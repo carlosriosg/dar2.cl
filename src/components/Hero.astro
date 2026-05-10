@@ -1,0 +1,58 @@
+---
+const {
+  eyebrow,
+  title,
+  subtitle,
+  cta,
+  ctaHref = '/contacto',
+  ctaSecondary,
+  ctaSecondaryHref,
+  size = 'lg',
+} = Astro.props;
+
+const titleSizes = {
+  lg: 'text-5xl md:text-7xl',
+  md: 'text-4xl md:text-5xl',
+  sm: 'text-3xl md:text-4xl',
+};
+---
+
+<section class="max-w-7xl mx-auto px-6 pt-24 pb-20">
+  {eyebrow && (
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
+      {eyebrow}
+    </p>
+  )}
+
+  <h1
+    class={`${titleSizes[size]} font-black tracking-tight leading-[1.05] mb-6 max-w-4xl`}
+    set:html={title}
+  />
+
+  {subtitle && (
+    <p class="text-lg md:text-xl text-[#666] max-w-2xl leading-relaxed mb-10">
+      {subtitle}
+    </p>
+  )}
+
+  {(cta || ctaSecondary) && (
+    <div class="flex flex-wrap gap-4 items-center">
+      {cta && (
+        <a
+          href={ctaHref}
+          class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 hover:bg-[#333] transition-colors"
+        >
+          {cta}
+        </a>
+      )}
+      {ctaSecondary && ctaSecondaryHref && (
+        <a
+          href={ctaSecondaryHref}
+          class="inline-flex items-center text-sm font-semibold px-6 py-3 border border-[#e5e5e5] hover:border-[#1a1a1a] transition-colors"
+        >
+          {ctaSecondary}
+        </a>
+      )}
+    </div>
+  )}
+</section>

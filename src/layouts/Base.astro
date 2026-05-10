@@ -1,0 +1,246 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Productora audiovisual en Santiago de Chile — 15 años',
+  description = 'Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://dar2.cl');
+const fullTitle = `${title} | DAR2 Servicios Audiovisuales`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="DAR2 Servicios Audiovisuales" />
+    <meta name="geo.region" content="CL-RM" />
+    <meta name="geo.placename" content="Santiago, Chile" />
+    <meta name="language" content="Spanish" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="DAR2" />
+
+    <!-- OG Image principal: cuadrada 1200x1200 (WhatsApp toma la primera que encuentra) -->
+    <meta property="og:image" content="https://dar2.cl/og-square.png" />
+    <meta property="og:image:secure_url" content="https://dar2.cl/og-square.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile" />
+
+    <!-- OG Image secundaria: rectangular 1200x630 (Facebook / LinkedIn eligen la mejor según contexto) -->
+    <meta property="og:image" content="https://dar2.cl/og-rect.png" />
+    <meta property="og:image:secure_url" content="https://dar2.cl/og-rect.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DAR2 — Streaming, live shopping y más" />
+
+    <!-- Twitter / X (usa card grande con imagen rectangular) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://dar2.cl/og-rect.png" />
+    <meta name="twitter:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile" />
+
+    <!-- Schema.org: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://dar2.cl/#organization",
+      "name": "DAR2 Servicios Audiovisuales",
+      "alternateName": "DAR2",
+      "description": "Productora audiovisual chilena especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR.",
+      "url": "https://dar2.cl",
+      "logo": "https://dar2.cl/images/logo.png",
+      "image": "https://dar2.cl/images/og-default.jpg",
+      "telephone": "+56998433346",
+      "email": "dar2@dar2.cl",
+      "foundingDate": "2010",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Holanda 099, of 603",
+        "addressLocality": "Providencia",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7510689",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4191,
+        "longitude": -70.6074
+      },
+      "areaServed": { "@type": "Country", "name": "Chile" },
+      "serviceType": [
+        "Streaming corporativo",
+        "Live Shopping",
+        "Circuito cerrado CCTV",
+        "Estudio virtual",
+        "Videos corporativos",
+        "Estrategias digitales",
+        "Contenido para redes sociales",
+        "Filtros AR"
+      ],
+      "founder": { "@type": "Person", "name": "Carlos Rios Guevara" },
+      "sameAs": [
+        "https://www.instagram.com/dar2.cl",
+        "https://www.linkedin.com/company/dar2"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org: ProfessionalService + catálogo de servicios -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DAR2",
+      "description": "Productora audiovisual en Santiago de Chile con más de 15 años de experiencia.",
+      "url": "https://dar2.cl",
+      "telephone": "+56998433346",
+      "email": "dar2@dar2.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Holanda 099, of 603",
+        "addressLocality": "Providencia",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7510071",
+        "addressCountry": "CL"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -33.424, "longitude": -70.612 },
+      "founder": { "@type": "Person", "name": "Carlos Rios Guevara" },
+      "sameAs": ["https://www.instagram.com/dar2.cl", "https://www.linkedin.com/company/dar2"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios audiovisuales",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Streaming", "url": "https://dar2.cl/servicios/streaming" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Live Shopping", "url": "https://dar2.cl/servicios/live-shopping" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Circuito Cerrado", "url": "https://dar2.cl/servicios/circuito-cerrado" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estudio Virtual", "url": "https://dar2.cl/servicios/estudio-virtual" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videos Corporativos", "url": "https://dar2.cl/servicios/videos-corporativos" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategias Digitales", "url": "https://dar2.cl/servicios/estrategias-digitales" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redes Sociales", "url": "https://dar2.cl/servicios/redes-sociales" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Filtros AR", "url": "https://dar2.cl/servicios/filtros-ar" }}
+        ]
+      }
+    })} />
+
+    <!-- Favicons (modo claro por defecto, modo oscuro con media query) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=2" />
+
+    <!-- Variantes modo oscuro -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-dark.png?v=2" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png?v=2" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48-dark.png?v=2" media="(prefers-color-scheme: dark)" />
+
+    <!-- Apple touch icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+
+    <!-- Para Android / PWA-lite -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=2" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png?v=2" />
+    <meta name="theme-color" content="#FF4500" />
+    <meta name="msapplication-TileColor" content="#FF4500" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400;1,14..32,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- ── Global Video Lightbox ────────────────────────── -->
+    <div
+      id="dar2-lightbox"
+      class="fixed inset-0 z-[9999] hidden bg-black/85 items-center justify-center p-4 md:p-10"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Reproductor de video"
+    >
+      <div class="relative w-full max-w-4xl">
+        <button
+          id="dar2-lightbox-close"
+          aria-label="Cerrar video"
+          class="absolute -top-10 right-0 flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+          Cerrar
+        </button>
+        <div class="aspect-video bg-black">
+          <iframe
+            id="dar2-lightbox-iframe"
+            class="w-full h-full"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; encrypted-media; picture-in-picture"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const lb      = document.getElementById('dar2-lightbox');
+      const iframe  = document.getElementById('dar2-lightbox-iframe');
+      const closeBtn = document.getElementById('dar2-lightbox-close');
+
+      function openLb(embed) {
+        if (!lb || !iframe) return;
+        iframe.src = embed + '?autoplay=1&rel=0&modestbranding=1';
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLb() {
+        if (!lb || !iframe) return;
+        lb.classList.add('hidden');
+        lb.classList.remove('flex');
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      window.addEventListener('dar2:open-video', (e) => openLb(e.detail.embed));
+      closeBtn?.addEventListener('click', closeLb);
+      lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lb?.classList.contains('hidden')) closeLb();
+      });
+    </script>
+    <ScrollToTop />
+  </body>
+</html>

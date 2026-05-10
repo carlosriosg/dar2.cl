@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoCard from '../components/VideoCard.astro';
+import { getCollection } from 'astro:content';
+
+const items  = await getCollection('portafolio');
+const sorted = items.sort((a, b) => b.data.anio - a.data.anio);
+---
+
+<Base
+  title="Portafolio — Videos y streaming para empresas chilenas"
+  description="Casos reales de streaming, videos corporativos y live shopping para Cencosud, Clínica Santa María, ABCDIN, Copec, CMPC, PC Factory y más."
+>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Portafolio</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      Proyectos que hablan
+      <em class="not-italic italic text-[#FF4500]"> por sí solos.</em>
+    </h1>
+    <p class="text-lg text-[#666] max-w-xl leading-relaxed">
+      Empresas de salud, banca, retail, energía, construcción y más.
+      Cada entrega, una operación impecable.
+    </p>
+  </section>
+
+  <!-- ── GRID ──────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+      {sorted.map(item => (
+        <VideoCard
+          youtube_url={item.data.youtube_url}
+          titulo={item.data.titulo}
+          cliente={item.data.cliente}
+          thumbnail={item.data.thumbnail}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────── -->
+  <section class="bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
+          ¿Tu proyecto podría estar aquí?
+        </h2>
+        <p class="text-[#999]">Cuéntanos qué necesitas y te armamos una propuesta en 48h.</p>
+      </div>
+      <a
+        href="/contacto"
+        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
+      >
+        Cotizar ahora →
+      </a>
+    </div>
+  </section>
+
+</Base>

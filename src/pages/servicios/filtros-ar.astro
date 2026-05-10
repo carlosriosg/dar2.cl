@@ -1,0 +1,245 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import { servicios } from '../../data/servicios.js';
+
+const s = servicios.find(x => x.slug === 'filtros-ar');
+
+const serviceJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: s.title,
+  provider: { '@id': 'https://dar2.cl/#organization' },
+  areaServed: 'Chile',
+  description: s.seoDescription,
+  serviceType: s.serviceType,
+});
+
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: s.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+---
+
+<Base
+  title={s.seoTitle}
+  description={s.seoDescription}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={serviceJsonLd} />
+    <script type="application/ld+json" set:html={faqJsonLd} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
+      {s.heroEyebrow}
+    </p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      {s.tagline}
+    </h1>
+    <p class="text-lg text-[#666] max-w-xl leading-relaxed mb-8">
+      {s.description}
+    </p>
+    <a
+      href="/contacto?servicio=filtros-ar"
+      class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+    >
+      Cotizar Filtros AR →
+    </a>
+  </section>
+
+  <!-- ¿Qué incluye? + Imagen -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-2xl font-black tracking-tight mb-8">¿Qué incluye?</h2>
+        <ul class="space-y-4">
+          {s.bullets.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF4500]"></span>
+              <p class="text-[#444] leading-relaxed">{item}</p>
+            </li>
+          ))}
+        </ul>
+        <a
+          href="/contacto?servicio=filtros-ar"
+          class="mt-10 inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
+        >
+          Cotizar Filtros AR →
+        </a>
+      </div>
+      <div class="rounded-[16px] overflow-hidden aspect-video bg-[#eaeaea]">
+        <Picture
+          src="/images/servicios/filtros-ar.jpg"
+          alt="Filtros AR de realidad aumentada — DAR2 Servicios Audiovisuales"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué te conviene -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Ventajas</p>
+    <h2 class="text-3xl font-black tracking-tight mb-12">Por qué te conviene.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {s.benefits.map(b => (
+        <div>
+          <p class="ar-benefit-num">{b.num}</p>
+          <p class="text-lg font-bold text-[#111] mb-2">{b.title}</p>
+          <p class="text-[#666] text-sm leading-relaxed">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Casos de uso -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Aplicaciones</p>
+    <h2 class="text-3xl font-black tracking-tight mb-12">Casos de uso.</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {s.cases.map(c => (
+        <div class="ar-case-card">
+          <p class="ar-case-num">{c.num}</p>
+          <p class="ar-case-label">{c.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Proyectos placeholder -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Portafolio</p>
+    <h2 class="text-3xl font-black tracking-tight mb-6">Proyectos de filtros AR.</h2>
+    <p class="text-[#666] max-w-xl leading-relaxed mb-8">
+      Estamos preparando nuestros primeros casos para compartir públicamente.
+      ¿Quieres ser uno de los primeros? Hablemos.
+    </p>
+    <a
+      href="/contacto"
+      class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+    >
+      Agendar reunión →
+    </a>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">FAQ</p>
+    <h2 class="text-3xl font-black tracking-tight mb-10">Preguntas frecuentes.</h2>
+    <div class="faq-list">
+      {s.faqs.map(f => (
+        <details class="faq-item">
+          <summary class="faq-question">{f.q}</summary>
+          <p class="faq-answer">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="bg-[#1a1a1a] mt-8">
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
+          {s.ctaTitle}
+        </h2>
+        <p class="text-[#999]">Cotización a medida en 48h.</p>
+      </div>
+      <a
+        href="/contacto"
+        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
+      >
+        Contáctanos →
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .ar-benefit-num {
+    font-size: 40px;
+    font-weight: 900;
+    color: #FF4500;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .ar-case-card {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+
+  .ar-case-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: #FF4500;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .ar-case-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 22px;
+    font-weight: 300;
+    color: #999;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 0 20px 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+</style>

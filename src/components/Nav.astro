@@ -1,0 +1,119 @@
+---
+import Picture from './Picture.astro';
+
+const navLinks = [
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/portafolio', label: 'Portafolio' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
+  <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="/" class="site-logo" aria-label="Ir al inicio de DAR2">
+      <Picture
+        src="/images/galeria/dar2_logo_firma.png"
+        alt="DAR2 — Productora audiovisual"
+        width="108"
+        height="32"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors ${
+              currentPath.startsWith(link.href)
+                ? 'text-[#1a1a1a]'
+                : 'text-[#666] hover:text-[#1a1a1a]'
+            }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA Desktop -->
+    <a
+      href="/contacto"
+      class="hidden md:inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#333] transition-colors"
+    >
+      Cotizar
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="nav-toggle"
+      aria-label="Abrir menú"
+      class="md:hidden flex flex-col gap-[5px] p-2"
+    >
+      <span class="w-5 h-[2px] bg-[#1a1a1a] block transition-all"></span>
+      <span class="w-5 h-[2px] bg-[#1a1a1a] block transition-all"></span>
+      <span class="w-5 h-[2px] bg-[#1a1a1a] block transition-all"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#e5e5e5] bg-white">
+    <ul class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class="block py-3 text-sm font-medium text-[#666] hover:text-[#1a1a1a] border-b border-[#f5f5f5] transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li class="pt-3">
+        <a href="/contacto" class="inline-flex bg-[#1a1a1a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#333] transition-colors">
+          Cotizar
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .site-logo img {
+    height: 32px;
+    width: auto;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+
+  .site-logo:hover img {
+    opacity: 0.8;
+  }
+
+  @media (min-width: 768px) {
+    .site-logo img {
+      height: 36px;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

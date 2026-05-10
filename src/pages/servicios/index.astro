@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import { servicios } from '../../data/servicios.js';
+---
+
+<Base
+  title="Servicios audiovisuales: streaming, live shopping y más"
+  description="8 servicios audiovisuales bajo un mismo techo: streaming, live shopping, circuito cerrado, estudio virtual, videos corporativos, estrategias digitales, redes sociales y filtros AR."
+>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Servicios</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      Todo lo que necesitas
+      <em class="not-italic italic text-[#FF4500]"> bajo un solo techo.</em>
+    </h1>
+    <p class="text-lg text-[#666] max-w-xl leading-relaxed">
+      8 servicios especializados, un solo proveedor, una sola factura.
+    </p>
+  </section>
+
+  <!-- Grilla de 7 servicios (todos iguales) -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+    <div class="svc-grid-index">
+      {servicios.map(s => (
+        <a href={`/servicios/${s.slug}`} class={`svc-card-index${s.featured ? ' svc-card-dark' : ''}`}>
+          {s.featured && <span class="svc-badge">{s.badgeText ?? 'TENDENCIA'}</span>}
+          <div class="svc-img-box">
+            <Picture
+              src={`/images/servicios/${s.slug}.jpg`}
+              alt={s.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="svc-body">
+            <p class="svc-num">{s.num}</p>
+            <p class="svc-title">{s.title}</p>
+            <p class="svc-desc">{s.shortDesc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
+          Cotización a medida en 48h.
+        </h2>
+        <p class="text-[#999]">Cuéntanos tu proyecto y te armamos una propuesta.</p>
+      </div>
+      <a
+        href="/contacto"
+        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
+      >
+        Contáctanos →
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .svc-grid-index {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 640px)  { .svc-grid-index { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .svc-grid-index { grid-template-columns: repeat(3, 1fr); } }
+
+  .svc-card-index {
+    position: relative;
+    background: #fafafa;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .svc-card-index:hover { transform: scale(1.01); }
+  .svc-card-dark { border: 1.5px solid #FF4500; }
+
+  .svc-img-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eaeaea;
+  }
+
+  .svc-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #FF4500;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .svc-num  { font-size: 11px; font-weight: 600; color: #999; letter-spacing: 2px; margin: 0; }
+  .svc-title { font-size: 18px; font-weight: 700; color: #111; margin: 4px 0; line-height: 1.2; }
+  .svc-desc  { font-size: 13px; color: #666; line-height: 1.5; margin: 0; }
+
+  .svc-card-dark .svc-num { color: #FF4500; }
+</style>

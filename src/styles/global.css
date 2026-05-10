@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #FF4500;
+  --color-primary: #1a1a1a;
+  --color-muted: #666666;
+  --color-border: #e5e5e5;
+  --color-surface: #f5f5f5;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── WhatsApp link — used in Footer and Contacto ──────── */
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #25D366;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.whatsapp-link:hover {
+  color: #1DA851;
+}
+
+.whatsapp-link svg {
+  flex-shrink: 0;
+}
+
+/* ── Submit button (WhatsApp-bound forms) ────────────── */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  background: #25D366;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #1DA851;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Global transition baseline: interactive elements get 0.3s ease */
+  a, button, input, select, textarea {
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+}

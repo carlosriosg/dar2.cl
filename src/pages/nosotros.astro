@@ -1,0 +1,161 @@
+---
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+
+// Team with matched photo filenames from public/images/nosotros/
+const equipo = [
+  { nombre: 'Carlos Rios Guevara',    rol: 'Director',                formacion: 'UNIACC', foto: 'carlos-rios.jpg'      },
+  { nombre: 'Víctor Arriagada',       rol: 'Publicista / Locutor',    formacion: null,      foto: 'victor-arriagada.jpg' },
+  { nombre: 'Cristian Pinto',         rol: 'Director Creativo',       formacion: null,      foto: 'cristian-pinto.jpg'   },
+  { nombre: 'Pablo Haz',              rol: 'Productor Ejecutivo',     formacion: null,      foto: 'pablo-haz.jpg'        },
+  { nombre: 'Alex Morovic',           rol: 'Guionista',               formacion: 'Arcos',   foto: 'alex-morovic.jpg'     },
+  { nombre: 'María de la Luz López',  rol: 'Ejecutiva de Cuentas',    formacion: null,      foto: 'mariluz-lopez.png'    },
+  { nombre: 'Mauricio Rudolphy',      rol: 'Director de Fotografía',  formacion: 'UNIACC',  foto: 'mauricio.png'         },
+  { nombre: 'Abigail Ruiz',           rol: 'Maquilladora',            formacion: null,      foto: 'Abigail-Ruiz.png'     },
+];
+
+const pilares = [
+  {
+    num: '01',
+    title: 'Brainstorming',
+    desc: 'Trabajamos en conjunto con el cliente para potenciar su proyecto. Cada producción comienza con una escucha activa de necesidades y objetivos.',
+  },
+  {
+    num: '02',
+    title: 'Valor',
+    desc: 'Nos ajustamos a tu presupuesto, contamos con equipamiento propio. El precio que cotizamos es el que aparece en la factura.',
+  },
+  {
+    num: '03',
+    title: '24/7',
+    desc: 'Nos gusta trabajar. Nuestra capacidad de reacción es inmediata. Ante cualquier contingencia, siempre hay alguien disponible.',
+  },
+  {
+    num: '04',
+    title: 'Resultado',
+    desc: 'El trabajo se termina cuando el cliente queda más que conforme. No cerramos un proyecto hasta que la entrega esté al nivel esperado.',
+  },
+];
+---
+
+<Base
+  title="Equipo DAR2 — 15 años produciendo audiovisual"
+  description="Equipo multidisciplinario con más de 15 años en la industria audiovisual chilena. Conoce a quienes producen cada uno de nuestros proyectos."
+>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Nosotros</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      Un equipo pequeño
+      <em class="not-italic italic text-[#FF4500]"> con foco quirúrgico.</em>
+    </h1>
+    <p class="text-lg text-[#666] max-w-xl leading-relaxed">
+      8 profesionales especializados, más de 15 años de experiencia y un compromiso claro:
+      que tu proyecto quede mejor de lo que imaginabas.
+    </p>
+  </section>
+
+  <!-- Historia -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="text-3xl font-black tracking-tight mb-6">15 años en el aire.</h2>
+        <div class="space-y-4 text-[#666] leading-relaxed">
+          <p>
+            DAR2 nació con una convicción simple: la producción audiovisual de calidad para empresas no debería requerir un ejército de proveedores. Hoy operamos end-to-end — desde el diseño de producción hasta la entrega final — bajo una sola factura.
+          </p>
+          <p>
+            Trabajamos con empresas del sector bancario, farmacéutico, retail, energía, salud y gremios que necesitan producción confiable, puntual y de nivel profesional. Siempre.
+          </p>
+          <p>
+            Nuestro modelo es intencionalmente pequeño: un equipo especializado, tecnología broadcast propia y un compromiso real con cada proyecto. No somos una plataforma. Somos la productora que opera el día del evento.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="border-l-2 border-[#FF4500] pl-6">
+          <p class="text-3xl font-black">15+</p>
+          <p class="text-[#666] text-sm mt-1">Años especializados en producción audiovisual</p>
+        </div>
+        <div class="border-l-2 border-[#e5e5e5] pl-6">
+          <p class="text-3xl font-black">40+</p>
+          <p class="text-[#666] text-sm mt-1">Producciones al año</p>
+        </div>
+        <div class="border-l-2 border-[#e5e5e5] pl-6">
+          <p class="text-3xl font-black">7</p>
+          <p class="text-[#666] text-sm mt-1">Servicios especializados</p>
+        </div>
+        <div class="border-l-2 border-[#e5e5e5] pl-6">
+          <p class="text-3xl font-black">30+</p>
+          <p class="text-[#666] text-sm mt-1">Empresas clientes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Equipo</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-xl">
+      Las personas detrás de cada producción.
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-10">
+      {equipo.map(persona => (
+        <div class="flex flex-col items-center text-center">
+          <!-- Foto circular -->
+          <div class="w-[140px] h-[140px] rounded-full overflow-hidden bg-[#f5f5f5] mb-5 border-2 border-[#eee]">
+            <Picture
+              src={`/images/nosotros/${persona.foto}`}
+              alt={persona.nombre}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p class="font-semibold text-[16px] leading-tight">{persona.nombre}</p>
+          <p class="text-[#888] text-[13px] mt-1">{persona.rol}</p>
+          {persona.formacion && (
+            <p class="text-[#999] text-xs mt-0.5">{persona.formacion}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 4 Pilares -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Filosofía</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-xl">
+      Cómo trabajamos.
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {pilares.map(p => (
+        <div class="border-t-2 border-[#e5e5e5] pt-6">
+          <p class="text-xs font-semibold text-[#666] mb-3">{p.num}</p>
+          <h3 class="font-black text-xl tracking-tight mb-3">{p.title}</h3>
+          <p class="text-[#666] text-sm leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#1a1a1a] mt-8">
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
+          Trabajemos juntos.
+        </h2>
+        <p class="text-[#999]">Cuéntanos tu próximo proyecto.</p>
+      </div>
+      <a
+        href="/contacto"
+        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
+      >
+        Contactar →
+      </a>
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,95 @@
+---
+import Picture from './Picture.astro';
+const { youtube_url, titulo, cliente, thumbnail } = Astro.props;
+
+function getYouTubeId(url) {
+  if (!url) return null;
+  const m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,15})/) ||
+            url.match(/[?&]v=([a-zA-Z0-9_-]{6,15})/);
+  return m ? m[1] : null;
+}
+
+const videoId = getYouTubeId(youtube_url);
+
+// Source priority: local thumbnail → YouTube maxresdefault
+const imgSrc = thumbnail
+  ? thumbnail
+  : videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null;
+
+const embed = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+
+// Double fallback: maxresdefault → hqdefault (only for YouTube thumbnails)
+const onerrorAttr = (!thumbnail && videoId)
+  ? `if(this.dataset.fallback!=='1'){this.dataset.fallback='1';this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg';}`
+  : `this.onerror=null;this.style.display='none'`;
+---
+
+<article class="video-card group" data-embed={embed}>
+  <!-- Thumbnail 16:9, rounded-16px -->
+  <div class="vc-thumb aspect-video overflow-hidden bg-[#eaeaea] relative thumbnail-trigger cursor-pointer select-none">
+    {imgSrc ? (
+      <Picture
+        src={imgSrc}
+        alt={`${titulo} — ${cliente}`}
+        class="vc-img w-full h-full object-cover"
+        loading="lazy"
+        onerror={onerrorAttr}
+      />
+    ) : (
+      <div class="w-full h-full bg-[#eaeaea]" />
+    )}
+
+    <!-- Play icon: 48px white circle, 70% → 100% on hover -->
+    {embed && (
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="vc-play w-12 h-12 rounded-full bg-white/70 flex items-center justify-center">
+          <svg class="w-5 h-5 text-[#1a1a1a] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+    )}
+  </div>
+
+  <!-- Title + client -->
+  <div class="mt-4">
+    <p class="text-[17px] font-semibold text-[#111] leading-[1.3] mb-1">{titulo}</p>
+    <p class="text-[13px] font-normal text-[#888]">{cliente}</p>
+  </div>
+</article>
+
+<style>
+  .vc-thumb {
+    border-radius: 16px;
+  }
+  .vc-img {
+    filter: brightness(0.98);
+    transition: filter 0.4s ease, transform 0.4s ease;
+  }
+  .video-card:hover .vc-img {
+    filter: brightness(1);
+    transform: scale(1.02);
+  }
+  .vc-play {
+    transition: background 0.3s ease, opacity 0.3s ease;
+  }
+  .video-card:hover .vc-play {
+    background: rgba(255, 255, 255, 1);
+  }
+</style>
+
+<script>
+  function initVideoCards() {
+    document.querySelectorAll('.video-card[data-embed]').forEach(card => {
+      if (card.dataset.wired) return;
+      card.dataset.wired = '1';
+      card.querySelector('.thumbnail-trigger')?.addEventListener('click', () => {
+        window.dispatchEvent(
+          new CustomEvent('dar2:open-video', { detail: { embed: card.dataset.embed } })
+        );
+      });
+    });
+  }
+  document.addEventListener('astro:page-load', initVideoCards);
+  initVideoCards();
+</script>

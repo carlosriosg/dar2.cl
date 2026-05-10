@@ -1,17 +1,582 @@
 ---
+import Base from '../layouts/Base.astro';
+import VideoCard from '../components/VideoCard.astro';
+import Picture from '../components/Picture.astro';
+import { getCollection } from 'astro:content';
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { servicios } from '../data/servicios.js';
 
+const todosLosItems = await getCollection('portafolio');
+const destacados = todosLosItems
+  .filter(i => i.data.destacado)
+  .sort((a, b) => b.data.anio - a.data.anio)
+  .slice(0, 6);
+
+// Hero gallery: 4 static initial images (client script randomizes on each visit)
+const heroPool = [
+  'pc-factory.png','pc-factory-ram.png','polpaico.png',
+  'beneficios-CMPC.png','valores-castano.png','copec.png',
+  'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
+];
+const heroImages = heroPool.slice(0, 4);
+
+// Load client logos dynamically from public/images/clientes/
+const logosDir  = join(process.cwd(), 'public', 'images', 'clientes');
+const logoFiles = readdirSync(logosDir)
+  .filter(f => /\.(png|jpg|jpeg|svg)$/i.test(f))
+  .sort();
+
+// Map filename -> official URL for each client (for SEO context and UX)
+const clienteUrls: Record<string, string> = {
+  'abcdin.png': 'https://www.abcdin.cl',
+  'aconcagua.png': 'https://www.aconcagua.cl',
+  'aga.png': 'https://www.aga.cl',
+  'anasac.png': 'https://www.anasac.cl',
+  'banco-de-chile.png': 'https://www.bancochile.cl',
+  'cencosud.png': 'https://www.cencosud.com',
+  'chilealimentos.png': 'https://www.chilealimentos.com',
+  'clinica-santa-maria.png': 'https://www.clinicasantamaria.cl',
+  'cnc.png': 'https://www.cnc.cl',
+  'codelco.png': 'https://www.codelco.com',
+  'consorcio.png': 'https://www.consorcio.cl',
+  'copeuch.png': 'https://www.coopeuch.cl',
+  'cuprum.png': 'https://www.cuprum.cl',
+  'dhl.png': 'https://www.dhl.com/cl-es',
+  'dijon.png': 'https://www.dijon.cl',
+  'easy.png': 'https://www.easy.cl',
+  'empresas-copec.png': 'https://www.empresascopec.cl',
+  'enap.png': 'https://www.enap.cl',
+  'enel.png': 'https://www.enel.cl',
+  'engage.png': 'https://engagechile.cl',
+  'euroamerica.png': 'https://www.euroamerica.cl',
+  'gerdau-aza.png': 'https://www.gerdau.cl',
+  'habitat.png': 'https://www.afphabitat.cl',
+  'icare.png': 'https://www.icare.cl',
+  'johnson.png': 'https://www.johnson.cl',
+  'lp.png': 'https://www.lpchile.cl',
+  'marine-harvest.png': 'https://mowi.com',
+  'metlife.png': 'https://w3.metlife.cl',
+  'nestle.png': 'https://www.nestle.cl',
+  'nunoa.png': 'https://www.nunoa.cl',
+  'paris.png': 'https://www.paris.cl',
+  'parque-arauco.png': 'https://www.parauco.com',
+  'pc-factory.png': 'https://www.pcfactory.cl',
+  'saab.png': 'https://www.saab.com',
+  'sacyr.png': 'https://www.sacyr.com',
+  'salfa-corp.png': 'https://www.salfacorp.com',
+  'teatro-del-lago.png': 'https://www.teatrodellago.cl',
+  'ucm.png': 'https://www.ucm.cl',
+  'udp.png': 'https://www.udp.cl',
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Productora audiovisual en Santiago de Chile — 15 años"
+  description="Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más."
+>
+
+  <!-- ── 1. HERO ─────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-[80px] pb-[60px]">
+    <div class="hero-grid">
+
+      <!-- Text column -->
+      <div class="hero-text">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
+          Productora Audiovisual · 15 Años
+        </p>
+        <h1
+          class="font-black leading-[1.05] mb-0"
+          style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px;"
+        >
+          Producimos<br /><span
+            id="rotating-word"
+            style="display:inline-block;min-width:14ch;font-style:italic;color:#E63E00;opacity:1;transition:opacity 0.2s ease;"
+          >live shopping</span><br />para empresas.
+        </h1>
+        <p class="text-lg md:text-xl text-[#666] leading-relaxed mt-8 mb-10">
+          Streaming, live shopping, videos corporativos, circuito cerrado, estudio virtual y más.
+          7 servicios bajo un solo techo, una sola factura.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contacto"
+            class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+          >
+            Cotizar ahora
+          </a>
+          <a
+            href="/portafolio"
+            class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border border-[#e5e5e5] hover:border-[#1a1a1a] transition-colors"
+          >
+            Ver portafolio
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery column: 2×2 grid, randomized per visit via client script -->
+      <div class="hero-gallery" aria-hidden="true">
+        {heroImages.map(img => (
+          <div class="hero-img-cell">
+            <Picture
+              src={`/images/portafolio/${img}`}
+              alt=""
+              class="hero-img"
+              loading="eager"
+            />
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 2. SERVICIOS (8) ──────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-3">Servicios</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-10">
+      8 servicios. Un solo proveedor.
+    </h2>
+
+    <div class="home-svc-grid">
+      {servicios.map((s) => (
+          <a
+            href={`/servicios/${s.slug}`}
+            class={`home-svc-card${s.featured ? ' home-svc-dark' : ''}`}
+          >
+            {s.featured && <span class="home-svc-badge">{s.badgeText ?? 'TENDENCIA'}</span>}
+            <div class="home-svc-img">
+              <div class="home-svc-img-inner">
+                <Picture
+                  src={`/images/servicios/${s.slug}.jpg`}
+                  alt={s.title}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="home-svc-text">
+              <p class="home-svc-num">{s.num}</p>
+              <p class="home-svc-title">{s.title}</p>
+              <p class="home-svc-desc">{s.shortDesc}</p>
+            </div>
+          </a>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/servicios" class="outline-btn">
+        Ver todos los servicios →
+      </a>
+    </div>
+  </section>
+
+  <!-- ── 3. PROYECTOS DESTACADOS ───────────────────────── -->
+  {destacados.length > 0 && (
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+      <div class="flex items-end justify-between mb-4 flex-wrap gap-4">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666]">Portafolio</p>
+        <a
+          href="/portafolio"
+          class="text-sm font-semibold text-[#666] hover:text-[#1a1a1a] transition-colors whitespace-nowrap"
+        >
+          Ver todos los proyectos →
+        </a>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-12">
+        Trabajo real,<br />clientes reales.
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        {destacados.map(item => (
+          <VideoCard
+            youtube_url={item.data.youtube_url}
+            titulo={item.data.titulo}
+            cliente={item.data.cliente}
+            thumbnail={item.data.thumbnail}
+          />
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/portafolio" class="outline-btn">
+          Ver todos los proyectos ({todosLosItems.length}) →
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- ── 4. CONFÍAN EN NOSOTROS (marquesina infinita) ────────────────────────── -->
+  <section class="clientes-section border-t border-[#e5e5e5] py-20">
+    <div class="max-w-[1200px] mx-auto px-6 mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Clientes</p>
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight">
+        Confían en nosotros.
+      </h2>
+    </div>
+
+    <!-- Marquesina: contenedor full-width con overflow hidden -->
+    <div class="marquee" aria-label="Clientes de DAR2">
+      <!-- Track duplicado 2x para loop infinito sin saltos -->
+      <div class="marquee-track">
+        {logoFiles.map(file => {
+          const name = file.replace(/\.(png|jpg|jpeg|webp|svg)$/i, '').replace(/-/g, ' ');
+          const url = clienteUrls[file];
+          const src = `/images/clientes/${file}`;
+          return (
+            <div class="marquee-item">
+              {url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={`Visitar sitio web de ${name}`}
+                  title={name}
+                >
+                  <Picture src={src} alt={`Logo ${name}`} loading="lazy" decoding="async" />
+                </a>
+              ) : (
+                <div title={name}>
+                  <Picture src={src} alt={`Logo ${name}`} loading="lazy" decoding="async" />
+                </div>
+              )}
+            </div>
+          );
+        })}
+        {logoFiles.map(file => {
+          const name = file.replace(/\.(png|jpg|jpeg|webp|svg)$/i, '').replace(/-/g, ' ');
+          const url = clienteUrls[file];
+          const src = `/images/clientes/${file}`;
+          return (
+            <div class="marquee-item" aria-hidden="true">
+              {url ? (
+                <a href={url} target="_blank" rel="noopener" tabindex="-1" title={name}>
+                  <Picture src={src} alt="" loading="lazy" decoding="async" />
+                </a>
+              ) : (
+                <div title={name}>
+                  <Picture src={src} alt="" loading="lazy" decoding="async" />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. STATS ──────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">En números</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-xl">
+      Trayectoria que respalda cada proyecto.
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div class="border-l-2 border-[#FF4500] pl-6">
+        <p class="text-5xl font-black tracking-tight">15+</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
+      </div>
+      <div class="border-l-2 border-[#e5e5e5] pl-6">
+        <p class="text-5xl font-black tracking-tight">40+</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Transmisiones<br />al año</p>
+      </div>
+      <div class="border-l-2 border-[#e5e5e5] pl-6">
+        <p class="text-5xl font-black tracking-tight">30+</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
+      </div>
+      <div class="border-l-2 border-[#e5e5e5] pl-6">
+        <p class="text-5xl font-black tracking-tight">1</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Factura<br />única</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. CTA FINAL ──────────────────────────────────── -->
+  <section class="bg-[#1a1a1a] mt-8">
+    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">
+          ¿Listo para transmitir?
+        </p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white leading-tight mb-3">
+          Cotización a medida en 48h.
+        </h2>
+        <p class="text-[#999] text-base md:text-lg">Sin letra chica. Sin intermediarios.</p>
+      </div>
+      <div class="shrink-0 flex flex-col items-start md:items-end gap-3">
+        <a href="/contacto" class="cta-outline-btn">
+          Contáctanos →
+        </a>
+        <a href="mailto:dar2@dar2.cl" class="text-[#999] text-[13px] hover:text-white transition-colors">
+          o escríbenos a dar2@dar2.cl
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  const words = [
+    'live shopping',
+    'streaming',
+    'videos corporativos',
+    'circuito cerrado',
+    'estudio virtual',
+    'estrategias digitales',
+    'contenido para marcas',
+  ];
+  let index = 0;
+
+  function initRotatingWord() {
+    const el = document.getElementById('rotating-word');
+    if (!el) return;
+
+    setInterval(() => {
+      el.style.opacity = '0';
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        el.textContent = words[index];
+        el.style.opacity = '1';
+      }, 200);
+    }, 1800);
+  }
+
+  document.addEventListener('astro:page-load', initRotatingWord);
+  initRotatingWord();
+
+  // Hero gallery: randomize on every visit (SSG builds static, JS shuffles client-side)
+  const heroPool = [
+    'pc-factory.png','pc-factory-ram.png','polpaico.png',
+    'beneficios-CMPC.png','valores-castano.png','copec.png',
+    'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
+  ];
+
+  function initHeroGallery() {
+    const imgs = document.querySelectorAll('.hero-img');
+    if (!imgs.length) return;
+    const shuffled = [...heroPool].sort(() => 0.5 - Math.random());
+    imgs.forEach((img, i) => {
+      const file = shuffled[i];
+      const webp = file.replace(/\.(png|jpe?g)$/i, '.webp');
+      const source = img.previousElementSibling;
+      if (source && source.tagName === 'SOURCE') {
+        source.srcset = `/images/portafolio/${webp}`;
+      }
+      img.src = `/images/portafolio/${file}`;
+    });
+  }
+
+  document.addEventListener('astro:page-load', initHeroGallery);
+  initHeroGallery();
+</script>
+
+<style>
+  /* ── Hero 2-col layout ─────────────────────────────── */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 768px)  { .hero-grid { grid-template-columns: 65fr 35fr; } }
+  @media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
+
+  .hero-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    justify-items: stretch;
+  }
+  .hero-img-cell {
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #eaeaea;
+    width: 100%;
+  }
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.96);
+    display: block;
+    transition: filter 0.3s ease;
+  }
+  .hero-img-cell:hover .hero-img { filter: brightness(1); }
+
+  /* ── Shared outline button ────────────────────────── */
+  .outline-btn {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    background: transparent;
+    color: #111;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .outline-btn:hover { background: #111; color: #fff; border-color: #111; }
+
+  /* ── CTA white-outline button ──────────────────────── */
+  .cta-outline-btn {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .cta-outline-btn:hover { background: #ffffff; color: #111; }
+
+  /* ── Clientes: marquesina infinita ────────────────── */
+  .clientes-section {
+    overflow-x: hidden;
+  }
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee-scroll 120s linear infinite;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-item {
+    flex-shrink: 0;
+    width: 140px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marquee-item a,
+  .marquee-item > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .marquee-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  .marquee-item a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+    .marquee {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+              mask-image: none;
+    }
+    .marquee-item img {
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .marquee-item {
+      width: 110px;
+      height: 60px;
+    }
+    .marquee-track {
+      gap: 2rem;
+      animation-duration: 90s;
+    }
+  }
+
+  /* ── Home service cards ────────────────────────────── */
+  .home-svc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 640px)  { .home-svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .home-svc-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .home-svc-card {
+    position: relative;
+    background: #fafafa;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .home-svc-card:hover { transform: scale(1.01); }
+  .home-svc-dark { border: 1.5px solid #FF4500; }
+
+  .home-svc-img { width: 100%; }
+  .home-svc-img-inner {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eaeaea;
+  }
+  .home-svc-text { flex: 1; }
+
+  .home-svc-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #FF4500;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .home-svc-num   { font-size: 11px; font-weight: 600; color: #999; letter-spacing: 2px; margin: 0; }
+  .home-svc-title { font-size: 18px; font-weight: 700; color: #111; margin: 4px 0; line-height: 1.2; }
+  .home-svc-desc  { font-size: 13px; color: #666; line-height: 1.5; margin: 0; }
+
+  .home-svc-dark .home-svc-num { color: #FF4500; }
+</style>
+
+</Base>

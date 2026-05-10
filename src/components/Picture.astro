@@ -1,0 +1,15 @@
+---
+const { src, alt = '', class: className, ...rest } = Astro.props;
+const isLocal = typeof src === 'string' && src.startsWith('/');
+const webp = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.webp') : src;
+const hasWebp = isLocal && webp !== src;
+---
+
+{hasWebp ? (
+  <picture>
+    <source srcset={webp} type="image/webp" />
+    <img src={src} alt={alt} class={className} {...rest} />
+  </picture>
+) : (
+  <img src={src} alt={alt} class={className} {...rest} />
+)}
