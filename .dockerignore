@@ -1,0 +1,15 @@
+# Excluye del contexto Docker para builds rapidos
+node_modules
+dist
+.git
+.gitignore
+.astro
+.vscode
+.claude
+.env
+.env.production
+*.log
+README.md
+Caddyfile
+htaccess-*.txt
+.DS_Store
