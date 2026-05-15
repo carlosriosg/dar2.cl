@@ -100,13 +100,13 @@ const clienteUrls: Record<string, string> = {
         </p>
         <div class="flex flex-wrap gap-4">
           <a
-            href="/contacto"
+            href="/contacto/"
             class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
           >
             Cotizar ahora
           </a>
           <a
-            href="/portafolio"
+            href="/portafolio/"
             class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border border-[#e5e5e5] hover:border-[#1a1a1a] transition-colors"
           >
             Ver portafolio
@@ -141,7 +141,7 @@ const clienteUrls: Record<string, string> = {
     <div class="home-svc-grid">
       {servicios.map((s) => (
           <a
-            href={`/servicios/${s.slug}`}
+            href={`/servicios/${s.slug}/`}
             class={`home-svc-card${s.featured ? ' home-svc-dark' : ''}`}
           >
             {s.featured && <span class="home-svc-badge">{s.badgeText ?? 'TENDENCIA'}</span>}
@@ -165,7 +165,7 @@ const clienteUrls: Record<string, string> = {
     </div>
 
     <div class="mt-8 text-center">
-      <a href="/servicios" class="outline-btn">
+      <a href="/servicios/" class="outline-btn">
         Ver todos los servicios →
       </a>
     </div>
@@ -177,7 +177,7 @@ const clienteUrls: Record<string, string> = {
       <div class="flex items-end justify-between mb-4 flex-wrap gap-4">
         <p class="text-xs font-semibold uppercase tracking-widest text-[#666]">Portafolio</p>
         <a
-          href="/portafolio"
+          href="/portafolio/"
           class="text-sm font-semibold text-[#666] hover:text-[#1a1a1a] transition-colors whitespace-nowrap"
         >
           Ver todos los proyectos →
@@ -197,7 +197,7 @@ const clienteUrls: Record<string, string> = {
         ))}
       </div>
       <div class="mt-10 text-center">
-        <a href="/portafolio" class="outline-btn">
+        <a href="/portafolio/" class="outline-btn">
           Ver todos los proyectos ({todosLosItems.length}) →
         </a>
       </div>
@@ -302,7 +302,7 @@ const clienteUrls: Record<string, string> = {
         <p class="text-[#999] text-base md:text-lg">Sin letra chica. Sin intermediarios.</p>
       </div>
       <div class="shrink-0 flex flex-col items-start md:items-end gap-3">
-        <a href="/contacto" class="cta-outline-btn">
+        <a href="/contacto/" class="cta-outline-btn">
           Contáctanos →
         </a>
         <a href="mailto:dar2@dar2.cl" class="text-[#999] text-[13px] hover:text-white transition-colors">

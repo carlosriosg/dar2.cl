@@ -2,10 +2,10 @@
 import Picture from './Picture.astro';
 
 const navLinks = [
-  { href: '/servicios', label: 'Servicios' },
-  { href: '/portafolio', label: 'Portafolio' },
-  { href: '/nosotros', label: 'Nosotros' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/servicios/', label: 'Servicios' },
+  { href: '/portafolio/', label: 'Portafolio' },
+  { href: '/nosotros/', label: 'Nosotros' },
+  { href: '/contacto/', label: 'Contacto' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -45,7 +45,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- CTA Desktop -->
     <a
-      href="/contacto"
+      href="/contacto/"
       class="hidden md:inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#333] transition-colors"
     >
       Cotizar
@@ -77,7 +77,7 @@ const currentPath = Astro.url.pathname;
         </li>
       ))}
       <li class="pt-3">
-        <a href="/contacto" class="inline-flex bg-[#1a1a1a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#333] transition-colors">
+        <a href="/contacto/" class="inline-flex bg-[#1a1a1a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#333] transition-colors">
           Cotizar
         </a>
       </li>

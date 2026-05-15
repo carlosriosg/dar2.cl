@@ -25,7 +25,7 @@ import { servicios } from '../../data/servicios.js';
   <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
     <div class="svc-grid-index">
       {servicios.map(s => (
-        <a href={`/servicios/${s.slug}`} class={`svc-card-index${s.featured ? ' svc-card-dark' : ''}`}>
+        <a href={`/servicios/${s.slug}/`} class={`svc-card-index${s.featured ? ' svc-card-dark' : ''}`}>
           {s.featured && <span class="svc-badge">{s.badgeText ?? 'TENDENCIA'}</span>}
           <div class="svc-img-box">
             <Picture
@@ -55,7 +55,7 @@ import { servicios } from '../../data/servicios.js';
         <p class="text-[#999]">Cuéntanos tu proyecto y te armamos una propuesta.</p>
       </div>
       <a
-        href="/contacto"
+        href="/contacto/"
         class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
       >
         Contáctanos →
