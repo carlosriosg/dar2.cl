@@ -21,11 +21,14 @@ RUN npm run build
 # ============================================
 FROM nginx:alpine
 
+# Limpiar contenido default de nginx:alpine (index.html welcome, 50x.html)
+# antes de copiar nuestro build, para evitar conflictos.
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copiar SOLO el build (no el repo completo)
+COPY --from=builder /app/dist /usr/share/nginx/html
+
 # Reemplazar el default.conf con nuestra config (reglas SEO)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copiar SOLO el build, no el repo completo
-COPY --from=builder /app/dist /usr/share/nginx/html
-
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
