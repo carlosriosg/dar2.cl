@@ -36,11 +36,17 @@ const pilares = [
     desc: 'El trabajo se termina cuando el cliente queda más que conforme. No cerramos un proyecto hasta que la entrega esté al nivel esperado.',
   },
 ];
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Nosotros', url: 'https://dar2.cl/nosotros/' },
+];
 ---
 
 <Base
   title="Equipo DAR2 — 15 años produciendo audiovisual"
   description="Equipo multidisciplinario con más de 15 años en la industria audiovisual chilena. Conoce a quienes producen cada uno de nuestros proyectos."
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- Hero -->

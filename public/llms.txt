@@ -4,26 +4,35 @@
 
 ## Sobre nosotros
 
-DAR2 es dirigida por Carlos Rios Guevara desde Av. Holanda 099, of 603, Providencia, Santiago. Ofrecemos servicios audiovisuales integrales bajo un solo techo, con 8 servicios especializados y respuesta a cotizaciones en menos de 48 horas hábiles.
+DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, oficina 603, Providencia, Santiago. Ofrecemos servicios audiovisuales integrales bajo un solo techo, con 8 servicios especializados y respuesta a cotizaciones en menos de 48 horas hábiles.
 
 ## Servicios principales
 
-- [Streaming](https://dar2.cl/servicios/streaming): Transmisión en vivo multicámara, enlaces punto a punto, producción broadcast para eventos corporativos.
-- [Live Shopping](https://dar2.cl/servicios/live-shopping): Ventas en vivo integradas con e-commerce, la tendencia retail 2026.
-- [Circuito Cerrado (CCTV)](https://dar2.cl/servicios/circuito-cerrado): Multicámaras robóticas para eventos presenciales, galas y congresos.
-- [Estudio Virtual](https://dar2.cl/servicios/estudio-virtual): Escenografías virtuales con calidad broadcast, chroma key profesional.
-- [Videos Corporativos](https://dar2.cl/servicios/videos-corporativos): Videos institucionales, de cultura organizacional, capacitación y producto.
-- [Estrategias Digitales](https://dar2.cl/servicios/estrategias-digitales): Planes integrales de comunicación audiovisual multiplataforma.
-- [Redes Sociales](https://dar2.cl/servicios/redes-sociales): Cápsulas, reels y contenido vertical optimizado para Instagram, TikTok y LinkedIn.
-- [Filtros AR](https://dar2.cl/servicios/filtros-ar): Filtros de realidad aumentada para Instagram y TikTok, experiencias inmersivas de marca.
+- [Streaming](https://dar2.cl/servicios/streaming/): Transmisión en vivo multicámara, enlaces punto a punto, producción broadcast para eventos corporativos.
+- [Live Shopping](https://dar2.cl/servicios/live-shopping/): Ventas en vivo integradas con e-commerce, la tendencia retail 2026.
+- [Circuito Cerrado (CCTV)](https://dar2.cl/servicios/circuito-cerrado/): Multicámaras robóticas para eventos presenciales, galas y congresos.
+- [Estudio Virtual](https://dar2.cl/servicios/estudio-virtual/): Escenografías virtuales con calidad broadcast, chroma key profesional.
+- [Videos Corporativos](https://dar2.cl/servicios/videos-corporativos/): Videos institucionales, de cultura organizacional, capacitación y producto.
+- [Estrategias Digitales](https://dar2.cl/servicios/estrategias-digitales/): Planes integrales de comunicación audiovisual multiplataforma.
+- [Redes Sociales](https://dar2.cl/servicios/redes-sociales/): Cápsulas, reels y contenido vertical optimizado para Instagram, TikTok y LinkedIn.
+- [Filtros AR](https://dar2.cl/servicios/filtros-ar/): Filtros de realidad aumentada para Instagram y TikTok, experiencias inmersivas de marca.
+
+## Páginas principales
+
+- [Inicio](https://dar2.cl/) — Resumen de servicios y portafolio destacado.
+- [Servicios](https://dar2.cl/servicios/) — Catálogo completo de 8 servicios audiovisuales.
+- [Portafolio](https://dar2.cl/portafolio/) — Casos de clientes con video: Cencosud, Codelco, Banco de Chile, Clínica Santa María, ABCDIN, Empresas Copec, CMPC, Polpaico y más.
+- [Nosotros](https://dar2.cl/nosotros/) — Equipo de 8 profesionales, historia y enfoque editorial.
+- [Contacto](https://dar2.cl/contacto/) — Formulario y datos directos (WhatsApp, email, dirección).
+- [Política de privacidad](https://dar2.cl/privacidad/) — Tratamiento de datos conforme a Ley 19.628 de Chile.
 
 ## Clientes destacados
 
-Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Parque Arauco, Sacyr, Salfacorp.
+Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Vida Cámara, VOENS, Castaño, Parque Arauco, Sacyr, Salfacorp.
 
 ## Sectores atendidos
 
-Retail, Farma, Supermercados, Corporativo, Banca, Educación, Gremios.
+Retail, Farma, Supermercados, Corporativo, Banca, Educación, Gremios, Minería, Construcción, Energía.
 
 ## Contacto
 
@@ -31,4 +40,5 @@ Retail, Farma, Supermercados, Corporativo, Banca, Educación, Gremios.
 - Teléfono / WhatsApp: +56 9 9843 3346
 - Dirección: Av. Holanda 099, of 603, Providencia, Santiago, Chile
 - Tiempo de respuesta a cotizaciones: 48 horas hábiles
-- Sitio web: https://dar2.cl
+- Horario: lunes a viernes, 09:00 a 19:00 (CLT)
+- Sitio web: https://dar2.cl/

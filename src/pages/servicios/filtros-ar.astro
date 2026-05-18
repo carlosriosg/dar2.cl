@@ -24,11 +24,23 @@ const faqJsonLd = JSON.stringify({
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 });
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Servicios', url: 'https://dar2.cl/servicios/' },
+  { name: s.title, url: `https://dar2.cl/servicios/${s.slug}/` },
+];
+
+// Servicios relacionados con filtros-ar
+const serviciosRelacionados = ['redes-sociales', 'estudio-virtual', 'estrategias-digitales']
+  .map(slug => servicios.find(x => x.slug === slug))
+  .filter(Boolean);
 ---
 
 <Base
   title={s.seoTitle}
   description={s.seoDescription}
+  breadcrumbs={breadcrumbs}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={serviceJsonLd} />
@@ -140,6 +152,25 @@ const faqJsonLd = JSON.stringify({
           <summary class="faq-question">{f.q}</summary>
           <p class="faq-answer">{f.a}</p>
         </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Servicios relacionados -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Servicios relacionados</p>
+    <h2 class="text-3xl font-black tracking-tight mb-10">¿Te puede interesar también?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {serviciosRelacionados.map(rel => (
+        <a
+          href={`/servicios/${rel.slug}/`}
+          class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors"
+        >
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-2">{rel.num}</p>
+          <h3 class="text-xl font-black tracking-tight mb-2">{rel.title}</h3>
+          <p class="text-sm text-[#666] leading-relaxed">{rel.shortDesc}</p>
+          <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver servicio →</p>
+        </a>
       ))}
     </div>
   </section>

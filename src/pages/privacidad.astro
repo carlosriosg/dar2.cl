@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Política de privacidad', url: 'https://dar2.cl/privacidad/' },
+];
+---
+
+<Base
+  title="Política de privacidad"
+  description="Política de privacidad y tratamiento de datos personales de DAR2 Servicios Audiovisuales, conforme a la Ley 19.628 de Chile."
+  breadcrumbs={breadcrumbs}
+>
+
+  <!-- Hero -->
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-12">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Legal</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] mb-6">
+      Política de privacidad.
+    </h1>
+    <p class="text-base text-[#666] leading-relaxed">
+      Última actualización: 18 de mayo de 2026.
+    </p>
+  </section>
+
+  <!-- Contenido -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+    <div class="prose-block">
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        DAR2 Servicios Audiovisuales, dirigida por Carlos Rios Guevara, con domicilio
+        en Av. Holanda 099, oficina 603, Providencia, Santiago, Chile, es la entidad
+        responsable del tratamiento de los datos personales recolectados a través de
+        este sitio.
+      </p>
+
+      <h2>2. Datos que recolectamos</h2>
+      <p>Cuando contactas a DAR2 a través del formulario o por WhatsApp, recolectamos:</p>
+      <ul>
+        <li>Nombre y empresa</li>
+        <li>Correo electrónico</li>
+        <li>Teléfono (opcional)</li>
+        <li>Servicio de interés y mensaje</li>
+      </ul>
+      <p>
+        Adicionalmente, el sitio puede registrar datos técnicos automáticos como
+        dirección IP, tipo de navegador y páginas visitadas. Estos datos se usan
+        únicamente con fines estadísticos agregados.
+      </p>
+
+      <h2>3. Finalidad del tratamiento</h2>
+      <p>Los datos personales se utilizan exclusivamente para:</p>
+      <ul>
+        <li>Responder solicitudes de cotización y consultas comerciales.</li>
+        <li>Enviar propuestas de servicios audiovisuales.</li>
+        <li>Mantener comunicación durante la ejecución de proyectos contratados.</li>
+        <li>Cumplir obligaciones legales y tributarias en Chile.</li>
+      </ul>
+
+      <h2>4. Base legal</h2>
+      <p>
+        El tratamiento se realiza con consentimiento previo del titular al enviar
+        el formulario de contacto o iniciar la conversación por WhatsApp,
+        conforme a la Ley 19.628 sobre Protección de la Vida Privada de Chile.
+      </p>
+
+      <h2>5. Conservación de los datos</h2>
+      <p>
+        Los datos se conservan durante el tiempo necesario para cumplir con la
+        finalidad para la que fueron recolectados. Los datos asociados a
+        proyectos contratados se conservan por 6 años por obligaciones tributarias.
+        Los datos de prospección comercial sin proyecto se eliminan a los 24 meses.
+      </p>
+
+      <h2>6. Compartir con terceros</h2>
+      <p>
+        DAR2 no vende ni alquila datos personales. Solo se comparten datos con
+        proveedores cuando es estrictamente necesario para la ejecución de un
+        proyecto (ej. plataformas de streaming si tú eres cliente activo) y
+        siempre bajo acuerdos de confidencialidad.
+      </p>
+
+      <h2>7. Cookies y tecnologías similares</h2>
+      <p>
+        Este sitio usa cookies técnicas mínimas necesarias para su funcionamiento.
+        No utilizamos cookies de seguimiento publicitario ni cookies de terceros
+        con fines de perfilamiento. El proveedor de CDN (Cloudflare) puede colocar
+        cookies de seguridad y rendimiento.
+      </p>
+
+      <h2>8. Tus derechos</h2>
+      <p>
+        Como titular de los datos, tienes derecho a:
+      </p>
+      <ul>
+        <li><strong>Acceso:</strong> conocer qué datos tenemos sobre ti.</li>
+        <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
+        <li><strong>Eliminación:</strong> solicitar que borremos tus datos.</li>
+        <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos.</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, escríbenos a
+        <a href="mailto:dar2@dar2.cl">dar2@dar2.cl</a> indicando "Solicitud de
+        ejercicio de derechos" en el asunto. Responderemos en un plazo máximo de
+        15 días hábiles.
+      </p>
+
+      <h2>9. Seguridad</h2>
+      <p>
+        DAR2 aplica medidas técnicas y organizativas razonables para proteger
+        los datos contra pérdida, acceso no autorizado o divulgación. El sitio
+        funciona sobre HTTPS con cifrado TLS, y los formularios se transmiten
+        de manera segura.
+      </p>
+
+      <h2>10. Cambios a esta política</h2>
+      <p>
+        Esta política puede actualizarse. Cualquier cambio sustancial se
+        publicará en esta misma página con una nueva fecha de actualización.
+      </p>
+
+      <h2>11. Contacto</h2>
+      <p>
+        Para cualquier consulta relacionada con esta política, escribe a:
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:dar2@dar2.cl">dar2@dar2.cl</a></li>
+        <li>Teléfono: <a href="tel:+56998433346">+56 9 9843 3346</a></li>
+        <li>Dirección: Av. Holanda 099 of 603, Providencia, Santiago, Chile</li>
+      </ul>
+
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .prose-block h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-block h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose-block p {
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .prose-block ul {
+    margin: 0 0 1rem 1.5rem;
+    color: #444;
+    line-height: 1.75;
+  }
+
+  .prose-block ul li {
+    list-style: disc;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-block a {
+    color: #FF4500;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .prose-block a:hover {
+    text-decoration-thickness: 2px;
+  }
+</style>

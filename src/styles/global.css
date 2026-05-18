@@ -6,7 +6,7 @@
   --color-muted: #666666;
   --color-border: #e5e5e5;
   --color-surface: #f5f5f5;
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* ── WhatsApp link — used in Footer and Contacto ──────── */

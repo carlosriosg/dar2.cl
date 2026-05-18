@@ -2,11 +2,17 @@
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
 import { servicios } from '../../data/servicios.js';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Servicios', url: 'https://dar2.cl/servicios/' },
+];
 ---
 
 <Base
   title="Servicios audiovisuales: streaming, live shopping y más"
   description="8 servicios audiovisuales bajo un mismo techo: streaming, live shopping, circuito cerrado, estudio virtual, videos corporativos, estrategias digitales, redes sociales y filtros AR."
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- Hero -->

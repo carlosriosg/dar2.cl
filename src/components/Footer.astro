@@ -74,7 +74,11 @@ import Picture from './Picture.astro';
   </div>
 
   <div class="footer-bottom">
-    <p>© {new Date().getFullYear()} DAR2 · Productora audiovisual</p>
+    <p>
+      © {new Date().getFullYear()} DAR2 · Productora audiovisual
+      <span class="footer-bottom-sep">·</span>
+      <a href="/privacidad/" class="footer-bottom-link">Política de privacidad</a>
+    </p>
   </div>
 </footer>
 
@@ -198,5 +202,19 @@ import Picture from './Picture.astro';
     color: #999;
     font-size: 0.8rem;
     margin: 0;
+  }
+
+  .footer-bottom-sep {
+    margin: 0 0.5rem;
+  }
+
+  .footer-bottom-link {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-bottom-link:hover {
+    color: #FF4500;
   }
 </style>

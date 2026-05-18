@@ -13,13 +13,26 @@ const destacados = todosLosItems
   .sort((a, b) => b.data.anio - a.data.anio)
   .slice(0, 6);
 
-// Hero gallery: 4 static initial images (client script randomizes on each visit)
+// Hero gallery: 4 static initial images (client script randomizes on each visit).
+// El alt text describe cada proyecto real para SEO de imágenes.
 const heroPool = [
   'pc-factory.png','pc-factory-ram.png','polpaico.png',
   'beneficios-CMPC.png','valores-castano.png','copec.png',
   'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
 ];
 const heroImages = heroPool.slice(0, 4);
+const heroAltMap = {
+  'pc-factory.png': 'Proyecto PC Factory — videos corporativos producidos por DAR2',
+  'pc-factory-ram.png': 'Proyecto PC Factory RAM — campaña audiovisual por DAR2',
+  'polpaico.png': 'Proyecto Polpaico — video corporativo de diversidad e inclusión',
+  'beneficios-CMPC.png': 'Proyecto CMPC — video de beneficios corporativos por DAR2',
+  'valores-castano.png': 'Proyecto Castaño — video de valores corporativos por DAR2',
+  'copec.png': 'Proyecto Empresas Copec — video corporativo Q1 producido por DAR2',
+  'habitat-2.png': 'Proyecto AFP Habitat — portal de formación audiovisual por DAR2',
+  'vida-camara.png': 'Proyecto Vida Cámara — video institucional producido por DAR2',
+  'march2.png': 'Proyecto Marsh — video de pilares corporativos por DAR2',
+  'abcdin4.png': 'Proyecto ABCDIN — videos corporativos producidos por DAR2',
+};
 
 // Load client logos dynamically from public/images/clientes/
 const logosDir  = join(process.cwd(), 'public', 'images', 'clientes');
@@ -74,6 +87,7 @@ const clienteUrls: Record<string, string> = {
 <Base
   title="Productora audiovisual en Santiago de Chile — 15 años"
   description="Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más."
+  preloadImage={`/images/portafolio/${heroImages[0].replace(/\.(png|jpe?g)$/i, '.webp')}`}
 >
 
   <!-- ── 1. HERO ─────────────────────────────────────────── -->
@@ -89,14 +103,18 @@ const clienteUrls: Record<string, string> = {
           class="font-black leading-[1.05] mb-0"
           style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px;"
         >
-          Producimos<br /><span
-            id="rotating-word"
-            style="display:inline-block;min-width:14ch;font-style:italic;color:#E63E00;opacity:1;transition:opacity 0.2s ease;"
-          >live shopping</span><br />para empresas.
+          Productora audiovisual<br />en Santiago<br /><span style="color:#E63E00;font-style:italic;">para empresas.</span>
         </h1>
-        <p class="text-lg md:text-xl text-[#666] leading-relaxed mt-8 mb-10">
-          Streaming, live shopping, videos corporativos, circuito cerrado, estudio virtual y más.
-          7 servicios bajo un solo techo, una sola factura.
+        <p class="text-lg md:text-xl text-[#666] leading-relaxed mt-8 mb-4">
+          Producimos
+          <span
+            id="rotating-word"
+            style="display:inline-block;min-width:14ch;color:#1a1a1a;font-weight:600;opacity:1;transition:opacity 0.2s ease;"
+          >live shopping</span>,
+          videos corporativos y mucho más.
+        </p>
+        <p class="text-base text-[#666] leading-relaxed mb-10">
+          8 servicios bajo un solo techo, una sola factura: streaming, live shopping, circuito cerrado, estudio virtual, videos corporativos, estrategias digitales, redes sociales y filtros AR.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -115,14 +133,18 @@ const clienteUrls: Record<string, string> = {
       </div>
 
       <!-- Gallery column: 2×2 grid, randomized per visit via client script -->
-      <div class="hero-gallery" aria-hidden="true">
-        {heroImages.map(img => (
+      <div class="hero-gallery">
+        {heroImages.map((img, i) => (
           <div class="hero-img-cell">
             <Picture
               src={`/images/portafolio/${img}`}
-              alt=""
+              alt={heroAltMap[img] ?? 'Proyecto audiovisual producido por DAR2'}
               class="hero-img"
+              width="600"
+              height="600"
               loading="eager"
+              decoding={i === 0 ? 'sync' : 'async'}
+              fetchpriority={i === 0 ? 'high' : undefined}
             />
           </div>
         ))}

@@ -5,12 +5,43 @@ import { getCollection } from 'astro:content';
 
 const items  = await getCollection('portafolio');
 const sorted = items.sort((a, b) => b.data.anio - a.data.anio);
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Portafolio', url: 'https://dar2.cl/portafolio/' },
+];
+
+// VideoObject schema: ItemList con todos los videos del portafolio.
+// Permite a Google mostrar rich results de video.
+const videoListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Portafolio de proyectos audiovisuales DAR2",
+  "itemListElement": sorted.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "VideoObject",
+      "name": item.data.titulo,
+      "description": item.data.descripcion ?? `Proyecto audiovisual para ${item.data.cliente} producido por DAR2 en ${item.data.anio}.`,
+      "thumbnailUrl": item.data.thumbnail?.startsWith('http') ? item.data.thumbnail : `https://dar2.cl${item.data.thumbnail}`,
+      "uploadDate": `${item.data.anio}-01-01`,
+      "contentUrl": item.data.youtube_url,
+      "embedUrl": item.data.youtube_url?.replace('watch?v=', 'embed/'),
+      "publisher": { "@id": "https://dar2.cl/#organization" }
+    }
+  }))
+};
 ---
 
 <Base
   title="Portafolio — Videos y streaming para empresas chilenas"
   description="Casos reales de streaming, videos corporativos y live shopping para Cencosud, Clínica Santa María, ABCDIN, Copec, CMPC, PC Factory y más."
+  breadcrumbs={breadcrumbs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(videoListSchema)} />
+  </Fragment>
 
   <!-- ── HERO ──────────────────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">

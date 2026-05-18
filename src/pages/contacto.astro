@@ -2,11 +2,17 @@
 import Base from '../layouts/Base.astro';
 
 const servicioParam = Astro.url.searchParams.get('servicio') ?? '';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Contacto', url: 'https://dar2.cl/contacto/' },
+];
 ---
 
 <Base
   title="Contacto — Cotiza tu proyecto audiovisual en 48h"
   description="Cotización a medida en 48 horas. Llámanos al +56 9 9843 3346 o escríbenos a dar2@dar2.cl. Av. Holanda 099, Providencia, Santiago."
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- Hero -->

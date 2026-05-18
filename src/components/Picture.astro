@@ -1,15 +1,39 @@
 ---
-const { src, alt = '', class: className, ...rest } = Astro.props;
+const {
+  src,
+  alt = '',
+  class: className,
+  width,
+  height,
+  fetchpriority,
+  loading,
+  decoding,
+  ...rest
+} = Astro.props;
+
 const isLocal = typeof src === 'string' && src.startsWith('/');
 const webp = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.webp') : src;
 const hasWebp = isLocal && webp !== src;
+
+// Construir atributos del img de forma uniforme. Astro filtra undefined.
+const imgAttrs = {
+  src,
+  alt,
+  class: className,
+  width,
+  height,
+  fetchpriority,
+  loading,
+  decoding,
+  ...rest,
+};
 ---
 
 {hasWebp ? (
   <picture>
     <source srcset={webp} type="image/webp" />
-    <img src={src} alt={alt} class={className} {...rest} />
+    <img {...imgAttrs} />
   </picture>
 ) : (
-  <img src={src} alt={alt} class={className} {...rest} />
+  <img {...imgAttrs} />
 )}

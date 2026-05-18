@@ -2,15 +2,111 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
+import '@fontsource-variable/inter/index.css';
+import '@fontsource-variable/inter/wght-italic.css';
 import '../styles/global.css';
 
 const {
   title = 'Productora audiovisual en Santiago de Chile — 15 años',
   description = 'Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más.',
+  breadcrumbs = null,
+  preloadImage = null,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://dar2.cl');
 const fullTitle = `${title} | DAR2 Servicios Audiovisuales`;
+const isHome = Astro.url.pathname === '/';
+
+// Schema unificado: LocalBusiness + ProfessionalService bajo un mismo @id.
+// NOTA: postal code y coordenadas a verificar con Correos de Chile y Google Maps.
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://dar2.cl/#organization",
+  "name": "DAR2 Servicios Audiovisuales",
+  "alternateName": "DAR2",
+  "description": "Productora audiovisual chilena con más de 15 años de experiencia, especializada en streaming corporativo, live shopping, videos corporativos, estudio virtual, circuito cerrado, estrategias digitales, redes sociales y filtros AR.",
+  "url": "https://dar2.cl/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+    "width": 600,
+    "height": 200
+  },
+  "image": "https://dar2.cl/og-square.png",
+  "telephone": "+56998433346",
+  "email": "dar2@dar2.cl",
+  "foundingDate": "2010-01-01",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Holanda 099, of 603",
+    "addressLocality": "Providencia",
+    "addressRegion": "Región Metropolitana",
+    "postalCode": "7510689",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.4191,
+    "longitude": -70.6074
+  },
+  "areaServed": { "@type": "Country", "name": "Chile" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }],
+  "founder": {
+    "@type": "Person",
+    "name": "Carlos Rios Guevara",
+    "jobTitle": "Director",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "UNIACC" }
+  },
+  "sameAs": [
+    "https://www.instagram.com/dar2.cl",
+    "https://www.linkedin.com/company/dar2"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios audiovisuales",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Streaming corporativo", "url": "https://dar2.cl/servicios/streaming/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Live Shopping", "url": "https://dar2.cl/servicios/live-shopping/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Circuito Cerrado CCTV", "url": "https://dar2.cl/servicios/circuito-cerrado/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estudio Virtual", "url": "https://dar2.cl/servicios/estudio-virtual/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videos Corporativos", "url": "https://dar2.cl/servicios/videos-corporativos/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategias Digitales", "url": "https://dar2.cl/servicios/estrategias-digitales/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redes Sociales", "url": "https://dar2.cl/servicios/redes-sociales/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Filtros AR", "url": "https://dar2.cl/servicios/filtros-ar/" }}
+    ]
+  }
+};
+
+// WebSite schema con SearchAction (habilita Sitelinks Search Box en Google).
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://dar2.cl/#website",
+  "url": "https://dar2.cl/",
+  "name": "DAR2 Servicios Audiovisuales",
+  "description": "Productora audiovisual en Santiago de Chile especializada en streaming, live shopping y video corporativo.",
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "inLanguage": "es-CL"
+};
+
+// BreadcrumbList opcional: el page padre puede pasar un array de items.
+const breadcrumbSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((b, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": b.name,
+    "item": b.url
+  }))
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -61,89 +157,19 @@ const fullTitle = `${title} | DAR2 Servicios Audiovisuales`;
     <meta name="twitter:image" content="https://dar2.cl/og-rect.png" />
     <meta name="twitter:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile" />
 
-    <!-- Schema.org: LocalBusiness -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://dar2.cl/#organization",
-      "name": "DAR2 Servicios Audiovisuales",
-      "alternateName": "DAR2",
-      "description": "Productora audiovisual chilena especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR.",
-      "url": "https://dar2.cl",
-      "logo": "https://dar2.cl/images/logo.png",
-      "image": "https://dar2.cl/images/og-default.jpg",
-      "telephone": "+56998433346",
-      "email": "dar2@dar2.cl",
-      "foundingDate": "2010",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Holanda 099, of 603",
-        "addressLocality": "Providencia",
-        "addressRegion": "Región Metropolitana",
-        "postalCode": "7510689",
-        "addressCountry": "CL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.4191,
-        "longitude": -70.6074
-      },
-      "areaServed": { "@type": "Country", "name": "Chile" },
-      "serviceType": [
-        "Streaming corporativo",
-        "Live Shopping",
-        "Circuito cerrado CCTV",
-        "Estudio virtual",
-        "Videos corporativos",
-        "Estrategias digitales",
-        "Contenido para redes sociales",
-        "Filtros AR"
-      ],
-      "founder": { "@type": "Person", "name": "Carlos Rios Guevara" },
-      "sameAs": [
-        "https://www.instagram.com/dar2.cl",
-        "https://www.linkedin.com/company/dar2"
-      ]
-    }
-    </script>
+    <!-- Schema.org: Organization (LocalBusiness + ProfessionalService unificados) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
-    <!-- Schema.org: ProfessionalService + catálogo de servicios -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "DAR2",
-      "description": "Productora audiovisual en Santiago de Chile con más de 15 años de experiencia.",
-      "url": "https://dar2.cl",
-      "telephone": "+56998433346",
-      "email": "dar2@dar2.cl",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Holanda 099, of 603",
-        "addressLocality": "Providencia",
-        "addressRegion": "Región Metropolitana",
-        "postalCode": "7510071",
-        "addressCountry": "CL"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": -33.424, "longitude": -70.612 },
-      "founder": { "@type": "Person", "name": "Carlos Rios Guevara" },
-      "sameAs": ["https://www.instagram.com/dar2.cl", "https://www.linkedin.com/company/dar2"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios audiovisuales",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Streaming", "url": "https://dar2.cl/servicios/streaming/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Live Shopping", "url": "https://dar2.cl/servicios/live-shopping/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Circuito Cerrado", "url": "https://dar2.cl/servicios/circuito-cerrado/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estudio Virtual", "url": "https://dar2.cl/servicios/estudio-virtual/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videos Corporativos", "url": "https://dar2.cl/servicios/videos-corporativos/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategias Digitales", "url": "https://dar2.cl/servicios/estrategias-digitales/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redes Sociales", "url": "https://dar2.cl/servicios/redes-sociales/" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Filtros AR", "url": "https://dar2.cl/servicios/filtros-ar/" }}
-        ]
-      }
-    })} />
+    <!-- Schema.org: WebSite con SearchAction (habilita Sitelinks Search Box) -->
+    {isHome && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
+
+    <!-- Schema.org: BreadcrumbList (cuando el page lo pasa) -->
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+
+    <!-- Preload LCP image (cuando el page lo indica) -->
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} type="image/webp" fetchpriority="high" />
+    )}
 
     <!-- Favicons (modo claro por defecto, modo oscuro con media query) -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
@@ -165,13 +191,7 @@ const fullTitle = `${title} | DAR2 Servicios Audiovisuales`;
     <meta name="theme-color" content="#FF4500" />
     <meta name="msapplication-TileColor" content="#FF4500" />
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400;1,14..32,700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Inter font self-hosted via @fontsource-variable/inter (importado arriba en el frontmatter) -->
 
     <slot name="head" />
   </head>
