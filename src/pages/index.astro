@@ -102,15 +102,12 @@ const clienteUrls: Record<string, string> = {
           </span>
           <span
             class="block"
-            style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px;"
+            style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px; min-height: 2.4em;"
           >
-            Producimos <span class="rotating-stack">
-              <span class="rotating-ghost" aria-hidden="true">contenido para marcas</span>
-              <span
-                id="rotating-word"
-                style="color:#E63E00;font-style:italic;opacity:1;transition:opacity 0.2s ease;"
-              >live shopping</span>
-            </span><br />y mucho más.
+            Producimos <span
+              id="rotating-word"
+              style="color:#E63E00;font-style:italic;opacity:1;transition:opacity 0.2s ease;"
+            >live shopping</span><br />y mucho más.
           </span>
         </h1>
         <p class="text-base md:text-lg text-[#666] leading-relaxed mb-10">
@@ -391,27 +388,6 @@ const clienteUrls: Record<string, string> = {
 </script>
 
 <style>
-  /* ── Hero rotating word: ghost reserva el espacio del peor caso ── */
-  /* Asi el bloque tiene siempre la misma altura/ancho sin importar  */
-  /* la palabra activa, y nada se mueve cuando rota.                  */
-  .rotating-stack {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-  }
-  .rotating-ghost {
-    visibility: hidden;
-    pointer-events: none;
-    user-select: none;
-  }
-  .rotating-stack #rotating-word {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    white-space: normal;
-  }
-
   /* ── Hero 2-col layout ─────────────────────────────── */
   .hero-grid {
     display: grid;
