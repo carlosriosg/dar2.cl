@@ -170,8 +170,10 @@ const clienteUrls: Record<string, string> = {
             <div class="home-svc-img">
               <div class="home-svc-img-inner">
                 <Picture
-                  src={`/images/servicios/${s.slug}.jpg`}
+                  src={`/images/servicios/${s.slug}-card.jpg`}
                   alt={s.title}
+                  width="730"
+                  height="544"
                   class="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -256,11 +258,11 @@ const clienteUrls: Record<string, string> = {
                   aria-label={`Visitar sitio web de ${name}`}
                   title={name}
                 >
-                  <Picture src={src} alt={`Logo ${name}`} loading="lazy" decoding="async" />
+                  <Picture src={src} alt={`Logo ${name}`} width="200" height="80" loading="lazy" decoding="async" />
                 </a>
               ) : (
                 <div title={name}>
-                  <Picture src={src} alt={`Logo ${name}`} loading="lazy" decoding="async" />
+                  <Picture src={src} alt={`Logo ${name}`} width="200" height="80" loading="lazy" decoding="async" />
                 </div>
               )}
             </div>
@@ -274,11 +276,11 @@ const clienteUrls: Record<string, string> = {
             <div class="marquee-item" aria-hidden="true">
               {url ? (
                 <a href={url} target="_blank" rel="noopener" tabindex="-1" title={name}>
-                  <Picture src={src} alt="" loading="lazy" decoding="async" />
+                  <Picture src={src} alt="" width="200" height="80" loading="lazy" decoding="async" />
                 </a>
               ) : (
                 <div title={name}>
-                  <Picture src={src} alt="" loading="lazy" decoding="async" />
+                  <Picture src={src} alt="" width="200" height="80" loading="lazy" decoding="async" />
                 </div>
               )}
             </div>

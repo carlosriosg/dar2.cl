@@ -60,8 +60,10 @@ const breadcrumbs = [
           {s.featured && <span class="svc-badge">{s.badgeText ?? 'TENDENCIA'}</span>}
           <div class="svc-img-box">
             <Picture
-              src={`/images/servicios/${s.slug}.jpg`}
+              src={`/images/servicios/${s.slug}-card.jpg`}
               alt={s.title}
+              width="730"
+              height="544"
               class="w-full h-full object-cover"
               loading="lazy"
             />
