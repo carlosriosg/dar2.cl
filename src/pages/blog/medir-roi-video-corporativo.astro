@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
 
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
@@ -58,6 +59,7 @@ const faqSchema = {
   title="Cómo medir el ROI de tu video corporativo: 5 métricas clave"
   description="Guía práctica para medir el retorno de inversión de un video corporativo: views, retention, conversión, brand lift y cálculo monetario del ROI."
   breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/roi-video-corporativo-hero.webp"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -79,6 +81,19 @@ const faqSchema = {
         Por <a href="/nosotros/">Carlos Rios Guevara</a> · 19 de mayo, 2026 · 7 min de lectura
       </p>
     </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/roi-video-corporativo-hero.png"
+        alt="Dashboard de métricas y ROI de video corporativo — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
 
     <nav class="article-toc" aria-label="Tabla de contenido">
       <p class="toc-title">En esta guía:</p>
@@ -265,7 +280,9 @@ const faqSchema = {
 
 <style>
   .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
-  .article-header { margin-bottom: 48px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
   .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
   .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
   .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }

@@ -21,6 +21,7 @@ const FOLDERS = [
   'public/images/portafolio',
   'public/images/galeria',
   'public/images/nosotros',
+  'public/images/blog',
 ];
 
 let processed = 0;
