@@ -10,7 +10,12 @@ import sharp from 'sharp';
 import { readdirSync, statSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 
-const MAX_WIDTH = 1600;
+// 1200px cubre hero @ 800x450 retina 2x con buffer. Imágenes mas
+// grandes se reducen. Originales 2400px+ ya fueron redimensionados a
+// 1600 antes; ahora un segundo pass a 1200 elimina los warnings
+// "imagen mas grande de lo necesario" para los cards de servicios
+// (580x433) y portafolio hero gallery (415x234).
+const MAX_WIDTH = 1200;
 const FOLDERS = [
   'public/images/servicios',
   'public/images/portafolio',
