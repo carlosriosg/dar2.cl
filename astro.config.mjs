@@ -6,7 +6,16 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dar2.cl',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Agrega lastmod a cada URL del sitemap (fecha del build). Mejora la
+      // priorizacion del crawl budget en Google Search Console.
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
+  ],
   build: {
     // Inline TODO el CSS en el <head> para eliminar render-blocking
     // stylesheet requests. PageSpeed reportaba 460ms de ahorro con 2 CSS
