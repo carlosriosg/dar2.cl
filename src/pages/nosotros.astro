@@ -41,6 +41,31 @@ const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Nosotros', url: 'https://dar2.cl/nosotros/' },
 ];
+
+// AboutPage schema con Person schemas anidados para cada miembro del equipo.
+// Eleva E-E-A-T al darle entidades nombradas con rol + organización a Google.
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://dar2.cl/nosotros/",
+  "name": "Equipo DAR2 — 15 años produciendo audiovisual",
+  "description": "Equipo multidisciplinario de DAR2 Servicios Audiovisuales con más de 15 años en la industria audiovisual chilena.",
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "employee": equipo.map(persona => ({
+      "@type": "Person",
+      "name": persona.nombre,
+      "jobTitle": persona.rol,
+      "worksFor": { "@id": "https://dar2.cl/#organization" },
+      "image": `https://dar2.cl/images/nosotros/${persona.foto}`,
+      ...(persona.formacion && {
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": persona.formacion }
+      })
+    }))
+  }
+};
 ---
 
 <Base
@@ -48,6 +73,9 @@ const breadcrumbs = [
   description="Equipo multidisciplinario con más de 15 años en la industria audiovisual chilena. Conoce a quienes producen cada uno de nuestros proyectos."
   breadcrumbs={breadcrumbs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">

@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Página no encontrada — Error 404"
+  description="La página que buscas no existe en dar2.cl. Te llevamos al inicio o a nuestros servicios."
+>
+  <section class="error-wrap">
+    <div class="error-inner">
+      <p class="error-eyebrow">Error 404</p>
+      <h1 class="error-h1">
+        Esta página
+        <em class="hl">no existe.</em>
+      </h1>
+      <p class="error-lead">
+        El link que seguiste apunta a una URL que ya no está disponible o fue movida. No tenemos esta página, pero sí tenemos lo que probablemente buscas.
+      </p>
+
+      <!-- Botones principales -->
+      <div class="error-cta">
+        <a href="/" class="error-cta-btn">Ir al inicio →</a>
+        <a href="/servicios/" class="error-cta-link">O ver nuestros servicios</a>
+      </div>
+
+      <!-- Links útiles -->
+      <div class="error-links">
+        <p class="error-links-title">¿Buscabas alguno de estos?</p>
+        <div class="error-links-grid">
+          <a href="/servicios/streaming/" class="error-link-card">
+            <p class="error-link-num">01</p>
+            <p class="error-link-title">Streaming</p>
+            <p class="error-link-desc">Transmisión en vivo multicámara con enlaces redundantes.</p>
+          </a>
+          <a href="/servicios/live-shopping/" class="error-link-card">
+            <p class="error-link-num">02</p>
+            <p class="error-link-title">Live Shopping</p>
+            <p class="error-link-desc">Ventas en vivo integradas con e-commerce.</p>
+          </a>
+          <a href="/servicios/videos-corporativos/" class="error-link-card">
+            <p class="error-link-num">05</p>
+            <p class="error-link-title">Videos Corporativos</p>
+            <p class="error-link-desc">Producción institucional con cámara cinema.</p>
+          </a>
+          <a href="/portafolio/" class="error-link-card">
+            <p class="error-link-num">→</p>
+            <p class="error-link-title">Portafolio</p>
+            <p class="error-link-desc">19 proyectos producidos para empresas chilenas.</p>
+          </a>
+          <a href="/blog/" class="error-link-card">
+            <p class="error-link-num">→</p>
+            <p class="error-link-title">Blog</p>
+            <p class="error-link-desc">Guías de producción audiovisual y digital.</p>
+          </a>
+          <a href="/contacto/" class="error-link-card">
+            <p class="error-link-num">→</p>
+            <p class="error-link-title">Contacto</p>
+            <p class="error-link-desc">Cotización a medida en 48h.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .error-wrap {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px 96px;
+  }
+  .error-inner { max-width: 880px; width: 100%; }
+
+  .error-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin: 0 0 24px;
+  }
+
+  .error-h1 {
+    font-size: clamp(48px, 6vw, 80px); font-weight: 900; line-height: 1.05;
+    letter-spacing: -1.5px; margin: 0 0 24px;
+  }
+
+  .error-lead {
+    font-size: 20px; line-height: 1.5; color: #444; max-width: 640px;
+    margin: 0 0 40px;
+  }
+
+  .error-cta {
+    display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .error-cta-btn {
+    display: inline-flex; align-items: center; background: #1a1a1a; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 16px 32px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .error-cta-btn:hover { background: #333; }
+
+  .error-cta-link {
+    color: #666; font-size: 15px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .error-cta-link:hover { color: #E63E00; }
+
+  .error-links { border-top: 1px solid #e5e5e5; padding-top: 40px; }
+  .error-links-title {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #888; margin: 0 0 24px;
+  }
+  .error-links-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) { .error-links-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .error-links-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .error-link-card {
+    display: block; border: 1px solid #e5e5e5; border-radius: 12px;
+    padding: 24px 20px; text-decoration: none; color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .error-link-card:hover { border-color: #1a1a1a; transform: translateY(-2px); }
+
+  .error-link-num {
+    font-size: 12px; font-weight: 700; color: #FF4500;
+    letter-spacing: 0.1em; margin: 0 0 8px;
+  }
+  .error-link-title {
+    font-size: 18px; font-weight: 900; color: #1a1a1a;
+    letter-spacing: -0.3px; margin: 0 0 6px;
+  }
+  .error-link-desc {
+    font-size: 14px; line-height: 1.5; color: #666; margin: 0;
+  }
+</style>
