@@ -5,7 +5,7 @@ export const servicios = [
     title: 'Streaming',
     shortDesc: 'Transmisión en vivo con enlaces punto a punto.',
     heroEyebrow: 'STREAMING CORPORATIVO',
-    tagline: 'Transmisiones en vivo sin dolores de cabeza.',
+    tagline: 'Transmisiones en vivo <em class="hl">sin dolores de cabeza.</em>',
     description:
       'Producimos streaming profesional para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
       'Multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
@@ -76,7 +76,7 @@ export const servicios = [
     title: 'Live Shopping',
     shortDesc: 'Venta en vivo con conversión medible.',
     heroEyebrow: 'LIVE SHOPPING',
-    tagline: 'Ventas en vivo que convierten.',
+    tagline: 'Ventas en vivo <em class="hl">que convierten.</em>',
     description:
       'Transmisiones con venta en vivo integrada al e-commerce. Conducción profesional, productos en pantalla ' +
       'y métricas reales de conversión. Retail, farmacias y supermercados ya están acá.',
@@ -147,7 +147,7 @@ export const servicios = [
     title: 'Circuito Cerrado',
     shortDesc: 'Multicámaras robóticas sin invadir el escenario.',
     heroEyebrow: 'CIRCUITO CERRADO CCTV',
-    tagline: 'Registro profesional sin invadir el escenario.',
+    tagline: 'Registro profesional <em class="hl">sin invadir el escenario.</em>',
     description:
       'Multicámaras robóticas PTZ para congresos, seminarios y shows en vivo. ' +
       'Operación remota desde consola, sin camarógrafos visibles en el espacio.',
@@ -218,7 +218,7 @@ export const servicios = [
     title: 'Estudio Virtual',
     shortDesc: 'Calidad broadcast sin set físico.',
     heroEyebrow: 'ESTUDIO VIRTUAL',
-    tagline: 'Calidad broadcast sin set físico.',
+    tagline: 'Calidad broadcast <em class="hl">sin set físico.</em>',
     description:
       'Generamos escenografías virtuales hiperrealistas con green screen. Presentaciones corporativas, keynotes ' +
       'y contenido de marca con calidad de TV, sin construir decorados.',
@@ -289,7 +289,7 @@ export const servicios = [
     title: 'Videos Corporativos',
     shortDesc: 'Cultura, valores, procesos y productos.',
     heroEyebrow: 'VIDEOS CORPORATIVOS',
-    tagline: 'Tu empresa contada con calidad broadcast.',
+    tagline: 'Tu empresa contada <em class="hl">con calidad broadcast.</em>',
     description:
       'Videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
       'y postproducción profesional. 15 años haciéndolo para empresas del IPSA.',
@@ -360,7 +360,7 @@ export const servicios = [
     title: 'Estrategias Digitales',
     shortDesc: 'Planes de contenido para redes.',
     heroEyebrow: 'ESTRATEGIAS DIGITALES',
-    tagline: 'Plan de contenido con producción de respaldo.',
+    tagline: 'Plan de contenido <em class="hl">con producción de respaldo.</em>',
     description:
       'Diseñamos planes de comunicación digital para marcas, y los producimos. ' +
       'Alineamos el contenido audiovisual a tus pilares, valores y objetivos de negocio.',
@@ -431,7 +431,7 @@ export const servicios = [
     title: 'Redes Sociales',
     shortDesc: 'Cápsulas, reels y formatos verticales optimizados.',
     heroEyebrow: 'CONTENIDO PARA REDES',
-    tagline: 'Producción especializada para Instagram, TikTok y LinkedIn.',
+    tagline: 'Producción especializada <em class="hl">para Instagram, TikTok y LinkedIn.</em>',
     description:
       'Cápsulas, reels y videos verticales optimizados para cada plataforma. ' +
       'Producimos con tu equipo ejecutivo como talento frente a cámara y te entregamos contenido listo para publicar.',
@@ -502,7 +502,7 @@ export const servicios = [
     title: 'Filtros AR',
     shortDesc: 'Realidad aumentada para Instagram y TikTok.',
     heroEyebrow: 'FILTROS DE REALIDAD AUMENTADA',
-    tagline: 'Filtros AR que tus clientes quieren compartir.',
+    tagline: 'Filtros AR que tus clientes <em class="hl">quieren compartir.</em>',
     description:
       'Diseñamos experiencias de realidad aumentada exclusivas para marcas en Instagram y TikTok. ' +
       'Branded masks, efectos interactivos y juegos que convierten a tu audiencia en embajadores orgánicos.',
