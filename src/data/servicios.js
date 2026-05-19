@@ -9,6 +9,18 @@ export const servicios = [
     description:
       'Producimos streaming profesional para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
       'Multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
+    longDescription: [
+      'El streaming corporativo profesional combina producción broadcast con infraestructura de transmisión confiable. No es Zoom con varios participantes: es producción multicámara con switcher dedicado, mezcla de audio en tiempo real, gráficas corporativas animadas y enlaces redundantes que evitan caídas durante el evento más importante de tu compañía.',
+      'En DAR2 producimos streamings con el mismo estándar técnico que ves en transmisiones broadcast de televisión. Cámaras profesionales, iluminación de set, dirección técnica en vivo y postproducción inmediata. La diferencia con un equipo improvisado es directa: cero interrupciones, audio limpio, gráficas precisas y un máster de calidad que sirve para cápsulas posteriores y archivo.',
+      'Trabajamos con plataformas privadas (Zoom Webinar, Microsoft Teams Live Events) o públicas (YouTube Live, Vimeo, LinkedIn Live, Facebook), y entregamos el archivo grabado editado con las gráficas del evento. Nuestros enlaces punto a punto redundantes garantizan que aunque falle una conexión, la transmisión continúa sin que el público lo note.',
+    ],
+    process: [
+      { num: '01', title: 'Briefing técnico', desc: 'Relevamos el tipo de evento, número de cámaras necesarias, requerimientos de plataforma, audiencia esperada e integración con sistemas internos del cliente. Cotización detallada en 48h.' },
+      { num: '02', title: 'Preproducción y ensayo', desc: 'Setup del estudio o locación, configuración del switcher, prueba de gráficas, conexión con la plataforma destino y rehearsal con los presentadores cuando aplica. Sin sorpresas el día del evento.' },
+      { num: '03', title: 'Transmisión en vivo', desc: 'Dirección técnica en tiempo real, switching entre cámaras, gestión de gráficas, mezcla de audio y monitoreo de enlace redundante. Un coordinador queda en contacto directo contigo durante todo el evento.' },
+      { num: '04', title: 'Entrega post-evento', desc: 'Edición del máster, generación de cápsulas para redes sociales y entrega de archivo en alta calidad listo para subir a tu intranet, archivo corporativo o redistribuir a tu audiencia.' },
+    ],
+    forWhom: 'El streaming corporativo profesional aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota. Si la audiencia importa y el costo de una caída técnica es alto, este servicio es para ti.',
     bullets: [
       'Producción y dirección técnica completa',
       'Sistema multicámara (2 a 6 cámaras)',
@@ -80,6 +92,18 @@ export const servicios = [
     description:
       'Transmisiones con venta en vivo integrada al e-commerce. Conducción profesional, productos en pantalla ' +
       'y métricas reales de conversión. Retail, farmacias y supermercados ya están acá.',
+    longDescription: [
+      'El live shopping es la categoría de comercio digital de mayor crecimiento en LatAm: combina streaming en vivo con compra directa desde el video. Durante la transmisión, los espectadores ven al presentador mostrando productos, hacen preguntas en el chat y compran sin salir del stream. La tasa de conversión es típicamente 5 a 10 veces superior al e-commerce tradicional.',
+      'En DAR2 producimos live shopping end-to-end: dirección creativa del show, conducción profesional (con nuestros presentadores o tus voceros), escenografía y props, integración técnica con tu plataforma de e-commerce (Shopify, VTEX, Magento, custom) y gráficas en tiempo real con precios, SKUs y stock disponible.',
+      'La transmisión simultánea a Instagram, TikTok, YouTube o plataforma propia maximiza alcance. Después del evento, entregamos reporte completo de métricas (audiencia simultánea, picos, interacciones, clicks a producto, conversiones) y trozeamos el contenido en cápsulas reutilizables para campañas pagadas y orgánicas.',
+    ],
+    process: [
+      { num: '01', title: 'Estrategia del show', desc: 'Definimos formato, duración, productos a mostrar, presentadores, mecánica de promociones y plataformas destino. Mapeamos KPIs de conversión que vamos a medir.' },
+      { num: '02', title: 'Integración técnica', desc: 'Conectamos el stream con tu e-commerce (carrito, checkout, descuentos en tiempo real). Probamos la mecánica de compra durante el video sin que el usuario salga del stream.' },
+      { num: '03', title: 'Producción en vivo', desc: 'Dirigimos el show con multicámara, presentadores profesionales, gráficas con precio/SKU/stock y stream simultáneo a las plataformas que elijas. Moderación de chat en tiempo real.' },
+      { num: '04', title: 'Reporte y reutilización', desc: 'Reporte de conversión post-evento (audiencia, clicks a producto, ventas atribuibles). Cortes editados para Reels, TikToks y Shorts. Versión completa para tu sitio o canal.' },
+    ],
+    forWhom: 'Live shopping aplica para retail (moda, electrónica, hogar), farmacias, supermercados, marcas de belleza y cualquier vertical con catálogo de e-commerce y márgenes que toleren un evento producido. Funciona especialmente bien para lanzamientos de temporada, liquidaciones, campañas flash y activaciones cruzadas con marcas aliadas.',
     bullets: [
       'Dirección y producción completa del show',
       'Presentadores y conductores profesionales',
@@ -151,6 +175,18 @@ export const servicios = [
     description:
       'Multicámaras robóticas PTZ para congresos, seminarios y shows en vivo. ' +
       'Operación remota desde consola, sin camarógrafos visibles en el espacio.',
+    longDescription: [
+      'El circuito cerrado con cámaras robóticas PTZ es la solución profesional para eventos donde la presencia física de camarógrafos arruinaría la experiencia. Para un congreso médico, una junta presencial o un seminario con expositores invitados, las cámaras se ubican en puntos fijos del recinto y se operan desde una consola remota, sin moverse durante la presentación.',
+      'En DAR2 manejamos hasta 6 cámaras PTZ simultáneas desde una sola consola con un operador especializado. El switcher controla múltiples cámaras, hace seguimiento del expositor, ajusta encuadre y zoom según el momento del evento, y genera la señal final que se proyecta en pantallas del recinto (IMAG) o se exporta a streaming.',
+      'El servicio incluye montaje discreto y rápido (1-2 horas previas al evento), grabación en alta definición de todas las señales y entrega de un máster editado al día siguiente con las mejores tomas. Si necesitas streaming simultáneo, exportamos la señal del circuito cerrado a la plataforma que elijas.',
+    ],
+    process: [
+      { num: '01', title: 'Visita técnica al recinto', desc: 'Reconocemos el espacio: ubicación de cámaras, conexiones eléctricas, conectividad, dimensiones del escenario, ubicación del público y necesidad de pantallas IMAG. Ajustamos cotización según hallazgos.' },
+      { num: '02', title: 'Montaje y prueba', desc: 'Instalación de cámaras PTZ en puntos fijos (trípodes, jirafa o estructuras del recinto), cableado de control, conexión con switcher y prueba de movimientos antes de la apertura del evento.' },
+      { num: '03', title: 'Operación en vivo', desc: 'Operador único maneja las cámaras desde consola: switching, seguimiento del expositor, ajuste de encuadres y proyección IMAG en pantallas del auditorio. Discreto, sin presencia visible.' },
+      { num: '04', title: 'Edición y entrega', desc: 'Al día siguiente del evento entregamos un máster con las mejores tomas cortadas. Si pediste streaming simultáneo, también el archivo de la transmisión completa.' },
+    ],
+    forWhom: 'Circuito cerrado PTZ aplica para congresos médicos y académicos, seminarios corporativos con audiencia presencial, conciertos y shows en vivo con aforo reducido, galas y ceremonias donde la cámara debe ser invisible, y capacitaciones con público presencial donde se valora la experiencia in-room.',
     bullets: [
       'Cámaras robóticas PTZ de control remoto',
       'Diseño compacto, mínima presencia física',
@@ -222,6 +258,18 @@ export const servicios = [
     description:
       'Generamos escenografías virtuales hiperrealistas con green screen. Presentaciones corporativas, keynotes ' +
       'y contenido de marca con calidad de TV, sin construir decorados.',
+    longDescription: [
+      'El estudio virtual usa green screen (chroma key) e iluminación profesional para integrar al presentador en una escenografía generada digitalmente. Te permite tener cualquier ambiente que imagines (un newsroom, un espacio futurista, una réplica de tus oficinas, un set inspirado en una marca global) sin construir decorados ni alquilar locaciones.',
+      'En DAR2 producimos en estudio propio con sistema de iluminación calibrado para chroma, fondo verde de máxima opacidad, cámaras profesionales y dirección creativa. El resultado es indistinguible de un set físico para el espectador final, incluso en pantallas grandes o transmisiones broadcast.',
+      'Integramos tu identidad visual completa en la escenografía virtual: colores corporativos, logos, pantallas con contenido animado, elementos 3D y branding ambient. Una sola sesión te da contenido para múltiples plataformas: YouTube, LinkedIn, intranet, capacitaciones internas, newsletters.',
+    ],
+    process: [
+      { num: '01', title: 'Diseño de la escenografía virtual', desc: 'Trabajamos con tu equipo de marca para definir el ambiente: colores, elementos visuales, pantallas con contenido, animaciones de fondo. Si tienes brief de identidad, lo respetamos.' },
+      { num: '02', title: 'Producción del talento', desc: 'Maquillaje, styling y dirección del presentador (sea un ejecutivo de tu empresa o un talento contratado). Los ayudamos a verse naturales y profesionales frente a cámara.' },
+      { num: '03', title: 'Rodaje con chroma key', desc: 'Grabación en nuestro estudio en Providencia con iluminación calibrada para green screen. Múltiples tomas para asegurar calidad, sin compromisos en el resultado final.' },
+      { num: '04', title: 'Postproducción', desc: 'Integración del presentador en la escenografía virtual, color grading, audio mastering y entrega en formatos web, broadcast o interno según necesites.' },
+    ],
+    forWhom: 'Estudio virtual aplica para presentaciones ejecutivas y keynotes, capacitaciones y e-learning corporativo, anuncios de marca con formato broadcast, programas internos de comunicación recurrente, y cualquier contenido donde quieras la calidad de un set físico sin pagar la producción de un decorado.',
     bullets: [
       'Diseño de ambiente virtual a medida',
       'Integración en tiempo real con presentador',
@@ -293,6 +341,18 @@ export const servicios = [
     description:
       'Videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
       'y postproducción profesional. 15 años haciéndolo para empresas del IPSA.',
+    longDescription: [
+      'Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.',
+      'En DAR2 producimos con cámara cinema Sony FX6, iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.',
+      'Trabajamos cada proyecto desde el brief hasta la entrega final: desarrollo de concepto, guion, plan de rodaje, dirección de arte, locaciones, casting cuando corresponde, rodaje, postproducción y entregables en todos los formatos (web, redes sociales, broadcast, presentaciones internas, archivos para distribución externa).',
+    ],
+    process: [
+      { num: '01', title: 'Brief y desarrollo de concepto', desc: 'Una reunión inicial para entender el objetivo del video, audiencia objetivo, mensaje clave y restricciones de marca. Proponemos narrativa, estructura, tono y plan de rodaje.' },
+      { num: '02', title: 'Preproducción', desc: 'Guion, storyboard cuando aplica, definición de locaciones, casting de talento (presentadores o actores), planificación técnica del rodaje y validación final con el cliente antes de filmar.' },
+      { num: '03', title: 'Rodaje', desc: 'Producción con cámara cinema, iluminación profesional, audio broadcast, maquillaje y dirección creativa. Múltiples días de rodaje según complejidad. Te invitamos a estar presente en set si quieres.' },
+      { num: '04', title: 'Postproducción', desc: 'Edición, color grading, motion graphics, sonorización, música original o licenciada, locución en off cuando aplica. Entregables en todos los formatos que necesites.' },
+    ],
+    forWhom: 'Videos corporativos aplica para empresas que necesitan contar su cultura organizacional, valores corporativos, procesos productivos, lanzamientos de producto, testimoniales de clientes o colaboradores, recap de eventos importantes, o material institucional para presentaciones a inversores y comunicación con stakeholders.',
     bullets: [
       'Desarrollo de guion y dirección creativa',
       'Rodaje con cámara cinema',
@@ -364,6 +424,18 @@ export const servicios = [
     description:
       'Diseñamos planes de comunicación digital para marcas, y los producimos. ' +
       'Alineamos el contenido audiovisual a tus pilares, valores y objetivos de negocio.',
+    longDescription: [
+      'Una estrategia digital no sirve si nadie la produce. Las consultoras que solo entregan PowerPoints sin producción audiovisual terminan en una carpeta sin usar. En DAR2 hacemos lo contrario: diseñamos la estrategia Y la ejecutamos, con el mismo equipo y la misma factura.',
+      'Cada plan empieza por un diagnóstico de tu presencia digital actual, análisis de competencia directa, definición de pilares de contenido alineados a tus valores y objetivos de negocio, y un calendario editorial mensual o trimestral con piezas concretas a producir cada semana.',
+      'La diferencia con una agencia de marketing tradicional: nosotros tenemos el equipo de producción audiovisual interno (cámara, dirección, edición, postproducción), así que cuando el plan dice "video institucional para LinkedIn", literalmente al día siguiente entra el equipo a grabar. Sin proveedores intermedios, sin retrabajos, sin coordinación de múltiples freelancers.',
+    ],
+    process: [
+      { num: '01', title: 'Diagnóstico digital', desc: 'Auditoría de tu presencia actual en redes y web, análisis de 3-5 competidores directos, identificación de gaps y oportunidades. Te entregamos un documento de hallazgos antes de empezar a producir.' },
+      { num: '02', title: 'Definición de pilares', desc: 'Trabajamos contigo para definir 3-5 pilares de contenido (ej: cultura, expertise, producto, comunidad) y mapear el tono, formato y frecuencia por plataforma.' },
+      { num: '03', title: 'Calendario editorial', desc: 'Plan mensual o trimestral con piezas específicas: qué se publica, en qué plataforma, qué objetivo cumple, qué KPI mide. Aprobamos contigo antes de producir.' },
+      { num: '04', title: 'Producción + medición', desc: 'Producimos las piezas audiovisuales mes a mes, las entregamos listas para publicar. Cada mes te enviamos reporte de KPIs (alcance, engagement, conversiones) con recomendaciones de ajuste.' },
+    ],
+    forWhom: 'Estrategias digitales aplica para empresas sin equipo interno de marketing, empresas con equipo interno que necesitan respaldo de producción, relanzamientos de marca, campañas institucionales por hitos (aniversario, lanzamiento, reposicionamiento), y comunicación interna digital (RRHH, cultura organizacional).',
     bullets: [
       'Diagnóstico digital y análisis de competencia',
       'Definición de pilares de contenido',
@@ -435,6 +507,18 @@ export const servicios = [
     description:
       'Cápsulas, reels y videos verticales optimizados para cada plataforma. ' +
       'Producimos con tu equipo ejecutivo como talento frente a cámara y te entregamos contenido listo para publicar.',
+    longDescription: [
+      'El contenido para redes sociales no es video corporativo achicado. Cada plataforma tiene su lenguaje propio: TikTok pide ritmo rápido y subtítulos quemados, Instagram Reels prioriza estética y musicalización, LinkedIn premia profundidad y formato más largo. Producir lo mismo para todas resulta en contenido que no rinde en ninguna.',
+      'En DAR2 producimos cápsulas, reels y videos verticales optimizados por plataforma. Trabajamos con tus ejecutivos o embajadores como talento frente a cámara (los dirigimos para que se vean naturales, incluso si nunca antes han salido en video), o con presentadores profesionales de nuestra red si prefieres.',
+      'Cada pieza pasa por nuestro flujo de postproducción ágil: edición rítmica, subtítulos automatizados con corrección manual, gráficas según tu identidad visual, audio mastering para reproducción móvil. Entrega en 5 días hábiles desde rodaje. Trabajamos por paquetes mensuales o producciones puntuales según prefieras.',
+    ],
+    process: [
+      { num: '01', title: 'Plan de contenido mensual', desc: 'Definimos contigo el calendario del mes: qué temas tocar, qué ejecutivos van a salir, qué formato por plataforma. Si tienes plan de marketing, lo respetamos.' },
+      { num: '02', title: 'Dirección del talento', desc: 'Antes del rodaje, briefamos al ejecutivo o vocero: qué decir, cómo decirlo, cómo verse natural en cámara. Los acompañamos en set para que el resultado se vea profesional.' },
+      { num: '03', title: 'Rodaje', desc: 'En tu oficina (para contenido contextual real) o en estudio (para contenido más cuidado). 4-8 piezas grabadas por jornada según complejidad. Los ejecutivos no pierden el día entero.' },
+      { num: '04', title: 'Postproducción ágil', desc: 'Edición optimizada por plataforma, subtítulos quemados, gráficas según tu identidad, formatos correctos (9:16 para Reels/TikTok, 4:5 para Instagram, 16:9 para YouTube). Entrega en 5 días hábiles.' },
+    ],
+    forWhom: 'Redes sociales aplica para marcas que necesitan presencia constante en Instagram, TikTok o LinkedIn pero no tienen equipo audiovisual propio, ejecutivos que quieren construir marca personal alineada con la empresa, campañas de producto que necesitan múltiples piezas (hero, awareness, performance), y comunicación interna que aprovecha formatos verticales para llegar al colaborador en su celular.',
     bullets: [
       'Cápsulas informativas y de marca',
       'Reels y videos verticales (9:16)',
@@ -506,6 +590,18 @@ export const servicios = [
     description:
       'Diseñamos experiencias de realidad aumentada exclusivas para marcas en Instagram y TikTok. ' +
       'Branded masks, efectos interactivos y juegos que convierten a tu audiencia en embajadores orgánicos.',
+    longDescription: [
+      'Los filtros AR son la única categoría publicitaria donde el usuario voluntariamente comparte tu marca en sus historias personales. A diferencia de un banner que se cierra al primer clic, un filtro de marca bien diseñado se comparte porque el usuario quiere lucirlo: cada uso es una impresión orgánica gratuita, multiplicando alcance sin pagar CPM.',
+      'En DAR2 diseñamos filtros AR exclusivos para Instagram (vía Meta Spark AR Studio) y TikTok (vía Effect House). Branded masks que aplican tu logo y colores a la cara del usuario, efectos interactivos que reaccionan al movimiento, juegos gamificados con scoring, efectos de producto para probarse virtualmente (lentes, sombreros, maquillaje), y fondos de realidad aumentada que recrean tu universo de marca.',
+      'Trabajamos desde el concepto creativo hasta la publicación final en cada plataforma, gestionando los procesos de revisión y aprobación de Meta y TikTok. Entregamos también una cápsula audiovisual del filtro en uso para lanzar la campaña en redes y reporte mensual de métricas (usos, impresiones, veces compartido) para medir el alcance orgánico real.',
+    ],
+    process: [
+      { num: '01', title: 'Briefing creativo', desc: 'Definimos el objetivo del filtro (awareness, gamificación, producto, evento), tono de marca, mecánica de interacción y plataformas destino. Cotización detallada en 48h.' },
+      { num: '02', title: 'Diseño y modelado 3D', desc: 'Concepto visual, modelado 3D, texturas, animaciones, integración con tracking facial y de movimiento. Iteramos contigo hasta aprobar el diseño final.' },
+      { num: '03', title: 'Desarrollo y testing', desc: 'Desarrollo en Meta Spark AR Studio (Instagram) y Effect House (TikTok). Pruebas internas en varios dispositivos, ajustes de rendimiento y validación de la mecánica antes de enviar a revisión.' },
+      { num: '04', title: 'Publicación y reporte', desc: 'Gestionamos la aprobación de Meta y TikTok. Una vez publicado, lanzamos cápsula audiovisual del filtro en uso. Reporte mensual de usos, impresiones y veces compartido con recomendaciones de amplificación.' },
+    ],
+    forWhom: 'Filtros AR aplica para lanzamientos de producto que necesitan viralidad orgánica, activaciones de evento corporativo (festivales, conciertos, congresos), campañas de temporada (Navidad, fiestas, mes del orgullo), campañas institucionales o de RRHH para amplificar reach, y marcas de retail/moda/belleza que quieren que el usuario "se pruebe" el producto antes de comprarlo.',
     bullets: [
       'Diseño creativo y conceptualización del filtro',
       'Modelado 3D y animación facial',
