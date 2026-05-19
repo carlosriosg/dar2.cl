@@ -9,7 +9,14 @@ import sharp from 'sharp';
 import { readdirSync, statSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const CARD_WIDTH = 730;
+// Dos tamaños generados por cada imagen:
+//   -card.{ext}:    730px wide  (retina 2x del card 365x272)
+//   -card-sm.{ext}: 365px wide  (1x DPI - PageSpeed sin retina)
+// El navegador elige cuál usar via srcset+sizes.
+const SIZES = [
+  { suffix: '-card-sm', width: 365 },
+  { suffix: '-card', width: 730 },
+];
 const FOLDERS = [
   'public/images/servicios',
   'public/images/portafolio',
@@ -24,49 +31,52 @@ async function walk(dir) {
     let stat;
     try { stat = statSync(fullPath); } catch { continue; }
     if (stat.isDirectory()) continue;
-    // Solo procesa originales (jpg/png que NO tienen -card en el nombre)
+    // Solo procesa originales (jpg/png que NO tienen -card o -card-sm en el nombre)
     if (!/\.(png|jpe?g)$/i.test(entry)) continue;
-    if (/-card\.(png|jpe?g)$/i.test(entry)) continue;
+    if (/-card(-sm)?\.(png|jpe?g)$/i.test(entry)) continue;
     try {
-      await makeCard(fullPath);
+      await makeCards(fullPath);
     } catch (e) {
       console.warn(`  Skip ${fullPath}: ${e.message}`);
     }
   }
 }
 
-async function makeCard(srcPath) {
-  const cardPath = srcPath.replace(/\.(png|jpe?g)$/i, '-card.$1');
-
+async function makeCards(srcPath) {
   const srcMtime = statSync(srcPath).mtimeMs;
-  if (existsSync(cardPath) && statSync(cardPath).mtimeMs >= srcMtime) {
-    skipped++;
-    return;
-  }
-
   const meta = await sharp(srcPath).metadata();
-  if (!meta.width || meta.width <= CARD_WIDTH) {
-    // El original ya es <= 730px, no tiene sentido generar -card
-    skipped++;
-    return;
-  }
-
   const isJpg = /\.jpe?g$/i.test(srcPath);
-  await sharp(srcPath)
-    .resize({ width: CARD_WIDTH, withoutEnlargement: true })
-    [isJpg ? 'jpeg' : 'png']({ quality: 85 })
-    .toFile(cardPath);
 
-  const srcSize = statSync(srcPath).size;
-  const cardSize = statSync(cardPath).size;
-  created++;
-  const pct = (100 * (1 - cardSize / srcSize)).toFixed(0);
-  console.log(
-    `${cardPath.padEnd(65)} ${(srcSize / 1024).toFixed(0).padStart(4)}KB -> ${(cardSize / 1024).toFixed(0).padStart(4)}KB  (-${pct}%)`
-  );
+  for (const { suffix, width } of SIZES) {
+    const outPath = srcPath.replace(/\.(png|jpe?g)$/i, `${suffix}.$1`);
+
+    if (existsSync(outPath) && statSync(outPath).mtimeMs >= srcMtime) {
+      skipped++;
+      continue;
+    }
+
+    if (!meta.width || meta.width <= width) {
+      skipped++;
+      continue;
+    }
+
+    await sharp(srcPath)
+      .resize({ width, withoutEnlargement: true })
+      [isJpg ? 'jpeg' : 'png']({ quality: 85 })
+      .toFile(outPath);
+
+    const srcSize = statSync(srcPath).size;
+    const outSize = statSync(outPath).size;
+    created++;
+    const pct = (100 * (1 - outSize / srcSize)).toFixed(0);
+    console.log(
+      `${outPath.padEnd(70)} ${(srcSize / 1024).toFixed(0).padStart(4)}KB -> ${(outSize / 1024).toFixed(0).padStart(4)}KB  (-${pct}%)`
+    );
+  }
 }
 
-console.log(`Generando -card.{jpg,png} de ${CARD_WIDTH}px ancho en:\n  ${FOLDERS.join('\n  ')}\n`);
+const sizesDesc = SIZES.map(s => `${s.suffix} ${s.width}px`).join(', ');
+console.log(`Generando ${sizesDesc} en:\n  ${FOLDERS.join('\n  ')}\n`);
 for (const folder of FOLDERS) {
   try {
     await walk(folder);

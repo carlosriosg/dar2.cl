@@ -8,6 +8,11 @@ const {
   fetchpriority,
   loading,
   decoding,
+  // Si `responsive` es true y `src` apunta a un archivo "-card.{ext}",
+  // genera srcset con la version -card-sm (365w) y -card (730w).
+  // El navegador elige según DPI y `sizes`.
+  responsive = false,
+  sizes,
   ...rest
 } = Astro.props;
 
@@ -15,6 +20,22 @@ const isLocal = typeof src === 'string' && src.startsWith('/');
 const avif = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.avif') : src;
 const webp = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.webp') : src;
 const hasModern = isLocal && webp !== src;
+
+// Si responsive y src termina en "-card.{ext}", deriva las URLs -sm.
+let avifSrcset = avif;
+let webpSrcset = webp;
+let useSrcset = false;
+
+if (responsive && isLocal && /-card\.(png|jpe?g)$/i.test(src)) {
+  const baseAvif = src.replace(/\.(png|jpe?g)$/i, '');
+  const ext = 'avif';
+  const extWebp = 'webp';
+  // baseAvif termina en "-card", quitamos "-card" para insertar "-card-sm"
+  const baseWithoutCard = baseAvif.replace(/-card$/i, '');
+  avifSrcset = `${baseWithoutCard}-card-sm.${ext} 365w, ${baseWithoutCard}-card.${ext} 730w`;
+  webpSrcset = `${baseWithoutCard}-card-sm.${extWebp} 365w, ${baseWithoutCard}-card.${extWebp} 730w`;
+  useSrcset = true;
+}
 
 // Construir atributos del img de forma uniforme. Astro filtra undefined.
 const imgAttrs = {
@@ -26,14 +47,15 @@ const imgAttrs = {
   fetchpriority,
   loading,
   decoding,
+  ...(useSrcset && sizes ? { sizes } : {}),
   ...rest,
 };
 ---
 
 {hasModern ? (
   <picture>
-    <source srcset={avif} type="image/avif" />
-    <source srcset={webp} type="image/webp" />
+    <source srcset={avifSrcset} type="image/avif" sizes={useSrcset ? sizes : undefined} />
+    <source srcset={webpSrcset} type="image/webp" sizes={useSrcset ? sizes : undefined} />
     <img {...imgAttrs} />
   </picture>
 ) : (
