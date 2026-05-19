@@ -87,6 +87,7 @@ const serviciosRelacionados = relacionadosSlugs
   title={s.seoTitle ?? s.title}
   description={s.seoDescription ?? s.description}
   breadcrumbs={breadcrumbs}
+  preloadImage={`/images/servicios/${s.slug}.webp`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={serviceJsonLd} />
@@ -95,19 +96,35 @@ const serviciosRelacionados = relacionadosSlugs
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
-      {s.heroEyebrow ?? `${s.num} — ${s.title}`}
-    </p>
-    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl" set:html={s.tagline}></h1>
-    <p class="text-lg text-[#666] max-w-xl leading-relaxed mb-8">
-      {s.description}
-    </p>
-    <a
-      href={`/contacto?servicio=${s.slug}`}
-      class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
-    >
-      Cotizar {s.title} →
-    </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
+          {s.heroEyebrow ?? `${s.num} — ${s.title}`}
+        </p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] mb-6" set:html={s.tagline}></h1>
+        <p class="text-base md:text-lg text-[#666] leading-relaxed mb-8">
+          {s.description}
+        </p>
+        <a
+          href={`/contacto?servicio=${s.slug}`}
+          class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+        >
+          Cotizar {s.title} →
+        </a>
+      </div>
+      <div class="rounded-[16px] overflow-hidden aspect-video bg-[#eaeaea]">
+        <Picture
+          src={`/images/servicios/${s.slug}.jpg`}
+          alt={`${s.title} — DAR2 Servicios Audiovisuales`}
+          class="w-full h-full object-cover"
+          width="800"
+          height="450"
+          loading="eager"
+          fetchpriority="high"
+          decoding="sync"
+        />
+      </div>
+    </div>
   </section>
 
   <!-- Long description (qué es / cómo lo hacemos / por qué importa) -->
@@ -157,34 +174,25 @@ const serviciosRelacionados = relacionadosSlugs
     </section>
   )}
 
-  <!-- ¿Qué incluye? + Imagen -->
+  <!-- ¿Qué incluye? (full-width, bullets en 2 columnas) -->
   <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-2xl font-black tracking-tight mb-8">¿Qué incluye?</h2>
-        <ul class="space-y-4">
-          {s.bullets.map(item => (
-            <li class="flex items-start gap-3">
-              <span class="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF4500]"></span>
-              <p class="text-[#444] leading-relaxed">{item}</p>
-            </li>
-          ))}
-        </ul>
-        <a
-          href={`/contacto?servicio=${s.slug}`}
-          class="mt-10 inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
-        >
-          Cotizar {s.title} →
-        </a>
-      </div>
-      <div class="rounded-[16px] overflow-hidden aspect-video bg-[#eaeaea]">
-        <Picture
-          src={`/images/servicios/${s.slug}.jpg`}
-          alt={`${s.title} — DAR2 Servicios Audiovisuales`}
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Deliverables</p>
+    <h2 class="text-3xl font-black tracking-tight mb-10">¿Qué incluye?</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 max-w-5xl">
+      {s.bullets.map(item => (
+        <li class="flex items-start gap-3">
+          <span class="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF4500]"></span>
+          <p class="text-[#444] leading-relaxed">{item}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="mt-10">
+      <a
+        href={`/contacto?servicio=${s.slug}`}
+        class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
+      >
+        Cotizar {s.title} →
+      </a>
     </div>
   </section>
 
