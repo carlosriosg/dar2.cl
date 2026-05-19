@@ -25,7 +25,7 @@ const videoListSchema = {
       "name": item.data.titulo,
       "description": item.data.descripcion ?? `Proyecto audiovisual para ${item.data.cliente} producido por DAR2 en ${item.data.anio}.`,
       "thumbnailUrl": item.data.thumbnail?.startsWith('http') ? item.data.thumbnail : `https://dar2.cl${item.data.thumbnail}`,
-      "uploadDate": `${item.data.anio}-01-01`,
+      "uploadDate": `${item.data.anio}-01-01T00:00:00-04:00`,
       "contentUrl": item.data.youtube_url,
       "embedUrl": item.data.youtube_url?.replace('watch?v=', 'embed/'),
       "publisher": { "@id": "https://dar2.cl/#organization" }
