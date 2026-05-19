@@ -1,0 +1,300 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Cómo medir el ROI de tu video corporativo', url: 'https://dar2.cl/blog/medir-roi-video-corporativo/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo medir el ROI de tu video corporativo: 5 métricas clave",
+  "description": "Guía práctica para medir el retorno de inversión de un video corporativo: views, retention, conversión, brand lift y cálculo monetario del ROI.",
+  "image": "https://dar2.cl/images/servicios/videos-corporativos.jpg",
+  "datePublished": "2026-05-19",
+  "dateModified": "2026-05-19",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/medir-roi-video-corporativo/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula el ROI de un video corporativo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ROI = (Valor generado − Costo de producción) / Costo de producción × 100. El valor generado depende del objetivo: si es video de venta, son ventas atribuibles. Si es reclutamiento, son postulaciones de calidad o contrataciones. Si es capacitación, es ahorro vs. capacitación presencial. Si es brand lift, es incremento de recordación medido en encuestas. El cálculo no es trivial pero es posible si defines el objetivo desde el inicio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué métricas son las más importantes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del objetivo. Para awareness: views únicos y alcance. Para engagement: tiempo promedio de visualización (retention) y completion rate. Para conversión: CTR del CTA al final, formularios completados, ventas atribuibles. Para brand lift: encuestas pre-post de recordación y asociación de marca. Sin definir objetivo, ninguna métrica importa." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué herramientas usar para medir?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para YouTube: YouTube Studio (retention, demographics, traffic sources). Para LinkedIn: LinkedIn Analytics (views únicos, completion, reactions). Para sitio propio: Vimeo o Wistia (mejor analítica de video que YouTube embebido). Para conversión: Google Analytics 4 con eventos de video. Para brand lift: encuestas tipo Brand Lift Study de Google Ads o herramientas como Typeform/SurveyMonkey con incentivo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es un benchmark de retention típico?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del formato. Video de 60 segundos en redes: retention promedio 50-65%. Video corporativo de 2-3 minutos: 40-55%. Video institucional de 4-5 minutos: 30-45%. Webinar de 60 minutos: 25-40%. Si tu retention está por debajo del benchmark, hay un problema de hook, ritmo o relevancia del contenido." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena medir si el video es pequeño?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, especialmente si es pequeño. Si un video chico funciona bien, el patrón se puede replicar a escala. Si no funciona, te ahorras hacer el grande con el mismo enfoque. La medición es lo que separa producir contenido a ciegas vs. mejorar campaña tras campaña." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Cómo medir el ROI de tu video corporativo: 5 métricas clave"
+  description="Guía práctica para medir el retorno de inversión de un video corporativo: views, retention, conversión, brand lift y cálculo monetario del ROI."
+  breadcrumbs={breadcrumbs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Video Corporativo</p>
+      <h1 class="article-h1">
+        Cómo medir el ROI de tu video corporativo:
+        <em class="hl">5 métricas clave.</em>
+      </h1>
+      <p class="article-lead">
+        El 70% de las empresas que producen video corporativo no mide su retorno de inversión. El otro 30% sí — y por eso mejora cada año mientras el resto improvisa. Esta guía es para que entres en el segundo grupo.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 19 de mayo, 2026 · 7 min de lectura
+      </p>
+    </header>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#por-que-no-miden">Por qué muchas empresas no miden</a></li>
+        <li><a href="#metricas">5 métricas clave</a></li>
+        <li><a href="#herramientas">Herramientas para trackear</a></li>
+        <li><a href="#valor-monetario">Asignar valor monetario</a></li>
+        <li><a href="#ejemplo-calculo">Ejemplo de cálculo de ROI</a></li>
+        <li><a href="#benchmarks">Benchmarks de retención</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="por-que-no-miden">
+      <h2>Por qué muchas empresas no miden ROI de video</h2>
+      <p>
+        Las tres razones más comunes que escuchamos en clientes corporativos:
+      </p>
+      <ol class="article-list">
+        <li><strong>"No definimos el objetivo desde el inicio":</strong> el video se produjo "porque sí" o "porque toca la junta anual". Sin objetivo no hay métrica que medir.</li>
+        <li><strong>"No sabemos qué plataforma elegir":</strong> el video va a YouTube, LinkedIn, intranet, una presentación interna. Cada plataforma da métricas distintas. Sin centralización, no hay panorama.</li>
+        <li><strong>"Pensamos que ROI de marketing es de marketing, no de comunicaciones":</thirteen> el video corporativo "no se vende", entonces "no aplica medir". Falso: aplica para reclutamiento, retención, comunicación interna, brand lift, eficiencia de capacitación, etc.</li>
+      </ol>
+      <p>
+        Lo primero que necesitas para medir es definir el objetivo del video <em>antes</em> de producirlo.
+      </p>
+    </section>
+
+    <section class="article-section" id="metricas">
+      <h2>5 métricas clave que debes medir</h2>
+
+      <h3>1. Views (vistas únicas)</h3>
+      <p>
+        Cuántas personas distintas vieron al menos un segmento del video. Las plataformas tienen definiciones distintas (YouTube cuenta vistas de 30+ segundos, LinkedIn de 3+ segundos), pero el concepto es el mismo: tamaño de la audiencia única.
+      </p>
+      <p>
+        Es la métrica más básica y la más sobrevalorada. 100.000 vistas significan poco si el 95% abandonó en los primeros 5 segundos.
+      </p>
+
+      <h3>2. Retention / Tiempo promedio de visualización</h3>
+      <p>
+        El indicador más importante de calidad de contenido. Mide qué porcentaje del video ve el espectador promedio. Si tu video dura 3 minutos y el tiempo promedio es 1:30, retention es 50%.
+      </p>
+      <p>
+        Retention alta significa que el contenido es relevante, el ritmo es bueno y la audiencia está enganchada. Retention baja significa que el hook inicial es débil o el contenido pierde fuerza.
+      </p>
+
+      <h3>3. Tasa de conversión</h3>
+      <p>
+        Aplica si el video tiene un objetivo accionable: CTA al final, link en la descripción, formulario de contacto, descarga de material. Mide qué porcentaje de los que vieron el video tomaron la acción deseada.
+      </p>
+      <p>
+        Es la métrica que conecta video con resultado de negocio. Un video con 1.000 views y 50 conversiones (5%) vale más que uno con 100.000 views y 100 conversiones (0.1%).
+      </p>
+
+      <h3>4. Engagement</h3>
+      <p>
+        En redes sociales: likes, comentarios, shares, reactions. En sitio propio: clicks en CTAs internos, scroll después del video, tiempo en página post-video. Indica involucramiento del espectador más allá del consumo pasivo.
+      </p>
+      <p>
+        Especialmente importante en LinkedIn (donde el algoritmo amplifica contenido con alta engagement) y en TikTok/Instagram (donde shares determinan viralidad).
+      </p>
+
+      <h3>5. Brand Lift</h3>
+      <p>
+        Mide cuánto cambia la percepción de tu marca después de la exposición al video. Se mide con encuestas pre-campaña vs. post-campaña: recordación de marca, asociación con atributos clave, intención de compra. Es complejo pero es la métrica más "real" para video institucional.
+      </p>
+      <p>
+        Google Ads ofrece Brand Lift Study integrado en campañas pagadas. Para campañas orgánicas, herramientas como Typeform o SurveyMonkey con muestreo bien diseñado funcionan.
+      </p>
+    </section>
+
+    <section class="article-section" id="herramientas">
+      <h2>Herramientas para trackear cada métrica</h2>
+      <ul class="article-list">
+        <li><strong>YouTube Studio</strong>: retention chart, demographics, traffic sources, search keywords. Excelente analítica gratis para video en YouTube.</li>
+        <li><strong>LinkedIn Analytics</strong>: views únicos, completion rate, reactions y comentarios por video. Demographics de quién vio (cargo, industria, empresa).</li>
+        <li><strong>Vimeo o Wistia</strong>: si el video va embebido en tu sitio, estas plataformas dan mejor analítica que YouTube embebido (heatmaps de retención, engagement por segundo, A/B testing).</li>
+        <li><strong>Google Analytics 4</strong>: eventos de video (start, 25%, 50%, 75%, complete) y atribución a conversiones del sitio. Con GTM se configura en 30 minutos.</li>
+        <li><strong>Meta Business Suite</strong>: para video en Instagram y Facebook. Métricas de retention de video stories y reels.</li>
+        <li><strong>TikTok Analytics</strong>: completion rate, shares, average watch time. Crítico para entender qué funciona en formato vertical corto.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="valor-monetario">
+      <h2>Cómo asignar valor monetario a las métricas</h2>
+      <p>
+        Para calcular ROI necesitas convertir cada métrica en peso. No siempre es directo, pero hay reglas comunes:
+      </p>
+      <ul class="article-list">
+        <li><strong>Video de venta:</strong> valor = ventas atribuibles × ticket promedio. Directo.</li>
+        <li><strong>Video de reclutamiento:</strong> valor = (postulaciones de calidad × probabilidad de contratación × costo evitado de headhunter por contratación). Por ejemplo: 50 postulaciones × 5% probabilidad × USD 3.000 ahorro = USD 7.500.</li>
+        <li><strong>Video de capacitación:</strong> valor = (colaboradores capacitados × horas ahorradas vs. capacitación presencial × costo/hora promedio). Ej: 200 personas × 4 horas × USD 30/h = USD 24.000 ahorro.</li>
+        <li><strong>Video institucional / brand lift:</strong> valor = incremento de recordación × tamaño audiencia × valor por punto de recordación. Más difícil de calcular pero se puede aproximar.</li>
+        <li><strong>Video de retención:</strong> valor = clientes retenidos × LTV (lifetime value). Si un video institucional reduce el churn en 1%, el valor es enorme.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="ejemplo-calculo">
+      <h2>Ejemplo de cálculo de ROI</h2>
+      <p>
+        Caso real simplificado: empresa retail produce un video de cultura organizacional para campaña de reclutamiento.
+      </p>
+      <ul class="article-list">
+        <li><strong>Costo del video:</strong> CLP 4.000.000 (producción + medios).</li>
+        <li><strong>Resultado:</strong> 80.000 vistas en LinkedIn + Instagram. 1.200 clicks al portal de empleo. 350 postulaciones (vs. baseline 90/mes). 12 contrataciones atribuibles.</li>
+        <li><strong>Valor por contratación evitando headhunter:</strong> CLP 1.800.000 ahorro promedio × 12 = CLP 21.600.000.</li>
+        <li><strong>ROI:</strong> (21.600.000 − 4.000.000) / 4.000.000 = <strong>440%</strong>.</li>
+      </ul>
+      <p>
+        Sin medir, esa empresa nunca habría sabido que el video pagó cinco veces su costo solo en ahorro de reclutamiento. Y lo más importante: ahora replica el formato.
+      </p>
+    </section>
+
+    <section class="article-section" id="benchmarks">
+      <h2>Benchmarks de retención por formato</h2>
+      <p>
+        Para que sepas si tu video está bien o mal:
+      </p>
+      <ul class="article-list">
+        <li><strong>Video de 60 segundos en redes (Reels, TikTok):</strong> retention promedio 50-65%.</li>
+        <li><strong>Video corporativo de 2-3 minutos:</strong> 40-55%.</li>
+        <li><strong>Video institucional de 4-5 minutos:</strong> 30-45%.</li>
+        <li><strong>Webinar / streaming de 60 minutos:</strong> 25-40%.</li>
+        <li><strong>E-learning de 10-20 minutos:</strong> 60-80% (audiencia más comprometida).</li>
+      </ul>
+      <p>
+        Si tu retention está por debajo del benchmark, hay un problema. Lo más común: hook inicial débil (los primeros 5 segundos no enganchan), ritmo lento, demasiada información, falta de variación visual.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/videos-corporativos/" class="article-cta-btn">
+          Ver nuestro servicio de Videos Corporativos →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cómo se calcula el ROI de un video corporativo?</summary>
+        <p>ROI = (Valor generado − Costo de producción) / Costo de producción × 100. El valor depende del objetivo: ventas atribuibles, postulaciones de calidad, ahorro en capacitación, brand lift medido en encuestas.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué métricas son las más importantes?</summary>
+        <p>Depende del objetivo. Para awareness: views únicos. Para engagement: retention y completion rate. Para conversión: CTR del CTA, formularios completados. Para brand lift: encuestas pre-post.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué herramientas usar para medir?</summary>
+        <p>YouTube Studio, LinkedIn Analytics, Vimeo/Wistia para sitio propio, Google Analytics 4 con eventos de video, Meta Business Suite. Para brand lift: Google Brand Lift Study o encuestas tipo Typeform.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuál es un benchmark de retention típico?</summary>
+        <p>Reels/TikTok 60 seg: 50-65%. Video corporativo 2-3 min: 40-55%. Institucional 4-5 min: 30-45%. Webinar 60 min: 25-40%.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Vale la pena medir si el video es pequeño?</summary>
+        <p>Sí, especialmente si es pequeño. Si funciona, replicas el patrón. Si no, te ahorras hacer el grande con el mismo enfoque. La medición es lo que separa producir a ciegas vs. mejorar.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <h2>¿Quieres producir video corporativo medible?</h2>
+      <p>
+        En DAR2 producimos video corporativo con foco en métricas. Te ayudamos a definir el objetivo, producir el contenido y configurar el tracking para que sepas qué funcionó.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=videos-corporativos" class="article-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 48px; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final { background: #fafafa; border-radius: 16px; padding: 40px; margin-top: 80px; }
+  .article-cta-final h2 { margin-top: 0; }
+</style>

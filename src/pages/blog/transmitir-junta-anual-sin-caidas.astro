@@ -1,0 +1,303 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Cómo transmitir tu junta anual sin caídas', url: 'https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo transmitir tu junta anual de accionistas sin caídas técnicas",
+  "description": "Guía técnica para transmitir tu junta anual de accionistas: causas de caídas, multicámara, enlaces redundantes, plataformas y checklist del día del evento.",
+  "image": "https://dar2.cl/images/servicios/streaming.jpg",
+  "datePublished": "2026-05-19",
+  "dateModified": "2026-05-19",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre un Zoom y un streaming profesional para junta anual?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un Zoom típico es videoconferencia: el ancho de banda del expositor determina la calidad para todos. Un streaming profesional usa multicámara, switcher dedicado, audio broadcast y enlaces redundantes. La señal sale del estudio con calidad de TV y se envía a una plataforma de transmisión. La diferencia se nota en calidad de imagen, sonido, dirección visual y, sobre todo, en confiabilidad: el streaming profesional tiene respaldo técnico en cada eslabón." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué plataforma es mejor para una junta anual?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende de la audiencia. Si los accionistas requieren login con identificación, Zoom Webinar o Microsoft Teams Live Events son los más usados. Si la junta es pública (empresa IPSA), YouTube Live o una plataforma embebida en el sitio corporativo permiten mayor escala. Las plataformas privadas con whitelist permiten control de quién entra. Lo importante: probar la plataforma con anticipación con el equipo legal y compliance." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas cámaras se necesitan para una junta anual?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El estándar son 3 a 4 cámaras: una para el directorio o panel principal, una cerrada para el orador en turno, una para la audiencia presencial (si hay) y una panorámica del recinto. Para juntas más grandes con varios oradores e interacción, se puede llegar a 6 cámaras controladas desde switcher." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si se cae el internet durante la transmisión?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una producción profesional tiene enlace redundante: dos conexiones físicas distintas (típicamente fibra + LTE 4G/5G o dos proveedores de fibra distintos). Si una cae, el switcher cambia automáticamente a la otra sin que el público lo note. Sin enlace redundante, una caída de internet termina el evento." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con cuánto tiempo de anticipación hay que contratar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Idealmente entre 4 y 8 semanas antes para producciones grandes. Esto permite reuniones de coordinación, briefing técnico, ensayo general con los expositores y validación de la plataforma con el equipo legal. Para urgencias, hay productoras (como DAR2) que pueden producir en 48-72 horas con disponibilidad confirmada, pero el riesgo aumenta." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Cómo transmitir tu junta anual de accionistas sin caídas técnicas"
+  description="Guía técnica para juntas anuales: causas comunes de caídas, multicámara, enlaces redundantes, plataformas (Zoom/Teams/YouTube), checklist del día del evento."
+  breadcrumbs={breadcrumbs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming Corporativo</p>
+      <h1 class="article-h1">
+        Cómo transmitir tu junta anual de accionistas
+        <em class="hl">sin caídas técnicas.</em>
+      </h1>
+      <p class="article-lead">
+        La junta anual es el evento corporativo más visible del año. Una caída técnica frente a accionistas, prensa o reguladores tiene consecuencias reales. Esta guía explica las causas comunes, cómo evitarlas y qué pedir a tu productora.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 19 de mayo, 2026 · 7 min de lectura
+      </p>
+    </header>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#por-que-fallan">Por qué fallan las transmisiones</a></li>
+        <li><a href="#multicamara">Multicámara y switcher</a></li>
+        <li><a href="#enlace-redundante">Enlace redundante (clave)</a></li>
+        <li><a href="#plataformas">Qué plataforma elegir</a></li>
+        <li><a href="#ensayo">El ensayo previo</a></li>
+        <li><a href="#checklist">Checklist del día del evento</a></li>
+        <li><a href="#productora">Qué pedir a la productora</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="por-que-fallan">
+      <h2>Por qué fallan las transmisiones de juntas anuales</h2>
+      <p>
+        En 15 años produciendo streaming corporativo en Chile hemos visto los mismos errores repetirse. Las caídas técnicas no son fortuitas: tienen causas que se pueden anticipar y mitigar. Las más frecuentes:
+      </p>
+      <ol class="article-list">
+        <li><strong>Conexión única a internet:</strong> el evento depende de una sola fibra. Si esa conexión cae (proveedor, edificio, intermitencia), la transmisión termina. Es el error más común y el más fácil de evitar con enlace redundante.</li>
+        <li><strong>Plataforma mal configurada:</strong> límite de asistentes superado, region settings incorrectos, latencia alta por servidor lejano. Se descubre en el momento, sin tiempo para corregir.</li>
+        <li><strong>Equipo audiovisual improvisado:</strong> webcams en lugar de cámaras profesionales, micrófonos lavalier de baja calidad, iluminación de oficina. El resultado se ve y se oye amateur.</li>
+        <li><strong>Sin dirección técnica:</strong> el expositor habla y nadie corta entre cámaras, no hay gráficas en tiempo real, no hay mezcla de audio. Es una grabación, no una producción.</li>
+        <li><strong>Sin ensayo previo:</strong> el primer chequeo técnico es el día del evento. Se descubren problemas con 15 minutos de antelación.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="multicamara">
+      <h2>Multicámara y switcher: por qué importa</h2>
+      <p>
+        Una junta anual filmada con una sola cámara fija aburre al espectador remoto en 10 minutos. La atención cae, los accionistas leen mails, el mensaje no llega. El estándar profesional son 3 a 4 cámaras coordinadas desde un switcher:
+      </p>
+      <ul class="article-list">
+        <li><strong>Cámara 1 — Panel principal:</strong> el directorio o panel completo, plano general fijo.</li>
+        <li><strong>Cámara 2 — Plano cerrado:</strong> el orador en turno, primer plano.</li>
+        <li><strong>Cámara 3 — Audiencia / contexto:</strong> reacciones del público presencial, plano del recinto.</li>
+        <li><strong>Cámara 4 — Panorámica:</strong> vista del recinto completo, transiciones, gráficas full screen.</li>
+      </ul>
+      <p>
+        El director técnico corta entre cámaras según el momento: presentación general → plano cerrado del orador → reacción del directorio → vuelta al panel. Eso es producción broadcast. Sin ese cambio rítmico, el espectador remoto se desconecta.
+      </p>
+    </section>
+
+    <section class="article-section" id="enlace-redundante">
+      <h2>Enlace redundante: la regla #1</h2>
+      <p>
+        Si solo recuerdas una cosa de esta guía, que sea esta: <strong>nunca transmitas una junta anual con una sola conexión a internet</strong>. El enlace redundante punto a punto es el seguro de vida de cualquier streaming corporativo serio.
+      </p>
+      <p>
+        Cómo funciona: el equipo en el recinto del evento envía la señal por dos rutas físicamente distintas. Típicamente una fibra dedicada del recinto y una conexión LTE/5G con módem profesional, o dos proveedores de fibra distintos. El switcher monitorea ambas en tiempo real. Si una cae, salta a la otra en menos de un segundo sin que el público lo note.
+      </p>
+      <p>
+        Sin enlace redundante, una caída de internet por motivos triviales (un corte de electricidad en una manzana, un error del ISP, una congestión local) termina el evento. Con enlace redundante, esos eventos pasan invisibles para el espectador.
+      </p>
+    </section>
+
+    <section class="article-section" id="plataformas">
+      <h2>Qué plataforma elegir</h2>
+
+      <h3>Zoom Webinar</h3>
+      <p>
+        La más común para juntas anuales privadas. Permite login con identificación, registro previo, votación en vivo, Q&A moderado. Soporta hasta 10.000-50.000 asistentes según el plan. Ideal cuando la audiencia es accionistas registrados.
+      </p>
+
+      <h3>Microsoft Teams Live Events</h3>
+      <p>
+        Similar a Zoom Webinar pero integrado al ecosistema corporativo Microsoft. Útil si la empresa ya usa Teams para toda la comunicación interna y los accionistas están en Active Directory.
+      </p>
+
+      <h3>YouTube Live</h3>
+      <p>
+        La opción pública por excelencia. Cero límite de asistentes, calidad de video alta, grabación queda en el canal. Para juntas de empresas IPSA o que quieren máxima transparencia. La señal se puede embeber en el sitio corporativo para mantener al espectador en tu ecosistema.
+      </p>
+
+      <h3>Plataforma propia / embebido</h3>
+      <p>
+        Para empresas que necesitan máximo control: la transmisión va a un reproductor en el sitio corporativo o intranet, sin marca de terceros, con control de acceso por whitelist y métricas detalladas. Requiere integración técnica con tu equipo de IT.
+      </p>
+    </section>
+
+    <section class="article-section" id="ensayo">
+      <h2>El ensayo previo (no opcional)</h2>
+      <p>
+        Una junta anual sin ensayo es un evento de riesgo. El ensayo no es opcional: es el momento donde se descubren los problemas a tiempo. Una semana antes del evento, ensaya:
+      </p>
+      <ol class="article-list">
+        <li><strong>Conectividad real:</strong> verifica las dos rutas de internet con load test. Que aguanten la calidad de video planificada (típicamente 1080p a 4-6 Mbps).</li>
+        <li><strong>Audio:</strong> nivel, claridad, ausencia de ecos, micrófonos de respaldo funcionando.</li>
+        <li><strong>Gráficas:</strong> que aparezcan los lower thirds con nombres correctos, logos en posición, transiciones suaves.</li>
+        <li><strong>Plataforma:</strong> conexión real con la plataforma destino, prueba de stream key, validación con el equipo legal/compliance.</li>
+        <li><strong>Expositores:</strong> que conozcan el flujo, el orden de palabra, las marcas de cámara y el tiempo asignado.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="checklist">
+      <h2>Checklist del día del evento</h2>
+      <p>
+        Lo que debe estar verificado mínimo 2 horas antes del evento:
+      </p>
+      <ul class="article-list">
+        <li>Ambas conexiones de internet activas y verificadas con stream test.</li>
+        <li>Todas las cámaras encendidas, enfocadas, con balance de blancos calibrado.</li>
+        <li>Todos los micrófonos funcionando con respaldo (lavalier + boom).</li>
+        <li>Iluminación de presentadores ajustada para evitar sombras.</li>
+        <li>Switcher con todas las fuentes verificadas y transiciones probadas.</li>
+        <li>Gráficas cargadas en el sistema (logos, lower thirds, full screens).</li>
+        <li>Conexión con la plataforma destino activa y recibiendo señal de prueba.</li>
+        <li>Equipo legal/compliance presente o disponible para incidencias.</li>
+        <li>Plan de contingencia documentado (qué hacer si falla X).</li>
+        <li>Briefing final con expositores realizado.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="productora">
+      <h2>Qué pedirle a la productora</h2>
+      <p>
+        Si vas a contratar una productora externa, pídele explícitamente:
+      </p>
+      <ol class="article-list">
+        <li><strong>Enlace redundante</strong> con dos rutas físicas distintas (no solo "dos cuentas del mismo proveedor").</li>
+        <li><strong>Mínimo 3 cámaras</strong> con switcher dedicado.</li>
+        <li><strong>Director técnico exclusivo</strong> para tu evento (no un junior compartido con otros clientes simultáneos).</li>
+        <li><strong>Ensayo general</strong> al menos una vez antes del día.</li>
+        <li><strong>Plan de contingencia</strong> documentado.</li>
+        <li><strong>Coordinador de contacto</strong> reachable durante todo el evento.</li>
+        <li><strong>Entrega post-evento</strong> con grabación master, gráficas embedidas y cápsulas para redes.</li>
+        <li><strong>Seguro de responsabilidad civil</strong> profesional (importante para eventos corporativos grandes).</li>
+      </ol>
+      <p>
+        Si la productora no incluye estos puntos en su cotización, busca otra.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/streaming/" class="article-cta-btn">
+          Ver nuestro servicio de Streaming →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuál es la diferencia entre un Zoom y un streaming profesional para junta anual?</summary>
+        <p>Un Zoom típico es videoconferencia: el ancho de banda del expositor determina la calidad para todos. Un streaming profesional usa multicámara, switcher dedicado, audio broadcast y enlaces redundantes. La señal sale del estudio con calidad de TV y se envía a una plataforma de transmisión.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué plataforma es mejor para una junta anual?</summary>
+        <p>Depende de la audiencia. Si los accionistas requieren login con identificación, Zoom Webinar o Microsoft Teams Live Events son los más usados. Si la junta es pública (empresa IPSA), YouTube Live o una plataforma embebida en el sitio corporativo permiten mayor escala.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuántas cámaras se necesitan?</summary>
+        <p>El estándar son 3 a 4 cámaras: una para el panel principal, una cerrada para el orador en turno, una para la audiencia presencial y una panorámica del recinto. Para juntas más grandes se puede llegar a 6 cámaras controladas desde switcher.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué pasa si se cae el internet durante la transmisión?</summary>
+        <p>Una producción profesional tiene enlace redundante: dos conexiones físicas distintas. Si una cae, el switcher cambia automáticamente a la otra sin que el público lo note. Sin enlace redundante, una caída de internet termina el evento.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Con cuánto tiempo de anticipación hay que contratar?</summary>
+        <p>Idealmente entre 4 y 8 semanas antes para producciones grandes. Para urgencias, hay productoras que pueden producir en 48-72 horas con disponibilidad confirmada, pero el riesgo aumenta.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <h2>¿Tienes junta anual a la vista?</h2>
+      <p>
+        En DAR2 producimos juntas anuales con enlace redundante, multicámara y dirección técnica desde 2010. Cotización a medida en 48 horas.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=streaming" class="article-cta-btn">
+          Cotizar streaming de junta anual →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 48px; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final { background: #fafafa; border-radius: 16px; padding: 40px; margin-top: 80px; }
+  .article-cta-final h2 { margin-top: 0; }
+</style>

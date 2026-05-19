@@ -1,0 +1,287 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Estudio virtual vs. set físico', url: 'https://dar2.cl/blog/estudio-virtual-vs-set-fisico/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Estudio virtual vs. set físico: cuándo conviene cada uno",
+  "description": "Comparativa práctica de estudio virtual (green screen) vs. set físico para producción audiovisual corporativa. Costos, tiempos, flexibilidad y casos de uso.",
+  "image": "https://dar2.cl/images/servicios/estudio-virtual.jpg",
+  "datePublished": "2026-05-19",
+  "dateModified": "2026-05-19",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/estudio-virtual-vs-set-fisico/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Se nota la diferencia entre un estudio virtual y un set físico en pantalla?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Con producción profesional, no. El estudio virtual moderno usa green screen calibrado, iluminación broadcast e integración 3D en tiempo real. El resultado en pantalla es indistinguible del set físico, incluso en proyecciones grandes. La diferencia se nota solo si la iluminación del chroma key está mal calibrada (sombras verdes, bordes pixelados) o si el escenario virtual es de baja calidad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un estudio virtual vs. un set físico?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para una sola sesión, el estudio virtual es generalmente más económico porque no requiere construir decorados ni alquilar locaciones. Para producciones recurrentes con la misma escenografía (programa semanal, capacitaciones periódicas), el estudio virtual amortiza aún más porque la escenografía se reutiliza. Un set físico tiene costos de construcción, transporte, montaje, alquiler de bodega y desmontaje que se repiten." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo conviene un set físico real?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cuando la producción requiere interacción física con objetos (cocinas, talleres, equipamiento), cuando el equipo es muy numeroso (más de 5 personas en cuadro simultáneamente), cuando el contexto físico ES el mensaje (ej. filmar en la planta industrial para mostrar la operación real), o cuando el cliente prefiere la estética de un espacio real con texturas y profundidad natural." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto demora una sesión en estudio virtual?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una sesión típica de 1-2 presentadores con escenografía virtual preestablecida toma entre 2 y 4 horas incluyendo setup, maquillaje, ensayo y múltiples tomas. Si la escenografía virtual es nueva y requiere diseño desde cero, agregar entre 1 y 3 semanas previas para el desarrollo 3D. Una vez creada, esa escenografía se reutiliza en sesiones futuras." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo combinar estudio virtual con elementos físicos reales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, es la técnica más sofisticada. Se llama composición mixta: el presentador físico interactúa con elementos virtuales (pantallas con contenido animado, gráficos 3D que aparecen al lado, objetos virtuales que él 'toca'). Requiere planificación previa de las marcas en piso, dirección precisa del presentador y postproducción más cuidadosa. El resultado es más vistoso para audiencias acostumbradas a contenido de TV." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Estudio virtual vs. set físico: cuándo conviene cada uno"
+  description="Comparativa práctica: estudio virtual con green screen vs. set físico real. Costos, tiempos, flexibilidad, casos de uso y cómo decidir cuál usar."
+  breadcrumbs={breadcrumbs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Estudio Virtual</p>
+      <h1 class="article-h1">
+        Estudio virtual vs. set físico:
+        <em class="hl">cuándo conviene cada uno.</em>
+      </h1>
+      <p class="article-lead">
+        Para una empresa que va a producir contenido audiovisual, la primera decisión es dónde grabar: construir un set físico, alquilar una locación, o usar estudio virtual con green screen. Esta guía compara ambas opciones en costo, tiempo, flexibilidad y resultado.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 19 de mayo, 2026 · 6 min de lectura
+      </p>
+    </header>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es-cada-uno">Qué es cada uno</a></li>
+        <li><a href="#comparativa">Comparativa directa</a></li>
+        <li><a href="#estudio-virtual">Cuándo conviene estudio virtual</a></li>
+        <li><a href="#set-fisico">Cuándo conviene set físico</a></li>
+        <li><a href="#composicion-mixta">Composición mixta</a></li>
+        <li><a href="#decidir">Cómo decidir</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="que-es-cada-uno">
+      <h2>Qué es cada uno</h2>
+
+      <h3>Estudio virtual (green screen)</h3>
+      <p>
+        Un espacio con fondo verde de alta opacidad e iluminación calibrada para chroma key. El presentador se filma sobre el verde, y en postproducción (o en tiempo real con sistemas avanzados) se reemplaza el verde por una escenografía virtual diseñada en 3D. Puede ser un newsroom, un espacio corporativo, un ambiente futurista, una réplica de tus oficinas o cualquier cosa imaginable.
+      </p>
+
+      <h3>Set físico</h3>
+      <p>
+        Un espacio real construido o existente. Puede ser un decorado armado en estudio (muebles, paredes, props), una locación natural (oficinas, planta industrial, exterior) o un set existente alquilado. El presentador interactúa físicamente con el ambiente.
+      </p>
+    </section>
+
+    <section class="article-section" id="comparativa">
+      <h2>Comparativa directa</h2>
+
+      <h3>Costo</h3>
+      <p>
+        <strong>Estudio virtual</strong> tiene costo inicial moderado: alquiler del estudio con chroma key, iluminación calibrada y diseño de la escenografía virtual 3D. La escenografía es un activo reutilizable. Para producciones recurrentes (programa semanal, capacitaciones mensuales), el costo amortiza fuerte después de 3-5 sesiones.
+      </p>
+      <p>
+        <strong>Set físico</strong> tiene costo más alto por sesión: construcción del decorado, transporte de muebles, montaje en estudio, alquiler de bodega para el decorado o desarmado entre sesiones, ambientación, props. Para una sola sesión grande puede ser comparable. Para producciones recurrentes, sale más caro acumulativamente.
+      </p>
+
+      <h3>Tiempo de producción</h3>
+      <p>
+        <strong>Estudio virtual</strong>: si la escenografía virtual ya existe, una sesión se monta en 1 hora. Si requiere diseño nuevo, agregar 1-3 semanas previas.
+      </p>
+      <p>
+        <strong>Set físico</strong>: montaje físico típicamente toma 1 día completo, desmontaje otro día. Producción puede comprimirse pero hay límites físicos.
+      </p>
+
+      <h3>Flexibilidad</h3>
+      <p>
+        <strong>Estudio virtual</strong>: cambias la escenografía con un click. Puedes producir en la mañana un episodio en "newsroom corporativo" y en la tarde otro en "espacio futurista".
+      </p>
+      <p>
+        <strong>Set físico</strong>: cambiar de ambiente requiere desmontar y montar todo. En un solo día normalmente se trabaja con un único decorado.
+      </p>
+
+      <h3>Calidad final</h3>
+      <p>
+        <strong>Estudio virtual</strong> con producción profesional: indistinguible de un set físico en pantalla. Mal hecho: sombras verdes, bordes pixelados, ambiente "barato". La calidad depende 90% de la iluminación del chroma key y de la calidad del modelo 3D.
+      </p>
+      <p>
+        <strong>Set físico</strong>: realismo absoluto, textures naturales, profundidad real. La cámara captura imperfecciones que dan sensación de "presente".
+      </p>
+    </section>
+
+    <section class="article-section" id="estudio-virtual">
+      <h2>Cuándo conviene estudio virtual</h2>
+      <p>
+        El estudio virtual es la mejor opción cuando:
+      </p>
+      <ul class="article-list">
+        <li><strong>Producción recurrente:</strong> programa semanal, mensual, capacitaciones periódicas. La escenografía es un activo reutilizable.</li>
+        <li><strong>Múltiples ambientes en pocas sesiones:</strong> contenido para distintas marcas, presentaciones a clientes con identidades diferentes, e-learning con varios contextos.</li>
+        <li><strong>Branding visual intenso:</strong> tu marca tiene colores específicos, elementos visuales únicos, identidad fuerte que quieres aplicar en cada cuadro.</li>
+        <li><strong>Presentaciones ejecutivas y keynotes:</strong> dar a tus ejecutivos un set de calidad broadcast sin pagar la construcción de un decorado físico.</li>
+        <li><strong>E-learning corporativo:</strong> capacitaciones donde el ambiente se diseña para reforzar el contenido (laboratorio virtual, planta virtual, ambiente educativo limpio).</li>
+        <li><strong>Restricciones de espacio:</strong> no tienes un estudio físico grande pero necesitas dar imagen de uno.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="set-fisico">
+      <h2>Cuándo conviene set físico</h2>
+      <p>
+        El set físico es mejor opción cuando:
+      </p>
+      <ul class="article-list">
+        <li><strong>Interacción con objetos reales:</strong> cocinas, talleres, equipamiento, productos físicos que se manipulan. Difícil simular en virtual.</li>
+        <li><strong>El espacio físico ES el mensaje:</strong> filmar en la planta industrial real, en la oficina del CEO, en la sucursal del banco. El contexto comunica autenticidad.</li>
+        <li><strong>Múltiples personas en cuadro simultáneamente:</strong> 5+ personas en cuadro al mismo tiempo. El green screen con muchos sujetos se complica técnicamente.</li>
+        <li><strong>Acción y movimiento amplio:</strong> tomas en steadicam, gimbal, dolly que cruzan el espacio. Más natural en físico.</li>
+        <li><strong>Audiencias muy críticas:</strong> contenido para sectores donde la autenticidad importa más que la estética (industria pesada, minería, salud).</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="composicion-mixta">
+      <h2>Composición mixta: lo mejor de los dos mundos</h2>
+      <p>
+        La técnica más avanzada combina ambas: presentador físico en un set real, con elementos virtuales agregados en postproducción o tiempo real. Pantallas con contenido animado, gráficos 3D que aparecen al lado, objetos virtuales con los que interactúa el presentador.
+      </p>
+      <p>
+        Es lo que ves en transmisiones broadcast modernas y noticieros premium. Requiere planificación previa (marcas en piso, dirección precisa) y postproducción más sofisticada, pero el resultado es notable: combinas la autenticidad del físico con la flexibilidad del virtual.
+      </p>
+    </section>
+
+    <section class="article-section" id="decidir">
+      <h2>Cómo decidir</h2>
+      <p>
+        Cuatro preguntas para definir cuál usar:
+      </p>
+      <ol class="article-list">
+        <li><strong>¿Cuánto contenido vas a producir?</strong> Más de 6 sesiones/año en formato similar → virtual. Pieza única → cualquiera.</li>
+        <li><strong>¿Cuántas variaciones de ambiente necesitas?</strong> Múltiples ambientes → virtual. Uno solo → cualquiera.</li>
+        <li><strong>¿El contexto físico aporta al mensaje?</strong> Sí (planta, oficina, locación específica) → físico. No (contenido educativo, anuncios, presentaciones) → virtual.</li>
+        <li><strong>¿Necesitas interacción con objetos reales?</strong> Sí → físico. No → virtual.</li>
+      </ol>
+      <p>
+        En la duda, conviene una llamada con la productora. Cuesta nada y aclara cuál encaja mejor con tu caso específico.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/estudio-virtual/" class="article-cta-btn">
+          Ver nuestro servicio de Estudio Virtual →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Se nota la diferencia en pantalla?</summary>
+        <p>Con producción profesional, no. El estudio virtual moderno usa green screen calibrado, iluminación broadcast e integración 3D en tiempo real. El resultado en pantalla es indistinguible del set físico, incluso en proyecciones grandes.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta uno vs. otro?</summary>
+        <p>Para una sesión única, el estudio virtual es generalmente más económico. Para producciones recurrentes con la misma escenografía, amortiza aún más. Un set físico tiene costos de construcción, transporte y montaje que se repiten cada vez.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuándo conviene set físico real?</summary>
+        <p>Cuando hay interacción física con objetos, el equipo es muy numeroso, el contexto físico es el mensaje (planta industrial, oficinas), o el cliente prefiere la estética de un espacio real con texturas naturales.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto demora una sesión en estudio virtual?</summary>
+        <p>Sesión típica de 1-2 presentadores con escenografía preestablecida: 2-4 horas. Si la escenografía es nueva, agregar 1-3 semanas previas para diseño 3D.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Puedo combinar estudio virtual con elementos físicos reales?</summary>
+        <p>Sí, composición mixta: presentador físico con elementos virtuales agregados (pantallas, gráficos 3D, objetos virtuales). Es la técnica más sofisticada y de mejor calidad.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <h2>¿Necesitas producir contenido broadcast?</h2>
+      <p>
+        En DAR2 producimos en estudio virtual con green screen calibrado, escenografías 3D a medida y postproducción completa. Sin costo de construcción de decorados.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=estudio-virtual" class="article-cta-btn">
+          Cotizar estudio virtual →
+        </a>
+        <a href="/servicios/" class="article-cta-link">
+          O ver todos los servicios →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 48px; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final { background: #fafafa; border-radius: 16px; padding: 40px; margin-top: 80px; }
+  .article-cta-final h2 { margin-top: 0; }
+</style>

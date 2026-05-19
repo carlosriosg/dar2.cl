@@ -30,6 +30,9 @@ DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, 
 
 - [Blog](https://dar2.cl/blog/) — Guías de producción audiovisual y digital para empresas.
 - [Qué es Live Shopping y cómo lo implementan las empresas en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/) — Guía completa: definición, plataformas, métricas, casos de uso por industria.
+- [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Guía técnica: multicámara, enlaces redundantes, plataformas y checklist del día del evento.
+- [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Comparativa práctica de costos, tiempos, flexibilidad y casos de uso de cada opción.
+- [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 métricas clave (views, retention, conversión, engagement, brand lift) + ejemplo de cálculo real.
 
 ## Clientes destacados
 
