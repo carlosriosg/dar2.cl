@@ -1,0 +1,242 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Cirugía Robótica · Clínica Santa María', url: 'https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cirugía Robótica para Clínica Santa María — Caso DAR2",
+  "description": "Producción audiovisual de alta complejidad técnica en pabellón médico para Clínica Santa María. Documentamos el programa de cirugía robótica con tecnología Da Vinci XI y Hugo RAS.",
+  "image": "https://dar2.cl/images/portafolio/Armado-Hugo-RAS2.jpg",
+  "datePublished": "2022-06-01",
+  "dateModified": "2026-05-19",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/",
+  "about": {
+    "@type": "Organization",
+    "name": "Clínica Santa María",
+    "url": "https://www.clinicasantamaria.cl"
+  },
+  "inLanguage": "es-CL"
+};
+---
+
+<Base
+  title="Cirugía Robótica · Clínica Santa María — Caso DAR2"
+  description="Producción audiovisual de alta complejidad en pabellón médico para Clínica Santa María. Cómo DAR2 documentó el programa de cirugía robótica con Da Vinci XI y Hugo RAS."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/portafolio/Armado-Hugo-RAS2.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Salud · 2022</p>
+      <h1 class="case-h1">
+        Cirugía Robótica para
+        <em class="hl">Clínica Santa María.</em>
+      </h1>
+      <p class="case-lead">
+        Producción audiovisual de alta complejidad técnica en pabellón médico para comunicar las capacidades de cirugía robótica del programa más grande de Chile. Iluminación especializada, dirección médica y registro del armado del robot Hugo RAS.
+      </p>
+    </header>
+
+    <!-- Overview -->
+    <section class="case-overview">
+      <div>
+        <p class="overview-label">Cliente</p>
+        <p class="overview-value">Clínica Santa María</p>
+      </div>
+      <div>
+        <p class="overview-label">Año</p>
+        <p class="overview-value">2022</p>
+      </div>
+      <div>
+        <p class="overview-label">Servicio</p>
+        <p class="overview-value">Video corporativo</p>
+      </div>
+      <div>
+        <p class="overview-label">Sector</p>
+        <p class="overview-value">Salud</p>
+      </div>
+    </section>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/portafolio/Armado-Hugo-RAS2.jpg"
+        alt="Armado del robot Hugo RAS — Cirugía Robótica Clínica Santa María, producción audiovisual DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El desafío -->
+    <section class="case-section">
+      <h2>El desafío.</h2>
+      <p>
+        Clínica Santa María opera el programa de cirugía robótica más extenso de Chile: más de 2.400 intervenciones desde 2011 con el sistema Da Vinci XI, único equipo nacional realizando cirugías bariátricas y de hernias con esta tecnología. En 2022, la clínica incorporó un segundo sistema — el Hugo RAS de Medtronic — para ampliar la capacidad operativa y diversificar la oferta robótica entre las cinco especialidades del programa.
+      </p>
+      <p>
+        El desafío para DAR2 era documentar este hito con calidad broadcast, en un entorno hospitalario activo. Filmar en pabellón médico tiene restricciones que no existen en estudio: protocolos de esterilidad, espacios reducidos, iluminación específica del bloque quirúrgico que no acepta nuestros equipos de iluminación estándar, presencia de equipo médico que no puede ser interrumpido y ventanas de tiempo acotadas entre procedimientos reales.
+      </p>
+      <p>
+        Además, el material tenía que servir para múltiples audiencias: prensa especializada, pacientes derivados, médicos referentes y comunicación interna del staff. Cada audiencia exige tono y formato distintos, pero la base audiovisual debía ser una sola.
+      </p>
+    </section>
+
+    <!-- Nuestra solución -->
+    <section class="case-section">
+      <h2>Nuestra solución.</h2>
+      <p>
+        Diseñamos una producción de un día en pabellón con foco en el armado y operación del Hugo RAS. El equipo desplegado se redujo al mínimo necesario para no interferir con el flujo del recinto: dirección, cámara cinema Sony FX6, asistencia técnica, iluminación de bajo perfil compatible con el ambiente quirúrgico y sonido directo.
+      </p>
+      <p>
+        Trabajamos con dirección médica del propio equipo de la clínica, validando cada toma para que el material fuera técnicamente correcto y respetara el protocolo de comunicación institucional. El robot fue protagonista visual: planos cerrados de los brazos robóticos, secuencias del armado completo, detalle de la consola de telemando y la cámara de visión 3D.
+      </p>
+      <p>
+        En postproducción, organizamos el material para que pudiera distribuirse en distintos formatos sin volver a producir: una pieza institucional de 90 segundos para prensa y redes corporativas, cortes verticales para Instagram y LinkedIn de la clínica, secuencias largas para uso interno y archivo.
+      </p>
+    </section>
+
+    <!-- Ejecución -->
+    <section class="case-section">
+      <h2>Ejecución.</h2>
+      <p>
+        El rodaje se hizo en jornada única entre procedimientos quirúrgicos reales. El equipo de DAR2 entró a pabellón con vestimenta y protocolo hospitalario, briefing previo con el equipo médico, y plan minuto a minuto pre-aprobado con la clínica. La iluminación de bajo perfil permitió respetar la luz original del quirófano sin sumar contaminación visual al ambiente clínico.
+      </p>
+      <p>
+        Las secuencias del armado del robot — el componente más visualmente potente de la producción — se registraron en cámara cinema con planos cerrados y movimientos lentos, dándole ritmo cinematográfico a lo que en realidad es un procedimiento técnico de los ingenieros de servicio. Esa decisión narrativa transformó un evento técnico en contenido institucional de alto valor comunicacional.
+      </p>
+    </section>
+
+    <!-- Resultado -->
+    <section class="case-section">
+      <h2>Resultado.</h2>
+      <p>
+        La pieza principal quedó en el canal institucional y los segmentos cortos circularon en redes corporativas. La producción cumplió con el estándar de comunicación médica que exige Clínica Santa María — institución que valora la rigurosidad técnica tanto en el procedimiento como en cómo se comunica.
+      </p>
+      <p>
+        El proyecto consolidó la relación con la clínica, que volvió a contratarnos para otras producciones del área de salud: cirugía urológica, mes del corazón, cápsulas educativas. Hoy somos uno de los referentes audiovisuales del sector salud privado en Santiago.
+      </p>
+    </section>
+
+    <!-- Sobre el programa (contexto cliente) -->
+    <section class="case-section case-context">
+      <h3>Sobre el programa de Cirugía Robótica de Clínica Santa María</h3>
+      <p>
+        El programa funciona desde 2011 con sistema Da Vinci (actualmente Da Vinci XI) y desde 2022 sumó el Hugo RAS. Acumula más de 2.400 intervenciones, el mayor volumen registrado en Chile. Cubre cinco especialidades quirúrgicas: urología (incluye prostatectomía radical y nefrectomía), cirugía bariátrica y metabólica, cirugía de hernias, ginecología y cirugía digestiva. El equipo lo integran cerca de 20 cirujanos certificados en plataformas robóticas.
+      </p>
+      <p>
+        La cirugía robótica permite procedimientos mínimamente invasivos con mayor precisión, menor sangrado postoperatorio, dolor reducido, estadía hospitalaria más breve, cicatrices más pequeñas y recuperación acelerada en comparación con la cirugía tradicional.
+      </p>
+      <p class="case-source">
+        Fuente: <a href="https://www.clinicasantamaria.cl/especialidades/cirugia-robotica" target="_blank" rel="noopener">clinicasantamaria.cl/especialidades/cirugia-robotica</a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Tu marca necesita producción audiovisual de calidad broadcast?</h2>
+      <p>
+        En DAR2 producimos video corporativo en entornos complejos: hospitales, plantas industriales, eventos en vivo, presentaciones broadcast. Cotización a medida en 48 horas.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto?servicio=videos-corporativos" class="case-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/portafolio/" class="case-cta-link">
+          O ver más proyectos →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+
+  .case-context {
+    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  }
+  .case-context h3 { margin-top: 0; }
+  .case-context p { font-size: 16px; color: #555; }
+  .case-source { font-size: 14px; color: #888; margin-top: 12px; }
+  .case-source a { color: #666; text-decoration: underline; }
+  .case-source a:hover { color: #E63E00; }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>

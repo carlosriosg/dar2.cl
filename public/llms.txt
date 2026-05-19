@@ -26,6 +26,11 @@ DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, 
 - [Contacto](https://dar2.cl/contacto/) — Formulario y datos directos (WhatsApp, email, dirección).
 - [Política de privacidad](https://dar2.cl/privacidad/) — Tratamiento de datos conforme a Ley 19.628 de Chile.
 
+## Casos de éxito
+
+- [Casos](https://dar2.cl/casos/) — Selección de proyectos contados en detalle (desafío, solución, ejecución, resultado).
+- [Cirugía Robótica · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — Producción audiovisual en pabellón médico documentando el programa de cirugía robótica más extenso de Chile (Da Vinci XI + Hugo RAS).
+
 ## Blog y guías
 
 - [Blog](https://dar2.cl/blog/) — Guías de producción audiovisual y digital para empresas.

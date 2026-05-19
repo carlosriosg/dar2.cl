@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+];
+
+const cases = [
+  {
+    slug: 'cirugia-robotica-clinica-santa-maria',
+    title: 'Cirugía Robótica · Clínica Santa María',
+    excerpt: 'Producción audiovisual en pabellón médico para documentar el programa de cirugía robótica más extenso de Chile (Da Vinci XI + Hugo RAS).',
+    year: 2022,
+    sector: 'Salud',
+    service: 'Video corporativo',
+  },
+];
+---
+
+<Base
+  title="Casos de éxito — Producción audiovisual para empresas chilenas"
+  description="Casos detallados de producción audiovisual de DAR2 para empresas chilenas: video corporativo, streaming, live shopping en sectores salud, retail, banca y más."
+  breadcrumbs={breadcrumbs}
+>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Casos</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      Cómo trabajamos
+      <em class="not-italic italic text-[#FF4500]"> con nuestros clientes.</em>
+    </h1>
+    <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
+      Selección de proyectos contados en detalle: el desafío, nuestra solución, ejecución y resultados.
+    </p>
+  </section>
+
+  <!-- Listado -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+    <ul class="cases-list">
+      {cases.map(c => (
+        <li class="case-item">
+          <a href={`/casos/${c.slug}/`} class="case-link">
+            <p class="case-meta">{c.sector} · {c.year} · {c.service}</p>
+            <h2 class="case-title">{c.title}</h2>
+            <p class="case-excerpt">{c.excerpt}</p>
+            <p class="case-readmore">Ver caso →</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+</Base>
+
+<style>
+  .cases-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 32px; }
+  .case-item { border-bottom: 1px solid #e5e5e5; padding-bottom: 32px; }
+  .case-item:last-child { border-bottom: none; }
+  .case-link { text-decoration: none; display: block; color: inherit; }
+  .case-meta {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #888; margin-bottom: 12px;
+  }
+  .case-title {
+    font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px;
+    margin: 0 0 12px; color: #1a1a1a; transition: color 0.2s ease;
+  }
+  .case-link:hover .case-title { color: #E63E00; }
+  .case-excerpt { font-size: 16px; line-height: 1.6; color: #555; margin: 0 0 16px; }
+  .case-readmore { font-size: 14px; font-weight: 700; color: #E63E00; margin: 0; }
+</style>
