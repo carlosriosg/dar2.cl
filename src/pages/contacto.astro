@@ -179,22 +179,163 @@ const breadcrumbs = [
   <!-- Mapa Google Maps -->
   <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-16">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Ubicación</p>
-    <h2 class="text-3xl font-black tracking-tight mb-8 max-w-2xl">
-      Av. Holanda 099, oficina 603 — Providencia.
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+      Estamos en
+      <em class="not-italic italic text-[#FF4500]"> Providencia.</em>
     </h2>
-    <div class="rounded-[16px] overflow-hidden aspect-[16/9] md:aspect-[21/9] bg-[#eaeaea]">
-      <iframe
-        title="Mapa de ubicación de DAR2 Servicios Audiovisuales en Av. Holanda 099, Providencia"
-        src="https://maps.google.com/maps?q=Av.+Holanda+099,+Providencia,+Chile&t=&z=16&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen={false}
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+
+    <div class="map-grid">
+      <!-- Info textual de la ubicación -->
+      <div class="map-info">
+        <div class="map-info-item">
+          <svg class="map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            <p class="map-info-label">Dirección</p>
+            <p class="map-info-value">Av. Holanda 099, oficina 603<br />Providencia, Santiago — Chile</p>
+          </div>
+        </div>
+
+        <div class="map-info-item">
+          <svg class="map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <div>
+            <p class="map-info-label">Estacionamiento</p>
+            <p class="map-info-value">Pagado en el edificio<br />Parquímetros en la calle</p>
+          </div>
+        </div>
+
+        <div class="map-info-item">
+          <svg class="map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div>
+            <p class="map-info-label">Horario</p>
+            <p class="map-info-value">Lunes a viernes<br />09:00 — 19:00 hrs</p>
+          </div>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=-33.418232666829546,-70.60460118861644"
+          target="_blank"
+          rel="noopener"
+          class="map-cta"
+        >
+          Cómo llegar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mapa -->
+      <div class="map-iframe-wrap">
+        <iframe
+          title="Mapa de ubicación de DAR2 Servicios Audiovisuales en Av. Holanda 099, Providencia"
+          src="https://maps.google.com/maps?q=-33.418232666829546,-70.60460118861644&t=&z=17&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen={false}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   </section>
+
+  <style>
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 1100px;
+    }
+    @media (min-width: 768px) {
+      .map-grid {
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+        align-items: stretch;
+      }
+    }
+
+    .map-info {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .map-info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .map-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: #FF4500;
+      margin-top: 2px;
+    }
+
+    .map-info-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+      margin: 0 0 4px;
+    }
+
+    .map-info-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .map-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    .map-cta:hover {
+      background: #333;
+    }
+
+    .map-iframe-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #eaeaea;
+      aspect-ratio: 4 / 3;
+      min-height: 320px;
+    }
+    @media (min-width: 768px) {
+      .map-iframe-wrap {
+        aspect-ratio: auto;
+        min-height: 360px;
+      }
+    }
+  </style>
 
 </Base>
 
