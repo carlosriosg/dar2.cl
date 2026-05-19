@@ -1,0 +1,246 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Valores Corporativos · CASTAÑO', url: 'https://dar2.cl/casos/valores-corporativos-castano/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Valores Corporativos para CASTAÑO — Caso DAR2",
+  "description": "Producción de video institucional de valores corporativos para CASTAÑO, panadería chilena con 90 años de historia y más de 2.000 colaboradores. Dirección de arte y piezas testimoniales.",
+  "image": "https://dar2.cl/images/portafolio/valores-castano.jpg",
+  "datePublished": "2023-09-01",
+  "dateModified": "2026-05-19",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/casos/valores-corporativos-castano/",
+  "about": {
+    "@type": "Organization",
+    "name": "CASTAÑO",
+    "url": "https://pedidos.castano.cl/nosotros",
+    "foundingDate": "1933"
+  },
+  "inLanguage": "es-CL"
+};
+---
+
+<Base
+  title="Valores Corporativos · CASTAÑO — Caso DAR2"
+  description="Cómo DAR2 produjo el video de valores corporativos para CASTAÑO: 90 años de historia panadera, 2.000+ colaboradores, dirección de arte y testimoniales."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/portafolio/valores-castano.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Retail Alimenticio · 2023</p>
+      <h1 class="case-h1">
+        Valores Corporativos para
+        <em class="hl">CASTAÑO.</em>
+      </h1>
+      <p class="case-lead">
+        Cómo contamos los valores de una panadería con 90 años de historia y más de 2.000 colaboradores. Dirección de arte cuidada, piezas testimoniales con personas reales del staff y un video institucional que la marca usa internamente para reforzar su cultura organizacional.
+      </p>
+    </header>
+
+    <!-- Overview -->
+    <section class="case-overview">
+      <div>
+        <p class="overview-label">Cliente</p>
+        <p class="overview-value">CASTAÑO</p>
+      </div>
+      <div>
+        <p class="overview-label">Año</p>
+        <p class="overview-value">2023</p>
+      </div>
+      <div>
+        <p class="overview-label">Servicio</p>
+        <p class="overview-value">Video corporativo</p>
+      </div>
+      <div>
+        <p class="overview-label">Sector</p>
+        <p class="overview-value">Retail Alimenticio</p>
+      </div>
+    </section>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/portafolio/valores-castano.jpg"
+        alt="Valores Corporativos CASTAÑO — Producción audiovisual DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El desafío -->
+    <section class="case-section">
+      <h2>El desafío.</h2>
+      <p>
+        CASTAÑO no es una empresa joven. Tiene más de 90 años en el mercado chileno — fundada en 1933 — y opera con más de 2.000 colaboradores entre dos plantas productivas, una red extensa de locales propios y una operación de distribución que abastece a las principales cadenas de supermercados, restaurantes e instituciones del país. Transformar esa historia en un video de valores corporativos de 3 minutos no es trivial.
+      </p>
+      <p>
+        El brief inicial pedía un material institucional que sirviera para comunicación interna: nuevos colaboradores que entran a la empresa, capacitaciones, recordatorios de cultura organizacional, recap anual del board. Tenía que sentirse honesto — sin la frialdad corporativa típica de los videos institucionales — pero al mismo tiempo cumplir con un estándar de producción broadcast que la marca pueda reutilizar durante años.
+      </p>
+      <p>
+        El desafío adicional: comunicar valores universales (calidad, tradición, compromiso) sin caer en el lugar común. La diferenciación de CASTAÑO no está en lo que dicen sus valores, está en cómo los aplican día a día — y eso solo se cuenta con las personas reales del staff, no con un guion genérico.
+      </p>
+    </section>
+
+    <!-- Nuestra solución -->
+    <section class="case-section">
+      <h2>Nuestra solución.</h2>
+      <p>
+        Construimos el video en torno a tres ejes narrativos: <strong>historia</strong> (la panadería de barrio que se volvió cadena nacional), <strong>oficio</strong> (lo que sus panaderos y operarios saben hacer mejor que nadie), y <strong>compromiso</strong> (el vínculo entre el equipo y el cliente final). Cada eje se sostiene con testimoniales reales de colaboradores en cuadro, no con voces en off ni texto sobreimpreso.
+      </p>
+      <p>
+        La dirección de arte priorizó las locaciones reales: planta productiva, locales de venta, áreas de despacho. Eso da textura, profundidad y autenticidad que un set construido nunca logra. Cámara cinema Sony FX6 con lentes que respetan la calidez del ambiente panadero — harina, masa, el horno encendido — sin caer en el cliché publicitario.
+      </p>
+      <p>
+        Los testimoniales se trabajaron previamente: definimos perfiles del staff que representaban distintas dimensiones de la marca (un panadero con décadas de oficio, una jefa de local, un operario joven), los entrevistamos sin guion, y armamos el video desde lo que dijeron — no al revés. Esa decisión hace que el material se sienta auténtico aunque sea producción profesional.
+      </p>
+    </section>
+
+    <!-- Ejecución -->
+    <section class="case-section">
+      <h2>Ejecución.</h2>
+      <p>
+        Rodaje de dos jornadas distribuidas entre planta productiva y locales de venta. El equipo de DAR2 entró con vestimenta protocolizada por las normas de inocuidad alimentaria de la planta, sin interrumpir el flujo productivo. Las tomas en planta — masa en producción, hornos, despacho — se hicieron en horario de operación real, no con simulaciones, lo que da al video una capa documental que el espectador siente aunque no la verbalice.
+      </p>
+      <p>
+        Las entrevistas testimoniales se filmaron en luz natural, con encuadres limpios y sin escenografía añadida. La persona habla, la planta o el local funciona detrás. Esa decisión técnica reduce postproducción y aumenta credibilidad.
+      </p>
+    </section>
+
+    <!-- Resultado -->
+    <section class="case-section">
+      <h2>Resultado.</h2>
+      <p>
+        El video quedó en la rotación interna de CASTAÑO para inducción de nuevos colaboradores, capacitaciones de cultura organizacional, presentaciones a proveedores y stakeholders. La pieza institucional ancla resume el ethos de la marca sin agotarse en tendencias visuales que envejecen rápido — es contenido pensado para usar varios años.
+      </p>
+      <p>
+        El proyecto consolidó la relación con CASTAÑO y abrió la conversación para otros formatos: contenido para redes sociales, recap de eventos internos, comunicación digital recurrente. El video de valores es la base sobre la que ahora se construye toda la narrativa de marca para audiencias internas y externas.
+      </p>
+    </section>
+
+    <!-- Sobre el cliente -->
+    <section class="case-section case-context">
+      <h3>Sobre CASTAÑO</h3>
+      <p>
+        CASTAÑO es una empresa panadera chilena fundada en 1933 en Santiago. En sus más de 90 años de operación, se transformó desde una pequeña panadería de barrio en una cadena con presencia nacional: red extensa de locales propios a lo largo de Chile, dos plantas productivas modernas, distribución en las principales cadenas de supermercados y abastecimiento diario a cientos de restaurantes e instituciones.
+      </p>
+      <p>
+        La empresa cuenta con más de 2.000 colaboradores y un programa de fidelización propio (Puntos Pancitos). Su posicionamiento se basa en un compromiso sostenido con la calidad de sus productos — un atributo que la marca defiende como el pilar central de su prestigio en el mercado chileno.
+      </p>
+      <p class="case-source">
+        Fuente: <a href="https://pedidos.castano.cl/nosotros" target="_blank" rel="noopener">pedidos.castano.cl/nosotros</a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Quieres producir el video institucional de tu empresa?</h2>
+      <p>
+        En DAR2 producimos videos de valores, cultura organizacional y comunicación interna con dirección de arte y testimoniales reales. Cotización a medida en 48 horas.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto?servicio=videos-corporativos" class="case-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/casos/" class="case-cta-link">
+          O ver más casos →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  .case-context {
+    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  }
+  .case-context h3 { margin-top: 0; }
+  .case-context p { font-size: 16px; color: #555; }
+  .case-source { font-size: 14px; color: #888; margin-top: 12px; }
+  .case-source a { color: #666; text-decoration: underline; }
+  .case-source a:hover { color: #E63E00; }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>
