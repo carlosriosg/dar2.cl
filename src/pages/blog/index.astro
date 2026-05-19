@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+];
+
+// Lista de artículos. Cuando agregues nuevos, los pones aquí.
+const articles = [
+  {
+    slug: 'que-es-live-shopping-chile',
+    title: 'Qué es Live Shopping y cómo lo implementan las empresas en Chile',
+    excerpt: 'Guía completa de live shopping: qué es, cómo funciona, plataformas, métricas y casos de uso en retail, farma y supermercados.',
+    date: '2026-05-19',
+    readTime: '8 min',
+    category: 'Live Shopping',
+  },
+];
+---
+
+<Base
+  title="Blog — Guías de producción audiovisual y live shopping"
+  description="Artículos sobre producción audiovisual, live shopping, streaming corporativo, video marketing y tendencias para empresas en Chile."
+  breadcrumbs={breadcrumbs}
+>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Blog</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
+      Guías de producción
+      <em class="not-italic italic text-[#FF4500]"> audiovisual y digital.</em>
+    </h1>
+    <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
+      Artículos sobre live shopping, streaming corporativo, video marketing y tendencias para empresas en Chile.
+    </p>
+  </section>
+
+  <!-- Listado -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+    <ul class="blog-list">
+      {articles.map(art => (
+        <li class="blog-item">
+          <a href={`/blog/${art.slug}/`} class="blog-link">
+            <p class="blog-meta">{art.category} · {art.readTime} de lectura</p>
+            <h2 class="blog-title">{art.title}</h2>
+            <p class="blog-excerpt">{art.excerpt}</p>
+            <p class="blog-readmore">Leer artículo →</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+</Base>
+
+<style>
+  .blog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .blog-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 32px;
+  }
+
+  .blog-item:last-child {
+    border-bottom: none;
+  }
+
+  .blog-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .blog-meta {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  .blog-title {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+  }
+
+  .blog-link:hover .blog-title {
+    color: #E63E00;
+  }
+
+  .blog-excerpt {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 16px;
+  }
+
+  .blog-readmore {
+    font-size: 14px;
+    font-weight: 700;
+    color: #E63E00;
+    margin: 0;
+  }
+</style>

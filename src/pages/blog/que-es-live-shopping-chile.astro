@@ -1,0 +1,534 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Qué es Live Shopping en Chile', url: 'https://dar2.cl/blog/que-es-live-shopping-chile/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Qué es Live Shopping y cómo lo implementan las empresas en Chile",
+  "description": "Guía completa de live shopping para empresas chilenas: qué es, cómo funciona, plataformas, métricas y casos de uso reales en retail, farma y supermercados.",
+  "image": "https://dar2.cl/images/servicios/live-shopping.jpg",
+  "datePublished": "2026-05-19",
+  "dateModified": "2026-05-19",
+  "author": {
+    "@type": "Person",
+    "name": "Carlos Rios Guevara",
+    "url": "https://dar2.cl/nosotros/"
+  },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/que-es-live-shopping-chile/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre live shopping y un streaming normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un streaming normal solo transmite contenido en vivo. Live shopping es streaming integrado con un e-commerce: el espectador ve el producto y puede comprarlo durante la transmisión, sin salir del video. Incluye gráficas con precios, SKUs, stock y links directos al carrito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué plataformas se puede hacer live shopping en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las principales son TikTok Live, Instagram Live, YouTube Live, Facebook Live y plataformas custom embebidas en el propio e-commerce. La elección depende del público objetivo, los productos y el ticket promedio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto vende una sesión típica de live shopping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Varía mucho según marca, producto y audiencia. En retail chileno, sesiones bien producidas con audiencias de 1.000-5.000 espectadores simultáneos pueden generar entre 5 y 50 millones de pesos en ventas atribuibles, con tasas de conversión 5-10 veces superiores al e-commerce tradicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué duración tiene una sesión de live shopping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La sweet spot está entre 60 y 120 minutos, con 90 minutos siendo lo más común. Una sesión más larga permite mostrar más productos, pero retener audiencia más allá de 2 horas es difícil. Se recomienda segmentar en bloques de 15-20 minutos con productos diferentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se necesita influencer o puede hacerlo la propia marca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas opciones funcionan. Influencers traen audiencia preconstruida y experiencia frente a cámara. Conducción interna de la marca cuesta menos y construye identidad propia. Lo importante es la dirección y producción profesional, no quién sale en pantalla."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="Qué es Live Shopping y cómo lo implementan las empresas en Chile"
+  description="Guía completa de live shopping: qué es, cómo funciona, plataformas (TikTok, Instagram, YouTube), métricas, casos de uso y cómo implementarlo en Chile. Por DAR2."
+  breadcrumbs={breadcrumbs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Live Shopping</p>
+      <h1 class="article-h1">
+        Qué es Live Shopping y cómo lo implementan
+        <em class="hl">las empresas en Chile.</em>
+      </h1>
+      <p class="article-lead">
+        El live shopping es la categoría de comercio digital de mayor crecimiento en LatAm. Si vendes a través de e-commerce, esta guía te muestra qué es, cómo funciona, qué plataformas usar y qué métricas medir.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 19 de mayo, 2026 · 8 min de lectura
+      </p>
+    </header>
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es">¿Qué es live shopping?</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#por-que-chile">Por qué está creciendo en Chile</a></li>
+        <li><a href="#beneficios">Beneficios para tu marca</a></li>
+        <li><a href="#plataformas">Plataformas disponibles</a></li>
+        <li><a href="#casos">Casos de uso por industria</a></li>
+        <li><a href="#metricas">Métricas clave</a></li>
+        <li><a href="#implementar">Cómo implementarlo</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="que-es">
+      <h2>¿Qué es live shopping?</h2>
+      <p>
+        El <strong>live shopping</strong> es una técnica de venta digital que combina <strong>streaming en vivo</strong> con <strong>compra directa en tiempo real</strong>. Durante la transmisión, los espectadores ven al presentador mostrando productos, hacen preguntas en el chat, y pueden comprar sin salir del video — el e-commerce está integrado en la experiencia.
+      </p>
+      <p>
+        Es la evolución natural del televenta de los 90, llevado a redes sociales y plataformas digitales modernas. Donde antes había un 800 y un operador, ahora hay un stream interactivo con métricas instantáneas, segmentación de audiencia y reutilización del contenido.
+      </p>
+      <p>
+        En 2023, China generó más de <strong>USD 562 mil millones</strong> en ventas vía live shopping. LatAm va creciendo a doble dígito anual desde 2021, con Chile y México como mercados pioneros del segmento.
+      </p>
+    </section>
+
+    <section class="article-section" id="como-funciona">
+      <h2>Cómo funciona una sesión de live shopping</h2>
+      <p>
+        Una sesión típica involucra cinco componentes técnicos:
+      </p>
+      <ol class="article-list">
+        <li><strong>Producción audiovisual:</strong> cámara, sonido, iluminación, switcher y dirección en vivo. Lo más cercano a una producción broadcast de televisión.</li>
+        <li><strong>Conducción profesional:</strong> uno o dos presentadores que conocen los productos, manejan el ritmo y responden al chat en tiempo real.</li>
+        <li><strong>Integración con e-commerce:</strong> la plataforma (Shopify, VTEX, Magento, custom) muestra el producto y permite agregarlo al carrito desde el video o en una pestaña al lado.</li>
+        <li><strong>Gráficas en tiempo real:</strong> overlays con precio, SKU, stock disponible, descuentos vigentes, contadores de tiempo limitado.</li>
+        <li><strong>Reporte de métricas:</strong> audiencia simultánea, picos, interacciones, clicks a producto y ventas atribuibles. Todo medible en tiempo real y post-sesión.</li>
+      </ol>
+      <p>
+        Los espectadores entran al stream desde un link compartido, redes sociales o una notificación push. Pueden interactuar en chat, hacer preguntas, recibir cupones exclusivos y comprar — todo dentro del mismo flujo.
+      </p>
+    </section>
+
+    <section class="article-section" id="por-que-chile">
+      <h2>Por qué está creciendo en Chile</h2>
+      <p>
+        El mercado chileno tiene tres condiciones que aceleran la adopción del live shopping:
+      </p>
+      <ol class="article-list">
+        <li><strong>Penetración de e-commerce alta:</strong> según la CCS, el 95% de los hogares chilenos compró online en 2024. La infraestructura de pagos digitales (Webpay, Khipu, Mercado Pago) está madura.</li>
+        <li><strong>Consumo de video en redes sociales masivo:</strong> Chile tiene una de las mayores penetraciones de Instagram y TikTok per cápita en LatAm. El comportamiento de "scrollear contenido en vivo" ya es nativo.</li>
+        <li><strong>Retail concentrado y abierto a innovación:</strong> los grandes retailers (Cencosud, Falabella, Ripley, ABCDIN, PC Factory) están experimentando activamente con formatos digitales. Live shopping es una palanca de conversión natural para ellos.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="beneficios">
+      <h2>Beneficios para tu marca</h2>
+      <p>
+        Comparado con otros formatos de venta digital, el live shopping ofrece ventajas únicas:
+      </p>
+      <ul class="article-list">
+        <li><strong>Conversión 5-10× mayor que el e-commerce tradicional.</strong> Los espectadores que llegan al stream ya están en modo "intención de compra", y la presión social del chat acelera la decisión.</li>
+        <li><strong>Engagement medible y comparable.</strong> Cada segundo de stream se vincula con clicks a producto, agregados al carrito y ventas. No hay caja negra como en una campaña de display.</li>
+        <li><strong>Contenido reutilizable.</strong> Una sesión de 90 minutos se trocea en 20-30 cápsulas para Reels, TikToks, Shorts y Stories. El ROI del video se multiplica.</li>
+        <li><strong>Reducción del costo de adquisición.</strong> Los clientes que llegan al stream tienen origen orgánico (redes sociales, base propia, influencers). No estás pagando CPC a Meta o Google.</li>
+        <li><strong>Construcción de comunidad.</strong> Las marcas que hacen live shopping recurrente (mensual o quincenal) construyen audiencias propias que vuelven sin necesidad de paid media.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="plataformas">
+      <h2>Plataformas disponibles en Chile</h2>
+      <p>
+        No hay "mejor plataforma" — cada una sirve para un caso de uso diferente. Las opciones más usadas:
+      </p>
+
+      <h3>TikTok Live</h3>
+      <p>
+        Ideal para marcas con audiencia joven (Gen Z y Millennials). Conversión alta gracias al algoritmo de TikTok que sirve el live a usuarios afines. <em>TikTok Shop</em> permite link directo de compra dentro del live en países habilitados. En Chile, el rollout completo está en proceso.
+      </p>
+
+      <h3>Instagram Live</h3>
+      <p>
+        El más usado en LatAm por su penetración y simplicidad. No tiene link de compra directo desde el video (todavía), pero se complementa con un carrusel de Reels y stories con stickers de producto.
+      </p>
+
+      <h3>YouTube Live</h3>
+      <p>
+        Mejor para audiencias amplias y contenido más largo (60-120 min). La calidad de video es la más alta y la grabación queda en el canal. Se puede embebir en el propio sitio para mantener al usuario en tu ecosistema.
+      </p>
+
+      <h3>Facebook Live</h3>
+      <p>
+        Aún relevante para audiencias 35+. Buena para marcas de retail tradicional y productos de mayor ticket.
+      </p>
+
+      <h3>Plataformas custom (embebido en el e-commerce)</h3>
+      <p>
+        La opción más sofisticada: el live transmite directo en tu sitio, con el carrito al lado y sin distracciones. Plataformas como Bambuser, Eyezon o Buywith ofrecen white-label. Requiere integración técnica pero entrega control total de la experiencia.
+      </p>
+    </section>
+
+    <section class="article-section" id="casos">
+      <h2>Casos de uso por industria</h2>
+
+      <h3>Retail (moda, hogar, electrónica)</h3>
+      <p>
+        El caso más maduro. Lanzamientos de temporada, liquidaciones, ventas flash, activaciones de categoría con marcas aliadas. Tickets promedio entre CLP 30.000 y 200.000.
+      </p>
+
+      <h3>Farma y belleza</h3>
+      <p>
+        Demostración de productos (skincare, cosmética, suplementos), educación + venta. La autoridad del presentador (dermatólogo, especialista) cierra ventas que requieren explicación técnica.
+      </p>
+
+      <h3>Supermercados</h3>
+      <p>
+        Bundles de despensa, campañas de temporada (Navidad, Fiestas Patrias), promociones cruzadas con marcas. Foco en volumen y conveniencia.
+      </p>
+
+      <h3>Servicios B2B</h3>
+      <p>
+        Demos de software, eventos de partners, lanzamientos de líneas premium. Audiencias más pequeñas pero ticket muy alto.
+      </p>
+    </section>
+
+    <section class="article-section" id="metricas">
+      <h2>Métricas clave que tienes que medir</h2>
+      <p>
+        Si vas a invertir en live shopping, mide estas variables. Si tu proveedor no las entrega, busca otro:
+      </p>
+      <ul class="article-list">
+        <li><strong>Audiencia simultánea pico</strong>: el mayor número de espectadores en cualquier momento del stream.</li>
+        <li><strong>Audiencia única total</strong>: cuántas personas distintas vieron al menos 1 segundo.</li>
+        <li><strong>Tiempo promedio de visualización</strong>: indicador de qué tan bien retiene la sesión.</li>
+        <li><strong>Tasa de conversión</strong>: ventas / espectadores únicos.</li>
+        <li><strong>Ticket promedio</strong>: monto promedio por compra.</li>
+        <li><strong>Revenue total atribuible</strong>: GMV (Gross Merchandise Value) generado durante y 24h después del live.</li>
+        <li><strong>Costo por adquisición (CPA)</strong>: costo total de la producción dividido por ventas. Compáralo con tu CPA promedio en otros canales.</li>
+        <li><strong>Engagement</strong>: mensajes en chat por minuto, reacciones, shares.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="implementar">
+      <h2>Cómo implementar live shopping en tu marca</h2>
+      <p>
+        El error más común es subestimar la producción. Un stream desde un celular con mal sonido convierte mal sin importar lo bueno que sea el producto. Necesitas:
+      </p>
+      <ol class="article-list">
+        <li><strong>Producción profesional:</strong> multicámara, sonido broadcast, iluminación, switcher con gráficas, dirección en vivo.</li>
+        <li><strong>Definir el formato y la frecuencia:</strong> sesión única para un lanzamiento, o programa recurrente (mensual/quincenal) para construir audiencia.</li>
+        <li><strong>Integración técnica con tu e-commerce:</strong> que los productos sean comprables sin fricción.</li>
+        <li><strong>Estrategia de audiencia:</strong> cómo llevas espectadores al stream (base propia, paid media, influencers, partnerships).</li>
+        <li><strong>Plan de reutilización del contenido:</strong> qué cápsulas vas a sacar del live para distribuir después.</li>
+      </ol>
+      <p>
+        DAR2 produce live shopping end-to-end desde hace 4 años. Hemos hecho lanzamientos para retail, farmacias y supermercados con foco en conversión medible.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/live-shopping/" class="article-cta-btn">
+          Ver nuestro servicio de Live Shopping →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuál es la diferencia entre live shopping y un streaming normal?</summary>
+        <p>Un streaming normal solo transmite contenido en vivo. Live shopping es streaming integrado con un e-commerce: el espectador ve el producto y puede comprarlo durante la transmisión, sin salir del video. Incluye gráficas con precios, SKUs, stock y links directos al carrito.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿En qué plataformas se puede hacer live shopping en Chile?</summary>
+        <p>Las principales son TikTok Live, Instagram Live, YouTube Live, Facebook Live y plataformas custom embebidas en el propio e-commerce. La elección depende del público objetivo, los productos y el ticket promedio.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto vende una sesión típica de live shopping?</summary>
+        <p>Varía mucho según marca, producto y audiencia. En retail chileno, sesiones bien producidas con audiencias de 1.000-5.000 espectadores simultáneos pueden generar entre 5 y 50 millones de pesos en ventas atribuibles, con tasas de conversión 5-10 veces superiores al e-commerce tradicional.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué duración tiene una sesión de live shopping?</summary>
+        <p>La sweet spot está entre 60 y 120 minutos, con 90 minutos siendo lo más común. Una sesión más larga permite mostrar más productos, pero retener audiencia más allá de 2 horas es difícil. Se recomienda segmentar en bloques de 15-20 minutos con productos diferentes.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Se necesita influencer o puede hacerlo la propia marca?</summary>
+        <p>Ambas opciones funcionan. Influencers traen audiencia preconstruida y experiencia frente a cámara. Conducción interna de la marca cuesta menos y construye identidad propia. Lo importante es la dirección y producción profesional, no quién sale en pantalla.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <h2>¿Listo para producir tu primer live shopping?</h2>
+      <p>
+        En DAR2 producimos live shopping end-to-end con producción broadcast, conducción profesional e integración con tu e-commerce. Cotización a medida en 48 horas.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=live-shopping" class="article-cta-btn">
+          Cotizar mi live shopping →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 48px;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .article-meta a {
+    color: #888;
+    text-decoration: underline;
+  }
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 80px;
+  }
+
+  .article-cta-final h2 {
+    margin-top: 0;
+  }
+</style>

@@ -12,8 +12,9 @@ const {
 } = Astro.props;
 
 const isLocal = typeof src === 'string' && src.startsWith('/');
+const avif = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.avif') : src;
 const webp = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.webp') : src;
-const hasWebp = isLocal && webp !== src;
+const hasModern = isLocal && webp !== src;
 
 // Construir atributos del img de forma uniforme. Astro filtra undefined.
 const imgAttrs = {
@@ -29,8 +30,9 @@ const imgAttrs = {
 };
 ---
 
-{hasWebp ? (
+{hasModern ? (
   <picture>
+    <source srcset={avif} type="image/avif" />
     <source srcset={webp} type="image/webp" />
     <img {...imgAttrs} />
   </picture>
