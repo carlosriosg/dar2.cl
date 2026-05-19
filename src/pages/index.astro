@@ -102,9 +102,9 @@ const clienteUrls: Record<string, string> = {
           </span>
           <span
             class="block"
-            style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px; min-height: 2.4em;"
+            style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px; min-height: 4em;"
           >
-            Producimos <span
+            Producimos<br /><span
               id="rotating-word"
               style="color:#E63E00;font-style:italic;opacity:1;transition:opacity 0.2s ease;"
             >live shopping</span><br />y mucho más.
@@ -451,10 +451,16 @@ const clienteUrls: Record<string, string> = {
     const shuffled = [...heroPool].sort(() => 0.5 - Math.random());
     imgs.forEach((img, i) => {
       const file = shuffled[i];
-      const webp = file.replace(/\.(png|jpe?g)$/i, '.webp');
-      const source = img.previousElementSibling;
-      if (source && source.tagName === 'SOURCE') {
-        source.srcset = `/images/portafolio/${webp}`;
+      const webpFile = file.replace(/\.(png|jpe?g)$/i, '.webp');
+      const avifFile = file.replace(/\.(png|jpe?g)$/i, '.avif');
+      // Picture.astro genera <picture> con <source avif>, <source webp>, <img>.
+      // Hay que actualizar AMBOS sources, no solo el primero (bug previo).
+      const picture = img.parentElement;
+      if (picture && picture.tagName === 'PICTURE') {
+        picture.querySelectorAll('source').forEach(s => {
+          if (s.type === 'image/avif') s.srcset = `/images/portafolio/${avifFile}`;
+          else if (s.type === 'image/webp') s.srcset = `/images/portafolio/${webpFile}`;
+        });
       }
       img.src = `/images/portafolio/${file}`;
     });
