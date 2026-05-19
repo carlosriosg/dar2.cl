@@ -153,9 +153,12 @@ const clienteUrls: Record<string, string> = {
   <!-- ── 2. SERVICIOS (8) ──────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-3">Servicios</p>
-    <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-10">
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-6">
       8 servicios. Un solo proveedor.
     </h2>
+    <p class="text-base md:text-lg text-[#666] leading-relaxed max-w-3xl mb-10">
+      Desde streaming corporativo en vivo hasta filtros AR para Instagram. Equipo propio, postproducción interna y una sola factura por todo el proyecto. Sin coordinar 5 proveedores. Sin sorpresas en el presupuesto.
+    </p>
 
     <div class="home-svc-grid">
       {servicios.map((s) => (
@@ -202,9 +205,12 @@ const clienteUrls: Record<string, string> = {
           Ver todos los proyectos →
         </a>
       </div>
-      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-12">
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
         Trabajo real,<br />clientes reales.
       </h2>
+      <p class="text-base md:text-lg text-[#666] leading-relaxed max-w-3xl mb-12">
+        Cirugías robóticas transmitidas en vivo para Clínica Santa María, junta anual de accionistas para Empresas Copec, videos de cultura organizacional para Polpaico y CMPC, portal de formación para AFP Habitat. Cada caso producido por nuestro equipo, dirigido por nuestro director, entregado en plazo.
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
         {destacados.map(item => (
           <VideoCard
@@ -282,12 +288,52 @@ const clienteUrls: Record<string, string> = {
     </div>
   </section>
 
+  <!-- ── 4B. TESTIMONIALES ─────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Testimonios</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+      Lo que dicen quienes ya trabajaron con DAR2.
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "DAR2 produjo nuestra junta anual durante varios años seguidos. Cero interrupciones, cero excusas. Cuando una marca te pide eso, los recomendamos antes que cualquier otro."
+        </p>
+        <footer class="testimonial-meta">
+          <p class="testimonial-role">Gerente de Comunicaciones</p>
+          <p class="testimonial-org">Retail multinacional, Chile</p>
+        </footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Pasamos de hacer videos en Zoom con el celular del jefe a contenido broadcast con escenografía virtual. La diferencia en percepción de marca con nuestros afiliados fue inmediata."
+        </p>
+        <footer class="testimonial-meta">
+          <p class="testimonial-role">Directora de Marketing Digital</p>
+          <p class="testimonial-org">AFP, Chile</p>
+        </footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Nuestro primer live shopping convirtió varias veces mejor que el e-commerce normal. Ahora hacemos uno cada dos semanas. DAR2 ya nos ha producido decenas de sesiones."
+        </p>
+        <footer class="testimonial-meta">
+          <p class="testimonial-role">Jefe de Activaciones</p>
+          <p class="testimonial-org">Retail farmacéutico, Chile</p>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
   <!-- ── 5. STATS ──────────────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">En números</p>
-    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-xl">
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-xl">
       Trayectoria que respalda cada proyecto.
     </h2>
+    <p class="text-base md:text-lg text-[#666] leading-relaxed max-w-3xl mb-12">
+      Fundada en 2010 por Carlos Rios Guevara. 15 años produciendo audiovisual para empresas chilenas con equipo propio y postproducción interna. Las cifras hablan por nosotros.
+    </p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
       <div class="border-l-2 border-[#FF4500] pl-6">
         <p class="text-5xl font-black tracking-tight">15+</p>
@@ -302,8 +348,39 @@ const clienteUrls: Record<string, string> = {
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
       </div>
       <div class="border-l-2 border-[#e5e5e5] pl-6">
-        <p class="text-5xl font-black tracking-tight">1</p>
-        <p class="text-[#666] text-sm mt-2 leading-snug">Factura<br />única</p>
+        <p class="text-5xl font-black tracking-tight">48h</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Respuesta a<br />cotización</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5B. CÓMO TRABAJAMOS ───────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+      Cómo trabajamos.
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="process-step">
+        <p class="process-num">01</p>
+        <h3 class="process-title">Briefing y propuesta</h3>
+        <p class="process-desc">
+          Una reunión inicial para entender qué necesitas: tipo de evento, audiencia, formato, presupuesto. Te enviamos una propuesta detallada y la cotización en menos de 48 horas hábiles, sin letra chica.
+        </p>
+      </div>
+      <div class="process-step">
+        <p class="process-num">02</p>
+        <h3 class="process-title">Producción</h3>
+        <p class="process-desc">
+          Coordinamos todo el rodaje o transmisión: equipo técnico, dirección, cámaras, sonido, iluminación, gráfica en tiempo real y enlace redundante. Un solo equipo, un solo director responsable. Tú revisas avances en cada hito.
+        </p>
+      </div>
+      <div class="process-step">
+        <p class="process-num">03</p>
+        <h3 class="process-title">Entrega y postproducción</h3>
+        <p class="process-desc">
+          Edición, corrección de color, motion graphics y audio mastering. Entregamos en todos los formatos que necesites: redes sociales, web, presentaciones internas, archivo broadcast. Una sola factura.
+        </p>
       </div>
     </div>
   </section>
@@ -388,6 +465,68 @@ const clienteUrls: Record<string, string> = {
 </script>
 
 <style>
+  /* ── Testimoniales ────────────────────────────────── */
+  .testimonial {
+    border-left: 3px solid #FF4500;
+    padding-left: 24px;
+    margin: 0;
+  }
+
+  .testimonial-text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin: 0 0 16px;
+  }
+
+  .testimonial-meta {
+    margin: 0;
+  }
+
+  .testimonial-role {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .testimonial-org {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── Proceso ──────────────────────────────────────── */
+  .process-step {
+    border-top: 2px solid #FF4500;
+    padding-top: 16px;
+  }
+
+  .process-num {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF4500;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+  }
+
+  .process-title {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+  }
+
+  .process-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
   /* ── Hero 2-col layout ─────────────────────────────── */
   .hero-grid {
     display: grid;
