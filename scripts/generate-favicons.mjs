@@ -1,40 +1,54 @@
+// Genera favicons estilo "app icon" desde SVG inline:
+// Fondo naranja DAR2 (#FF4500) redondeado + camara blanca centrada.
+// Visible en modo claro y oscuro sin depender de prefers-color-scheme.
+// Uso: node scripts/generate-favicons.mjs
 import sharp from 'sharp';
-import { existsSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const projectRoot = join(__dirname, '..');
-const publicDir = join(projectRoot, 'public');
-const sourceLight = join(publicDir, 'images', 'galeria', 'icon.png');   // blanco (para modo oscuro)
-const sourceDark  = join(publicDir, 'images', 'galeria', 'icon-dark.png'); // negro (para modo claro)
+const publicDir = join(__dirname, '..', 'public');
 
-if (!existsSync(sourceLight)) { console.error(`ERROR: No existe ${sourceLight}`); process.exit(1); }
-if (!existsSync(sourceDark))  { console.error(`ERROR: No existe ${sourceDark}`);  process.exit(1); }
+// SVG: cuadrado redondeado naranja + icono camara blanco (estilo lucide "video")
+// El icono se centra y ocupa ~60% del canvas.
+function svgFor(size) {
+  const radius = Math.round(size * 0.22); // 22% radio (look App Store)
+  // Camera viewbox original es 24x24. Lo centramos y escalamos a 60% del canvas.
+  const scale = (size * 0.60) / 24;
+  const offset = (size - 24 * scale) / 2;
+  const stroke = Math.max(1.6, size * 0.075);
 
-const outputs = [
-  // Modo claro (icono negro)
-  { source: sourceDark,  size: 16,  name: 'favicon-16x16.png' },
-  { source: sourceDark,  size: 32,  name: 'favicon-32x32.png' },
-  { source: sourceDark,  size: 48,  name: 'favicon-48x48.png' },
-  { source: sourceDark,  size: 180, name: 'apple-touch-icon.png' },
-  { source: sourceDark,  size: 192, name: 'icon-192.png' },
-  { source: sourceDark,  size: 512, name: 'icon-512.png' },
-  // Modo oscuro (icono blanco)
-  { source: sourceLight, size: 16,  name: 'favicon-16x16-dark.png' },
-  { source: sourceLight, size: 32,  name: 'favicon-32x32-dark.png' },
-  { source: sourceLight, size: 48,  name: 'favicon-48x48-dark.png' },
-  { source: sourceLight, size: 192, name: 'icon-192-dark.png' },
-  { source: sourceLight, size: 512, name: 'icon-512-dark.png' },
-];
-
-console.log('Generando favicons...\n');
-for (const out of outputs) {
-  const destPath = join(publicDir, out.name);
-  await sharp(out.source)
-    .resize(out.size, out.size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toFile(destPath);
-  console.log(`  OK ${out.name} (${out.size}x${out.size})`);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  <rect width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#FF4500"/>
+  <g transform="translate(${offset}, ${offset}) scale(${scale})"
+     fill="none" stroke="#ffffff" stroke-width="${stroke / scale}" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m22 8-6 4 6 4V8Z"/>
+    <rect width="14" height="12" x="2" y="6" rx="2" ry="2"/>
+  </g>
+</svg>`;
 }
-console.log('\nFavicons generados en public/');
+
+async function renderPng(size, name) {
+  const dest = join(publicDir, name);
+  const svg = Buffer.from(svgFor(size));
+  await sharp(svg).png().toFile(dest);
+  console.log(`  OK ${name} (${size}x${size})`);
+}
+
+console.log('Generando favicons estilo app icon (naranja + camara blanca)...\n');
+
+// Tamanos estandar
+await renderPng(16,  'favicon-16x16.png');
+await renderPng(32,  'favicon-32x32.png');
+await renderPng(48,  'favicon-48x48.png');
+await renderPng(180, 'apple-touch-icon.png');
+await renderPng(192, 'icon-192.png');
+await renderPng(512, 'icon-512.png');
+
+// favicon.ico (PNG 32x32 dentro, aceptado por todos los navegadores modernos)
+const icoBuf = await sharp(Buffer.from(svgFor(32))).png().toBuffer();
+writeFileSync(join(publicDir, 'favicon.ico'), icoBuf);
+console.log('  OK favicon.ico (32x32 PNG)');
+
+console.log('\nDone.');

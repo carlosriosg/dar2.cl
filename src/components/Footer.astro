@@ -28,8 +28,8 @@ import Picture from './Picture.astro';
       </p>
     </div>
 
-    <!-- Col 2-3 unificada: Servicios (lista continua mobile, 2 subcolumnas desktop) -->
-    <div class="footer-col footer-col--services">
+    <!-- Col 2: Servicios -->
+    <div class="footer-col">
       <p class="footer-heading">Servicios</p>
       <ul class="footer-list footer-list--services">
         <li><a href="/servicios/streaming/">Streaming</a></li>
@@ -43,9 +43,9 @@ import Picture from './Picture.astro';
       </ul>
     </div>
 
-    <!-- Col 4: Otros + contacto -->
+    <!-- Col 3: Empresa -->
     <div class="footer-col">
-      <p class="footer-heading">Otros</p>
+      <p class="footer-heading">Empresa</p>
       <ul class="footer-list">
         <li><a href="/portafolio/">Portafolio</a></li>
         <li><a href="/casos/">Casos de éxito</a></li>
@@ -53,7 +53,11 @@ import Picture from './Picture.astro';
         <li><a href="/nosotros/">Nosotros</a></li>
         <li><a href="/contacto/">Contacto</a></li>
       </ul>
-      <p class="footer-heading footer-heading--spaced">Contacto</p>
+    </div>
+
+    <!-- Col 4: Contacto + redes -->
+    <div class="footer-col">
+      <p class="footer-heading">Contacto</p>
       <ul class="footer-list">
         <li>
           <a
@@ -70,6 +74,24 @@ import Picture from './Picture.astro';
           </a>
         </li>
         <li><a href="mailto:dar2@dar2.cl">dar2@dar2.cl</a></li>
+      </ul>
+
+      <p class="footer-heading footer-heading--spaced">Síguenos</p>
+      <ul class="footer-social">
+        <li>
+          <a
+            href="https://www.instagram.com/dar2.cl/"
+            target="_blank"
+            rel="noopener"
+            aria-label="DAR2 en Instagram"
+            class="footer-social-link"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.175 8.796 2.163 12 2.163zm0 1.622c-3.141 0-3.505.012-4.737.069-1.05.048-1.62.222-2 .369-.5.195-.857.428-1.232.803-.375.375-.608.732-.803 1.232-.147.38-.32.95-.369 2-.057 1.232-.069 1.596-.069 4.737s.012 3.505.069 4.737c.048 1.05.222 1.62.369 2 .195.5.428.857.803 1.232.375.375.732.608 1.232.803.38.147.95.32 2 .369 1.232.057 1.596.069 4.737.069s3.505-.012 4.737-.069c1.05-.048 1.62-.222 2-.369.5-.195.857-.428 1.232-.803.375-.375.608-.732.803-1.232.147-.38.32-.95.369-2 .057-1.232.069-1.596.069-4.737s-.012-3.505-.069-4.737c-.048-1.05-.222-1.62-.369-2-.195-.5-.428-.857-.803-1.232-.375-.375-.732-.608-1.232-.803-.38-.147-.95-.32-2-.369-1.232-.057-1.596-.069-4.737-.069zm0 2.756a5.459 5.459 0 1 1 0 10.918 5.459 5.459 0 0 1 0-10.918zm0 9.005a3.546 3.546 0 1 0 0-7.092 3.546 3.546 0 0 0 0 7.092zm6.95-9.218a1.275 1.275 0 1 1-2.55 0 1.275 1.275 0 0 1 2.55 0z"/>
+            </svg>
+            <span>@dar2.cl</span>
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -122,17 +144,19 @@ import Picture from './Picture.astro';
 
   @media (min-width: 1024px) {
     .footer-container {
-      grid-template-columns: 2fr 2fr 1fr;
+      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      gap: 2rem;
     }
   }
 
+  /* Servicios en 2 sub-columnas siempre que haya espacio (tablet+) */
   .footer-list--services {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.625rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 640px) and (max-width: 1023px) {
     .footer-list--services {
       grid-template-columns: repeat(2, 1fr);
       gap: 0.625rem 1.5rem;
@@ -204,6 +228,34 @@ import Picture from './Picture.astro';
 
   .footer-list :global(.whatsapp-link:hover) {
     color: #1DA851;
+  }
+
+  /* Social links (Instagram, etc.) */
+  .footer-social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-social-link:hover {
+    color: #E1306C;
+  }
+
+  .footer-social-link svg {
+    flex-shrink: 0;
   }
 
   .footer-bottom {
