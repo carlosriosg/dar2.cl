@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
 
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
@@ -15,6 +16,7 @@ const articles = [
     date: '2026-05-19',
     readTime: '8 min',
     category: 'Live Shopping',
+    image: '/images/blog/live-shopping-hero.png',
   },
   {
     slug: 'transmitir-junta-anual-sin-caidas',
@@ -23,6 +25,7 @@ const articles = [
     date: '2026-05-19',
     readTime: '7 min',
     category: 'Streaming Corporativo',
+    image: '/images/blog/streaming-junta-anual-hero.png',
   },
   {
     slug: 'estudio-virtual-vs-set-fisico',
@@ -31,6 +34,7 @@ const articles = [
     date: '2026-05-19',
     readTime: '6 min',
     category: 'Estudio Virtual',
+    image: '/images/blog/estudio-virtual-vs-fisico-hero.png',
   },
   {
     slug: 'medir-roi-video-corporativo',
@@ -39,6 +43,7 @@ const articles = [
     date: '2026-05-19',
     readTime: '7 min',
     category: 'Video Corporativo',
+    image: '/images/blog/roi-video-corporativo-hero.png',
   },
 ];
 ---
@@ -62,15 +67,27 @@ const articles = [
   </section>
 
   <!-- Listado -->
-  <section class="max-w-3xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+  <section class="max-w-5xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
     <ul class="blog-list">
       {articles.map(art => (
         <li class="blog-item">
           <a href={`/blog/${art.slug}/`} class="blog-link">
-            <p class="blog-meta">{art.category} · {art.readTime} de lectura</p>
-            <h2 class="blog-title">{art.title}</h2>
-            <p class="blog-excerpt">{art.excerpt}</p>
-            <p class="blog-readmore">Leer artículo →</p>
+            <div class="blog-thumb">
+              <Picture
+                src={art.image}
+                alt={art.title}
+                width="730"
+                height="411"
+                class="blog-thumb-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-body">
+              <p class="blog-meta">{art.category} · {art.readTime} de lectura</p>
+              <h2 class="blog-title">{art.title}</h2>
+              <p class="blog-excerpt">{art.excerpt}</p>
+              <p class="blog-readmore">Leer artículo →</p>
+            </div>
           </a>
         </li>
       ))}
@@ -86,22 +103,52 @@ const articles = [
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
   }
 
   .blog-item {
     border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 32px;
+    padding-bottom: 40px;
   }
-
   .blog-item:last-child {
     border-bottom: none;
   }
 
   .blog-link {
     text-decoration: none;
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
     color: inherit;
+  }
+  @media (min-width: 768px) {
+    .blog-link {
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+  }
+
+  .blog-thumb {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    transition: transform 0.3s ease;
+  }
+  .blog-thumb :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .blog-link:hover .blog-thumb :global(img) {
+    transform: scale(1.04);
+  }
+
+  .blog-body {
+    display: flex;
+    flex-direction: column;
   }
 
   .blog-meta {
@@ -109,18 +156,21 @@ const articles = [
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 12px;
+    color: #666;
+    margin: 0 0 10px;
   }
 
   .blog-title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
     line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+    margin: 0 0 10px;
     color: #1a1a1a;
     transition: color 0.2s ease;
+  }
+  @media (min-width: 768px) {
+    .blog-title { font-size: 26px; }
   }
 
   .blog-link:hover .blog-title {
@@ -128,10 +178,10 @@ const articles = [
   }
 
   .blog-excerpt {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
     color: #555;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
   }
 
   .blog-readmore {
