@@ -6,55 +6,13 @@ import { getCollection } from 'astro:content';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { servicios } from '../data/servicios.js';
-import { readdirSync, existsSync } from 'node:fs';
 
 // ========================================
-// FEED DE INSTAGRAM (estatico, optimizado)
+// FEED DE INSTAGRAM (Behold.so, auto-actualiza)
 // ========================================
-// Para AGREGAR un post: copia un objeto, cambia url, caption y prefix.
-// Las imagenes se detectan automaticamente leyendo public/images/instagram/
-// con la convencion: <prefix>-1.jpg, <prefix>-2.jpg, etc.
-// Tip: descarga las imagenes del carousel con https://igram.io
-// y renombralas siguiendo la convencion. Luego corre `npm run optimize:images`.
-const igPostsConfig = [
-  {
-    prefix: 'post1',
-    url: 'https://www.instagram.com/p/DNR-41BsNZf/',
-    caption: 'Grabación día de hoy',
-    altBase: 'Grabacion DAR2 — backstage de produccion',
-  },
-  {
-    prefix: 'post2',
-    url: 'https://www.instagram.com/p/CyE2tUivhRE/',
-    caption: 'Hoy toco grabación con multipista',
-    altBase: 'Grabacion con audio multipista — DAR2',
-  },
-  {
-    prefix: 'post3',
-    url: 'https://www.instagram.com/p/C0eR7a2uU5y/',
-    caption: 'En streaming con Iñaki Gutiérrez y Eugenia Rolón',
-    altBase: 'Streaming con Inaki Gutierrez y Eugenia Rolon — DAR2',
-  },
-];
-
-// Detecta automaticamente cuantas imagenes hay por post leyendo la carpeta.
-const IG_DIR = 'public/images/instagram';
-const igPosts = igPostsConfig.map(p => {
-  let images = [];
-  if (existsSync(IG_DIR)) {
-    images = readdirSync(IG_DIR)
-      .filter(f => new RegExp(`^${p.prefix}-\\d+\\.(jpe?g|png|webp|avif)$`, 'i').test(f))
-      // Solo el master (jpg/png), no las variantes optimizadas que crea optimize:images
-      .filter(f => /\.(jpe?g|png)$/i.test(f))
-      .sort((a, b) => {
-        const na = parseInt(a.match(/-(\d+)\./)[1]);
-        const nb = parseInt(b.match(/-(\d+)\./)[1]);
-        return na - nb;
-      })
-      .map(f => `/images/instagram/${f}`);
-  }
-  return { ...p, images };
-}).filter(p => p.images.length > 0); // solo posts con imagenes
+// Cuando publicas en @dar2.cl, Behold lo recoge automaticamente.
+// Si necesitas cambiar el feed-id, edita el atributo del <behold-widget> abajo.
+const BEHOLD_FEED_ID = 'L5VGbKK8n3XzIZpmneCs';
 
 const todosLosItems = await getCollection('portafolio');
 const destacados = todosLosItems
@@ -494,85 +452,9 @@ const clienteUrls: Record<string, string> = {
         </a>
       </div>
 
-      {igPosts.length === 0 ? (
-        <!-- Estado vacio: instrucciones para el dev -->
-        <div class="ig-empty">
-          <p>Pon imágenes en <code>public/images/instagram/</code> con la convención <code>post1-1.jpg</code>, <code>post1-2.jpg</code>, etc.</p>
-        </div>
-      ) : (
-        <!-- Grilla del feed (3 cards grandes, estilo Instagram con badge de carousel) -->
-        <ul class="ig-grid" id="ig-grid">
-          {igPosts.map((post, postIdx) => (
-            <li class="ig-card">
-              <button
-                type="button"
-                class="ig-card-btn"
-                data-post-idx={postIdx}
-                aria-label={`Ver post: ${post.caption}`}
-              >
-                <div class="ig-card-img">
-                  <Picture
-                    src={post.images[0]}
-                    alt={post.altBase}
-                    width="800"
-                    height="800"
-                    loading="lazy"
-                  />
-                </div>
-                {post.images.length > 1 && (
-                  <span class="ig-card-badge" aria-label={`Carrusel de ${post.images.length} imágenes`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <rect x="8" y="8" width="12" height="12" rx="2" ry="2"/>
-                      <path d="M4 16V6a2 2 0 0 1 2-2h10"/>
-                    </svg>
-                  </span>
-                )}
-                <div class="ig-card-overlay">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                </div>
-              </button>
-              <p class="ig-card-caption">{post.caption}</p>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <!-- Lightbox (oculto por defecto) -->
-      <div class="ig-lightbox" id="ig-lightbox" role="dialog" aria-modal="true" aria-labelledby="ig-lightbox-caption" hidden>
-        <button type="button" class="ig-lb-close" id="ig-lb-close" aria-label="Cerrar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
-        <button type="button" class="ig-lb-prev" id="ig-lb-prev" aria-label="Imagen anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-        </button>
-        <button type="button" class="ig-lb-next" id="ig-lb-next" aria-label="Siguiente imagen">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
-        <div class="ig-lb-content">
-          <div class="ig-lb-img-wrap">
-            <img id="ig-lb-img" src="" alt="" />
-          </div>
-          <div class="ig-lb-meta">
-            <div class="ig-lb-dots" id="ig-lb-dots"></div>
-            <p class="ig-lb-caption" id="ig-lightbox-caption"></p>
-            <p class="ig-lb-counter" id="ig-lb-counter"></p>
-            <a class="ig-lb-link" id="ig-lb-link" href="" target="_blank" rel="noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.175 8.796 2.163 12 2.163zm0 1.622c-3.141 0-3.505.012-4.737.069-1.05.048-1.62.222-2 .369-.5.195-.857.428-1.232.803-.375.375-.608.732-.803 1.232-.147.38-.32.95-.369 2-.057 1.232-.069 1.596-.069 4.737s.012 3.505.069 4.737c.048 1.05.222 1.62.369 2 .195.5.428.857.803 1.232.375.375.732.608 1.232.803.38.147.95.32 2 .369 1.232.057 1.596.069 4.737.069s3.505-.012 4.737-.069c1.05-.048 1.62-.222 2-.369.5-.195.857-.428 1.232-.803.375-.375.608-.732.803-1.232.147-.38.32-.95.369-2 .057-1.232.069-1.596.069-4.737s-.012-3.505-.069-4.737c-.048-1.05-.222-1.62-.369-2-.195-.5-.428-.857-.803-1.232-.375-.375-.732-.608-1.232-.803-.38-.147-.95-.32-2-.369-1.232-.057-1.596-.069-4.737-.069zm0 2.756a5.459 5.459 0 1 1 0 10.918 5.459 5.459 0 0 1 0-10.918zm0 9.005a3.546 3.546 0 1 0 0-7.092 3.546 3.546 0 0 0 0 7.092zm6.95-9.218a1.275 1.275 0 1 1-2.55 0 1.275 1.275 0 0 1 2.55 0z"/>
-              </svg>
-              Ver en Instagram
-            </a>
-          </div>
-        </div>
+      <!-- Widget Behold.so (auto-actualiza cuando publicas en @dar2.cl) -->
+      <div class="ig-widget-wrap">
+        <behold-widget feed-id={BEHOLD_FEED_ID}></behold-widget>
       </div>
 
       <p class="ig-bottom-link">
@@ -584,8 +466,8 @@ const clienteUrls: Record<string, string> = {
     </div>
   </section>
 
-  <!-- Datos del lightbox como JSON para el script vanilla -->
-  <script id="ig-data" type="application/json" set:html={JSON.stringify(igPosts)}></script>
+  <!-- Behold.so widget loader (auto-actualiza el feed de Instagram) -->
+  <script type="module" src="https://w.behold.so/widget.js" defer></script>
 
 
 <script>
@@ -648,121 +530,6 @@ const clienteUrls: Record<string, string> = {
   document.addEventListener('astro:page-load', initHeroGallery);
   initHeroGallery();
 
-  // ========================================
-  // INSTAGRAM LIGHTBOX
-  // ========================================
-  function initIgLightbox() {
-    const dataEl = document.getElementById('ig-data');
-    const grid = document.getElementById('ig-grid');
-    const lb = document.getElementById('ig-lightbox');
-    if (!dataEl || !grid || !lb) return;
-
-    const posts = JSON.parse(dataEl.textContent || '[]');
-    const img = document.getElementById('ig-lb-img');
-    const caption = document.getElementById('ig-lightbox-caption');
-    const counter = document.getElementById('ig-lb-counter');
-    const link = document.getElementById('ig-lb-link');
-    const dots = document.getElementById('ig-lb-dots');
-    const closeBtn = document.getElementById('ig-lb-close');
-    const prevBtn = document.getElementById('ig-lb-prev');
-    const nextBtn = document.getElementById('ig-lb-next');
-
-    let currentPost = 0;
-    let currentImg = 0;
-
-    function render() {
-      const post = posts[currentPost];
-      if (!post) return;
-      img.src = post.images[currentImg];
-      img.alt = post.altBase + ' (imagen ' + (currentImg + 1) + ')';
-      caption.textContent = post.caption;
-      counter.textContent = (currentImg + 1) + ' / ' + post.images.length;
-      link.href = post.url;
-
-      // Dots
-      dots.innerHTML = '';
-      if (post.images.length > 1) {
-        post.images.forEach((_, i) => {
-          const dot = document.createElement('button');
-          dot.type = 'button';
-          dot.className = 'ig-lb-dot' + (i === currentImg ? ' is-active' : '');
-          dot.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
-          dot.addEventListener('click', () => { currentImg = i; render(); });
-          dots.appendChild(dot);
-        });
-      }
-
-      // Prev/next visibility
-      prevBtn.style.visibility = post.images.length > 1 ? 'visible' : 'hidden';
-      nextBtn.style.visibility = post.images.length > 1 ? 'visible' : 'hidden';
-    }
-
-    function open(postIdx) {
-      currentPost = postIdx;
-      currentImg = 0;
-      lb.hidden = false;
-      document.body.style.overflow = 'hidden';
-      render();
-      requestAnimationFrame(() => lb.classList.add('is-open'));
-    }
-
-    function close() {
-      lb.classList.remove('is-open');
-      document.body.style.overflow = '';
-      setTimeout(() => { lb.hidden = true; }, 250);
-    }
-
-    function prev() {
-      const post = posts[currentPost];
-      currentImg = (currentImg - 1 + post.images.length) % post.images.length;
-      render();
-    }
-
-    function next() {
-      const post = posts[currentPost];
-      currentImg = (currentImg + 1) % post.images.length;
-      render();
-    }
-
-    // Click en card -> abrir lightbox
-    grid.querySelectorAll('.ig-card-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const idx = parseInt(btn.dataset.postIdx, 10);
-        open(idx);
-      });
-    });
-
-    // Controles
-    closeBtn.addEventListener('click', close);
-    prevBtn.addEventListener('click', prev);
-    nextBtn.addEventListener('click', next);
-
-    // Click en fondo cierra
-    lb.addEventListener('click', (e) => {
-      if (e.target === lb) close();
-    });
-
-    // Teclas
-    document.addEventListener('keydown', (e) => {
-      if (lb.hidden) return;
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') prev();
-      else if (e.key === 'ArrowRight') next();
-    });
-
-    // Swipe en mobile (touch)
-    let touchStartX = 0;
-    img.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    img.addEventListener('touchend', (e) => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) > 50) {
-        if (dx > 0) prev(); else next();
-      }
-    });
-  }
-
-  document.addEventListener('astro:page-load', initIgLightbox);
-  initIgLightbox();
 </script>
 
 <style>
@@ -1111,264 +878,29 @@ const clienteUrls: Record<string, string> = {
     box-shadow: 0 6px 20px rgba(221, 42, 123, 0.35);
   }
 
-  /* Grid del feed: 1 col mobile, 3 col tablet+ */
-  .ig-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  /* Wrapper del widget de Behold */
+  .ig-widget-wrap {
+    width: 100%;
+    min-height: 400px;
   }
-  @media (min-width: 640px) {
-    .ig-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+
+  /* Customizacion del web component de Behold via CSS variables */
+  behold-widget {
+    --behold-row-gap: 12px;
+    --behold-column-gap: 12px;
+    --behold-border-radius: 12px;
+    --behold-aspect-ratio: 1 / 1;
+    width: 100%;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    behold-widget {
+      --behold-row-gap: 16px;
+      --behold-column-gap: 16px;
+      --behold-border-radius: 16px;
     }
   }
-  @media (min-width: 1024px) {
-    .ig-grid { gap: 20px; }
-  }
-
-  .ig-empty {
-    background: #fff7ed;
-    border: 1px dashed #FF4500;
-    border-radius: 12px;
-    padding: 32px;
-    text-align: center;
-    color: #666;
-  }
-  .ig-empty code {
-    background: #ffe6d4;
-    color: #c53700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.85em;
-  }
-
-  .ig-card {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .ig-card-btn {
-    all: unset;
-    position: relative;
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #f5f5f5;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  .ig-card-btn:hover,
-  .ig-card-btn:focus-visible {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
-  }
-  .ig-card-btn:focus-visible {
-    outline: 2px solid #E1306C;
-    outline-offset: 4px;
-  }
-  .ig-card-img {
-    width: 100%;
-    height: 100%;
-  }
-  .ig-card-img :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .ig-card-btn:hover .ig-card-img :global(img) {
-    transform: scale(1.04);
-  }
-
-  /* Badge "carousel" arriba a la derecha (estilo Instagram real) */
-  .ig-card-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background: transparent;
-    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
-    pointer-events: none;
-  }
-
-  /* Overlay con corazon al hover */
-  .ig-card-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg,
-      rgba(245, 133, 41, 0.85) 0%,
-      rgba(221, 42, 123, 0.85) 50%,
-      rgba(129, 52, 175, 0.85) 100%);
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  .ig-card-btn:hover .ig-card-overlay,
-  .ig-card-btn:focus-visible .ig-card-overlay {
-    opacity: 1;
-  }
-  .ig-card-overlay svg {
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
-    transform: scale(1);
-    transition: transform 0.3s ease;
-  }
-  .ig-card-btn:hover .ig-card-overlay svg {
-    transform: scale(1.15);
-  }
-
-  /* Caption debajo de la card */
-  .ig-card-caption {
-    font-size: 14px;
-    line-height: 1.45;
-    color: #555;
-    margin: 0;
-    padding: 0 4px;
-  }
-  @media (min-width: 768px) {
-    .ig-card-caption { font-size: 15px; }
-  }
-
-  /* ========================================
-     LIGHTBOX
-     ======================================== */
-  .ig-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-  .ig-lightbox.is-open { opacity: 1; }
-  .ig-lightbox[hidden] { display: none; }
-
-  .ig-lb-close,
-  .ig-lb-prev,
-  .ig-lb-next {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border: 0;
-    color: #fff;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-    z-index: 2;
-  }
-  .ig-lb-close:hover,
-  .ig-lb-prev:hover,
-  .ig-lb-next:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.08);
-  }
-  .ig-lb-close { top: 20px; right: 20px; }
-  .ig-lb-prev  { left: 20px; top: 50%; transform: translateY(-50%); }
-  .ig-lb-next  { right: 20px; top: 50%; transform: translateY(-50%); }
-  .ig-lb-prev:hover { transform: translateY(-50%) scale(1.08); }
-  .ig-lb-next:hover { transform: translateY(-50%) scale(1.08); }
-
-  @media (min-width: 768px) {
-    .ig-lb-prev  { left: 32px; }
-    .ig-lb-next  { right: 32px; }
-  }
-
-  .ig-lb-content {
-    max-width: 90vw;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-  }
-  .ig-lb-img-wrap {
-    max-width: 100%;
-    max-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #ig-lb-img {
-    max-width: 100%;
-    max-height: 70vh;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  }
-  .ig-lb-meta {
-    text-align: center;
-    color: #fff;
-    max-width: 600px;
-  }
-  .ig-lb-dots {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-  .ig-lb-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-  .ig-lb-dot.is-active {
-    background: #fff;
-    transform: scale(1.4);
-  }
-  .ig-lb-caption {
-    font-size: 15px;
-    line-height: 1.5;
-    margin: 0 0 8px;
-  }
-  .ig-lb-counter {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0 0 12px;
-    letter-spacing: 0.05em;
-  }
-  .ig-lb-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
-    transition: transform 0.2s ease;
-  }
-  .ig-lb-link:hover { transform: scale(1.05); }
 
   .ig-bottom-link {
     text-align: center;
