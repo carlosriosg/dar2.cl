@@ -28,20 +28,24 @@ const currentPath = Astro.url.pathname;
 
     <!-- Desktop Links -->
     <ul class="hidden md:flex items-center gap-8">
-      {navLinks.map(link => (
+      {navLinks.map(link => {
+        const isCurrent = currentPath.startsWith(link.href);
+        return (
         <li>
           <a
             href={link.href}
             class={`text-sm font-medium transition-colors ${
-              currentPath.startsWith(link.href)
+              isCurrent
                 ? 'text-[#1a1a1a]'
                 : 'text-[#666] hover:text-[#1a1a1a]'
             }`}
+            aria-current={isCurrent ? 'page' : undefined}
           >
             {link.label}
           </a>
         </li>
-      ))}
+        );
+      })}
     </ul>
 
     <!-- CTA Desktop -->
@@ -67,16 +71,22 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[#e5e5e5] bg-white">
     <ul class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
-      {navLinks.map(link => (
+      {navLinks.map(link => {
+        const isCurrent = currentPath.startsWith(link.href);
+        return (
         <li>
           <a
             href={link.href}
-            class="block py-3 text-sm font-medium text-[#666] hover:text-[#1a1a1a] border-b border-[#f5f5f5] transition-colors"
+            class={`block py-3 text-sm font-medium hover:text-[#1a1a1a] border-b border-[#f5f5f5] transition-colors ${
+              isCurrent ? 'text-[#1a1a1a]' : 'text-[#666]'
+            }`}
+            aria-current={isCurrent ? 'page' : undefined}
           >
             {link.label}
           </a>
         </li>
-      ))}
+        );
+      })}
       <li class="pt-3">
         <a href="/contacto/" class="inline-flex bg-[#1a1a1a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#333] transition-colors">
           Cotizar

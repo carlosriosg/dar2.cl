@@ -22,7 +22,7 @@ const articles = [
     slug: 'transmitir-junta-anual-sin-caidas',
     title: 'Cómo transmitir tu junta anual de accionistas sin caídas técnicas',
     excerpt: 'Guía técnica: causas de caídas, multicámara, enlaces redundantes, plataformas (Zoom/Teams/YouTube) y checklist del día del evento.',
-    date: '2026-05-19',
+    date: '2026-05-12',
     readTime: '7 min',
     category: 'Streaming Corporativo',
     image: '/images/blog/streaming-junta-anual-hero.png',
@@ -31,7 +31,7 @@ const articles = [
     slug: 'estudio-virtual-vs-set-fisico',
     title: 'Estudio virtual vs. set físico: cuándo conviene cada uno',
     excerpt: 'Comparativa práctica de costos, tiempos, flexibilidad y calidad. Cuándo elegir green screen y cuándo construir un set real.',
-    date: '2026-05-19',
+    date: '2026-05-05',
     readTime: '6 min',
     category: 'Estudio Virtual',
     image: '/images/blog/estudio-virtual-vs-fisico-hero.png',
@@ -40,12 +40,46 @@ const articles = [
     slug: 'medir-roi-video-corporativo',
     title: 'Cómo medir el ROI de tu video corporativo: 5 métricas clave',
     excerpt: 'Views, retention, conversión, engagement y brand lift. Herramientas, benchmarks y un ejemplo de cálculo real de ROI.',
-    date: '2026-05-19',
+    date: '2026-04-28',
     readTime: '7 min',
     category: 'Video Corporativo',
     image: '/images/blog/roi-video-corporativo-hero.png',
   },
 ];
+
+// Schema Blog + ItemList para que Google muestre rich results de carousel
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://dar2.cl/blog/#blog",
+  "url": "https://dar2.cl/blog/",
+  "name": "Blog DAR2 — Guías de producción audiovisual y digital",
+  "description": "Artículos y guías sobre producción audiovisual, live shopping, streaming corporativo, video marketing y tendencias para empresas en Chile.",
+  "inLanguage": "es-CL",
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "blogPost": articles.map((a) => ({
+    "@type": "BlogPosting",
+    "headline": a.title,
+    "url": `https://dar2.cl/blog/${a.slug}/`,
+    "datePublished": a.date,
+    "description": a.excerpt,
+    "image": `https://dar2.cl${a.image}`,
+    "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+    "publisher": { "@id": "https://dar2.cl/#organization" }
+  }))
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Artículos del Blog DAR2",
+  "itemListElement": articles.map((a, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `https://dar2.cl/blog/${a.slug}/`,
+    "name": a.title
+  }))
+};
 ---
 
 <Base
@@ -53,6 +87,10 @@ const articles = [
   description="Artículos sobre producción audiovisual, live shopping, streaming corporativo, video marketing y tendencias para empresas en Chile."
   breadcrumbs={breadcrumbs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
