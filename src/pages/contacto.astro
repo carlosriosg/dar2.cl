@@ -432,7 +432,9 @@ const breadcrumbs = [
         const payload = {
           access_key: WEB3FORMS_KEY,
           subject: `Nuevo lead dar2.cl — ${servicioLegible}`,
-          from_name: 'dar2.cl · Formulario web',
+          from_name: `${nombre} · vía dar2.cl`,
+          // Reply-to: cuando Carlos responda al email, va directo al cliente
+          replyto: email,
           nombre,
           email,
           telefono: telefono || '—',
