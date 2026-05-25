@@ -22,4 +22,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://dar2.cl/sitemap-index.xml
+Sitemap: https://dar2.cl/sitemap-0.xml

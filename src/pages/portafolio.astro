@@ -3,110 +3,61 @@ import Base from '../layouts/Base.astro';
 import VideoCard from '../components/VideoCard.astro';
 import { getCollection } from 'astro:content';
 
-const items  = await getCollection('portafolio');
-const sorted = items.sort((a, b) => b.data.anio - a.data.anio);
-
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Portafolio', url: 'https://dar2.cl/portafolio/' },
 ];
 
-// VideoObject schema: ItemList con todos los videos del portafolio.
-// Permite a Google mostrar rich results de video.
-const videoListSchema = {
+const todosLosItems = await getCollection('portafolio');
+const ordenados = todosLosItems.sort((a, b) => b.data.anio - a.data.anio);
+
+const portafolioSchema = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Portafolio de proyectos audiovisuales DAR2",
-  "itemListElement": sorted.map((item, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "item": {
-      "@type": "VideoObject",
-      "name": item.data.titulo,
-      "description": item.data.descripcion ?? `Proyecto audiovisual para ${item.data.cliente} producido por DAR2 en ${item.data.anio}.`,
-      "thumbnailUrl": item.data.thumbnail?.startsWith('http') ? item.data.thumbnail : `https://dar2.cl${item.data.thumbnail}`,
-      "uploadDate": `${item.data.anio}-01-01T00:00:00-04:00`,
-      "contentUrl": item.data.youtube_url,
-      "embedUrl": item.data.youtube_url?.replace('watch?v=', 'embed/'),
-      "publisher": { "@id": "https://dar2.cl/#organization" }
-    }
-  }))
+  "@type": "CollectionPage",
+  "url": "https://dar2.cl/portafolio/",
+  "name": "Portafolio DAR2 — Proyectos audiovisuales",
+  "description": "Proyectos de streaming corporativo, live shopping, videos institucionales y más. Clientes: Cencosud, ENAP, Clínica Santa María, ABCDIN, AFP Habitat y otros.",
+  "publisher": { "@id": "https://dar2.cl/#organization" }
 };
 ---
 
 <Base
-  title="Portafolio — Videos y streaming para empresas chilenas"
-  description="Casos reales de streaming, videos corporativos y live shopping para Cencosud, Clínica Santa María, ABCDIN, Copec, CMPC, PC Factory y más."
+  title="Portafolio — Proyectos de streaming y video corporativo | DAR2"
+  description="Conoce nuestros proyectos de streaming corporativo, live shopping, videos institucionales y producción audiovisual. Clientes como Cencosud, ENAP, Clínica Santa María y más."
   breadcrumbs={breadcrumbs}
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(videoListSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(portafolioSchema)} />
   </Fragment>
 
-  <!-- ── HERO ──────────────────────────────────────────── -->
+  <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Portafolio</p>
     <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
       Proyectos que hablan
-      <em class="not-italic italic text-[#FF4500]"> por sí solos.</em>
+      <em class="text-accent italic"> por sí solos.</em>
     </h1>
     <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
-      Empresas de salud, banca, retail, energía, construcción y más. Cada entrega, una operación impecable, con dirección técnica propia y equipo coordinado de extremo a extremo.
+      Streaming corporativo, live shopping, videos institucionales y producción audiovisual para empresas chilenas. Cada proyecto, un caso real.
     </p>
   </section>
 
-  <!-- ── INTRO POR INDUSTRIA ───────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
-      <div>
-        <h2 class="text-2xl font-black tracking-tight mb-4">+15 años de experiencia.</h2>
-        <p class="text-[#666] leading-relaxed">
-          Esta selección representa una parte del trabajo de DAR2 desde 2010. Producciones en estudio propio en Providencia, locaciones en planta industrial, eventos en vivo con multicámara, escenografías virtuales y campañas de redes sociales. Cada proyecto operado por nuestro equipo interno, sin subcontratación de la producción.
-        </p>
+  <!-- Grilla de proyectos -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-12">
+    {ordenados.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        {ordenados.map(item => (
+          <VideoCard
+            youtube_url={item.data.youtube_url}
+            titulo={item.data.titulo}
+            cliente={item.data.cliente}
+            thumbnail={item.data.thumbnail}
+          />
+        ))}
       </div>
-      <div>
-        <h2 class="text-2xl font-black tracking-tight mb-4">Industrias representadas.</h2>
-        <p class="text-[#666] leading-relaxed">
-          <strong class="text-[#1a1a1a]">Salud:</strong> Clínica Santa María (cirugías robóticas, mes del corazón, cápsulas educativas).<br />
-          <strong class="text-[#1a1a1a]">Retail:</strong> ABCDIN, PC Factory, CASTAÑO, Empresas Copec.<br />
-          <strong class="text-[#1a1a1a]">Banca y seguros:</strong> AFP Habitat, Marsh, Vida Cámara.<br />
-          <strong class="text-[#1a1a1a]">Construcción e industria:</strong> CMPC, Polpaico, VOENS, Astara.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── GRID ──────────────────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Todos los proyectos</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-      {sorted.map(item => (
-        <VideoCard
-          youtube_url={item.data.youtube_url}
-          titulo={item.data.titulo}
-          cliente={item.data.cliente}
-          thumbnail={item.data.thumbnail}
-        />
-      ))}
-    </div>
-  </section>
-
-  <!-- ── CTA ───────────────────────────────────────────── -->
-  <section class="bg-[#1a1a1a]">
-    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
-          ¿Tu proyecto podría estar aquí?
-        </h2>
-        <p class="text-[#ccc]">Cuéntanos qué necesitas y te armamos una propuesta en 48h.</p>
-      </div>
-      <a
-        href="/contacto/"
-        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
-      >
-        Cotizar ahora →
-      </a>
-    </div>
+    ) : (
+      <p class="text-[#666] text-lg">Pronto estaremos agregando nuestros proyectos aquí.</p>
+    )}
   </section>
 
 </Base>

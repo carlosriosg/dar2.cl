@@ -4,8 +4,8 @@ export const servicios = [
     num: '01',
     title: 'Streaming',
     shortDesc: 'Transmisión en vivo con enlaces punto a punto.',
-    heroEyebrow: 'STREAMING CORPORATIVO',
-    tagline: 'Transmisiones en vivo <em class="hl">sin dolores de cabeza.</em>',
+    heroEyebrow: 'PRODUCTORA DE STREAMING EN SANTIAGO',
+    tagline: 'Streaming corporativo profesional <em class="hl">sin dolores de cabeza.</em>',
     description:
       'Producimos streaming profesional para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
       'Multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
@@ -56,8 +56,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
-    seoTitle: 'Streaming corporativo profesional en Santiago, Chile',
-    seoDescription: 'Transmisión en vivo con multicámara, switcher profesional y enlace punto a punto. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
+    seoTitle: 'Productora de Streaming en Santiago | Streaming Corporativo Profesional — DAR2',
+    seoDescription: 'Productora de streaming en Santiago de Chile. Streaming corporativo profesional con multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
