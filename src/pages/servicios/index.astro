@@ -27,32 +27,8 @@ const breadcrumbs = [
     </p>
   </section>
 
-  <!-- Intro: por qué un solo proveedor -->
-  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
-      <div>
-        <h2 class="text-3xl font-black tracking-tight mb-6">Un solo equipo de extremo a extremo.</h2>
-        <p class="text-[#666] leading-relaxed mb-4">
-          La producción audiovisual corporativa típica implica coordinar entre productora, técnicos, postproducción, gráfica y agencias separadas. El cliente termina haciendo de project manager y pagando por las brechas entre todos los proveedores.
-        </p>
-        <p class="text-[#666] leading-relaxed">
-          En DAR2 operamos los 8 servicios con equipo interno: cámaras Sony FX6, switchers, sistema de iluminación broadcast, multicámaras robóticas PTZ, estudio con green screen y enlaces redundantes. La producción y la postproducción viven en el mismo edificio. Un solo director de proyecto coordina todo.
-        </p>
-      </div>
-      <div>
-        <h2 class="text-3xl font-black tracking-tight mb-6">¿Qué servicio necesitas?</h2>
-        <p class="text-[#666] leading-relaxed mb-4">
-          Si tienes un evento corporativo en vivo (junta anual, lanzamiento, seminario) → <a href="/servicios/streaming/" class="svc-inline-link">Streaming</a>. Si vendes online y quieres ventas en vivo → <a href="/servicios/live-shopping/" class="svc-inline-link">Live Shopping</a>. Si necesitas video institucional o de cultura → <a href="/servicios/videos-corporativos/" class="svc-inline-link">Videos Corporativos</a>.
-        </p>
-        <p class="text-[#666] leading-relaxed">
-          Si requieres contenido recurrente para redes → <a href="/servicios/redes-sociales/" class="svc-inline-link">Redes Sociales</a> o <a href="/servicios/estrategias-digitales/" class="svc-inline-link">Estrategias Digitales</a>. Para contenido broadcast con escenografía digital → <a href="/servicios/estudio-virtual/" class="svc-inline-link">Estudio Virtual</a>. Para activación viral en redes → <a href="/servicios/filtros-ar/" class="svc-inline-link">Filtros AR</a>.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Grilla de 8 servicios -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+  <section class="max-w-7xl mx-auto px-6 pb-24 pt-16">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Catálogo completo</p>
     <div class="svc-grid-index">
       {servicios.map(s => (
@@ -77,6 +53,30 @@ const breadcrumbs = [
           </div>
         </a>
       ))}
+    </div>
+  </section>
+
+  <!-- Intro: por qué un solo proveedor -->
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
+      <div>
+        <h2 class="text-3xl font-black tracking-tight mb-6">Un solo equipo de extremo a extremo.</h2>
+        <p class="text-[#666] leading-relaxed mb-4">
+          La producción audiovisual corporativa típica implica coordinar entre productora, técnicos, postproducción, gráfica y agencias separadas. El cliente termina haciendo de project manager y pagando por las brechas entre todos los proveedores.
+        </p>
+        <p class="text-[#666] leading-relaxed">
+          En DAR2 operamos los 8 servicios con equipo interno: cámaras Sony FX6, switchers, sistema de iluminación broadcast, multicámaras robóticas PTZ, estudio con green screen y enlaces redundantes. La producción y la postproducción viven en el mismo edificio. Un solo director de proyecto coordina todo.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-3xl font-black tracking-tight mb-6">¿Qué servicio necesitas?</h2>
+        <p class="text-[#666] leading-relaxed mb-4">
+          Si tienes un evento corporativo en vivo (junta anual, lanzamiento, seminario) → <a href="/servicios/streaming/" class="svc-inline-link">Streaming</a>. Si vendes online y quieres ventas en vivo → <a href="/servicios/live-shopping/" class="svc-inline-link">Live Shopping</a>. Si necesitas video institucional o de cultura → <a href="/servicios/videos-corporativos/" class="svc-inline-link">Videos Corporativos</a>.
+        </p>
+        <p class="text-[#666] leading-relaxed">
+          Si requieres contenido recurrente para redes → <a href="/servicios/redes-sociales/" class="svc-inline-link">Redes Sociales</a> o <a href="/servicios/estrategias-digitales/" class="svc-inline-link">Estrategias Digitales</a>. Para contenido broadcast con escenografía digital → <a href="/servicios/estudio-virtual/" class="svc-inline-link">Estudio Virtual</a>. Para activación viral en redes → <a href="/servicios/filtros-ar/" class="svc-inline-link">Filtros AR</a>.
+        </p>
+      </div>
     </div>
   </section>
 
