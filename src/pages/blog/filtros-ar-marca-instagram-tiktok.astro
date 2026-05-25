@@ -1,0 +1,305 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Filtros AR para marca', url: 'https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Filtros AR para marca: cómo funcionan y por qué tu empresa debería tener uno",
+  "description": "Guía completa de filtros de realidad aumentada para Instagram y TikTok: tipos, costos, proceso de creación y métricas de alcance orgánico.",
+  "image": "https://dar2.cl/images/servicios/filtros-ar.jpg",
+  "datePublished": "2026-04-14",
+  "dateModified": "2026-04-14",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta desarrollar un filtro AR para Instagram?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende de la complejidad. Un filtro simple (cambio de color, marco) cuesta entre CLP 500.000 y 1.500.000. Un filtro interactivo con tracking facial, animaciones y gamificación puede costar entre CLP 3.000.000 y 8.000.000. El costo incluye desarrollo, testing y publicación en Meta Spark." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda en desarrollarse?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un filtro simple: 1-2 semanas. Un filtro complejo: 3-6 semanas. Incluye diseño conceptual, desarrollo técnico, testing en múltiples dispositivos y publicación." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué métricas se pueden medir?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Meta Spark entrega: impresiones, capturas (fotos/videos guardados), compartidos, usuarios únicos que interactuaron, tiempo de uso promedio. TikTok Effect House entrega métricas similares." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los filtros AR funcionan para B2B?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, especialmente para activaciones de marca en ferias, lanzamientos de producto y campañas de employer branding. Un filtro AR bien diseñado puede generar alcance orgánico masivo independientemente del rubro." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Filtros AR para marca: cómo funcionan y por qué tu empresa debería tener uno"
+  description="Guía completa de filtros de realidad aumentada para Instagram y TikTok: tipos, costos, proceso de creación y métricas de alcance orgánico."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/filtros-ar-marca-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Filtros AR</p>
+      <h1 class="article-h1">
+        Filtros AR para marca: cómo funcionan y por qué tu empresa
+        <em class="hl">debería tener uno.</em>
+      </h1>
+      <p class="article-lead">
+        Los filtros de realidad aumentada (AR) son una de las herramientas de marketing digital con mejor ROI en redes sociales. Un solo filtro bien diseñado puede generar millones de impresiones orgánicas sin invertir un peso en pauta.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 14 de abril, 2026 · 6 min de lectura
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/filtros-ar-marca-hero.png"
+        alt="Filtros de realidad aumentada para marca en Instagram y TikTok — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-son">¿Qué son los filtros AR?</a></li>
+        <li><a href="#tipos">Tipos de filtros para marca</a></li>
+        <li><a href="#beneficios">Beneficios para tu empresa</a></li>
+        <li><a href="#proceso">Proceso de creación</a></li>
+        <li><a href="#costos">Costos referenciales</a></li>
+        <li><a href="#metricas">Métricas y medición</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="que-son">
+      <h2>¿Qué son los filtros AR?</h2>
+      <p>
+        Los filtros de realidad aumentada (AR) son efectos visuales que se superponen en tiempo real sobre el rostro, el cuerpo o el entorno del usuario a través de la cámara del celular. Funcionan en Instagram (Meta Spark), TikTok (Effect House) y Snapchat (Lens Studio).
+      </p>
+      <p>
+        A diferencia de un filtro estático, un filtro AR puede reaccionar a movimientos faciales, gestos, toques en pantalla, sonido ambiente e incluso la profundidad del espacio. Esto permite experiencias interactivas que van desde maquillaje virtual hasta juegos completos.
+      </p>
+      <p>
+        Para las marcas, los filtros AR son una herramienta de brand awareness orgánico: cada vez que un usuario graba un video o se toma una foto con tu filtro y lo comparte, está generando exposición gratuita para tu marca.
+      </p>
+    </section>
+
+    <section class="article-section" id="tipos">
+      <h2>Tipos de filtros AR para marca</h2>
+
+      <h3>Filtros faciales (face tracking)</h3>
+      <p>
+        Los más comunes. Mapean el rostro del usuario y aplican efectos: maquillaje virtual, máscaras, distorsiones, accesorios (lentes, coronas, sombreros). Ideales para campañas de belleza, moda y entretención.
+      </p>
+
+      <h3>Filtros de entorno (world tracking)</h3>
+      <p>
+        Anclan objetos virtuales al espacio real: muebles, productos 3D, logos flotantes, escenas completas. Perfectos para lanzamientos de producto, decoración y retail.
+      </p>
+
+      <h3>Filtros interactivos (gesture + touch)</h3>
+      <p>
+        Responden a toques en pantalla, gestos manuales o movimientos de cabeza. Incluyen juegos, quizzes, coleccionables. Generan mayor tiempo de interacción y más compartidos.
+      </p>
+
+      <h3>Filtros de audio reactivo</h3>
+      <p>
+        Reaccionan al sonido ambiente o a la música: visualizadores, beats sincronizados, cambios de color por ritmo. Populares en TikTok para contenido musical.
+      </p>
+    </section>
+
+    <section class="article-section" id="beneficios">
+      <h2>Beneficios para tu empresa</h2>
+      <ul class="article-list">
+        <li><strong>Alcance orgánico masivo:</strong> un filtro viral puede generar millones de impresiones sin inversión en pauta. El usuario es quien crea el contenido con tu marca.</li>
+        <li><strong>Engagement profundo:</strong> los filtros AR tienen tasas de interacción muy superiores a otros formatos. El usuario no solo ve, sino que participa activamente.</li>
+        <li><strong>Diferenciación de marca:</strong> tener un filtro AR propio posiciona a tu marca como innovadora y cercana a las tendencias digitales.</li>
+        <li><strong>Contenido generado por usuarios (UGC):</strong> cada video o foto con tu filtro es contenido auténtico que puedes republicar en tus redes.</li>
+        <li><strong>Datos y métricas:</strong> Meta Spark y Effect House entregan métricas detalladas de uso, alcance y engagement del filtro.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="proceso">
+      <h2>Proceso de creación de un filtro AR</h2>
+      <ol class="article-list">
+        <li><strong>Briefing creativo:</strong> definimos el objetivo (awareness, engagement, ventas), el público objetivo y el concepto visual del filtro.</li>
+        <li><strong>Diseño conceptual:</strong> creamos mockups y animaciones del filtro en acción. Aprobación del cliente antes de desarrollo.</li>
+        <li><strong>Desarrollo técnico:</strong> programación del filtro en Meta Spark Studio o Effect House. Incluye tracking, animaciones, interacciones y optimización de rendimiento.</li>
+        <li><strong>Testing multiplataforma:</strong> probamos en dispositivos iOS y Android de distintas gamas para asegurar rendimiento uniforme.</li>
+        <li><strong>Publicación:</strong> subimos el filtro a Meta Spark o TikTok Effect House. Revisión y aprobación por la plataforma (24-72 horas).</li>
+        <li><strong>Activación y monitoreo:</strong> lanzamos el filtro con una campaña de activación (influencers, stories, ads) y monitoreamos métricas en tiempo real.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="costos">
+      <h2>Costos referenciales</h2>
+      <p>
+        El costo de un filtro AR varía según complejidad:
+      </p>
+      <ul class="article-list">
+        <li><strong>Filtro simple</strong> (cambio de color, marco, logo): CLP 500.000 - 1.500.000.</li>
+        <li><strong>Filtro medio</strong> (face tracking, animaciones, 2-3 interacciones): CLP 1.500.000 - 3.500.000.</li>
+        <li><strong>Filtro complejo</strong> (world tracking, gamificación, múltiples interacciones): CLP 3.500.000 - 8.000.000.</li>
+      </ul>
+      <p>
+        El costo incluye desarrollo, testing en múltiples dispositivos, publicación y reporte de métricas post-lanzamiento.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/filtros-ar/" class="article-cta-btn">
+          Ver nuestro servicio de Filtros AR →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="metricas">
+      <h2>Métricas y medición</h2>
+      <p>
+        Las plataformas entregan métricas detalladas:
+      </p>
+      <ul class="article-list">
+        <li><strong>Impresiones:</strong> cuántas veces se mostró el filtro en pantalla.</li>
+        <li><strong>Capturas:</strong> fotos y videos guardados con el filtro.</li>
+        <li><strong>Compartidos:</strong> cuántas veces se compartió contenido con el filtro.</li>
+        <li><strong>Usuarios únicos:</strong> personas distintas que usaron el filtro.</li>
+        <li><strong>Tiempo de uso promedio:</strong> cuánto interactúa cada usuario.</li>
+        <li><strong>Alcance orgánico:</strong> impresiones generadas sin pauta.</li>
+      </ul>
+      <p>
+        Un filtro exitoso puede generar 500.000 a 5.000.000 de impresiones orgánicas en su primer mes, dependiendo de la activación y la calidad del efecto.
+      </p>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta desarrollar un filtro AR para Instagram?</summary>
+        <p>Depende de la complejidad. Un filtro simple cuesta entre CLP 500.000 y 1.500.000. Un filtro interactivo con tracking facial y gamificación puede costar entre CLP 3.000.000 y 8.000.000.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto tiempo tarda en desarrollarse?</summary>
+        <p>Un filtro simple: 1-2 semanas. Un filtro complejo: 3-6 semanas. Incluye diseño, desarrollo, testing y publicación.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué métricas se pueden medir?</summary>
+        <p>Meta Spark entrega impresiones, capturas, compartidos, usuarios únicos y tiempo de uso. TikTok Effect House entrega métricas similares.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Los filtros AR funcionan para B2B?</summary>
+        <p>Sí, especialmente para activaciones de marca en ferias, lanzamientos de producto y campañas de employer branding. Un filtro AR bien diseñado genera alcance orgánico masivo independientemente del rubro.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Quieres un filtro AR para tu marca?</h2>
+      <p>
+        En DAR2 diseñamos y desarrollamos filtros AR para Instagram y TikTok. Te acompañamos desde el concepto hasta la publicación y medición de resultados.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=filtros-ar" class="article-cta-btn">
+          Cotizar filtro AR →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

@@ -1,0 +1,307 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Contenido LinkedIn con ejecutivos', url: 'https://dar2.cl/blog/contenido-linkedin-ejecutivos/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo producir contenido para LinkedIn con tus ejecutivos como talento",
+  "description": "Guía práctica para grabar videos profesionales con ejecutivos sin experiencia frente a cámara: formato, duración, dirección y postproducción.",
+  "image": "https://dar2.cl/images/servicios/redes-sociales.jpg",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/contenido-linkedin-ejecutivos/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué duración debe tener un video para LinkedIn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El sweet spot está entre 45 segundos y 2 minutos. LinkedIn premia la retención, no la duración. Videos de 60-90 segundos tienen las mejores tasas de completion. Si el contenido es muy denso, mejor dividirlo en una serie de 2-3 videos cortos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo preparar a un ejecutivo sin experiencia frente a cámara?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Con preparación: briefing escrito con los 3 puntos clave, ensayo en cámara (sin grabar), teleprompter con frases cortas (no texto literal), y dirección amable que corrija sin presionar. La mayoría de los ejecutivos mejora notablemente después del primer video." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué equipo se necesita para grabar videos profesionales para LinkedIn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mínimo: cámara (DSLR/mirrorless o celular gama alta), trípode, micrófono de solapa o shotgun, y luz principal (softbox o panel LED). Para producción más profesional: segunda cámara, luz de relleno, teleprompter y fondo neutro o corporativo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cada cuánto hay que publicar contenido en LinkedIn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Consistencia sobre frecuencia. 1-2 videos por semana es ideal para construir audiencia sin saturar. Lo importante es mantener el ritmo: mejor 1 video por semana durante 6 meses que 10 videos en un mes y después nada." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Cómo producir contenido para LinkedIn con tus ejecutivos como talento"
+  description="Guía práctica para grabar videos profesionales con ejecutivos sin experiencia frente a cámara: formato, duración, dirección y postproducción."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/linkedin-ejecutivos-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Redes Sociales</p>
+      <h1 class="article-h1">
+        Cómo producir contenido para LinkedIn con tus ejecutivos
+        <em class="hl">como talento.</em>
+      </h1>
+      <p class="article-lead">
+        El contenido en LinkedIn con ejecutivos como protagonistas es una de las estrategias de branding corporativo más efectivas. Pero grabar a un gerente que nunca ha estado frente a cámara tiene sus desafíos. Esta guía te muestra cómo hacerlo bien.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 17 de marzo, 2026 · 6 min de lectura
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/linkedin-ejecutivos-hero.png"
+        alt="Producción de video corporativo para LinkedIn con ejecutivos — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#por-que">Por qué funciona el video con ejecutivos</a></li>
+        <li><a href="#formatos">Formatos que funcionan en LinkedIn</a></li>
+        <li><a href="#preparacion">Preparación del ejecutivo</a></li>
+        <li><a href="#produccion">Producción: equipo y set</a></li>
+        <li><a href="#direccion">Dirección frente a cámara</a></li>
+        <li><a href="#postproduccion">Postproducción y distribución</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="por-que">
+      <h2>Por qué funciona el video con ejecutivos en LinkedIn</h2>
+      <p>
+        LinkedIn es la red social donde el contenido de autoridad tiene más impacto. Cuando un CEO, gerente o director habla directamente a cámara sobre su industria, su empresa o su visión, genera:
+      </p>
+      <ul class="article-list">
+        <li><strong>Confianza:</strong> el 82% de los compradores B2B confía más en una empresa cuyos líderes son visibles en redes sociales (fuente: Edelman-LinkedIn).</li>
+        <li><strong>Alcance orgánico:</strong> LinkedIn prioriza el contenido nativo en video. Un video publicado por un ejecutivo tiene 3-5× más alcance que el mismo contenido publicado por la marca.</li>
+        <li><strong>Employer branding:</strong> los candidatos investigan a los líderes de la empresa antes de postular. Ejecutivos activos en LinkedIn atraen mejor talento.</li>
+        <li><strong>Posicionamiento:</strong> el algoritmo de LinkedIn premia la autoridad temática. Un ejecutivo que publica consistentemente sobre su rubro se convierte en referente.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="formatos">
+      <h2>Formatos que funcionan en LinkedIn</h2>
+
+      <h3>Video de opinión / análisis (60-90 seg)</h3>
+      <p>
+        El ejecutivo comenta una tendencia de la industria, una noticia relevante o un aprendizaje. Formato ideal para posicionamiento de autoridad. Se graba en plano medio, fondo corporativo o neutro, con teleprompter de apoyo.
+      </p>
+
+      <h3>Video de "detrás de la empresa" (45-60 seg)</h3>
+      <p>
+        Muestra cómo se trabaja, valores de la empresa, hitos del equipo. Humaniza la marca y atrae talento. Se puede grabar en las instalaciones, con planos de contexto.
+      </p>
+
+      <h3>Video de agradecimiento / reconocimiento (30-45 seg)</h3>
+      <p>
+        El ejecutivo agradece a clientes, equipo o colaboradores por un logro específico. Corto, genuino, sin guion rígido. Genera alto engagement.
+      </p>
+
+      <h3>Video de producto / servicio (60-90 seg)</h3>
+      <p>
+        El ejecutivo explica un producto o servicio desde una perspectiva estratégica: por qué se creó, qué problema resuelve, qué resultados ha visto. Más creíble que un video de marketing tradicional.
+      </p>
+    </section>
+
+    <section class="article-section" id="preparacion">
+      <h2>Preparación del ejecutivo</h2>
+      <p>
+        El 90% del éxito de un video con ejecutivos está en la preparación previa. Nunca asumas que "como es gerente, va a salir bien naturalmente".
+      </p>
+      <ol class="article-list">
+        <li><strong>Briefing escrito:</strong> envía una hoja con los 3 puntos clave que debe cubrir, el tono (formal/cercano) y la duración objetivo. Nada más.</li>
+        <li><strong>Ensayo sin cámara:</strong> 10 minutos de conversación donde el ejecutivo dice los puntos con sus palabras. No leas, conversa.</li>
+        <li><strong>Teleprompter con frases cortas:</strong> no escribas texto literal. Escribe ideas sueltas que el ejecutivo complete naturalmente.</li>
+        <li><strong>Ropa y apariencia:</strong> colores sólidos (evitar rayas finas que vibran en cámara), sin logos grandes, maquillaje ligero para reducir brillos.</li>
+        <li><strong>Hidratación y pausas:</strong> agua antes de grabar, pausas cada 2-3 tomas para relajar la expresión facial.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="produccion">
+      <h2>Producción: equipo y set mínimo</h2>
+      <p>
+        No necesitas un estudio broadcast para lograr buena calidad. El set mínimo profesional incluye:
+      </p>
+      <ul class="article-list">
+        <li><strong>Cámara:</strong> DSLR/mirrorless con lente 50mm f/1.8 o celular gama alta en 4K.</li>
+        <li><strong>Trípode:</strong> imprescindible para plano estable.</li>
+        <li><strong>Micrófono:</strong> de solapa inalámbrico (DJI Mic, Rode Wireless) o shotgun direccional. El audio es más importante que el video.</li>
+        <li><strong>Iluminación:</strong> softbox o panel LED como luz principal a 45°, más luz de relleno suave. Luz de ventana natural también funciona si está controlada.</li>
+        <li><strong>Fondo:</strong> neutro (pared lisa, librero, fondo corporativo con logo sutil). Evitar fondos ocupados o ventanas sin cortinas.</li>
+        <li><strong>Teleprompter:</strong> app en tablet o teleprompter físico sobre la lente. El ejecutivo no debe leer, sino usar el texto como referencia.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="direccion">
+      <h2>Dirección frente a cámara</h2>
+      <p>
+        La mayoría de los ejecutivos nunca ha recibido dirección profesional. Algunas técnicas que usamos en DAR2:
+      </p>
+      <ul class="article-list">
+        <li><strong>Empieza con preguntas, no con lectura:</strong> "Cuéntame, ¿por qué es importante este tema para la industria?" en vez de "Léeme el párrafo 1".</li>
+        <li><strong>Corrige de a una cosa a la vez:</strong> "Perfecto, ahora intenta mirar directo a la lente en vez de al teleprompter" y después "genial, ahora agrega una pausa después de la palabra clave".</li>
+        <li><strong>Usa el "take de respaldo":</strong> después de la toma oficial, pide una versión "más relajada, como si se lo contaras a un colega". Esa suele ser la mejor.</li>
+        <li><strong>Muestra el playback:</strong> después de 2-3 tomas, muestra el resultado. El ejecutivo gana confianza al verse bien en cámara.</li>
+        <li><strong>Respeta el tiempo:</strong> los ejecutivos tienen agendas apretadas. Planifica 30-45 minutos máximo por video, incluyendo preparación.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="postproduccion">
+      <h2>Postproducción y distribución</h2>
+      <p>
+        El video crudo nunca se publica directo. La postproducción profesional marca la diferencia:
+      </p>
+      <ul class="article-list">
+        <li><strong>Edición de ritmo:</strong> corta pausas largas, repeticiones y muletillas. El video final debe ser más dinámico que la grabación original.</li>
+        <li><strong>Corrección de color:</strong> temperatura de color consistente, realce de tono de piel, look corporativo limpio.</li>
+        <li><strong>Audio:</strong> ecualización, compresión suave, reducción de ruido de fondo. Nivel de volumen consistente.</li>
+        <li><strong>Subtítulos:</strong> el 85% de los videos en LinkedIn se ven sin sonido. Subtítulos sincronizados y bien diseñados son obligatorios.</li>
+        <li><strong>Miniatura personalizada:</strong> frame con el rostro del ejecutivo y texto breve. Aumenta el CTR significativamente.</li>
+        <li><strong>Distribución:</strong> publica desde el perfil personal del ejecutivo (no desde la página de la empresa). Etiqueta a la empresa y a colegas relevantes.</li>
+      </ul>
+      <div class="article-cta">
+        <a href="/servicios/redes-sociales/" class="article-cta-btn">
+          Ver nuestro servicio de Redes Sociales →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Qué duración debe tener un video para LinkedIn?</summary>
+        <p>Entre 45 segundos y 2 minutos. Videos de 60-90 segundos tienen las mejores tasas de completion. Si el contenido es denso, divídelo en una serie de videos cortos.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo preparar a un ejecutivo sin experiencia frente a cámara?</summary>
+        <p>Briefing con 3 puntos clave, ensayo sin cámara, teleprompter con frases cortas, dirección amable que corrija sin presionar. La mayoría mejora notablemente después del primer video.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué equipo se necesita?</summary>
+        <p>Mínimo: cámara, trípode, micrófono de solapa y luz principal. Para producción profesional: segunda cámara, luz de relleno, teleprompter y fondo corporativo.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cada cuánto hay que publicar?</summary>
+        <p>1-2 videos por semana es ideal. Consistencia sobre frecuencia: mejor 1 video por semana durante 6 meses que 10 videos en un mes y después nada.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Quieres producir video para LinkedIn con tus ejecutivos?</h2>
+      <p>
+        En DAR2 producimos contenido para LinkedIn con ejecutivos como talento. Te ayudamos con la preparación, producción, postproducción y estrategia de distribución.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=redes-sociales" class="article-cta-btn">
+          Cotizar producción →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

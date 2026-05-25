@@ -23,12 +23,17 @@ const uid = `r-${crypto.randomUUID()}`;
 
 <style>
   .reveal {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 1; /* visible por defecto, la animación es mejora progresiva */
+    transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .reveal.is-visible {
+  .reveal.is-animated {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal.is-animated.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -42,9 +47,12 @@ const uid = `r-${crypto.randomUUID()}`;
     const y = el.dataset.y || '24px';
     const once = el.dataset.once !== 'false';
 
-    // Apply dynamic styles via JS
+    // Aplicar estilos dinámicos vía JS
     el.style.transition = `opacity ${duration}ms ease, transform ${duration}ms ease`;
     el.style.transitionDelay = `${delay}ms`;
+
+    // Marcar para animar: arranca invisible y se revela al hacer scroll
+    el.classList.add('is-animated');
     el.style.transform = `translateY(${y})`;
 
     const observer = new IntersectionObserver(

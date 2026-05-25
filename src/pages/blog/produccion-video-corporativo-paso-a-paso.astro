@@ -1,0 +1,328 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Producción de video corporativo paso a paso', url: 'https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Producción de video corporativo paso a paso: desde el brief hasta la entrega",
+  "description": "El proceso completo de producción de un video corporativo: preproducción, rodaje, postproducción y entregables. Con plazos y costos referenciales.",
+  "image": "https://dar2.cl/images/servicios/videos-corporativos.jpg",
+  "datePublished": "2026-03-03",
+  "dateModified": "2026-03-03",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo toma producir un video corporativo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende de la complejidad. Un video simple (1 locación, 1 día de rodaje, edición básica): 2-3 semanas. Un video complejo (múltiples locaciones, animaciones, postproducción avanzada): 4-8 semanas. El 60% del tiempo se va en preproducción y postproducción." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un video corporativo en Chile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Varía según alcance. Video corporativo básico (1 cámara, 1 locación, 2-3 min): desde CLP 2.500.000. Video profesional (multicámara, locaciones múltiples, gráficas): desde CLP 5.000.000. Video premium (producción broadcast, postproducción avanzada): desde CLP 10.000.000." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye la preproducción de un video corporativo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Briefing, investigación, desarrollo de concepto y guion, storyboard, plan de rodaje, casting si aplica, permisos de locación, coordinación logística y reuniones de alineación con el cliente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué formatos de entrega incluye un video corporativo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los entregables estándar incluyen: master en 4K y Full HD, versión vertical para redes sociales (9:16), versión cuadrada (1:1), clips cortos para Reels/TikTok, subtítulos quemados, y versión sin texto para doblaje internacional." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Producción de video corporativo paso a paso: desde el brief hasta la entrega"
+  description="El proceso completo de producción de un video corporativo: preproducción, rodaje, postproducción y entregables. Con plazos y costos referenciales."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/produccion-video-corporativo-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Video Corporativo</p>
+      <h1 class="article-h1">
+        Producción de video corporativo paso a paso:
+        <em class="hl">desde el brief hasta la entrega.</em>
+      </h1>
+      <p class="article-lead">
+        Producir un video corporativo profesional no es solo "agarrar una cámara y grabar". Hay un proceso estructurado que separa un resultado amateur de uno que cumple objetivos de negocio. Esta guía recorre cada etapa.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 3 de marzo, 2026 · 8 min de lectura
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/produccion-video-corporativo-hero.png"
+        alt="Producción de video corporativo profesional — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#preproduccion">Preproducción: la etapa más importante</a></li>
+        <li><a href="#rodaje">Rodaje: el día de la grabación</a></li>
+        <li><a href="#postproduccion">Postproducción: edición, color y audio</a></li>
+        <li><a href="#entregables">Entregables y formatos</a></li>
+        <li><a href="#plazos">Plazos referenciales</a></li>
+        <li><a href="#costos">Costos referenciales</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="preproduccion">
+      <h2>Preproducción: la etapa más importante</h2>
+      <p>
+        La preproducción es donde se define el 80% del resultado final. Una preproducción sólida reduce riesgos, ahorra tiempo en rodaje y postproducción, y asegura que el video cumpla su objetivo.
+      </p>
+
+      <h3>1. Briefing con el cliente</h3>
+      <p>
+        Reunión inicial para entender: objetivo del video (awareness, ventas, reclutamiento, capacitación), audiencia objetivo, tono (formal, cercano, inspiracional), mensajes clave, restricciones (presupuesto, plazo, locaciones).
+      </p>
+
+      <h3>2. Investigación y concepto</h3>
+      <p>
+        Análisis de la marca, la competencia y referentes audiovisuales. Desarrollo del concepto creativo: enfoque narrativo, estilo visual, tratamiento. Se presentan 2-3 opciones al cliente.
+      </p>
+
+      <h3>3. Guion y storyboard</h3>
+      <p>
+        Escritura del guion aprobado por el cliente. Desarrollo de storyboard (versión visual cuadro por cuadro) para alinear expectativas antes del rodaje. Incluye planos, transiciones, gráficas y texto en pantalla.
+      </p>
+
+      <h3>4. Plan de rodaje</h3>
+      <p>
+        Cronograma detallado: fechas, locaciones, talento, equipo técnico, logística. Permisos de grabación, autorizaciones de imagen, contratos. Todo firmado antes del día del rodaje.
+      </p>
+    </section>
+
+    <section class="article-section" id="rodaje">
+      <h2>Rodaje: el día de la grabación</h2>
+      <p>
+        El rodaje es la etapa más visible pero no necesariamente la más larga. Un día típico de rodaje corporativo incluye:
+      </p>
+      <ul class="article-list">
+        <li><strong>Llegada y montaje:</strong> 1-2 horas para instalar cámaras, luces, micrófonos, monitores y decoración de set.</li>
+        <li><strong>Pruebas de cámara y audio:</strong> 30 minutos para ajustar exposición, balance de blancos, niveles de audio y encuadre.</li>
+        <li><strong>Grabación por bloques:</strong> cada escena se graba en múltiples tomas (plano general, plano medio, primer plano, inserts).</li>
+        <li><strong>Revisión y respaldo:</strong> al final del día, se revisa el material grabado y se respaldan los archivos en 2 discos duros separados.</li>
+      </ul>
+      <p>
+        Un rodaje corporativo típico dura 1 día (8-10 horas) para videos de 2-3 minutos. Proyectos más complejos pueden requerir 2-3 días de rodaje.
+      </p>
+    </section>
+
+    <section class="article-section" id="postproduccion">
+      <h2>Postproducción: edición, color y audio</h2>
+      <p>
+        La postproducción es donde el material crudo se transforma en el video final. Es la etapa que más tiempo requiere (40-50% del proyecto total).
+      </p>
+
+      <h3>Edición</h3>
+      <p>
+        Selección de las mejores tomas, montaje narrativo, ritmo, transiciones. Se entrega un "corte fino" para revisión del cliente. Después de feedback, se afina el corte final.
+      </p>
+
+      <h3>Corrección de color</h3>
+      <p>
+        Ajuste de temperatura de color, contraste, saturación y look general. Se busca consistencia visual entre todas las escenas y el estilo definido en preproducción.
+      </p>
+
+      <h3>Audio</h3>
+      <p>
+        Edición de diálogos (cortar pausas, ajustar sincronía), mezcla de audio (niveles de voz, música, efectos), reducción de ruido ambiente. La música se selecciona de librerías libres de derechos o se compone original.
+      </p>
+
+      <h3>Gráficas y motion graphics</h3>
+      <p>
+        Títulos, lower thirds, gráficas de datos, animaciones de logo, texto en pantalla. Se integran en la edición final con estilo coherente con la marca.
+      </p>
+    </section>
+
+    <section class="article-section" id="entregables">
+      <h2>Entregables y formatos</h2>
+      <p>
+        Un video corporativo profesional se entrega en múltiples formatos para distintos canales:
+      </p>
+      <ul class="article-list">
+        <li><strong>Master 4K</strong> (3840×2160, H.264 o ProRes): archivo original de máxima calidad para archivo.</li>
+        <li><strong>Full HD</strong> (1920×1080): versión estándar para web y presentaciones.</li>
+        <li><strong>Vertical 9:16</strong> (1080×1920): para Instagram Reels, TikTok, YouTube Shorts.</li>
+        <li><strong>Cuadrado 1:1</strong> (1080×1080): para Instagram feed y LinkedIn.</li>
+        <li><strong>Clips cortos</strong> (15-30 seg): versiones resumidas para redes sociales.</li>
+        <li><strong>Con subtítulos quemados</strong>: para visualización sin sonido.</li>
+        <li><strong>Sin texto ni gráficas</strong>: versión limpia para doblaje o traducción.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="plazos">
+      <h2>Plazos referenciales</h2>
+      <p>
+        El tiempo total de producción depende de la complejidad:
+      </p>
+      <ul class="article-list">
+        <li><strong>Video simple</strong> (1 locación, 1 día de rodaje, edición básica): 2-3 semanas.</li>
+        <li><strong>Video profesional</strong> (2-3 locaciones, gráficas, postproducción completa): 4-6 semanas.</li>
+        <li><strong>Video premium</strong> (múltiples locaciones, animaciones, música original): 6-10 semanas.</li>
+      </ul>
+      <p>
+        El 60% del tiempo se invierte en preproducción y postproducción. El rodaje es la etapa más corta.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/videos-corporativos/" class="article-cta-btn">
+          Ver nuestro servicio de Videos Corporativos →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="costos">
+      <h2>Costos referenciales</h2>
+      <p>
+        Los costos de producción de video corporativo en Chile varían según alcance:
+      </p>
+      <ul class="article-list">
+        <li><strong>Video básico</strong> (1 cámara, 1 locación, 2-3 min): desde CLP 2.500.000.</li>
+        <li><strong>Video profesional</strong> (multicámara, locaciones múltiples, gráficas): desde CLP 5.000.000.</li>
+        <li><strong>Video premium</strong> (producción broadcast, postproducción avanzada): desde CLP 10.000.000.</li>
+      </ul>
+      <p>
+        Los valores incluyen equipo, crew, postproducción y entregables en todos los formatos. No incluyen talento externo (actores, locutores) ni viajes fuera de Santiago.
+      </p>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuánto tiempo toma producir un video corporativo?</summary>
+        <p>Video simple: 2-3 semanas. Video profesional: 4-6 semanas. Video premium: 6-10 semanas. El 60% del tiempo se va en preproducción y postproducción.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta un video corporativo en Chile?</summary>
+        <p>Básico: desde CLP 2.500.000. Profesional: desde CLP 5.000.000. Premium: desde CLP 10.000.000. Incluye equipo, crew, postproducción y entregables.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué incluye la preproducción?</summary>
+        <p>Briefing, investigación, concepto, guion, storyboard, plan de rodaje, permisos, coordinación logística y reuniones de alineación con el cliente.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué formatos de entrega incluye?</summary>
+        <p>Master 4K, Full HD, vertical 9:16, cuadrado 1:1, clips cortos para redes, con subtítulos y versión limpia sin texto.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Listo para producir tu video corporativo?</h2>
+      <p>
+        En DAR2 producimos video corporativo end-to-end con equipo propio y postproducción interna. Te acompañamos desde el brief hasta la entrega en todos los formatos.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=videos-corporativos" class="article-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

@@ -1,0 +1,306 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Circuito cerrado vs. streaming', url: 'https://dar2.cl/blog/circuito-cerrado-vs-streaming/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Circuito cerrado vs. streaming: diferencias, cuándo usar cada uno y cómo combinarlos",
+  "description": "Comparativa técnica entre circuito cerrado CCTV y streaming en vivo. Cuándo conviene cada formato y cómo combinarlos en un mismo evento.",
+  "image": "https://dar2.cl/images/servicios/circuito-cerrado.jpg",
+  "datePublished": "2026-03-31",
+  "dateModified": "2026-03-31",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/circuito-cerrado-vs-streaming/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la principal diferencia entre circuito cerrado y streaming?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El circuito cerrado transmite video a pantallas físicas en ubicaciones específicas sin pasar por internet. El streaming distribuye video a través de internet a dispositivos remotos. El primero es más seguro y confiable; el segundo tiene mayor alcance." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se pueden combinar circuito cerrado y streaming en un mismo evento?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, es la configuración más común en eventos corporativos grandes. La señal se envía simultáneamente a pantallas en salas físicas (circuito cerrado) y a audiencia remota vía streaming. Se necesita un switcher de video que distribuya la señal a ambos destinos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesito para un circuito cerrado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cámaras, switcher de video, cableado HDMI/SDI (o transmisores inalámbricos), pantallas o proyectores en cada punto de visualización, y un sistema de audio distribuido. Para distancias largas, se usa fibra óptica o SDI sobre coaxial." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo conviene más el circuito cerrado que el streaming?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cuando el contenido es sensible o confidencial (juntas de directorio, resultados financieros), cuando la audiencia está toda en un mismo edificio pero en salas separadas, o cuando la conexión a internet no es confiable." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Circuito cerrado vs. streaming: diferencias, cuándo usar cada uno y cómo combinarlos"
+  description="Comparativa técnica entre circuito cerrado CCTV y streaming en vivo. Cuándo conviene cada formato y cómo combinarlos en un mismo evento."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/circuito-cerrado-vs-streaming-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming Corporativo</p>
+      <h1 class="article-h1">
+        Circuito cerrado vs. streaming: diferencias, cuándo usar cada uno
+        <em class="hl">y cómo combinarlos.</em>
+      </h1>
+      <p class="article-lead">
+        No es lo mismo transmitir por internet que distribuir video a pantallas dentro de un edificio. Cada formato tiene casos de uso distintos, ventajas técnicas y consideraciones de presupuesto. Esta guía te ayuda a elegir.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 31 de marzo, 2026 · 5 min de lectura
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/circuito-cerrado-vs-streaming-hero.png"
+        alt="Circuito cerrado de video vs streaming en vivo — comparativa DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#definiciones">Definiciones: qué es cada uno</a></li>
+        <li><a href="#diferencias">Diferencias técnicas clave</a></li>
+        <li><a href="#cuando-usar">Cuándo usar circuito cerrado</a></li>
+        <li><a href="#cuando-streaming">Cuándo usar streaming</a></li>
+        <li><a href="#combinar">Cómo combinarlos</a></li>
+        <li><a href="#costos">Comparativa de costos</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="definiciones">
+      <h2>Definiciones: qué es cada uno</h2>
+
+      <h3>Circuito cerrado de televisión (CCTV)</h3>
+      <p>
+        El circuito cerrado es un sistema de distribución de video que transmite señal desde una o más cámaras a un conjunto específico de monitores o pantallas, sin pasar por internet. La señal viaja por cable (SDI, HDMI, fibra óptica) o por transmisión inalámbrica en una red local privada.
+      </p>
+      <p>
+        Se llama "cerrado" porque la señal solo está disponible en los puntos de visualización definidos. Nadie fuera de ese circuito puede acceder al contenido.
+      </p>
+
+      <h3>Streaming en vivo</h3>
+      <p>
+        El streaming en vivo codifica la señal de video y la distribuye a través de internet a dispositivos remotos: computadores, tablets, celulares, smart TVs. Cualquier persona con el link puede verlo, desde cualquier lugar del mundo.
+      </p>
+      <p>
+        La señal pasa por un codificador, sube a un servidor de streaming (CDN) y se distribuye a los espectadores. La calidad depende del ancho de banda de subida y de la capacidad del CDN.
+      </p>
+    </section>
+
+    <section class="article-section" id="diferencias">
+      <h2>Diferencias técnicas clave</h2>
+      <ul class="article-list">
+        <li><strong>Seguridad:</strong> circuito cerrado es inherentemente seguro (no hay riesgo de filtración por internet). Streaming requiere autenticación, cifrado y plataformas seguras.</li>
+        <li><strong>Alcance:</strong> circuito cerrado llega solo a pantallas físicas conectadas. Streaming llega a cualquier dispositivo con internet.</li>
+        <li><strong>Latencia:</strong> circuito cerrado tiene latencia casi cero (frames en tiempo real). Streaming tiene 5-30 segundos de delay dependiendo de la plataforma.</li>
+        <li><strong>Calidad:</strong> circuito cerrado entrega calidad sin compresión adicional (full broadcast). Streaming comprime el video para adaptarse al ancho de banda disponible.</li>
+        <li><strong>Dependencia de internet:</strong> circuito cerrado no necesita internet. Streaming depende completamente de la conexión.</li>
+        <li><strong>Escalabilidad:</strong> circuito cerrado requiere infraestructura física por cada punto de visualización. Streaming escala sin límite de audiencia.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="cuando-usar">
+      <h2>Cuándo usar circuito cerrado</h2>
+      <p>
+        El circuito cerrado es la mejor opción cuando:
+      </p>
+      <ul class="article-list">
+        <li><strong>El contenido es confidencial:</strong> juntas de directorio, resultados financieros, información sensible que no debe salir del edificio.</li>
+        <li><strong>La audiencia está en un mismo lugar:</strong> convenciones con salas satélite, hoteles con múltiples salones, edificios corporativos con pisos separados.</li>
+        <li><strong>No hay internet confiable:</strong> eventos en zonas sin conectividad o donde no se puede garantizar el ancho de banda necesario.</li>
+        <li><strong>Se necesita latencia cero:</strong> eventos donde la interacción en tiempo real es crítica (votaciones en vivo, preguntas y respuestas sincronizadas).</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="cuando-streaming">
+      <h2>Cuándo usar streaming</h2>
+      <p>
+        El streaming es la mejor opción cuando:
+      </p>
+      <ul class="article-list">
+        <li><strong>La audiencia está dispersa geográficamente:</strong> colaboradores en regiones, clientes en otros países, accionistas remotos.</li>
+        <li><strong>Se busca alcance masivo:</strong> lanzamientos de producto, eventos abiertos al público, campañas de marketing.</li>
+        <li><strong>El contenido quedará grabado:</strong> el streaming deja automáticamente una grabación disponible para reproducción posterior.</li>
+        <li><strong>Se necesita medir audiencia:</strong> las plataformas de streaming entregan métricas detalladas de quién vio, desde dónde y por cuánto tiempo.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="combinar">
+      <h2>Cómo combinar circuito cerrado y streaming</h2>
+      <p>
+        En eventos corporativos grandes, la configuración más común es híbrida: la misma señal de video se envía simultáneamente a pantallas en salas físicas (circuito cerrado) y a audiencia remota (streaming).
+      </p>
+      <p>
+        Para esto se necesita:
+      </p>
+      <ol class="article-list">
+        <li><strong>Un switcher de video profesional</strong> que reciba todas las cámaras y distribuya la señal seleccionada (PGM) a múltiples destinos.</li>
+        <li><strong>Un splitter de señal</strong> que envíe la PGM simultáneamente al codificador de streaming y a los transmisores de circuito cerrado.</li>
+        <li><strong>Infraestructura de red separada:</strong> el circuito cerrado usa cableado propio (SDI, HDMI, fibra), mientras el streaming usa la conexión a internet.</li>
+        <li><strong>Monitoreo independiente:</strong> un técnico supervisa la calidad del circuito cerrado y otro la del streaming, para asegurar que ambos destinos reciban señal óptima.</li>
+      </ol>
+      <p>
+        DAR2 ha implementado esta configuración híbrida en juntas de accionistas para Empresas Copec, Clínica Santa María y otros clientes corporativos.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/circuito-cerrado/" class="article-cta-btn">
+          Ver nuestro servicio de Circuito Cerrado →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="costos">
+      <h2>Comparativa de costos</h2>
+      <p>
+        El costo depende del tamaño del evento y la infraestructura requerida:
+      </p>
+      <ul class="article-list">
+        <li><strong>Circuito cerrado básico</strong> (2-3 pantallas en un edificio): desde CLP 1.500.000.</li>
+        <li><strong>Circuito cerrado complejo</strong> (múltiples salas, largas distancias, fibra óptica): desde CLP 4.000.000.</li>
+        <li><strong>Streaming básico</strong> (1 cámara, plataforma estándar): desde CLP 800.000.</li>
+        <li><strong>Streaming multicámara profesional</strong> (3+ cámaras, gráficas, CDN): desde CLP 2.500.000.</li>
+        <li><strong>Solución híbrida completa</strong> (circuito cerrado + streaming): desde CLP 4.500.000.</li>
+      </ul>
+      <p>
+        Todos los valores incluyen equipo, instalación, operación y soporte técnico durante el evento.
+      </p>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuál es la principal diferencia entre circuito cerrado y streaming?</summary>
+        <p>El circuito cerrado transmite video a pantallas físicas sin internet. El streaming distribuye por internet a dispositivos remotos. El primero es más seguro; el segundo tiene mayor alcance.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Se pueden combinar en un mismo evento?</summary>
+        <p>Sí, es la configuración más común en eventos corporativos grandes. La señal se envía simultáneamente a pantallas físicas y a audiencia remota vía streaming.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué necesito para un circuito cerrado?</summary>
+        <p>Cámaras, switcher, cableado SDI/HDMI, pantallas o proyectores en cada punto, y sistema de audio distribuido. Para distancias largas, fibra óptica o SDI sobre coaxial.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuándo conviene más el circuito cerrado que el streaming?</summary>
+        <p>Cuando el contenido es confidencial, cuando la audiencia está toda en un mismo edificio en salas separadas, o cuando la conexión a internet no es confiable.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Necesitas circuito cerrado, streaming o ambos?</h2>
+      <p>
+        En DAR2 diseñamos e implementamos soluciones de distribución de video para eventos corporativos. Te asesoramos en la mejor configuración según tu evento, audiencia y presupuesto.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=streaming" class="article-cta-btn">
+          Cotizar solución →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>
