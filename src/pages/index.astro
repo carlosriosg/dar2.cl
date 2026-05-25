@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import VideoCard from '../components/VideoCard.astro';
 import Picture from '../components/Picture.astro';
+import Reveal from '../components/Reveal.astro';
 import { getCollection } from 'astro:content';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -98,7 +99,7 @@ const clienteUrls: Record<string, string> = {
 >
 
   <!-- ── 1. HERO ─────────────────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-[80px] pb-[60px]">
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-15">
     <div class="hero-grid">
 
       <!-- Text column -->
@@ -123,13 +124,13 @@ const clienteUrls: Record<string, string> = {
         <div class="flex flex-wrap gap-4">
           <a
             href="/contacto/"
-            class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+          class="inline-flex items-center bg-primary text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
           >
             Cotizar ahora
           </a>
           <a
             href="/portafolio/"
-            class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border border-[#e5e5e5] hover:border-[#1a1a1a] transition-colors"
+            class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border border-border hover:border-primary transition-colors"
           >
             Ver portafolio
           </a>
@@ -158,7 +159,8 @@ const clienteUrls: Record<string, string> = {
   </section>
 
   <!-- ── 2. SERVICIOS (8) ──────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
+  <Reveal>
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-3">Servicios</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-6">
       8 servicios. Un solo proveedor.
@@ -203,15 +205,17 @@ const clienteUrls: Record<string, string> = {
       </a>
     </div>
   </section>
+  </Reveal>
 
   <!-- ── 3. PROYECTOS DESTACADOS ───────────────────────── -->
   {destacados.length > 0 && (
-    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <Reveal delay={100}>
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
       <div class="flex items-end justify-between mb-4 flex-wrap gap-4">
         <p class="text-xs font-semibold uppercase tracking-widest text-[#666]">Portafolio</p>
         <a
           href="/portafolio/"
-          class="text-sm font-semibold text-[#666] hover:text-[#1a1a1a] transition-colors whitespace-nowrap"
+          class="text-sm font-semibold text-[#666] hover:text-primary transition-colors whitespace-nowrap"
         >
           Ver todos los proyectos →
         </a>
@@ -238,11 +242,13 @@ const clienteUrls: Record<string, string> = {
         </a>
       </div>
     </section>
+    </Reveal>
   )}
 
   <!-- ── 4. CONFÍAN EN NOSOTROS (marquesina infinita) ────────────────────────── -->
-  <section class="clientes-section border-t border-[#e5e5e5] py-20">
-    <div class="max-w-[1200px] mx-auto px-6 mb-12">
+  <Reveal delay={200}>
+  <section class="clientes-section border-t border-border py-20">
+    <div class="max-w-300 mx-auto px-6 mb-12">
       <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Clientes</p>
       <h2 class="text-3xl md:text-4xl font-black tracking-tight">
         Confían en nosotros.
@@ -298,15 +304,79 @@ const clienteUrls: Record<string, string> = {
       </div>
     </div>
   </section>
+  </Reveal>
 
   <!-- ── 4B. TESTIMONIALES ─────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+  <Reveal delay={300}>
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Testimonios</p>
-    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
-      Lo que dicen quienes ya trabajaron con DAR2.
-    </h2>
+    <div class="flex items-center gap-3 mb-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight max-w-2xl">
+        Lo que dicen quienes ya trabajaron con DAR2.
+      </h2>
+    </div>
+
+    <!-- Google Rating -->
+    <div class="flex items-center gap-3 mb-10">
+      <div class="flex items-center gap-0.5">
+        {[1,2,3,4,5].map(i => (
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        ))}
+      </div>
+      <p class="text-lg font-bold text-primary">5.0</p>
+      <a
+        href="https://www.google.com/maps?cid=6666778595618035561"
+        target="_blank"
+        rel="noopener"
+        class="text-sm text-[#666] hover:text-primary transition-colors underline underline-offset-2"
+      >
+        Reseñas de Google
+      </a>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <blockquote class="testimonial">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(i => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          ))}
+        </div>
+        <p class="testimonial-text">
+          "Excelente servicio, muy profesionales, cumplieron con todo lo prometido y más. Muy recomendables para eventos corporativos y streaming en vivo."
+        </p>
+        <footer class="testimonial-meta">
+          <p class="testimonial-role">Claudio Martínez</p>
+          <p class="testimonial-org">Google Review ★★★★★</p>
+        </footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(i => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          ))}
+        </div>
+        <p class="testimonial-text">
+          "Muy contento con el trabajo realizado. Producción impecable, equipo muy profesional y resultados de alta calidad. Sin duda volveremos a trabajar con ellos."
+        </p>
+        <footer class="testimonial-meta">
+          <p class="testimonial-role">Andrés Sepúlveda</p>
+          <p class="testimonial-org">Google Review ★★★★★</p>
+        </footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(i => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          ))}
+        </div>
         <p class="testimonial-text">
           "DAR2 produjo nuestra junta anual durante varios años seguidos. Cero interrupciones, cero excusas. Cuando una marca te pide eso, los recomendamos antes que cualquier otro."
         </p>
@@ -315,29 +385,13 @@ const clienteUrls: Record<string, string> = {
           <p class="testimonial-org">Retail multinacional, Chile</p>
         </footer>
       </blockquote>
-      <blockquote class="testimonial">
-        <p class="testimonial-text">
-          "Pasamos de hacer videos en Zoom con el celular del jefe a contenido broadcast con escenografía virtual. La diferencia en percepción de marca con nuestros afiliados fue inmediata."
-        </p>
-        <footer class="testimonial-meta">
-          <p class="testimonial-role">Directora de Marketing Digital</p>
-          <p class="testimonial-org">AFP, Chile</p>
-        </footer>
-      </blockquote>
-      <blockquote class="testimonial">
-        <p class="testimonial-text">
-          "Nuestro primer live shopping convirtió varias veces mejor que el e-commerce normal. Ahora hacemos uno cada dos semanas. DAR2 ya nos ha producido decenas de sesiones."
-        </p>
-        <footer class="testimonial-meta">
-          <p class="testimonial-role">Jefe de Activaciones</p>
-          <p class="testimonial-org">Retail farmacéutico, Chile</p>
-        </footer>
-      </blockquote>
     </div>
   </section>
+  </Reveal>
 
   <!-- ── 5. STATS ──────────────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+  <Reveal delay={400}>
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">En números</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-xl">
       Trayectoria que respalda cada proyecto.
@@ -346,27 +400,29 @@ const clienteUrls: Record<string, string> = {
       Fundada en 2010 por Carlos Rios Guevara. 15 años produciendo audiovisual para empresas chilenas con equipo propio y postproducción interna. Las cifras hablan por nosotros.
     </p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-      <div class="border-l-2 border-[#FF4500] pl-6">
+      <div class="border-l-2 border-accent pl-6">
         <p class="text-5xl font-black tracking-tight">15+</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
       </div>
-      <div class="border-l-2 border-[#e5e5e5] pl-6">
+      <div class="border-l-2 border-border pl-6">
         <p class="text-5xl font-black tracking-tight">40+</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Transmisiones<br />al año</p>
       </div>
-      <div class="border-l-2 border-[#e5e5e5] pl-6">
+      <div class="border-l-2 border-border pl-6">
         <p class="text-5xl font-black tracking-tight">30+</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
       </div>
-      <div class="border-l-2 border-[#e5e5e5] pl-6">
+      <div class="border-l-2 border-border pl-6">
         <p class="text-5xl font-black tracking-tight">48h</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Respuesta a<br />cotización</p>
       </div>
     </div>
   </section>
+  </Reveal>
 
   <!-- ── 5B. CÓMO TRABAJAMOS ───────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+  <Reveal delay={500}>
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
       Cómo trabajamos.
@@ -395,9 +451,132 @@ const clienteUrls: Record<string, string> = {
       </div>
     </div>
   </section>
+  </Reveal>
+
+  <!-- ── 5C. LEAD CAPTURE FORM ────────────────────────── -->
+  <Reveal delay={600}>
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Cotización</p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-xl">
+          Cuéntanos tu proyecto
+          <em class="text-accent italic"> y te cotizamos en 48h.</em>
+        </h2>
+        <p class="text-[#666] leading-relaxed mb-6">
+          Sin letra chica, sin intermediarios. Te enviamos una propuesta detallada con presupuesto, alcance y timeline.
+        </p>
+        <div class="flex items-center gap-2 text-sm text-[#666]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>También por <a href="https://wa.me/56998433346?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20DAR2" target="_blank" rel="noopener" class="font-semibold text-primary hover:text-accent transition-colors">WhatsApp</a> o <a href="mailto:dar2@dar2.cl" class="font-semibold text-primary hover:text-accent transition-colors">dar2@dar2.cl</a></span>
+        </div>
+      </div>
+      <div>
+        <form
+          id="lead-form"
+          name="lead"
+          class="space-y-4 bg-[#fafafa] p-8 rounded-2xl border border-border"
+        >
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" for="lead-nombre">Nombre *</label>
+            <input
+              type="text"
+              id="lead-nombre"
+              name="nombre"
+              required
+              placeholder="Tu nombre"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors rounded-lg bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" for="lead-email">Email *</label>
+            <input
+              type="email"
+              id="lead-email"
+              name="email"
+              required
+              placeholder="tu@empresa.cl"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors rounded-lg bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" for="lead-mensaje">Cuéntanos tu proyecto *</label>
+            <textarea
+              id="lead-mensaje"
+              name="mensaje"
+              rows="3"
+              required
+              placeholder="Tipo de evento, fecha estimada, número de asistentes..."
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors rounded-lg bg-white resize-none"
+            ></textarea>
+          </div>
+          <button type="submit" class="w-full bg-primary text-white text-sm font-bold px-6 py-3.5 rounded-xl hover:bg-[#333] transition-colors" id="lead-submit">
+            <span id="lead-submit-label">Solicitar cotización →</span>
+          </button>
+          <div id="lead-status" class="text-sm font-medium hidden" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ── Lead capture form (Web3Forms) ──────────────────
+    const leadForm = document.getElementById('lead-form');
+    const leadSubmit = document.getElementById('lead-submit');
+    const leadLabel = document.getElementById('lead-submit-label');
+    const leadStatus = document.getElementById('lead-status');
+
+    if (leadForm && leadSubmit && leadLabel && leadStatus) {
+      leadForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!leadForm.reportValidity()) return;
+
+        const data = new FormData(leadForm);
+        const payload = {
+          access_key: '8786a10e-33d3-40a3-9f1b-6570a3a3db0c',
+          subject: 'Nuevo lead desde homepage dar2.cl',
+          from_name: `${data.get('nombre')} · vía homepage dar2.cl`,
+          replyto: data.get('email'),
+          nombre: data.get('nombre'),
+          email: data.get('email'),
+          mensaje: data.get('mensaje'),
+          origen: 'Homepage - Lead capture',
+        };
+
+        leadSubmit.disabled = true;
+        leadLabel.textContent = 'Enviando...';
+        leadStatus.className = 'text-sm font-medium mt-3 p-3 rounded-lg bg-[#f5f5f5] text-[#555] border-l-[3px] border-[#999]';
+        leadStatus.textContent = 'Enviando tu mensaje...';
+        leadStatus.hidden = false;
+
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          if (res.ok) {
+            leadStatus.className = 'text-sm font-medium mt-3 p-3 rounded-lg bg-[#ecfdf5] text-[#065f46] border-l-[3px] border-[#10b981]';
+            leadStatus.textContent = '✓ Mensaje enviado. Te responderemos en menos de 48h hábiles.';
+            leadForm.reset();
+          } else {
+            throw new Error(`HTTP ${res.status}`);
+          }
+        } catch (err) {
+          leadStatus.className = 'text-sm font-medium mt-3 p-3 rounded-lg bg-[#fef2f2] text-[#991b1b] border-l-[3px] border-[#ef4444]';
+          leadStatus.textContent = 'Hubo un problema. Escríbenos a dar2@dar2.cl o por WhatsApp.';
+        }
+
+        leadSubmit.disabled = false;
+        leadLabel.textContent = 'Solicitar cotización →';
+      });
+    }
+  </script>
+  </Reveal>
 
   <!-- ── 6. CTA FINAL ──────────────────────────────────── -->
-  <section class="bg-[#1a1a1a] mt-8">
+  <section class="bg-primary mt-8">
     <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
       <div>
         <p class="text-xs font-semibold uppercase tracking-widest text-[#aaa] mb-4">
@@ -432,7 +611,7 @@ const clienteUrls: Record<string, string> = {
             <span>@dar2.cl · Instagram</span>
           </p>
           <h2 id="ig-heading" class="ig-title">
-            Detrás de cámaras del <em class="not-italic italic text-[#FF4500]">estudio.</em>
+            Detrás de cámaras del <em class="text-accent italic">estudio.</em>
           </h2>
           <p class="ig-subtitle">
             Producciones recientes, behind the scenes y novedades del día a día en DAR2.

@@ -45,6 +45,42 @@ const articles = [
     category: 'Video Corporativo',
     image: '/images/blog/roi-video-corporativo-hero.png',
   },
+  {
+    slug: 'filtros-ar-marca-instagram-tiktok',
+    title: 'Filtros AR para marca: cómo funcionan y por qué tu empresa debería tener uno',
+    excerpt: 'Guía completa de filtros de realidad aumentada para Instagram y TikTok: tipos, costos, proceso de creación y métricas de alcance orgánico.',
+    date: '2026-04-14',
+    readTime: '6 min',
+    category: 'Filtros AR',
+    image: '/images/blog/filtros-ar-marca-hero.png',
+  },
+  {
+    slug: 'circuito-cerrado-vs-streaming',
+    title: 'Circuito cerrado vs. streaming: diferencias, cuándo usar cada uno y cómo combinarlos',
+    excerpt: 'Comparativa técnica entre circuito cerrado CCTV y streaming en vivo. Cuándo conviene cada formato y cómo combinarlos en un mismo evento.',
+    date: '2026-03-31',
+    readTime: '5 min',
+    category: 'Streaming Corporativo',
+    image: '/images/blog/circuito-cerrado-vs-streaming-hero.png',
+  },
+  {
+    slug: 'contenido-linkedin-ejecutivos',
+    title: 'Cómo producir contenido para LinkedIn con tus ejecutivos como talento',
+    excerpt: 'Guía práctica para grabar videos profesionales con ejecutivos sin experiencia frente a cámara: formato, duración, dirección y postproducción.',
+    date: '2026-03-17',
+    readTime: '6 min',
+    category: 'Redes Sociales',
+    image: '/images/blog/linkedin-ejecutivos-hero.png',
+  },
+  {
+    slug: 'produccion-video-corporativo-paso-a-paso',
+    title: 'Producción de video corporativo paso a paso: desde el brief hasta la entrega',
+    excerpt: 'El proceso completo de producción de un video corporativo: preproducción, rodaje, postproducción y entregables. Con plazos y costos referenciales.',
+    date: '2026-03-03',
+    readTime: '8 min',
+    category: 'Video Corporativo',
+    image: '/images/blog/produccion-video-corporativo-hero.png',
+  },
 ];
 
 // Schema Blog + ItemList para que Google muestre rich results de carousel
@@ -97,7 +133,7 @@ const itemListSchema = {
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Blog</p>
     <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
       Guías de producción
-      <em class="not-italic italic text-[#FF4500]"> audiovisual y digital.</em>
+      <em class="text-accent italic"> audiovisual y digital.</em>
     </h1>
     <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
       Artículos sobre live shopping, streaming corporativo, video marketing y tendencias para empresas en Chile.
@@ -105,7 +141,7 @@ const itemListSchema = {
   </section>
 
   <!-- Listado -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-12">
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-12">
     <ul class="blog-list">
       {articles.map(art => (
         <li class="blog-item">
