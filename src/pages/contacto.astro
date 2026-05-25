@@ -7,6 +7,16 @@ const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Contacto', url: 'https://dar2.cl/contacto/' },
 ];
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://dar2.cl/contacto/#contactpage",
+  "url": "https://dar2.cl/contacto/",
+  "name": "Contacto — Cotiza tu proyecto audiovisual en 48h",
+  "description": "Cotización a medida en 48 horas. Llámanos al +56 9 9843 3346 o escríbenos a dar2@dar2.cl. Av. Holanda 099, Providencia, Santiago.",
+  "mainEntity": { "@id": "https://dar2.cl/#organization" }
+};
 ---
 
 <Base
@@ -14,6 +24,9 @@ const breadcrumbs = [
   description="Cotización a medida en 48 horas. Llámanos al +56 9 9843 3346 o escríbenos a dar2@dar2.cl. Av. Holanda 099, Providencia, Santiago."
   breadcrumbs={breadcrumbs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
@@ -153,7 +166,7 @@ const breadcrumbs = [
           <div>
             <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Ubicación</p>
             <p class="text-sm text-[#666] leading-relaxed">
-              Av. Holanda 099, of. 603<br />
+              Av. Holanda 099, of 603<br />
               Providencia, Santiago<br />
               Chile
             </p>

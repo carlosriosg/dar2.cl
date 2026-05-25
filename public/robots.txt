@@ -19,4 +19,7 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://dar2.cl/sitemap-index.xml

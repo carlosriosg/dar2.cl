@@ -106,7 +106,15 @@ const websiteSchema = {
   "name": "DAR2 Servicios Audiovisuales",
   "description": "Productora audiovisual en Santiago de Chile especializada en streaming, live shopping y video corporativo.",
   "publisher": { "@id": "https://dar2.cl/#organization" },
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://dar2.cl/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 };
 
 // BreadcrumbList opcional: el page padre puede pasar un array de items.
