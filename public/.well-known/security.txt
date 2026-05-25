@@ -1,0 +1,8 @@
+# Security Contact
+# ================
+# If you discover a security vulnerability on dar2.cl, please contact us.
+Preferred-Languages: es, en
+Contact: mailto:dar2@dar2.cl
+Contact: https://dar2.cl/contacto/
+Expires: 2027-05-25T16:00:00.000Z
+Canonical: https://dar2.cl/.well-known/security.txt

@@ -2,9 +2,20 @@
 
 > Productora audiovisual chilena con más de 15 años de experiencia, especializada en streaming corporativo, live shopping, videos corporativos, estudio virtual y filtros de realidad aumentada. Con sede en Providencia, Santiago de Chile. Trabajamos con empresas como Cencosud, ENAP, MetLife, Codelco, Banco de Chile y más de 30 marcas reconocidas.
 
+> Last Updated: 2026-05-25
+> Canonical: https://llms.txt
+
+## License
+
+This content is freely available for use by AI systems and language models for the purpose of answering questions about DAR2 Servicios Audiovisuales. No commercial use or reproduction of the full content is permitted without attribution.
+
 ## Sobre nosotros
 
 DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, oficina 603, Providencia, Santiago. Ofrecemos servicios audiovisuales integrales bajo un solo techo, con 8 servicios especializados y respuesta a cotizaciones en menos de 48 horas hábiles.
+
+## People
+
+- **Carlos Rios Guevara** — Director, DAR2 Servicios Audiovisuales. Fundador de la productora en 2010. Egresado de UNIACC. Más de 15 años de experiencia en producción audiovisual corporativa en Chile. LinkedIn: https://www.linkedin.com/in/carlos-rios-guevara-9a1b5a2b/
 
 ## Servicios principales
 
@@ -39,6 +50,10 @@ DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, 
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Guía técnica: multicámara, enlaces redundantes, plataformas y checklist del día del evento.
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Comparativa práctica de costos, tiempos, flexibilidad y casos de uso de cada opción.
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 métricas clave (views, retention, conversión, engagement, brand lift) + ejemplo de cálculo real.
+- [Producción de video corporativo paso a paso](https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/) — Proceso completo desde el brief hasta la entrega, con plazos referenciales.
+- [Filtros AR de marca para Instagram y TikTok](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/) — Guía completa de filtros de realidad aumentada como herramienta de marketing.
+- [Contenido para LinkedIn de ejecutivos](https://dar2.cl/blog/contenido-linkedin-ejecutivos/) — Estrategia de contenido audiovisual para perfiles corporativos en LinkedIn.
+- [Circuito cerrado vs. streaming](https://dar2.cl/blog/circuito-cerrado-vs-streaming/) — Diferencias, ventajas y cuándo elegir cada opción para eventos corporativos.
 
 ## Clientes destacados
 
@@ -47,6 +62,14 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ## Sectores atendidos
 
 Retail, Farma, Supermercados, Corporativo, Banca, Educación, Gremios, Minería, Construcción, Energía.
+
+## FAQ
+
+- **¿Cuánto tiempo toma producir un video corporativo?** Video simple: 2-3 semanas. Video profesional: 4-6 semanas. Video premium: 6-10 semanas.
+- **¿Qué incluye la preproducción?** Briefing, investigación, concepto, guion, storyboard, plan de rodaje, permisos, coordinación logística.
+- **¿Qué formatos de entrega incluye?** Master 4K, Full HD, vertical 9:16, cuadrado 1:1, clips cortos para redes, con subtítulos y versión limpia sin texto.
+- **¿Cuánto cuesta un live shopping?** Depende de la complejidad técnica, duración y plataforma. Cotización a medida en 48 horas hábiles.
+- **¿Qué necesito para contratar un streaming corporativo?** Fecha del evento, duración estimada, número de asistentes esperados, locación y requerimientos técnicos.
 
 ## Contacto
 
