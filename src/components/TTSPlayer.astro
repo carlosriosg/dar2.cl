@@ -40,6 +40,21 @@
     let spokenChars = 0;
     let resumeOffset = 0;
 
+    // --- Formatear tiempo (protegido contra NaN) ---
+    function formatTime(ms) {
+      if (typeof ms !== 'number' || isNaN(ms) || ms < 0) ms = 0;
+      const totalSec = Math.floor(ms / 1000);
+      const min = Math.floor(totalSec / 60);
+      const sec = totalSec % 60;
+      return `${min}:${sec.toString().padStart(2, '0')}`;
+    }
+
+    // --- Estimar duración (~150 ms por carácter) ---
+    function estimateDuration(chars) {
+      if (typeof chars !== 'number' || isNaN(chars)) return 0;
+      return chars * 150;
+    }
+
     // --- Obtener texto del artículo ---
     function getArticleText() {
       const article = document.querySelector('article');
@@ -74,17 +89,24 @@
       return result;
     }
 
-    // --- Formatear tiempo ---
-    function formatTime(ms) {
-      const totalSec = Math.floor(ms / 1000);
-      const min = Math.floor(totalSec / 60);
-      const sec = totalSec % 60;
-      return `${min}:${sec.toString().padStart(2, '0')}`;
+    // --- Mostrar tiempo estimado inicial ---
+    function showInitialTime() {
+      const text = getArticleText();
+      if (!text) {
+        timeEl.textContent = '0:00 / 0:00';
+        return;
+      }
+      const total = estimateDuration(text.length);
+      timeEl.textContent = `0:00 / ${formatTime(total)}`;
     }
 
-    // --- Estimar duración (~150 ms por carácter) ---
-    function estimateDuration(text) {
-      return text.length * 150;
+    // --- Actualizar barra de progreso ---
+    function updateProgress() {
+      const pct = totalChars > 0 ? Math.min((spokenChars / totalChars) * 100, 100) : 0;
+      progressBar.style.width = pct + '%';
+      const elapsed = estimateDuration(spokenChars);
+      const total = estimateDuration(totalChars);
+      timeEl.textContent = `${formatTime(elapsed)} / ${formatTime(total)}`;
     }
 
     // --- Leer chunk ---
@@ -125,21 +147,11 @@
       speechSynthesis.speak(utterance);
     }
 
-    // --- Actualizar barra de progreso ---
-    function updateProgress() {
-      const pct = totalChars > 0 ? Math.min((spokenChars / totalChars) * 100, 100) : 0;
-      progressBar.style.width = pct + '%';
-      const elapsed = estimateDuration(spokenChars);
-      const total = estimateDuration(totalChars);
-      timeEl.textContent = `${formatTime(elapsed)} / ${formatTime(total)}`;
-    }
-
     // --- Reset UI ---
     function resetUI() {
       state = STATE.IDLE;
       icon.textContent = '▶';
       label.textContent = 'Escuchar artículo';
-      timeEl.textContent = '';
       progressBar.style.width = '0%';
       chunks = [];
       currentChunk = 0;
@@ -147,6 +159,8 @@
       spokenChars = 0;
       resumeOffset = 0;
       utterance = null;
+      // Volver a mostrar tiempo inicial
+      showInitialTime();
     }
 
     // --- Iniciar reproducción ---
@@ -209,6 +223,9 @@
         pause();
       }
     });
+
+    // --- Mostrar tiempo inicial al cargar ---
+    showInitialTime();
 
     // --- Precargar voces (pueden tardar en cargar) ---
     if (speechSynthesis.getVoices().length === 0) {
