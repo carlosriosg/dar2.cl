@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
 
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
@@ -89,6 +90,8 @@ const faqSchema = {
         decoding="sync"
       />
     </div>
+
+    <TTSPlayer />
 
     <nav class="article-toc" aria-label="Tabla de contenido">
       <p class="toc-title">En esta guía:</p>
