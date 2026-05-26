@@ -63,12 +63,12 @@ const portafolioSchema = {
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Portafolio</p>
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-6">Portafolio</p>
     <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
       Proyectos que hablan
       <em class="text-accent italic"> por sí solos.</em>
     </h1>
-    <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
+    <p class="text-lg text-muted max-w-2xl leading-relaxed">
       Streaming corporativo, live shopping, videos institucionales y producción audiovisual para empresas chilenas. Cada proyecto, un caso real.
     </p>
   </section>
@@ -76,25 +76,25 @@ const portafolioSchema = {
   <!-- Intro: qué tipo de proyectos hacemos -->
   <section class="max-w-7xl mx-auto px-6 pb-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
-        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Streaming</p>
-        <p class="text-sm text-[#666] leading-relaxed">
+      <div class="p-6 bg-[#fafafa] border border-border">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Streaming</p>
+        <p class="text-sm text-muted leading-relaxed">
           Transmisiones en vivo multicámara con enlaces redundantes. Juntas anuales, lanzamientos y seminarios sin caídas.
-          <a href="/servicios/streaming/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+          <a href="/servicios/streaming/" class="text-primary font-semibold hover:text-accent transition-colors">Ver servicio →</a>
         </p>
       </div>
-      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
-        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Live Shopping</p>
-        <p class="text-sm text-[#666] leading-relaxed">
+      <div class="p-6 bg-[#fafafa] border border-border">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Live Shopping</p>
+        <p class="text-sm text-muted leading-relaxed">
           Ventas en vivo con integración a e-commerce. Conducción profesional, gráficas en tiempo real y métricas de conversión.
-          <a href="/servicios/live-shopping/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+          <a href="/servicios/live-shopping/" class="text-primary font-semibold hover:text-accent transition-colors">Ver servicio →</a>
         </p>
       </div>
-      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
-        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Videos Corporativos</p>
-        <p class="text-sm text-[#666] leading-relaxed">
+      <div class="p-6 bg-[#fafafa] border border-border">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Videos Corporativos</p>
+        <p class="text-sm text-muted leading-relaxed">
           Videos institucionales, de cultura y producto con cámara cinema y dirección creativa. 15 años produciendo para empresas del IPSA.
-          <a href="/servicios/videos-corporativos/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+          <a href="/servicios/videos-corporativos/" class="text-primary font-semibold hover:text-accent transition-colors">Ver servicio →</a>
         </p>
       </div>
     </div>
@@ -115,7 +115,7 @@ const portafolioSchema = {
         ))}
       </div>
     ) : (
-      <p class="text-[#666] text-lg">Pronto estaremos agregando nuestros proyectos aquí.</p>
+      <p class="text-muted text-lg">Pronto estaremos agregando nuestros proyectos aquí.</p>
     )}
   </section>
 

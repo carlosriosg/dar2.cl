@@ -30,18 +30,18 @@ const contactPageSchema = {
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Contacto</p>
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-6">Contacto</p>
     <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
       Cotización en
-      <em class="not-italic italic text-[#FF4500]"> 48 horas.</em>
+      <em class="italic text-accent"> 48 horas.</em>
     </h1>
-    <p class="text-lg text-[#666] max-w-xl leading-relaxed">
+    <p class="text-lg text-muted max-w-xl leading-relaxed">
       Cuéntanos de qué se trata tu proyecto y te armamos una propuesta detallada. Sin letra chica, sin intermediarios.
     </p>
   </section>
 
   <!-- Contenido -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-16">
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
 
       <!-- Formulario -->
@@ -60,7 +60,7 @@ const contactPageSchema = {
               name="nombre"
               required
               placeholder="Tu nombre"
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors"
             />
           </div>
           <div>
@@ -70,7 +70,7 @@ const contactPageSchema = {
               id="empresa"
               name="empresa"
               placeholder="Nombre de tu empresa"
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors"
             />
           </div>
           <div>
@@ -81,17 +81,17 @@ const contactPageSchema = {
               name="email"
               required
               placeholder="tu@empresa.cl"
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors"
             />
           </div>
           <div>
-            <label class="block text-sm font-semibold mb-2" for="telefono">Teléfono <span class="text-[#666] font-normal">(opcional)</span></label>
+            <label class="block text-sm font-semibold mb-2" for="telefono">Teléfono <span class="text-muted font-normal">(opcional)</span></label>
             <input
               type="tel"
               id="telefono"
               name="telefono"
               placeholder="+56 9 XXXX XXXX"
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors"
             />
           </div>
           <div>
@@ -100,7 +100,7 @@ const contactPageSchema = {
               id="servicio"
               name="servicio"
               required
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors bg-white appearance-none"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors bg-white appearance-none"
             >
               <option value="">Selecciona un servicio</option>
               <option value="streaming" selected={servicioParam === 'streaming'}>Streaming</option>
@@ -122,7 +122,7 @@ const contactPageSchema = {
               rows="5"
               required
               placeholder="Fecha estimada, tipo de proyecto, número de asistentes, plataforma objetivo..."
-              class="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#1a1a1a] outline-none text-sm transition-colors resize-none"
+              class="w-full px-4 py-3 border border-border focus:border-primary outline-none text-sm transition-colors resize-none"
             ></textarea>
           </div>
           <button type="submit" class="submit-btn" id="contact-submit">
@@ -142,7 +142,7 @@ const contactPageSchema = {
       <div class="md:pt-12">
         <div class="space-y-10">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Contacto directo</p>
+            <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">Contacto directo</p>
             <div class="space-y-3">
               <p class="font-bold text-lg">Carlos Rios Guevara</p>
               <a
@@ -157,34 +157,34 @@ const contactPageSchema = {
                 </svg>
                 <span>+56 9 9843 3346</span>
               </a>
-              <a href="mailto:dar2@dar2.cl" class="flex items-center gap-3 text-[#666] hover:text-[#1a1a1a] transition-colors group">
-                <span class="text-sm group-hover:text-[#FF4500] transition-colors">dar2@dar2.cl</span>
+              <a href="mailto:dar2@dar2.cl" class="flex items-center gap-3 text-muted hover:text-primary transition-colors group">
+                <span class="text-sm group-hover:text-accent transition-colors">dar2@dar2.cl</span>
               </a>
             </div>
           </div>
 
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Ubicación</p>
-            <p class="text-sm text-[#666] leading-relaxed">
+            <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">Ubicación</p>
+            <p class="text-sm text-muted leading-relaxed">
               Av. Holanda 099, Oficina 603<br />
               Providencia, Santiago<br />
               Chile
             </p>
           </div>
 
-          <div class="border border-[#e5e5e5] p-6">
+          <div class="border border-border p-6">
             <p class="font-bold text-sm mb-2">Tiempo de respuesta</p>
-            <p class="text-[#666] text-sm leading-relaxed">
-              Respondemos todas las consultas en menos de <strong class="text-[#FF4500]">48 horas hábiles</strong>.
+            <p class="text-muted text-sm leading-relaxed">
+              Respondemos todas las consultas en menos de <strong class="text-accent">48 horas hábiles</strong>.
               Para urgencias, llámanos directamente.
             </p>
           </div>
 
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Sectores</p>
+            <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">Sectores</p>
             <div class="flex flex-wrap gap-2">
               {['Retail', 'Farma', 'Supermercados', 'Corporativo', 'Banca', 'Educación', 'Gremios'].map(s => (
-                <span class="px-3 py-1.5 bg-[#f5f5f5] text-[#666] text-xs font-medium">{s}</span>
+                <span class="px-3 py-1.5 bg-surface text-muted text-xs font-medium">{s}</span>
               ))}
             </div>
           </div>
@@ -194,11 +194,11 @@ const contactPageSchema = {
   </section>
 
   <!-- Mapa Google Maps -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-[#e5e5e5] pt-16">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Ubicación</p>
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-16">
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">Ubicación</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
       Estamos en
-      <em class="not-italic italic text-[#FF4500]"> Providencia.</em>
+      <em class="italic text-accent"> Providencia.</em>
     </h2>
 
     <div class="map-grid">
