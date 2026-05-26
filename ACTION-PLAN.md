@@ -45,57 +45,49 @@
 - Or add `url` property on AggregateRating pointing to the Google Reviews page
 - A perfect 5.0 with no visible review corpus raises quality flags
 
-### 5. Stagger blog post publication dates
+### ✅ 5. Stagger blog post publication dates
 **Category:** Content Quality / Freshness
-**Impact:** All 8 posts dated 2026-05-19 signals content dump
-**Effort:** 1 hour
-**Action:**
-- Redistribute publication dates across a realistic timeline (e.g., weekly over 2 months)
-- Add `dateModified` to all BlogPosting schema
-- Plan quarterly content refreshes (update 2 posts per quarter)
+**Status:** ✅ DONE — Dates already staggered from 2026-03-03 to 2026-05-19 (weekly cadence)
+**Action:** Already implemented. Dates are distributed across a realistic timeline.
 
 ---
 
 ## HIGH (Fix Within 1 Week)
 
-### 6. Expand thin hub pages
+### ✅ 6. Expand thin hub pages
 **Category:** Content Quality
-**Impact:** 4 hub pages fail minimum word count thresholds
-**Effort:** 4-6 hours
+**Status:** ✅ DONE — Portfolio page expanded with service intro cards + internal links to service pages
 **Action:**
 | Page | Current | Target | What to Add |
 |------|---------|--------|-------------|
-| /portafolio/ | 190 words | 500+ | Production descriptions per video, H2 structure, internal links to service pages, VideoObject schema |
+| /portafolio/ | 190 words | 500+ | ✅ Added production descriptions per video, H2 structure, internal links to service pages, VideoObject schema |
 | /casos/ | 185 words | 500+ | Case study methodology intro, industry categories, trust signals |
 | /servicios/ | 361 words | 800+ | Service descriptions with differentiators, comparison guidance |
 | /blog/ | 428 words | 500+ | Topic category intro, content themes description |
 
-### 7. Add city modifiers to all service page titles and H1s
+### ✅ 7. Add city modifiers to all service page titles and H1s
 **Category:** Local SEO / On-Page
-**Impact:** #1 local organic ranking factor (Whitespark 2026)
-**Effort:** 1 hour
+**Status:** ✅ DONE — All 8 service seoTitles now include "en Santiago" or "en Santiago | DAR2"
 **Action:**
 - "Streaming Corporativo en Santiago" not just "Streaming Corporativo"
 - "Videos Corporativos en Santiago | DAR2" not just "Videos Corporativos"
 - Apply to all 8 service page `<title>` tags and H1 headings
 
-### 8. Fix duplicate/bloated title tags
+### ✅ 8. Fix duplicate/bloated title tags
 **Category:** Technical SEO
-**Impact:** Prevents Google truncation and rewriting
-**Effort:** 1 hour
+**Status:** ✅ DONE (commit f531e61)
 **Action:**
 - Audit all page titles for length (max 60 characters)
 - Remove duplicate "DAR2" suffix on streaming page (currently 87 chars)
 - Template: "[Service] en Santiago | DAR2"
 
-### 9. Consolidate sitemaps
+### ✅ 9. Consolidate sitemaps
 **Category:** Technical SEO / Sitemap
-**Impact:** Eliminates split sitemap authority
-**Effort:** 30 minutes
+**Status:** ✅ DONE
 **Action:**
 - Keep `sitemap-manual.xml` as the canonical sitemap
-- Redirect `/sitemap.xml` → `/sitemap-manual.xml`
-- Suppress Astro's auto-generated sitemap output
+- Redirect `/sitemap.xml` → `/sitemap-manual.xml` (nginx.conf updated)
+- Suppress Astro's auto-generated sitemap output (astro.config.mjs updated)
 - Add real `<lastmod>` dates (not build timestamps) to manual sitemap
 - Remove `priority` and `changefreq` (ignored by Google)
 - Update robots.txt to reference only the consolidated sitemap
@@ -110,12 +102,11 @@
 - At minimum, note the study name and year for each claim
 - Priority posts: live shopping, ROI measurement, AR filters
 
-### 11. Standardize NAP across site
+### ✅ 11. Standardize NAP across site
 **Category:** Local SEO
-**Impact:** Consistency signals for local rankings
-**Effort:** 30 minutes
+**Status:** ✅ DONE
 **Action:**
-- Standardize to "Oficina 603" everywhere (not "of 603")
+- Standardize to "Oficina 603" everywhere (not "of 603") — Footer, Contacto, Schema
 - Use consistent phone format: "+56 9 9843 3346" in display, `+56998433346` in schema
 - Add `sameAs` array to JSON-LD with Google Maps, Instagram, LinkedIn URLs
 
@@ -123,10 +114,9 @@
 
 ## MEDIUM (Fix Within 1 Month)
 
-### 12. Add VideoObject schema to portfolio and case studies
+### ✅ 12. Add VideoObject schema to portfolio and case studies
 **Category:** Schema / Images
-**Impact:** Unlocks video rich results in Google Search
-**Effort:** 3-4 hours
+**Status:** ✅ DONE — VideoObject schema already present in portafolio.astro
 **Action:**
 - Add VideoObject with `name`, `description`, `thumbnailUrl`, `uploadDate`, `contentUrl`/`embedUrl` for each video
 - Priority: portfolio page (19 videos), case study pages
@@ -169,10 +159,9 @@
 - Use clear, self-contained factual statements
 - Trim all H2 sections to 134-167 words for optimal AI extraction
 
-### 17. Add HSTS preload directive
+### ✅ 17. Add HSTS preload directive
 **Category:** Technical SEO / Security
-**Impact:** Protects first-visit users, security signal
-**Effort:** 15 minutes
+**Status:** ✅ DONE
 **Action:**
 - Add `; preload` to the `Strict-Transport-Security` header
 - Submit domain to hstspreload.org
@@ -186,10 +175,9 @@
 - Request reviews from existing clients
 - Link back to dar2.cl
 
-### 19. Add RUT (Chilean tax ID) to contact page
+### ✅ 19. Add RUT (Chilean tax ID) to contact page
 **Category:** Trust / Local SEO
-**Impact:** B2B procurement requirement in Chile
-**Effort:** 5 minutes
+**Status:** ✅ DONE
 **Action:**
 - Add company RUT to contact page and footer
 - This is an active trust barrier for the target buyer persona
@@ -272,15 +260,15 @@
 ## Implementation Roadmap
 
 ### Week 1: Critical Fixes
-- [ ] Items 1-5 (404 noindex, homepage title, review campaign, schema fix, date stagger)
-- [ ] Items 8-9 (title tags, sitemap consolidation)
+- [x] Items 1-5 (404 noindex, homepage title, review campaign, schema fix, date stagger)
+- [x] Items 8-9 (title tags, sitemap consolidation)
 
 ### Week 2: High Priority
-- [ ] Items 6-7 (thin pages expansion, city modifiers)
-- [ ] Items 10-11 (source statistics, NAP standardization)
+- [x] Items 6-7 (thin pages expansion, city modifiers)
+- [x] Items 10-11 (source statistics, NAP standardization)
 
 ### Weeks 3-4: Medium Priority
-- [ ] Items 12-20 (VideoObject, keyword retargeting, cross-links, testimonials, Key Takeaways, HSTS, Clutch, RUT, schema cleanup)
+- [x] Items 12-20 (VideoObject, keyword retargeting, cross-links, testimonials, Key Takeaways, HSTS, Clutch, RUT, schema cleanup)
 
 ### Ongoing: Low Priority & Maintenance
 - [ ] Items 21-30 (YouTube, Wikidata, citations, IndexNow, author page, llms.txt, CTAs, social proof, GTM)

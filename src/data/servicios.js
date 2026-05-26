@@ -222,7 +222,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Evento corporativo a la vista?',
     featured: false,
-    seoTitle: 'Circuito cerrado CCTV para eventos corporativos',
+    seoTitle: 'Circuito cerrado CCTV para eventos corporativos en Santiago',
     seoDescription: 'Multicámaras robóticas PTZ para congresos, seminarios y eventos. Registro profesional sin invadir el escenario. Precio óptimo.',
     serviceType: 'Registro audiovisual con multicámaras robóticas',
     faqs: [
@@ -305,7 +305,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas producir contenido broadcast?',
     featured: false,
-    seoTitle: 'Estudio virtual con green screen y escenografías 3D',
+    seoTitle: 'Estudio virtual con green screen en Santiago | DAR2',
     seoDescription: 'Generamos escenografías virtuales hiperrealistas con calidad broadcast. Presentaciones corporativas sin los costos de un set físico.',
     serviceType: 'Producción en estudio virtual',
     faqs: [
@@ -388,7 +388,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
-    seoTitle: 'Videos corporativos e institucionales en Chile',
+    seoTitle: 'Videos corporativos e institucionales en Santiago | DAR2',
     seoDescription: 'Videos de cultura, valores, procesos y productos. Dirección creativa, cámara cinema, postproducción profesional.',
     serviceType: 'Producción de video corporativo',
     faqs: [
@@ -471,7 +471,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Estrategia de contenido digital para marcas',
+    seoTitle: 'Estrategia de contenido digital para marcas en Santiago',
     seoDescription: 'Planes de comunicación para redes sociales con producción audiovisual de respaldo. Contenido alineado a los pilares de tu marca.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
@@ -554,7 +554,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
-    seoTitle: 'Contenido para Instagram, TikTok y LinkedIn',
+    seoTitle: 'Contenido para Instagram, TikTok y LinkedIn en Santiago',
     seoDescription: 'Cápsulas, reels y videos verticales optimizados para cada plataforma. Postproducción ágil y paquetes mensuales.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
@@ -638,7 +638,7 @@ export const servicios = [
     ctaTitle: '¿Te imaginas tu marca en un filtro AR?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Filtros AR de marca para Instagram y TikTok',
+    seoTitle: 'Filtros AR de marca para Instagram y TikTok en Santiago',
     seoDescription: 'Diseñamos filtros de realidad aumentada exclusivos para campañas. Publicación en Meta Spark AR y Effect House. Alcance orgánico medible.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [

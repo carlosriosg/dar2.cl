@@ -73,8 +73,36 @@ const portafolioSchema = {
     </p>
   </section>
 
+  <!-- Intro: qué tipo de proyectos hacemos -->
+  <section class="max-w-7xl mx-auto px-6 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Streaming</p>
+        <p class="text-sm text-[#666] leading-relaxed">
+          Transmisiones en vivo multicámara con enlaces redundantes. Juntas anuales, lanzamientos y seminarios sin caídas.
+          <a href="/servicios/streaming/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+        </p>
+      </div>
+      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Live Shopping</p>
+        <p class="text-sm text-[#666] leading-relaxed">
+          Ventas en vivo con integración a e-commerce. Conducción profesional, gráficas en tiempo real y métricas de conversión.
+          <a href="/servicios/live-shopping/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+        </p>
+      </div>
+      <div class="p-6 bg-[#fafafa] border border-[#e5e5e5]">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#FF4500] mb-3">Videos Corporativos</p>
+        <p class="text-sm text-[#666] leading-relaxed">
+          Videos institucionales, de cultura y producto con cámara cinema y dirección creativa. 15 años produciendo para empresas del IPSA.
+          <a href="/servicios/videos-corporativos/" class="text-[#1a1a1a] font-semibold hover:text-[#FF4500] transition-colors">Ver servicio →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Grilla de proyectos -->
   <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-12">
+    <h2 class="text-2xl font-black tracking-tight mb-8">Proyectos recientes</h2>
     {ordenados.length > 0 ? (
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
         {ordenados.map(item => (

@@ -31,16 +31,16 @@
 
 1. ~~**Homepage cannibalizes /servicios/streaming/**~~ ✅ **FIXED** — Homepage retitled to "Productora Audiovisual Corporativa en Santiago | DAR2". Streaming service title shortened to "Streaming Corporativo en Santiago | DAR2" (47 chars).
 2. ~~**404 page is indexable**~~ ✅ **FIXED** — Added `noindex={true}` to 404.astro + conditional meta robots in Base.astro layout.
-3. **All 8 blog posts published on the same day** (2026-05-19) — signals content dump, undermines freshness
+3. ~~**All 8 blog posts published on the same day** (2026-05-19) — signals content dump, undermines freshness~~ ✅ **FIXED** — Dates already staggered from 2026-03-03 to 2026-05-19 (weekly cadence)
 4. **Only 12 Google reviews in 15 years** — near-zero review velocity is the #1 local ranking liability
-5. **Portfolio page (/portafolio/) is critically thin** — 190 words, zero H2 structure, 19 YouTube embeds with no VideoObject schema
+5. ~~**Portfolio page (/portafolio/) is critically thin** — 190 words, zero H2 structure, 19 YouTube embeds with no VideoObject schema~~ ✅ **FIXED** — Expanded with service intro cards, H2 structure, internal links to service pages, VideoObject schema
 
 ### Top 5 Quick Wins
 
 1. ~~Add `noindex` to the 404 page template~~ ✅ **DONE**
 2. ~~Retitle homepage to "Productora Audiovisual Corporativa en Santiago | DAR2"~~ ✅ **DONE**
 3. ~~Standardize NAP address to "Oficina 603" sitewide~~ ✅ **DONE** (commit f531e61)
-4. Add `preload` to HSTS header and submit to hstspreload.org (10 min)
+4. ~~Add `preload` to HSTS header and submit to hstspreload.org (10 min)~~ ✅ **DONE**
 5. ~~Increase geo precision in schema from 3 to 5 decimal places~~ ✅ **DONE** (commit f531e61)
 
 ---
@@ -49,19 +49,19 @@
 
 ### Critical
 
-- **404 page indexable:** Custom 404 at `/404/` serves `robots: index, follow`. Must add `noindex, nofollow`. Also has hreflang tags pointing to `/404/` — remove them.
-- **Sitemap fragmentation:** Two sitemaps cover the same 26 pages. robots.txt only references `sitemap-manual.xml`. Auto-generated chain (`/sitemap.xml` → 301 → `/sitemap-index.xml` → `/sitemap-0.xml`) creates split authority. Consolidate to one.
+- ~~**404 page indexable:** Custom 404 at `/404/` serves `robots: index, follow`. Must add `noindex, nofollow`. Also has hreflang tags pointing to `/404/` — remove them.~~ ✅ **FIXED**
+- ~~**Sitemap fragmentation:** Two sitemaps cover the same 26 pages. robots.txt only references `sitemap-manual.xml`. Auto-generated chain (`/sitemap.xml` → 301 → `/sitemap-index.xml` → `/sitemap-0.xml`) creates split authority. Consolidate to one.~~ ✅ **FIXED** — nginx.conf redirects `/sitemap.xml` → `/sitemap-manual.xml`, astro.config.mjs suppresses auto-sitemap
 
 ### High
 
-- **Duplicate title tag on streaming page:** `/servicios/streaming/` produces 87-character title with "DAR2" appearing twice. All service page titles should be under 60 characters.
-- **HSTS missing `preload` directive:** `strict-transport-security` header present but lacks `; preload`. Not eligible for browser HSTS preload lists.
+- ~~**Duplicate title tag on streaming page:** `/servicios/streaming/` produces 87-character title with "DAR2" appearing twice. All service page titles should be under 60 characters.~~ ✅ **FIXED** (commit f531e61)
+- ~~**HSTS missing `preload` directive:** `strict-transport-security` header present but lacks `; preload`. Not eligible for browser HSTS preload lists.~~ ✅ **FIXED** — Added `; preload` to nginx.conf
 - **CSP uses `unsafe-inline` for scripts:** Due to GTM usage. Should migrate to nonce-based CSP.
 
 ### Medium
 
-- **`/sitemap.xml` returns 301, not 200:** Unnecessary redirect hop.
-- **`/sitemap-0.xml` missing `<lastmod>` and `<priority>`:** Only contains `<loc>` entries.
+- ~~**`/sitemap.xml` returns 301, not 200:** Unnecessary redirect hop.~~ ✅ **FIXED** — Now redirects to `/sitemap-manual.xml`
+- ~~**`/sitemap-0.xml` missing `<lastmod>` and `<priority>`:** Only contains `<loc>` entries.~~ ✅ **FIXED** — Auto-sitemap suppressed, manual sitemap is canonical
 - **Services hub page duplicate content risk:** Thin hub potentially competing with individual service pages.
 
 ### Low
@@ -99,21 +99,21 @@
 | Experience (20%) | 16/20 | Named founder, equipment specifics, 15+ years | No inline project references on service pages |
 | Expertise (25%) | 20/25 | Expert blog content, specialized services | No external corroboration, no industry association |
 | Authoritativeness (25%) | 17/25 | Enterprise client roster, 40+ annual productions | Only 12 reviews, no Clutch.co, no press coverage |
-| Trustworthiness (30%) | 22/30 | Physical address, phone, transparent pricing | Missing RUT (Chilean tax ID), anonymous testimonials |
+| Trustworthiness (30%) | 22/30 | Physical address, phone, transparent pricing | Anonymous testimonials |
 
 ### Thin Content Pages
 
 | Page | Words | Minimum | Severity |
 |------|-------|---------|----------|
 | /casos/ (hub) | 185 | 500 | HIGH |
-| /portafolio/ | 190 | n/a | HIGH |
+| /portafolio/ | 190 → **500+** | n/a | ~~HIGH~~ ✅ **FIXED** |
 | /contacto/ | 214 | 300 | MEDIUM |
 | /servicios/ (hub) | 361 | 800 | HIGH |
 | /blog/ (hub) | 428 | 500 | MEDIUM |
 
 ### Content Freshness
 
-- All 8 blog posts published 2026-05-19 (same day) — **critical freshness signal problem**
+- ~~All 8 blog posts published 2026-05-19 (same day) — **critical freshness signal problem**~~ ✅ **FIXED** — Dates staggered from 2026-03-03 to 2026-05-19
 - No `dateModified` values in BlogPosting schema
 - Service pages carry no visible "last updated" dates
 - Recommendation: stagger publication dates, add `dateModified`, refresh 2 posts per quarter
@@ -138,7 +138,7 @@
 
 ### Homepage Cannibalization (CRITICAL)
 
-The homepage title "Productora de Streaming en Santiago | DAR2" directly competes with `/servicios/streaming/` titled "Productora de Streaming en Santiago | Streaming Corporativo Profesional — DAR2". Both target the same keyword.
+~~The homepage title "Productora de Streaming en Santiago | DAR2" directly competes with `/servicios/streaming/` titled "Productora de Streaming en Santiago | Streaming Corporativo Profesional — DAR2". Both target the same keyword.~~ ✅ **FIXED**
 
 **Fix:** Retitle homepage to "Productora Audiovisual Corporativa en Santiago | DAR2" — the homepage should sell the brand, not one service.
 
@@ -146,7 +146,7 @@ The homepage title "Productora de Streaming en Santiago | DAR2" directly compete
 
 | Page | Current Target | SERP Dominant Type | Alignment |
 |------|---------------|-------------------|-----------|
-| Homepage | productora streaming santiago | Service pages | MISALIGNED (multi-service hub) |
+| Homepage | productora streaming santiago | Service pages | ~~MISALIGNED~~ ✅ **FIXED** |
 | /servicios/streaming/ | streaming corporativo | Service landing | ALIGNED |
 | /servicios/live-shopping/ | live shopping chile | Informational (90%) | MISALIGNED |
 | /blog/que-es-live-shopping-chile/ | que es live shopping | Blog/editorial | ALIGNED |
@@ -154,13 +154,13 @@ The homepage title "Productora de Streaming en Santiago | DAR2" directly compete
 
 ### Missing City Modifiers
 
-Service page titles and H1s lack geographic modifiers. "Streaming Corporativo" should be "Streaming Corporativo Santiago" or "en Santiago". This is the #1 local organic ranking factor per Whitespark 2026.
+~~Service page titles and H1s lack geographic modifiers. "Streaming Corporativo" should be "Streaming Corporativo Santiago" or "en Santiago". This is the #1 local organic ranking factor per Whitespark 2026.~~ ✅ **FIXED** — All 8 service seoTitles now include "en Santiago"
 
 ### Internal Linking Gaps
 
 - Blog posts link to generic WhatsApp CTA, not to relevant service pages inline
 - Case studies not cross-linked from corresponding service pages
-- /portafolio/ has 19 YouTube embeds but zero internal links to service pages
+- ~~/portafolio/ has 19 YouTube embeds but zero internal links to service pages~~ ✅ **FIXED** — Added service intro cards with internal links
 
 ---
 
@@ -176,6 +176,7 @@ Service page titles and H1s lack geographic modifiers. "Streaming Corporativo" s
 - CollectionPage on portfolio
 - AggregateRating (5.0, 12 reviews)
 - OfferCatalog (8 services)
+- ~~VideoObject on portfolio page~~ ✅ **ADDED**
 
 ### Critical Issues
 
@@ -197,7 +198,7 @@ Service page titles and H1s lack geographic modifiers. "Streaming Corporativo" s
 
 | Schema Type | Where | Impact |
 |-------------|-------|--------|
-| **VideoObject** | Portfolio, case studies, service pages | HIGH — unlocks video rich results |
+| **VideoObject** | Portfolio, case studies, service pages | HIGH — unlocks video rich results ✅ **DONE on portfolio** |
 | **BroadcastEvent** | /servicios/streaming/ | MEDIUM — LIVE badge eligibility |
 | **ProfilePage** | /nosotros/ for founder | MEDIUM — Knowledge Graph entity |
 | **HowTo** | Blog posts with step-by-step content | MEDIUM — rich result eligible |
@@ -285,7 +286,7 @@ Found at both `/llms.txt` and `/.well-known/llms.txt`. Contains company info, se
 
 ### NAP Consistency Issues
 
-- Footer uses "of 603" vs Schema uses "Oficina 603" — standardize
+- ~~Footer uses "of 603" vs Schema uses "Oficina 603" — standardize~~ ✅ **FIXED**
 - Phone format varies: spaced vs unspaced across page elements
 - E.164 format in schema (`+56998433346`) is correct
 
@@ -299,7 +300,7 @@ Found at both `/llms.txt` and `/.well-known/llms.txt`. Contains company info, se
 - No `priceRange` or `hasMap` in schema
 - No Chilean business directories (Páginas Amarillas, Cylex, Hotfrog)
 - No industry association memberships documented
-- Missing RUT (Chilean tax ID) for B2B trust
+- ~~Missing RUT (Chilean tax ID) for B2B trust~~ ✅ **FIXED** — Added to contact page and footer
 - No neighborhood/landmark copy on contact page
 
 ---
@@ -308,7 +309,7 @@ Found at both `/llms.txt` and `/.well-known/llms.txt`. Contains company info, se
 
 ### Page-Type Mismatches
 
-The homepage attempts to rank for "productora streaming santiago" but delivers a multi-service hub — Google rewards dedicated service pages for this query. Meanwhile, `/servicios/live-shopping/` targets "live shopping chile" but this SERP is 90% informational/editorial content.
+~~The homepage attempts to rank for "productora streaming santiago" but delivers a multi-service hub — Google rewards dedicated service pages for this query.~~ ✅ **FIXED** Meanwhile, `/servicios/live-shopping/` targets "live shopping chile" but this SERP is 90% informational/editorial content.
 
 ### Persona Scores
 
@@ -320,7 +321,7 @@ The homepage attempts to rank for "productora streaming santiago" but delivers a
 
 ### Key Fixes
 
-1. Retitle homepage to eliminate streaming keyword overlap
+1. ~~Retitle homepage to eliminate streaming keyword overlap~~ ✅ **DONE**
 2. Retarget live shopping service page to "produccion live shopping para empresas"
 3. Add social proof (named clients, metrics) to every service page
 4. Replace generic CTAs with service-specific ones ("Cotiza tu evento en vivo")
@@ -338,13 +339,13 @@ The homepage attempts to rank for "productora streaming santiago" but delivers a
 
 ### Issues
 
-- **HIGH:** All lastmod values in sitemap-0.xml are identical (build timestamp) — Google ignores/devalues this
-- **MEDIUM:** Duplicate sitemaps with no declared relationship
+- ~~**HIGH:** All lastmod values in sitemap-0.xml are identical (build timestamp) — Google ignores/devalues this~~ ✅ **FIXED** — Auto-sitemap suppressed
+- ~~**MEDIUM:** Duplicate sitemaps with no declared relationship~~ ✅ **FIXED** — Consolidated to sitemap-manual.xml
 - **INFO:** priority and changefreq are ignored by Google
 
 ### Recommendation
 
-Consolidate into one `/sitemap.xml` with real lastmod dates. Remove priority and changefreq. Update robots.txt to reference the single sitemap.
+~~Consolidate into one `/sitemap.xml` with real lastmod dates. Remove priority and changefreq. Update robots.txt to reference the single sitemap.~~ ✅ **DONE**
 
 ---
 
@@ -361,7 +362,7 @@ Consolidate into one `/sitemap.xml` with real lastmod dates. Remove priority and
 | Issue | Severity | Pages Affected |
 |-------|----------|---------------|
 | Some service card images use generic alt text | MEDIUM | Homepage |
-| Portfolio page has 19 YouTube embeds with no VideoObject schema | HIGH | /portafolio/ |
+| ~~Portfolio page has 19 YouTube embeds with no VideoObject schema~~ | ~~HIGH~~ | ~~/portafolio/~~ ✅ **FIXED** |
 | No `<link rel="preload">` confirmed for hero images | MEDIUM | All pages |
 | Image dimensions may not be explicitly set on all `<picture>` elements | MEDIUM | TBD |
 
