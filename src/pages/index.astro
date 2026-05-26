@@ -29,6 +29,34 @@ const heroPool = [
   'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
 ];
 const heroImages = heroPool.slice(0, 4);
+function getYouTubeId(url: string | undefined) {
+  if (!url) return null;
+  const m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,15})/) ||
+            url.match(/[?&]v=([a-zA-Z0-9_-]{6,15})/);
+  return m ? m[1] : null;
+}
+
+// Generar VideoObject schema para los videos destacados
+const videoSchemas = destacados
+  .filter(item => item.data.youtube_url)
+  .map(item => {
+    const videoId = getYouTubeId(item.data.youtube_url);
+    const thumbnail = item.data.thumbnail
+      ? `https://dar2.cl${item.data.thumbnail}`
+      : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    return {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": `${item.data.titulo} — ${item.data.cliente}`,
+      "description": item.data.descripcion,
+      "thumbnailUrl": thumbnail,
+      "uploadDate": `${item.data.anio}-01-01`,
+      "embedUrl": `https://www.youtube.com/embed/${videoId}`,
+      "contentUrl": item.data.youtube_url,
+      "publisher": { "@type": "Organization", "@id": "https://dar2.cl/#organization" }
+    };
+  });
+
 const heroAltMap = {
   'pc-factory.png': 'Proyecto PC Factory — videos corporativos producidos por DAR2',
   'pc-factory-ram.png': 'Proyecto PC Factory RAM — campaña audiovisual por DAR2',
@@ -97,6 +125,11 @@ const clienteUrls: Record<string, string> = {
   description="Productora audiovisual corporativa en Santiago de Chile. Especialistas en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años con Cencosud, ENAP, Clínica Santa María y más."
   preloadImage={`/images/portafolio/${heroImages[0].replace(/\.(png|jpe?g)$/i, '.webp')}`}
 >
+  <Fragment slot="head">
+    {videoSchemas.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </Fragment>
 
   <!-- ── 1. HERO ─────────────────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-15">

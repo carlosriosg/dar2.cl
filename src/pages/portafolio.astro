@@ -11,6 +11,34 @@ const breadcrumbs = [
 const todosLosItems = await getCollection('portafolio');
 const ordenados = todosLosItems.sort((a, b) => b.data.anio - a.data.anio);
 
+function getYouTubeId(url: string | undefined) {
+  if (!url) return null;
+  const m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,15})/) ||
+            url.match(/[?&]v=([a-zA-Z0-9_-]{6,15})/);
+  return m ? m[1] : null;
+}
+
+// Generar VideoObject schema para cada proyecto con video
+const videoSchemas = ordenados
+  .filter(item => item.data.youtube_url)
+  .map(item => {
+    const videoId = getYouTubeId(item.data.youtube_url);
+    const thumbnail = item.data.thumbnail
+      ? `https://dar2.cl${item.data.thumbnail}`
+      : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    return {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": `${item.data.titulo} — ${item.data.cliente}`,
+      "description": item.data.descripcion,
+      "thumbnailUrl": thumbnail,
+      "uploadDate": `${item.data.anio}-01-01`,
+      "embedUrl": `https://www.youtube.com/embed/${videoId}`,
+      "contentUrl": item.data.youtube_url,
+      "publisher": { "@type": "Organization", "@id": "https://dar2.cl/#organization" }
+    };
+  });
+
 const portafolioSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -28,6 +56,9 @@ const portafolioSchema = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(portafolioSchema)} />
+    {videoSchemas.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </Fragment>
 
   <!-- Hero -->
