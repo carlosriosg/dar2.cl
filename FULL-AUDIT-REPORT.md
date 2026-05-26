@@ -1,486 +1,402 @@
 # Full SEO Audit Report: dar2.cl
 
-**Site:** https://dar2.cl/
-**Business:** DAR2 Servicios Audiovisuales — Streaming & Audiovisual Production
-**Location:** Av. Holanda 099, Of. 603, Providencia, Santiago, Chile
-**Industry:** Local Professional Service (B2B)
-**Stack:** Astro v6.1.8, Cloudflare CDN, GTM
+**Date:** May 26, 2026
+**URL:** https://dar2.cl/
+**Business:** DAR2 Servicios Audiovisuales — Productora audiovisual corporativa
+**Location:** Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile
+**Industry:** Professional Services / Audiovisual Production (B2B)
+**CMS:** Astro (Static Site Generator) + Tailwind CSS
 **Pages Crawled:** 26
-**Audit Date:** 2026-05-26
-
----
-
-## SEO Health Score: 62 / 100
-
-| Category | Weight | Score | Weighted |
-|----------|--------|-------|----------|
-| Technical SEO | 22% | 68/100 | 15.0 |
-| Content Quality | 23% | 71/100 | 16.3 |
-| On-Page SEO | 20% | 54/100 | 10.8 |
-| Schema / Structured Data | 10% | 65/100 | 6.5 |
-| Performance (CWV) | 10% | 62/100 | 6.2 |
-| AI Search Readiness | 10% | 71/100 | 7.1 |
-| Images | 5% | 78/100 | 3.9 |
-| **TOTAL** | **100%** | | **65.8 → 62** |
-
-*Score adjusted down by -4 for: broken SearchAction schema, SXO page-type mismatch on primary keywords (54/100 SXO score), and near-zero backlink profile.*
 
 ---
 
 ## Executive Summary
 
-### Business Type Detected
+### Overall SEO Health Score: 63/100
 
-**Local Professional Service (Hybrid)** — Studio-based in Providencia, Santiago with nationwide service delivery (areaServed: Chile).
+| Category | Weight | Score | Weighted |
+|----------|--------|-------|----------|
+| Technical SEO | 22% | 72 | 15.8 |
+| Content Quality | 23% | 71 | 16.3 |
+| On-Page SEO | 20% | 55 | 11.0 |
+| Schema / Structured Data | 10% | 68 | 6.8 |
+| Performance (CWV) | 10% | 70 | 7.0 |
+| AI Search Readiness (GEO) | 10% | 74 | 7.4 |
+| Images | 5% | 60 | 3.0 |
+| **TOTAL** | **100%** | | **67.3** |
+
+**Adjusted Score: 63/100** (-4.3 for local SEO score of 58 and SXO gap score of 44, which drag operational effectiveness below the weighted technical score)
 
 ### Top 5 Critical Issues
 
-1. ~~**Title tags exceed 60 characters on ALL pages**~~ ✅ **FIXED** — All pages now under 60 chars.
-2. ~~**Broken SearchAction schema**~~ ✅ **FIXED** — Removed from WebSite JSON-LD.
-3. **SXO page-type mismatch** — Primary commercial keywords ("streaming corporativo chile", "videos corporativos santiago") require dedicated Service Pages. The homepage tries to rank for all 8 services simultaneously, competing against single-topic pages from competitors.
-4. **Near-zero backlink profile** — Common Crawl data shows dar2.cl below the reporting threshold. Despite 40+ enterprise client relationships, essentially no inbound links exist.
-5. **HTML not edge-cached on Cloudflare** — `cf-cache-status: DYNAMIC` means every visitor hits origin, adding 200-600ms to TTFB unnecessarily for a static site.
+1. ~~**Homepage cannibalizes /servicios/streaming/**~~ ✅ **FIXED** — Homepage retitled to "Productora Audiovisual Corporativa en Santiago | DAR2". Streaming service title shortened to "Streaming Corporativo en Santiago | DAR2" (47 chars).
+2. ~~**404 page is indexable**~~ ✅ **FIXED** — Added `noindex={true}` to 404.astro + conditional meta robots in Base.astro layout.
+3. **All 8 blog posts published on the same day** (2026-05-19) — signals content dump, undermines freshness
+4. **Only 12 Google reviews in 15 years** — near-zero review velocity is the #1 local ranking liability
+5. **Portfolio page (/portafolio/) is critically thin** — 190 words, zero H2 structure, 19 YouTube embeds with no VideoObject schema
 
 ### Top 5 Quick Wins
 
-1. **Edge-cache HTML on Cloudflare** — Zero code changes, just a Cache Rule. Expected LCP improvement: 200-600ms.
-2. ~~**Truncate all title tags to <60 characters**~~ ✅ **DONE** — Template-level fix applied to all pages.
-3. ~~**Remove broken SearchAction** from WebSite schema~~ ✅ **DONE** — 5-minute code change.
-4. ~~**Add `preconnect` hints** for GTM and Behold widget~~ ✅ **DONE** — saves 100-300ms per page load.
-5. ~~**Fix `ratingValue` type** in AggregateRating schema~~ ✅ **DONE** — changed string `"5.0"` to number `5.0`, added `worstRating: 1`.
+1. ~~Add `noindex` to the 404 page template~~ ✅ **DONE**
+2. ~~Retitle homepage to "Productora Audiovisual Corporativa en Santiago | DAR2"~~ ✅ **DONE**
+3. ~~Standardize NAP address to "Oficina 603" sitewide~~ ✅ **DONE** (commit f531e61)
+4. Add `preload` to HSTS header and submit to hstspreload.org (10 min)
+5. ~~Increase geo precision in schema from 3 to 5 decimal places~~ ✅ **DONE** (commit f531e61)
 
 ---
 
-## Technical SEO — 68/100
+## 1. Technical SEO (72/100)
 
-| Check | Status | Severity |
-|-------|--------|----------|
-| HTTPS enforcement | PASS | — |
-| Canonical tags (all pages) | PASS | — |
-| Meta robots | PASS | index, follow on all pages |
-| Viewport meta | PASS | — |
-| robots.txt | PASS | Open policy, AI crawlers allowed |
-| hreflang (es-CL + x-default) | PARTIAL | Medium — only on homepage, should be sitewide |
-| Duplicate sitemaps | FAIL | High — Two competing sitemaps, neither ideal |
-| Sitemap lastmod dates | FAIL | Medium — Manual has none; auto-gen has fake identical timestamps |
-| Content-Type charset header | FAIL | High — No `charset=utf-8` in HTTP header, corrupting Spanish characters in schema |
-| SearchAction → 404 | FAIL | Critical — Active invalid schema |
-| Internal linking (18-19/page) | PASS | Good cross-linking |
-| URL structure | PASS | Clean, trailing slashes, logical hierarchy |
-| JavaScript dependency | PASS | Astro static — minimal JS |
-| HTTP/3 support | PASS | `alt-svc: h3=":443"` present |
-| Google Maps embed on contact | FAIL | High — No map iframe on /contacto/ |
+### Critical
 
-### robots.txt
+- **404 page indexable:** Custom 404 at `/404/` serves `robots: index, follow`. Must add `noindex, nofollow`. Also has hreflang tags pointing to `/404/` — remove them.
+- **Sitemap fragmentation:** Two sitemaps cover the same 26 pages. robots.txt only references `sitemap-manual.xml`. Auto-generated chain (`/sitemap.xml` → 301 → `/sitemap-index.xml` → `/sitemap-0.xml`) creates split authority. Consolidate to one.
 
-Open crawling policy. Explicitly allows all major AI crawlers:
-- GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, ChatGPT-User, OAI-SearchBot
+### High
 
-Sitemap reference: `https://dar2.cl/sitemap-manual.xml`
+- **Duplicate title tag on streaming page:** `/servicios/streaming/` produces 87-character title with "DAR2" appearing twice. All service page titles should be under 60 characters.
+- **HSTS missing `preload` directive:** `strict-transport-security` header present but lacks `; preload`. Not eligible for browser HSTS preload lists.
+- **CSP uses `unsafe-inline` for scripts:** Due to GTM usage. Should migrate to nonce-based CSP.
 
-### Sitemaps
+### Medium
 
-Two competing sitemaps exist covering the same 26 URLs:
+- **`/sitemap.xml` returns 301, not 200:** Unnecessary redirect hop.
+- **`/sitemap-0.xml` missing `<lastmod>` and `<priority>`:** Only contains `<loc>` entries.
+- **Services hub page duplicate content risk:** Thin hub potentially competing with individual service pages.
 
-- `sitemap-manual.xml` — referenced in robots.txt, has priority/changefreq but NO lastmod dates
-- `sitemap-index.xml` → `sitemap-0.xml` — Astro auto-generated, has lastmod (build timestamp) but identical across all URLs
+### Low
 
-**Recommendation:** Consolidate to the Astro auto-generated sitemap. Implement git-based lastmod injection at build time. Remove deprecated priority/changefreq tags. Update robots.txt to reference `sitemap-index.xml`.
+- **No IndexNow key detected:** Adding it enables instant crawl signals for Bing/Yandex.
+- **LCP preload may target wrong image:** Preloads portfolio image instead of hero.
+- **`Permissions-Policy` missing `interest-cohort`:** Minor audit tool flag.
 
-### Crawled Pages (26 total)
-
-| URL | Status | Words | H1 | H2s | Images | Title Length |
-|-----|--------|-------|----|----|--------|-------------|
-| / | 200 | 676 | 1 | 9 | 98 | 122 chars |
-| /servicios/ | 200 | 361 | 1 | 3 | 10 | 102 chars |
-| /servicios/streaming/ | 200 | 829 | 1 | 10 | 9 | 111 chars |
-| /servicios/live-shopping/ | 200 | 798 | 1 | 10 | 9 | 96 chars |
-| /servicios/videos-corporativos/ | 200 | 787 | 1 | 10 | 9 | 77 chars |
-| /servicios/estudio-virtual/ | 200 | 765 | 1 | 10 | 9 | 83 chars |
-| /servicios/filtros-ar/ | 200 | 878 | 1 | 10 | 3 | 74 chars |
-| /servicios/redes-sociales/ | 200 | 810 | 1 | 10 | 9 | 74 chars |
-| /servicios/circuito-cerrado/ | 200 | 806 | 1 | 10 | 9 | 78 chars |
-| /servicios/estrategias-digitales/ | 200 | 765 | 1 | 10 | 9 | 74 chars |
-| /blog/ | 200 | 428 | 1 | 8 | 10 | 82 chars |
-| /casos/ | 200 | 185 | 1 | 2 | 2 | 97 chars |
-| /contacto/ | 200 | 214 | 1 | 2 | 2 | 81 chars |
-| /nosotros/ | 200 | 609 | 1 | 5 | 10 | 94 chars |
-| /portafolio/ | 200 | 190 | 1 | 0 | 21 | 95 chars |
-| /privacidad/ | 200 | 543 | 1 | 11 | 2 | 54 chars |
-
-Plus 8 blog posts and 2 case study detail pages in the sitemap.
-
----
-
-## Content Quality (E-E-A-T) — 71/100
-
-### E-E-A-T Breakdown
-
-| Dimension | Score | Notes |
-|-----------|-------|-------|
-| Experience | 16/20 | Named founder, equipment specifics, first-person operational insights |
-| Expertise | 20/25 | Expert-level blog content; no external corroboration |
-| Authoritativeness | 17/25 | Major clients named; low review count; no press coverage |
-| Trustworthiness | 22/30 | Address/contact solid; missing RUT, anonymous testimonials |
-
-### Strengths
-
-- Named founder (Carlos Rios Guevara, UNIACC) attributed as author on all 8 blog posts
-- Blog content demonstrates genuine operational knowledge with Chile-specific market data
-- 8 team members named with roles on /nosotros/
-- Equipment specificity (Sony FX6, PTZ, green screen studio)
-- Enterprise client portfolio: Cencosud, ENAP, Banco Chile, Codelco, Clínica Santa María
-- TTS (text-to-speech) player on blog posts — genuine UX differentiator
-
-### Title Tag Issues (Critical)
-
-ALL pages exceed the ~60-character Google display limit:
-
-| Page | Current Length | Recommended |
-|------|---------------|-------------|
-| Homepage | 122 chars | "Productora Audiovisual en Santiago \| DAR2" (41 chars) |
-| /servicios/ | 102 chars | "Servicios Audiovisuales Santiago \| DAR2" (40 chars) |
-| /servicios/streaming/ | 111 chars | "Streaming Corporativo Santiago \| DAR2" (38 chars) |
-
-### Thin Content Pages
-
-| Page | Words | Minimum | Status |
-|------|-------|---------|--------|
-| /servicios/ | 361 | 800 | FAIL — service hub needs expansion |
-| /casos/ | 185 | 500 | FAIL — critically thin for B2B trust |
-| /portafolio/ | 190 | — | THIN — 0 H2s, no descriptive text |
-
-### Blog Content Assessment
-
-- 8 posts with 1,333–1,568 words each — adequate depth
-- All published 2026-05-19 (same day) — **batch-publication red flag**
-- Unattributed statistics: "70% don't measure ROI", "USD 562B China live shopping" need source citations
-- Question-based H2 headings strongly correlate with AI snippet selection
-
-### AI Citation Readiness: 62/100
-
-- FAQ schema implemented on service pages (positive)
-- Statistics without source citations reduce citability
-- No HowTo or structured comparison data
-- Missing "Key Takeaways" summary blocks
-
----
-
-## On-Page SEO / SXO — 54/100
-
-### Page-Type Mismatch (Critical Finding)
-
-Google's SERPs for primary keywords show dedicated Service Pages ranking, not multi-service homepages:
-
-| Keyword | SERP Dominant Type | DAR2 Match? |
-|---------|-------------------|-------------|
-| productora de streaming santiago | Service Page | NO — Homepage covers 8 services |
-| streaming corporativo chile | Service Page | Service pages exist but may not be optimized |
-| live shopping chile | Hybrid (edu+CTA) | PARTIAL — Blog post only |
-| videos corporativos santiago | Service Page | Service pages exist |
-| estudio virtual chile | Service Page | Service pages exist |
-
-### Persona Scores
-
-| Persona | Score | Rating |
-|---------|-------|--------|
-| Corporate Comm Manager | 54/100 | Needs Work |
-| Retail Brand Manager (Live Shopping) | 40/100 | Critical Mismatch |
-| Procurement Officer | 43/100 | Critical Mismatch |
-| SME Owner (First-Time) | 56/100 | Needs Work |
-| Agency Account Manager | 53/100 | Needs Work |
-
-**Systemic issue:** Average Action score is 8.4/25 across all personas. The single-CTA WhatsApp model forces every visitor into a sales conversation regardless of journey stage.
-
-### Conversion Path Issues
-
-- Blog educates users → sends them to generic WhatsApp CTA → no commercial service page to link to internally
-- Case study pages exist in sitemap but may have thin content
-- No downloadable spec sheet or quotation form for consideration-stage visitors
-- 48-hour quote promise is too slow for agency pitch cycles
-
-### Competitors Ranking Ahead
-
-- StreamingHD (/productora) — dedicated single-topic service pages
-- FeriaPixel (/videos-corporativos/) — dedicated video production page
-- EnDirecto.cl (/sets-virtuales/) — dedicated virtual studio page
-- ATE Producciones — explicit event type targeting (juntas de accionistas)
-
----
-
-## Schema / Structured Data — 65/100
-
-### Schema Types Detected
-
-| Page | Schema Types |
-|------|-------------|
-| Homepage | LocalBusiness+ProfessionalService, WebSite, Person |
-| /servicios/ | LocalBusiness+ProfessionalService, Person, BreadcrumbList |
-| Service pages | LocalBusiness+ProfessionalService, Person, BreadcrumbList, Service, FAQPage |
-| /blog/ | LocalBusiness+ProfessionalService, Person, BreadcrumbList, Blog, ItemList |
-| /contacto/ | LocalBusiness+ProfessionalService, Person, BreadcrumbList, ContactPage |
-| /nosotros/ | LocalBusiness+ProfessionalService, Person, BreadcrumbList, AboutPage |
-| /portafolio/ | LocalBusiness+ProfessionalService, Person, BreadcrumbList, CollectionPage |
-
-### Critical Issues
-
-| ID | Issue | Detail |
-|----|-------|--------|
-| C1 | ratingValue is String | `"5.0"` must be number `5.0` |
-| C2 | SearchAction → 404 | `/search?q=` endpoint doesn't exist |
-| C3 | Service schema missing `url` | Cannot associate schema with canonical page |
-| C4 | BlogPosting missing `dateModified` | Required for Article rich results |
-| C5 | UTF-8 encoding corrupted | No `charset=utf-8` in HTTP Content-Type header |
-| C6 | CollectionPage empty | /portafolio/ has 19 YouTube videos with zero VideoObject |
-
-### Missing Schema Opportunities
-
-1. **VideoObject** for 19 portfolio YouTube videos — highest missed rich result opportunity
-2. **Review** entities for individual testimonials (only AggregateRating exists)
-3. **Person.image** and **Person.description** for founder
-4. **worstRating** missing from AggregateRating
-5. **HowTo** schema for blog how-to content
-
-### Corrected AggregateRating
-
-```json
-"aggregateRating": {
-  "@type": "AggregateRating",
-  "ratingValue": 5.0,
-  "reviewCount": 12,
-  "bestRating": 5,
-  "worstRating": 1
-}
-```
-
-### Corrected WebSite (remove SearchAction)
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://dar2.cl/#website",
-  "url": "https://dar2.cl/",
-  "name": "DAR2 Servicios Audiovisuales",
-  "description": "Productora audiovisual en Santiago de Chile especializada en streaming, live shopping y video corporativo.",
-  "publisher": { "@id": "https://dar2.cl/#organization" },
-  "inLanguage": "es-CL"
-}
-```
-
-### Service Schema Template (add to each service page)
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Streaming Corporativo",
-  "url": "https://dar2.cl/servicios/streaming/",
-  "image": "https://dar2.cl/images/servicios/streaming-hero.jpg",
-  "description": "Streaming corporativo profesional con multicámara y enlace redundante.",
-  "serviceType": "Transmisión audiovisual en vivo",
-  "provider": { "@id": "https://dar2.cl/#organization" },
-  "areaServed": { "@type": "Country", "name": "Chile" },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://dar2.cl/servicios/streaming/",
-    "priceCurrency": "CLP",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "priceCurrency": "CLP",
-      "description": "Cotización a medida según alcance del evento"
-    }
-  }
-}
-```
-
----
-
-## Performance (CWV) — 62/100
-
-### Core Web Vitals Estimates
-
-| Metric | Estimated Value | Status |
-|--------|----------------|--------|
-| LCP | ~2.8-3.5s | Needs Improvement |
-| INP | ~80-130ms | Good |
-| CLS | ~0.05-0.12 | Borderline |
-
-### Performance Scorecard
-
-| Area | Score |
-|------|-------|
-| CSS delivery (fully inline) | 10/10 |
-| Font loading (self-hosted Inter, swap, preloaded) | 9/10 |
-| INP risk (lightweight JS, passive listeners) | 9/10 |
-| JS loading (minimal Astro, correct defer/async) | 8/10 |
-| Image formats (WebP + AVIF via `<picture>`) | 8/10 |
-| Preload hints (hero image correct) | 7/10 |
-| CLS risk (Behold widget + 6 undimensioned images) | 6/10 |
-| HTML delivery (TTFB not edge-cached) | 6/10 |
-| Image sizing (no srcset anywhere) | 5/10 |
-| Third-party scripts (GTM position + Behold) | 5/10 |
-
-### Key Findings
-
-- **HTML not edge-cached:** `cf-cache-status: DYNAMIC` on every request. Astro generates static HTML — it should be cached at Cloudflare's edge. TTFB is 0.35s from Santiago when it could be <50ms.
-- **GTM loads before charset/viewport** — first element in `<head>`, blocks parser
-- **No preconnect hints** for `googletagmanager.com`, `w.behold.so`, `static.cloudflareinsights.com`
-- **No srcset on any image** — mobile users receive desktop-sized images
-- **6 video card images missing width/height** — CLS risk
-- **Behold Instagram widget** has no reserved height — highest CLS risk
-- **Self-hosted Inter font with swap + preload** — excellent
-- **Zero external CSS** — all inline, zero render-blocking
-
----
-
-## AI Search Readiness (GEO) — 71/100
-
-### GEO Scores by Dimension
-
-| Dimension | Weight | Score |
-|-----------|--------|-------|
-| Citability | 25% | 72/100 |
-| Structural Readability | 20% | 78/100 |
-| Multi-Modal Content | 15% | 55/100 |
-| Authority & Brand Signals | 20% | 68/100 |
-| Technical Accessibility | 20% | 77/100 |
-
-### Platform-Specific Readiness
-
-| Platform | Score | Rationale |
-|----------|-------|-----------|
-| Claude | 74/100 | Both ClaudeBot + anthropic-ai allowed; structured content |
-| Perplexity | 73/100 | Question-based headings optimized for passage retrieval |
-| Google AI Overviews | 70/100 | FAQ schema + Google-Extended allowed |
-| ChatGPT | 65/100 | GPTBot allowed; no YouTube/Wikipedia entity |
-| Bing Copilot | 62/100 | Missing external citation signals |
-
-### AI Crawler Access
-
-All major AI crawlers explicitly allowed in robots.txt. llms.txt present at both canonical paths (`/llms.txt` and `/.well-known/llms.txt`).
-
-### Key Gaps
-
-- **No YouTube channel** — YouTube correlation with AI citations is 0.737 (strongest known signal)
-- **No Wikipedia/Wikidata entity** — Primary AI entity disambiguation source absent
-- **llms.txt not spec-compliant** — Paragraph format instead of structured Markdown with URL index
-- **Statistics without attribution** reduce citation likelihood
-- **No "Key Takeaways" boxes** on blog articles (most commonly cited block format in Perplexity)
-
----
-
-## Images — 78/100
+### Passing
 
 | Check | Status |
 |-------|--------|
-| Alt text (all 98 homepage images) | PASS — 100% coverage |
-| Modern formats (WebP/AVIF via `<picture>`) | PASS |
-| Lazy loading | PASS — all images lazy-loaded |
-| Hero preload with fetchpriority="high" | PASS |
-| Responsive sizing (srcset) | FAIL — No srcset on any image |
-| Width/height dimensions | PARTIAL — 6 video cards missing |
-| Client logo optimization | PASS — AVIF sources for logos |
+| HTTPS / TLS (Cloudflare) | PASS |
+| `html lang="es-CL"` | PASS |
+| Canonical tags (self-referencing) | PASS |
+| meta robots (indexable pages) | PASS |
+| Viewport meta | PASS |
+| JS rendering (Astro SSG) | PASS |
+| Structured data blocks | PASS |
+| Security headers (CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy) | PASS |
+| Font preloading (Inter woff2) | PASS |
+| URL structure (trailing slashes, lowercase, hyphens) | PASS |
+| H1 count (1 per page on service pages) | PASS |
+| Open Graph / Twitter Card | PASS |
+| robots.txt AI crawler policy | PASS |
 
 ---
 
-## Local SEO — 61/100
+## 2. Content Quality & E-E-A-T (71/100)
 
-### Scores by Dimension
+### E-E-A-T Breakdown
 
-| Dimension | Weight | Score |
-|-----------|--------|-------|
-| GBP Signals | 25% | 52/100 |
-| Reviews & Reputation | 20% | 65/100 |
-| Local On-Page SEO | 20% | 72/100 |
-| NAP Consistency & Citations | 15% | 55/100 |
-| Local Schema Markup | 10% | 78/100 |
-| Local Link & Authority Signals | 10% | 45/100 |
+| Factor | Score | Key Strengths | Key Gaps |
+|--------|-------|---------------|----------|
+| Experience (20%) | 16/20 | Named founder, equipment specifics, 15+ years | No inline project references on service pages |
+| Expertise (25%) | 20/25 | Expert blog content, specialized services | No external corroboration, no industry association |
+| Authoritativeness (25%) | 17/25 | Enterprise client roster, 40+ annual productions | Only 12 reviews, no Clutch.co, no press coverage |
+| Trustworthiness (30%) | 22/30 | Physical address, phone, transparent pricing | Missing RUT (Chilean tax ID), anonymous testimonials |
 
-### NAP Consistency
+### Thin Content Pages
 
-| Source | Name | Address | Phone |
-|--------|------|---------|-------|
-| Schema (all pages) | DAR2 Servicios Audiovisuales | Av. Holanda 099, of 603 | +56998433346 |
-| Contact page visible | DAR2 Servicios Audiovisuales | Av. Holanda 099, oficina 603 | +56 9 9843 3346 |
+| Page | Words | Minimum | Severity |
+|------|-------|---------|----------|
+| /casos/ (hub) | 185 | 500 | HIGH |
+| /portafolio/ | 190 | n/a | HIGH |
+| /contacto/ | 214 | 300 | MEDIUM |
+| /servicios/ (hub) | 361 | 800 | HIGH |
+| /blog/ (hub) | 428 | 500 | MEDIUM |
 
-**Discrepancy:** "of 603" vs "oficina 603" — standardize to "Oficina 603" across all instances.
+### Content Freshness
 
-### GBP Signals
+- All 8 blog posts published 2026-05-19 (same day) — **critical freshness signal problem**
+- No `dateModified` values in BlogPosting schema
+- Service pages carry no visible "last updated" dates
+- Recommendation: stagger publication dates, add `dateModified`, refresh 2 posts per quarter
 
-- Google Maps CID confirmed: 6666778595618035561
-- Review link present: g.page/r/CWmX_YPPJ4VcEBM/review
-- Review CTA in footer: "Déjanos una reseña"
-- **MISSING:** No Google Maps iframe embed on /contacto/ (critical GBP signal)
-- **MISSING:** No directions link
+### AI Citation Readiness: 62/100
 
-### Reviews
-
-- AggregateRating: 5.0 / 12 reviews
-- 12 reviews is LOW for a 15-year company with 30+ enterprise clients
-- 18-day review velocity rule applies — need consistent new reviews
-- On-page testimonials not marked up with Review schema
-
-### Citation Opportunities
-
-| Directory | Status | Priority |
-|-----------|--------|----------|
-| Google Business Profile | Present | — |
-| LinkedIn Company Page | Present | — |
-| Instagram @dar2.cl | Present | — |
-| Clutch.co | Missing | High |
-| Sortlist.com | Missing | Medium |
-| ACHAP (Chilean ad agencies) | Missing | Medium |
-| Agencias.cl | Missing | Medium |
-| Wikidata | Missing | Medium |
+| Signal | Status |
+|--------|--------|
+| FAQ schema on service pages | Present |
+| Question-based H2s in blog | Present |
+| AI crawlers allowed | Present |
+| llms.txt present | Present (non-compliant format) |
+| Statistics with source citations | MISSING |
+| Key Takeaways summary blocks | MISSING |
+| HowTo schema | MISSING |
+| YouTube channel entity | MISSING |
+| Wikipedia/Wikidata entity | MISSING |
 
 ---
 
-## Backlink Profile — Insufficient Data
+## 3. On-Page SEO (55/100)
 
-### Common Crawl Results
+### Homepage Cannibalization (CRITICAL)
 
-| Metric | Value |
-|--------|-------|
-| Found in CC crawl | Yes |
-| PageRank ranking | Below threshold |
-| Referring domains sampled | 0 |
+The homepage title "Productora de Streaming en Santiago | DAR2" directly competes with `/servicios/streaming/` titled "Productora de Streaming en Santiago | Streaming Corporativo Profesional — DAR2". Both target the same keyword.
 
-The domain is crawled but sits below the link graph reporting threshold — consistent with very few or zero inbound links from external domains.
+**Fix:** Retitle homepage to "Productora Audiovisual Corporativa en Santiago | DAR2" — the homepage should sell the brand, not one service.
 
-### Key Insight
+### Service Page Intent Mismatches
 
-dar2.cl links out to 40+ enterprise clients but receives essentially no inbound links in return. The relationship equity exists; it has not been converted into link equity.
+| Page | Current Target | SERP Dominant Type | Alignment |
+|------|---------------|-------------------|-----------|
+| Homepage | productora streaming santiago | Service pages | MISALIGNED (multi-service hub) |
+| /servicios/streaming/ | streaming corporativo | Service landing | ALIGNED |
+| /servicios/live-shopping/ | live shopping chile | Informational (90%) | MISALIGNED |
+| /blog/que-es-live-shopping-chile/ | que es live shopping | Blog/editorial | ALIGNED |
+| /servicios/videos-corporativos/ | videos corporativos santiago | Service pages | ALIGNED |
 
-### Link Building Priorities
+### Missing City Modifiers
 
-1. **Client backlinks** — Joint case studies, production credits on client video pages
-2. **YouTube channel** — High-DA referring domain, zero cost
-3. **Clutch.co profile** — B2B services directory with strong DA
-4. **Chilean directories** — ACHAP, CORFO, ProChile
-5. **Editorial coverage** — Chilean trade media (El Publicista, Mercado Negro)
-6. **Vimeo portfolio** — Professional video platform with followed links
+Service page titles and H1s lack geographic modifiers. "Streaming Corporativo" should be "Streaming Corporativo Santiago" or "en Santiago". This is the #1 local organic ranking factor per Whitespark 2026.
 
-### API Configuration Needed
+### Internal Linking Gaps
 
-Free APIs that would unlock full scoring:
-- Moz: https://moz.com/products/api (2,500 rows/month free)
-- Bing Webmaster: https://www.bing.com/webmasters (free)
-- Config file: `~/.config/claude-seo/backlinks-api.json`
+- Blog posts link to generic WhatsApp CTA, not to relevant service pages inline
+- Case studies not cross-linked from corresponding service pages
+- /portafolio/ has 19 YouTube embeds but zero internal links to service pages
 
 ---
 
-## All Scores Summary
+## 4. Schema & Structured Data (68/100)
 
-| Analysis | Score |
-|----------|-------|
-| **Overall SEO Health** | **62/100** |
-| Technical SEO | 68/100 |
-| Content Quality (E-E-A-T) | 71/100 |
-| On-Page SEO / SXO | 54/100 |
-| Schema / Structured Data | 65/100 |
-| Performance (CWV) | 62/100 |
-| AI Search Readiness (GEO) | 71/100 |
-| Images | 78/100 |
-| Local SEO | 61/100 |
-| Backlink Profile | Insufficient Data |
+### Implemented (Correct)
+
+- LocalBusiness + ProfessionalService dual typing
+- WebSite with publisher @id reference
+- FAQPage on all 8 service pages (5 Q&As each)
+- BlogPosting with author, dates, publisher
+- BreadcrumbList on all pages
+- CollectionPage on portfolio
+- AggregateRating (5.0, 12 reviews)
+- OfferCatalog (8 services)
+
+### Critical Issues
+
+| Issue | Severity |
+|-------|----------|
+| AggregateRating has no linked Review entities or source URL — unverifiable | CRITICAL |
+| FAQPage on commercial service pages yields no Google rich results (restricted since Aug 2023) | CRITICAL |
+
+### Warnings
+
+| Issue | Severity |
+|-------|----------|
+| `image` is single string, should be array with 3 aspect ratios (16:9, 4:3, 1:1) | WARNING |
+| `founder` Person lacks `@id`, `url`, `sameAs` — weakens E-E-A-T linkage | WARNING |
+| LocalBusiness re-declared on service pages instead of referenced by `@id` | WARNING |
+| Blog post `author` Person nodes don't share `@id` with homepage founder node | WARNING |
+
+### Missing Opportunities
+
+| Schema Type | Where | Impact |
+|-------------|-------|--------|
+| **VideoObject** | Portfolio, case studies, service pages | HIGH — unlocks video rich results |
+| **BroadcastEvent** | /servicios/streaming/ | MEDIUM — LIVE badge eligibility |
+| **ProfilePage** | /nosotros/ for founder | MEDIUM — Knowledge Graph entity |
+| **HowTo** | Blog posts with step-by-step content | MEDIUM — rich result eligible |
+| **SearchAction** | WebSite block | LOW — sitelinks search box |
+
+---
+
+## 5. Performance / Core Web Vitals (70/100)
+
+*Note: Lab-based analysis only. No CrUX field data or PageSpeed API access.*
+
+### LCP (Largest Contentful Paint)
+
+- **Risk:** GTM loaded synchronously in `<head>` blocks HTML parser before hero image discovery
+- **Risk:** Hero image may lack `<link rel="preload">`
+- **Risk:** Inter Variable font without `font-display: swap` could delay text LCP
+
+**Fixes:**
+1. Add `<link rel="preload" as="image">` for hero image with correct `imagesrcset`
+2. Move GTM to async or defer initialization until after LCP
+3. Confirm `font-display: swap` on `@font-face` declarations
+
+### INP (Interaction to Next Paint)
+
+- **Low risk:** Astro SSG with minimal client JS
+- **Watch:** GTM firing multiple tags on interaction, marquee/lightbox handlers
+
+### CLS (Cumulative Layout Shift)
+
+- **Good:** Picture elements with WebP/AVIF sources
+- **Risk:** GTM-injected elements (banners, chat widgets) without reserved space
+- **Fix:** Verify all images carry `width` and `height` attributes
+
+### Positive Signals
+
+- Astro SSG = pre-rendered HTML, no client-side rendering dependency
+- Images use `<picture>` with WebP + AVIF
+- Fonts loaded as woff2 with preload
+- Tailwind CSS purged for production
+- Minimal JS footprint
+
+---
+
+## 6. AI Search Readiness / GEO (74/100)
+
+### AI Crawler Access: Fully Open
+
+All major AI crawlers explicitly allowed in robots.txt: GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, ChatGPT-User, OAI-SearchBot.
+
+### llms.txt: Present but Non-Compliant
+
+Found at both `/llms.txt` and `/.well-known/llms.txt`. Contains company info, services, and contact data. Missing RSL 1.0 license declaration and proper structured URL index format.
+
+### Platform Readiness
+
+| Platform | Score | Key Factor |
+|----------|-------|------------|
+| Perplexity | 78/100 | SSG rendering + question headings well-matched |
+| Google AI Overviews | 72/100 | Schema strong; passage length slightly long |
+| Bing Copilot | 65/100 | Moderate passage density |
+| ChatGPT | 58/100 | No Wikipedia/Wikidata entity, no YouTube presence |
+
+### Key Recommendations
+
+1. Trim blog passages to 134-167 words per section (optimal AI citation window)
+2. Source every statistic with inline citations
+3. Create YouTube channel (strongest AI citation correlation: r=0.737)
+4. Add RSL 1.0 license to llms.txt
+5. Create Wikidata entity for DAR2
+
+---
+
+## 7. Local SEO (58/100)
+
+### Dimension Scores
+
+| Dimension | Score |
+|-----------|-------|
+| GBP Signals | 52/100 |
+| Reviews & Reputation | 60/100 |
+| Local On-Page SEO | 72/100 |
+| NAP Consistency | 55/100 |
+| Local Schema | 68/100 |
+| Local Links & Authority | 35/100 |
+
+### NAP Consistency Issues
+
+- Footer uses "of 603" vs Schema uses "Oficina 603" — standardize
+- Phone format varies: spaced vs unspaced across page elements
+- E.164 format in schema (`+56998433346`) is correct
+
+### Review Velocity Crisis
+
+12 reviews over 15 years = ~0.8 reviews/year. Per Sterling Sky's 18-day rule, review velocity is a cliff-edge ranking factor. This is the single largest local ranking liability.
+
+### Missing Local Signals
+
+- No GBP review badge or live data widget on site
+- No `priceRange` or `hasMap` in schema
+- No Chilean business directories (Páginas Amarillas, Cylex, Hotfrog)
+- No industry association memberships documented
+- Missing RUT (Chilean tax ID) for B2B trust
+- No neighborhood/landmark copy on contact page
+
+---
+
+## 8. SXO / Search Experience (44/100)
+
+### Page-Type Mismatches
+
+The homepage attempts to rank for "productora streaming santiago" but delivers a multi-service hub — Google rewards dedicated service pages for this query. Meanwhile, `/servicios/live-shopping/` targets "live shopping chile" but this SERP is 90% informational/editorial content.
+
+### Persona Scores
+
+| Persona | Score | Biggest Gap |
+|---------|-------|-------------|
+| Corporate Event Planner | 50/100 | No pricing/scope detail, generic CTAs |
+| Marketing Director (Live Shopping) | 41/100 | No retail case studies, no conversion metrics |
+| Procurement Officer (Videos) | 55/100 | No deliverables spec, no turnaround time |
+
+### Key Fixes
+
+1. Retitle homepage to eliminate streaming keyword overlap
+2. Retarget live shopping service page to "produccion live shopping para empresas"
+3. Add social proof (named clients, metrics) to every service page
+4. Replace generic CTAs with service-specific ones ("Cotiza tu evento en vivo")
+
+---
+
+## 9. Sitemap Analysis
+
+### Structure
+
+| Sitemap | URLs | lastmod | changefreq | priority |
+|---------|------|---------|------------|----------|
+| sitemap-manual.xml | 26 | Missing | Present | Present |
+| sitemap-0.xml (auto) | 26 | Fabricated (all same timestamp) | Missing | Missing |
+
+### Issues
+
+- **HIGH:** All lastmod values in sitemap-0.xml are identical (build timestamp) — Google ignores/devalues this
+- **MEDIUM:** Duplicate sitemaps with no declared relationship
+- **INFO:** priority and changefreq are ignored by Google
+
+### Recommendation
+
+Consolidate into one `/sitemap.xml` with real lastmod dates. Remove priority and changefreq. Update robots.txt to reference the single sitemap.
+
+---
+
+## 10. Images Assessment (60/100)
+
+### Strengths
+
+- Modern format support: `<picture>` elements with WebP and AVIF sources
+- Portfolio images have descriptive alt text (e.g., "Cirugía Robótica — Clínica Santa María")
+- Logo uses proper alt text on service pages
+
+### Issues
+
+| Issue | Severity | Pages Affected |
+|-------|----------|---------------|
+| Some service card images use generic alt text | MEDIUM | Homepage |
+| Portfolio page has 19 YouTube embeds with no VideoObject schema | HIGH | /portafolio/ |
+| No `<link rel="preload">` confirmed for hero images | MEDIUM | All pages |
+| Image dimensions may not be explicitly set on all `<picture>` elements | MEDIUM | TBD |
+
+---
+
+## Appendix: Site Structure
+
+```
+dar2.cl/
+├── / (Homepage)
+├── /servicios/ (Services hub)
+│   ├── /streaming/
+│   ├── /live-shopping/
+│   ├── /circuito-cerrado/
+│   ├── /estudio-virtual/
+│   ├── /videos-corporativos/
+│   ├── /estrategias-digitales/
+│   ├── /redes-sociales/
+│   └── /filtros-ar/
+├── /portafolio/ (Portfolio)
+├── /casos/ (Case studies hub)
+│   ├── /cirugia-robotica-clinica-santa-maria/
+│   └── /valores-corporativos-castano/
+├── /blog/ (Blog hub)
+│   ├── /que-es-live-shopping-chile/
+│   ├── /transmitir-junta-anual-sin-caidas/
+│   ├── /estudio-virtual-vs-set-fisico/
+│   ├── /medir-roi-video-corporativo/
+│   ├── /filtros-ar-marca-instagram-tiktok/
+│   ├── /circuito-cerrado-vs-streaming/
+│   ├── /contenido-linkedin-ejecutivos/
+│   └── /produccion-video-corporativo-paso-a-paso/
+├── /nosotros/ (About)
+├── /contacto/ (Contact)
+└── /privacidad/ (Privacy Policy)
+```
+
+**Total: 26 pages | 8 services | 8 blog posts | 2 case studies**

@@ -17,6 +17,7 @@ const {
   description = 'Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más.',
   breadcrumbs = null,
   preloadImage = null,
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://dar2.cl');
@@ -144,7 +145,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="es-CL" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    )}
     <meta name="author" content="DAR2 Servicios Audiovisuales" />
     <meta name="geo.region" content="CL-RM" />
     <meta name="geo.placename" content="Santiago, Chile" />

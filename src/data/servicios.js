@@ -56,8 +56,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
-    seoTitle: 'Productora de Streaming en Santiago | Streaming Corporativo Profesional — DAR2',
-    seoDescription: 'Productora de streaming en Santiago de Chile. Streaming corporativo profesional con multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
+    seoTitle: 'Streaming Corporativo en Santiago | DAR2',
+    seoDescription: 'Streaming corporativo profesional en Santiago de Chile. Multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
