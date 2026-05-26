@@ -115,7 +115,7 @@ const websiteSchema = {
 const breadcrumbSchema = breadcrumbs ? {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((b, i) => ({
+  "itemListElement": breadcrumbs.map((b: { name: string; url: string }, i: number) => ({
     "@type": "ListItem",
     "position": i + 1,
     "name": b.name,
@@ -292,11 +292,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
-      const lb      = document.getElementById('dar2-lightbox');
-      const iframe  = document.getElementById('dar2-lightbox-iframe');
-      const closeBtn = document.getElementById('dar2-lightbox-close');
+      const lb      = document.getElementById('dar2-lightbox') as HTMLElement | null;
+      const iframe  = document.getElementById('dar2-lightbox-iframe') as HTMLIFrameElement | null;
+      const closeBtn = document.getElementById('dar2-lightbox-close') as HTMLElement | null;
 
-      function openLb(embed) {
+      function openLb(embed: string) {
         if (!lb || !iframe) return;
         iframe.src = embed + '?autoplay=1&rel=0&modestbranding=1';
         lb.classList.remove('hidden');
@@ -312,10 +312,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.body.style.overflow = '';
       }
 
-      window.addEventListener('dar2:open-video', (e) => openLb(e.detail.embed));
+      window.addEventListener('dar2:open-video', ((e: CustomEvent) => openLb(e.detail.embed)) as EventListener);
       closeBtn?.addEventListener('click', closeLb);
-      lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-      document.addEventListener('keydown', (e) => {
+      lb?.addEventListener('click', (e: MouseEvent) => { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', (e: KeyboardEvent) => {
         if (e.key === 'Escape' && !lb?.classList.contains('hidden')) closeLb();
       });
     </script>

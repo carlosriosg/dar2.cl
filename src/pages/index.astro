@@ -57,7 +57,7 @@ const videoSchemas = destacados
     };
   });
 
-const heroAltMap = {
+const heroAltMap: Record<string, string> = {
   'pc-factory.png': 'Proyecto PC Factory — videos corporativos producidos por DAR2',
   'pc-factory-ram.png': 'Proyecto PC Factory RAM — campaña audiovisual por DAR2',
   'polpaico.png': 'Proyecto Polpaico — video corporativo de diversidad e inclusión',
@@ -554,8 +554,8 @@ const clienteUrls: Record<string, string> = {
 
   <script>
     // ── Lead capture form (Web3Forms) ──────────────────
-    const leadForm = document.getElementById('lead-form');
-    const leadSubmit = document.getElementById('lead-submit');
+    const leadForm = document.getElementById('lead-form') as HTMLFormElement | null;
+    const leadSubmit = document.getElementById('lead-submit') as HTMLButtonElement | null;
     const leadLabel = document.getElementById('lead-submit-label');
     const leadStatus = document.getElementById('lead-status');
 
@@ -735,7 +735,7 @@ const clienteUrls: Record<string, string> = {
           else if (s.type === 'image/webp') s.srcset = `/images/portafolio/${webpFile}`;
         });
       }
-      img.src = `/images/portafolio/${file}`;
+      (img as HTMLImageElement).src = `/images/portafolio/${file}`;
     });
   }
 
