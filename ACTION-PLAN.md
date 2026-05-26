@@ -16,26 +16,56 @@
 
 ---
 
-## Critical (Fix Immediately)
+## ✅ Completed (commit f531e61 — 2026-05-26)
 
-### 1. Truncate ALL title tags to <60 characters
+### ✅ 1. Truncate ALL title tags to <60 characters
 **Category:** On-Page SEO
-**Impact:** CTR improvement across all SERPs
-**Effort:** Template change, 30 minutes
-**Current:** Homepage is 122 chars ("Productora de Streaming en Santiago | DAR2 — Streaming Corporativo, Live Shopping y Video | DAR2 Servicios Audiovisuales")
-**Recommended titles:**
-- Homepage: "Productora Audiovisual en Santiago | DAR2" (41 chars)
-- /servicios/: "Servicios Audiovisuales Santiago | DAR2" (39 chars)
-- /servicios/streaming/: "Streaming Corporativo Santiago | DAR2" (37 chars)
-- /servicios/live-shopping/: "Live Shopping Chile | DAR2" (26 chars)
-- /servicios/videos-corporativos/: "Videos Corporativos Santiago | DAR2" (35 chars)
-- Apply same pattern to all 26 pages
+**Status:** ✅ DONE
+**Changes:**
+- Homepage: `"Productora de Streaming en Santiago | DAR2"` (41 chars)
+- /servicios/: `"Servicios Audiovisuales | DAR2"` (28 chars)
+- /contacto/: `"Contacto — Cotiza tu proyecto en 48h | DAR2"` (46 chars)
+- /blog/: `"Blog de Producción Audiovisual | DAR2"` (38 chars)
+- All service pages and blog posts updated with consistent format
 
-### 2. Remove broken SearchAction schema
+### ✅ 2. Remove broken SearchAction schema
 **Category:** Schema
-**Impact:** Eliminates active invalid markup
-**Effort:** 5 minutes
-**Fix:** Remove the `potentialAction` block from the WebSite JSON-LD on the homepage. The `/search?q=` endpoint returns 404.
+**Status:** ✅ DONE
+**Fix:** Removed the `potentialAction` block from WebSite JSON-LD in Base.astro layout.
+
+### ✅ 5. Fix AggregateRating schema
+**Category:** Schema
+**Status:** ✅ DONE
+**Fix:** Changed `"5.0"` (string) to `5.0` (number). Added `worstRating: 1`.
+
+### ✅ 10. Add `dateModified` to all BlogPosting schema
+**Category:** Schema
+**Status:** ✅ DONE
+**Fix:** Added `"dateModified"` to BlogPosting schema in blog/index.astro. Individual blog posts already had it.
+
+### ✅ 11. Add preconnect hints for third-party origins
+**Category:** Performance
+**Status:** ✅ DONE
+**Fix:** Added to Base.astro `<head>`:
+```html
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://w.behold.so" crossorigin>
+<link rel="preconnect" href="https://api.web3forms.com" crossorigin>
+```
+
+### ✅ 12. Reserve height for Behold Instagram widget
+**Category:** Performance (CLS)
+**Status:** ✅ DONE
+**Fix:** Added `min-height: 600px` to behold-widget CSS in index.astro.
+
+### ✅ NAP Consistency Fix
+**Category:** Local SEO
+**Status:** ✅ DONE
+**Fix:** Changed `"of 603"` to `"Oficina 603"` in Base.astro schema for NAP consistency with visible text on /contacto/.
+
+---
+
+## Critical (Fix Immediately) — Remaining
 
 ### 3. Fix HTTP Content-Type header to include charset=utf-8
 **Category:** Technical SEO
@@ -48,22 +78,6 @@
 **Impact:** -200-600ms LCP improvement
 **Effort:** Cloudflare Cache Rule, 10 minutes
 **Fix:** The HTML is served as `cf-cache-status: DYNAMIC` on every request. Since Astro generates static HTML, add a Cloudflare Cache Rule: `Cache-Control: s-maxage=3600, stale-while-revalidate=86400`. TTFB drops from ~350ms to <50ms.
-
-### 5. Fix AggregateRating schema
-**Category:** Schema
-**Impact:** Rich result eligibility for review stars
-**Effort:** 2 minutes
-**Fix:**
-```json
-"aggregateRating": {
-  "@type": "AggregateRating",
-  "ratingValue": 5.0,
-  "reviewCount": 12,
-  "bestRating": 5,
-  "worstRating": 1
-}
-```
-Change `"5.0"` (string) to `5.0` (number). Add `worstRating: 1`.
 
 ---
 

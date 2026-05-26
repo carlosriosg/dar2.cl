@@ -35,8 +35,8 @@
 
 ### Top 5 Critical Issues
 
-1. **Title tags exceed 60 characters on ALL pages** — Homepage is 122 chars (2x the limit). Google truncates heavily, hurting CTR across every SERP listing.
-2. **Broken SearchAction schema** — `WebSite.potentialAction` points to `/search?q=` which returns 404. Active invalid markup.
+1. ~~**Title tags exceed 60 characters on ALL pages**~~ ✅ **FIXED** — All pages now under 60 chars.
+2. ~~**Broken SearchAction schema**~~ ✅ **FIXED** — Removed from WebSite JSON-LD.
 3. **SXO page-type mismatch** — Primary commercial keywords ("streaming corporativo chile", "videos corporativos santiago") require dedicated Service Pages. The homepage tries to rank for all 8 services simultaneously, competing against single-topic pages from competitors.
 4. **Near-zero backlink profile** — Common Crawl data shows dar2.cl below the reporting threshold. Despite 40+ enterprise client relationships, essentially no inbound links exist.
 5. **HTML not edge-cached on Cloudflare** — `cf-cache-status: DYNAMIC` means every visitor hits origin, adding 200-600ms to TTFB unnecessarily for a static site.
@@ -44,10 +44,10 @@
 ### Top 5 Quick Wins
 
 1. **Edge-cache HTML on Cloudflare** — Zero code changes, just a Cache Rule. Expected LCP improvement: 200-600ms.
-2. **Truncate all title tags to <60 characters** — Template-level fix affecting all 26 pages instantly.
-3. **Remove broken SearchAction** from WebSite schema — 5-minute code change.
-4. **Add `preconnect` hints** for GTM and Behold widget — saves 100-300ms per page load.
-5. **Fix `ratingValue` type** in AggregateRating schema — change string `"5.0"` to number `5.0`, add `worstRating: 1`.
+2. ~~**Truncate all title tags to <60 characters**~~ ✅ **DONE** — Template-level fix applied to all pages.
+3. ~~**Remove broken SearchAction** from WebSite schema~~ ✅ **DONE** — 5-minute code change.
+4. ~~**Add `preconnect` hints** for GTM and Behold widget~~ ✅ **DONE** — saves 100-300ms per page load.
+5. ~~**Fix `ratingValue` type** in AggregateRating schema~~ ✅ **DONE** — changed string `"5.0"` to number `5.0`, added `worstRating: 1`.
 
 ---
 
