@@ -98,6 +98,7 @@ const blogSchema = {
     "headline": a.title,
     "url": `https://dar2.cl/blog/${a.slug}/`,
     "datePublished": a.date,
+    "dateModified": a.date,
     "description": a.excerpt,
     "image": `https://dar2.cl${a.image}`,
     "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
@@ -119,7 +120,7 @@ const itemListSchema = {
 ---
 
 <Base
-  title="Blog — Guías de producción audiovisual en Chile"
+  title="Blog de Producción Audiovisual | DAR2"
   description="Artículos sobre producción audiovisual en Chile, live shopping, streaming corporativo, video marketing y tendencias para empresas."
   breadcrumbs={breadcrumbs}
 >

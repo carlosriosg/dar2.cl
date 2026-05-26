@@ -1,349 +1,296 @@
 # SEO Action Plan: dar2.cl
 
 **Site:** https://dar2.cl/
-**Date:** May 25, 2026
-**Current Score:** 78/100
-**Target Score:** 88/100
+**Business:** DAR2 Servicios Audiovisuales
+**Overall SEO Health Score:** 62/100
+**Date:** 2026-05-26
 
 ---
 
 ## Priority Definitions
 
-- **CRITICAL** — Blocks indexing or directly harms rankings. Fix immediately.
-- **HIGH** — Significantly impacts rankings or AI visibility. Fix within 1-2 weeks.
-- **MEDIUM** — Optimization opportunity with measurable impact. Fix within 1 month.
-- **LOW** — Nice to have, incremental improvement. Backlog.
+- **Critical**: Blocks indexing, causes penalties, or actively harms rankings (fix immediately)
+- **High**: Significantly impacts rankings or conversions (fix within 2 weeks)
+- **Medium**: Optimization opportunity with measurable impact (fix within 1 month)
+- **Low**: Nice to have, long-term improvements (backlog)
 
 ---
 
-## CRITICAL Priority
+## Critical (Fix Immediately)
 
-### 1. Add canonical tags to all pages
-**Category:** Technical SEO
-**Effort:** 30 minutes
-**Impact:** Prevents duplicate content issues and consolidates ranking signals
+### 1. Truncate ALL title tags to <60 characters
+**Category:** On-Page SEO
+**Impact:** CTR improvement across all SERPs
+**Effort:** Template change, 30 minutes
+**Current:** Homepage is 122 chars ("Productora de Streaming en Santiago | DAR2 — Streaming Corporativo, Live Shopping y Video | DAR2 Servicios Audiovisuales")
+**Recommended titles:**
+- Homepage: "Productora Audiovisual en Santiago | DAR2" (41 chars)
+- /servicios/: "Servicios Audiovisuales Santiago | DAR2" (39 chars)
+- /servicios/streaming/: "Streaming Corporativo Santiago | DAR2" (37 chars)
+- /servicios/live-shopping/: "Live Shopping Chile | DAR2" (26 chars)
+- /servicios/videos-corporativos/: "Videos Corporativos Santiago | DAR2" (35 chars)
+- Apply same pattern to all 26 pages
 
-Multiple pages lack explicit `<link rel="canonical">` tags, including /servicios/, /contacto/, /nosotros/, /portafolio/, and individual service pages. In Astro.js, add a canonical link in the `<head>` layout component:
-
-```html
-<link rel="canonical" href={Astro.url.href} />
-```
-
-### 2. Fix sitemap lastmod timestamps
-**Category:** Technical SEO
-**Effort:** 1-2 hours
-**Impact:** Enables crawlers to prioritize fresh content
-
-All 25 URLs share identical lastmod (build artifact from Astro). Configure Astro's sitemap integration to use actual content modification dates instead of build time. Also add `changefreq` and `priority` attributes.
-
-### 3. Launch Google review acquisition campaign
-**Category:** Local SEO
-**Effort:** 2 hours setup + ongoing
-**Impact:** 12 reviews in 15 years is critically low. Directly affects local pack rankings and AI trust signals.
-
-Actions:
-- Implement post-project review request email sequence (send 48h after delivery)
-- Add WhatsApp review request to project close workflow
-- Contact top 10 existing clients for reviews
-- Target: 1 review every 2 weeks minimum
-- Goal: 40+ reviews within 90 days
-
-### 4. Add hyperlinked source citations to all blog statistics
-**Category:** Content Quality / GEO
-**Effort:** 2-3 hours per post (~16 hours total)
-**Impact:** Transforms unverifiable claims into citable facts for AI systems
-
-Fix these specific unsourced claims:
-- "95% de hogares chilenos compraron online en 2024" → link to CCS report
-- "USD 562 billion China live shopping 2023" → link to McKinsey/Statista
-- "Conversión 5-10x mayor que e-commerce" → link to Bambuser/McKinsey
-- "70% of companies don't measure video ROI" → link to Wyzowl/HubSpot or remove
-- Audit all 8 posts for every statistic and add `[Source, Year](URL)` format
-
----
-
-## HIGH Priority
-
-### 5. Link or create YouTube channel across all entity touchpoints
-**Category:** GEO / AI Visibility
-**Effort:** 2-4 hours (if channel exists) / 2-4 weeks (if creating)
-**Impact:** YouTube-AI citation correlation is 0.737 — the strongest single signal
-
-Actions:
-- If YouTube channel exists: add URL to JSON-LD sameAs, llms.txt, footer social links
-- If no channel: create one, upload 5-10 portfolio pieces with VideoObject schema
-- Add `VideoObject` schema to each portfolio/case study page that embeds a video
-
-### 6. Create Clutch.co profile with verified client reviews
-**Category:** Local SEO / Authority
-**Effort:** 4-6 hours setup
-**Impact:** #1 B2B services citation platform globally. 3 of top 5 AI visibility factors are citation-related.
-
-With 30+ named corporate clients across healthcare, energy, retail, and banking, 3-5 Clutch reviews with verified project descriptions would significantly elevate both citation authority and conversion credibility.
-
-### 7. Convert blog H2/H3 headings to question format
-**Category:** On-Page SEO / GEO
-**Effort:** 1-2 hours total
-**Impact:** AI Overviews extract answers to questions. Question-format headings create direct query-answer pairs.
-
-Examples:
-- "Cómo funciona una sesión de live shopping" → "¿Cómo funciona una sesión de live shopping en Chile?"
-- "Por qué está creciendo en Chile" → "¿Por qué está creciendo el live shopping en Chile en 2026?"
-- "Multicámara y switcher: por qué importa" → "¿Por qué necesitas multicámara y switcher profesional?"
-- Each H3 question should be followed by a self-contained 134-167 word answer paragraph
-
-### 8. Implement HowTo schema on procedural blog posts
-**Category:** Schema / GEO
-**Effort:** 3-5 hours
-**Impact:** HowTo schema is a reliable Google AI Overview trigger for procedural queries
-
-Target posts:
-- "Producción de video corporativo paso a paso: desde el brief hasta la entrega"
-- "Cómo transmitir tu junta anual de accionistas sin caídas técnicas"
-- "Cómo producir contenido para LinkedIn con tus ejecutivos como talento"
-
-### 9. Add VideoObject schema to individual case study / portfolio pages
+### 2. Remove broken SearchAction schema
 **Category:** Schema
-**Effort:** 2-3 hours
-**Impact:** Enables video rich results in Google Search and Images
+**Impact:** Eliminates active invalid markup
+**Effort:** 5 minutes
+**Fix:** Remove the `potentialAction` block from the WebSite JSON-LD on the homepage. The `/search?q=` endpoint returns 404.
 
-Each case study and portfolio page embedding a YouTube video should have:
+### 3. Fix HTTP Content-Type header to include charset=utf-8
+**Category:** Technical SEO
+**Impact:** Fixes corrupted Spanish characters in all schema descriptions sitewide
+**Effort:** Server/CDN configuration change
+**Fix:** Ensure the HTTP response header includes `Content-Type: text/html; charset=utf-8`. Check Cloudflare settings or Astro's server configuration.
+
+### 4. Edge-cache HTML on Cloudflare
+**Category:** Performance
+**Impact:** -200-600ms LCP improvement
+**Effort:** Cloudflare Cache Rule, 10 minutes
+**Fix:** The HTML is served as `cf-cache-status: DYNAMIC` on every request. Since Astro generates static HTML, add a Cloudflare Cache Rule: `Cache-Control: s-maxage=3600, stale-while-revalidate=86400`. TTFB drops from ~350ms to <50ms.
+
+### 5. Fix AggregateRating schema
+**Category:** Schema
+**Impact:** Rich result eligibility for review stars
+**Effort:** 2 minutes
+**Fix:**
 ```json
-{
-  "@type": "VideoObject",
-  "name": "Project name",
-  "description": "Project description",
-  "thumbnailUrl": "thumbnail URL",
-  "uploadDate": "YYYY-MM-DD",
-  "duration": "PT5M30S",
-  "embedUrl": "YouTube embed URL"
+"aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": 5.0,
+  "reviewCount": 12,
+  "bestRating": 5,
+  "worstRating": 1
 }
 ```
-
-### 10. Add pricing context to service pages
-**Category:** SXO
-**Effort:** 2-3 hours
-**Impact:** Competitors (FeriaPixel) have dedicated pricing pages. Google rewards pricing transparency.
-
-Don't need a rate card. Add a "Precios y Presupuestos" FAQ entry on each service page:
-- "¿Cuánto cuesta un streaming corporativo?" → "Depende de X, Y, Z. Proyectos típicos parten desde..."
-- "¿De qué depende el precio?" → "Las variables principales son..."
-- "¿Cómo solicito un presupuesto?" → "Completa el formulario..."
+Change `"5.0"` (string) to `5.0` (number). Add `worstRating: 1`.
 
 ---
 
-## MEDIUM Priority
+## High (Fix Within 2 Weeks)
 
-### 11. Add geographic modifiers to missing title tags
-**Category:** On-Page SEO / Local
-**Effort:** 30 minutes
-**Impact:** Local ranking signal for geo-modified queries
-
-| Page | Current | Recommended |
-|------|---------|-------------|
-| /servicios/estudio-virtual/ | "Estudio virtual con green screen y escenografías 3D \| DAR2" | "Estudio virtual con green screen en Santiago \| DAR2" |
-| /servicios/ | "Servicios audiovisuales: streaming, live shopping y más \| DAR2" | "Servicios audiovisuales en Santiago \| DAR2" |
-| /blog/ | "Blog — Guías de producción audiovisual y live shopping \| DAR2" | "Blog — Guías de producción audiovisual en Chile \| DAR2" |
-| /nosotros/ | "Equipo DAR2 — 15 años produciendo audiovisual" | "Equipo DAR2 — 15 años de producción audiovisual en Santiago" |
-| /contacto/ | "Contacto — Cotiza tu proyecto audiovisual en 48h \| DAR2" | "Contacto — Cotiza producción audiovisual en Santiago \| DAR2" |
-
-### 12. Individualize meta descriptions per page
-**Category:** On-Page SEO
-**Effort:** 1-2 hours
-**Impact:** Unique meta descriptions improve CTR from search results
-
-Write unique 150-160 character meta descriptions for each service page including: service name, differentiator, and geo modifier.
-
-### 13. Add Person sameAs and GBP URL to schema
-**Category:** Schema / Local / GEO
-**Effort:** 20 minutes
-**Impact:** Connects on-page entities to external verified profiles
-
-Actions:
-- Add to Person schema for Carlos Rios Guevara:
-  ```json
-  "sameAs": ["https://www.linkedin.com/in/carlos-rios-guevara-9a1b5a2b/"]
-  ```
-- Add to Organization sameAs array:
-  ```json
-  "https://maps.google.com/?cid=6666778595618035561"
-  ```
-
-### 14. Standardize NAP formatting site-wide
+### 6. Add Google Maps iframe to /contacto/
 **Category:** Local SEO
-**Effort:** 30 minutes
-**Impact:** Consistent NAP improves citation matching algorithms
+**Impact:** Critical GBP signal + UX improvement
+**Effort:** 15 minutes
+**Fix:** Embed Google Maps using CID 6666778595618035561. Place prominently on the contact page.
 
-Adopt single canonical format:
-- Address: `Av. Holanda 099, of. 603, Providencia, Santiago, Chile`
-- Phone: `+56 9 9843 3346`
-
-Standardize across: homepage footer, contact page, about page, JSON-LD schema, all future directory listings.
-
-### 15. Create dedicated Santiago location page
-**Category:** Local SEO
+### 7. Expand /casos/ case studies
+**Category:** Content / E-E-A-T
+**Impact:** Trust for procurement buyers, E-E-A-T authority
 **Effort:** 4-6 hours
-**Impact:** Captures high-intent local searches like "productora audiovisual Santiago"
+**Fix:** Expand each case study to 400-600 words with: Desafío → Solución → Ejecución → Resultados (with measurable outcomes: viewer count, connection stability, client repeat rate). Add at least 1-2 more case studies from financial/retail clients.
 
-Create `/produccion-audiovisual-santiago/` with:
-- 600+ word unique description of the Providencia studio
-- Embedded Google Maps
-- Address and phone in visible HTML
-- Selection of Santiago-based case studies
-- LocalBusiness schema markup
-- CTA to contact/cotizar
-
-### 16. Add OAI-SearchBot to robots.txt
-**Category:** GEO
-**Effort:** 5 minutes
-**Impact:** Ensures ChatGPT's real-time web search crawler has explicit access
-
-Add to robots.txt:
-```
-User-agent: OAI-SearchBot
-Allow: /
-```
-
-### 17. Add 301 redirect from /.well-known/llms.txt to /llms.txt
-**Category:** GEO
-**Effort:** 5 minutes
-**Impact:** Some AI crawlers check the alternative path
-
-### 18. Fix blog post date metadata error
-**Category:** Content Quality
-**Effort:** 15 minutes
-**Impact:** A published date later than updated date is logically impossible and harms freshness credibility
-
-The "junta anual" post shows published: May 19, updated: May 12. Fix dateModified to equal or follow datePublished. Audit all 8 posts for similar inconsistencies.
-
-### 19. Submit NAP to key Chilean directories
-**Category:** Local SEO
+### 8. Expand /servicios/ hub from 361 to 800+ words
+**Category:** Content
+**Impact:** Category keyword coverage
 **Effort:** 2-3 hours
-**Impact:** Tier 1 citation sources for the Chilean market
+**Fix:** Add a comparison matrix of the 8 services, FAQs, and a "how to choose" decision section.
 
-Register on:
-- Páginas Amarillas Chile (amarillas.cl)
-- Apple Maps (Apple Business Connect)
-- Waze
-- Foursquare/Factual
-- Ensure category matches GBP primary category
+### 9. Add `url` and `image` to Service schema
+**Category:** Schema
+**Impact:** Service-page association in Google's understanding
+**Effort:** 1 hour total (all service pages)
+**Fix:** Each Service JSON-LD block needs a `url` pointing to its canonical page and an `image` property.
 
-### 20. Add inter-blog cross-linking
-**Category:** On-Page SEO
-**Effort:** 1 hour
-**Impact:** Distributes link equity and creates topical clusters
+### 10. Add `dateModified` to all BlogPosting schema
+**Category:** Schema
+**Impact:** Article rich results eligibility
+**Effort:** Template change
+**Fix:** Add `"dateModified": "YYYY-MM-DD"` to each BlogPosting in the Blog hub schema and individual post pages.
 
-Add "Artículos relacionados" section at bottom of each blog post linking to 2-3 related posts. Group by topic clusters:
-- Streaming cluster: junta anual, circuito cerrado vs streaming
-- Video cluster: video corporativo paso a paso, ROI video corporativo
-- Digital/social cluster: LinkedIn ejecutivos, redes sociales, filtros AR
-- Innovation cluster: live shopping, estudio virtual vs set físico
+### 11. Add preconnect hints for third-party origins
+**Category:** Performance
+**Impact:** -100-300ms per page load
+**Effort:** 5 minutes
+**Fix:** Add to `<head>` after charset/viewport meta:
+```html
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://w.behold.so" crossorigin>
+<link rel="dns-prefetch" href="https://feeds.behold.so">
+```
+
+### 12. Reserve height for Behold Instagram widget
+**Category:** Performance (CLS)
+**Impact:** Eliminates highest CLS risk
+**Effort:** 10 minutes
+**Fix:** Add CSS: `behold-widget, [data-behold-id] { min-height: 420px; display: block; }`
+
+### 13. Add VideoObject schema for portfolio YouTube videos
+**Category:** Schema
+**Impact:** Video rich results — highest visibility gain
+**Effort:** 1-2 hours
+**Fix:** Add VideoObject JSON-LD for each of the 19 YouTube embeds on /portafolio/. Include: name, description, thumbnailUrl, uploadDate, contentUrl, embedUrl, publisher.
+
+### 14. Consolidate to one sitemap with real lastmod dates
+**Category:** Technical SEO
+**Impact:** Crawl efficiency + freshness signals
+**Effort:** 1-2 hours
+**Fix:**
+1. Keep Astro auto-generated sitemap (`sitemap-index.xml`)
+2. Implement git-based lastmod in Astro's sitemap serialize hook
+3. Remove deprecated priority/changefreq
+4. Update robots.txt: `Sitemap: https://dar2.cl/sitemap-index.xml`
+5. Retire `sitemap-manual.xml`
+
+### 15. Launch review acquisition program
+**Category:** Local SEO
+**Impact:** Local ranking + trust signals
+**Effort:** Ongoing process
+**Fix:** Target 30+ Google reviews within 6 months. Send direct review link (g.page/r/CWmX_YPPJ4VcEBM/review) via WhatsApp/email within 72 hours of project delivery. Minimum 1 new review every 15 days to stay above the 18-day velocity cliff.
 
 ---
 
-## LOW Priority
+## Medium (Fix Within 1 Month)
 
-### 21. Add alt text to team member photos
-**Category:** Images
-**Effort:** 15 minutes
-**Impact:** Accessibility and image SEO
+### 16. Add source citations to blog statistics
+**Category:** Content / E-E-A-T
+**Impact:** Citability + credibility
+**Effort:** 2-4 hours editing
+**Fix:** Link to eMarketer, Statista, CCS for claims like "USD 562B China live shopping", "95% Chilean households online", "70% don't measure ROI".
 
-Add descriptive alt text to all 8 team photos on /nosotros/:
-- "Carlos Rios Guevara — Director de DAR2 Servicios Audiovisuales"
-- "Víctor Arriagada — Publicista y Locutor en DAR2"
-- etc.
+### 17. Create standalone author page for Carlos Rios Guevara
+**Category:** E-E-A-T
+**Impact:** Strengthens Person entity + authorship trail
+**Effort:** 1-2 hours
+**Fix:** Create `/nosotros/carlos-rios-guevara/` with 300-500 word bio, UNIACC details, production history, links to authored blog posts. Update Person schema `url` to point here.
 
-### 22. Implement weekly GBP post cadence
-**Category:** Local SEO
-**Effort:** 30 min/week (repurpose existing blog content)
-**Impact:** GBP posts are a direct engagement signal
+### 18. Stagger blog publication dates for future posts
+**Category:** Content
+**Impact:** Reduces AI-batch-generation perception
+**Effort:** Process change
+**Fix:** All 8 current posts dated 2026-05-19 (red flag). Going forward, publish individually across weeks. If posts were genuinely authored at different times, update datePublished to reflect actual dates.
 
-### 23. Add ContactPage schema to /contacto/
-**Category:** Schema
-**Effort:** 15 minutes
-
-### 24. Add SearchAction to WebSite schema
-**Category:** Schema
-**Effort:** 15 minutes
-
-### 25. Create llms-full.txt companion file
-**Category:** GEO
+### 19. Add comparison tables to vs-type blog posts
+**Category:** Content / GEO
+**Impact:** AI citation + structured readability
 **Effort:** 2-3 hours
-**Impact:** Allows AI systems to index full content without HTTP round-trips
+**Fix:** Convert "Circuito cerrado vs. streaming" and "Estudio virtual vs. set físico" prose comparisons into HTML tables (5-8 rows: cost, setup time, audience size, use case, equipment).
 
-### 26. Verify GBP primary category
-**Category:** Local SEO
-**Effort:** 10 minutes (requires GBP dashboard access)
-**Impact:** #1 local ranking factor (Whitespark 2026, score: 193)
-
-Confirm primary category is the most specific available option: "Empresa de producción de vídeos" or equivalent.
-
-### 27. Add Vimeo/Behance profile to sameAs
-**Category:** Schema / Authority
-**Effort:** 1-2 hours if profiles exist
-
-### 28. Reduce geo coordinate precision in schema
-**Category:** Schema (cosmetic)
+### 20. Publish RUT (Chilean tax ID) on contact + nosotros pages
+**Category:** Trust / Local SEO
+**Impact:** Chilean B2B procurement trust signal
 **Effort:** 5 minutes
-**Impact:** From 15 decimal places to recommended 5
+
+### 21. Convert client relationships into backlinks
+**Category:** Backlinks
+**Impact:** Authority building (currently near-zero)
+**Effort:** Ongoing outreach
+**Fix:** Draft personalized emails to client marketing contacts (Cencosud, ENAP, Banco Chile). Propose joint case studies or "produced by" credits with links. Even 3-4 enterprise backlinks would push dar2.cl above CC reporting threshold.
+
+### 22. Create YouTube channel
+**Category:** GEO / Backlinks
+**Impact:** Strongest AI citation signal (0.737 correlation) + high-DA referring domain
+**Effort:** Ongoing
+**Fix:** Upload 3-5 portfolio clips. Include https://dar2.cl/ in every description. Mirror blog content as 5-10 minute video explainers.
+
+### 23. Create Clutch.co profile
+**Category:** Local SEO / Citations
+**Impact:** High-DA B2B citation + review channel
+**Effort:** 2-3 hours
+**Fix:** Register at clutch.co/agencies/video-production. Claim Chile/Santiago category. Request 3-5 client reviews.
+
+### 24. Add srcset to images for responsive delivery
+**Category:** Performance
+**Impact:** Mobile performance improvement
+**Effort:** 2-3 hours
+**Fix:** Generate multiple image sizes at build time. Add srcset to `<picture>` sources. Mobile users currently receive desktop-sized images.
+
+### 25. Implement two-track CTA system
+**Category:** SXO / Conversion
+**Impact:** Serves consideration-stage visitors
+**Effort:** 4-6 hours
+**Fix:**
+- Track 1 (decision-ready): Keep WhatsApp "Cotizar ahora"
+- Track 2 (consideration): "Descargar ficha de servicios" (PDF) or "Ver proceso en detalle"
+- Every service page and blog post should offer both tracks
+
+---
+
+## Low (Backlog)
+
+### 26. Fix llms.txt to spec-compliant format
+**Category:** GEO
+**Impact:** AI search indexing
+**Effort:** 1-2 hours
+**Fix:** Replace paragraph-style content with structured Markdown: brief description + `## Sections` block listing key pages with titles and URLs.
+
+### 27. Build Wikidata entity for DAR2
+**Category:** GEO
+**Impact:** AI entity disambiguation
+**Effort:** 3-6 hours
+**Fix:** Create Wikidata item: instance of "audiovisual production company", country Chile, founded 2010, founder Carlos Rios Guevara, headquarters Providencia, Santiago.
+
+### 28. Expand /portafolio/ with descriptive text per project
+**Category:** Content
+**Impact:** Content depth + searchability
+**Effort:** 2-3 hours
+**Fix:** Add 50-100 word description per portfolio item: client, challenge, format, technical approach.
+
+### 29. Add hreflang to all pages (not just homepage)
+**Category:** Technical SEO
+**Impact:** International signal consistency
+**Effort:** Template change
+**Fix:** hreflang es-CL + x-default currently only on homepage. Add to all 26 pages.
+
+### 30. Add verified testimonials with company affiliation
+**Category:** E-E-A-T / Trust
+**Impact:** Verifiable social proof
+**Effort:** Requires client approval
+**Fix:** Request permission from testimonial authors to include role + company name. Mark up with Review schema.
+
+### 31. Submit to Chilean directories
+**Category:** Local SEO / Citations
+**Impact:** Citation building + entity corroboration
+**Effort:** 2-3 hours
+**Fix:** Submit to ACHAP, Sortlist.com, Agencias.cl, CORFO supplier registry, ProChile exporter directory.
+
+### 32. Add width/height to 6 video card images
+**Category:** Performance (CLS)
+**Impact:** Minor CLS safety net
+**Effort:** 15 minutes
+**Fix:** The `.vc-img` portfolio images (polpaico, vida-camara, valores-castano, etc.) are missing `width` and `height` attributes.
+
+### 33. Move GTM below charset/viewport meta tags
+**Category:** Performance
+**Impact:** Minor parser optimization
+**Effort:** 5 minutes
+**Fix:** GTM is currently the first element in `<head>`, before `<meta charset>`. Move it after the two critical meta tags.
 
 ---
 
 ## Implementation Roadmap
 
-### Week 1 (CRITICAL)
-- [ ] Add canonical tags to all pages (#1)
-- [ ] Fix sitemap lastmod timestamps (#2)
-- [ ] Set up review acquisition campaign (#3)
-- [ ] Add OAI-SearchBot to robots.txt (#16)
-- [ ] Fix date metadata error (#18)
-- [ ] Standardize NAP formatting (#14)
-- [ ] Add Person sameAs and GBP URL to schema (#13)
+### Week 1 — Quick Wins (Items 1-5)
+- Truncate title tags (template change)
+- Remove SearchAction, fix AggregateRating (schema edits)
+- Fix Content-Type header (server config)
+- Edge-cache HTML (Cloudflare rule)
+- **Expected score improvement: +5-8 points**
 
-### Week 2 (HIGH)
-- [ ] Link/create YouTube channel (#5)
-- [ ] Convert blog headings to question format (#7)
-- [ ] Add geographic modifiers to title tags (#11)
-- [ ] Individualize meta descriptions (#12)
-- [ ] Add inter-blog cross-linking (#20)
-- [ ] Add alt text to team photos (#21)
+### Week 2 — High Priority (Items 6-15)
+- Add Google Maps embed
+- Preconnect hints + Behold height fix
+- Sitemap consolidation
+- Schema fixes (Service url, BlogPosting dateModified, VideoObject)
+- Start review acquisition
+- **Expected score improvement: +5-7 points**
 
-### Week 3-4 (HIGH)
-- [ ] Begin adding source citations to blog posts (#4) — 2 posts per week
-- [ ] Implement HowTo schema on 3 posts (#8)
-- [ ] Add VideoObject schema to case studies (#9)
-- [ ] Add pricing FAQ to service pages (#10)
-- [ ] Create Clutch.co profile (#6)
+### Weeks 3-4 — Content & Authority (Items 7-8, 16-25)
+- Expand /casos/ and /servicios/ hub
+- Add source citations to blog
+- Create author page
+- YouTube channel setup
+- Clutch.co profile
+- Begin client backlink outreach
+- Implement two-track CTA
+- **Expected score improvement: +8-12 points**
 
-### Month 2 (MEDIUM)
-- [ ] Complete source citations on remaining posts (#4)
-- [ ] Create Santiago location page (#15)
-- [ ] Submit NAP to directories (#19)
-- [ ] Add /.well-known/llms.txt redirect (#17)
-- [ ] Create llms-full.txt (#25)
-- [ ] Implement GBP weekly posts (#22)
-- [ ] Add ContactPage schema (#23)
+### Ongoing — Long-term (Items 26-33)
+- Wikidata entity
+- llms.txt optimization
+- Portfolio expansion
+- Directory submissions
+- **Expected score improvement: +3-5 points**
 
-### Ongoing
-- [ ] Maintain review velocity (1+ review per 2 weeks)
-- [ ] Publish 2-4 new blog posts per month
-- [ ] Monitor sitemap lastmod freshness
-- [ ] Track keyword rankings for 5 target queries
-
----
-
-## Expected Impact
-
-| Metric | Current | 30 Days | 90 Days |
-|--------|---------|---------|---------|
-| SEO Health Score | 78/100 | 84/100 | 88/100 |
-| Local SEO Score | 67/100 | 75/100 | 82/100 |
-| GEO Score | 71/100 | 78/100 | 85/100 |
-| SXO Score | 54/100 | 62/100 | 72/100 |
-| Google Reviews | 12 | 16 | 30+ |
-| FAQ Rich Results | Eligible | Active | Active |
-| Video Rich Results | Partial | Full | Full |
-
----
-
-*Action plan generated by Claude Code SEO Audit — May 25, 2026*
+### Projected Score After Full Implementation: 83-94/100

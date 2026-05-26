@@ -13,14 +13,14 @@ import interLatinNormal from '@fontsource-variable/inter/files/inter-latin-wght-
 import interLatinItalic from '@fontsource-variable/inter/files/inter-latin-wght-italic.woff2?url';
 
 const {
-  title = 'Productora audiovisual en Santiago de Chile — 15 años',
+  title = 'Productora Audiovisual en Santiago | DAR2',
   description = 'Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más.',
   breadcrumbs = null,
   preloadImage = null,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://dar2.cl');
-const fullTitle = `${title} | DAR2 Servicios Audiovisuales`;
+const fullTitle = title.includes('| DAR2') ? title : `${title} | DAR2`;
 const isHome = Astro.url.pathname === '/';
 
 // Schema unificado: LocalBusiness + ProfessionalService bajo un mismo @id.
@@ -46,7 +46,7 @@ const organizationSchema = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Holanda 099, of 603",
+    "streetAddress": "Av. Holanda 099, Oficina 603",
     "addressLocality": "Providencia",
     "addressRegion": "Región Metropolitana",
     "postalCode": "7510689",
@@ -66,9 +66,10 @@ const organizationSchema = {
   }],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
+    "ratingValue": 5.0,
     "reviewCount": 12,
-    "bestRating": "5"
+    "bestRating": 5,
+    "worstRating": 1
   },
   "founder": {
     "@type": "Person",
@@ -97,7 +98,7 @@ const organizationSchema = {
   }
 };
 
-// WebSite schema con SearchAction (habilita Sitelinks Search Box en Google).
+// WebSite schema (sin SearchAction — el endpoint /search?q= no existe).
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -106,15 +107,7 @@ const websiteSchema = {
   "name": "DAR2 Servicios Audiovisuales",
   "description": "Productora audiovisual en Santiago de Chile especializada en streaming, live shopping y video corporativo.",
   "publisher": { "@id": "https://dar2.cl/#organization" },
-  "inLanguage": "es-CL",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://dar2.cl/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "inLanguage": "es-CL"
 };
 
 // BreadcrumbList opcional: el page padre puede pasar un array de items.
@@ -219,6 +212,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {preloadImage && (
       <link rel="preload" as="image" href={preloadImage} type="image/webp" fetchpriority="high" />
     )}
+
+    <!-- Preconnect hints para orígenes críticos de terceros -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://w.behold.so" crossorigin />
+    <link rel="preconnect" href="https://api.web3forms.com" crossorigin />
 
     <!-- Preload Inter latin fonts (normal + italic) para reducir cadena critica.
          crossorigin requerido aun para mismo origen porque <link rel=preload as=font>
