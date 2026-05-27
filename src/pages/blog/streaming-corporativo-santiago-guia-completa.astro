@@ -1,0 +1,386 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Streaming corporativo en Santiago: guía completa', url: 'https://dar2.cl/blog/streaming-corporativo-santiago-guia-completa/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Streaming corporativo en Santiago: guía completa para empresas",
+  "description": "Guía completa de streaming corporativo en Santiago de Chile: qué es, tipos de eventos, equipamiento, plataformas, checklist para contratar y preguntas frecuentes.",
+  "image": "https://dar2.cl/images/servicios/streaming.jpg",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/streaming-corporativo-santiago-guia-completa/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es el streaming corporativo profesional?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El streaming corporativo profesional es la transmisión en vivo de eventos empresariales con producción broadcast: multicámara, switcher dedicado, mezcla de audio en tiempo real, gráficas animadas y enlaces redundantes. A diferencia de una videoconferencia (Zoom, Teams), el streaming profesional ofrece calidad de TV, dirección técnica y confiabilidad para eventos críticos como juntas anuales, lanzamientos y seminarios." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de eventos corporativos se pueden transmitir en vivo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los más comunes en Chile son: juntas anuales de accionistas, lanzamientos de producto, seminarios y conferencias, capacitaciones masivas, eventos híbridos (presencial + remoto), congresos médicos y académicos, y activaciones de marca con live shopping. Cada tipo tiene requerimientos técnicos distintos en cuanto a número de cámaras, plataforma y nivel de interactividad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas cámaras se necesitan para un streaming corporativo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del tipo de evento. Para una junta anual o seminario: 3 a 4 cámaras (panel, orador, audiencia, panorámica). Para un lanzamiento de producto o live shopping: 2 a 3 cámaras más una dedicada a producto. Para un congreso grande: hasta 6 cámaras robóticas PTZ operadas desde una consola. El switcher permite cortar entre ellas en tiempo real." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué equipamiento incluye un streaming profesional?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un streaming profesional incluye: cámaras broadcast (Sony, Blackmagic), switcher de video, mezclador de audio, sistema de iluminación, micrófonos profesionales (lavalier, boom, inalámbricos), monitor de referencia, gráficas en tiempo real, enlace redundante (fibra + LTE/5G) y codificador de streaming. Todo operado por un equipo técnico especializado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué plataformas se usan para streaming corporativo en Chile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las más usadas son: Zoom Webinar (para eventos privados con registro), Microsoft Teams Live Events (para empresas integradas al ecosistema Microsoft), YouTube Live (para eventos públicos sin límite de audiencia), LinkedIn Live (para contenido profesional y B2B), Vimeo (para transmisiones embebidas en sitios web) y plataformas privadas vía RTMP para máximo control." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo elegir una productora de streaming en Santiago?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Al elegir una productora de streaming en Santiago, verifica que ofrezca: enlace redundante con dos conexiones físicas distintas, mínimo 3 cámaras con switcher, director técnico exclusivo para tu evento, ensayo general previo, plan de contingencia documentado, coordinador de contacto durante el evento, y entrega post-evento con grabación master. Pide referencias de clientes corporativos y casos reales." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan productoras de streaming fuera de Santiago?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, muchas productoras con base en Santiago se desplazan a regiones para eventos corporativos. Es importante que la productora tenga experiencia en logística de equipos y personal fuera de la Región Metropolitana, y que pueda coordinar enlaces redundantes incluso en locaciones con infraestructura limitada." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Streaming corporativo en Santiago: guía completa para empresas | DAR2"
+  description="Guía completa de streaming corporativo en Santiago de Chile: qué es, tipos de eventos, equipamiento, plataformas, checklist para contratar productora y preguntas frecuentes."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/streaming-junta-anual-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming Corporativo</p>
+      <h1 class="article-h1">
+        Streaming corporativo en Santiago:
+        <em class="hl">guía completa para empresas.</em>
+      </h1>
+      <p class="article-lead">
+        El streaming corporativo se ha convertido en una herramienta esencial para empresas chilenas que necesitan llegar a audiencias remotas sin perder calidad ni control. Esta guía cubre todo lo que necesitas saber para contratar un servicio profesional en Santiago.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 26 de mayo, 2026 · 9 min de lectura
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/streaming-junta-anual-hero.png"
+        alt="Producción de streaming corporativo profesional en Santiago — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es">¿Qué es el streaming corporativo profesional?</a></li>
+        <li><a href="#tipos-eventos">Tipos de eventos que se transmiten en vivo</a></li>
+        <li><a href="#equipamiento">Equipamiento de un streaming profesional</a></li>
+        <li><a href="#plataformas">Plataformas de transmisión</a></li>
+        <li><a href="#enlace-redundante">Enlace redundante: por qué es clave</a></li>
+        <li><a href="#checklist">Checklist para contratar una productora</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="que-es">
+      <h2>¿Qué es el streaming corporativo profesional?</h2>
+      <p>
+        El streaming corporativo profesional es la transmisión en vivo de eventos empresariales con estándar de producción broadcast. No es una videoconferencia con Zoom ni una transmisión improvisada con un celular: es producción audiovisual en tiempo real, con multicámara, switcher dedicado, mezcla de audio profesional, gráficas animadas y enlaces redundantes que garantizan que la transmisión no se caiga.
+      </p>
+      <p>
+        En Santiago de Chile, el streaming corporativo se ha vuelto un estándar para empresas que necesitan comunicar con accionistas, colaboradores, clientes y público general sin las limitaciones geográficas de un evento presencial. Una junta anual transmitida en vivo desde Providencia puede ser vista por accionistas en Antofagasta, Concepción o Puerto Montt con la misma calidad.
+      </p>
+      <p>
+        La diferencia entre un streaming amateur y uno profesional se nota en tres dimensiones: <strong>calidad técnica</strong> (imagen, sonido, iluminación), <strong>confiabilidad</strong> (la transmisión no se cae) y <strong>dirección</strong> (el contenido se ve dinámico, bien producido, con ritmo). Para eventos corporativos críticos, las tres son igualmente importantes.
+      </p>
+    </section>
+
+    <section class="article-section" id="tipos-eventos">
+      <h2>¿Qué tipos de eventos se transmiten en vivo?</h2>
+      <p>
+        En Chile, los eventos corporativos que más se transmiten por streaming profesional son:
+      </p>
+
+      <h3>Juntas anuales de accionistas</h3>
+      <p>
+        El evento corporativo más crítico del año. Requiere máxima confiabilidad, cumplimiento regulatorio (la transmisión debe quedar registrada), multicámara para cubrir directorio, oradores y audiencia, y plataforma con control de acceso. Empresas del IPSA como Empresas Copec, Cencosud y otras transmiten sus juntas anualmente con producción profesional.
+      </p>
+
+      <h3>Lanzamientos de producto</h3>
+      <p>
+        Eventos donde una marca presenta una nueva línea, temporada o innovación. Combinan streaming con elementos de show: conducción, invitados especiales, música, gráficas de producto en tiempo real. La producción debe ser impecable porque el video queda como material de marketing después del evento.
+      </p>
+
+      <h3>Seminarios y conferencias</h3>
+      <p>
+        Congresos, charlas magistrales, paneles de expertos. Suelen tener múltiples expositores, horarios ajustados y audiencias especializadas. La producción debe manejar cambios rápidos de orador, integración con presentaciones PowerPoint/Keynote y Q&A en vivo.
+      </p>
+
+      <h3>Eventos híbridos</h3>
+      <p>
+        Combinan audiencia presencial en un recinto con audiencia remota vía streaming. El desafío técnico es doble: producir para la sala (pantallas IMAG, sonido ambiente) y para la transmisión (streaming con multicámara). Requieren coordinación precisa entre el director técnico y el productor del evento presencial.
+      </p>
+
+      <h3>Capacitaciones masivas</h3>
+      <p>
+        Empresas con miles de colaboradores en todo Chile usan streaming para capacitar simultáneamente a todo el equipo. La plataforma debe soportar alta concurrencia, y la producción debe mantener la atención de la audiencia remota durante períodos más largos.
+      </p>
+
+      <div class="article-cta">
+        <a href="/servicios/streaming/" class="article-cta-btn">
+          Ver nuestro servicio de Streaming Corporativo →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="equipamiento">
+      <h2>¿Qué equipamiento incluye un streaming profesional?</h2>
+      <p>
+        Una producción de streaming corporativo profesional en Santiago utiliza el siguiente equipamiento estándar:
+      </p>
+      <ul class="article-list">
+        <li><strong>Cámaras broadcast:</strong> Sony FX6, Blackmagic Pocket Cinema o equivalentes. Para eventos con múltiples oradores, se suman cámaras robóticas PTZ controladas desde consola.</li>
+        <li><strong>Switcher de video:</strong> Blackmagic ATEM o similar. Permite cortar entre cámaras en tiempo real, agregar gráficas, transiciones y efectos.</li>
+        <li><strong>Mezclador de audio:</strong> consola profesional con entradas para micrófonos inalámbricos, lavalier, boom y fuentes externas (presentaciones, videos).</li>
+        <li><strong>Sistema de iluminación:</strong> luces LED profesionales con control de temperatura de color, para que los expositores se vean naturales y profesionales.</li>
+        <li><strong>Micrófonos:</strong> combinación de lavalier (para oradores principales), inalámbricos de mano (para Q&A) y boom (para captura ambiental).</li>
+        <li><strong>Gráficas en tiempo real:</strong> lower thirds con nombres y cargos, pantallas completas con datos, logos animados, todo integrado al switcher.</li>
+        <li><strong>Enlace redundante:</strong> dos conexiones a internet físicamente distintas (fibra + LTE/5G) con conmutación automática.</li>
+        <li><strong>Codificador de streaming:</strong> equipo dedicado que toma la señal del switcher y la envía a la plataforma destino con la calidad y formato correctos.</li>
+      </ul>
+      <p>
+        En DAR2 operamos con equipo propio en nuestro estudio de Providencia o nos desplazamos al recinto del cliente con todo el equipamiento necesario. La ventaja del equipo propio es que cada técnico conoce el material, los tiempos de montaje son predecibles y no hay sorpresas de último minuto.
+      </p>
+    </section>
+
+    <section class="article-section" id="plataformas">
+      <h2>¿Qué plataformas de transmisión existen?</h2>
+      <p>
+        La elección de la plataforma depende del tipo de evento, la audiencia y los requerimientos de control de acceso. En Chile, las más usadas son:
+      </p>
+
+      <h3>Zoom Webinar</h3>
+      <p>
+        Ideal para eventos privados con registro y control de acceso. Permite login con identificación, votación en vivo, Q&A moderado y reportes de asistencia. Soporta hasta 50.000 asistentes. Es la plataforma más usada para juntas anuales de accionistas en Chile.
+      </p>
+
+      <h3>Microsoft Teams Live Events</h3>
+      <p>
+        La opción natural para empresas que ya usan el ecosistema Microsoft. Integración con Active Directory, calendarios corporativos y herramientas de colaboración. Ideal para capacitaciones internas y comunicaciones con colaboradores.
+      </p>
+
+      <h3>YouTube Live</h3>
+      <p>
+        La plataforma pública por excelencia. Sin límite de asistentes, calidad de video alta, la grabación queda disponible automáticamente. Ideal para eventos que buscan máxima difusión: lanzamientos, seminarios abiertos, contenido de marca. La transmisión se puede embeber en el sitio web corporativo.
+      </p>
+
+      <h3>LinkedIn Live</h3>
+      <p>
+        Perfecta para contenido B2B, paneles de expertos y contenido de liderazgo. La audiencia de LinkedIn es profesional por definición, y la transmisión en vivo tiene prioridad en el algoritmo de la plataforma.
+      </p>
+
+      <h3>Plataforma privada vía RTMP</h3>
+      <p>
+        Para empresas que necesitan máximo control: la señal se envía a un reproductor embebido en el sitio corporativo o intranet, sin marca de terceros, con control de acceso por whitelist y métricas detalladas. Requiere integración técnica con el equipo de IT del cliente.
+      </p>
+    </section>
+
+    <section class="article-section" id="enlace-redundante">
+      <h2>¿Por qué el enlace redundante es clave?</h2>
+      <p>
+        Si hay un solo aspecto técnico que diferencia un streaming profesional de uno amateur, es el enlace redundante. En términos simples: <strong>nunca transmitas un evento corporativo con una sola conexión a internet</strong>.
+      </p>
+      <p>
+        El enlace redundante funciona así: el equipo de producción envía la señal del evento por dos rutas de internet físicamente distintas. La ruta principal suele ser una fibra óptica dedicada del recinto. La ruta de respaldo es una conexión LTE o 5G con un módem profesional, o un segundo proveedor de fibra. El codificador monitorea ambas rutas en tiempo real. Si la conexión principal falla (corte de electricidad, error del ISP, congestión), el sistema cambia automáticamente a la ruta de respaldo en menos de un segundo. El público remoto no nota la transición.
+      </p>
+      <p>
+        En Santiago, donde la infraestructura de internet es buena pero no infalible, el enlace redundante es especialmente importante. Cortes programados de proveedores, obras viales que dañan fibra óptica, congestión en horario punta: son eventos comunes que pueden interrumpir una transmisión sin respaldo. Una productora de streaming profesional en Santiago siempre incluye enlace redundante en su propuesta técnica.
+      </p>
+    </section>
+
+    <section class="article-section" id="checklist">
+      <h2>¿Qué pedirle a una productora de streaming en Santiago?</h2>
+      <p>
+        Si estás evaluando contratar una productora de streaming en Santiago, usa este checklist para asegurarte de que cumple con el estándar profesional:
+      </p>
+      <ol class="article-list">
+        <li><strong>Enlace redundante</strong> con dos conexiones físicamente distintas (fibra + LTE/5G o dos proveedores de fibra).</li>
+        <li><strong>Mínimo 3 cámaras</strong> con switcher dedicado y operador de cámara por cada una (o cámaras PTZ para eventos con espacio reducido).</li>
+        <li><strong>Director técnico exclusivo</strong> para tu evento, no compartido con otros clientes simultáneos.</li>
+        <li><strong>Ensayo general</strong> al menos una semana antes del evento, con todos los expositores y la plataforma definitiva.</li>
+        <li><strong>Plan de contingencia</strong> documentado: qué hacer si falla cada componente del sistema.</li>
+        <li><strong>Coordinador de contacto</strong> disponible durante todo el evento para resolver incidencias en tiempo real.</li>
+        <li><strong>Entrega post-evento</strong> con grabación master, gráficas integradas y cápsulas editadas para redes sociales.</li>
+        <li><strong>Experiencia comprobable</strong> con clientes corporativos en Chile. Pide casos reales y referencias.</li>
+        <li><strong>Equipo propio</strong> (no subcontratado): asegura consistencia técnica y coordinación entre los miembros del equipo.</li>
+        <li><strong>Seguro de responsabilidad civil</strong> profesional para eventos corporativos grandes.</li>
+      </ol>
+      <p>
+        En DAR2 cumplimos con todos estos puntos. Producimos streaming corporativo en Santiago desde 2010 para clientes como Cencosud, ENAP, Clínica Santa María, ABCDIN, AFP Habitat y Empresas Copec, entre otros.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/streaming/" class="article-cta-btn">
+          Ver servicio de Streaming Corporativo →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          Ver casos reales →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Qué es el streaming corporativo profesional?</summary>
+        <p>El streaming corporativo profesional es la transmisión en vivo de eventos empresariales con producción broadcast: multicámara, switcher dedicado, mezcla de audio en tiempo real, gráficas animadas y enlaces redundantes. A diferencia de una videoconferencia, ofrece calidad de TV y confiabilidad para eventos críticos.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué tipos de eventos corporativos se pueden transmitir en vivo?</summary>
+        <p>Juntas anuales de accionistas, lanzamientos de producto, seminarios y conferencias, capacitaciones masivas, eventos híbridos, congresos médicos y académicos, y activaciones de marca con live shopping.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuántas cámaras se necesitan para un streaming corporativo?</summary>
+        <p>Para una junta anual o seminario: 3 a 4 cámaras. Para un lanzamiento de producto: 2 a 3 cámaras. Para un congreso grande: hasta 6 cámaras robóticas PTZ operadas desde consola.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué equipamiento incluye un streaming profesional?</summary>
+        <p>Cámaras broadcast, switcher de video, mezclador de audio, sistema de iluminación, micrófonos profesionales, gráficas en tiempo real, enlace redundante y codificador de streaming. Todo operado por un equipo técnico especializado.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué plataformas se usan para streaming corporativo en Chile?</summary>
+        <p>Zoom Webinar, Microsoft Teams Live Events, YouTube Live, LinkedIn Live, Vimeo y plataformas privadas vía RTMP. La elección depende del tipo de evento y los requerimientos de control de acceso.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo elegir una productora de streaming en Santiago?</summary>
+        <p>Verifica que ofrezca: enlace redundante, mínimo 3 cámaras, director técnico exclusivo, ensayo general, plan de contingencia, coordinador de contacto, entrega post-evento, experiencia comprobable con clientes corporativos y equipo propio.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Trabajan productoras de streaming fuera de Santiago?</summary>
+        <p>Sí, muchas productoras con base en Santiago se desplazan a regiones. Es importante que tengan experiencia en logística de equipos fuera de la Región Metropolitana y puedan coordinar enlaces redundantes en locaciones con infraestructura limitada.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Necesitas streaming corporativo en Santiago?</h2>
+      <p>
+        En DAR2 producimos streaming corporativo profesional desde 2010. Multicámara, enlace redundante, dirección técnica y postproducción. Cotización a medida en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=streaming" class="article-cta-btn">
+          Cotizar streaming →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          Ver casos reales →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .article-meta { font-size: 14px; color: #888; }
+  .article-meta a { color: #888; text-decoration: underline; }
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

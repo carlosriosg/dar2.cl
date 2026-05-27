@@ -80,6 +80,18 @@ export const servicios = [
         q: '¿Trabajan en regiones fuera de Santiago?',
         a: 'Sí, nos desplazamos a todo Chile. Para eventos fuera de RM coordinamos logística de equipo y equipo técnico.',
       },
+      {
+        q: '¿Qué incluye exactamente el servicio de streaming corporativo en Santiago?',
+        a: 'Incluye producción completa: multicámara con switcher, mezcla de audio profesional, gráficas corporativas animadas en tiempo real, enlace redundante punto a punto (fibra + LTE/5G), transmisión a la plataforma que elijas, dirección técnica durante todo el evento y grabación master editada post-evento.',
+      },
+      {
+        q: '¿Cuál es la diferencia entre un streaming profesional y una videoconferencia?',
+        a: 'Un streaming profesional usa multicámara con switcher dedicado, mezcla de audio broadcast, iluminación de set, gráficas en tiempo real y enlace redundante. Una videoconferencia (Zoom, Teams) depende del ancho de banda del expositor y no tiene dirección técnica. La diferencia se nota en calidad de imagen, sonido y confiabilidad.',
+      },
+      {
+        q: '¿Qué tipo de eventos corporativos transmiten en Santiago?',
+        a: 'Juntas anuales de accionistas, lanzamientos de producto, seminarios y conferencias, capacitaciones masivas, eventos híbridos (presencial + remoto), congresos médicos y académicos, y activaciones de marca con live shopping.',
+      },
     ],
   },
   {
