@@ -56,8 +56,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
-    seoTitle: 'Streaming corporativo profesional en Chile',
-    seoDescription: 'Transmisión en vivo con multicámara, switcher profesional y enlace punto a punto. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
+    seoTitle: 'Productora de streaming y transmisión en vivo',
+    seoDescription: 'Productora de streaming para empresas en Santiago, Chile. Transmisión de eventos en vivo multicámara: juntas de accionistas, lanzamientos y seminarios sin caídas. Cotización en 48h.',
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
@@ -79,6 +79,10 @@ export const servicios = [
       {
         q: '¿Trabajan en regiones fuera de Santiago?',
         a: 'Sí, nos desplazamos a todo Chile. Para eventos fuera de RM coordinamos logística de equipo y equipo técnico.',
+      },
+      {
+        q: '¿Qué tipos de evento transmiten en vivo?',
+        a: 'Juntas de accionistas, lanzamientos de producto, seminarios, congresos, webinars, capacitaciones masivas y eventos híbridos (presencial + remoto). Producimos el streaming completo para cualquiera de ellos.',
       },
     ],
   },
@@ -139,8 +143,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping en Chile — Ventas en vivo para retail',
-    seoDescription: 'Producimos live shopping end-to-end: conducción, multicámara, integración con e-commerce, gráficas en tiempo real y métricas de conversión.',
+    seoTitle: 'Live Shopping en Chile: productora de venta en vivo',
+    seoDescription: 'Productora de live shopping para retail, farmacia y marcas en Chile. Venta en vivo integrada a tu e-commerce, conducción profesional y conversión medible. Cotización en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
       {
@@ -163,14 +167,18 @@ export const servicios = [
         q: '¿Entregan reportes post-show?',
         a: 'Sí, reporte completo con audiencia promedio, picos, interacciones, cuántos clicks a producto y ventas atribuibles.',
       },
+      {
+        q: '¿Quién produce el live shopping, nosotros o ustedes?',
+        a: 'Nosotros producimos todo end-to-end: dirección, multicámara, conducción, integración con tu e-commerce y reporte de conversión. Como productora de live shopping, tu equipo solo aporta los productos y la marca.',
+      },
     ],
   },
   {
     slug: 'circuito-cerrado',
     num: '03',
-    title: 'Circuito Cerrado',
-    shortDesc: 'Multicámaras robóticas sin invadir el escenario.',
-    heroEyebrow: 'CIRCUITO CERRADO CCTV',
+    title: 'Multicámara para Eventos',
+    shortDesc: 'Multicámara y pantallas IMAG sin invadir el escenario.',
+    heroEyebrow: 'MULTICÁMARA Y PANTALLAS · IMAG',
     tagline: 'Registro profesional <em class="hl">sin invadir el escenario.</em>',
     description:
       'Multicámaras robóticas PTZ para congresos, seminarios y shows en vivo. ' +
@@ -222,13 +230,17 @@ export const servicios = [
     ],
     ctaTitle: '¿Evento corporativo a la vista?',
     featured: false,
-    seoTitle: 'Circuito cerrado CCTV para eventos corporativos',
-    seoDescription: 'Multicámaras robóticas PTZ para congresos, seminarios y eventos. Registro profesional sin invadir el escenario. Precio óptimo.',
+    seoTitle: 'Multicámara y pantallas IMAG para eventos',
+    seoDescription: 'Multicámara para eventos en Chile: pantallas LED e IMAG, cámaras robóticas PTZ y registro profesional para congresos, seminarios y shows. Sin camarógrafos invadiendo el escenario.',
     serviceType: 'Registro audiovisual con multicámaras robóticas',
     faqs: [
       {
+        q: '¿"Circuito cerrado" es lo mismo que cámaras de seguridad?',
+        a: 'No. En eventos, el circuito cerrado de televisión (CCTV) se refiere a un sistema multicámara con proyección en pantallas del propio recinto (IMAG), no a vigilancia. Capturamos al expositor con cámaras PTZ y lo mostramos en pantallas gigantes para que todo el auditorio vea en detalle.',
+      },
+      {
         q: '¿Qué diferencia hay con un streaming normal?',
-        a: 'El circuito cerrado es para registro interno del evento o proyección en pantallas del mismo lugar. El streaming es para transmitir a una audiencia externa. Ambos se pueden combinar.',
+        a: 'La multicámara con IMAG es para registro interno del evento o proyección en pantallas del mismo lugar. El streaming es para transmitir a una audiencia externa. Ambos se pueden combinar.',
       },
       {
         q: '¿Cuántas cámaras PTZ manejan simultáneamente?',
@@ -305,8 +317,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas producir contenido broadcast?',
     featured: false,
-    seoTitle: 'Estudio virtual con green screen y escenografías 3D',
-    seoDescription: 'Generamos escenografías virtuales hiperrealistas con calidad broadcast. Presentaciones corporativas sin los costos de un set físico.',
+    seoTitle: 'Estudio virtual y croma profesional en Santiago',
+    seoDescription: 'Estudio virtual con croma profesional (chroma key / fondo verde) en Providencia, Santiago. Escenografías 3D con calidad broadcast para keynotes, e-learning y contenido de marca.',
     serviceType: 'Producción en estudio virtual',
     faqs: [
       {
@@ -328,6 +340,10 @@ export const servicios = [
       {
         q: '¿El presentador debe tener experiencia?',
         a: 'No. Los dirigimos para que se vean naturales. Trabajamos con ejecutivos sin experiencia en cámara todo el tiempo.',
+      },
+      {
+        q: '¿Ofrecen arriendo de estudio con croma (chroma key)?',
+        a: 'Sí. Contamos con estudio propio en Providencia con croma profesional (fondo verde), iluminación calibrada y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.',
       },
     ],
   },
@@ -388,8 +404,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
-    seoTitle: 'Videos corporativos e institucionales en Chile',
-    seoDescription: 'Videos de cultura, valores, procesos y productos. Dirección creativa, cámara cinema, postproducción profesional.',
+    seoTitle: 'Video corporativo e institucional para empresas',
+    seoDescription: 'Productora de videos corporativos para empresas en Chile. Video institucional, de capacitación, procesos industriales y de producto. Dirección, cámara cinema y postproducción. Cotiza en 48h.',
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -411,6 +427,10 @@ export const servicios = [
       {
         q: '¿Incluye música y locución?',
         a: 'Sí. Licenciamos música original o de banco, y contamos con locutores profesionales para voz en off.',
+      },
+      {
+        q: '¿Qué tipos de video corporativo producen?',
+        a: 'Video institucional, de cultura y valores, de capacitación e inducción, de procesos industriales y mineros, de producto y testimoniales de clientes o colaboradores. Adaptamos el formato y el presupuesto a tu objetivo.',
       },
     ],
   },
@@ -471,8 +491,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Estrategia de contenido digital para marcas',
-    seoDescription: 'Planes de comunicación para redes sociales con producción audiovisual de respaldo. Contenido alineado a los pilares de tu marca.',
+    seoTitle: 'Estrategia y producción de contenido audiovisual',
+    seoDescription: 'Estrategia de contenido audiovisual para marcas en Chile: plan, pilares y producción con equipo propio. Marketing audiovisual que sí se ejecuta, no solo un PowerPoint.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
       {
@@ -554,8 +574,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
-    seoTitle: 'Contenido para Instagram, TikTok y LinkedIn',
-    seoDescription: 'Cápsulas, reels y videos verticales optimizados para cada plataforma. Postproducción ágil y paquetes mensuales.',
+    seoTitle: 'Productora de reels y contenido para redes',
+    seoDescription: 'Productora de contenido audiovisual para redes sociales en Chile: reels, cápsulas y videos verticales para Instagram, TikTok y LinkedIn. Paquetes mensuales y entrega ágil.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
       {
@@ -638,8 +658,8 @@ export const servicios = [
     ctaTitle: '¿Te imaginas tu marca en un filtro AR?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Filtros AR de marca para Instagram y TikTok',
-    seoDescription: 'Diseñamos filtros de realidad aumentada exclusivos para campañas. Publicación en Meta Spark AR y Effect House. Alcance orgánico medible.',
+    seoTitle: 'Filtros de realidad aumentada para Instagram y TikTok',
+    seoDescription: 'Creamos filtros de realidad aumentada (AR) personalizados para marcas en Chile. Filtros de Instagram y TikTok para campañas y eventos. Spark AR y Effect House. Alcance orgánico medible.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [
       {
@@ -661,6 +681,10 @@ export const servicios = [
       {
         q: '¿Cómo se mide el éxito del filtro?',
         a: 'Meta y TikTok entregan métricas de usos, impresiones y veces compartido. Entregamos un reporte mensual con estos datos y recomendaciones para potenciar el alcance.',
+      },
+      {
+        q: '¿Pueden crear un filtro de Instagram o TikTok para mi empresa o evento?',
+        a: 'Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lanzamientos y eventos corporativos: desde branded masks con tu logo hasta efectos interactivos y juegos. Publicamos en Instagram (Spark AR) y TikTok (Effect House).',
       },
     ],
   },
