@@ -23,8 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Claude Code local settings
+# AI assistant local settings
 .claude/
+.opencode/
 
 # Server-only artifacts (vivien en el hosting, no en el repo)
 htaccess-nuevo.txt
