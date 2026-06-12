@@ -116,6 +116,9 @@ import Picture from './Picture.astro';
         Déjanos una reseña
       </a>
     </p>
+    <p class="footer-credit">
+      Sitio creado por <a href="https://koredesk.com" target="_blank" rel="noopener noreferrer">koredesk.com</a>
+    </p>
   </div>
 </footer>
 
@@ -282,6 +285,22 @@ import Picture from './Picture.astro';
   }
 
   .footer-bottom-link:hover {
+    color: #FF4500;
+  }
+
+  .footer-credit {
+    color: #888;
+    font-size: 0.75rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .footer-credit a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-credit a:hover {
     color: #FF4500;
   }
 </style>
