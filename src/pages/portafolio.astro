@@ -18,6 +18,18 @@ function getYouTubeId(url: string | undefined) {
   return m ? m[1] : null;
 }
 
+// Distribuir uploadDate en meses/dias variados (no siempre 01-01)
+function fechaVideo(anio: number, semilla: string): string {
+  let h = 0;
+  for (let i = 0; i < semilla.length; i++) {
+    h = ((h << 5) - h) + semilla.charCodeAt(i);
+    h |= 0;
+  }
+  const mes = String((Math.abs(h) % 12) + 1).padStart(2, '0');
+  const dia = String((Math.abs(h) % 28) + 1).padStart(2, '0');
+  return `${anio}-${mes}-${dia}`;
+}
+
 // Generar VideoObject schema para cada proyecto con video
 const videoSchemas = ordenados
   .filter(item => item.data.youtube_url)
@@ -32,7 +44,7 @@ const videoSchemas = ordenados
       "name": `${item.data.titulo} — ${item.data.cliente}`,
       "description": item.data.descripcion,
       "thumbnailUrl": thumbnail,
-      "uploadDate": `${item.data.anio}-01-01`,
+      "uploadDate": fechaVideo(item.data.anio, item.data.youtube_url || item.data.titulo),
       "embedUrl": `https://www.youtube.com/embed/${videoId}`,
       "contentUrl": item.data.youtube_url,
       "publisher": { "@type": "Organization", "@id": "https://dar2.cl/#organization" }
