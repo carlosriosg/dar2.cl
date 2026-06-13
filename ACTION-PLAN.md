@@ -1,286 +1,164 @@
-# SEO Action Plan: dar2.cl
+# Plan de Acción SEO: dar2.cl
 
-**Date:** May 26, 2026 | **Current Score: 63/100** | **Target Score: 82/100**
-
----
-
-## Priority Legend
-
-- **CRITICAL** — Blocks indexing or causes active ranking harm. Fix immediately.
-- **HIGH** — Significantly impacts rankings or conversions. Fix within 1 week.
-- **MEDIUM** — Optimization opportunity with measurable impact. Fix within 1 month.
-- **LOW** — Nice to have, incremental improvement. Backlog.
+**Fecha:** 2026-06-13 | **Score actual: 72/100** | **Score objetivo: 85/100**
 
 ---
 
-## CRITICAL (Fix Immediately)
+## Resumen: Qué mueve la aguja
 
-### ✅ 1. Add `noindex` to 404 page
-**Category:** Technical SEO
-**Status:** ✅ DONE (commit pending)
-**Action:** Added `noindex={true}` prop to 404.astro + conditional meta robots in Base.astro layout.
-
-### ✅ 2. Fix homepage cannibalization with /servicios/streaming/
-**Category:** On-Page SEO / SXO
-**Status:** ✅ DONE (commit f531e61)
-**Action:** Homepage title changed to "Productora Audiovisual Corporativa en Santiago | DAR2". Streaming service title shortened to "Streaming Corporativo en Santiago | DAR2" (47 chars, no duplicate DAR2).
-
-### 3. Launch review velocity campaign
-**Category:** Local SEO
-**Impact:** 12 reviews in 15 years is the #1 local ranking liability
-**Effort:** 2 hours setup + ongoing
-**Action:**
-- Create a short Google review link using CID `6666778595618035561`
-- Email/WhatsApp past clients requesting reviews
-- Add review request to post-project workflow
-- Target: 2-3 new reviews per month minimum
-- Add visible review link to footer and contact page
-
-### 4. Fix AggregateRating schema
-**Category:** Schema / Structured Data
-**Impact:** Current implementation is unverifiable — no linked Review entities
-**Effort:** 30 minutes
-**Action:**
-- Either add individual `Review` typed entities with actual review content
-- Or add `url` property on AggregateRating pointing to the Google Reviews page
-- A perfect 5.0 with no visible review corpus raises quality flags
-
-### ✅ 5. Stagger blog post publication dates
-**Category:** Content Quality / Freshness
-**Status:** ✅ DONE — Dates already staggered from 2026-03-03 to 2026-05-19 (weekly cadence)
-**Action:** Already implemented. Dates are distributed across a realistic timeline.
+El sitio está técnicamente completo. El código no es el cuello de botella — **la autoridad de dominio lo es**. Las acciones 1-3 son las únicas que desbloquean la indexación de las 19 páginas atascadas. El resto son optimizaciones que preparan el sitio para capitalizar esa autoridad.
 
 ---
 
-## HIGH (Fix Within 1 Week)
+## Crítico — Esta semana
 
-### ✅ 6. Expand thin hub pages
-**Category:** Content Quality
-**Status:** ✅ DONE — Portfolio page expanded with service intro cards + internal links to service pages
-**Action:**
-| Page | Current | Target | What to Add |
-|------|---------|--------|-------------|
-| /portafolio/ | 190 words | 500+ | ✅ Added production descriptions per video, H2 structure, internal links to service pages, VideoObject schema |
-| /casos/ | 185 words | 500+ | Case study methodology intro, industry categories, trust signals |
-| /servicios/ | 361 words | 800+ | Service descriptions with differentiators, comparison guidance |
-| /blog/ | 428 words | 500+ | Topic category intro, content themes description |
+### 1. Registrar en Film Commission Chile (.gob.cl)
+**Impacto:** Un backlink .gob.cl es la señal de confianza más fuerte disponible para un negocio audiovisual chileno.
+**NAP exacto a usar:**
+```
+DAR2 Servicios Audiovisuales
+Av. Holanda 099, Oficina 603
+Providencia, Región Metropolitana, Chile
++56 9 9843 3346
+dar2@dar2.cl
+https://dar2.cl
+```
+**Esfuerzo:** 1-2h | **Archivo:** Externo (dirfcch.cultura.gob.cl)
 
-### ✅ 7. Add city modifiers to all service page titles and H1s
-**Category:** Local SEO / On-Page
-**Status:** ✅ DONE — All 8 service seoTitles now include "en Santiago" or "en Santiago | DAR2"
-**Action:**
-- "Streaming Corporativo en Santiago" not just "Streaming Corporativo"
-- "Videos Corporativos en Santiago | DAR2" not just "Videos Corporativos"
-- Apply to all 8 service page `<title>` tags and H1 headings
+### 2. live.dar2.cl — NO eliminar (es sitio legítimo de cliente)
+**Corrección importante:** `live.dar2.cl` es la app de **Live Shopping de Radio Futuro** (cliente de DAR2), NO spam. El spam del hackeo viejo (`justsim-lowl.html`, etc.) **ya da 404 — está muerto**. La app está aislada y no contamina el dominio principal.
+**Acción opcional:** si `live.dar2.cl` está como propiedad en Search Console, usar "Retiradas" para acelerar la desindexación de las URLs spam viejas. Si no, el 404 las limpia con el tiempo. **NO tocar el DNS.**
+**Esfuerzo:** 0 (o 10 min retirada opcional en GSC) | **Archivo:** Externo (GSC, opcional)
 
-### ✅ 8. Fix duplicate/bloated title tags
-**Category:** Technical SEO
-**Status:** ✅ DONE (commit f531e61)
-**Action:**
-- Audit all page titles for length (max 60 characters)
-- Remove duplicate "DAR2" suffix on streaming page (currently 87 chars)
-- Template: "[Service] en Santiago | DAR2"
+### 3. Campaña de reviews (12 → 40+)
+**Impacto:** 12 reviews en 15 años es señal débil. Meta: 3/mes.
+**Link directo:** `https://g.page/r/CWmX_YPPJ4VcEBM/review`
+**Acción:** WhatsApp individual a los últimos 10 clientes con el link.
+**Esfuerzo:** 1h | **Archivo:** Externo
 
-### ✅ 9. Consolidate sitemaps
-**Category:** Technical SEO / Sitemap
-**Status:** ✅ DONE
-**Action:**
-- Keep `sitemap-manual.xml` as the canonical sitemap
-- Redirect `/sitemap.xml` → `/sitemap-manual.xml` (nginx.conf updated)
-- Suppress Astro's auto-generated sitemap output (astro.config.mjs updated)
-- Add real `<lastmod>` dates (not build timestamps) to manual sitemap
-- Remove `priority` and `changefreq` (ignored by Google)
-- Update robots.txt to reference only the consolidated sitemap
-- Submit to Google Search Console
+### 4. Fix teléfono en schema
+**Impacto:** NAP consistency para citaciones automáticas.
+**Cambio:** `"telephone": "+56998433346"` → `"telephone": "+56 9 9843 3346"`
+**Esfuerzo:** 5 min | **Archivo:** `src/layouts/Base.astro` línea 44
 
-### 10. Source all statistics in blog posts
-**Category:** Content Quality / E-E-A-T / GEO
-**Impact:** Unsourced stats reduce trustworthiness and AI citability
-**Effort:** 2 hours
-**Action:**
-- Add inline citations for all statistics (e.g., "USD 562B" → link to McKinsey report)
-- At minimum, note the study name and year for each claim
-- Priority posts: live shopping, ROI measurement, AR filters
-
-### ✅ 11. Standardize NAP across site
-**Category:** Local SEO
-**Status:** ✅ DONE
-**Action:**
-- Standardize to "Oficina 603" everywhere (not "of 603") — Footer, Contacto, Schema
-- Use consistent phone format: "+56 9 9843 3346" in display, `+56998433346` in schema
-- Add `sameAs` array to JSON-LD with Google Maps, Instagram, LinkedIn URLs
+### 5. Fix llms.txt
+**Impacto:** Corrección para crawlers AI.
+**Cambios:**
+- Línea 6: `> Canonical: https://llms.txt` → `> Canonical: https://dar2.cl/llms.txt`
+- Línea 79: `of 603` → `Oficina 603`
+**Esfuerzo:** 5 min | **Archivo:** `public/llms.txt`
 
 ---
 
-## MEDIUM (Fix Within 1 Month)
+## Alta — 2 semanas
 
-### ✅ 12. Add VideoObject schema to portfolio and case studies
-**Category:** Schema / Images
-**Status:** ✅ DONE — VideoObject schema already present in portafolio.astro
-**Action:**
-- Add VideoObject with `name`, `description`, `thumbnailUrl`, `uploadDate`, `contentUrl`/`embedUrl` for each video
-- Priority: portfolio page (19 videos), case study pages
-- Consider BroadcastEvent on streaming service page
+### 6. Restringir aggregateRating solo al homepage
+**Problema:** 5.0/12 reviews hardcodeado se inyecta en TODAS las páginas (servicios, blog, etc.).
+**Fix en Base.astro:**
+```js
+const organizationSchema = {
+  // ... propiedades existentes ...
+  ...(isHome && {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5.0,
+      "reviewCount": 12,
+      "bestRating": 5,
+      "worstRating": 1
+    }
+  })
+};
+```
+**Esfuerzo:** 10 min | **Archivo:** `src/layouts/Base.astro` líneas 68-74
 
-### 13. Retarget /servicios/live-shopping/ keyword
-**Category:** SXO / On-Page
-**Impact:** Current target "live shopping chile" is 90% informational SERPs
-**Effort:** 1 hour
-**Action:**
-- Change title/H1 to target "produccion live shopping para empresas" or "servicio live shopping B2B chile"
-- Reserve "live shopping chile" for the blog post
-- Update meta description to match commercial intent
+### 7. Fix bug LCP hero shuffle
+**Problema:** `initHeroGallery()` reemplaza la imagen preloaded con otra aleatoria. Browser descarga imagen preloaded y luego la descarta.
+**Fix en index.astro:**
+```js
+imgs.forEach((img, i) => {
+  if (i === 0) return; // keep the preloaded LCP image
+  // ... rest of shuffle logic
+});
+```
+**Esfuerzo:** 15 min | **Archivo:** `src/pages/index.astro`
 
-### 14. Add cross-links between content types
-**Category:** On-Page SEO / Internal Linking
-**Impact:** Strengthens topical authority and user journey
-**Effort:** 2-3 hours
-**Action:**
-- Blog posts → link inline to corresponding service pages (not just footer nav)
-- Service pages → link to relevant case studies
-- Portfolio entries → link to the service that produced them
-- Case studies → link to the specific service page
+### 8. Vincular author via @id en blog posts
+**Problema:** Articles declaran `author` como inline Person en vez de referenciar el @id global.
+**Fix en 12 archivos (10 blog + 2 casos):**
+```json
+"author": { "@id": "https://dar2.cl/#person" }
+```
+**Esfuerzo:** 30 min | **Archivos:** `src/pages/blog/*.astro`, `src/pages/casos/*.astro`
 
-### 15. Replace anonymous testimonials with attributed quotes
-**Category:** E-E-A-T / Trust
-**Impact:** Enterprise buyers distrust anonymous testimonials
-**Effort:** 2-4 hours (requires client outreach)
-**Action:**
-- Get permission to use client name, title, and company
-- Add photo if possible
-- Update schema to include Review entities with named reviewers
+### 9. Registrar en Clutch.co
+**Impacto:** Directorio B2B Tier 1 + reviews verificados de clientes.
+**Esfuerzo:** 2h | **Archivo:** Externo
 
-### 16. Add "Key Takeaways" boxes to blog posts
-**Category:** GEO / AI Citation
-**Impact:** Most-cited block format in Perplexity
-**Effort:** 2 hours
-**Action:**
-- Add a 3-5 bullet summary box at the top or bottom of each blog post
-- Use clear, self-contained factual statements
-- Trim all H2 sections to 134-167 words for optimal AI extraction
+### 10. Registrar en Bing Places + Apple Business Connect
+**Impacto:** Citaciones Tier 1. Importan desde GBP.
+**Esfuerzo:** 30 min | **Archivo:** Externo
 
-### ✅ 17. Add HSTS preload directive
-**Category:** Technical SEO / Security
-**Status:** ✅ DONE
-**Action:**
-- Add `; preload` to the `Strict-Transport-Security` header
-- Submit domain to hstspreload.org
+### 11. Tabla comparativa de precios live shopping
+**Impacto:** Activo GEO #1 — tablas son targets de extracción premium para AI.
+**Agregar tabla HTML** con columnas: Tier, Precio, Cámaras, Duración, Integración, Caso ideal.
+**Esfuerzo:** 1-2h | **Archivo:** `src/pages/blog/cuanto-cuesta-live-shopping-chile.astro`
 
-### 18. Create Clutch.co profile
-**Category:** E-E-A-T / Authority
-**Impact:** Primary B2B services authority directory
-**Effort:** 2 hours
-**Action:**
-- Create company profile with service categories
-- Request reviews from existing clients
-- Link back to dar2.cl
-
-### ✅ 19. Add RUT (Chilean tax ID) to contact page
-**Category:** Trust / Local SEO
-**Status:** ✅ DONE
-**Action:**
-- Add company RUT to contact page and footer
-- This is an active trust barrier for the target buyer persona
-
-### 20. Fix LocalBusiness schema duplication
-**Category:** Schema
-**Impact:** Reduces duplicate entity signals
-**Effort:** 1-2 hours
-**Action:**
-- Service pages should reference the organization by `@id` (`https://dar2.cl/#organization`) instead of re-declaring all properties
-- Ensure blog post `author` Person nodes share the same `@id` as the homepage founder node
-- Add `image`, `description`, `url`, `sameAs` to the founder Person entity
+### 12. Fix Service schema
+**Cambios en `[slug].astro`:**
+```js
+const serviceJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'url': `https://dar2.cl/servicios/${s.slug}/`,
+  name: s.title,
+  provider: { '@id': 'https://dar2.cl/#organization' },
+  areaServed: { '@type': 'Country', 'name': 'Chile' },
+  description: s.seoDescription ?? s.description,
+  serviceType: s.serviceType ?? s.title,
+});
+```
+**Esfuerzo:** 10 min | **Archivo:** `src/pages/servicios/[slug].astro`
 
 ---
 
-## LOW (Backlog)
+## Media — 30 días
 
-### 21. Create YouTube channel
-**Category:** GEO / Authority
-**Impact:** Strongest AI citation correlation signal (r=0.737)
-**Effort:** Ongoing
-**Action:** Upload 4-6 service explainer videos. Use keyword-optimized titles.
-
-### 22. Create Wikidata entity
-**Category:** GEO / Entity
-**Impact:** Knowledge Graph disambiguation for AI systems
-**Effort:** 2-3 hours
-**Action:** Create entry with instance=audiovisual production company, country=Chile, founded=2010, founder=Carlos Rios Guevara.
-
-### 23. Build Chilean business directory citations
-**Category:** Local SEO
-**Impact:** Strengthens citation network
-**Effort:** 4-6 hours
-**Action:** List on Páginas Amarillas Chile, Cylex Chile, Hotfrog Chile, Kompass Chile with exact standardized NAP.
-
-### 24. Add IndexNow support
-**Category:** Technical SEO
-**Impact:** Instant crawl signals for Bing/Yandex on publish
-**Effort:** 15 minutes
-**Action:** Add IndexNow key file to domain root, add directive to robots.txt.
-
-### 25. Create author archive page
-**Category:** E-E-A-T
-**Impact:** Crawlable authority entity page
-**Effort:** 1-2 hours
-**Action:** Create `/autor/carlos-rios/` with full bio, credentials, content list, and ProfilePage schema.
-
-### 26. Add RSL 1.0 license to llms.txt
-**Category:** GEO
-**Impact:** Signals explicit AI training permission
-**Effort:** 5 minutes
-**Action:** Add `license: https://rsl.openfuture.org/` to llms.txt.
-
-### 27. Reformat llms.txt to spec-compliant format
-**Category:** GEO
-**Impact:** Improves AI system parsing
-**Effort:** 30 minutes
-**Action:** Restructure as Markdown with URL index per spec.
-
-### 28. Add scoped CTAs to service pages
-**Category:** SXO / Conversion
-**Impact:** Improves persona-specific conversion
-**Effort:** 2 hours
-**Action:** Replace generic "Cotizar" with "Cotiza tu evento en vivo", "Ver portafolio de live shopping", etc.
-
-### 29. Add social proof to every service page
-**Category:** SXO / E-E-A-T
-**Impact:** Addresses Trust gaps for all buyer personas
-**Effort:** 3-4 hours
-**Action:** Named client logos, one case study with metrics per page.
-
-### 30. Investigate GTM async loading
-**Category:** Performance
-**Impact:** May improve LCP
-**Effort:** 2-3 hours
-**Action:** Move GTM to load via async tag or defer until after LCP. Audit tag firing triggers.
+| # | Acción | Archivo | Esfuerzo |
+|---|---|---|---|
+| 13 | Expandir caso CASTAÑO (+150-200 palabras contextuales) | `casos/valores-corporativos-castano.astro` | 1h |
+| 14 | Agregar fuentes a estadísticas (CCS, China, ROI) con links | 3 blog posts | 1h |
+| 15 | Crear caso de éxito live shopping (incluso anonimizado) | Nuevo en `casos/` | 4-6h |
+| 16 | Agregar H2 long-tail a streaming ("juntas anuales" + "congresos") | `servicios.js` o template | 1h |
+| 17 | Links comerciales desde blog posts a servicios con anchor text | 3 blog posts | 30 min |
+| 18 | Investigar/resolver `/privacidad/` duplicada en sitemap | config @astrojs/sitemap | 30 min |
+| 19 | Agregar `lastmod` al sitemap automático | `astro.config.mjs` | 30 min |
+| 20 | Mejorar seoDescription videos-corporativos (agregar "Santiago" + CTA) | `servicios.js` L416 | 10 min |
 
 ---
 
-## Implementation Roadmap
+## Baja — Backlog
 
-### Week 1: Critical Fixes
-- [x] Items 1-5 (404 noindex, homepage title, review campaign, schema fix, date stagger)
-- [x] Items 8-9 (title tags, sitemap consolidation)
-
-### Week 2: High Priority
-- [x] Items 6-7 (thin pages expansion, city modifiers)
-- [x] Items 10-11 (source statistics, NAP standardization)
-
-### Weeks 3-4: Medium Priority
-- [x] Items 12-20 (VideoObject, keyword retargeting, cross-links, testimonials, Key Takeaways, HSTS, Clutch, RUT, schema cleanup)
-
-### Ongoing: Low Priority & Maintenance
-- [ ] Items 21-30 (YouTube, Wikidata, citations, IndexNow, author page, llms.txt, CTAs, social proof, GTM)
+| # | Acción | Archivo | Esfuerzo |
+|---|---|---|---|
+| 21 | Preconnect img.youtube.com | `Base.astro` | 5 min |
+| 22 | VideoObject uploadDate con fechas reales de YouTube | 20 `.md` portafolio | 2h |
+| 23 | numberOfEmployees en schema organization | `Base.astro` | 5 min |
+| 24 | Person Carlos en nosotros.astro con @id `#person` | `nosotros.astro` | 10 min |
+| 25 | Fix Reveal.astro FOUC (clase en HTML, no via JS) | `Reveal.astro` | 15 min |
+| 26 | Definición live shopping al primer párrafo del artículo | blog live shopping | 20 min |
+| 27 | `<figcaption>` en imágenes clave | Varios | 1h |
+| 28 | Simplificar @type a solo ProfessionalService | `Base.astro` L31 | 5 min |
 
 ---
 
-## Expected Impact
+## Timeline estimado
 
-| Timeframe | Score Target | Key Driver |
-|-----------|-------------|------------|
-| Current | 63/100 | Baseline |
-| After Week 1 | 70/100 | Technical fixes + cannibalization resolution |
-| After Week 2 | 75/100 | Content expansion + local SEO improvements |
-| After Month 1 | 82/100 | Schema enrichment + SXO alignment + review growth |
-| After Quarter 1 | 88/100 | Authority building + AI readiness + content freshness |
+| Semana | Acciones | Score esperado |
+|---|---|---|
+| Semana 1 | #1-5 (críticos) | 74/100 |
+| Semana 2 | #6-12 (alta) | 78/100 |
+| Semana 3-4 | #13-20 (media) | 82/100 |
+| Mes 2-3 | Reviews acumulándose, backlinks indexados | 85/100 |
+| Mes 4-6 | Páginas desindexadas empiezan a aparecer | Ranking visible |
+
+> **Recordatorio:** el score on-page ya es 77/100. El salto a 85+ vendrá de la **autoridad de dominio** (backlinks + reviews + citaciones), no del código.

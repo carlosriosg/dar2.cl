@@ -226,7 +226,7 @@ Trabajo reciente (todo desplegado en producción, `main`):
 El sitio no aparece bien posicionado en Google **no por el código** (que está completo), sino por **falta de autoridad de dominio**. Estado en Search Console (2026-06): **15 páginas indexadas / 19 "rastreada: actualmente sin indexar"**. Eso = Google las leyó pero el dominio aún no le da confianza suficiente.
 
 - ⏳ **Indexación pendiente** de ~19 páginas → se resuelve con autoridad (backlinks) + tiempo, NO con código.
-- ⏳ **Subdominio spam `live.dar2.cl`** → eliminar registro en Cloudflare DNS (tarea manual).
+- ✅ **Subdominio `live.dar2.cl`** → NO es spam: es la app de Live Shopping de Radio Futuro (cliente). El spam viejo del hackeo ya da 404. **NO eliminar.** Opcional: retirar URLs viejas en GSC.
 - ⏳ **Reviews en Google:** 12 actuales → meta 40+.
 
 ### 4.5 Próximos pasos (Next Steps) inmediatos
@@ -234,7 +234,7 @@ El sitio no aparece bien posicionado en Google **no por el código** (que está 
 **Prioridad 1 — construir autoridad (lo único que destraba la indexación):**
 1. Registrar el negocio en directorios de alta autoridad. Ver **`BACKLINKS-DIRECTORIOS.md`** (incluye NAP exacto). Empezar por **Film Commission Chile** (`.gob.cl`), **Clutch.co**, **ineventos.cl**.
 2. En **Google Search Console** → solicitar indexación de las páginas "rastreada/descubierta sin indexar" + confirmar que el sitemap (`sitemap-manual.xml`) siga "Correcto".
-3. **Eliminar `live.dar2.cl`** en Cloudflare DNS.
+3. **NO tocar `live.dar2.cl`** — es la app de un cliente (Radio Futuro). El spam viejo ya da 404; opcional retirar URLs viejas en GSC.
 4. **Campaña de reviews** en Google (12 → 40). Link directo: `g.page/r/CWmX_YPPJ4VcEBM/review`.
 
 **Prioridad 2 — deuda técnica (de código, opcional):**

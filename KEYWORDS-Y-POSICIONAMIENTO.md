@@ -14,10 +14,10 @@ Al buscar `site:dar2.cl` y `site:dar2.cl/servicios`, Google solo muestra la **ho
 
 > **Verificar YA:** Google Search Console → "Inspección de URLs" → pega `https://dar2.cl/servicios/streaming/` → ¿dice "La URL está en Google" o "no está indexada"? Si no está, click "Solicitar indexación". Repetir con las 8 páginas de servicio + blog + casos.
 
-### 2. Subdominio SPAM colgando de tu dominio: `live.dar2.cl`
-Google tiene indexado `live.dar2.cl/0gcunw/justsim-lowl.html` y similares — spam sobre simuladores de vuelo en francés/inglés. Es un **subdominio hackeado o abandonado** (probablemente quedó de Bluehost). Esto daña la reputación de TODO dar2.cl ante Google.
+### 2. Subdominio `live.dar2.cl` — aclaración (NO es spam)
+`live.dar2.cl` es la app de **Live Shopping de Radio Futuro** (cliente de DAR2), legítima y en producción. El spam del hackeo anterior (simuladores de vuelo) que Google llegó a indexar **ya da 404 — está muerto**, y las rutas internas de la app están en `noindex`. La app está aislada del dominio principal.
 
-> **Acción:** Entra a tu DNS (Cloudflare) y revisa si existe un registro `live.dar2.cl`. Si no lo usas, elimínalo. Si lo usas para algo, asegúralo. Luego en Search Console → "Retiradas" → solicita eliminar las URLs de `live.dar2.cl`.
+> **Acción:** NO eliminar el subdominio. Si `live.dar2.cl` está en Search Console como propiedad, usa "Retiradas" para acelerar la desindexación de las URLs spam viejas; si no, el 404 las limpia solo con el tiempo.
 
 ### 3. Autoridad de dominio = 0 (cero backlinks)
 Ningún otro sitio enlaza a dar2.cl. Google usa los enlaces como "votos de confianza". Sin votos, no rankeas contra productoras con 10+ años. Esto se construye con tiempo (ver Parte 4).
@@ -260,7 +260,7 @@ Para cifras exactas de búsqueda en Chile (no estimaciones):
 
 **Esta semana (destraba todo):**
 1. ✅ Verificar indexación de las 8 páginas de servicio en Search Console → solicitar indexación
-2. ✅ Eliminar / asegurar el subdominio spam `live.dar2.cl` (Cloudflare DNS + Search Console retiradas)
+2. ✅ `live.dar2.cl` aclarado: es la app de Radio Futuro (cliente), no spam. El spam viejo ya da 404. NO eliminar; opcional retirar URLs viejas en GSC.
 3. ✅ Verificar que sitemap incluya todas las páginas (servicios, blog, casos)
 
 **Próximas 2 semanas (optimización on-page):**
