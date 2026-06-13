@@ -1,0 +1,578 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Cuánto cuesta un live shopping en Chile', url: 'https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Cuánto cuesta un live shopping en Chile? Precios y factores 2026",
+  "description": "Guía de precios de live shopping en Chile: qué factores determinan el costo, rangos referenciales por nivel de producción, qué incluye y cómo se cotiza.",
+  "image": "https://dar2.cl/images/blog/live-shopping-hero.png",
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "author": {
+    "@type": "Person",
+    "name": "Carlos Rios Guevara",
+    "url": "https://dar2.cl/nosotros/"
+  },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un live shopping en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio de un live shopping en Chile varía según el nivel de producción. Una sesión básica con una cámara parte desde aproximadamente CLP 800.000. Una producción profesional multicámara con switcher, gráficas en tiempo real e integración con e-commerce suele ubicarse entre CLP 1.500.000 y 3.500.000 por sesión. Los programas recurrentes y producciones premium con set propio superan ese rango. La cotización siempre es a medida según objetivos, duración y plataforma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué factores determinan el precio de un live shopping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los principales son: número de cámaras y complejidad de la producción, duración de la sesión, integración técnica con el e-commerce, gráficas y overlays en tiempo real, conducción (interna o influencer), ubicación (estudio o terreno), y si es una sesión única o un programa recurrente. A mayor producción y conversión esperada, mayor inversión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Conviene una sesión única o un programa recurrente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una sesión única sirve para lanzamientos o campañas puntuales (CyberDay, Navidad). Un programa recurrente (mensual o quincenal) tiene mejor costo por sesión, construye audiencia propia y multiplica el retorno a lo largo del tiempo. Para marcas que apuestan al canal, el programa recurrente es más rentable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El precio incluye la integración con mi e-commerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del proveedor. En DAR2 la integración con tu e-commerce (Shopify, VTEX, WooCommerce, Magento o custom) está contemplada en las producciones profesionales: mostramos el producto con precio, stock y link de compra durante el live. Conviene confirmar siempre qué incluye la cotización."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se mide el retorno de inversión de un live shopping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se compara la inversión de producción contra el GMV (ventas atribuibles durante y 24h después del live) y el costo por adquisición resultante. Como el live shopping convierte 5 a 10 veces más que el e-commerce tradicional, un live bien producido suele recuperar la inversión en la misma sesión."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="¿Cuánto cuesta un live shopping en Chile?"
+  description="Precios de live shopping en Chile 2026: factores que determinan el costo, rangos referenciales por nivel de producción, qué incluye y cómo se cotiza. Por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/live-shopping-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Live Shopping</p>
+      <h1 class="article-h1">
+        ¿Cuánto cuesta un live shopping
+        <em class="hl">en Chile?</em>
+      </h1>
+      <p class="article-lead">
+        Es la primera pregunta de toda marca que evalúa el canal. La respuesta honesta es "depende", pero aquí te damos rangos referenciales reales del mercado chileno, qué factores mueven el precio y cómo saber si la inversión vale la pena.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 9 de junio, 2026 · 7 min de lectura
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/live-shopping-hero.png"
+        alt="Cuánto cuesta un live shopping en Chile — Producción de venta en vivo por DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#respuesta-corta">La respuesta corta</a></li>
+        <li><a href="#factores">De qué depende el precio</a></li>
+        <li><a href="#rangos">Rangos referenciales por nivel</a></li>
+        <li><a href="#incluye">Qué incluye una producción profesional</a></li>
+        <li><a href="#modelos">Sesión única vs. programa recurrente</a></li>
+        <li><a href="#roi">Cómo saber si vale la pena (ROI)</a></li>
+        <li><a href="#errores">Errores que cuestan caro</a></li>
+        <li><a href="#cotizar">Cómo cotizar bien</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="respuesta-corta">
+      <h2>La respuesta corta</h2>
+      <p>
+        En Chile, el precio de un live shopping <strong>parte desde unos CLP 800.000</strong> para una sesión básica con una cámara, y se ubica típicamente <strong>entre CLP 1.500.000 y 3.500.000</strong> para una producción profesional multicámara con integración a e-commerce. Las producciones premium y los programas recurrentes superan ese rango.
+      </p>
+      <p>
+        Pero el precio absoluto importa menos que el <strong>retorno</strong>: un live bien producido convierte 5 a 10 veces más que el e-commerce tradicional, así que la pregunta real no es "cuánto cuesta" sino "cuánto me devuelve". Vamos por partes.
+      </p>
+    </section>
+
+    <section class="article-section" id="factores">
+      <h2>¿De qué depende el precio?</h2>
+      <p>
+        No hay un precio único porque no hay una sola forma de producir. Estos son los factores que más mueven la aguja:
+      </p>
+      <ul class="article-list">
+        <li><strong>Número de cámaras y complejidad.</strong> Una cámara fija no es lo mismo que un setup multicámara con switcher y dirección en vivo. Más cámaras = más dinamismo, más equipo, más costo.</li>
+        <li><strong>Duración de la sesión.</strong> Un live de 45 minutos cuesta menos que uno de 2 horas con varios bloques de producto.</li>
+        <li><strong>Integración con el e-commerce.</strong> Mostrar producto con precio, stock y link de compra en tiempo real requiere trabajo técnico de integración (Shopify, VTEX, WooCommerce, custom).</li>
+        <li><strong>Gráficas y overlays en tiempo real.</strong> Precios, SKUs, contadores, descuentos vigentes, lower-thirds animados. La capa gráfica eleva la conversión y suma producción.</li>
+        <li><strong>Conducción.</strong> Conducción interna de la marca cuesta menos; un influencer o presentador profesional suma fee pero puede traer audiencia.</li>
+        <li><strong>Ubicación.</strong> Estudio propio, locación del cliente o terreno: cada una tiene logística distinta.</li>
+        <li><strong>Frecuencia.</strong> Una sesión única siempre tiene mayor costo unitario que un programa recurrente.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="rangos">
+      <h2>Rangos referenciales por nivel</h2>
+      <p>
+        Estos rangos son <strong>referenciales del mercado chileno 2026</strong> y sirven para que te hagas una idea. La cotización final siempre es a medida.
+      </p>
+
+      <h3>Nivel básico — desde CLP 800.000</h3>
+      <p>
+        Una o dos cámaras, sonido y luz simples, gráficas básicas. Ideal para una primera prueba del canal o marcas pequeñas. Convierte, pero deja calidad de producción sobre la mesa.
+      </p>
+
+      <h3>Nivel profesional — CLP 1.500.000 a 3.500.000</h3>
+      <p>
+        Multicámara con switcher, dirección en vivo, sonido broadcast, iluminación, gráficas en tiempo real e integración con tu e-commerce. Es el estándar recomendado para retail, farma y supermercados que quieren conversión seria. La mayoría de los lives corporativos viven en este rango.
+      </p>
+
+      <h3>Nivel premium / recurrente — CLP 3.500.000+</h3>
+      <p>
+        Set diseñado, varias cámaras, equipo ampliado, producción de cápsulas para reutilizar el contenido, y/o un programa recurrente (mensual o quincenal) con costo por sesión optimizado. Para marcas que convierten el live shopping en un canal permanente.
+      </p>
+    </section>
+
+    <section class="article-section" id="incluye">
+      <h2>¿Qué incluye una producción profesional?</h2>
+      <p>
+        Cuando pidas una cotización, asegúrate de que estos componentes estén contemplados. Si falta alguno, el precio "barato" puede salir caro en conversión:
+      </p>
+      <ol class="article-list">
+        <li><strong>Producción audiovisual:</strong> multicámara, sonido, iluminación, switcher y dirección en vivo.</li>
+        <li><strong>Integración con e-commerce:</strong> producto comprable sin fricción durante el live.</li>
+        <li><strong>Gráficas en tiempo real:</strong> precio, SKU, stock, descuentos, contadores.</li>
+        <li><strong>Conducción y guion:</strong> estructura de bloques, ritmo y manejo del chat.</li>
+        <li><strong>Reporte de métricas:</strong> audiencia, picos, clicks a producto y ventas atribuibles.</li>
+        <li><strong>Reutilización de contenido:</strong> cápsulas para Reels, TikTok y Shorts después del live.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="modelos">
+      <h2>Sesión única vs. programa recurrente</h2>
+      <p>
+        Es la decisión que más impacta el costo por sesión y el retorno total:
+      </p>
+      <ul class="article-list">
+        <li><strong>Sesión única.</strong> Perfecta para un lanzamiento, una fecha comercial (CyberDay, Navidad, Fiestas Patrias) o probar el canal. Mayor costo unitario, sin compromiso.</li>
+        <li><strong>Programa recurrente.</strong> Mensual o quincenal. El costo por sesión baja, construyes audiencia propia que vuelve sin paid media, y el aprendizaje acumulado mejora la conversión de cada live. Para marcas que apuestan al canal, es lo más rentable.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="roi">
+      <h2>¿Cómo saber si vale la pena?</h2>
+      <p>
+        El live shopping no se evalúa por su costo sino por su <strong>retorno</strong>. La fórmula es simple:
+      </p>
+      <p>
+        <strong>ROI = (ventas atribuibles − costo de producción) / costo de producción.</strong>
+      </p>
+      <p>
+        Como el formato convierte 5 a 10 veces más que el e-commerce tradicional, una sesión profesional con una audiencia de 1.000 a 5.000 espectadores puede generar ventas muy por encima del costo de producción — recuperando la inversión en la misma sesión. La clave es medir el <strong>GMV</strong> (ventas durante y 24 horas después del live) y compararlo con tu costo por adquisición habitual.
+      </p>
+      <p>
+        Por eso vale más invertir en una buena producción que convierte, que ahorrar en un live precario que no vende. El costo de producción se diluye rápido cuando la conversión es alta.
+      </p>
+    </section>
+
+    <section class="article-section" id="errores">
+      <h2>Errores que cuestan caro</h2>
+      <ul class="article-list">
+        <li><strong>Elegir solo por precio.</strong> Un live con mal sonido o sin integración de compra convierte poco, y un live que no vende es 100% pérdida sin importar lo barato que haya sido.</li>
+        <li><strong>No llevar audiencia al stream.</strong> La mejor producción no sirve si nadie la ve. Hay que planificar cómo llevas espectadores (base propia, redes, influencers).</li>
+        <li><strong>No reutilizar el contenido.</strong> Una sesión de 90 minutos da para 20-30 cápsulas. No aprovecharlas es tirar a la basura la mitad del ROI.</li>
+        <li><strong>No medir.</strong> Si tu proveedor no entrega reporte de ventas atribuibles, no podrás saber si funcionó.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="cotizar">
+      <h2>Cómo cotizar bien</h2>
+      <p>
+        Para recibir una cotización precisa, ten claro: objetivo del live (lanzamiento, liquidación, recurrente), duración estimada, plataforma (Instagram, TikTok, YouTube o embebido en tu sitio), cuántos productos vas a mostrar, y tu plataforma de e-commerce. Con eso, una buena productora te entrega una propuesta a medida.
+      </p>
+      <p>
+        En DAR2 producimos live shopping end-to-end desde hace años, con producción broadcast, conducción profesional e integración con tu e-commerce, y cotizamos a medida en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/live-shopping/" class="article-cta-btn">
+          Ver nuestro servicio de Live Shopping →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta un live shopping en Chile?</summary>
+        <p>Una sesión básica con una cámara parte desde aproximadamente CLP 800.000. Una producción profesional multicámara con switcher, gráficas e integración a e-commerce suele ubicarse entre CLP 1.500.000 y 3.500.000 por sesión. Las producciones premium y programas recurrentes superan ese rango. La cotización es a medida según objetivos, duración y plataforma.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué factores determinan el precio?</summary>
+        <p>Número de cámaras y complejidad de la producción, duración, integración con el e-commerce, gráficas en tiempo real, conducción (interna o influencer), ubicación, y si es sesión única o programa recurrente.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Conviene una sesión única o un programa recurrente?</summary>
+        <p>La sesión única sirve para lanzamientos o campañas puntuales. El programa recurrente (mensual o quincenal) tiene mejor costo por sesión, construye audiencia propia y multiplica el retorno en el tiempo. Para marcas que apuestan al canal, el recurrente es más rentable.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿El precio incluye la integración con mi e-commerce?</summary>
+        <p>Depende del proveedor. En DAR2, la integración con tu e-commerce (Shopify, VTEX, WooCommerce, Magento o custom) está contemplada en las producciones profesionales. Conviene confirmar siempre qué incluye cada cotización.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo se mide el retorno de inversión?</summary>
+        <p>Comparando la inversión de producción contra el GMV (ventas atribuibles durante y 24h después del live) y el costo por adquisición resultante. Como el live shopping convierte 5 a 10 veces más que el e-commerce tradicional, un live bien producido suele recuperar la inversión en la misma sesión.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Quieres una cotización real para tu live shopping?</h2>
+      <p>
+        Cuéntanos tu objetivo, productos y plataforma, y te armamos una propuesta a medida con producción profesional e integración a tu e-commerce. Cotización en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=live-shopping" class="article-cta-btn">
+          Cotizar mi live shopping →
+        </a>
+        <a href="/blog/que-es-live-shopping-chile/" class="article-cta-link">
+          O leer: ¿qué es el live shopping? →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    margin-bottom: 48px;
+  }
+  .article-hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .article-meta a {
+    color: #888;
+    text-decoration: underline;
+  }
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .article-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF4500;
+    margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+  .article-cta-final p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover {
+    background: #E63E00;
+    transform: translateY(-2px);
+  }
+  .article-cta-final .article-cta-link {
+    color: #aaa;
+  }
+  .article-cta-final .article-cta-link:hover {
+    color: #fff;
+  }
+</style>
