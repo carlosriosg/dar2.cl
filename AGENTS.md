@@ -4,7 +4,7 @@
 >
 > **Proyecto:** sitio web de **DAR2 Servicios Audiovisuales** — productora audiovisual B2B en Santiago de Chile (streaming, live shopping, video corporativo, estudio virtual, etc.).
 > **Sitio en producción:** https://dar2.cl/
-> **Última actualización del handover:** 2026-06-10
+> **Última actualización del handover:** 2026-06-13
 > **Idioma del proyecto:** español de Chile (es-CL). Todo el contenido, comentarios y nombres de dominio están en español.
 
 ---
@@ -40,7 +40,7 @@ Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **re
 
 > ⚠️ **NO hay framework de tests, ni ESLint, ni Prettier configurados.** No existen scripts `test`/`lint`/`format`.
 > - La única validación de tipos es vía `tsconfig.json` (`astro/tsconfigs/strict`). Para chequear tipos: `npm run astro -- check`.
-> - La "prueba" estándar antes de un commit es: **`npm run build`** debe completar sin errores (28 páginas generadas a la fecha).
+> - La "prueba" estándar antes de un commit es: **`npm run build`** debe completar sin errores (29 páginas generadas a la fecha).
 
 ### Despliegue (Deploy)
 
@@ -65,7 +65,7 @@ Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **re
 - **Tipografía:** `@fontsource-variable/inter` `^5.2.8` (Inter variable, self-hosted, con preload de woff2 normal + italic).
 - **Imágenes:** `sharp` `^0.34.5` (devDep) para el pipeline de optimización. Servidas con `<picture>` (AVIF → WebP → fallback).
 - **Favicon .ico:** `png-to-ico` `^3.0.1` (devDep).
-- **Dependencia instalada pero NO usada:** `@astrojs/sitemap` `^3.7.2` está en `dependencies` pero **NO está en `astro.config.mjs`** (`integrations: []`). El sitemap se mantiene a mano (ver Deudas Técnicas).
+- **Sitemap automático:** `@astrojs/sitemap` `^3.7.2` activo en `astro.config.mjs` (`integrations: [sitemap()]`). Genera `sitemap-index.xml` + `sitemap-0.xml` en cada build con todas las páginas — siempre sincronizado.
 
 ### Infraestructura
 
@@ -77,7 +77,7 @@ Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **re
   - `listen 80 default_server` (CRÍTICO: sin esto, las requests a `dar2.cl` caen en el server block de www y crean loop infinito).
   - 301 trailing-slash canónico (`/ruta` → `/ruta/`).
   - **410 Gone** para spam legacy de WordPress (`/wp-*`) y del hackeo de Bluehost (`*.html`, `/products/`).
-  - 301 `/sitemap.xml` → `/sitemap-manual.xml`.
+  - 301 `/sitemap.xml` y `/sitemap-manual.xml` → `/sitemap-index.xml` (el sitemap viejo redirige al automático).
   - Cache headers (1 año immutable para assets `_astro/` e imágenes).
   - Security headers (HSTS, CSP, X-Frame-Options, etc.).
 
@@ -99,9 +99,9 @@ No es Clean Architecture ni MVC. Es el patrón idiomático de **Astro: content-d
 │   ├── images/{clientes,portafolio,servicios,galeria,blog,nosotros}/  # AVIF+WebP+fallback
 │   ├── videos/
 │   ├── llms.txt                 # índice para crawlers de IA (+ /.well-known/llms.txt)
-│   ├── robots.txt               # permite todos los bots + AI crawlers; apunta al sitemap
-│   ├── sitemap-manual.xml       # SITEMAP ACTIVO, mantenido a mano (27 URLs)
+│   ├── robots.txt               # permite todos los bots + AI crawlers; apunta a sitemap-index.xml
 │   └── .well-known/security.txt
+│   # sitemap-index.xml + sitemap-0.xml se generan en build (@astrojs/sitemap), no viven en public/
 ├── src/
 │   ├── components/              # 7 componentes Astro
 │   │   ├── Nav.astro            # header sticky + menú mobile (aria-current)
@@ -204,22 +204,26 @@ Trabajo reciente (todo desplegado en producción, `main`):
 - ✅ **Renombre de servicio:** "Circuito Cerrado CCTV" → **"Multicámara para Eventos"** (atraía público de seguridad). Renombrado en nav, footer, schema, contacto, home, llms.txt. **El slug `/circuito-cerrado/` se mantuvo intacto** (no rompe URLs ni el flujo del formulario). El blog post educativo "circuito-cerrado-vs-streaming" se conservó (captura esa búsqueda informativa).
 - ✅ **Quick wins SEO:** `aria-current="page"` en Nav, fechas de blog escalonadas, `hreflang="es-CL"` + `x-default`, schema `Blog`+`ItemList` en `/blog/`, `rel="noopener noreferrer"` en links externos.
 - ✅ **Limpieza de spam del hackeo (Bluehost):** reglas **410 Gone** en `nginx.conf` para URLs de spam (`*.html`, `/products/`) que Google aún recordaba.
-- ✅ **(Sesión previa con otro asistente)** 5 blog posts nuevos, componentes `Reveal.astro` y `TTSPlayer.astro`, security headers, sitemap manual completo (27 URLs), NAP consistente.
+- ✅ **(Sesión previa con otro asistente)** 5 blog posts nuevos, componentes `Reveal.astro` y `TTSPlayer.astro`, security headers, NAP consistente.
+- ✅ **Auditoría profunda (jun 2026):** fix de imágenes 404 en casos (.jpg→.png en schema + `<img>`), logo schema con dimensiones reales (400×118), `uploadDate` unificado vía `fechaVideo()`, 3 bylines de blog corregidos, 7 titles + 3 descriptions acortados a límite SERP.
+- ✅ **Blog post océano azul:** "¿Cuánto cuesta un live shopping en Chile?" — keyword transaccional sin competencia de productoras.
+- ✅ **Reposicionamiento Filtros AR:** Meta cerró Spark AR (14-ene-2025) → servicio + blog reescritos a **TikTok (Effect House) + Snapchat (Lens Studio)**. FAQ que captura "¿filtros de Instagram en 2026?".
+- ✅ **Sitemap automático:** migrado de manual a `@astrojs/sitemap` (siempre sincronizado, 29 URLs).
+- ✅ **GTM eliminado:** era peso muerto sin uso (confirmado con el dueño) — gana performance.
+- ✅ **`live.dar2.cl` aclarado:** NO es spam, es la app de Live Shopping de Radio Futuro (cliente). El spam viejo ya da 404. NO eliminar.
 
 ### 4.2 Estado actual del código
 
-**El sitio está técnicamente completo y estable.** El on-page, schema, performance (CSS inline, imágenes AVIF, fonts preload) y técnico (canonicals, redirects, sitemap, robots) están en muy buen estado — mejor que la competencia directa. `npm run build` genera 28 páginas sin errores.
+**El sitio está técnicamente completo y estable.** El on-page, schema, performance (CSS inline, imágenes AVIF, fonts preload) y técnico (canonicals, redirects, sitemap automático, robots) están en muy buen estado — mejor que la competencia directa. `npm run build` genera 29 páginas sin errores.
 
 ### 4.3 Deudas técnicas y errores conocidos (de CÓDIGO)
 
 | Item | Detalle | Acción sugerida |
 | :--- | :--- | :--- |
-| **`@astrojs/sitemap` huérfano** | Está en `dependencies` pero NO se usa (`integrations: []`). El sitemap es manual. | Decidir: migrar a sitemap automático (elimina mantenimiento a mano) **o** quitar la dependencia. |
-| **Sitemap manual** | `public/sitemap-manual.xml` se mantiene a mano (27 URLs). Riesgo de desactualizarse al agregar páginas. | Idealmente migrar a `@astrojs/sitemap` (requiere actualizar `robots.txt` y el redirect de `nginx.conf`). |
-| **GTM posible peso muerto** | `GTM-5NBSGWM5` carga en cada visita. No se confirmó que dispare nada (Analytics, etc.). | Verificar en el contenedor de GTM si hay tags activos; si está vacío, quitarlo (gana performance). |
-| **VideoObject `uploadDate`** | El audit sospecha fechas placeholder (2022/2023) en el schema VideoObject de home/portafolio. | Verificar y poner fechas reales (o el `anio` del proyecto), o Google ignora el rich result. |
 | **Testimonios sin Review schema** | Los testimonios del home son anónimos, sin schema `Review`. | Agregar `Review` schema **solo** con nombres/empresas reales y con permiso del cliente. |
-| **README desactualizado** | Dice `Base.astro` en components (está en `layouts/`), score SEO viejo (62), sitemap "to be retired". | Actualizar o deferir al presente CLAUDE.md. |
+| **README desactualizado** | Dice `Base.astro` en components (está en `layouts/`), score SEO viejo, sitemap "to be retired". | Actualizar o deferir al presente CLAUDE.md. |
+
+**Resueltas en la auditoría de junio 2026 (ya NO son deudas):** `@astrojs/sitemap` activado (sitemap automático) + sitemap manual eliminado · GTM removido · `VideoObject.uploadDate` unificado con `fechaVideo()` · imágenes 404 en casos corregidas · logo schema con dimensiones reales · titles/descriptions dentro de límite SERP · servicio Filtros AR reposicionado a TikTok/Snapchat.
 
 ### 4.4 NO son bugs de código — SEO operativo (tareas del dueño del sitio)
 
@@ -233,14 +237,14 @@ El sitio no aparece bien posicionado en Google **no por el código** (que está 
 
 **Prioridad 1 — construir autoridad (lo único que destraba la indexación):**
 1. Registrar el negocio en directorios de alta autoridad. Ver **`BACKLINKS-DIRECTORIOS.md`** (incluye NAP exacto). Empezar por **Film Commission Chile** (`.gob.cl`), **Clutch.co**, **ineventos.cl**.
-2. En **Google Search Console** → solicitar indexación de las páginas "rastreada/descubierta sin indexar" + confirmar que el sitemap (`sitemap-manual.xml`) siga "Correcto".
+2. En **Google Search Console** → solicitar indexación de las páginas "rastreada/descubierta sin indexar" + **reenviar el sitemap nuevo** (`sitemap-index.xml`; el viejo `sitemap-manual.xml` redirige a él).
 3. **NO tocar `live.dar2.cl`** — es la app de un cliente (Radio Futuro). El spam viejo ya da 404; opcional retirar URLs viejas en GSC.
 4. **Campaña de reviews** en Google (12 → 40). Link directo: `g.page/r/CWmX_YPPJ4VcEBM/review`.
 
-**Prioridad 2 — deuda técnica (de código, opcional):**
-5. Resolver el `@astrojs/sitemap` huérfano (migrar a automático o quitar dep).
-6. Verificar/limpiar GTM si está vacío.
-7. Corregir `uploadDate` en VideoObject schema.
+**Prioridad 2 — deuda técnica restante (de código, opcional):**
+5. Agregar `Review` schema a testimonios (requiere nombres/empresas reales con permiso).
+6. Actualizar el `README.md` (quedó desfasado vs. este handover).
+7. (Opcional) Crear la Ola 2 de `ESTRATEGIA-CONTENIDO-SEO.md`: subpáginas de video por industria.
 
 ### 4.6 Documentos de referencia en el repo
 
@@ -248,7 +252,8 @@ El sitio no aparece bien posicionado en Google **no por el código** (que está 
 | :--- | :--- |
 | `KEYWORDS-Y-POSICIONAMIENTO.md` | Keyword research por servicio (cómo busca la gente cada uno) + diagnóstico de indexación |
 | `BACKLINKS-DIRECTORIOS.md` | Guía de link building: directorios priorizados + datos NAP exactos para citaciones |
-| `FULL-AUDIT-REPORT.md` / `ACTION-PLAN.md` | Auditoría SEO completa (algo desactualizada, pre-mejoras recientes) |
+| `FULL-AUDIT-REPORT.md` / `ACTION-PLAN.md` | Auditoría SEO completa (jun 2026) + plan priorizado |
+| `ESTRATEGIA-CONTENIDO-SEO.md` | Inteligencia competitiva + océanos azules + plan de contenido en 3 olas |
 | `AUDIT-DEEPSEEK.md` | Auditoría secundaria con hallazgos verificados contra código |
 
 ---
@@ -260,7 +265,7 @@ El sitio no aparece bien posicionado en Google **no por el código** (que está 
 - **NAP oficial:** DAR2 Servicios Audiovisuales · Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile · +56 9 9843 3346 · dar2@dar2.cl
 - **Web3Forms access key** (en `contacto.astro`): `8786a10e-33d3-40a3-9f1b-6570a3a3db0c` (los leads llegan a carlos@dar2.cl)
 - **Behold.so feed-id** (en `index.astro`): `L5VGbKK8n3XzIZpmneCs`
-- **Google Tag Manager:** `GTM-5NBSGWM5`
+- **Google Tag Manager:** removido del sitio (no se usaba). Si se reactiva, el ID era `GTM-5NBSGWM5` — preferir GA4 directo (más liviano).
 - **Google review link:** `https://g.page/r/CWmX_YPPJ4VcEBM/review`
 - **CSP nota:** si se agregan scripts externos (analytics, píxeles, etc.), hay que añadir sus dominios a la `Content-Security-Policy` en `nginx.conf`.
 
