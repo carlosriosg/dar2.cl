@@ -26,7 +26,7 @@ DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, 
 - [Videos Corporativos](https://dar2.cl/servicios/videos-corporativos/): Videos institucionales, de cultura organizacional, capacitación y producto.
 - [Estrategias Digitales](https://dar2.cl/servicios/estrategias-digitales/): Planes integrales de comunicación audiovisual multiplataforma.
 - [Redes Sociales](https://dar2.cl/servicios/redes-sociales/): Cápsulas, reels y contenido vertical optimizado para Instagram, TikTok y LinkedIn.
-- [Filtros AR](https://dar2.cl/servicios/filtros-ar/): Filtros de realidad aumentada para Instagram y TikTok, experiencias inmersivas de marca.
+- [Filtros AR](https://dar2.cl/servicios/filtros-ar/): Filtros de realidad aumentada para TikTok y Snapchat, experiencias inmersivas de marca.
 
 ## Páginas principales
 
@@ -47,11 +47,12 @@ DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, 
 
 - [Blog](https://dar2.cl/blog/) — Guías de producción audiovisual y digital para empresas.
 - [Qué es Live Shopping y cómo lo implementan las empresas en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/) — Guía completa: definición, plataformas, métricas, casos de uso por industria.
+- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Rangos de precio referenciales por nivel de producción, qué incluye una producción profesional y cómo se cotiza.
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Guía técnica: multicámara, enlaces redundantes, plataformas y checklist del día del evento.
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Comparativa práctica de costos, tiempos, flexibilidad y casos de uso de cada opción.
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 métricas clave (views, retention, conversión, engagement, brand lift) + ejemplo de cálculo real.
 - [Producción de video corporativo paso a paso](https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/) — Proceso completo desde el brief hasta la entrega, con plazos referenciales.
-- [Filtros AR de marca para Instagram y TikTok](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/) — Guía completa de filtros de realidad aumentada como herramienta de marketing.
+- [Filtros AR de marca: qué cambió en 2026](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/) — Por qué Meta cerró los filtros de Instagram y cómo crear filtros AR de marca hoy en TikTok y Snapchat.
 - [Contenido para LinkedIn de ejecutivos](https://dar2.cl/blog/contenido-linkedin-ejecutivos/) — Estrategia de contenido audiovisual para perfiles corporativos en LinkedIn.
 - [Circuito cerrado vs. streaming](https://dar2.cl/blog/circuito-cerrado-vs-streaming/) — Diferencias, ventajas y cuándo elegir cada opción para eventos corporativos.
 

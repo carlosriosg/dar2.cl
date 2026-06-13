@@ -612,22 +612,22 @@ export const servicios = [
     slug: 'filtros-ar',
     num: '08',
     title: 'Filtros AR',
-    shortDesc: 'Realidad aumentada para Instagram y TikTok.',
+    shortDesc: 'Realidad aumentada para TikTok y Snapchat.',
     heroEyebrow: 'FILTROS DE REALIDAD AUMENTADA',
     tagline: 'Filtros AR que tus clientes <em class="hl">quieren compartir.</em>',
     description:
-      'Diseñamos experiencias de realidad aumentada exclusivas para marcas en Instagram y TikTok. ' +
+      'Diseñamos experiencias de realidad aumentada exclusivas para marcas en TikTok y Snapchat. ' +
       'Branded masks, efectos interactivos y juegos que convierten a tu audiencia en embajadores orgánicos.',
     longDescription: [
       'Los filtros AR son la única categoría publicitaria donde el usuario voluntariamente comparte tu marca en sus historias personales. A diferencia de un banner que se cierra al primer clic, un filtro de marca bien diseñado se comparte porque el usuario quiere lucirlo: cada uso es una impresión orgánica gratuita, multiplicando alcance sin pagar CPM.',
-      'En DAR2 diseñamos filtros AR exclusivos para Instagram (vía Meta Spark AR Studio) y TikTok (vía Effect House). Branded masks que aplican tu logo y colores a la cara del usuario, efectos interactivos que reaccionan al movimiento, juegos gamificados con scoring, efectos de producto para probarse virtualmente (lentes, sombreros, maquillaje), y fondos de realidad aumentada que recrean tu universo de marca.',
-      'Trabajamos desde el concepto creativo hasta la publicación final en cada plataforma, gestionando los procesos de revisión y aprobación de Meta y TikTok. Entregamos también una cápsula audiovisual del filtro en uso para lanzar la campaña en redes y reporte mensual de métricas (usos, impresiones, veces compartido) para medir el alcance orgánico real.',
+      'En DAR2 diseñamos filtros AR exclusivos para TikTok (vía Effect House) y Snapchat (vía Lens Studio), las dos plataformas que mantienen la creación de efectos de marca por terceros. Branded masks que aplican tu logo y colores a la cara del usuario, efectos interactivos que reaccionan al movimiento, juegos gamificados con scoring, efectos de producto para probarse virtualmente (lentes, sombreros, maquillaje), y fondos de realidad aumentada que recrean tu universo de marca.',
+      'Trabajamos desde el concepto creativo hasta la publicación final en cada plataforma, gestionando los procesos de revisión y aprobación de TikTok y Snapchat. Entregamos también una cápsula audiovisual del filtro en uso para lanzar la campaña en redes y reporte mensual de métricas (usos, impresiones, veces compartido) para medir el alcance orgánico real.',
     ],
     process: [
       { num: '01', title: 'Briefing creativo', desc: 'Definimos el objetivo del filtro (awareness, gamificación, producto, evento), tono de marca, mecánica de interacción y plataformas destino. Cotización detallada en 48h.' },
       { num: '02', title: 'Diseño y modelado 3D', desc: 'Concepto visual, modelado 3D, texturas, animaciones, integración con tracking facial y de movimiento. Iteramos contigo hasta aprobar el diseño final.' },
-      { num: '03', title: 'Desarrollo y testing', desc: 'Desarrollo en Meta Spark AR Studio (Instagram) y Effect House (TikTok). Pruebas internas en varios dispositivos, ajustes de rendimiento y validación de la mecánica antes de enviar a revisión.' },
-      { num: '04', title: 'Publicación y reporte', desc: 'Gestionamos la aprobación de Meta y TikTok. Una vez publicado, lanzamos cápsula audiovisual del filtro en uso. Reporte mensual de usos, impresiones y veces compartido con recomendaciones de amplificación.' },
+      { num: '03', title: 'Desarrollo y testing', desc: 'Desarrollo en Effect House (TikTok) y Lens Studio (Snapchat). Pruebas internas en varios dispositivos, ajustes de rendimiento y validación de la mecánica antes de enviar a revisión.' },
+      { num: '04', title: 'Publicación y reporte', desc: 'Gestionamos la aprobación de TikTok y Snapchat. Una vez publicado, lanzamos cápsula audiovisual del filtro en uso. Reporte mensual de usos, impresiones y veces compartido con recomendaciones de amplificación.' },
     ],
     forWhom: 'Filtros AR aplica para lanzamientos de producto que necesitan viralidad orgánica, activaciones de evento corporativo (festivales, conciertos, congresos), campañas de temporada (Navidad, fiestas, mes del orgullo), campañas institucionales o de RRHH para amplificar reach, y marcas de retail/moda/belleza que quieren que el usuario "se pruebe" el producto antes de comprarlo.',
     bullets: [
@@ -635,7 +635,7 @@ export const servicios = [
       'Modelado 3D y animación facial',
       'Integración con la identidad visual de tu marca',
       'Efectos interactivos y gamificación opcional',
-      'Publicación en Meta Spark AR (Instagram) y Effect House (TikTok)',
+      'Publicación en Effect House (TikTok) y Lens Studio (Snapchat)',
       'Registro audiovisual del filtro en uso (cápsula de lanzamiento)',
       'Reporte de métricas: usos, impresiones, compartidos',
       'Actualización y mantención del filtro',
@@ -666,21 +666,25 @@ export const servicios = [
     ctaTitle: '¿Te imaginas tu marca en un filtro AR?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Filtros de realidad aumentada para Instagram y TikTok',
-    seoDescription: 'Diseñamos filtros de realidad aumentada exclusivos para campañas. Publicación en Meta Spark AR y Effect House. Alcance orgánico medible.',
+    seoTitle: 'Filtros de realidad aumentada para TikTok y Snapchat',
+    seoDescription: 'Diseñamos filtros de realidad aumentada para marcas en TikTok (Effect House) y Snapchat (Lens Studio). Branded masks y efectos interactivos con alcance orgánico medible.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [
       {
+        q: '¿Se pueden hacer filtros AR para Instagram en 2026?',
+        a: 'No para terceros. Meta cerró Spark AR —su plataforma para crear filtros— el 14 de enero de 2025, y desde entonces ya no es posible publicar filtros de marca de terceros en Instagram, Facebook ni Messenger. Las plataformas que sí mantienen creación de efectos AR de marca son TikTok (Effect House) y Snapchat (Lens Studio), donde sí trabajamos.',
+      },
+      {
         q: '¿Cuánto tiempo tarda hacer un filtro AR?',
-        a: 'El proceso completo toma entre 3 y 6 semanas: briefing creativo, diseño y modelado, desarrollo, pruebas internas, revisión del cliente y publicación en Meta Spark AR o Effect House.',
+        a: 'El proceso completo toma entre 3 y 6 semanas: briefing creativo, diseño y modelado, desarrollo, pruebas internas, revisión del cliente y publicación en Effect House (TikTok) o Lens Studio (Snapchat).',
       },
       {
         q: '¿En qué plataformas se publican los filtros?',
-        a: 'Instagram y Facebook (vía Meta Spark AR Studio) y TikTok (vía Effect House). Cada plataforma tiene su proceso de revisión y aprobación, que gestionamos nosotros.',
+        a: 'TikTok (vía Effect House) y Snapchat (vía Lens Studio). Cada plataforma tiene su proceso de revisión y aprobación, que gestionamos nosotros. Instagram y Facebook ya no permiten filtros de terceros desde que Meta cerró Spark AR en enero de 2025.',
       },
       {
-        q: '¿Pueden los usuarios de Instagram guardar y compartir el filtro?',
-        a: 'Sí, una vez publicado el filtro aparece en el perfil de tu marca en Instagram y cualquier usuario puede usarlo, guardarlo y compartirlo en sus historias.',
+        q: '¿Pueden los usuarios guardar y compartir el filtro?',
+        a: 'Sí. Una vez publicado, el filtro queda asociado al perfil de tu marca en TikTok o Snapchat, y cualquier usuario puede usarlo, guardarlo y compartirlo en sus videos e historias.',
       },
       {
         q: '¿Qué tipos de filtros hacen?',
@@ -688,11 +692,11 @@ export const servicios = [
       },
       {
         q: '¿Cómo se mide el éxito del filtro?',
-        a: 'Meta y TikTok entregan métricas de usos, impresiones y veces compartido. Entregamos un reporte mensual con estos datos y recomendaciones para potenciar el alcance.',
+        a: 'TikTok y Snapchat entregan métricas de usos, impresiones y veces compartido. Entregamos un reporte mensual con estos datos y recomendaciones para potenciar el alcance.',
       },
       {
-        q: '¿Pueden crear un filtro de Instagram o TikTok para mi empresa o evento?',
-        a: 'Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lanzamientos y eventos corporativos: desde branded masks con tu logo hasta efectos interactivos y juegos. Publicamos en Instagram (Spark AR) y TikTok (Effect House).',
+        q: '¿Pueden crear un filtro para mi empresa o evento?',
+        a: 'Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lanzamientos y eventos corporativos: desde branded masks con tu logo hasta efectos interactivos y juegos. Publicamos en TikTok (Effect House) y Snapchat (Lens Studio).',
       },
     ],
   },
