@@ -239,7 +239,7 @@ export const servicios = [
     ctaTitle: '¿Evento corporativo a la vista?',
     featured: false,
     seoTitle: 'Multicámara, pantallas y streaming para eventos',
-    seoDescription: 'Multicámara para eventos en Santiago: pantallas LED e IMAG, cámaras robóticas PTZ y streaming del evento para congresos, seminarios y shows. Sin camarógrafos invadiendo el escenario.',
+    seoDescription: 'Multicámara para eventos en Santiago: pantallas LED e IMAG, cámaras robóticas PTZ y streaming para congresos, seminarios y shows en vivo. Cotiza en 48h.',
     serviceType: 'Registro audiovisual con multicámaras robóticas',
     faqs: [
       {
