@@ -1,16 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
-// NOTA: No usamos @astrojs/sitemap porque generamos un sitemap manual
-// (public/sitemap-manual.xml) que controlamos directamente. El plugin
-// de Astro generaria sitemap-index.xml que no necesitamos.
-// nginx redirige /sitemap.xml -> /sitemap-manual.xml.
+// Sitemap automatico: @astrojs/sitemap genera sitemap-index.xml +
+// sitemap-0.xml en cada build, incluyendo TODAS las paginas. Reemplaza
+// al sitemap manual, que se desincronizaba al agregar contenido nuevo.
+// nginx redirige /sitemap.xml y /sitemap-manual.xml -> /sitemap-index.xml.
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dar2.cl',
-  integrations: [],
+  integrations: [sitemap()],
   build: {
     // Inline TODO el CSS en el <head> para eliminar render-blocking
     // stylesheet requests. PageSpeed reportaba 460ms de ahorro con 2 CSS
