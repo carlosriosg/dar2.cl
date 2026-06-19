@@ -6,15 +6,15 @@ import TTSPlayer from '../../components/TTSPlayer.astro';
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Blog', url: 'https://dar2.cl/blog/' },
-  { name: 'Cuánto cuesta un live shopping en Chile', url: 'https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/' },
+  {   name: 'Live Shopping en Chile: factores que determinan el presupuesto', url: 'https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/' },
 ];
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "¿Cuánto cuesta un live shopping en Chile? Precios y factores 2026",
-  "description": "Guía de precios de live shopping en Chile: qué factores determinan el costo, rangos referenciales por nivel de producción, qué incluye y cómo se cotiza.",
-  "image": "https://dar2.cl/images/blog/live-shopping-hero.png",
+  "headline": "Live Shopping en Chile: factores que determinan el presupuesto",
+  "description": "Guía de presupuesto de live shopping en Chile: qué factores determinan la inversión, niveles de producción, qué incluye cada nivel y cómo cotizar correctamente.",
+  "image": "https://dar2.cl/images/blog/live-shopping-presupuesto-hero.png",
   "datePublished": "2026-06-09",
   "dateModified": "2026-06-09",
   "author": {
@@ -33,18 +33,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto cuesta un live shopping en Chile?",
+      "name": "¿De qué depende el presupuesto de un live shopping?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El precio de un live shopping en Chile varía según el nivel de producción. Una sesión básica con una cámara parte desde aproximadamente CLP 800.000. Una producción profesional multicámara con switcher, gráficas en tiempo real e integración con e-commerce suele ubicarse entre CLP 1.500.000 y 3.500.000 por sesión. Los programas recurrentes y producciones premium con set propio superan ese rango. La cotización siempre es a medida según objetivos, duración y plataforma."
+        "text": "El presupuesto de un live shopping varía según el alcance del proyecto: número de cámaras, duración de la sesión, integración con el e-commerce, gráficas en tiempo real, tipo de conducción, ubicación (estudio o terreno) y si es una sesión única o un programa recurrente. Cada proyecto es distinto y la cotización siempre es a medida."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué factores determinan el precio de un live shopping?",
+      "name": "¿Qué factores determinan la inversión en un live shopping?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los principales son: número de cámaras y complejidad de la producción, duración de la sesión, integración técnica con el e-commerce, gráficas y overlays en tiempo real, conducción (interna o influencer), ubicación (estudio o terreno), y si es una sesión única o un programa recurrente. A mayor producción y conversión esperada, mayor inversión."
+        "text": "Los principales son: número de cámaras y complejidad de la producción, duración de la sesión, integración técnica con el e-commerce, gráficas y overlays en tiempo real, conducción (interna o profesional), ubicación (estudio o terreno), y si es una sesión única o un programa recurrente."
       }
     },
     {
@@ -52,12 +52,12 @@ const faqSchema = {
       "name": "¿Conviene una sesión única o un programa recurrente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una sesión única sirve para lanzamientos o campañas puntuales (CyberDay, Navidad). Un programa recurrente (mensual o quincenal) tiene mejor costo por sesión, construye audiencia propia y multiplica el retorno a lo largo del tiempo. Para marcas que apuestan al canal, el programa recurrente es más rentable."
+        "text": "Una sesión única sirve para lanzamientos o campañas puntuales (CyberDay, Navidad). Un programa recurrente (mensual o quincenal) construye audiencia propia, mejora el costo por sesión y multiplica el retorno a lo largo del tiempo. Para marcas que apuestan al canal, el programa recurrente es más rentable."
       }
     },
     {
       "@type": "Question",
-      "name": "¿El precio incluye la integración con mi e-commerce?",
+      "name": "¿La integración con mi e-commerce está incluida?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Depende del proveedor. En DAR2 la integración con tu e-commerce (Shopify, VTEX, WooCommerce, Magento o custom) está contemplada en las producciones profesionales: mostramos el producto con precio, stock y link de compra durante el live. Conviene confirmar siempre qué incluye la cotización."
@@ -76,10 +76,10 @@ const faqSchema = {
 ---
 
 <Base
-  title="¿Cuánto cuesta un live shopping en Chile?"
-  description="Precios de live shopping en Chile 2026: factores que determinan el costo, rangos referenciales por nivel de producción, qué incluye y cómo se cotiza. Por DAR2."
+  title="Live Shopping en Chile: factores que determinan el presupuesto"
+  description="Factores que determinan el presupuesto de un live shopping en Chile: niveles de producción, qué incluye cada uno y cómo cotizar correctamente. Por DAR2."
   breadcrumbs={breadcrumbs}
-  preloadImage="/images/blog/live-shopping-hero.webp"
+  preloadImage="/images/blog/live-shopping-presupuesto-hero.webp"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -92,11 +92,11 @@ const faqSchema = {
     <header class="article-header">
       <p class="article-eyebrow">Blog · Live Shopping</p>
       <h1 class="article-h1">
-        ¿Cuánto cuesta un live shopping
-        <em class="hl">en Chile?</em>
+        Live Shopping en Chile:
+        <em class="hl">factores que determinan el presupuesto</em>
       </h1>
       <p class="article-lead">
-        Es la primera pregunta de toda marca que evalúa el canal. La respuesta honesta es "depende", pero aquí te damos rangos referenciales reales del mercado chileno, qué factores mueven el precio y cómo saber si la inversión vale la pena.
+        El live shopping es el formato de venta en vivo de mayor crecimiento en Chile. Pero el presupuesto no es único: depende del alcance del proyecto. Aquí te explicamos los factores que determinan la inversión, los niveles de producción y cómo cotizar correctamente.
       </p>
       <p class="article-meta">
         Por <a href="/nosotros/">Carlos Rios Guevara</a> · 9 de junio, 2026 · 7 min de lectura
@@ -106,8 +106,8 @@ const faqSchema = {
     <!-- Hero image -->
     <div class="article-hero-image">
       <Picture
-        src="/images/blog/live-shopping-hero.png"
-        alt="Cuánto cuesta un live shopping en Chile — Producción de venta en vivo por DAR2"
+        src="/images/blog/live-shopping-presupuesto-hero.png"
+        alt="Live Shopping en Chile — Factores que determinan el presupuesto de producción"
         class="w-full h-full object-cover"
         width="1200"
         height="675"
@@ -137,12 +137,12 @@ const faqSchema = {
 
     <!-- Contenido -->
     <section class="article-section" id="respuesta-corta">
-      <h2>La respuesta corta</h2>
+      <h2>El presupuesto de un live shopping</h2>
       <p>
-        En Chile, el precio de un live shopping <strong>parte desde unos CLP 800.000</strong> para una sesión básica con una cámara, y se ubica típicamente <strong>entre CLP 1.500.000 y 3.500.000</strong> para una producción profesional multicámara con integración a e-commerce. Las producciones premium y los programas recurrentes superan ese rango.
+        No existe un presupuesto único para un live shopping porque no hay dos producciones iguales. El costo depende del <strong>alcance del proyecto</strong>: cuántas cámaras, duración, integración con el e-commerce, gráficas en tiempo real, tipo de conducción y frecuencia.
       </p>
       <p>
-        Pero el precio absoluto importa menos que el <strong>retorno</strong>: un live bien producido convierte 5 a 10 veces más que el e-commerce tradicional, así que la pregunta real no es "cuánto cuesta" sino "cuánto me devuelve". Vamos por partes.
+        Cada proyecto tiene requerimientos particulares. Una marca que recién prueba el canal no necesita lo mismo que un retailer con programa recurrente. Lo importante no es el presupuesto absoluto, sino el <strong>retorno</strong>: un live bien producido convierte 5 a 10 veces más que el e-commerce tradicional. La pregunta real no es "cuánto cuesta" sino "cuánto me devuelve". Vamos por partes.
       </p>
     </section>
 
@@ -163,24 +163,24 @@ const faqSchema = {
     </section>
 
     <section class="article-section" id="rangos">
-      <h2>Rangos referenciales por nivel</h2>
+      <h2>Niveles de producción</h2>
       <p>
-        Estos rangos son <strong>referenciales del mercado chileno 2026</strong> y sirven para que te hagas una idea. La cotización final siempre es a medida.
+        La producción de un live shopping se puede estructurar en niveles según la complejidad. Cada nivel responde a objetivos y alcances distintos. La cotización final siempre es a medida.
       </p>
 
-      <h3>Nivel básico — desde CLP 800.000</h3>
+      <h3>Nivel básico</h3>
       <p>
-        Una o dos cámaras, sonido y luz simples, gráficas básicas. Ideal para una primera prueba del canal o marcas pequeñas. Convierte, pero deja calidad de producción sobre la mesa.
+        Una o dos cámaras, sonido y luz simples, gráficas básicas. Ideal para una primera prueba del canal o marcas que quieren validar el formato. Convierte, pero deja oportunidades de producción sobre la mesa.
       </p>
 
-      <h3>Nivel profesional — CLP 1.500.000 a 3.500.000</h3>
+      <h3>Nivel profesional</h3>
       <p>
-        Multicámara con switcher, dirección en vivo, sonido broadcast, iluminación, gráficas en tiempo real e integración con tu e-commerce. Es el estándar recomendado para retail, farma y supermercados que quieren conversión seria. La mayoría de los lives corporativos viven en este rango.
+        Multicámara con switcher, dirección en vivo, sonido broadcast, iluminación profesional, gráficas en tiempo real e integración con tu e-commerce. Es el estándar recomendado para retail, farma y supermercados que buscan conversión seria.
       </p>
 
-      <h3>Nivel premium / recurrente — CLP 3.500.000+</h3>
+      <h3>Nivel premium</h3>
       <p>
-        Set diseñado, varias cámaras, equipo ampliado, producción de cápsulas para reutilizar el contenido, y/o un programa recurrente (mensual o quincenal) con costo por sesión optimizado. Para marcas que convierten el live shopping en un canal permanente.
+        Set diseñado, varias cámaras, equipo ampliado, producción de cápsulas para reutilizar el contenido, y/o un programa recurrente (mensual o quincenal). Para marcas que convierten el live shopping en un canal de venta permanente.
       </p>
     </section>
 
@@ -255,13 +255,13 @@ const faqSchema = {
       <h2>Preguntas frecuentes</h2>
 
       <details class="article-faq">
-        <summary>¿Cuánto cuesta un live shopping en Chile?</summary>
-        <p>Una sesión básica con una cámara parte desde aproximadamente CLP 800.000. Una producción profesional multicámara con switcher, gráficas e integración a e-commerce suele ubicarse entre CLP 1.500.000 y 3.500.000 por sesión. Las producciones premium y programas recurrentes superan ese rango. La cotización es a medida según objetivos, duración y plataforma.</p>
+        <summary>¿De qué depende el presupuesto de un live shopping?</summary>
+        <p>Del alcance del proyecto: número de cámaras, duración, integración con el e-commerce, gráficas en tiempo real, tipo de conducción, ubicación y frecuencia. Cada proyecto se cotiza a medida según estos factores.</p>
       </details>
 
       <details class="article-faq">
-        <summary>¿Qué factores determinan el precio?</summary>
-        <p>Número de cámaras y complejidad de la producción, duración, integración con el e-commerce, gráficas en tiempo real, conducción (interna o influencer), ubicación, y si es sesión única o programa recurrente.</p>
+        <summary>¿Qué factores determinan la inversión?</summary>
+        <p>Número de cámaras y complejidad de la producción, duración, integración con el e-commerce, gráficas en tiempo real, conducción (interna o profesional), ubicación, y si es sesión única o programa recurrente.</p>
       </details>
 
       <details class="article-faq">
@@ -270,7 +270,7 @@ const faqSchema = {
       </details>
 
       <details class="article-faq">
-        <summary>¿El precio incluye la integración con mi e-commerce?</summary>
+        <summary>¿La integración con mi e-commerce está incluida?</summary>
         <p>Depende del proveedor. En DAR2, la integración con tu e-commerce (Shopify, VTEX, WooCommerce, Magento o custom) está contemplada en las producciones profesionales. Conviene confirmar siempre qué incluye cada cotización.</p>
       </details>
 
@@ -283,9 +283,9 @@ const faqSchema = {
     <!-- CTA final -->
     <section class="article-section article-cta-final">
       <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
-      <h2>¿Quieres una cotización real para tu live shopping?</h2>
+      <h2>¿Quieres una cotización a medida para tu live shopping?</h2>
       <p>
-        Cuéntanos tu objetivo, productos y plataforma, y te armamos una propuesta a medida con producción profesional e integración a tu e-commerce. Cotización en 48 horas hábiles.
+        Cuéntanos tu objetivo, productos y plataforma, y te armamos una propuesta personalizada con producción profesional e integración a tu e-commerce. Cotización en 48 horas hábiles.
       </p>
       <div class="article-cta">
         <a href="/contacto?servicio=live-shopping" class="article-cta-btn">
