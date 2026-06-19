@@ -15,6 +15,7 @@ RUN npm ci
 # Build del sitio
 COPY . .
 RUN npm run build
+RUN npm run ping:sitemap
 
 # ============================================
 # Stage 2: nginx sirviendo dist/
