@@ -1,0 +1,257 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Sala de Bombas · VOGT', url: 'https://dar2.cl/casos/bomba-minera-vogt-pelambres/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sala de Bombas Tipo Contenedor para Minera Los Pelambres — Caso DAR2",
+  "description": "Producción audiovisual para documentar el diseño y fabricación de una sala de bombas tipo contenedor de VOGT, diseñada y fabricada en Chile para operar a 4.000 m.s.n.m. en la faena minera Los Pelambres.",
+  "image": "https://dar2.cl/images/portafolio/vogt-bomba-pelambres.png",
+  "datePublished": "2025-02-01",
+  "dateModified": "2026-06-18",
+  "author": { "@type": "Person", "name": "Carlos Rios Guevara", "url": "https://dar2.cl/nosotros/" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/casos/bomba-minera-vogt-pelambres/",
+  "about": {
+    "@type": "Organization",
+    "name": "VOGT S.A.",
+    "description": "Empresa chilena experta en soluciones de impulsión de fluidos para minería sostenible.",
+    "url": "https://www.vogt.cl"
+  },
+  "inLanguage": "es-CL"
+};
+---
+
+<Base
+  title="Sala de Bombas Tipo Contenedor · VOGT — Caso DAR2"
+  description="Cómo DAR2 documentó el diseño y fabricación de una sala de bombas tipo contenedor de VOGT para Minera Los Pelambres: piping AISI 316L, instrumentación IO-Link y operación a 4.000 m.s.n.m."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/portafolio/vogt-bomba-pelambres.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Minería · 2025</p>
+      <h1 class="case-h1">
+        Sala de Bombas para
+        <em class="hl">Minera Los Pelambres.</em>
+      </h1>
+      <p class="case-lead">
+        Cómo documentamos el diseño y fabricación de una sala de bombas tipo contenedor diseñada y fabricada íntegramente en Chile, con especificaciones técnicas para operar a 4.000 metros sobre el nivel del mar en una de las faenas mineras más importantes del país.
+      </p>
+    </header>
+
+    <!-- Overview -->
+    <section class="case-overview">
+      <div>
+        <p class="overview-label">Cliente</p>
+        <p class="overview-value">VOGT</p>
+      </div>
+      <div>
+        <p class="overview-label">Año</p>
+        <p class="overview-value">2025</p>
+      </div>
+      <div>
+        <p class="overview-label">Servicio</p>
+        <p class="overview-value">Video corporativo</p>
+      </div>
+      <div>
+        <p class="overview-label">Sector</p>
+        <p class="overview-value">Minería</p>
+      </div>
+    </section>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/portafolio/vogt-bomba-pelambres.png"
+        alt="Sala de Bombas Tipo Contenedor VOGT — Producción audiovisual DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El desafío -->
+    <section class="case-section">
+      <h2>El desafío.</h2>
+      <p>
+        VOGT — empresa chilena con décadas de experiencia en soluciones de impulsión de fluidos — desarrolló una sala de bombas tipo contenedor para abastecer de agua a la operación de Minera Los Pelambres, una de las faenas cupríferas más relevantes de Chile, operada por Antofagasta Minerals en la cordillera de la Región de Coquimbo, a más de 3.200 metros sobre el nivel del mar.
+      </p>
+      <p>
+        Las condiciones de operación eran extremas: el contenedor debía soportar una carga de nieve de 1.200 kg/m², operar de manera confiable a 4.000 m.s.n.m. con baja presión atmosférica, cumplir con el estándar Nema 4R (protección contra ingreso de agua y polvo), y mantener toda la instrumentación crítica funcionando en un entorno de alta montaña con temperaturas bajo cero.
+      </p>
+      <p>
+        El desafío para DAR2 era documentar todo el proceso — desde el diseño y la fabricación en las dependencias de VOGT hasta el ensamblaje final — en un video técnico que sirviera tanto para la presentación al cliente minero como para futuros proyectos de la empresa. El video debía mostrar los detalles de ingeniería sin perder calidad narrativa ni profesionalismo broadcast.
+      </p>
+    </section>
+
+    <!-- Nuestra solución -->
+    <section class="case-section">
+      <h2>Nuestra solución.</h2>
+      <p>
+        Planteamos una producción en formato documental técnico: cámara en mano cuidada, iluminación que respeta el entorno industrial, y una estructura narrativa que guía al espectador desde la ingeniería del diseño hasta el producto terminado. El video recorre cada componente crítico de la sala de bombas, explicando su función dentro del sistema integrado.
+      </p>
+      <p>
+        La producción destacó los elementos clave del contenedor: el piping en acero inoxidable AISI 316L de 8" para la descarga principal, el flujómetro electromagnético DN200, las válvulas con actuador eléctrico en descarga y despiche, el tablero de control y comunicaciones con PLC, el maestro IO-Link que integra la instrumentación, y la antena Starlink que permite la comunicación remota desde la faena.
+      </p>
+      <p>
+        También documentamos los elementos estructurales: la viga principal de izaje para mantenimientos, los cáncamos de 12 toneladas, el piso en grating FRP de 30 mm, el aire acondicionado tipo mochila de 60.000 BTU, y los tecles de izaje de 2.000 kg y 500 kg. Cada detalle fue capturado con la precisión que requiere un video técnico-industrial.
+      </p>
+    </section>
+
+    <!-- Ejecución -->
+    <section class="case-section">
+      <h2>Ejecución.</h2>
+      <p>
+        El rodaje se realizó en las instalaciones de VOGT en Quilicura, Santiago, durante una jornada completa. Trabajamos integrados al ritmo de la planta, documentando cada etapa del ensamblaje sin interrumpir la operación. El equipo de DAR2 coordinó con los ingenieros de VOGT para identificar los momentos clave del proceso y asegurar que ningún detalle técnico quedara fuera.
+      </p>
+      <p>
+        La postproducción incluyó etiquetado gráfico de cada componente — manómetro de glicerina 0-40 bar, transductor de presión en descarga 0-16 bar, válvula de alivio de presión, sensor de flujo — para que el video funcionara tanto como presentación comercial como material de referencia técnica. El resultado es una pieza que comunica ingeniería de precisión con calidad cinematográfica.
+      </p>
+    </section>
+
+    <!-- Resultado -->
+    <section class="case-section">
+      <h2>Resultado.</h2>
+      <p>
+        El video fue presentado al equipo de Minera Los Pelambres como parte del dossier técnico de la sala de bombas, y hoy es parte del material comercial de VOGT para futuros proyectos mineros. La pieza demuestra la capacidad de la empresa para diseñar y fabricar equipos de bombeo de alta complejidad íntegramente en Chile, compitiendo con estándares internacionales.
+      </p>
+      <p>
+        El proyecto consolidó la relación con VOGT y abrió la puerta a nuevas producciones para el sector minero e industrial, un segmento donde la demanda de contenido técnico de calidad sigue creciendo.
+      </p>
+    </section>
+
+    <!-- Sobre el cliente -->
+    <section class="case-section case-context">
+      <h3>Sobre VOGT</h3>
+      <p>
+        VOGT es una empresa chilena con más de 30 años de experiencia en soluciones de impulsión de fluidos para minería, industria, sanitarias y energía. Con casa matriz en Quilicura, Santiago, y sucursales en Antofagasta y Concepción, la empresa diseña, fabrica y mantiene equipos de bombeo — bombas flotantes, verticales y horizontales — además de ofrecer servicios de alta gama y soluciones IIoT para monitoreo remoto.
+      </p>
+      <p>
+        Su sello es la ingeniería aplicada a condiciones extremas: equipos diseñados para operar en alta montaña, desierto y zonas de alta exigencia sísmica, con un enfoque en sostenibilidad, eficiencia hídrica y desarrollo de proveedores locales.
+      </p>
+      <p class="case-source">
+        Fuente: <a href="https://www.vogt.cl" target="_blank" rel="noopener">vogt.cl</a>
+      </p>
+    </section>
+
+    <!-- Sobre Minera Los Pelambres -->
+    <section class="case-section case-context">
+      <h3>Sobre Minera Los Pelambres</h3>
+      <p>
+        Minera Los Pelambres es una faena de cobre ubicada en la comuna de Salamanca, Región de Coquimbo, operada por Antofagasta Minerals. Es una de las minas más grandes de Chile y produce concentrado de cobre, molibdeno y oro. La operación se encuentra a más de 3.200 m.s.n.m. en la cordillera de los Andes, lo que exige equipos diseñados específicamente para operar en condiciones de alta altitud, baja presión atmosférica y temperaturas extremas.
+      </p>
+      <p class="case-source">
+        Fuente: <a href="https://www.antofagasta.co.uk" target="_blank" rel="noopener">Antofagasta plc</a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Necesitas un video técnico-industrial para tu proyecto?</h2>
+      <p>
+        En DAR2 producimos videos corporativos, técnicos e institucionales para el sector minero e industrial. Cotización a medida en 48 horas.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto?servicio=videos-corporativos" class="case-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/casos/" class="case-cta-link">
+          O ver más casos →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  .case-context {
+    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  }
+  .case-context h3 { margin-top: 0; }
+  .case-context p { font-size: 16px; color: #555; }
+  .case-source { font-size: 14px; color: #888; margin-top: 12px; }
+  .case-source a { color: #666; text-decoration: underline; }
+  .case-source a:hover { color: #E63E00; }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>
