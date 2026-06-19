@@ -15,7 +15,8 @@
     "generate:ico": "node scripts/generate-ico.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "resize:images": "node scripts/resize-large-images.mjs",
-    "generate:cards": "node scripts/generate-card-sizes.mjs"
+    "generate:cards": "node scripts/generate-card-sizes.mjs",
+    "ping:sitemap": "node scripts/ping-indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
