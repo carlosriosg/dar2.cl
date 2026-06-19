@@ -413,7 +413,7 @@ export const servicios = [
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
     seoTitle: 'Video corporativo e institucional en Santiago',
-    seoDescription: 'Videos de cultura, valores, procesos y productos. Dirección creativa, cámara cinema, postproducción profesional.',
+    seoDescription: 'Videos corporativos e institucionales en Santiago: cultura, valores, procesos y productos. Dirección creativa con cámara cinema Sony FX6 y postproducción profesional completa.',
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -583,7 +583,7 @@ export const servicios = [
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
     seoTitle: 'Productora de reels y contenido para redes sociales',
-    seoDescription: 'Cápsulas, reels y videos verticales optimizados para cada plataforma. Postproducción ágil y paquetes mensuales.',
+    seoDescription: 'Cápsulas, reels y videos verticales optimizados para Instagram, TikTok y LinkedIn. Postproducción ágil con dirección de talento ejecutivo y paquetes mensuales de contenido.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
       {
