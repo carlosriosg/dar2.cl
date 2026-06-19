@@ -16,7 +16,7 @@ async function pingIndexNow(key) {
   const r = await fetch(url, { method: 'GET', redirect: 'manual' });
   const status = r.status;
 
-  if (status === 200) {
+  if (status === 200 || status === 202) {
     console.log(`OK (${status}) — IndexNow notified for ${SITEMAP}`);
     return true;
   }
