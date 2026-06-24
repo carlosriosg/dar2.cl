@@ -67,6 +67,18 @@ const breadcrumbs = [
   { name: s.title, url: `https://dar2.cl/servicios/${s.slug}/` },
 ];
 
+// Cross-linking: blog posts relacionados por servicio (mejora enlaces internos + SEO).
+const blogPorServicio = {
+  'streaming': [{ slug: 'streaming-corporativo-santiago-guia-completa', title: 'Streaming corporativo en Santiago: guía completa' }, { slug: 'transmitir-junta-anual-sin-caidas', title: 'Transmitir junta anual sin caídas' }],
+  'live-shopping': [{ slug: 'que-es-live-shopping-chile', title: 'Qué es Live Shopping en Chile' }, { slug: 'cuanto-cuesta-live-shopping-chile', title: '¿Cuánto cuesta un live shopping?' }],
+  'circuito-cerrado': [{ slug: 'circuito-cerrado-vs-streaming', title: 'Circuito cerrado vs streaming' }],
+  'estudio-virtual': [{ slug: 'estudio-virtual-vs-set-fisico', title: 'Estudio virtual vs set físico' }],
+  'videos-corporativos': [{ slug: 'medir-roi-video-corporativo', title: 'Cómo medir el ROI de un video corporativo' }, { slug: 'produccion-video-corporativo-paso-a-paso', title: 'Producción de video corporativo paso a paso' }],
+  'estrategias-digitales': [{ slug: 'contenido-linkedin-ejecutivos', title: 'Contenido para LinkedIn de ejecutivos' }],
+  'redes-sociales': [{ slug: 'contenido-linkedin-ejecutivos', title: 'Contenido para LinkedIn de ejecutivos' }, { slug: 'filtros-ar-marca-instagram-tiktok', title: 'Filtros AR para marca en Instagram y TikTok' }],
+};
+const blogPostsRelacionados = blogPorServicio[s.slug] ?? [];
+
 // Cross-linking: 3 servicios relacionados por cada uno (mejora crawl depth + SEO).
 const relacionadosMap = {
   'streaming': ['live-shopping', 'circuito-cerrado', 'estudio-virtual'],
@@ -86,6 +98,7 @@ const serviciosRelacionados = relacionadosSlugs
 <Base
   title={s.seoTitle ?? s.title}
   description={s.seoDescription ?? s.description}
+  canonicalURL={`https://dar2.cl/servicios/${s.slug}/`}
   breadcrumbs={breadcrumbs}
   preloadImage={`/images/servicios/${s.slug}.webp`}
 >
@@ -263,6 +276,27 @@ const serviciosRelacionados = relacionadosSlugs
             <summary class="faq-question">{f.q}</summary>
             <p class="faq-answer">{f.a}</p>
           </details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Blog posts relacionados -->
+  {blogPostsRelacionados.length > 0 && (
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+      <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Blog</p>
+      <h2 class="text-3xl font-black tracking-tight mb-10">
+        Artículos relacionados.
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPostsRelacionados.map(post => (
+          <a
+            href={`/blog/${post.slug}/`}
+            class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors"
+          >
+            <h3 class="text-xl font-black tracking-tight mb-2">{post.title}</h3>
+            <p class="text-sm font-semibold text-[#FF4500] mt-4">Leer artículo →</p>
+          </a>
         ))}
       </div>
     </section>

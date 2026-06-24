@@ -40,6 +40,7 @@ const serviciosRelacionados = ['redes-sociales', 'estudio-virtual', 'estrategias
 <Base
   title={s.seoTitle}
   description={s.seoDescription}
+  canonicalURL="https://dar2.cl/servicios/filtros-ar/"
   breadcrumbs={breadcrumbs}
   preloadImage="/images/servicios/filtros-ar.webp"
 >
@@ -198,6 +199,22 @@ const serviciosRelacionados = ['redes-sociales', 'estudio-virtual', 'estrategias
           <p class="faq-answer">{f.a}</p>
         </details>
       ))}
+    </div>
+  </section>
+
+  <!-- Blog posts relacionados -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Blog</p>
+    <h2 class="text-3xl font-black tracking-tight mb-10">Artículos relacionados.</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="/blog/filtros-ar-marca-instagram-tiktok/" class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <h3 class="text-xl font-black tracking-tight mb-2">Filtros AR para marca en Instagram y TikTok</h3>
+        <p class="text-sm font-semibold text-[#FF4500] mt-4">Leer artículo →</p>
+      </a>
+      <a href="/blog/contenido-linkedin-ejecutivos/" class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <h3 class="text-xl font-black tracking-tight mb-2">Contenido para LinkedIn de ejecutivos</h3>
+        <p class="text-sm font-semibold text-[#FF4500] mt-4">Leer artículo →</p>
+      </a>
     </div>
   </section>
 

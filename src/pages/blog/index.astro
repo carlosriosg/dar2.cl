@@ -160,7 +160,7 @@ const itemListSchema = {
   </section>
 
   <!-- Listado -->
-  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-12">
+  <section class="max-w-7xl mx-auto px-6 pb-16 border-t border-border pt-12">
     <ul class="blog-list">
       {articles.map(art => (
         <li class="blog-item">
@@ -185,6 +185,33 @@ const itemListSchema = {
         </li>
       ))}
     </ul>
+  </section>
+
+  <!-- Navegacion a servicios -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 border-t border-border pt-12">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Servicios</p>
+    <h2 class="text-3xl font-black tracking-tight mb-6">¿Necesitas producción audiovisual?</h2>
+    <p class="text-[#666] max-w-2xl leading-relaxed mb-10">
+      Los artículos del blog son guías educativas. Si necesitas producción audiovisual profesional para tu empresa, conoce nuestros servicios.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/servicios/streaming/" class="block p-5 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="font-bold text-sm mb-1">Streaming</p>
+        <p class="text-xs text-[#666]">Transmisión en vivo corporativa</p>
+      </a>
+      <a href="/servicios/live-shopping/" class="block p-5 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="font-bold text-sm mb-1">Live Shopping</p>
+        <p class="text-xs text-[#666]">Ventas en vivo integradas a e-commerce</p>
+      </a>
+      <a href="/servicios/videos-corporativos/" class="block p-5 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="font-bold text-sm mb-1">Videos Corporativos</p>
+        <p class="text-xs text-[#666]">Producción institucional con cámara cinema</p>
+      </a>
+      <a href="/servicios/estudio-virtual/" class="block p-5 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="font-bold text-sm mb-1">Estudio Virtual</p>
+        <p class="text-xs text-[#666]">Escenografías virtuales con chroma key</p>
+      </a>
+    </div>
   </section>
 
 </Base>
