@@ -57,7 +57,7 @@ export const servicios = [
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
     seoTitle: 'Productora de streaming corporativo en Santiago',
-    seoDescription: 'Streaming corporativo profesional en Santiago de Chile. Multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotización en 48h.',
+    seoDescription: 'Productora audiovisual de streaming en Santiago para eventos corporativos. Streaming profesional con multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotiza en 48h.',
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
@@ -151,8 +151,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping en Chile: venta en vivo para retail',
-    seoDescription: 'Producimos live shopping end-to-end: conducción, multicámara, integración con e-commerce, gráficas en tiempo real y métricas de conversión.',
+    seoTitle: 'Live Shopping y Live Stream en Chile: venta en vivo para retail',
+    seoDescription: 'Live shopping y live stream shopping en Chile. Producción end-to-end: conducción, multicámara, integración con e-commerce y métricas de conversión reales. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
       {
