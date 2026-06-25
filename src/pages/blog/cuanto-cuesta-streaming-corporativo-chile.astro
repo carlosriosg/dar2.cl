@@ -1,0 +1,582 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Streaming corporativo en Chile: factores que determinan la inversión', url: 'https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Streaming corporativo en Chile: factores que determinan la inversión",
+  "description": "Guía de inversión en streaming corporativo en Chile: qué factores determinan el presupuesto, niveles de producción, qué incluye cada nivel y cómo cotizar correctamente.",
+  "image": "https://dar2.cl/images/blog/streaming-junta-anual-hero.png",
+  "datePublished": "2026-06-24",
+  "dateModified": "2026-06-24",
+  "author": {
+    "@type": "Person",
+    "name": "Carlos Rios Guevara",
+    "url": "https://dar2.cl/nosotros/"
+  },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿De qué depende el presupuesto de un streaming corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El presupuesto de un streaming corporativo varía según el alcance del proyecto: número de cámaras, duración del evento, tipo de plataforma, necesidad de enlace redundante, gráficas en tiempo real, ubicación (estudio, oficina del cliente o terreno) y si incluye postproducción del máster. Cada evento es distinto y la cotización siempre es a medida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué factores determinan la inversión en un streaming corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los principales son: número de cámaras y complejidad de la producción, duración del evento, plataforma de transmisión (pública o privada), necesidad de enlace redundante (backup de internet), gráficas corporativas en tiempo real, ubicación del evento y si se requiere edición y entrega post-evento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre un streaming básico y uno profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un streaming básico usa una cámara fija, sonido directo y transmisión simple a una plataforma. Un streaming profesional incluye multicámara con switcher, dirección en vivo, sonido broadcast, iluminación de set, gráficas corporativas animadas, enlace redundante y grabación master para postproducción."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye una producción de streaming profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una producción profesional incluye: multicámara con switcher y operador, mezcla de audio en vivo, iluminación de set, gráficas corporativas animadas en tiempo real, enlace redundante punto a punto, transmisión a la plataforma que elijas (Zoom, Teams, YouTube, Vimeo, LinkedIn), dirección técnica durante todo el evento y grabación master editada post-evento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo elegir productora de streaming en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para elegir una productora de streaming en Santiago, verifica que tenga: equipo propio (cámaras, switcher, enlaces de respaldo), experiencia en eventos similares al tuyo, capacidad de enlace redundante, servicio de postproducción, y referencias de clientes reales. Una productora con estudio propio y equipo interno suele ofrecer mejor relación entre calidad y coordinación."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="Streaming corporativo en Chile: factores que determinan la inversión"
+  description="Factores que determinan la inversión en un streaming corporativo en Chile: niveles de producción, qué incluye cada uno y cómo cotizar correctamente. Por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/streaming-junta-anual-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming Corporativo</p>
+      <h1 class="article-h1">
+        Streaming corporativo en Chile:
+        <em class="hl">factores que determinan la inversión</em>
+      </h1>
+      <p class="article-lead">
+        El streaming corporativo es la forma más efectiva de conectar con tu audiencia remota en juntas anuales, lanzamientos y seminarios. Pero la inversión no es única: depende del alcance del proyecto. Aquí te explicamos los factores que determinan el presupuesto, los niveles de producción y cómo contratar bien.
+      </p>
+      <p class="article-meta">
+        Por <a href="/nosotros/">Carlos Rios Guevara</a> · 24 de junio, 2026 · 7 min de lectura
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/streaming-junta-anual-hero.png"
+        alt="Streaming corporativo en Chile — Factores que determinan la inversión en producción"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#respuesta-corta">La respuesta corta</a></li>
+        <li><a href="#factores">De qué depende el presupuesto</a></li>
+        <li><a href="#niveles">Niveles de producción</a></li>
+        <li><a href="#incluye">Qué incluye una producción profesional</a></li>
+        <li><a href="#enlace-redundante">Enlace redundante: el factor crítico</a></li>
+        <li><a href="#plataformas">Plataforma: pública vs. privada</a></li>
+        <li><a href="#errores">Errores que salen caros</a></li>
+        <li><a href="#cotizar">Cómo cotizar bien un streaming</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="respuesta-corta">
+      <h2>La inversión en un streaming corporativo</h2>
+      <p>
+        No existe una inversión única para un streaming corporativo porque no hay dos eventos iguales. El presupuesto depende del <strong>alcance del proyecto</strong>: cuántas cámaras, duración del evento, plataforma de transmisión, necesidad de enlace redundante, gráficas en tiempo real y ubicación.
+      </p>
+      <p>
+        Cada evento tiene requerimientos distintos. Una junta anual de accionistas para 5.000 espectadores remotos no necesita lo mismo que un seminario interno para 200 colaboradores. Lo importante no es el presupuesto absoluto, sino la <strong>confiabilidad</strong>: un streaming mal producido que se cae a mitad de una junta de accionistas cuesta mucho más en reputación que lo que se ahorró en producción. Vamos por partes.
+      </p>
+    </section>
+
+    <section class="article-section" id="factores">
+      <h2>¿De qué depende el presupuesto?</h2>
+      <p>
+        Estos son los factores que más inciden en la inversión de un streaming corporativo:
+      </p>
+      <ul class="article-list">
+        <li><strong>Número de cámaras y complejidad.</strong> Una cámara fija no es lo mismo que un setup multicámara con switcher y dirección en vivo. Para una junta anual se recomiendan 3-4 cámaras como mínimo.</li>
+        <li><strong>Duración del evento.</strong> Una transmisión de 30 minutos no requiere la misma logística que un seminario de 4 horas con múltiples bloques y expositores.</li>
+        <li><strong>Tipo de plataforma.</strong> Transmitir a YouTube es más simple que hacerlo a una plataforma privada como Zoom Webinar o Microsoft Teams Live Events, que requieren integración técnica adicional.</li>
+        <li><strong>Enlace redundante.</strong> El factor más crítico para eventos donde una caída no es aceptable. Tener respaldo de conexión (fibra + LTE/5G) suma equipamiento y configuración.</li>
+        <li><strong>Gráficas en tiempo real.</strong> Lower thirds, presentación de expositores, logos corporativos, transiciones animadas. La capa gráfica eleva la calidad percibida del evento.</li>
+        <li><strong>Ubicación.</strong> En nuestro estudio en Providencia, en las oficinas del cliente, o en un recinto de eventos. Cada locación tiene requerimientos de montaje y logística distintos.</li>
+        <li><strong>Postproducción.</strong> Si necesitas el máster editado después del evento, con cápsulas para redes sociales o el registro completo para archivo, eso suma tiempo de edición.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="niveles">
+      <h2>Niveles de producción</h2>
+      <p>
+        La producción de un streaming corporativo se puede estructurar en niveles según la complejidad y criticidad del evento. Cada nivel responde a objetivos distintos y la cotización final siempre es a medida.
+      </p>
+
+      <h3>Nivel básico</h3>
+      <p>
+        Una o dos cámaras, sonido desde la sala, transmisión directa a una plataforma pública (YouTube o Facebook). Sin enlace redundante, sin gráficas en tiempo real. Ideal para eventos internos, capacitaciones o transmisiones donde una interrupción breve no es crítica.
+      </p>
+
+      <h3>Nivel profesional</h3>
+      <p>
+        Multicámara con switcher, dirección en vivo, sonido broadcast, iluminación profesional, gráficas corporativas animadas en tiempo real y enlace redundante punto a punto. Es el estándar recomendado para juntas anuales, lanzamientos de producto y seminarios donde la calidad y confiabilidad son importantes.
+      </p>
+
+      <h3>Nivel premium</h3>
+      <p>
+        Producción completa con 4 a 6 cámaras, equipo técnico ampliado, enlace redundante con respaldo automático, integración con plataformas privadas (Zoom Webinar, Teams Live Events), dirección creativa, postproducción del máster y generación de cápsulas para redes sociales. Para eventos de alta dirección, conferencias masivas o transmisiones donde una falla no es una opción.
+      </p>
+    </section>
+
+    <section class="article-section" id="incluye">
+      <h2>¿Qué incluye una producción profesional?</h2>
+      <p>
+        Cuando pidas una cotización para un streaming corporativo, asegúrate de que estos componentes estén contemplados:
+      </p>
+      <ol class="article-list">
+        <li><strong>Producción audiovisual:</strong> multicámara, sonido broadcast, iluminación, switcher y dirección en vivo.</li>
+        <li><strong>Gráficas corporativas:</strong> lower thirds, presentación de expositores, logos y transiciones animadas en tiempo real.</li>
+        <li><strong>Enlace redundante:</strong> respaldo de conexión que toma el control si falla la señal principal, sin que el público lo note.</li>
+        <li><strong>Transmisión a plataforma:</strong> configuración y prueba con la plataforma antes del evento (Zoom, Teams, YouTube, Vimeo, LinkedIn).</li>
+        <li><strong>Dirección técnica:</strong> un coordinador técnico dedicado durante todo el evento, en contacto directo contigo.</li>
+        <li><strong>Grabación master:</strong> registro completo del evento en alta calidad para postproducción.</li>
+        <li><strong>Edición post-evento:</strong> máster editado y cápsulas para redes si aplica.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="enlace-redundante">
+      <h2>Enlace redundante: el factor crítico</h2>
+      <p>
+        Si hay un factor que diferencia un streaming profesional de uno improvisado, es el <strong>enlace redundante</strong>. Una caída de internet a mitad de una junta anual de accionistas o durante el lanzamiento de un producto es simplemente inaceptable para una empresa.
+      </p>
+      <p>
+        El enlace redundante funciona con dos o más conexiones simultáneas (fibra + LTE/5G) que operan en paralelo. Si una falla, la otra toma el control automáticamente, sin que el público note la transición. Es la diferencia entre un streaming que transmite "cuando el internet funciona" y uno que transmite "siempre".
+      </p>
+      <p>
+        No todos los eventos necesitan enlace redundante. Para una capacitación interna, una sola conexión puede ser suficiente. Para una junta de accionistas, un lanzamiento de producto o una conferencia con audiencia remota masiva, es indispensable.
+      </p>
+    </section>
+
+    <section class="article-section" id="plataformas">
+      <h2>Plataforma: pública vs. privada</h2>
+      <p>
+        La elección de plataforma impacta tanto la producción como la experiencia del espectador:
+      </p>
+      <ul class="article-list">
+        <li><strong>Plataformas públicas</strong> (YouTube Live, LinkedIn Live, Facebook): más simples de configurar, alcance abierto, ideales para eventos de marketing o contenido que quieres que se comparta. La audiencia no necesita credenciales.</li>
+        <li><strong>Plataformas privadas</strong> (Zoom Webinar, Microsoft Teams Live Events, Vimeo): requieren integración técnica, autenticación de asistentes, ideal para juntas de accionistas, capacitaciones internas o contenido confidencial. Suelen incluir herramientas de moderación y reportes de asistencia.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="errores">
+      <h2>Errores que salen caros</h2>
+      <ul class="article-list">
+        <li><strong>Elegir solo por precio.</strong> Un streaming que se cae a mitad del evento no tiene precio que lo justifique. La confiabilidad es el factor más importante.</li>
+        <li><strong>No hacer prueba técnica.</strong> El día del evento no es momento para descubrir que el internet no alcanza o que el micrófono no funciona. Una prueba con 48 horas de anticipación es obligatoria.</li>
+        <li><strong>Subestimar el sonido.</strong> Una mala transmisión de video se perdona, un audio malo arruina la experiencia. El sonido broadcast no es opcional para un evento serio.</li>
+        <li><strong>No tener plan B.</strong> Si la conexión principal falla y no hay respaldo, pierdes la transmisión. El enlace redundante es el seguro del streaming.</li>
+        <li><strong>No grabar para postproducción.</strong> No grabar el máster en alta calidad pierde la oportunidad de reutilizar el contenido después del evento.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="cotizar">
+      <h2>Cómo cotizar bien un streaming</h2>
+      <p>
+        Para recibir una cotización precisa, ten claro: tipo de evento (junta anual, lanzamiento, seminario), duración estimada, número de asistentes remotos, plataforma de transmisión, ubicación del evento y si necesitas postproducción. Con eso, una buena productora te entrega una propuesta a medida.
+      </p>
+      <p>
+        En DAR2 producimos streaming corporativo desde 2010 con equipo propio, estudio en Providencia, enlaces redundantes y postproducción interna. Cotizamos a medida en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/streaming/" class="article-cta-btn">
+          Ver nuestro servicio de Streaming Corporativo →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿De qué depende el presupuesto de un streaming corporativo?</summary>
+        <p>Del alcance del proyecto: número de cámaras, duración, plataforma, enlace redundante, gráficas en tiempo real, ubicación y postproducción. Cada evento se cotiza a medida según estos factores.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué factores determinan la inversión?</summary>
+        <p>Número de cámaras y complejidad, duración, plataforma (pública o privada), necesidad de enlace redundante, gráficas corporativas, ubicación del evento y si incluye edición post-evento.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué diferencia hay entre un streaming básico y uno profesional?</summary>
+        <p>Un streaming básico usa una cámara fija sin respaldo. Uno profesional incluye multicámara con switcher, dirección en vivo, sonido broadcast, iluminación, gráficas animadas, enlace redundante y grabación master.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué incluye una producción de streaming profesional?</summary>
+        <p>Multicámara con switcher, mezcla de audio en vivo, iluminación de set, gráficas corporativas animadas, enlace redundante punto a punto, transmisión a la plataforma que elijas, dirección técnica y grabación master editada.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo elegir productora de streaming en Santiago?</summary>
+        <p>Verifica que tenga equipo propio, experiencia en eventos similares, capacidad de enlace redundante, servicio de postproducción y referencias reales. Una productora con estudio propio suele ofrecer mejor calidad y coordinación.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Sirve el streaming para eventos híbridos?</summary>
+        <p>Sí. El streaming corporativo profesional está diseñado para eventos híbridos: combina audiencia presencial en el recinto con espectadores remotos. La producción multicámara con gráficas funciona para ambas audiencias simultáneamente.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Quieres una cotización a medida para tu streaming corporativo?</h2>
+      <p>
+        Cuéntanos tu evento, audiencia y plataforma, y te armamos una propuesta personalizada con producción profesional, enlace redundante y postproducción incluida. Cotización en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto?servicio=streaming" class="article-cta-btn">
+          Cotizar mi streaming →
+        </a>
+        <a href="/blog/streaming-corporativo-santiago-guia-completa/" class="article-cta-link">
+          O leer: guía completa de streaming corporativo →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    margin-bottom: 48px;
+  }
+  .article-hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .article-meta a {
+    color: #888;
+    text-decoration: underline;
+  }
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .article-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF4500;
+    margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+  .article-cta-final p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover {
+    background: #E63E00;
+    transform: translateY(-2px);
+  }
+  .article-cta-final .article-cta-link {
+    color: #aaa;
+  }
+  .article-cta-final .article-cta-link:hover {
+    color: #fff;
+  }
+</style>
