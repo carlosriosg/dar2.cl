@@ -7,10 +7,10 @@ export const servicios = [
     heroEyebrow: 'PRODUCTORA DE STREAMING EN SANTIAGO',
     tagline: 'Streaming corporativo profesional <em class="hl">sin dolores de cabeza.</em>',
     description:
-      'Producimos streaming profesional para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
-      'Multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
+      'Producimos streaming de eventos para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
+      'Servicio de streaming con multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
     longDescription: [
-      'El streaming corporativo profesional combina producción broadcast con infraestructura de transmisión confiable. No es Zoom con varios participantes: es producción multicámara con switcher dedicado, mezcla de audio en tiempo real, gráficas corporativas animadas y enlaces redundantes que evitan caídas durante el evento más importante de tu compañía.',
+      'El servicio de transmisión de video y streaming corporativo combina producción broadcast con infraestructura de transmisión confiable. No es Zoom con varios participantes: es producción multicámara con switcher dedicado, mezcla de audio en tiempo real, gráficas corporativas animadas y enlaces redundantes que evitan caídas durante el evento más importante de tu compañía.',
       'En DAR2 producimos streamings con el mismo estándar técnico que ves en transmisiones broadcast de televisión. Cámaras profesionales, iluminación de set, dirección técnica en vivo y postproducción inmediata. La diferencia con un equipo improvisado es directa: cero interrupciones, audio limpio, gráficas precisas y un máster de calidad que sirve para cápsulas posteriores y archivo.',
       'Trabajamos con plataformas privadas (Zoom Webinar, Microsoft Teams Live Events) o públicas (YouTube Live, Vimeo, LinkedIn Live, Facebook), y entregamos el archivo grabado editado con las gráficas del evento. Nuestros enlaces punto a punto redundantes garantizan que aunque falle una conexión, la transmisión continúa sin que el público lo note.',
     ],
@@ -20,7 +20,7 @@ export const servicios = [
       { num: '03', title: 'Transmisión en vivo', desc: 'Dirección técnica en tiempo real, switching entre cámaras, gestión de gráficas, mezcla de audio y monitoreo de enlace redundante. Un coordinador queda en contacto directo contigo durante todo el evento.' },
       { num: '04', title: 'Entrega post-evento', desc: 'Edición del máster, generación de cápsulas para redes sociales y entrega de archivo en alta calidad listo para subir a tu intranet, archivo corporativo o redistribuir a tu audiencia.' },
     ],
-    forWhom: 'El streaming corporativo profesional aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota. Si la audiencia importa y el costo de una caída técnica es alto, este servicio es para ti.',
+    forWhom: 'El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota. Si la audiencia importa y el costo de una caída técnica es alto, este servicio de streaming para eventos empresariales es para ti.',
     bullets: [
       'Producción y dirección técnica completa',
       'Sistema multicámara (2 a 6 cámaras)',
@@ -40,7 +40,7 @@ export const servicios = [
       {
         num: '02',
         title: 'Producción broadcast',
-        desc: 'Multicámara, gráficas en tiempo real y switching profesional. La misma calidad que ves en TV, para tu evento corporativo.',
+        desc: 'Sistema multicámara, gráficas en tiempo real y switching profesional. La misma calidad que ves en TV para tu evento corporativo. Una empresa de streaming con estándar broadcast.',
       },
       {
         num: '03',
@@ -102,7 +102,7 @@ export const servicios = [
     heroEyebrow: 'LIVE SHOPPING',
     tagline: 'Ventas en vivo <em class="hl">que convierten.</em>',
     description:
-      'Transmisiones con venta en vivo integrada al e-commerce. Conducción profesional, productos en pantalla ' +
+      'Live stream shopping y ventas en vivo en Chile, integradas a tu e-commerce. Conducción profesional, productos en pantalla ' +
       'y métricas reales de conversión. Retail, farmacias y supermercados ya están acá.',
     longDescription: [
       'El live shopping es la categoría de comercio digital de mayor crecimiento en LatAm: combina streaming en vivo con compra directa desde el video. Durante la transmisión, los espectadores ven al presentador mostrando productos, hacen preguntas en el chat y compran sin salir del stream. La tasa de conversión es típicamente 5 a 10 veces superior al e-commerce tradicional.',
@@ -115,7 +115,7 @@ export const servicios = [
       { num: '03', title: 'Producción en vivo', desc: 'Dirigimos el show con multicámara, presentadores profesionales, gráficas con precio/SKU/stock y stream simultáneo a las plataformas que elijas. Moderación de chat en tiempo real.' },
       { num: '04', title: 'Reporte y reutilización', desc: 'Reporte de conversión post-evento (audiencia, clicks a producto, ventas atribuibles). Cortes editados para Reels, TikToks y Shorts. Versión completa para tu sitio o canal.' },
     ],
-    forWhom: 'Live shopping aplica para retail (moda, electrónica, hogar), farmacias, supermercados, marcas de belleza y cualquier vertical con catálogo de e-commerce y márgenes que toleren un evento producido. Funciona especialmente bien para lanzamientos de temporada, liquidaciones, campañas flash y activaciones cruzadas con marcas aliadas.',
+    forWhom: 'Live shopping en Chile aplica para retail (moda, electrónica, hogar), farmacias, supermercados, marcas de belleza y cualquier vertical con catálogo de e-commerce y márgenes que toleren un evento producido. Funciona especialmente bien para lanzamientos de temporada, liquidaciones, campañas flash y activaciones cruzadas con marcas aliadas.',
     bullets: [
       'Dirección y producción completa del show',
       'Presentadores y conductores profesionales',
@@ -189,10 +189,10 @@ export const servicios = [
     heroEyebrow: 'MULTICÁMARA, PANTALLAS Y STREAMING',
     tagline: 'Registro profesional <em class="hl">sin invadir el escenario.</em>',
     description:
-      'Multicámaras robóticas PTZ para congresos, seminarios y shows en vivo. ' +
-      'Operación remota desde consola, sin camarógrafos visibles en el espacio.',
+      'Sistema multicámara PTZ para eventos empresariales en Chile. ' +
+      'Congresos, seminarios y shows en vivo. Operación remota desde consola, sin camarógrafos visibles en el espacio.',
     longDescription: [
-      'El circuito cerrado con cámaras robóticas PTZ es la solución profesional para eventos donde la presencia física de camarógrafos arruinaría la experiencia. Para un congreso médico, una junta presencial o un seminario con expositores invitados, las cámaras se ubican en puntos fijos del recinto y se operan desde una consola remota, sin moverse durante la presentación.',
+      'El sistema de múltiples cámaras robóticas PTZ es la solución profesional para eventos empresariales en Chile donde la presencia física de camarógrafos arruinaría la experiencia. Para un congreso médico, una junta presencial o un seminario con expositores invitados, las cámaras se ubican en puntos fijos del recinto y se operan desde una consola remota, sin moverse durante la presentación.',
       'En DAR2 manejamos hasta 6 cámaras PTZ simultáneas desde una sola consola con un operador especializado. El switcher controla múltiples cámaras, hace seguimiento del expositor, ajusta encuadre y zoom según el momento del evento, y genera la señal final que se proyecta en pantallas del recinto (IMAG) o se exporta a streaming.',
       'El servicio incluye montaje discreto y rápido (1-2 horas previas al evento), grabación en alta definición de todas las señales y entrega de un máster editado al día siguiente con las mejores tomas. Si necesitas streaming simultáneo, exportamos la señal del circuito cerrado a la plataforma que elijas.',
     ],
@@ -279,7 +279,7 @@ export const servicios = [
       'Generamos escenografías virtuales hiperrealistas con green screen. Presentaciones corporativas, keynotes ' +
       'y contenido de marca con calidad de TV, sin construir decorados.',
     longDescription: [
-      'El estudio virtual usa green screen (chroma key) e iluminación profesional para integrar al presentador en una escenografía generada digitalmente. Te permite tener cualquier ambiente que imagines (un newsroom, un espacio futurista, una réplica de tus oficinas, un set inspirado en una marca global) sin construir decorados ni alquilar locaciones.',
+      'El estudio croma virtual usa green screen (chroma key) e iluminación profesional para integrar al presentador en una escenografía generada digitalmente. Te permite tener cualquier ambiente que imagines (un newsroom, un espacio futurista, una réplica de tus oficinas, un set inspirado en una marca global) sin construir decorados ni alquilar locaciones.',
       'En DAR2 producimos en estudio propio con sistema de iluminación calibrado para chroma, fondo verde de máxima opacidad, cámaras profesionales y dirección creativa. El resultado es indistinguible de un set físico para el espectador final, incluso en pantallas grandes o transmisiones broadcast.',
       'Integramos tu identidad visual completa en la escenografía virtual: colores corporativos, logos, pantallas con contenido animado, elementos 3D y branding ambient. Una sola sesión te da contenido para múltiples plataformas: YouTube, LinkedIn, intranet, capacitaciones internas, newsletters.',
     ],
@@ -291,7 +291,7 @@ export const servicios = [
     ],
     forWhom: 'Estudio virtual aplica para presentaciones ejecutivas y keynotes, capacitaciones y e-learning corporativo, anuncios de marca con formato broadcast, programas internos de comunicación recurrente, y cualquier contenido donde quieras la calidad de un set físico sin pagar la producción de un decorado.',
     bullets: [
-      'Diseño de ambiente virtual a medida',
+      'Estudio con croma: diseño de ambiente virtual a medida',
       'Integración en tiempo real con presentador',
       'Calidad broadcast completa',
       'Compatible con streaming o grabación',
@@ -363,7 +363,7 @@ export const servicios = [
     heroEyebrow: 'VIDEOS CORPORATIVOS',
     tagline: 'Tu empresa contada <em class="hl">con calidad broadcast.</em>',
     description:
-      'Videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
+      'Video corporativo en Santiago: videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
       'y postproducción profesional. 15 años haciéndolo para empresas del IPSA.',
     longDescription: [
       'Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.',
