@@ -363,7 +363,7 @@ export const servicios = [
     heroEyebrow: 'VIDEOS CORPORATIVOS',
     tagline: 'Tu empresa contada <em class="hl">con calidad broadcast.</em>',
     description:
-      'Video corporativo en Santiago: videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
+      'Video corporativo en Santiago para empresas: videos institucionales, de valores, cultura, procesos y productos. Dirección creativa, cámara cinema ' +
       'y postproducción profesional. 15 años haciéndolo para empresas del IPSA.',
     longDescription: [
       'Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.',
@@ -412,8 +412,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
-    seoTitle: 'Video corporativo e institucional en Santiago',
-    seoDescription: 'Videos corporativos e institucionales en Santiago: cultura, valores, procesos y productos. Dirección creativa con cámara cinema Sony FX6 y postproducción profesional completa.',
+    seoTitle: 'Video corporativo e institucional para empresas en Santiago',
+    seoDescription: 'Videos corporativos e institucionales en Santiago para empresas. Cultura, valores, procesos, productos y video eventos. Dirección creativa con cámara cinema Sony FX6 y postproducción profesional completa.',
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -450,7 +450,7 @@ export const servicios = [
     heroEyebrow: 'ESTRATEGIAS DIGITALES',
     tagline: 'Plan de contenido <em class="hl">con producción de respaldo.</em>',
     description:
-      'Diseñamos planes de comunicación digital para marcas, y los producimos. ' +
+      'Agencia de producción audiovisual con estrategia: diseñamos planes de comunicación digital para marcas, y los producimos. ' +
       'Alineamos el contenido audiovisual a tus pilares, valores y objetivos de negocio.',
     longDescription: [
       'Una estrategia digital no sirve si nadie la produce. Las consultoras que solo entregan PowerPoints sin producción audiovisual terminan en una carpeta sin usar. En DAR2 hacemos lo contrario: diseñamos la estrategia Y la ejecutamos, con el mismo equipo y la misma factura.',
@@ -499,8 +499,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Estrategia y producción de contenido audiovisual',
-    seoDescription: 'Planes de comunicación para redes sociales con producción audiovisual de respaldo. Contenido alineado a los pilares de tu marca.',
+    seoTitle: 'Agencia de producción audiovisual y estrategia de contenido',
+    seoDescription: 'Agencia de producción audiovisual y estrategia de contenido digital. Planes de comunicación para redes sociales con producción audiovisual de respaldo. Contenido alineado a los pilares de tu marca.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
       {
