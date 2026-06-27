@@ -15,7 +15,10 @@ RUN npm ci
 # Build del sitio
 COPY . .
 RUN npm run build
-RUN npm run ping:sitemap
+# ping:sitemap movido a post-deploy. Si se ejecuta en build,
+# puede fallar por falta de conectividad o rate-limit de IndexNow,
+# bloqueando el deploy completo. Ejecutar como hook en Coolify o cron.
+# RUN npm run ping:sitemap
 
 # ============================================
 # Stage 2: nginx sirviendo dist/
