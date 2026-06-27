@@ -188,13 +188,13 @@ const reviewSchemas = [
             >live shopping</span><br />y mucho más.
           </span>
         </h1>
-        <p class="text-base md:text-lg text-[#666] leading-relaxed mb-10">
-          Empresa de streaming y producción audiovisual con 15 años de experiencia. 8 servicios bajo un solo techo, una sola factura: streaming de eventos, live shopping, multicámara para eventos, estudio virtual, videos corporativos, estrategias digitales, redes sociales y filtros AR.
+        <p class="text-base md:text-lg text-[#666] leading-relaxed mb-6">
+          Empresa de streaming y producción audiovisual con 15 años de experiencia y equipo propio en Providencia. 8 servicios, una sola factura.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
             href="/contacto/"
-          class="inline-flex items-center bg-primary text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+          class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
           >
             Cotizar ahora
           </a>
@@ -243,11 +243,13 @@ const reviewSchemas = [
           techo y 15 años produciendo para empresas chilenas del IPSA. Una sola 
           factura, un solo director de proyecto, cero intermediarios.
         </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {['Streaming','Live Shopping','Multicámara IMAG','Estudio Virtual','Videos Corporativos','Estrategias Digitales','Redes Sociales','Filtros AR'].map(svc => (
+            <span class="inline-block text-xs font-semibold text-[#666] bg-[#f5f5f5] border border-[#e5e5e5] rounded-full px-3 py-1.5">{svc}</span>
+          ))}
+        </div>
         <p class="text-base text-[#666] leading-relaxed mb-8">
-          Streaming corporativo, live shopping, videos institucionales, estudio virtual 
-          con chroma, multicámara robótica para eventos, estrategias digitales, 
-          contenido para redes sociales y filtros AR. Todo lo que una empresa 
-          necesita para comunicar, producido por una misma 
+          Todo lo que una empresa necesita para comunicar, producido por una misma
           <strong>productora audiovisual en Santiago</strong>.
         </p>
         <a href="/servicios/" class="outline-btn">
@@ -453,55 +455,64 @@ const reviewSchemas = [
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <blockquote class="testimonial">
-        <div class="flex items-center gap-1 mb-3">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl border border-[#e5e5e5] shadow-sm p-6 flex flex-col">
+        <div class="flex items-center gap-1 mb-4">
           {[1,2,3,4,5].map(i => (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           ))}
         </div>
-        <p class="testimonial-text">
+        <p class="text-[#555] text-sm leading-relaxed mb-5 flex-1">
           "Excelente servicio, muy profesionales, cumplieron con todo lo prometido y más. Muy recomendables para eventos corporativos y streaming en vivo."
         </p>
-        <footer class="testimonial-meta">
-          <p class="testimonial-role">Claudio Martínez</p>
-          <p class="testimonial-org">Google Review ★★★★★</p>
-        </footer>
-      </blockquote>
-      <blockquote class="testimonial">
-        <div class="flex items-center gap-1 mb-3">
+        <div class="flex items-center gap-3 pt-4 border-t border-[#f0f0f0]">
+          <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">CM</div>
+          <div>
+            <p class="text-sm font-semibold text-[#1a1a1a]">Claudio Martínez</p>
+            <p class="text-xs text-[#999]">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl border border-[#e5e5e5] shadow-sm p-6 flex flex-col">
+        <div class="flex items-center gap-1 mb-4">
           {[1,2,3,4,5].map(i => (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           ))}
         </div>
-        <p class="testimonial-text">
+        <p class="text-[#555] text-sm leading-relaxed mb-5 flex-1">
           "Muy contento con el trabajo realizado. Producción impecable, equipo muy profesional y resultados de alta calidad. Sin duda volveremos a trabajar con ellos."
         </p>
-        <footer class="testimonial-meta">
-          <p class="testimonial-role">Andrés Sepúlveda</p>
-          <p class="testimonial-org">Google Review ★★★★★</p>
-        </footer>
-      </blockquote>
-      <blockquote class="testimonial">
-        <div class="flex items-center gap-1 mb-3">
+        <div class="flex items-center gap-3 pt-4 border-t border-[#f0f0f0]">
+          <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">AS</div>
+          <div>
+            <p class="text-sm font-semibold text-[#1a1a1a]">Andrés Sepúlveda</p>
+            <p class="text-xs text-[#999]">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl border border-[#e5e5e5] shadow-sm p-6 flex flex-col">
+        <div class="flex items-center gap-1 mb-4">
           {[1,2,3,4,5].map(i => (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           ))}
         </div>
-        <p class="testimonial-text">
+        <p class="text-[#555] text-sm leading-relaxed mb-5 flex-1">
           "DAR2 produjo nuestra junta anual durante varios años seguidos. Cero interrupciones, cero excusas. Cuando una marca te pide eso, los recomendamos antes que cualquier otro."
         </p>
-        <footer class="testimonial-meta">
-          <p class="testimonial-role">Gerente de Comunicaciones</p>
-          <p class="testimonial-org">Retail multinacional, Chile</p>
-        </footer>
-      </blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-[#f0f0f0]">
+          <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">GC</div>
+          <div>
+            <p class="text-sm font-semibold text-[#1a1a1a]">Gerente de Comunicaciones</p>
+            <p class="text-xs text-[#999]">Retail multinacional, Chile</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   </Reveal>
@@ -517,20 +528,24 @@ const reviewSchemas = [
       Fundada en 2010 por Carlos Rios Guevara. 15 años produciendo audiovisual para empresas chilenas con equipo propio y postproducción interna. Las cifras hablan por nosotros.
     </p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-      <div class="border-l-2 border-accent pl-6">
-        <p class="text-5xl font-black tracking-tight">15+</p>
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">15+</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
       </div>
-      <div class="border-l-2 border-border pl-6">
-        <p class="text-5xl font-black tracking-tight">40+</p>
-        <p class="text-[#666] text-sm mt-2 leading-snug">Transmisiones<br />al año</p>
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polygon points="23 7 16 12 7 12 7 7 16 7"/><rect x="1" y="1" width="22" height="22" rx="2" ry="2"/><line x1="2" y1="15" x2="22" y2="15"/></svg>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">40+</p>
+        <p class="text-[#666] text-sm mt-2 leading-snug">Producciones<br />al año</p>
       </div>
-      <div class="border-l-2 border-border pl-6">
-        <p class="text-5xl font-black tracking-tight">30+</p>
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">30+</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
       </div>
-      <div class="border-l-2 border-border pl-6">
-        <p class="text-5xl font-black tracking-tight">48h</p>
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">48h</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Respuesta a<br />cotización</p>
       </div>
     </div>
@@ -544,26 +559,26 @@ const reviewSchemas = [
     <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
       Cómo trabajamos.
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <div class="process-step">
-        <p class="process-num">01</p>
-        <h3 class="process-title">Briefing y propuesta</h3>
-        <p class="process-desc">
-          Una reunión inicial para entender qué necesitas: tipo de evento, audiencia, formato, presupuesto. Te enviamos una propuesta detallada y la cotización en menos de 48 horas hábiles, sin letra chica.
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+        <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">1</div>
+        <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Briefing y propuesta</h3>
+        <p class="text-[#666] text-sm leading-relaxed">
+          Una reunión para entender qué necesitas: tipo de evento, audiencia, formato. Te enviamos la cotización en 48 horas hábiles, sin letra chica.
         </p>
       </div>
-      <div class="process-step">
-        <p class="process-num">02</p>
-        <h3 class="process-title">Producción</h3>
-        <p class="process-desc">
-          Coordinamos todo el rodaje o transmisión: equipo técnico, dirección, cámaras, sonido, iluminación, gráfica en tiempo real y enlace redundante. Un solo equipo, un solo director responsable. Tú revisas avances en cada hito.
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+        <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">2</div>
+        <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Producción</h3>
+        <p class="text-[#666] text-sm leading-relaxed">
+          Coordinamos todo: equipo técnico, dirección, cámaras, sonido, iluminación y enlace redundante. Un solo director responsable. Revisas avances en cada hito.
         </p>
       </div>
-      <div class="process-step">
-        <p class="process-num">03</p>
-        <h3 class="process-title">Entrega y postproducción</h3>
-        <p class="process-desc">
-          Edición, corrección de color, motion graphics y audio mastering. Entregamos en todos los formatos que necesites: redes sociales, web, presentaciones internas, archivo broadcast. Una sola factura.
+      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+        <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">3</div>
+        <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Entrega y postproducción</h3>
+        <p class="text-[#666] text-sm leading-relaxed">
+          Edición, color grading, motion graphics y audio. Entregamos en todos los formatos: redes sociales, web, presentaciones, broadcast. Una sola factura.
         </p>
       </div>
     </div>
@@ -692,29 +707,6 @@ const reviewSchemas = [
   </script>
   </Reveal>
 
-  <!-- ── 6. CTA FINAL ──────────────────────────────────── -->
-  <section class="bg-primary mt-8">
-    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-[#aaa] mb-4">
-          ¿Listo para transmitir?
-        </p>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white leading-tight mb-3">
-          Cotización a medida en 48h.
-        </h2>
-        <p class="text-[#ccc] text-base md:text-lg">Sin letra chica. Sin intermediarios.</p>
-      </div>
-      <div class="shrink-0 flex flex-col items-start md:items-end gap-3">
-        <a href="/contacto/" class="cta-outline-btn">
-          Contáctanos →
-        </a>
-        <a href="mailto:dar2@dar2.cl" class="text-[#ccc] text-[13px] hover:text-white transition-colors">
-          o escríbenos a dar2@dar2.cl
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- INSTAGRAM FEED -->
   <section class="ig-section" aria-labelledby="ig-heading">
     <div class="ig-container">
@@ -762,6 +754,29 @@ const reviewSchemas = [
     </div>
   </section>
 
+  <!-- ── 6. CTA FINAL ──────────────────────────────────── -->
+  <section class="bg-primary mt-8">
+    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#aaa] mb-4">
+          ¿Listo para transmitir?
+        </p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white leading-tight mb-3">
+          Cotización a medida en 48h.
+        </h2>
+        <p class="text-[#ccc] text-base md:text-lg">Sin letra chica. Sin intermediarios.</p>
+      </div>
+      <div class="shrink-0 flex flex-col items-start md:items-end gap-3">
+        <a href="/contacto/" class="cta-outline-btn">
+          Contáctanos →
+        </a>
+        <a href="mailto:dar2@dar2.cl" class="text-[#ccc] text-[13px] hover:text-white transition-colors">
+          o escríbenos a dar2@dar2.cl
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Behold.so widget loader (auto-actualiza el feed de Instagram) -->
   <script type="module" src="https://w.behold.so/widget.js" defer></script>
 
@@ -789,7 +804,7 @@ const reviewSchemas = [
         el.textContent = words[index];
         el.style.opacity = '1';
       }, 200);
-    }, 1800);
+    }, 2500);
   }
 
   document.addEventListener('astro:page-load', initRotatingWord);
@@ -1059,18 +1074,20 @@ const reviewSchemas = [
 
   .home-svc-card {
     position: relative;
-    background: #fafafa;
-    border: 1px solid transparent;
+    background: #fff;
+    border: 1px solid #e5e5e5;
     border-radius: 16px;
-    padding: 16px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .home-svc-card:hover { transform: scale(1.01); }
-  .home-svc-dark { border: 1.5px solid #FF4500; }
+  .home-svc-card:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .home-svc-dark { border: 1.5px solid #FF4500; box-shadow: 0 1px 4px rgba(255,69,0,0.1); }
+  .home-svc-dark:hover { box-shadow: 0 4px 14px rgba(255,69,0,0.15); }
 
   .home-svc-img { width: 100%; }
   .home-svc-img-inner {
@@ -1095,8 +1112,8 @@ const reviewSchemas = [
     border-radius: 20px;
   }
   .home-svc-num   { font-size: 11px; font-weight: 700; color: #666; letter-spacing: 2px; margin: 0; }
-  .home-svc-title { font-size: 18px; font-weight: 700; color: #111; margin: 4px 0; line-height: 1.2; }
-  .home-svc-desc  { font-size: 13px; color: #555; line-height: 1.5; margin: 0; }
+  .home-svc-title { font-size: 20px; font-weight: 700; color: #111; margin: 4px 0; line-height: 1.2; }
+  .home-svc-desc  { font-size: 14px; color: #555; line-height: 1.5; margin: 0; }
 
   .home-svc-dark .home-svc-num { color: #C53700; }
 
