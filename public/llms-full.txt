@@ -1,0 +1,548 @@
+# DAR2 Servicios Audiovisuales — Full Content
+
+> Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
+> **Last updated:** 2026-06-26
+> **Canonical:** https://dar2.cl/llms-full.txt
+> **Summary version:** https://dar2.cl/llms.txt
+
+---
+
+## About DAR2
+
+DAR2 Servicios Audiovisuales is a B2B audiovisual production company based in Santiago, Chile. Founded in 2010 by Carlos Rios Guevara (UNIACC graduate). 15+ years of experience, 8 in-house professionals, studio in Providencia.
+
+**Address:** Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile
+**Phone/WhatsApp:** +56 9 9843 3346
+**Email:** dar2@dar2.cl
+**Website:** https://dar2.cl/
+**Business hours:** Monday–Friday, 09:00–19:00 CLT
+**Quote response:** Under 48 business hours
+
+**Key differentiators vs competitors:**
+- 8 services under one roof (not outsourced to freelancers)
+- Broadcast-quality equipment (Sony FX6, PTZ cameras, professional audio)
+- 15-year track record with IPSA companies
+- Production + post-production in the same building
+- Single invoice for multi-service projects
+- 48-hour custom quoting
+
+---
+
+## Clients
+
+Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Vida Cámara, VOENS, Castaño, Parque Arauco, Sacyr, Salfacorp.
+
+---
+
+## Team
+
+- **Carlos Rios Guevara** — Director & Founder. UNIACC. 15+ years in corporate production.
+- **Cristian Pinto** — Post-production lead. Editor & colorist.
+- **Jorge Díaz** — Director of photography. Sony FX6 specialist.
+- **Mario Toro** — Sound engineer. Broadcast audio & live mixing.
+- **Víctor Arriagada** — Technical director. Streaming & live switching.
+- **Pablo Haz** — Motion graphics & virtual sets.
+- **Mariluz López** — Production coordinator.
+- **Abigail Ruiz** — Digital content & strategy.
+
+---
+
+## Service: Streaming Corporativo
+
+**URL:** https://dar2.cl/servicios/streaming/
+**Type:** Transmisión audiovisual en vivo
+
+### Description
+
+El servicio de transmisión de video y streaming corporativo combina producción broadcast con infraestructura de transmisión confiable. No es Zoom con varios participantes: es producción multicámara con switcher dedicado, mezcla de audio en tiempo real, gráficas corporativas animadas y enlaces redundantes que evitan caídas durante el evento más importante de tu compañía.
+
+En DAR2 producimos streamings con el mismo estándar técnico que ves en transmisiones broadcast de televisión. Cámaras profesionales, iluminación de set, dirección técnica en vivo y postproducción inmediata. La diferencia con un equipo improvisado es directa: cero interrupciones, audio limpio, gráficas precisas y un máster de calidad que sirve para cápsulas posteriores y archivo.
+
+Trabajamos con plataformas privadas (Zoom Webinar, Microsoft Teams Live Events) o públicas (YouTube Live, Vimeo, LinkedIn Live, Facebook), y entregamos el archivo grabado editado con las gráficas del evento. Nuestros enlaces punto a punto redundantes garantizan que aunque falle una conexión, la transmisión continúa sin que el público lo note.
+
+### Target audience
+
+El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota.
+
+### Process
+
+1. Briefing técnico
+2. Preproducción y ensayo
+3. Transmisión en vivo
+4. Entrega post-evento
+
+### Features
+
+- Producción y dirección técnica completa
+- Sistema multicámara (2 a 6 cámaras)
+- Switcher de video y mezcla de audio en vivo
+- Gráfica corporativa animada en tiempo real
+- Enlace redundante punto a punto
+- Stream a plataformas privadas o públicas (Zoom, Teams, YouTube, Vimeo)
+- Grabación master en alta calidad
+- Edición y entrega post-evento
+
+### FAQs
+
+**Q: ¿Cuánto tiempo antes hay que contratar un streaming?**
+A: Idealmente una semana antes del evento para preparar el setup técnico y hacer un ensayo general. Para urgencias, podemos producir en 48 horas con disponibilidad confirmada.
+
+**Q: ¿Qué plataformas soportan?**
+A: Zoom, Microsoft Teams, YouTube Live, Vimeo, LinkedIn Live, o plataformas privadas del cliente vía RTMP.
+
+**Q: ¿Incluye grabación final?**
+A: Sí, entregamos la grabación master en alta calidad, editada con las gráficas del evento.
+
+**Q: ¿Cuántas cámaras usan?**
+A: Entre 2 y 6 cámaras según el tamaño y tipo de evento. Una junta anual típica usa 3-4.
+
+**Q: ¿Trabajan en regiones fuera de Santiago?**
+A: Sí, nos desplazamos a todo Chile. Para eventos fuera de RM coordinamos logística de equipo y equipo técnico.
+
+**Q: ¿Qué incluye exactamente el servicio de streaming corporativo en Santiago?**
+A: Incluye producción completa: multicámara con switcher, mezcla de audio profesional, gráficas corporativas animadas en tiempo real, enlace redundante punto a punto (fibra + LTE/5G), transmisión a la plataforma que elijas, dirección técnica durante todo el evento y grabación master editada post-evento.
+
+**Q: ¿Cuál es la diferencia entre un streaming profesional y una videoconferencia?**
+A: Un streaming profesional usa multicámara con switcher dedicado, mezcla de audio broadcast, iluminación de set, gráficas en tiempo real y enlace redundante. Una videoconferencia (Zoom, Teams) depende del ancho de banda del expositor y no tiene dirección técnica. La diferencia se nota en calidad de imagen, sonido y confiabilidad.
+
+**Q: ¿Qué tipo de eventos corporativos transmiten en Santiago?**
+A: Juntas anuales de accionistas, lanzamientos de producto, seminarios y conferencias, capacitaciones masivas, eventos híbridos (presencial + remoto), congresos médicos y académicos, y activaciones de marca con live shopping.
+
+---
+
+## Service: Live Shopping
+
+**URL:** https://dar2.cl/servicios/live-shopping/
+
+### Description
+
+El live shopping profesional es una producción de video en vivo con conducción, multicámara y switcher, conectada a Shopify, VTEX, Mercado Libre o tu CMS para que la audiencia compre mientras mira sin salir del stream. No es poner un celular en un trípode: es una transmisión con calidad broadcast diseñada para vender.
+
+En DAR2 producimos live shopping end-to-end: diseño de la pauta de venta con preview de tus productos, dirección de cámara, switcher con overlays gráficos de precio y CTA, micrófono profesional, backline de apoyo técnico y coordinación con tu equipo de e-commerce para enlazar el stream a las fichas de producto correctas. Si tu marca ya tiene host o influencer lo dirigimos; si no, tenemos presentadores profesionales con experiencia en retail.
+
+Lo que hace distinto nuestro servicio es la integración real con tu plataforma de venta y el reporte post-show. No solo producimos: te decimos cuánta gente vio cada segmento, en qué minuto hubo más conversión y qué producto generó más clics.
+
+### Target audience
+
+Marcas de retail, supermercados, farmacias, moda, electrónica y consumo masivo que venden online y quieren agregar el canal de venta en vivo como nueva línea de conversión. Empresas que ya hacen e-commerce, pero no tienen productora ni equipo audiovisual interno.
+
+### Process
+
+1. Briefing de marca y selección de productos
+2. Pauta de venta, escaleta y guion de conducción
+3. Setup y ensayo técnico
+4. Transmisión en vivo con dirección de cámaras y switcher
+5. Reporte de métricas de audiencia y conversión post-show
+
+### Features
+
+- Producción multicámara (2 a 4 cámaras)
+- Conducción profesional (presentador/a incluido o dirección de tu host)
+- Overlays gráficos en vivo (precios, CTAs, códigos QR, stock)
+- Integración en vivo con plataformas de e-commerce
+- Chat y comandos en vivo moderados
+- Sonido profesional con micrófono solapero o shotgun
+- Iluminación de set en tu tienda, bodega o estudio
+- Reporte de conversión post-show
+
+### FAQs
+
+**Q: ¿Se integra con cualquier e-commerce?**
+A: Sí. Trabajamos con Shopify, VTEX, Magento, WooCommerce y plataformas custom. Nos adaptamos a la arquitectura del cliente.
+
+**Q: ¿En qué plataformas se transmite?**
+A: YouTube Live, Instagram, TikTok Live, Facebook, o una plataforma embebida en el propio e-commerce del cliente.
+
+**Q: ¿El presentador lo ponen ustedes?**
+A: Ofrecemos presentadores profesionales de nuestra red, o podemos dirigir a un embajador/influencer que ya tenga la marca.
+
+**Q: ¿Qué duración tiene una transmisión típica?**
+A: Entre 60 y 120 minutos. La sweet spot para retail suele ser 90 minutos con 3-5 segmentos de producto.
+
+**Q: ¿Entregan reportes post-show?**
+A: Sí, reporte completo con audiencia promedio, picos, interacciones, cuántos clicks a producto y ventas atribuibles.
+
+**Q: ¿Quién produce el live shopping, nosotros o ustedes?**
+A: Nosotros producimos todo end-to-end: dirección, multicámara, conducción, integración con tu e-commerce y reporte de conversión. Como productora de live shopping, tu equipo solo aporta los productos y la marca.
+
+---
+
+## Service: Multicámara para Eventos (IMAG)
+
+**URL:** https://dar2.cl/servicios/circuito-cerrado/
+
+### Description
+
+El circuito cerrado para eventos es un sistema multicámara con proyección en pantallas del propio recinto (IMAG —Image Magnification). Capturamos al expositor con cámaras robóticas PTZ y proyectamos en pantallas gigantes para que todo el auditorio vea cada detalle de la presentación, incluso desde el fondo de la sala. No es seguridad ni vigilancia: es producción de video en vivo para eventos presenciales.
+
+En DAR2 operamos el circuito cerrado con cámaras Sony PTZ controladas desde una sola consola, proyección en pantallas LED o telones, switching en vivo para alimentar las pantallas y, cuando el cliente lo pide, exportación simultánea a streaming. La ventaja de las cámaras robóticas es que un solo operador cubre hasta 6 ángulos sin necesidad de un equipo humano desplazándose por el escenario.
+
+### Target audience
+
+Productores de eventos, centros de convenciones, hoteles, empresas que organizan congresos, seminarios académicos, galas corporativas y ceremonias de premiación. Si tu evento tiene más de 100 asistentes y el expositor no se ve bien desde las últimas filas, necesitas IMAG.
+
+### Process
+
+1. Visita técnica a locación (presencial o virtual)
+2. Diseño de planta de cámaras y pantallas
+3. Montaje, calibración y ensayo
+4. Operación en vivo durante el evento
+5. Edición del máster y entrega
+
+### Features
+
+- Cámaras PTZ robóticas Sony (hasta 6 simultáneas)
+- Pantallas LED o proyección de alta luminosidad
+- Switcher multicámara en vivo
+- Control desde consola única
+- Grabación multicámara para postproducción
+- Streaming simultáneo opcional
+- Audio embebido de la mesa de sonido del evento
+
+### FAQs
+
+**Q: ¿"Circuito cerrado" es lo mismo que cámaras de seguridad?**
+A: No. En eventos, el circuito cerrado de televisión (CCTV) es un sistema multicámara con proyección en pantallas del propio recinto (IMAG), no vigilancia. Capturamos al expositor con cámaras PTZ y lo mostramos en pantallas gigantes para que todo el auditorio vea en detalle.
+
+**Q: ¿Qué diferencia hay con un streaming normal?**
+A: La multicámara con IMAG es para registro interno del evento o proyección en pantallas del mismo lugar. El streaming es para transmitir a una audiencia externa. Ambos se combinan y solemos hacerlo en el mismo evento.
+
+**Q: ¿Cuántas cámaras PTZ manejan simultáneamente?**
+A: Hasta 6 cámaras desde una sola consola. Un operador cubre el evento completo.
+
+**Q: ¿Sirve para auditorios grandes?**
+A: Sí, especialmente por el IMAG (proyección de la señal en pantallas laterales). El público de fondo ve al expositor en detalle.
+
+**Q: ¿Entregan el material editado?**
+A: Sí, al día siguiente del evento entregamos un máster con las mejores tomas cortadas.
+
+**Q: ¿Se pueden transmitir en vivo también?**
+A: Sí, el circuito cerrado puede exportarse a streaming simultáneamente.
+
+---
+
+## Service: Estudio Virtual
+
+**URL:** https://dar2.cl/servicios/estudio-virtual/
+
+### Description
+
+El estudio virtual con croma (chroma key) reemplaza la escenografía física por un set digital hiperrealista generado en tiempo real. En DAR2 combinamos un espacio físico profesional con iluminación calibrada, cámara broadcast y un motor de gráfica 4K que te permite presentar productos, conducir una capacitación o hacer un video institucional con fondos virtuales de calidad broadcast. Sin arrendar locaciones, sin construir sets, sin trasladar equipos ni decorados.
+
+Cada proyecto virtual se diseña a medida: definimos la paleta de colores, el estilo visual y la profundidad de la escena para que sea consistente con el manual de marca del cliente. Las escenografías se crean una vez y quedan como activo reutilizable para futuras grabaciones.
+
+### Target audience
+
+Empresas que necesitan producir videos con alta calidad visual sin el costo de construir sets físicos. Ideal para presentaciones corporativas, capacitaciones, lanzamientos de producto, entrevistas ejecutivas y comunicación interna.
+
+### Process
+
+1. Briefing creativo y definición de estilo visual
+2. Diseño y modelado 3D de escenografías
+3. Setup de iluminación y calibración del croma
+4. Grabación con dirección de talento en vivo
+5. Postproducción y entrega
+
+### Features
+
+- Estudio con green screen profesional
+- Escenografías virtuales 3D hiperrealistas
+- Iluminación broadcast calibrada
+- Cámara cinema Sony FX6
+- Dirección de presentador/ejecutivo en vivo
+- Teleprompter con guion cargado
+- Postproducción con motion graphics
+- Activos virtuales reutilizables
+
+### FAQs
+
+**Q: ¿Puedo llevar mi propio diseño de escenografía virtual?**
+A: Sí. Si tu empresa tiene un diseño o concepto visual, lo implementamos. También podemos diseñarlo desde cero con tu equipo de marca.
+
+**Q: ¿Cuánto dura una grabación típica?**
+A: Las sesiones de 1-2 personas duran entre 2 y 4 horas incluyendo setup, maquillaje y varias tomas.
+
+**Q: ¿Se puede usar para streaming en vivo?**
+A: Sí, el estudio virtual funciona tanto para grabado como para transmisión en vivo.
+
+**Q: ¿Se nota que es un fondo virtual?**
+A: Con nuestro setup de iluminación y chromakey, la integración es invisible incluso en pantallas grandes.
+
+**Q: ¿El presentador debe tener experiencia?**
+A: No. Los dirigimos para que se vean naturales. Trabajamos con ejecutivos sin experiencia en cámara todo el tiempo.
+
+**Q: ¿Ofrecen arriendo de estudio con croma (chroma key)?**
+A: Sí. Contamos con estudio propio en Providencia con croma profesional (fondo verde), iluminación calibrada y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.
+
+---
+
+## Service: Videos Corporativos
+
+**URL:** https://dar2.cl/servicios/videos-corporativos/
+
+### Description
+
+Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.
+
+En DAR2 producimos con cámara cinema Sony FX6, iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.
+
+Trabajamos cada proyecto desde el brief hasta la entrega final: desarrollo de concepto, guion, plan de rodaje, dirección de arte, locaciones, casting cuando corresponde, rodaje, postproducción y entregables en todos los formatos (web, redes sociales, broadcast, presentaciones internas, archivos para distribución externa).
+
+### Target audience
+
+Empresas que necesitan contar su cultura organizacional, valores corporativos, procesos productivos, lanzamientos de producto, testimoniales de clientes o colaboradores, recap de eventos importantes, o material institucional para presentaciones a inversores y comunicación con stakeholders.
+
+### Process
+
+1. Brief y desarrollo de concepto
+2. Preproducción (guion, storyboard, locaciones, casting)
+3. Rodaje con cámara cinema
+4. Postproducción (edición, color, sonido, motion graphics)
+
+### Features
+
+- Desarrollo de guion y dirección creativa
+- Rodaje con cámara cinema
+- Dirección de arte y locaciones
+- Maquillaje y styling de presentadores
+- Captura de sonido profesional
+- Postproducción completa (edición, color, sonido)
+- Motion graphics y gráfica corporativa
+- Entrega en múltiples formatos (web, interno, redes)
+
+### FAQs
+
+**Q: ¿Cuánto demora producir un video corporativo?**
+A: Entre 2 y 6 semanas según complejidad. Un video de valores con 1 día de rodaje se entrega en 3 semanas. Uno institucional con varias locaciones, 4-6 semanas.
+
+**Q: ¿Escriben ustedes el guion?**
+A: Sí. Tenemos guionista propio. Trabajamos desde un brief del cliente y proponemos narrativa, estructura y tono.
+
+**Q: ¿Graban en las oficinas del cliente?**
+A: Sí. Grabamos en planta, oficinas, terreno o donde necesite el proyecto. También tenemos estudio propio en Providencia.
+
+**Q: ¿Cuánto dura un video corporativo ideal?**
+A: Entre 60 segundos y 3 minutos para audiencias externas. Para audiencias internas (capacitación, comunicación) pueden ser más largos.
+
+**Q: ¿Incluye música y locución?**
+A: Sí. Licenciamos música original o de banco, y contamos con locutores profesionales para voz en off.
+
+**Q: ¿Qué tipos de video corporativo producen?**
+A: Video institucional, de cultura y valores, de capacitación e inducción, de procesos industriales y mineros, de producto y testimoniales de clientes o colaboradores. Adaptamos el formato y el presupuesto a tu objetivo.
+
+---
+
+## Service: Estrategias Digitales (Agencia de Producción Audiovisual)
+
+**URL:** https://dar2.cl/servicios/estrategias-digitales/
+
+### Description
+
+Una estrategia digital no sirve si nadie la produce. Las consultoras que solo entregan PowerPoints sin producción audiovisual terminan en una carpeta sin usar. En DAR2 hacemos lo contrario: diseñamos la estrategia Y la ejecutamos, con el mismo equipo y la misma factura.
+
+Cada plan empieza por un diagnóstico de tu presencia digital actual, análisis de competencia directa, definición de pilares de contenido alineados a tus valores y objetivos de negocio, y un calendario editorial mensual o trimestral con piezas concretas a producir cada semana.
+
+La diferencia con una agencia de marketing tradicional: nosotros tenemos el equipo de producción audiovisual interno (cámara, dirección, edición, postproducción), así que cuando el plan dice "video institucional para LinkedIn", literalmente al día siguiente entra el equipo a grabar. Sin proveedores intermedios, sin retrabajos, sin coordinación de múltiples freelancers.
+
+### Target audience
+
+Empresas sin equipo interno de marketing, empresas con equipo interno que necesitan respaldo de producción, relanzamientos de marca, campañas institucionales por hitos (aniversario, lanzamiento, reposicionamiento), y comunicación interna digital (RRHH, cultura organizacional).
+
+### Process
+
+1. Diagnóstico digital
+2. Definición de pilares de contenido
+3. Calendario editorial
+4. Producción + medición
+
+### Features
+
+- Diagnóstico digital y análisis de competencia
+- Definición de pilares de contenido
+- Calendario editorial mensual o trimestral
+- Producción audiovisual de respaldo
+- Guía de tono y estilo visual
+- Templates y sistema gráfico reutilizable
+- Medición de KPIs y reportes
+- Ajustes mensuales según performance
+
+### FAQs
+
+**Q: ¿Es solo para redes sociales?**
+A: No. Diseñamos estrategias para múltiples canales: LinkedIn, Instagram, TikTok, YouTube, newsletters, microsites y comunicación interna.
+
+**Q: ¿Cuánto contenido producen al mes?**
+A: Depende del paquete. Los paquetes estándar incluyen 4-8 piezas mensuales. Los premium, 12-20 piezas más campañas.
+
+**Q: ¿Trabajan con mi equipo de marketing?**
+A: Sí. Nos integramos con equipos internos o funcionamos como tu equipo externo completo.
+
+**Q: ¿Qué métricas reportan?**
+A: Alcance, engagement, CTR, conversiones, crecimiento de audiencia. Dashboard mensual con recomendaciones.
+
+**Q: ¿Plazo mínimo de contrato?**
+A: Trabajamos por proyecto puntual o por contratos de 3, 6 o 12 meses. Los contratos largos tienen mejor tarifa.
+
+---
+
+## Service: Redes Sociales
+
+**URL:** https://dar2.cl/servicios/redes-sociales/
+
+### Description
+
+El contenido para redes sociales no es video corporativo achicado. Cada plataforma tiene su lenguaje propio: TikTok pide ritmo rápido y subtítulos quemados, Instagram Reels prioriza estética y musicalización, LinkedIn premia profundidad y formato más largo. Producir lo mismo para todas resulta en contenido que no rinde en ninguna.
+
+En DAR2 producimos videos nativos para cada plataforma: reels verticales, videos cuadrados para feed, clips de TikTok con subtítulos animados, y cápsulas para LinkedIn con ritmo medido y edición pulida. Trabajamos con ejecutivos y profesionales sin experiencia en cámara y los dirigimos para que se vean naturales, creíbles y on-brand.
+
+### Target audience
+
+Empresas con presencia activa en redes sociales, marcas que quieren contenido recurrente producido por profesionales, ejecutivos que necesitan construir marca personal en LinkedIn, pymes y startups que buscan consistencia visual y editorial sin contratar un equipo interno.
+
+### Process
+
+1. Briefing y definición de tono
+2. Planificación mensual o trimestral de cápsulas
+3. Grabación en locación o estudio
+4. Edición y postproducción
+5. Entrega lista para publicar
+
+### Features
+
+- Producción de cápsulas y reels
+- Videos verticales 9:16 optimizados
+- Subtítulos quemados y gráficas animadas
+- Contenido para Instagram, TikTok y LinkedIn
+- Dirección de ejecutivos sin experiencia en cámara
+- Locución profesional cuando aplica
+- Paquetes mensuales de contenido
+- Postproducción ágil con turnos semanales
+
+### FAQs
+
+**Q: ¿Mi equipo no sabe hablar a cámara, ustedes los dirigen?**
+A: Sí. Tenemos experiencia dirigiendo ejecutivos que nunca han salido en video. Los ayudamos a verse naturales, seguros y profesionales.
+
+**Q: ¿Puedo pedir solo cápsulas sueltas o deben ser paquetes?**
+A: Trabajamos ambos modelos. Paquetes mensuales tienen mejor tarifa; producciones puntuales tienen más flexibilidad.
+
+**Q: ¿Graban en la oficina del cliente o en estudio?**
+A: Ambos. En la oficina para contenido contextual real; en estudio para contenido más cuidado visualmente.
+
+**Q: ¿Postulan publicación también?**
+A: No publicamos directamente, pero entregamos listo para subir con subtítulos y hashtags sugeridos. Si necesitas community management, lo combinamos con Estrategias Digitales.
+
+**Q: ¿En cuánto tiempo entregan?**
+A: 5 días hábiles desde la grabación. Entregas express en 48h con costo adicional.
+
+---
+
+## Service: Filtros AR
+
+**URL:** https://dar2.cl/servicios/filtros-ar/
+
+### Description
+
+Creamos filtros de realidad aumentada para marcas en TikTok (Effect House) y Snapchat (Lens Studio). Desde branded masks con el logo hasta experiencias interactivas que se comparten orgánicamente. Nota importante: Meta cerró Spark AR (Instagram/Facebook) el 14 de enero de 2025. Los únicos canales viables para filtros AR de marca hoy son TikTok y Snapchat, donde trabajamos activamente.
+
+### Target audience
+
+Marcas que buscan activaciones digitales de alto alcance orgánico, empresas con campañas en TikTok o Snapchat, eventos que quieren un filtro temático como recuerdo interactivo, y agencias que necesitan un partner de ejecución técnica.
+
+### Process
+
+1. Briefing creativo y conceptualización
+2. Diseño y modelado 3D
+3. Desarrollo en Effect House o Lens Studio
+4. Pruebas y refinamiento
+5. Publicación y reporte de métricas
+
+### Features
+
+- Diseño de filtro AR desde cero
+- Branded masks con logo y elementos de marca
+- Efectos de producto (prueba virtual, unboxing)
+- Juegos y quizzes interactivos
+- Publicación en TikTok y/o Snapchat
+- Revisión y aprobación de plataforma gestionada
+- Reporte de métricas de uso y alcance
+
+### FAQs
+
+**Q: ¿Se pueden hacer filtros AR para Instagram en 2026?**
+A: No para terceros. Meta cerró Spark AR —su plataforma para crear filtros— el 14 de enero de 2025, y desde entonces ya no es posible publicar filtros de marca de terceros en Instagram, Facebook ni Messenger. Las plataformas que sí mantienen creación de efectos AR de marca son TikTok (Effect House) y Snapchat (Lens Studio), donde sí trabajamos.
+
+**Q: ¿Cuánto tiempo tarda hacer un filtro AR?**
+A: El proceso completo toma entre 3 y 6 semanas: briefing creativo, diseño y modelado, desarrollo, pruebas internas, revisión del cliente y publicación en Effect House (TikTok) o Lens Studio (Snapchat).
+
+**Q: ¿En qué plataformas se publican los filtros?**
+A: TikTok (vía Effect House) y Snapchat (vía Lens Studio). Cada plataforma tiene su proceso de revisión y aprobación, que gestionamos nosotros. Instagram y Facebook ya no permiten filtros de terceros desde que Meta cerró Spark AR en enero de 2025.
+
+**Q: ¿Pueden los usuarios guardar y compartir el filtro?**
+A: Sí. Una vez publicado, el filtro queda asociado al perfil de tu marca en TikTok o Snapchat, y cualquier usuario puede usarlo, guardarlo y compartirlo en sus videos e historias.
+
+**Q: ¿Qué tipos de filtros hacen?**
+A: Branded masks (cara con elementos de marca), filtros de juego o quiz, efectos de producto (probarse lentes, sombreros), fondos de realidad aumentada y efectos de temporada.
+
+**Q: ¿Cómo se mide el éxito del filtro?**
+A: TikTok y Snapchat entregan métricas de usos, impresiones y veces compartido. Entregamos un reporte mensual con estos datos y recomendaciones para potenciar el alcance.
+
+**Q: ¿Pueden crear un filtro para mi empresa o evento?**
+A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lanzamientos y eventos corporativos: desde branded masks con tu logo hasta efectos interactivos y juegos. Publicamos en TikTok (Effect House) y Snapchat (Lens Studio).
+
+---
+
+## Pricing Reference (CLP)
+
+All prices are referential ranges. Every project receives a custom quote.
+
+- **Filtro AR:** $800,000–$2,000,000
+- **Video corporativo simple:** $2,000,000–$4,000,000
+- **Streaming 2 cámaras:** $2,000,000–$4,000,000
+- **Live shopping (4 shows/month):** $4,000,000–$8,000,000
+- **Streaming corporativo full:** $5,000,000–$12,000,000
+- **Video institucional completo:** $6,000,000–$15,000,000
+
+---
+
+## Case studies
+
+### Cirugía Robótica · Clínica Santa María
+**URL:** https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/
+Production of the most extensive robotic surgery program in Chile. Filming inside operating room with Da Vinci XI and Hugo RAS systems. Challenge: sterile environment, medical protocols, multiple surgery types.
+
+### Valores Corporativos · CASTAÑO
+**URL:** https://dar2.cl/casos/valores-corporativos-castano/
+Institutional values video for 90-year-old Chilean bakery with 2,000+ employees. Art direction, real employee testimonials, multiple locations.
+
+### Bomba Minera · VOGT Pelambres
+**URL:** https://dar2.cl/casos/bomba-minera-vogt-pelambres/
+Industrial process documentation in mining environment.
+
+---
+
+## Blog posts
+
+- [Qué es Live Shopping en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
+- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/)
+- [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/)
+- [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/)
+- [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/)
+- [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/)
+- [Producción de video corporativo paso a paso](https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/)
+- [Filtros AR de marca en 2026](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/)
+- [Contenido para LinkedIn de ejecutivos](https://dar2.cl/blog/contenido-linkedin-ejecutivos/)
+- [Circuito cerrado vs. streaming](https://dar2.cl/blog/circuito-cerrado-vs-streaming/)
+- [Streaming corporativo en Santiago: guía completa](https://dar2.cl/blog/streaming-corporativo-santiago-guia-completa/)
+- [Full blog index](https://dar2.cl/blog/)
+
+---
+
+## Contact
+
+- **Email:** dar2@dar2.cl
+- **WhatsApp:** +56 9 9843 3346
+- **Form:** https://dar2.cl/contacto/
+- **Address:** Av. Holanda 099, Of. 603, Providencia, Santiago, Chile
+- **Hours:** Mon–Fri, 09:00–19:00 CLT
+- **Quote:** Under 48 business hours

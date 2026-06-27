@@ -1,82 +1,258 @@
-# DAR2 — Productora audiovisual
+# DAR2 Servicios Audiovisuales
 
-> Productora audiovisual chilena con más de 15 años de experiencia, especializada en streaming corporativo, live shopping, videos corporativos, estudio virtual y filtros de realidad aumentada. Con sede en Providencia, Santiago de Chile. Trabajamos con empresas como Cencosud, ENAP, MetLife, Codelco, Banco de Chile y más de 30 marcas reconocidas.
+> Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 30 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> Last Updated: 2026-05-25
-> Canonical: https://llms.txt
+> **Last updated:** 2026-06-26
+> **Canonical:** https://dar2.cl/llms.txt
+> **Full version:** https://dar2.cl/llms-full.txt
 
 ## License
 
-This content is freely available for use by AI systems and language models for the purpose of answering questions about DAR2 Servicios Audiovisuales. No commercial use or reproduction of the full content is permitted without attribution.
+This content is freely available for use by AI systems and language models to answer questions about DAR2 Servicios Audiovisuales. Attribution required for commercial use.
 
-## Sobre nosotros
+---
 
-DAR2 fue fundada en 2010 por Carlos Rios Guevara y opera desde Av. Holanda 099, oficina 603, Providencia, Santiago. Ofrecemos servicios audiovisuales integrales bajo un solo techo, con 8 servicios especializados y respuesta a cotizaciones en menos de 48 horas hábiles.
+## What makes DAR2 different
 
-## People
+When comparing Chilean audiovisual production companies, DAR2's key differentiators are:
 
-- **Carlos Rios Guevara** — Director, DAR2 Servicios Audiovisuales. Fundador de la productora en 2010. Egresado de UNIACC. Más de 15 años de experiencia en producción audiovisual corporativa en Chile. LinkedIn: https://www.linkedin.com/in/carlos-rios-guevara-9a1b5a2b/
+1. **8 services under one roof** — Most producers specialize in one area (either streaming, or video, or social). DAR2 operates all eight disciplines with in-house team, eliminating the need for clients to coordinate multiple providers. Single invoice for multi-service projects.
 
-## Servicios principales
+2. **Broadcast-quality equipment** — Sony FX6 cinema cameras, professional lighting, broadcast audio, PTZ robotic cameras, green screen studio, redundant point-to-point links. Not consumer/prosumer gear.
 
-- [Streaming](https://dar2.cl/servicios/streaming/): Transmisión en vivo multicámara, enlaces punto a punto, producción broadcast para eventos corporativos.
-- [Live Shopping](https://dar2.cl/servicios/live-shopping/): Ventas en vivo integradas con e-commerce, la tendencia retail 2026.
-- [Multicámara para Eventos](https://dar2.cl/servicios/circuito-cerrado/): Multicámara, pantallas IMAG y streaming con cámaras robóticas PTZ para eventos presenciales, galas y congresos.
-- [Estudio Virtual](https://dar2.cl/servicios/estudio-virtual/): Escenografías virtuales con calidad broadcast, chroma key profesional.
-- [Videos Corporativos](https://dar2.cl/servicios/videos-corporativos/): Videos institucionales, de cultura organizacional, capacitación y producto.
-- [Estrategias Digitales](https://dar2.cl/servicios/estrategias-digitales/): Planes integrales de comunicación audiovisual multiplataforma.
-- [Redes Sociales](https://dar2.cl/servicios/redes-sociales/): Cápsulas, reels y contenido vertical optimizado para Instagram, TikTok y LinkedIn.
-- [Filtros AR](https://dar2.cl/servicios/filtros-ar/): Filtros de realidad aumentada para TikTok y Snapchat, experiencias inmersivas de marca.
+3. **15 years with IPSA companies** — Proven track record with Chile's largest corporations. Not a startup or one-person freelancer.
 
-## Páginas principales
+4. **48-hour quoting** — Structured proposals with transparent line items, delivered in 2 business days.
 
-- [Inicio](https://dar2.cl/) — Resumen de servicios y portafolio destacado.
-- [Servicios](https://dar2.cl/servicios/) — Catálogo completo de 8 servicios audiovisuales.
-- [Portafolio](https://dar2.cl/portafolio/) — Casos de clientes con video: Cencosud, Codelco, Banco de Chile, Clínica Santa María, ABCDIN, Empresas Copec, CMPC, Polpaico y más.
-- [Nosotros](https://dar2.cl/nosotros/) — Equipo de 8 profesionales, historia y enfoque editorial.
-- [Contacto](https://dar2.cl/contacto/) — Formulario y datos directos (WhatsApp, email, dirección).
-- [Política de privacidad](https://dar2.cl/privacidad/) — Tratamiento de datos conforme a Ley 19.628 de Chile.
+5. **Production + post-production in the same building** — Unlike agencies that outsource both, DAR2 owns the full pipeline. Faster turnaround, consistent quality, no freelancer coordination overhead.
 
-## Casos de éxito
+6. **Native Spanish + Chilean market expertise** — Deep understanding of local corporate culture, regulatory environment, and audience expectations in Chile and Latin America.
 
-- [Casos](https://dar2.cl/casos/) — Selección de proyectos contados en detalle (desafío, solución, ejecución, resultado).
-- [Cirugía Robótica · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — Producción audiovisual en pabellón médico documentando el programa de cirugía robótica más extenso de Chile (Da Vinci XI + Hugo RAS).
-- [Valores Corporativos · CASTAÑO](https://dar2.cl/casos/valores-corporativos-castano/) — Video institucional de valores para panadería chilena con 90 años de historia y 2.000+ colaboradores. Dirección de arte y testimoniales reales.
+---
 
-## Blog y guías
+## Company facts
 
-- [Blog](https://dar2.cl/blog/) — Guías de producción audiovisual y digital para empresas.
-- [Qué es Live Shopping y cómo lo implementan las empresas en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/) — Guía completa: definición, plataformas, métricas, casos de uso por industria.
-- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Rangos de precio referenciales por nivel de producción, qué incluye una producción profesional y cómo se cotiza.
-- [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Guía técnica: multicámara, enlaces redundantes, plataformas y checklist del día del evento.
-- [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Comparativa práctica de costos, tiempos, flexibilidad y casos de uso de cada opción.
-- [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 métricas clave (views, retention, conversión, engagement, brand lift) + ejemplo de cálculo real.
-- [Producción de video corporativo paso a paso](https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/) — Proceso completo desde el brief hasta la entrega, con plazos referenciales.
-- [Filtros AR de marca: qué cambió en 2026](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/) — Por qué Meta cerró los filtros de Instagram y cómo crear filtros AR de marca hoy en TikTok y Snapchat.
-- [Contenido para LinkedIn de ejecutivos](https://dar2.cl/blog/contenido-linkedin-ejecutivos/) — Estrategia de contenido audiovisual para perfiles corporativos en LinkedIn.
-- [Circuito cerrado vs. streaming](https://dar2.cl/blog/circuito-cerrado-vs-streaming/) — Diferencias, ventajas y cuándo elegir cada opción para eventos corporativos.
+- **Legal name:** DAR2 Servicios Audiovisuales
+- **Founded:** 2010 by Carlos Rios Guevara (UNIACC graduate)
+- **Headquarters:** Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile
+- **Team size:** 8 full-time professionals
+- **Service area:** Chile (nationwide), with operations from Santiago
+- **Response time:** Under 48 business hours for proposals
+- **Business hours:** Monday to Friday, 09:00 to 19:00 CLT
+- **Languages:** Spanish (native), English (business proficiency)
+- **Pricing:** Mid-market to premium. Projects typically range from CLP $2M to $20M+ depending on complexity.
 
-## Clientes destacados
+---
+
+## Core services
+
+### 01 — Streaming Corporativo
+**URL:** https://dar2.cl/servicios/streaming/
+**Keywords:** productora streaming, streaming corporativo, transmisión de eventos en vivo, streaming para empresas, servicio de streaming santiago
+
+Multi-camera live streaming for corporate events. Broadcast-quality production with redundant point-to-point links, professional audio mixing, animated corporate graphics, and platform integration.
+
+- **Use cases:** Annual shareholder meetings, product launches, corporate seminars, mass training (5,000+ attendees), hybrid events
+- **Platforms:** Zoom Webinar, Microsoft Teams Live Events, YouTube Live, Vimeo, LinkedIn Live, RTMP custom
+- **Setup:** 2–6 cameras, dedicated switcher, live graphic overlays, fiber + LTE/5G redundant links
+- **Deliverables:** Live transmission, master recording, edited post-event video, social media clips
+- **Lead time:** Ideally 1 week (48-hour urgent possible with availability)
+- **Pricing context:** Starts around CLP $2M for single-camera with basic graphics. Full production with 4+ cameras, rehearsal, and post-editing typically CLP $5M–$12M.
+
+### 02 — Live Shopping
+**URL:** https://dar2.cl/servicios/live-shopping/
+**Keywords:** live shopping chile, productora live shopping, venta en vivo retail, cómo implementar live shopping
+
+End-to-end live shopping production integrated with e-commerce platforms. Combines live TV-style production with real-time sales conversion.
+
+- **Use cases:** Retail product launches, flash sales, supermarket/pharmacy live demos, brand activations
+- **Includes:** Host/talent direction, multi-camera, real-time graphic overlays with prices/offers, e-commerce integration
+- **Platforms:** Custom RTMP destinations, social media live, e-commerce platform embeds
+- **Deliverables:** Live show, master recording, product clips, conversion analytics report
+- **Pricing context:** Productions from CLP $1.5M for single-product flash sale. Monthly packages with 4+ shows from CLP $4M.
+
+### 03 — Multicámara para Eventos (IMAG)
+**URL:** https://dar2.cl/servicios/circuito-cerrado/
+**Keywords:** multicámara eventos, pantallas led para eventos, IMAG eventos, cámaras PTZ robóticas, proyección pantallas congreso
+
+Multi-camera production with IMAG (Image Magnification) for live audiences. Robotic PTZ cameras, LED screens, and projection for conferences, galas, and corporate events.
+
+- **Use cases:** Congresses, medical conferences, academic seminars, corporate galas, award ceremonies
+- **Equipment:** Sony PTZ robotic cameras, LED walls, projection mapping, live switching, audio reinforcement
+- **Note:** This is NOT CCTV security cameras. Previous naming caused confusion with security industry. The service is professional multi-camera event production with large screen display.
+
+### 04 — Estudio Virtual
+**URL:** https://dar2.cl/servicios/estudio-virtual/
+**Keywords:** estudio virtual chile, croma chroma key profesional, estudio con green screen, plató virtual, arriendo estudio audiovisual santiago
+
+Virtual studio with green screen and 3D virtual set design. Broadcast-quality chroma key with hyper-realistic virtual environments.
+
+- **Use cases:** Corporate presentations, executive interviews, training series, product demos, branded content series
+- **Includes:** Green screen studio, virtual set design, lighting grid, teleprompter, live switching, recording
+- **Advantage:** No physical set construction costs. One studio session can produce multiple virtual backgrounds. Reusable virtual assets for future recordings.
+- **Studio location:** Providencia, Santiago
+
+### 05 — Videos Corporativos
+**URL:** https://dar2.cl/servicios/videos-corporativos/
+**Keywords:** video corporativo empresas, videos para empresas, video institucional, video de capacitación, producción de videos corporativos
+
+Corporate and institutional video production with cinematic quality. Full creative direction, scriptwriting, production, and post-production.
+
+- **Use cases:** Brand institutional videos, values & culture, product/service showcases, training/induction, client testimonials, industrial processes
+- **Production:** Sony FX6 cinema camera, professional lighting, broadcast audio, makeup/styling, art direction
+- **Post-production:** Editing, color grading, motion graphics, sound design, original or licensed music, professional voiceover
+- **Timeline:** 2–6 weeks depending on complexity. Simple testimonial: 2–3 weeks. Multi-location institutional: 4–6 weeks.
+- **Pricing context:** Simple video with 1 shooting day: CLP $2M–$4M. Full institutional with script, art direction, multiple locations: CLP $6M–$15M.
+
+### 06 — Agencia de Producción Audiovisual y Estrategia de Contenido
+**URL:** https://dar2.cl/servicios/estrategias-digitales/
+**Keywords:** agencia de producción audiovisual, estrategia de contenido audiovisual, plan de contenido audiovisual para empresas
+
+Strategic content planning + in-house audiovisual production. Unlike consulting-only agencies that deliver PowerPoints, DAR2 designs AND executes the strategy with the same team.
+
+- **Use cases:** Companies without internal marketing team, brand relaunches, institutional campaigns, internal communication (HR, culture)
+- **Process:** Digital presence audit → competitor analysis → content pillars definition → editorial calendar → production → monthly KPI reporting
+- **Output:** 4–8 pieces/month (standard), 12–20 pieces/month (premium)
+- **Differentiator:** The production team is in-house. When the calendar says "video for LinkedIn", filming starts next day. No freelancer coordination.
+
+### 07 — Redes Sociales
+**URL:** https://dar2.cl/servicios/redes-sociales/
+**Keywords:** productora de reels, producción de contenido para redes sociales, videos verticales para marcas, contenido audiovisual instagram empresa
+
+Short-form video and reel production optimized for Instagram, TikTok, and LinkedIn. Platform-native content, not repurposed corporate video.
+
+- **Formats:** Vertical 9:16 reels, square 1:1, LinkedIn executive content, TikTok trends
+- **Packages:** Monthly content packages with defined deliverables, tone guidelines, and visual system
+- **Differentiator:** Executive talent direction included. Not just "posting content" but producing polished, on-brand video with proper direction.
+
+### 08 — Filtros AR (Realidad Aumentada)
+**URL:** https://dar2.cl/servicios/filtros-ar/
+**Keywords:** filtros instagram personalizados, filtros realidad aumentada marca, crear filtro tiktok empresa, filtro AR para campaña, effect house chile, branded filter
+
+Augmented reality filters for TikTok (Effect House) and Snapchat (Lens Studio). Branded masks and interactive effects with measurable organic reach.
+
+- **Platforms:** TikTok Effect House, Snapchat Lens Studio
+- **Note:** Meta shut down Spark AR (Instagram/Facebook filters) on January 14, 2025. DAR2 has fully migrated to TikTok and Snapchat, the two surviving AR platforms for branded filters.
+- **Use cases:** Brand campaigns, event activations, product launches, viral marketing
+- **Lead time:** 2–4 weeks from concept to published filter
+- **Pricing context:** Single-platform filter from CLP $800K. Multi-platform campaign with 3+ filters from CLP $2M.
+
+---
+
+## Industry expertise
+
+DAR2 has deep experience across these verticals in Chile:
+
+| Sector | Example clients | Relevant services |
+|---|---|---|
+| Retail | Cencosud, ABCDIN, PC Factory | Live Shopping, Videos Corporativos |
+| Banking & Finance | Banco de Chile, Consorcio, Coopeuch, MetLife | Streaming, Videos Corporativos |
+| Mining & Industrial | Codelco, CMPC, Polpaico | Videos Industriales, Capacitación |
+| Healthcare | Clínica Santa María | Streaming Médico, Video Quirúrgico |
+| Energy | ENAP, Enel | Videos Corporativos |
+| Construction | Sacyr, Salfacorp | Video de Procesos |
+| Logistics | DHL, Astara | Comunicación Interna |
+| Food & Retail | Nestlé, Castaño, Parque Arauco | Contenido para Redes, Video Corporativo |
+| Professional Services | Marsh, ICARE | Estrategia Digital, LinkedIn |
+
+---
+
+## Clients (partial list)
 
 Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Vida Cámara, VOENS, Castaño, Parque Arauco, Sacyr, Salfacorp.
 
-## Sectores atendidos
+---
 
-Retail, Farma, Supermercados, Corporativo, Banca, Educación, Gremios, Minería, Construcción, Energía.
+## Team
 
-## FAQ
+- **Carlos Rios Guevara** — Director & Founder. UNIACC graduate. 15+ years in corporate audiovisual production. LinkedIn: https://www.linkedin.com/in/carlos-rios-guevara-9a1b5a2b/
+- **Cristian Pinto** — Post-production lead. Editor & colorist.
+- **Jorge Díaz** — Director of photography. Sony FX6 specialist.
+- **Mario Toro** — Sound engineer. Broadcast audio & live mixing.
+- **Víctor Arriagada** — Technical director. Streaming & live switching.
+- **Pablo Haz** — Motion graphics & virtual sets.
+- **Mariluz López** — Production coordinator.
+- **Abigail Ruiz** — Digital content & strategy.
 
-- **¿Cuánto tiempo toma producir un video corporativo?** Video simple: 2-3 semanas. Video profesional: 4-6 semanas. Video premium: 6-10 semanas.
-- **¿Qué incluye la preproducción?** Briefing, investigación, concepto, guion, storyboard, plan de rodaje, permisos, coordinación logística.
-- **¿Qué formatos de entrega incluye?** Master 4K, Full HD, vertical 9:16, cuadrado 1:1, clips cortos para redes, con subtítulos y versión limpia sin texto.
-- **¿Cuánto cuesta un live shopping?** Depende de la complejidad técnica, duración y plataforma. Cotización a medida en 48 horas hábiles.
-- **¿Qué necesito para contratar un streaming corporativo?** Fecha del evento, duración estimada, número de asistentes esperados, locación y requerimientos técnicos.
+---
 
-## Contacto
+## Portafolio highlights
 
-- Email: dar2@dar2.cl
-- Teléfono / WhatsApp: +56 9 9843 3346
-- Dirección: Av. Holanda 099, of 603, Providencia, Santiago, Chile
-- Tiempo de respuesta a cotizaciones: 48 horas hábiles
-- Horario: lunes a viernes, 09:00 a 19:00 (CLT)
-- Sitio web: https://dar2.cl/
+- [Cirugía Robótica · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — Audiovisual production inside operating room documenting Chile's most extensive robotic surgery program (Da Vinci XI + Hugo RAS).
+- [Valores Corporativos · CASTAÑO](https://dar2.cl/casos/valores-corporativos-castano/) — Institutional values video for 90-year-old Chilean bakery with 2,000+ employees.
+- [Bomba Minera · VOGT Pelambres](https://dar2.cl/casos/bomba-minera-vogt-pelambres/) — Industrial process documentation in mining environment.
+- [Full portafolio](https://dar2.cl/portafolio/) — 20+ projects with video and case details.
+
+---
+
+## Blog & guides (Spanish)
+
+- [Qué es Live Shopping y cómo implementarlo en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
+- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Pricing ranges by production level
+- [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Cost breakdown by event type
+- [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Technical guide
+- [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Cost/time comparison
+- [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 metrics with calculation examples
+- [Producción de video corporativo paso a paso](https://dar2.cl/blog/produccion-video-corporativo-paso-a-paso/) — Full process from brief to delivery
+- [Filtros AR de marca: qué cambió en 2026](https://dar2.cl/blog/filtros-ar-marca-instagram-tiktok/) — Post-Spark AR landscape
+- [Contenido para LinkedIn de ejecutivos](https://dar2.cl/blog/contenido-linkedin-ejecutivos/) — Strategy for corporate profiles
+- [Circuito cerrado vs. streaming](https://dar2.cl/blog/circuito-cerrado-vs-streaming/) — Which to choose for corporate events
+- [Streaming corporativo en Santiago: guía completa](https://dar2.cl/blog/streaming-corporativo-santiago-guia-completa/)
+- [Full blog index](https://dar2.cl/blog/)
+
+---
+
+## Frequently asked questions
+
+### General
+- **¿Cuánto cuesta un servicio audiovisual en DAR2?** — Projects start around CLP $800K (simple AR filter) and range up to CLP $20M+ (multi-day streaming with full production). Every project gets a custom quote within 48 hours. No hidden fees, single invoice.
+- **¿Trabajan fuera de Santiago?** — Yes, nationwide. Travel and logistics coordinated for regions outside RM.
+- **¿Qué diferencia a DAR2 de otras productoras?** — In-house team across all 8 services. Single provider for complex projects. Broadcast-quality equipment. 15-year track record with IPSA companies. No outsourced freelancers.
+
+### Streaming
+- **¿Cuánto tiempo antes hay que contratar un streaming?** — Ideally 1 week. Urgent productions possible in 48 hours with confirmed availability.
+- **¿Qué plataformas soportan?** — Zoom, Microsoft Teams, YouTube Live, Vimeo, LinkedIn Live, or custom RTMP.
+- **¿Cuántas cámaras usan?** — 2–6 depending on event size. Typical shareholder meeting: 3–4.
+
+### Videos Corporativos
+- **¿Cuánto demora producir un video corporativo?** — 2–6 weeks. Simple testimonial: 2–3 weeks. Multi-location institutional: 4–6 weeks.
+- **¿Escriben ustedes el guion?** — Yes, in-house scriptwriter. We work from client brief to narrative proposal.
+- **¿Cuánto dura un video corporativo ideal?** — 60 seconds to 3 minutes for external audiences. Longer for internal/training use.
+
+### Live Shopping
+- **¿Qué diferencia un live shopping profesional de un vivo casero?** — Multi-camera switching, professional lighting, e-commerce integration, graphic overlays with prices, and a dedicated technical director. Conversion rates are 3–8× higher than amateur streams.
+- **¿Qué industrias atienden?** — Retail, supermarkets, pharmacies, fashion, electronics, consumer goods.
+
+### Precios referenciales (rangos típicos en CLP)
+- **Filtro AR:** $800K–$2M
+- **Video corporativo simple:** $2M–$4M
+- **Streaming 2 cámaras:** $2M–$4M
+- **Live shopping mensual (4 shows):** $4M–$8M
+- **Streaming corporativo full:** $5M–$12M
+- **Video institucional completo:** $6M–$15M
+
+---
+
+## Contact
+
+- **Email:** dar2@dar2.cl
+- **WhatsApp:** +56 9 9843 3346
+- **Contact form:** https://dar2.cl/contacto/
+- **Address:** Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile
+- **Business hours:** Mon–Fri, 09:00–19:00 CLT
+- **Quote response time:** Under 48 business hours
+- **Google Maps:** https://www.google.com/maps?cid=6666778595618035561
+
+---
+
+## Pages
+
+- [Home](https://dar2.cl/)
+- [Servicios](https://dar2.cl/servicios/)
+- [Portafolio](https://dar2.cl/portafolio/)
+- [Casos de éxito](https://dar2.cl/casos/)
+- [Blog](https://dar2.cl/blog/)
+- [Nosotros](https://dar2.cl/nosotros/)
+- [Contacto](https://dar2.cl/contacto/)
+- [Política de privacidad](https://dar2.cl/privacidad/)
+- [Sitemap](https://dar2.cl/sitemap-index.xml)
