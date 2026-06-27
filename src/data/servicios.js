@@ -57,7 +57,7 @@ export const servicios = [
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
     seoTitle: 'Productora de streaming corporativo en Santiago',
-    seoDescription: 'Productora audiovisual de streaming en Santiago para eventos corporativos. Streaming profesional con multicámara, enlace redundante y switcher. Juntas anuales, lanzamientos y seminarios. Cotiza en 48h.',
+    seoDescription: 'Productora de streaming profesional en Santiago. Multicámara, enlace redundante, transmisión en vivo para juntas anuales, lanzamientos y seminarios corporativos. Cotiza en 48h.',
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
@@ -151,7 +151,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping y Live Stream en Chile: venta en vivo para retail',
+    seoTitle: 'Live Shopping en Chile: venta en vivo para retail',
     seoDescription: 'Live shopping y live stream shopping en Chile. Producción end-to-end: conducción, multicámara, integración con e-commerce y métricas de conversión reales. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
@@ -326,7 +326,7 @@ export const servicios = [
     ctaTitle: '¿Necesitas producir contenido broadcast?',
     featured: false,
     seoTitle: 'Estudio virtual y croma (chroma key) en Santiago',
-    seoDescription: 'Generamos escenografías virtuales hiperrealistas con calidad broadcast. Presentaciones corporativas sin los costos de un set físico.',
+    seoDescription: 'Estudio virtual con croma profesional en Providencia. Escenografías 3D hiperrealistas, chroma key broadcast y presentaciones corporativas sin costo de set físico. Cotiza en 48h.',
     serviceType: 'Producción en estudio virtual',
     faqs: [
       {
@@ -412,8 +412,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
-    seoTitle: 'Video corporativo e institucional para empresas en Santiago',
-    seoDescription: 'Videos corporativos e institucionales en Santiago para empresas. Cultura, valores, procesos, productos y video eventos. Dirección creativa con cámara cinema Sony FX6 y postproducción profesional completa.',
+    seoTitle: 'Video Corporativo en Santiago: producción para empresas',
+    seoDescription: 'Videos corporativos en Santiago para empresas: institucionales, de valores, cultura, procesos y producto. Dirección creativa, cámara cinema Sony FX6 y postproducción completa.',
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -499,8 +499,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Agencia de producción audiovisual y estrategia de contenido',
-    seoDescription: 'Agencia de producción audiovisual y estrategia de contenido digital. Planes de comunicación para redes sociales con producción audiovisual de respaldo. Contenido alineado a los pilares de tu marca.',
+    seoTitle: 'Estrategia de Contenido Audiovisual para Empresas',
+    seoDescription: 'Estrategia de contenido audiovisual con producción interna. Planes de comunicación para redes sociales, diagnóstico digital y calendario editorial. Contenido alineado a tu marca.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
       {
@@ -582,8 +582,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
-    seoTitle: 'Productora de reels y contenido para redes sociales',
-    seoDescription: 'Cápsulas, reels y videos verticales optimizados para Instagram, TikTok y LinkedIn. Postproducción ágil con dirección de talento ejecutivo y paquetes mensuales de contenido.',
+    seoTitle: 'Productora de Reels: Instagram, TikTok y LinkedIn',
+    seoDescription: 'Cápsulas, reels y videos verticales para Instagram, TikTok y LinkedIn. Dirección de ejecutivos sin experiencia en cámara, postproducción ágil y paquetes mensuales de contenido.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
       {
@@ -666,8 +666,8 @@ export const servicios = [
     ctaTitle: '¿Te imaginas tu marca en un filtro AR?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Filtros de realidad aumentada para TikTok y Snapchat',
-    seoDescription: 'Diseñamos filtros de realidad aumentada para marcas en TikTok (Effect House) y Snapchat (Lens Studio). Branded masks y efectos interactivos con alcance orgánico medible.',
+    seoTitle: 'Filtros AR de Marca para TikTok y Snapchat',
+    seoDescription: 'Filtros AR de marca para TikTok (Effect House) y Snapchat (Lens Studio). Branded masks, efectos interactivos y métricas de alcance orgánico. Cotiza en 48h.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [
       {
