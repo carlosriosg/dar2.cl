@@ -217,7 +217,7 @@ const reviewSchemas = [
               class="hero-img"
               width="600"
               height="600"
-              loading="eager"
+              loading={i < 2 ? 'eager' : 'lazy'}
               decoding={i === 0 ? 'sync' : 'async'}
               fetchpriority={i === 0 ? 'high' : undefined}
             />

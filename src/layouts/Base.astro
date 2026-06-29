@@ -63,7 +63,13 @@ const organizationSchema = {
     "latitude": -33.418232666829546,
     "longitude": -70.60460118861644
   },
-  "areaServed": { "@type": "Country", "name": "Chile" },
+  "areaServed": [
+    { "@type": "Country", "name": "Chile" },
+    { "@type": "AdministrativeArea", "name": "Región Metropolitana" }
+  ],
+  "paymentAccepted": "Efectivo, Transferencia Bancaria, Tarjeta de Crédito, Débito, Factura 30 días",
+  "currenciesAccepted": "CLP",
+  "hasMap": "https://maps.google.com/?q=-33.418232666829546,-70.60460118861644",
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

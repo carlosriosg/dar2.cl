@@ -151,7 +151,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping en Chile: venta en vivo para retail',
+    seoTitle: 'Live Shopping en Santiago: venta en vivo para retail en Chile',
     seoDescription: 'Live shopping y live stream shopping en Chile. Producción end-to-end: conducción, multicámara, integración con e-commerce y métricas de conversión reales. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
@@ -186,11 +186,11 @@ export const servicios = [
     num: '03',
     title: 'Multicámara para Eventos',
     shortDesc: 'Multicámara, pantallas IMAG y streaming del evento.',
-    heroEyebrow: 'MULTICÁMARA, PANTALLAS Y STREAMING',
-    tagline: 'Registro profesional <em class="hl">sin invadir el escenario.</em>',
+    heroEyebrow: 'MULTICÁMARA PARA EVENTOS',
+    tagline: 'Multicámara para eventos <em class="hl">— no es CCTV ni seguridad.</em>',
     description:
-      'Sistema multicámara PTZ para eventos empresariales en Chile. ' +
-      'Congresos, seminarios y shows en vivo. Operación remota desde consola, sin camarógrafos visibles en el espacio.',
+      'Sistema multicámara PTZ para eventos corporativos en Santiago. ' +
+      'Pantallas LED, IMAG y streaming para congresos y seminarios. No es CCTV ni seguridad: es producción audiovisual en vivo.',
     longDescription: [
       'El sistema de múltiples cámaras robóticas PTZ es la solución profesional para eventos empresariales en Chile donde la presencia física de camarógrafos arruinaría la experiencia. Para un congreso médico, una junta presencial o un seminario con expositores invitados, las cámaras se ubican en puntos fijos del recinto y se operan desde una consola remota, sin moverse durante la presentación.',
       'En DAR2 manejamos hasta 6 cámaras PTZ simultáneas desde una sola consola con un operador especializado. El switcher controla múltiples cámaras, hace seguimiento del expositor, ajusta encuadre y zoom según el momento del evento, y genera la señal final que se proyecta en pantallas del recinto (IMAG) o se exporta a streaming.',
@@ -499,7 +499,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Estrategia de Contenido Audiovisual para Empresas',
+    seoTitle: 'Estrategia de Contenido Audiovisual para Empresas en Santiago',
     seoDescription: 'Estrategia de contenido audiovisual con producción interna. Planes de comunicación para redes sociales, diagnóstico digital y calendario editorial. Contenido alineado a tu marca.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
@@ -583,7 +583,7 @@ export const servicios = [
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
     seoTitle: 'Productora de Reels: Instagram, TikTok y LinkedIn',
-    seoDescription: 'Cápsulas, reels y videos verticales para Instagram, TikTok y LinkedIn. Dirección de ejecutivos sin experiencia en cámara, postproducción ágil y paquetes mensuales de contenido.',
+    seoDescription: 'Productora de reels en Santiago: cápsulas y videos verticales para Instagram, TikTok y LinkedIn. Dirección de ejecutivos, postproducción ágil y paquetes mensuales.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
       {
@@ -613,11 +613,11 @@ export const servicios = [
     num: '08',
     title: 'Filtros AR',
     shortDesc: 'Realidad aumentada para TikTok y Snapchat.',
-    heroEyebrow: 'FILTROS DE REALIDAD AUMENTADA',
-    tagline: 'Filtros AR que tus clientes <em class="hl">quieren compartir.</em>',
+    heroEyebrow: 'FILTROS AR · TIKTOK + SNAPCHAT',
+    tagline: 'Filtros AR para TikTok y Snapchat <em class="hl">que tu audiencia comparte.</em>',
     description:
-      'Diseñamos experiencias de realidad aumentada exclusivas para marcas en TikTok y Snapchat. ' +
-      'Branded masks, efectos interactivos y juegos que convierten a tu audiencia en embajadores orgánicos.',
+      'Creamos filtros de realidad aumentada para marcas en TikTok (Effect House) y Snapchat (Lens Studio). ' +
+      'Instagram cerró Spark AR en enero 2025 — migramos a las plataformas que sí permiten filtros de marca.',
     longDescription: [
       'Los filtros AR son la única categoría publicitaria donde el usuario voluntariamente comparte tu marca en sus historias personales. A diferencia de un banner que se cierra al primer clic, un filtro de marca bien diseñado se comparte porque el usuario quiere lucirlo: cada uso es una impresión orgánica gratuita, multiplicando alcance sin pagar CPM.',
       'En DAR2 diseñamos filtros AR exclusivos para TikTok (vía Effect House) y Snapchat (vía Lens Studio), las dos plataformas que mantienen la creación de efectos de marca por terceros. Branded masks que aplican tu logo y colores a la cara del usuario, efectos interactivos que reaccionan al movimiento, juegos gamificados con scoring, efectos de producto para probarse virtualmente (lentes, sombreros, maquillaje), y fondos de realidad aumentada que recrean tu universo de marca.',
@@ -667,7 +667,7 @@ export const servicios = [
     featured: true,
     badgeText: 'NUEVO',
     seoTitle: 'Filtros AR de Marca para TikTok y Snapchat',
-    seoDescription: 'Filtros AR de marca para TikTok (Effect House) y Snapchat (Lens Studio). Branded masks, efectos interactivos y métricas de alcance orgánico. Cotiza en 48h.',
+    seoDescription: 'Filtros AR de marca desde Santiago: TikTok (Effect House) y Snapchat (Lens Studio). Instagram cerró Spark AR en 2025. Branded masks y efectos interactivos. Cotiza en 48h.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [
       {
