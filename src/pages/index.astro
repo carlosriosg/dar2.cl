@@ -194,7 +194,7 @@ const reviewSchemas = [
         <div class="flex flex-wrap gap-4">
           <a
             href="/contacto/"
-          class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
+          class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors btn-glow"
           >
             Cotizar ahora
           </a>
@@ -229,8 +229,8 @@ const reviewSchemas = [
   </section>
 
   <!-- ── 1B. PRODUCTORA AUDIOVISUAL (pilar SEO) ──────── -->
-  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-border">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+  <section class="section-gradient-01 max-w-full px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start max-w-7xl mx-auto">
       <div>
         <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-3">Productora Audiovisual</p>
         <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-6">
@@ -278,7 +278,6 @@ const reviewSchemas = [
   </section>
 
   <!-- ── 2. SERVICIOS (8) ──────────────────────────────── -->
-  <Reveal>
   <section class="max-w-7xl mx-auto px-6 py-16 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-3">Servicios</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-6">
@@ -288,6 +287,7 @@ const reviewSchemas = [
       Desde streaming corporativo en vivo hasta filtros AR para Instagram. Equipo propio, postproducción interna y una sola factura por todo el proyecto. Sin coordinar 5 proveedores. Sin sorpresas en el presupuesto.
     </p>
 
+    <Reveal stagger={100}>
     <div class="home-svc-grid">
       {servicios.map((s) => (
           <a
@@ -317,6 +317,7 @@ const reviewSchemas = [
           </a>
       ))}
     </div>
+    </Reveal>
 
     <div class="mt-8 text-center">
       <a href="/servicios/" class="outline-btn">
@@ -359,8 +360,9 @@ const reviewSchemas = [
         <a href="/portafolio/" class="outline-btn">
           Ver todos los proyectos ({todosLosItems.length}) →
         </a>
-      </div>
-    </section>
+    </div>
+    </div>
+  </section>
     </Reveal>
   )}
 
@@ -519,7 +521,7 @@ const reviewSchemas = [
 
   <!-- ── 5. STATS ──────────────────────────────────────── -->
   <Reveal delay={400}>
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+  <section class="section-gradient-02 max-w-full px-6 py-20">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">En números</p>
     <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-xl">
       Trayectoria que respalda cada proyecto.
@@ -530,17 +532,17 @@ const reviewSchemas = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
       <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">15+</p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="15" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
       </div>
       <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polygon points="23 7 16 12 7 12 7 7 16 7"/><rect x="1" y="1" width="22" height="22" rx="2" ry="2"/><line x1="2" y1="15" x2="22" y2="15"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">40+</p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="40" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Producciones<br />al año</p>
       </div>
       <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">30+</p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="30" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
       </div>
       <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
@@ -554,12 +556,13 @@ const reviewSchemas = [
 
   <!-- ── 5B. CÓMO TRABAJAMOS ───────────────────────────── -->
   <Reveal delay={500}>
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
-    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
-      Cómo trabajamos.
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <section class="section-gradient-01 max-w-full px-6 py-20">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+        Cómo trabajamos.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
         <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">1</div>
         <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Briefing y propuesta</h3>
@@ -587,7 +590,7 @@ const reviewSchemas = [
 
   <!-- ── 5C. LEAD CAPTURE FORM ────────────────────────── -->
   <Reveal delay={600}>
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+  <section class="section-gradient-02 max-w-full px-6 py-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl">
       <div>
         <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Cotización</p>
@@ -840,6 +843,36 @@ const reviewSchemas = [
 
   document.addEventListener('astro:page-load', initHeroGallery);
   initHeroGallery();
+
+  // Stats counter animation: cuenta desde 0 al valor real al entrar en viewport
+  function initCounters() {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = Number(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      let started = false;
+
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          const start = performance.now();
+          function update() {
+            const elapsed = performance.now() - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = current + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+          observer.unobserve(el);
+        }
+      }, { threshold: 0.5 });
+      observer.observe(el);
+    });
+  }
+  document.addEventListener('astro:page-load', initCounters);
+  initCounters();
 
 </script>
 

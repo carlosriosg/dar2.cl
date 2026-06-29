@@ -9,14 +9,12 @@
   --font-family-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* ── Highlight inline para taglines de servicio (color brand + italic) ── */
 .hl {
   color: #E63E00;
   font-style: italic;
   font-weight: 900;
 }
 
-/* ── WhatsApp link — used in Footer and Contacto ──────── */
 .whatsapp-link {
   display: inline-flex;
   align-items: center;
@@ -35,7 +33,6 @@
   flex-shrink: 0;
 }
 
-/* ── Submit button (WhatsApp-bound forms) ────────────── */
 .submit-btn {
   display: inline-flex;
   align-items: center;
@@ -61,6 +58,7 @@
     font-family: var(--font-family-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -72,9 +70,84 @@
     box-sizing: border-box;
   }
 
-  /* Global transition baseline: interactive elements get 0.3s ease */
   a, button, input, select, textarea {
     transition-duration: 0.3s;
     transition-timing-function: ease;
   }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 69, 0, 0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.section-gradient-01 {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+}
+
+.section-gradient-02 {
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 50%, #fafafa 100%);
+}
+
+.svc-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.svc-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: #FF4500;
+}
+
+.hover-underline {
+  position: relative;
+  text-decoration: none;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF4500;
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+.counter-value {
+  display: inline-block;
 }

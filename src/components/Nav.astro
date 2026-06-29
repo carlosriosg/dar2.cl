@@ -34,9 +34,9 @@ const currentPath = Astro.url.pathname;
         <li>
           <a
             href={link.href}
-            class={`text-sm font-medium transition-colors ${
+            class={`text-sm font-medium transition-colors hover-underline ${
               isCurrent
-                ? 'text-[#1a1a1a]'
+                ? 'text-[#1a1a1a] font-semibold'
                 : 'text-[#666] hover:text-[#1a1a1a]'
             }`}
             aria-current={isCurrent ? 'page' : undefined}
@@ -51,7 +51,7 @@ const currentPath = Astro.url.pathname;
     <!-- CTA Desktop -->
     <a
       href="/contacto/"
-      class="hidden md:inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#333] transition-colors"
+      class="hidden md:inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#e03d00] transition-colors"
     >
       Cotizar
     </a>
@@ -88,7 +88,7 @@ const currentPath = Astro.url.pathname;
         );
       })}
       <li class="pt-3">
-        <a href="/contacto/" class="inline-flex bg-[#1a1a1a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#333] transition-colors">
+        <a href="/contacto/" class="inline-flex bg-[#FF4500] text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-[#e03d00] transition-colors">
           Cotizar
         </a>
       </li>
