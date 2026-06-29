@@ -169,18 +169,19 @@ const reviewSchemas = [
   </Fragment>
 
   <!-- ── 1. HERO ─────────────────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-15">
+  <section class="section-hero-glow max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-15">
     <div class="hero-grid">
 
       <!-- Text column -->
       <div class="hero-text">
+        <div class="accent-line mb-6"></div>
         <h1 class="font-black leading-[1.05] tracking-tight mb-8">
           <span class="block text-lg md:text-xl text-[#666] font-semibold mb-4 tracking-normal">
             Productora audiovisual en Santiago.
           </span>
           <span
             class="block"
-            style="font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -1.5px; min-height: 4em;"
+            style="font-size: clamp(44px, 5vw, 72px); letter-spacing: -1.5px;"
           >
             Producimos<br /><span
               id="rotating-word"
@@ -188,7 +189,7 @@ const reviewSchemas = [
             >live shopping</span><br />y mucho más.
           </span>
         </h1>
-        <p class="text-base md:text-lg text-[#666] leading-relaxed mb-6">
+        <p class="text-base md:text-lg text-[#666] leading-relaxed max-w-xl mb-8">
           Empresa de streaming y producción audiovisual con 15 años de experiencia y equipo propio en Providencia. 8 servicios, una sola factura.
         </p>
         <div class="flex flex-wrap gap-4">
@@ -200,7 +201,7 @@ const reviewSchemas = [
           </a>
           <a
             href="/portafolio/"
-            class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border border-border hover:border-primary transition-colors"
+            class="inline-flex items-center text-sm font-semibold px-6 py-3 rounded-xl border-2 border-[#ddd] text-[#1a1a1a] hover:border-[#FF4500] hover:bg-[#fff8f5] transition-colors"
           >
             Ver portafolio
           </a>
@@ -330,7 +331,7 @@ const reviewSchemas = [
   <!-- ── 3. PROYECTOS DESTACADOS ───────────────────────── -->
   {destacados.length > 0 && (
     <Reveal delay={100}>
-    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+  <section class="section-dot max-w-7xl mx-auto px-6 py-20 border-t border-border">
       <div class="flex items-end justify-between mb-4 flex-wrap gap-4">
         <p class="text-xs font-semibold uppercase tracking-widest text-[#666]">Portafolio</p>
         <a
@@ -429,7 +430,7 @@ const reviewSchemas = [
 
   <!-- ── 4B. TESTIMONIALES ─────────────────────────────── -->
   <Reveal delay={300}>
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+  <section class="section-dot max-w-7xl mx-auto px-6 py-20 border-t border-border">
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Testimonios</p>
     <div class="flex items-center gap-3 mb-4">
       <h2 class="text-3xl md:text-4xl font-black tracking-tight max-w-2xl">
@@ -556,7 +557,7 @@ const reviewSchemas = [
 
   <!-- ── 5B. CÓMO TRABAJAMOS ───────────────────────────── -->
   <Reveal delay={500}>
-  <section class="section-gradient-01 max-w-full px-6 py-20">
+  <section class="section-dot section-gradient-01 max-w-full px-6 py-20">
     <div class="max-w-7xl mx-auto">
       <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
       <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
