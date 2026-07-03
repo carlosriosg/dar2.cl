@@ -119,7 +119,7 @@ const serviciosRelacionados = relacionadosSlugs
           {s.description}
         </p>
         <a
-          href={`/contacto?servicio=${s.slug}`}
+          href="/contacto/"
           class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
         >
           Cotizar {s.title} →
@@ -201,13 +201,13 @@ const serviciosRelacionados = relacionadosSlugs
     </ul>
     <div class="mt-10">
       <a
-        href={`/contacto?servicio=${s.slug}`}
-        class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
-      >
-        Cotizar {s.title} →
-      </a>
-    </div>
-  </section>
+          href="/contacto/"
+          class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors"
+        >
+          Cotizar {s.title} →
+        </a>
+      </div>
+    </section>
 
   <!-- Por qué te conviene -->
   {s.benefits && s.benefits.length > 0 && (
