@@ -1,0 +1,362 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Cómo elegir una productora audiovisual en Santiago', url: 'https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo elegir una productora audiovisual en Santiago en 2026",
+  "description": "Guía práctica para contratar una productora audiovisual en Santiago de Chile: tipos de productoras, qué preguntar, presupuestos, equipamiento y cómo evitar errores costosos.",
+  "image": "https://dar2.cl/images/servicios/streaming.jpg",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "Carlos Rios Guevara",
+    "url": "https://dar2.cl/nosotros/"
+  },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/",
+  "inLanguage": "es-CL"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es una productora audiovisual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una productora audiovisual es una empresa especializada en planificar, producir y postproducir contenido en video. En Chile, las productoras audiovisuales ofrecen servicios que van desde streaming corporativo y videos institucionales hasta live shopping, estudio virtual con chroma key, animación y contenido para redes sociales. Algunas tienen equipo propio y estudio; otras tercerizan según el proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta contratar una productora audiovisual en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del alcance del proyecto. Un video corporativo simple puede partir en CLP $2M, mientras que una producción multicámara con streaming, gráficas en tiempo real y postproducción puede llegar a CLP $15M o más. Lo importante no es el precio absoluto sino el retorno: una buena producción convierte mejor y dura más."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué preguntar antes de contratar una productora audiovisual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pregunta si tienen equipo propio o tercerizan, cuántos años llevan en el mercado, si tienen estudio propio, qué cámaras usan, si incluyen enlace redundante para streaming, cómo manejan la postproducción, y pide referencias de clientes reales. Una productora con equipo interno suele ofrecer mejor coordinación y consistencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo elegir entre una productora audiovisual grande y una boutique?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las productoras grandes tienen más capacidad para eventos masivos pero suelen ser más lentas y caras. Las boutiques como DAR2 ofrecen atención directa del director, equipo propio, agilidad y mejor relación costo-beneficio. Para empresas que valoran coordinación directa y calidad broadcast, una boutique con equipo interno es la mejor opción."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué equipo debe tener una productora audiovisual profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una productora profesional debería operar con cámaras cinema como Sony FX6 o equivalentes, iluminación broadcast, micrófonos profesionales, switcher de video para multicámara, enlaces redundantes para streaming y estudio con green screen. Si no tienen equipo propio y alquilan todo para cada proyecto, la calidad y consistencia pueden variar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo toma producir un video corporativo con una productora audiovisual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un video corporativo simple con una jornada de grabación toma de 2 a 3 semanas desde el brief hasta la entrega final. Producciones más complejas con múltiples locaciones, animaciones y revisión de borradores pueden tomar de 4 a 6 semanas. El tiempo depende de la complejidad del guion, la cantidad de locaciones y los ciclos de aprobación del cliente."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="Cómo elegir una productora audiovisual en Santiago: guía 2026"
+  description="Guía práctica para contratar una productora audiovisual en Santiago de Chile. Tipos de productoras, presupuestos, equipo técnico, qué preguntar y cómo evitar errores."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/servicios/streaming.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Guía</p>
+      <h1 class="article-h1">
+        Cómo elegir una productora audiovisual en Santiago:
+        <em class="hl">guía práctica para empresas.</em>
+      </h1>
+      <p class="article-lead">
+        Encontrar la productora audiovisual adecuada en Santiago puede marcar la diferencia entre un proyecto que cumple objetivos y uno que solo cumple el presupuesto. Esta guía te ayuda a evaluar opciones, hacer las preguntas correctas y tomar una decisión informada.
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/servicios/streaming.jpg"
+        alt="Producción audiovisual con equipo profesional — cámara Sony FX6 en estudio"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#tipos">Tipos de productoras audiovisuales en Chile</a></li>
+        <li><a href="#equipo">Qué equipo debe tener una productora profesional</a></li>
+        <li><a href="#preguntas">7 preguntas antes de contratar</a></li>
+        <li><a href="#presupuesto">Presupuestos: cuánto invertir según el proyecto</a></li>
+        <li><a href="#errores">Errores que cuestan caro</a></li>
+        <li><a href="#por-que-dar2">Por qué DAR2 es distinto</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="tipos">
+      <h2>¿Qué tipos de productoras audiovisuales existen en Chile?</h2>
+      <p>
+        No todas las productoras audiovisuales funcionan igual. En Santiago conviven varios modelos, y cada uno responde a necesidades distintas:
+      </p>
+
+      <h3>Productora audiovisual boutique con equipo propio</h3>
+      <p>
+        Tienen equipo interno (cámaras, estudio, postproducción) y un equipo creativo estable. Ofrecen atención directa del director o dueño, agilidad en la toma de decisiones y consistencia en la calidad. Ideales para empresas que buscan una relación de largo plazo y proyectos recurrentes. DAR2 entra en esta categoría.
+      </p>
+
+      <h3>Productora audiovisual grande o agencia full-service</h3>
+      <p>
+        Equipos grandes, múltiples departamentos, capacidad para eventos masivos. Suelen tercerizar parte de la producción. Son más lentas en coordinación y más caras, pero tienen espalda para proyectos muy grandes. Recomendadas para eventos con +5.000 asistentes o producciones que requieran un equipo de 30+ personas.
+      </p>
+
+      <h3>Freelancer o realizador individual</h3>
+      <p>
+        Una persona opera cámara, edita y entrega. Más económico, pero sin respaldo para proyectos complejos. Si se enferma el día de la grabación, no hay plan B. Recomendado solo para proyectos muy simples o con presupuesto muy ajustado.
+      </p>
+
+      <h3>Productora especializada</h3>
+      <p>
+        Algunas productoras audiovisuales en Santiago se especializan en un nicho: solo streaming, solo videoclips, solo contenido para redes. Son excelentes en lo suyo, pero si necesitas múltiples servicios, terminas coordinando varios proveedores.
+      </p>
+    </section>
+
+    <section class="article-section" id="equipo">
+      <h2>¿Qué equipo debe tener una productora audiovisual profesional?</h2>
+      <p>
+        El equipamiento es uno de los diferenciadores más claros entre una productora audiovisual seria y una que alquila todo para cada proyecto. Esto es lo mínimo que deberías esperar:
+      </p>
+      <ul class="article-list">
+        <li><strong>Cámaras cinema o broadcast:</strong> Sony FX6, Canon C300, RED o equivalentes. No consumer/prosumer. La diferencia en calidad de imagen es abismal.</li>
+        <li><strong>Iluminación profesional:</strong> paneles LED broadcast, softboxes, fresnel. Iluminación de tres puntos para entrevistas y corporativo.</li>
+        <li><strong>Audio broadcast:</strong> micrófonos de solapa inalámbricos (DJI Mic, Rode Wireless), shotgun direccional, grabador de respaldo. El audio malo arruina cualquier video.</li>
+        <li><strong>Switcher de video:</strong> para producciones multicámara en vivo. ATEM Mini Pro o equivalente profesional.</li>
+        <li><strong>Enlaces redundantes:</strong> para streaming: fibra + LTE/5G como respaldo automático. Una caída en vivo no es aceptable.</li>
+        <li><strong>Estudio propio con green screen:</strong> chroma key calibrado con iluminación broadcast para estudio virtual.</li>
+        <li><strong>Postproducción interna:</strong> edición, color grading (DaVinci Resolve), motion graphics y mezcla de audio. Si tercerizan la postproducción, la calidad y los plazos dependen de terceros.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="preguntas">
+      <h2>7 preguntas que hacer antes de contratar una productora audiovisual</h2>
+      <p>
+        Estas preguntas te ayudarán a separar productoras audiovisuales profesionales de las que no lo son:
+      </p>
+      <ol class="article-list">
+        <li><strong>¿Tienen equipo propio o alquilan para cada proyecto?</strong> Si alquilan, la calidad puede variar y los imprevistos son más difíciles de resolver.</li>
+        <li><strong>¿Cuántos años llevan en el mercado?</strong> La experiencia importa: una productora con 10+ años ha enfrentado suficientes imprevistos como para saber resolverlos.</li>
+        <li><strong>¿Tienen estudio propio en Santiago?</strong> Tener estudio significa que invierten en infraestructura y están establecidos. También agiliza las sesiones de grabación.</li>
+        <li><strong>¿Puedo ver casos reales completos?</strong> No solo el reel. Pide ver proyectos completos: desde el brief hasta el resultado final.</li>
+        <li><strong>¿Quién será mi contacto directo?</strong> En las productoras grandes, a veces el director comercial vende y después pasas con un productor que no conocías. En una boutique, tranzas directo con quien produce.</li>
+        <li><strong>¿Qué pasa si el día de la grabación falla algo?</strong> Una productora profesional tiene plan B para cada equipo crítico: cámara de respaldo, micrófono extra, enlace redundante.</li>
+        <li><strong>¿Las cotizaciones son cerradas o tienen ítems que pueden aumentar?</strong> Desconfía de cotizaciones muy baratas que después suman "extras". Una cotización profesional desglosa cada ítem y se respeta.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="presupuesto">
+      <h2>¿Cuánto cuesta contratar una productora audiovisual en Santiago?</h2>
+      <p>
+        Los presupuestos varían según el alcance, pero estos rangos te dan una referencia para 2026:
+      </p>
+      <ul class="article-list">
+        <li><strong>Video corporativo simple</strong> (1 cámara, 1 locación, edición básica): CLP $2M — $4M</li>
+        <li><strong>Video institucional completo</strong> (guion, dirección de arte, múltiples locaciones, color grading): CLP $6M — $15M</li>
+        <li><strong>Streaming corporativo</strong> (2-4 cámaras, gráficas, enlace redundante): CLP $2M — $12M</li>
+        <li><strong>Live shopping</strong> (producción profesional con integración e-commerce): CLP $1.5M — $8M por sesión</li>
+        <li><strong>Filtro AR</strong> (TikTok o Snapchat): CLP $800K — $2M</li>
+        <li><strong>Producción mensual de contenido</strong> (8-12 piezas para redes): CLP $3M — $8M al mes</li>
+      </ul>
+      <p>
+        Una buena productora audiovisual te entrega una cotización detallada con cada ítem desglosado. Si el presupuesto te parece alto, pregúntate: ¿cuánto vale para tu empresa un video mal hecho que no comunica, o un streaming que se cae a mitad de la junta?
+      </p>
+    </section>
+
+    <section class="article-section" id="errores">
+      <h2>Errores comunes al contratar una productora audiovisual</h2>
+      <ul class="article-list">
+        <li><strong>Elegir solo por precio.</strong> La productora más barata rara vez es la mejor opción. Un video mal producido no solo no comunica: daña la percepción de tu marca.</li>
+        <li><strong>No ver el portafolio completo.</strong> El reel siempre muestra lo mejor. Pide ver proyectos completos, incluyendo los que no son tan vistosos pero resolvieron el problema del cliente.</li>
+        <li><strong>No firmar un briefing.</strong> Sin un brief escrito, cada parte entiende algo distinto. Asegúrate de que la productora te pida un brief o te ayude a escribirlo.</li>
+        <li><strong>No pedir referencias.</strong> Una llamada con un cliente anterior vale más que cualquier presentación comercial.</li>
+        <li><strong>No tener claro los derechos de uso.</strong> Asegúrate de que el contrato especifique que te llevas los derechos completos del material producido, incluyendo los raw.</li>
+        <li><strong>Subestimar la postproducción.</strong> El mejor rodaje del mundo no sirve si la edición, el color y el sonido son mediocres. Pregunta quién hace la postproducción y si es interna o tercerizada.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="por-que-dar2">
+      <h2>¿Por qué DAR2 es distinto a otras productoras audiovisuales?</h2>
+      <p>
+        Hay muchas productoras audiovisuales en Santiago, pero DAR2 opera con un modelo que pocas tienen:
+      </p>
+      <ul class="article-list">
+        <li><strong>8 servicios bajo un mismo techo:</strong> streaming, live shopping, videos corporativos, estudio virtual, multicámara, estrategias digitales, redes sociales y filtros AR. Una sola productora, una sola factura.</li>
+        <li><strong>Equipo propio de 8 profesionales:</strong> directores, camarógrafos, editores, coloristas y motion graphic artists internos. No tercerizamos.</li>
+        <li><strong>Estudio propio en Providencia:</strong> green screen calibrado, iluminación broadcast, Sony FX6, postproducción interna. Todo en un mismo edificio.</li>
+        <li><strong>15 años con clientes IPSA:</strong> Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María. No somos una productora nueva.</li>
+        <li><strong>Cotización en 48 horas:</strong> sin vueltas, sin letra chica.</li>
+      </ul>
+      <p>
+        Si buscas una productora audiovisual en Santiago con equipo propio, estudio y trayectoria, <a href="/contacto/" class="article-inline-link">conversemos sin compromiso</a>.
+      </p>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Qué es una productora audiovisual?</summary>
+        <p>Es una empresa que produce contenido en video: desde spots publicitarios y videos corporativos hasta streaming en vivo y filtros de realidad aumentada. En Chile, las productoras audiovisuales ofrecen servicio completo: preproducción, rodaje y postproducción.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta una productora audiovisual en Santiago?</summary>
+        <p>Desde CLP $2M para un video corporativo simple hasta CLP $15M+ para una producción completa con streaming, gráficas y postproducción. El presupuesto depende del alcance, el equipo requerido y la complejidad del proyecto.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué preguntar antes de contratar?</summary>
+        <p>Si tienen equipo propio, estudio, cuántos años llevan, quién será tu contacto, qué pasa si falla algo el día de la grabación, y si la cotización es cerrada. Una productora seria responde sin rodeos.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo elegir entre una productora boutique y una grande?</summary>
+        <p>Si valoras atención directa, agilidad y consistencia, una boutique con equipo propio como DAR2 es mejor. Si necesitas un equipo masivo para un evento con +5.000 personas, una productora grande puede tener más capacidad operativa.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué equipo debe tener una productora audiovisual profesional?</summary>
+        <p>Cámaras cinema (Sony FX6 o superior), iluminación broadcast, audio profesional, switcher para multicámara, enlaces redundantes para streaming y postproducción interna. Si alquilan todo, la calidad puede variar.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto tiempo toma producir un video corporativo?</summary>
+        <p>De 2 a 3 semanas para un proyecto simple con una jornada de grabación. Producciones más complejas pueden tomar de 4 a 6 semanas, incluyendo guion, producción, postproducción y revisiones.</p>
+      </details>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Buscas una productora audiovisual en Santiago?</h2>
+      <p>
+        En DAR2 producimos contenido audiovisual profesional con equipo propio, estudio en Providencia y 15 años de experiencia con clientes IPSA. Cotización a medida en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar proyecto →
+        </a>
+        <a href="/portafolio/" class="article-cta-link">
+          O ver nuestro portafolio →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+  .hl { color: #FF4500; }
+
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; color: #1a1a1a; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+
+  .article-inline-link { color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .article-inline-link:hover { color: #FF4500; }
+
+  .article-faq { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  .article-faq summary { font-size: 17px; font-weight: 700; color: #1a1a1a; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
+  .article-faq summary::-webkit-details-marker { display: none; }
+  .article-faq summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 24px; font-weight: 300; color: #666; transition: transform 0.2s ease; }
+  .article-faq[open] summary::after { content: '−'; }
+  .article-faq p { font-size: 16px; line-height: 1.6; color: #555; margin: 12px 0 0; }
+
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>
