@@ -17,11 +17,7 @@ const articleSchema = {
   "image": "https://dar2.cl/images/servicios/streaming.jpg",
   "datePublished": "2026-07-09",
   "dateModified": "2026-07-09",
-  "author": {
-    "@type": "Person",
-    "name": "Carlos Rios Guevara",
-    "url": "https://dar2.cl/nosotros/"
-  },
+  "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/",
   "inLanguage": "es-CL"
@@ -284,6 +280,9 @@ const faqSchema = {
       <div class="article-cta">
         <a href="/contacto/" class="article-cta-btn">
           Cotizar proyecto →
+        </a>
+        <a href="/servicios/" class="article-cta-link">
+          Conocer los 8 servicios →
         </a>
         <a href="/portafolio/" class="article-cta-link">
           O ver nuestro portafolio →

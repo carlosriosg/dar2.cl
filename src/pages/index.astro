@@ -833,6 +833,7 @@ const reviewSchemas = [
     if (!imgs.length) return;
     const shuffled = [...heroPool].sort(() => 0.5 - Math.random());
     imgs.forEach((img, i) => {
+      if (i === 0) return; // keep LCP image preloaded
       const file = shuffled[i];
       const webpFile = file.replace(/\.(png|jpe?g)$/i, '.webp');
       const avifFile = file.replace(/\.(png|jpe?g)$/i, '.avif');

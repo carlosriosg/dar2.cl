@@ -44,9 +44,10 @@ const relacionados = [
 const serviceJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Service',
+  url: `https://dar2.cl/servicios/${s.slug}/`,
   name: s.title,
   provider: { '@id': 'https://dar2.cl/#organization' },
-  areaServed: 'Chile',
+  areaServed: { '@type': 'Country', 'name': 'Chile' },
   description: s.seoDescription ?? s.description,
   serviceType: s.serviceType ?? s.title,
 });

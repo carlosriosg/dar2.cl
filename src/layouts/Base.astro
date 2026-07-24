@@ -76,13 +76,15 @@ const organizationSchema = {
     "opens": "09:00",
     "closes": "19:00"
   }],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": 5.0,
-    "reviewCount": 12,
-    "bestRating": 5,
-    "worstRating": 1
-  },
+  ...(isHome && {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5.0,
+      "reviewCount": 12,
+      "bestRating": 5,
+      "worstRating": 1
+    }
+  }),
   "founder": {
     "@type": "Person",
     "name": "Carlos Rios Guevara",
@@ -91,7 +93,7 @@ const organizationSchema = {
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+56998433346",
+  "telephone": "+56 9 9843 3346",
     "email": "dar2@dar2.cl",
     "contactType": "sales",
     "availableLanguage": ["Spanish", "English"],
@@ -251,6 +253,7 @@ const breadcrumbSchema = breadcrumbs ? {
     <!-- Preconnect hints para orígenes críticos de terceros -->
     <link rel="preconnect" href="https://w.behold.so" crossorigin />
     <link rel="preconnect" href="https://api.web3forms.com" crossorigin />
+    <link rel="preconnect" href="https://img.youtube.com" crossorigin />
 
     <!-- Preload Inter latin fonts (normal + italic) para reducir cadena critica.
          crossorigin requerido aun para mismo origen porque <link rel=preload as=font>

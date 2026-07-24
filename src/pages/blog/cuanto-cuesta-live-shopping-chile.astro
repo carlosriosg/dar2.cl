@@ -17,11 +17,7 @@ const articleSchema = {
   "image": "https://dar2.cl/images/blog/live-shopping-presupuesto-hero2.png",
   "datePublished": "2026-06-09",
   "dateModified": "2026-06-09",
-  "author": {
-    "@type": "Person",
-    "name": "Carlos Rios Guevara",
-    "url": "https://dar2.cl/nosotros/"
-  },
+  "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/",
   "inLanguage": "es-CL"
@@ -179,6 +175,77 @@ const faqSchema = {
       <p>
         Set diseñado, varias cámaras, equipo ampliado, producción de cápsulas para reutilizar el contenido, y/o un programa recurrente (mensual o quincenal). Para marcas que convierten el live shopping en un canal de venta permanente.
       </p>
+
+      <h3>Tabla comparativa por nivel</h3>
+      <div class="article-table-wrap">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Básico</th>
+              <th>Profesional</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cámaras</td>
+              <td>1-2 fijas</td>
+              <td>2-4 con switcher</td>
+              <td>4+ con dirección</td>
+            </tr>
+            <tr>
+              <td>Sonido</td>
+              <td>Micrófono simple</td>
+              <td>Broadcast + mezcla</td>
+              <td>Multicanal profesional</td>
+            </tr>
+            <tr>
+              <td>Iluminación</td>
+              <td>Básica LED</td>
+              <td>Profesional 3 puntos</td>
+              <td>Set diseñado</td>
+            </tr>
+            <tr>
+              <td>Gráficas en vivo</td>
+              <td>Solo texto</td>
+              <td>Precios + SKU + stock</td>
+              <td>Overlays animados + contadores</td>
+            </tr>
+            <tr>
+              <td>Integración e-commerce</td>
+              <td>No incluye</td>
+              <td>Shopify / VTEX / WooCommerce</td>
+              <td>Multiplataforma + custom</td>
+            </tr>
+            <tr>
+              <td>Conducción</td>
+              <td>Interna</td>
+              <td>Profesional / Influencer</td>
+              <td>Conductor + co-host</td>
+            </tr>
+            <tr>
+              <td>Cápsulas post-live</td>
+              <td>No incluye</td>
+              <td>5-10 Reels / Shorts</td>
+              <td>20-30 piezas</td>
+            </tr>
+            <tr>
+              <td>Reporte de métricas</td>
+              <td>No incluye</td>
+              <td>GMV + audiencia + ROI</td>
+              <td>Dashboard completo</td>
+            </tr>
+            <tr>
+              <td><strong>Rango CLP</strong></td>
+              <td><strong>$800K - $1.5M</strong></td>
+              <td><strong>$1.5M - $4M</strong></td>
+              <td><strong>$4M - $8M+</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="article-table-footnote">* Rangos referenciales. Cada proyecto se cotiza a medida en 48h hábiles. No hay dos live shoppings iguales.</p>
+      </div>
     </section>
 
     <section class="article-section" id="incluye">
@@ -425,6 +492,52 @@ const faqSchema = {
 
   .article-list li {
     margin-bottom: 10px;
+  }
+
+  /* Table */
+  .article-table-wrap {
+    overflow-x: auto;
+    margin: 32px 0;
+  }
+  .article-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.4;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .article-table thead {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .article-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .article-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #333;
+  }
+  .article-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .article-table tbody tr:hover {
+    background: #fafafa;
+  }
+  .article-table tbody tr:last-child td {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .article-table-footnote {
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
   }
 
   /* FAQ */
