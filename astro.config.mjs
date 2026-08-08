@@ -12,7 +12,22 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://dar2.cl',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Blindaje defensivo: el sitemap solo indexa rutas de paginas HTML,
+      // pero este filter garantiza que nunca se cuelen URLs con query
+      // params (ej. /contacto?servicio=...), archivos estaticos ni
+      // extensiones de assets.
+      filter: (page) => {
+        try {
+          const url = new URL(page);
+          return url.search === '' && !/\.[a-z0-9]{2,5}$/i.test(url.pathname);
+        } catch {
+          return false;
+        }
+      },
+    }),
+  ],
   build: {
     // Inline TODO el CSS en el <head> para eliminar render-blocking
     // stylesheet requests. PageSpeed reportaba 460ms de ahorro con 2 CSS
