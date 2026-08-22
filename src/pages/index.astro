@@ -21,14 +21,54 @@ const destacados = todosLosItems
   .sort((a, b) => b.data.anio - a.data.anio)
   .slice(0, 6);
 
-// Hero gallery: 4 static initial images (client script randomizes on each visit).
-// El alt text describe cada proyecto real para SEO de imágenes.
+// Hero gallery: pool curado de imagenes (portafolio + galeria + podcast + casos).
+// 4 se eligen en build (shuffle server-side); el script cliente rota las celdas
+// 1-3 en cada visita. La celda 0 (LCP) queda fija por sesion y cambia por build.
+// Cada entrada debe tener tripleta JPG/PNG + WebP + AVIF (el <picture> no hace
+// fallback ante 404 de un <source>).
 const heroPool = [
-  'pc-factory.png','pc-factory-ram.png','polpaico.png',
-  'beneficios-CMPC.png','valores-castano.png','copec.png',
-  'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
+  { src: '/images/portafolio/pc-factory.png', alt: 'Proyecto PC Factory — videos corporativos producidos por DAR2' },
+  { src: '/images/portafolio/pc-factory-ram.png', alt: 'Proyecto PC Factory RAM — campaña audiovisual por DAR2' },
+  { src: '/images/portafolio/polpaico.png', alt: 'Proyecto Polpaico — video corporativo de diversidad e inclusión' },
+  { src: '/images/portafolio/beneficios-CMPC.png', alt: 'Proyecto CMPC — video de beneficios corporativos por DAR2' },
+  { src: '/images/portafolio/valores-castano.png', alt: 'Proyecto Castaño — video de valores corporativos por DAR2' },
+  { src: '/images/portafolio/copec.png', alt: 'Proyecto Empresas Copec — video corporativo Q1 producido por DAR2' },
+  { src: '/images/portafolio/habitat-2.png', alt: 'Proyecto AFP Habitat — portal de formación audiovisual por DAR2' },
+  { src: '/images/portafolio/vida-camara.png', alt: 'Proyecto Vida Cámara — video institucional producido por DAR2' },
+  { src: '/images/portafolio/march2.png', alt: 'Proyecto Marsh — video de pilares corporativos por DAR2' },
+  { src: '/images/portafolio/abcdin4.png', alt: 'Proyecto ABCDIN — videos corporativos producidos por DAR2' },
+  { src: '/images/portafolio/astra.png', alt: 'Proyecto Astra — producción audiovisual de DAR2' },
+  { src: '/images/portafolio/cda.png', alt: 'Proyecto CDA — producción audiovisual de DAR2' },
+  { src: '/images/portafolio/csm-capsula.png', alt: 'Cápsulas audiovisuales Clínica Santa María — producción DAR2' },
+  { src: '/images/portafolio/voens.png', alt: 'Proyecto Voens — producción audiovisual de DAR2' },
+  { src: '/images/portafolio/voens_la-parva.png', alt: 'Proyecto Voens La Parva — producción audiovisual de DAR2' },
+  { src: '/images/portafolio/retorno2.png', alt: 'Proyecto corporativo — producción audiovisual de DAR2' },
+  { src: '/images/portafolio/prostata-csm.png', alt: 'Proyecto de salud Clínica Santa María — producción audiovisual DAR2' },
+  { src: '/images/portafolio/CSM-Mes-del-corazon.png', alt: 'Campaña Mes del Corazón Clínica Santa María — producción DAR2' },
+  { src: '/images/portafolio/vogt-bomba-pelambres.png', alt: 'Caso VOGT sala de bombas — video técnico producido por DAR2' },
+  { src: '/images/portafolio/Armado-Hugo-RAS2.png', alt: 'Cirugía robótica Clínica Santa María — documentación audiovisual DAR2' },
+  { src: '/images/galeria/camara-zcam-full-equipada.png', alt: 'Cámara ZCam equipada — equipo de producción DAR2 en terreno' },
+  { src: '/images/galeria/live-afp-habitat-fondo-virtual.png', alt: 'Live streaming AFP Habitat con fondo virtual — transmisión DAR2' },
+  { src: '/images/galeria/cobertura-multi-camara.png', alt: 'Cobertura multicámara en vivo — producción DAR2' },
+  { src: '/images/galeria/enlace-punto-a-punto-entel.png', alt: 'Enlace punto a punto en evento — ingeniería de transmisión DAR2' },
+  { src: '/images/galeria/rodaje-capsulas-clinica-santa-maria.png', alt: 'Rodaje de cápsulas Clínica Santa María — producción DAR2' },
+  { src: '/images/galeria/setup-dar2.png', alt: 'Setup de producción DAR2 — equipo y puesta en escena' },
+  { src: '/images/podcast/set-general.jpg', alt: 'Set de video podcast corporativo — producción DAR2' },
+  { src: '/images/podcast/los-3-conversando.jpg', alt: 'Conversación de videopodcast corporativo — producción DAR2' },
+  { src: '/images/podcast/plano-general-estudio.jpg', alt: 'Plano general del set de video podcast — DAR2' },
+  { src: '/images/casos/circuito-cerrado-la-mar/ambiente-salones.jpg', alt: 'Evento gastronómico La Mar con pantallas verticales en vivo — DAR2' },
+  { src: '/images/casos/circuito-cerrado-la-mar/estacion-brasas.jpg', alt: 'Estación de brasas La Mar transmitida en vivo — cobertura DAR2' },
 ];
-const heroImages = heroPool.slice(0, 4);
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const heroImages = shuffle(heroPool).slice(0, 4);
 function getYouTubeId(url: string | undefined) {
   if (!url) return null;
   const m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,15})/) ||
@@ -70,19 +110,6 @@ const videoSchemas = destacados
       "publisher": { "@type": "Organization", "@id": "https://dar2.cl/#organization" }
     };
   });
-
-const heroAltMap: Record<string, string> = {
-  'pc-factory.png': 'Proyecto PC Factory — videos corporativos producidos por DAR2',
-  'pc-factory-ram.png': 'Proyecto PC Factory RAM — campaña audiovisual por DAR2',
-  'polpaico.png': 'Proyecto Polpaico — video corporativo de diversidad e inclusión',
-  'beneficios-CMPC.png': 'Proyecto CMPC — video de beneficios corporativos por DAR2',
-  'valores-castano.png': 'Proyecto Castaño — video de valores corporativos por DAR2',
-  'copec.png': 'Proyecto Empresas Copec — video corporativo Q1 producido por DAR2',
-  'habitat-2.png': 'Proyecto AFP Habitat — portal de formación audiovisual por DAR2',
-  'vida-camara.png': 'Proyecto Vida Cámara — video institucional producido por DAR2',
-  'march2.png': 'Proyecto Marsh — video de pilares corporativos por DAR2',
-  'abcdin4.png': 'Proyecto ABCDIN — videos corporativos producidos por DAR2',
-};
 
 // Load client logos dynamically from public/images/clientes/
 const logosDir  = join(process.cwd(), 'public', 'images', 'clientes');
@@ -157,7 +184,7 @@ const reviewSchemas = [
 <Base
   title="Productora Audiovisual en Santiago — Streaming, Live Shopping | DAR2"
   description="Productora audiovisual B2B en Santiago con 15 años y equipo propio. Streaming corporativo, live shopping, videos corporativos, estudio virtual y filtros AR. Cotiza en 48h."
-  preloadImage={`/images/portafolio/${heroImages[0].replace(/\.(png|jpe?g)$/i, '.webp')}`}
+  preloadImage={heroImages[0].src.replace(/\.(png|jpe?g)$/i, '.webp')}
 >
   <Fragment slot="head">
     {videoSchemas.map(schema => (
@@ -213,8 +240,8 @@ const reviewSchemas = [
         {heroImages.map((img, i) => (
           <div class="hero-img-cell">
             <Picture
-              src={`/images/portafolio/${img}`}
-              alt={heroAltMap[img] ?? 'Proyecto audiovisual producido por DAR2'}
+              src={img.src}
+              alt={img.alt}
               class="hero-img"
               width="600"
               height="600"
@@ -792,7 +819,7 @@ const reviewSchemas = [
   <script type="module" src="https://w.behold.so/widget.js" defer></script>
 
 
-<script>
+<script define:vars={{ heroPool }}>
   const words = [
     'live shopping',
     'streaming',
@@ -821,32 +848,38 @@ const reviewSchemas = [
   document.addEventListener('astro:page-load', initRotatingWord);
   initRotatingWord();
 
-  // Hero gallery: randomize on every visit (SSG builds static, JS shuffles client-side)
-  const heroPool = [
-    'pc-factory.png','pc-factory-ram.png','polpaico.png',
-    'beneficios-CMPC.png','valores-castano.png','copec.png',
-    'habitat-2.png','vida-camara.png','march2.png','abcdin4.png',
-  ];
+  // Hero gallery: pool inyectado desde el frontmatter via define:vars (fuente
+  // unica). Cada visita mezcla y rota las celdas 1-3; la celda 0 (LCP) queda
+  // fija por sesion (imagen preload) y cambia en cada build.
+  function shuffle<T>(arr: T[]): T[] {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
   function initHeroGallery() {
     const imgs = document.querySelectorAll('.hero-img');
     if (!imgs.length) return;
-    const shuffled = [...heroPool].sort(() => 0.5 - Math.random());
+    const shuffled = shuffle(heroPool);
     imgs.forEach((img, i) => {
       if (i === 0) return; // keep LCP image preloaded
-      const file = shuffled[i];
-      const webpFile = file.replace(/\.(png|jpe?g)$/i, '.webp');
-      const avifFile = file.replace(/\.(png|jpe?g)$/i, '.avif');
+      const item = shuffled[i];
+      if (!item) return;
+      const base = item.src.replace(/\.(png|jpe?g)$/i, '');
       // Picture.astro genera <picture> con <source avif>, <source webp>, <img>.
       // Hay que actualizar AMBOS sources, no solo el primero (bug previo).
       const picture = img.parentElement;
       if (picture && picture.tagName === 'PICTURE') {
         picture.querySelectorAll('source').forEach(s => {
-          if (s.type === 'image/avif') s.srcset = `/images/portafolio/${avifFile}`;
-          else if (s.type === 'image/webp') s.srcset = `/images/portafolio/${webpFile}`;
+          if (s.type === 'image/avif') s.srcset = `${base}.avif`;
+          else if (s.type === 'image/webp') s.srcset = `${base}.webp`;
         });
       }
-      (img as HTMLImageElement).src = `/images/portafolio/${file}`;
+      (img as HTMLImageElement).src = item.src;
+      (img as HTMLImageElement).alt = item.alt;
     });
   }
 
