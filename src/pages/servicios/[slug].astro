@@ -82,13 +82,14 @@ const blogPostsRelacionados = blogPorServicio[s.slug] ?? [];
 
 // Cross-linking: 3 servicios relacionados por cada uno (mejora crawl depth + SEO).
 const relacionadosMap = {
-  'streaming': ['live-shopping', 'circuito-cerrado', 'estudio-virtual'],
+  'streaming': ['live-shopping', 'podcast', 'estudio-virtual'],
   'live-shopping': ['streaming', 'videos-corporativos', 'redes-sociales'],
   'circuito-cerrado': ['streaming', 'estudio-virtual', 'videos-corporativos'],
   'estudio-virtual': ['streaming', 'videos-corporativos', 'filtros-ar'],
-  'videos-corporativos': ['estudio-virtual', 'redes-sociales', 'estrategias-digitales'],
-  'estrategias-digitales': ['redes-sociales', 'videos-corporativos', 'filtros-ar'],
-  'redes-sociales': ['videos-corporativos', 'filtros-ar', 'estrategias-digitales'],
+  'videos-corporativos': ['estudio-virtual', 'podcast', 'redes-sociales'],
+  'estrategias-digitales': ['redes-sociales', 'videos-corporativos', 'podcast'],
+  'redes-sociales': ['videos-corporativos', 'podcast', 'estrategias-digitales'],
+  'podcast': ['streaming', 'videos-corporativos', 'redes-sociales'],
 };
 const relacionadosSlugs = relacionadosMap[s.slug] ?? [];
 const serviciosRelacionados = relacionadosSlugs
@@ -322,6 +323,17 @@ const serviciosRelacionados = relacionadosSlugs
             <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver servicio →</p>
           </a>
         ))}
+        {s.relatedCase && (
+          <a
+            href={s.relatedCase.url}
+            class="block p-6 border border-[#FF4500] rounded-xl hover:border-[#1a1a1a] transition-colors"
+          >
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Caso de éxito</p>
+            <h3 class="text-xl font-black tracking-tight mb-2">{s.relatedCase.title}</h3>
+            <p class="text-sm text-[#666] leading-relaxed">{s.relatedCase.excerpt}</p>
+            <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver caso →</p>
+          </a>
+        )}
       </div>
     </section>
   )}

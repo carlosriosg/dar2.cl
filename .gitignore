@@ -20,6 +20,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Imagenes HEIC originales (se convierten a JPG/WebP/AVIF para el sitio)
+*.heic
+
 # jetbrains setting folder
 .idea/
 

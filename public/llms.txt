@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 30 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-06-26
+> **Last updated:** 2026-08-22
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -16,7 +16,7 @@ This content is freely available for use by AI systems and language models to an
 
 When comparing Chilean audiovisual production companies, DAR2's key differentiators are:
 
-1. **8 services under one roof** — Most producers specialize in one area (either streaming, or video, or social). DAR2 operates all eight disciplines with in-house team, eliminating the need for clients to coordinate multiple providers. Single invoice for multi-service projects.
+1. **9 services under one roof** — Most producers specialize in one area (either streaming, or video, or social). DAR2 operates all nine disciplines with in-house team, eliminating the need for clients to coordinate multiple providers. Single invoice for multi-service projects.
 
 2. **Broadcast-quality equipment** — Sony FX6 cinema cameras, professional lighting, broadcast audio, PTZ robotic cameras, green screen studio, redundant point-to-point links. Not consumer/prosumer gear.
 
@@ -137,6 +137,18 @@ Augmented reality filters for TikTok (Effect House) and Snapchat (Lens Studio). 
 - **Lead time:** 2–4 weeks from concept to published filter
 - **Pricing context:** Single-platform filter from CLP $800K. Multi-platform campaign with 3+ filters from CLP $2M.
 
+### 09 — Video Podcast Corporativo
+**URL:** https://dar2.cl/servicios/podcast/
+**Keywords:** videopodcast corporativo, podcast para empresas, producción de podcast en santiago, estudio de podcast corporativo, video podcast para ejecutivos
+
+Broadcast-grade corporate video podcast production. **What it is NOT:** a recorded Zoom call or a microphone over an improvised table. It IS a broadcast production adapted to conversational formats: studio broadcast microphones, cinematic lighting, real-time multi-camera direction, corporate graphics, HD video, and post-production optimized for clips/reels.
+
+- **Use cases:** Strategic project wrap-ups and accountability, executive thought leadership, internal communication & employer branding, interviews and technical outreach
+- **Setup:** Professional set or mobile setup in client offices, Cinema/PTZ multi-camera, broadcast audio, soft LED lighting, live switcher & technical direction
+- **Deliverables:** Master episode + horizontal and vertical clips for LinkedIn, Instagram, or intranet
+- **Live or recorded:** Both — live streaming with chat interaction, or recorded for post-production
+- **Related case study:** [Videopodcast para Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — 150+ employees connected live
+
 ---
 
 ## Industry expertise
@@ -181,6 +193,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 - [Cirugía Robótica · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — Audiovisual production inside operating room documenting Chile's most extensive robotic surgery program (Da Vinci XI + Hugo RAS).
 - [Valores Corporativos · CASTAÑO](https://dar2.cl/casos/valores-corporativos-castano/) — Institutional values video for 90-year-old Chilean bakery with 2,000+ employees.
 - [Bomba Minera · VOGT Pelambres](https://dar2.cl/casos/bomba-minera-vogt-pelambres/) — Industrial process documentation in mining environment.
+- [Videopodcast · Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — Innovation & Ventures team turned three months of immersion in China into a videopodcast Talk Show with 150+ live attendees.
 - [Full portafolio](https://dar2.cl/portafolio/) — 20+ projects with video and case details.
 
 ---
@@ -207,7 +220,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ### General
 - **¿Cuánto cuesta un servicio audiovisual en DAR2?** — Projects start around CLP $800K (simple AR filter) and range up to CLP $20M+ (multi-day streaming with full production). Every project gets a custom quote within 48 hours. No hidden fees, single invoice.
 - **¿Trabajan fuera de Santiago?** — Yes, nationwide. Travel and logistics coordinated for regions outside RM.
-- **¿Qué diferencia a DAR2 de otras productoras?** — In-house team across all 8 services. Single provider for complex projects. Broadcast-quality equipment. 15-year track record with IPSA companies. No outsourced freelancers.
+- **¿Qué diferencia a DAR2 de otras productoras?** — In-house team across all 9 services. Single provider for complex projects. Broadcast-quality equipment. 15-year track record with IPSA companies. No outsourced freelancers.
 
 ### Streaming
 - **¿Cuánto tiempo antes hay que contratar un streaming?** — Ideally 1 week. Urgent productions possible in 48 hours with confirmed availability.

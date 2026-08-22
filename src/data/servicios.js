@@ -700,4 +700,91 @@ export const servicios = [
       },
     ],
   },
+  {
+    slug: 'podcast',
+    num: '09',
+    title: 'Video Podcast',
+    shortDesc: 'Videopodcast corporativo con calidad broadcast.',
+    heroEyebrow: 'PRODUCTORA DE VIDEO PODCAST EN SANTIAGO',
+    tagline: 'Producción de Video Podcast Corporativo <em class="hl">en Santiago.</em>',
+    description:
+      'Transforma tus informes, estrategias y conversaciones de liderazgo en videopodcasts de alta calidad audiovisual. ' +
+      'Set profesional, dirección multicámara, audio prístino e integración multimedia para contenido de alto impacto interno y externo.',
+    longDescription: [
+      'Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.',
+      'En DAR2 montamos un set profesional — en nuestro estudio en Providencia o como setup móvil en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
+      'Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas para redes, sin volver a producir.',
+    ],
+    process: [
+      { num: '01', title: 'Briefing y pauta', desc: 'Definimos el tono, formato de set, participantes e integración de apoyo gráfico y video. Cotización detallada en 48h.' },
+      { num: '02', title: 'Set & setup técnico', desc: 'Iluminación de estudio, microfonía broadcast, configuración multicámara y pruebas de señal antes de grabar o transmitir.' },
+      { num: '03', title: 'Grabación / transmisión en vivo', desc: 'Dirección técnica en tiempo real, switching de cámaras y mezcla de audio prístina. Transmisión privada o pública con interacción de chat.' },
+      { num: '04', title: 'Postproducción & clips', desc: 'Entrega del capítulo máster completo más edición de cápsulas y reels en formato vertical para redes o intranet.' },
+    ],
+    forWhom: 'Un video podcast corporativo aplica para rendiciones de cuentas y cierres de proyectos estratégicos (viajes de innovación, juntas internas), programas de thought leadership de ejecutivos y gerentes, comunicación interna y cultura organizacional, y programas de entrevistas o divulgación técnica para clientes o industria.',
+    bullets: [
+      'Set de grabación o setup móvil en oficinas del cliente',
+      'Sistema multicámara Cinema / PTZ',
+      'Microfonía broadcast y procesamiento de audio en tiempo real',
+      'Iluminación LED suave de set',
+      'Switcher y dirección técnica en vivo',
+      'Inserción de gráficas animadas, diapositivas y videos en pantalla',
+      'Edición máster y entrega de mini-cápsulas para RRSS / Intranet',
+    ],
+    benefits: [
+      {
+        num: '01',
+        title: 'Calidad broadcast, no Zoom',
+        desc: 'Multicámara, audio de estudio e iluminación cinematográfica. Un videopodcast que se ve y se escucha profesional.',
+      },
+      {
+        num: '02',
+        title: 'Un formato, múltiples salidas',
+        desc: 'Máster completo más cápsulas verticales y horizontales para LinkedIn, Instagram e intranet desde la misma sesión.',
+      },
+      {
+        num: '03',
+        title: 'En vivo o grabado',
+        desc: 'Transmite en directo con interacción de chat o graba para postproducción. Tú eliges la modalidad según el objetivo.',
+      },
+    ],
+    cases: [
+      { num: '01', label: 'Rendiciones de cuentas y cierres de proyecto' },
+      { num: '02', label: 'Thought leadership de ejecutivos y gerentes' },
+      { num: '03', label: 'Comunicación interna y cultura organizacional' },
+      { num: '04', label: 'Entrevistas y divulgación técnica' },
+    ],
+    ctaTitle: '¿Listo para producir tu video podcast?',
+    featured: false,
+    seoTitle: 'Producción de Video Podcast Corporativo en Santiago',
+    seoDescription: 'Productora de video podcast corporativo en Santiago. Set profesional, multicámara, audio broadcast y cápsulas para redes. Para empresas, ejecutivos y comunicación interna. Cotiza en 48h.',
+    serviceType: 'Producción de video podcast corporativo',
+    relatedCase: {
+      title: 'Videopodcast para Transelec',
+      excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +150 colaboradores.',
+      url: '/casos/podcast-transelec-innovacion-china/',
+    },
+    faqs: [
+      {
+        q: '¿Se puede grabar en nuestras propias oficinas o requiere estudio?',
+        a: 'Podemos montar un set móvil profesional directamente en tus instalaciones o utilizar nuestro estudio en Providencia.',
+      },
+      {
+        q: '¿El podcast se puede transmitir en vivo o solo grabado?',
+        a: 'Ambas opciones. Podemos emitirlo en directo vía streaming privado o público con interacción de chat, o grabarlo para postproducción.',
+      },
+      {
+        q: '¿Entregan cápsulas para redes sociales?',
+        a: 'Sí, cada capítulo incluye la entrega del máster completo más clips horizontales y verticales editados para LinkedIn, Instagram o intranet.',
+      },
+      {
+        q: '¿En qué se diferencia un video podcast corporativo de un podcast de audio?',
+        a: 'Un video podcast suma cámara, set e iluminación al formato conversacional: se graba o transmite con dirección multicámara, gráficas corporativas en pantalla y audio broadcast. El resultado rinde tanto como capítulo en YouTube o LinkedIn como en cápsulas verticales para redes.',
+      },
+      {
+        q: '¿Cuánto demora producir un video podcast corporativo?',
+        a: 'Un capítulo típico se graba en una jornada (incluyendo el setup de set) y se entrega editado en una a dos semanas, junto con las cápsulas para redes. La cotización detallada la tienes en 48 horas hábiles.',
+      },
+    ],
+  },
 ];

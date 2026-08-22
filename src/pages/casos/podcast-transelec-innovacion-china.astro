@@ -1,0 +1,256 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Videopodcast · Transelec', url: 'https://dar2.cl/casos/podcast-transelec-innovacion-china/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Videopodcast para Transelec: transformando un informe de innovación en China en un formato dinámico y cercano",
+  "description": "Cómo el equipo de Innovación y Ventures de Transelec convirtió tres meses de inmersión tecnológica en China en un videopodcast tipo Talk Show que conectó a más de 150 colaboradores en tiempo real.",
+  "image": "https://dar2.cl/images/podcast/set-general.jpg",
+  "datePublished": "2026-06-15",
+  "dateModified": "2026-08-22",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/casos/podcast-transelec-innovacion-china/",
+  "about": {
+    "@type": "Organization",
+    "name": "Transelec",
+    "url": "https://www.transelec.cl"
+  },
+  "inLanguage": "es-CL"
+};
+---
+
+<Base
+  title="Videopodcast · Transelec"
+  description="Cómo DAR2 produjo un videopodcast tipo Talk Show para Transelec: tres meses de inmersión tecnológica en China convertidos en un formato dinámico que conectó a +150 colaboradores en vivo."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/podcast/set-general.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Energía · 2026</p>
+      <h1 class="case-h1">
+        Videopodcast para <em class="hl">Transelec:</em>
+        transformando un informe de innovación en China en un formato dinámico y cercano
+      </h1>
+      <p class="case-lead">
+        Cómo el equipo de Innovación y Ventures de Transelec convirtió tres meses de inmersión tecnológica en un videopodcast tipo Talk Show que conectó a más de 150 colaboradores en tiempo real.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <section class="case-overview">
+      <div>
+        <p class="overview-label">Cliente</p>
+        <p class="overview-value">Transelec (Innovación y Ventures)</p>
+      </div>
+      <div>
+        <p class="overview-label">Servicio</p>
+        <p class="overview-value">Videopodcast / Streaming Corporativo</p>
+      </div>
+      <div>
+        <p class="overview-label">Audiencia</p>
+        <p class="overview-value">+150 profesionales en vivo</p>
+      </div>
+      <div>
+        <p class="overview-label">Formato</p>
+        <p class="overview-value">Talk Show con chat en tiempo real</p>
+      </div>
+    </section>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/podcast/set-general.jpg"
+        alt="Set de videopodcast corporativo producido por DAR2 para Transelec — conversación tipo Talk Show"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El desafío -->
+    <section class="case-section">
+      <h2>El desafío.</h2>
+      <p>
+        El equipo de Innovación y Ventures de Transelec venía de tres meses de pasantía técnica en China junto a China Southern Power Grid (CSG) —una compañía con 350.000 empleados y 270 millones de usuarios—. Traían de vuelta una cantidad enorme de información de alto valor: modelos de inteligencia artificial aplicados a la red eléctrica, estrategias de ciberseguridad, automatización de inspecciones y una visión de futuro que la organización necesitaba internalizar.
+      </p>
+      <p>
+        El reto no era producir un informe más, sino presentar métricas complejas de Inteligencia Artificial, ciberseguridad y automatización sin perder la cercanía, el dinamismo ni el engagement de la audiencia interna. Un documento o un webinar tradicional habrían sepultado el contenido en tecnicismos; la empresa necesitaba un formato que convirtiera tres meses de aprendizaje intensivo en una conversación que se entendiera y se recordara.
+      </p>
+    </section>
+
+    <!-- Nuestra solución audiovisual -->
+    <section class="case-section">
+      <h2>Nuestra solución audiovisual.</h2>
+      <p>
+        Producimos e implementamos un videopodcast interactivo tipo Talk Show, con el estándar broadcast de DAR2, para transformar el informe técnico en una conversación cercana y visualmente rica.
+      </p>
+      <p>
+        <strong>Puesta en escena.</strong> Conversación fluida moderada por el equipo de Innovación, alternando datos duros con anécdotas de terreno y choque cultural. El formato Talk Show humaniza la información y mantiene la atención.
+      </p>
+      <p>
+        <strong>Integración multimedia.</strong> Apoyo continuo con diapositivas de métricas, imágenes en terreno y videos HD: vuelos autónomos de drones, centros de comando 24/7 y gemelos digitales. La pantalla refuerza cada dato con evidencia visual.
+      </p>
+      <p>
+        <strong>Interacción en vivo.</strong> Gestión y transmisión del chat en vivo para responder preguntas en tiempo real. La audiencia no solo miró: participó y dirigió parte de la conversación.
+      </p>
+    </section>
+
+    <!-- Imagen conversación -->
+    <div class="case-hero-image case-image-inline">
+      <Picture
+        src="/images/podcast/los-3-conversando.jpg"
+        alt="Tres profesionales conversando en el videopodcast de Transelec — producción DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Highlights técnicos -->
+    <section class="case-section">
+      <h2>Highlights técnicos del contenido.</h2>
+      <p>
+        <strong>Tecnología.</strong> Redes 5G cerradas con protocolo Power Harmony OS de Huawei, inspección autónoma del 70% de líneas mediante drones e IA, e indicadores SAIDI de 7.5 min/año en Shenzhen.
+      </p>
+      <p>
+        <strong>Cultura y transferencia.</strong> Gestión del bienestar laboral en Asia y pilotaje de inspecciones autónomas locales en Chile (Proyecto Cerronavia).
+      </p>
+    </section>
+
+    <!-- Resultado -->
+    <section class="case-section">
+      <h2>Resultado.</h2>
+      <p>
+        El videopodcast marcó un récord de sintonía interna y una alta valoración del formato por parte de la audiencia. Más de 150 profesionales se conectaron simultáneamente en vivo, participaron a través del chat y convirtieron una sesión de transferencia de conocimiento en una conversación que siguió resonando después del evento.
+      </p>
+      <p>
+        El proyecto demostró el potencial del videopodcast corporativo como herramienta de comunicación interna: el mismo contenido que antes habría sido un documento de 40 páginas se transformó en un formato audiovisual dinámico, reutilizable en cápsulas para redes e intranet, y con la cercanía que los informes tradicionales no logran.
+      </p>
+    </section>
+
+    <!-- Sobre el cliente -->
+    <section class="case-section case-context">
+      <h3>Sobre Transelec</h3>
+      <p>
+        Transelec es la principal empresa de transmisión de energía eléctrica de Chile, con una red de alta tensión que transporta la mayor parte de la energía que consume el país. Su equipo de Innovación y Ventures lidera la exploración de tecnologías emergentes —inteligencia artificial, automatización, ciberseguridad— para modernizar la operación de la red y anticipar el futuro del sector energético.
+      </p>
+      <p class="case-source">
+        Fuente: <a href="https://www.transelec.cl" target="_blank" rel="noopener">transelec.cl</a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Quieres producir un videopodcast corporativo para tu empresa?</h2>
+      <p>
+        En DAR2 producimos videopodcasts y streaming corporativo con set profesional, dirección multicámara y postproducción de cápsulas para redes. Cotización a medida en 48 horas.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar videopodcast →
+        </a>
+        <a href="/servicios/podcast/" class="case-cta-link">
+          O ver el servicio Video Podcast →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  .case-context {
+    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  }
+  .case-context h3 { margin-top: 0; }
+  .case-context p { font-size: 16px; color: #555; }
+  .case-source { font-size: 14px; color: #888; margin-top: 12px; }
+  .case-source a { color: #666; text-decoration: underline; }
+  .case-source a:hover { color: #E63E00; }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>
