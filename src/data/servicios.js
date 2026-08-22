@@ -711,7 +711,7 @@ export const servicios = [
       'Set profesional, dirección multicámara, audio prístino e integración multimedia para contenido de alto impacto interno y externo.',
     longDescription: [
       'Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.',
-      'En DAR2 montamos un set profesional — en nuestro estudio en Providencia o como setup móvil en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
+      'En DAR2 contamos con un set profesional en Providencia o también podemos montar un setup móvil en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
       'Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas para redes, sin volver a producir.',
     ],
     process: [
