@@ -222,10 +222,10 @@ const eventSchema = {
     <section class="case-section case-gallery">
       <h2>Galería del evento</h2>
       <p>
-        La cobertura completa del evento en imágenes: cámaras PTZ cenitales, estaciones de cocina y la experiencia en vivo transmitida a las pantallas.
+        La cobertura completa del evento en imágenes: estaciones de cocina y la experiencia en vivo transmitida a las pantallas.
       </p>
       <div class="case-gallery-grid">
-        <div class="case-gallery-item case-gallery-item--land">
+        <div class="case-gallery-item">
           <Picture
             src="/images/casos/circuito-cerrado-la-mar/estacion-brasas.jpg"
             alt="Estación de brasas de La Mar Cebichería transmitida en vivo a las pantallas del evento"
@@ -236,18 +236,7 @@ const eventSchema = {
             decoding="async"
           />
         </div>
-        <div class="case-gallery-item case-gallery-item--tall">
-          <Picture
-            src="/images/casos/circuito-cerrado-la-mar/camara-ptz-cenital.jpg"
-            alt="Cámara PTZ cenital enfocando el plano detalle de una estación de cocina de La Mar Cebichería"
-            class="w-full h-full object-cover"
-            width="1600"
-            height="2842"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="case-gallery-item case-gallery-item--land">
+        <div class="case-gallery-item">
           <Picture
             src="/images/casos/circuito-cerrado-la-mar/estacion-postres.jpg"
             alt="Estación de postres de La Mar Cebichería con cobertura multicámara en vivo"
@@ -356,17 +345,15 @@ const eventSchema = {
   .case-gallery { margin-bottom: 64px; }
   .case-gallery-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
-    grid-auto-flow: dense; gap: 12px; margin-top: 28px;
+    gap: 12px; margin-top: 28px;
   }
   @media (min-width: 640px) {
-    .case-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .case-gallery-grid { gap: 16px; }
   }
   .case-gallery-item { border-radius: 12px; overflow: hidden; background: #eaeaea; }
   .case-gallery-item :global(img) {
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  .case-gallery-item--land { aspect-ratio: 16 / 9; }
-  .case-gallery-item--tall { aspect-ratio: 9 / 16; grid-row: span 2; }
 
   .case-context {
     background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;

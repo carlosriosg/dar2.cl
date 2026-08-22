@@ -26,7 +26,6 @@ const NAME_MAP = {
   '20260820_180926.heic': 'ambiente-salones',
   '20260820_193314.heic': 'camara-ptz-estacion-1',
   '20260820_193332.heic': 'camarografos-inalambricos',
-  '20260820_193350.heic': 'camara-ptz-cenital',
   '20260820_202541.heic': 'pantalla-vertical-chef',
   '20260820_220725.heic': 'estacion-brasas',
   '20260820_220846.heic': 'estacion-postres',
