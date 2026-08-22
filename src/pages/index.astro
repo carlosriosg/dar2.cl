@@ -818,8 +818,10 @@ const reviewSchemas = [
   <!-- Behold.so widget loader (auto-actualiza el feed de Instagram) -->
   <script type="module" src="https://w.behold.so/widget.js" defer></script>
 
+  <!-- Hero gallery pool (fuente unica del frontmatter; el script lo parsea). -->
+  <script type="application/json" id="hero-pool-data" set:html={JSON.stringify(heroPool)}></script>
 
-<script define:vars={{ heroPool }}>
+<script>
   const words = [
     'live shopping',
     'streaming',
@@ -848,10 +850,11 @@ const reviewSchemas = [
   document.addEventListener('astro:page-load', initRotatingWord);
   initRotatingWord();
 
-  // Hero gallery: pool inyectado desde el frontmatter via define:vars (fuente
-  // unica). Cada visita mezcla y rota las celdas 1-3; la celda 0 (LCP) queda
-  // fija por sesion (imagen preload) y cambia en cada build.
-  function shuffle<T>(arr: T[]): T[] {
+  // Hero gallery: pool desde el tag #hero-pool-data (fuente unica del
+  // frontmatter, se serializa como JSON). Cada visita mezcla y rota las celdas
+  // 1-3; la celda 0 (LCP) queda fija por sesion (imagen preload) y cambia en
+  // cada build. JS puro: define:vars rompe el transform TS->JS de Astro.
+  function shuffle(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -861,13 +864,21 @@ const reviewSchemas = [
   }
 
   function initHeroGallery() {
+    const poolEl = document.getElementById('hero-pool-data');
     const imgs = document.querySelectorAll('.hero-img');
-    if (!imgs.length) return;
-    const shuffled = shuffle(heroPool);
+    if (!poolEl || !imgs.length) return;
+    let pool;
+    try {
+      pool = JSON.parse(poolEl.textContent || '[]');
+    } catch {
+      return;
+    }
+    if (!Array.isArray(pool) || !pool.length) return;
+    const shuffled = shuffle(pool);
     imgs.forEach((img, i) => {
       if (i === 0) return; // keep LCP image preloaded
       const item = shuffled[i];
-      if (!item) return;
+      if (!item || !item.src) return;
       const base = item.src.replace(/\.(png|jpe?g)$/i, '');
       // Picture.astro genera <picture> con <source avif>, <source webp>, <img>.
       // Hay que actualizar AMBOS sources, no solo el primero (bug previo).
@@ -878,8 +889,8 @@ const reviewSchemas = [
           else if (s.type === 'image/webp') s.srcset = `${base}.webp`;
         });
       }
-      (img as HTMLImageElement).src = item.src;
-      (img as HTMLImageElement).alt = item.alt;
+      img.src = item.src;
+      img.alt = item.alt;
     });
   }
 
