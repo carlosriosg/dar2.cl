@@ -157,6 +157,27 @@ const serviciosRelacionados = relacionadosSlugs
     </section>
   )}
 
+  <!-- Galería del set (solo para servicios que tienen fotos extra) -->
+  {s.extraImages && s.extraImages.length > 0 && (
+    <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {s.extraImages.map(img => (
+          <div class="rounded-[16px] overflow-hidden aspect-video bg-[#eaeaea]">
+            <Picture
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover"
+              width="800"
+              height="450"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
   <!-- Para quién es -->
   {s.forWhom && (
     <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">

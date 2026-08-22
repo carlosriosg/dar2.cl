@@ -764,6 +764,10 @@ export const servicios = [
       excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +150 colaboradores.',
       url: '/casos/podcast-transelec-innovacion-china/',
     },
+    extraImages: [
+      { src: '/images/podcast/plano-general-estudio.jpg', alt: 'Plano general del set de video podcast corporativo — producción DAR2 en estudio' },
+      { src: '/images/podcast/los-3-saludando.jpg', alt: 'Presentadores saludando al cierre del video podcast corporativo producido por DAR2' },
+    ],
     faqs: [
       {
         q: '¿Se puede grabar en nuestras propias oficinas o requiere estudio?',
