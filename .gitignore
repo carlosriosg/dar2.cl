@@ -22,6 +22,8 @@ pnpm-debug.log*
 
 # Imagenes HEIC originales (se convierten a JPG/WebP/AVIF para el sitio)
 *.heic
+# Originales del caso La Mar (fuente de conversion, no se despliegan ni trackean)
+raw-images-la-mar/
 
 # jetbrains setting folder
 .idea/

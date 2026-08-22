@@ -1,0 +1,395 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Circuito Cerrado La Mar', url: 'https://dar2.cl/casos/circuito-cerrado-la-mar/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Article", "CaseStudy"],
+  "headline": "Circuito Cerrado Multicámara y Cobertura Gastronómica en Vivo: 18 Años de La Mar Cebichería",
+  "description": "Despliegue técnico de nivel broadcast con 7 cámaras para la cumbre culinaria 'El Mar que Nos Une' de La Mar Cebichería: cámaras PTZ sobre cada estación, camarógrafos inalámbricos y 5 pantallas verticales transmitiendo en tiempo real.",
+  "image": "https://dar2.cl/images/casos/circuito-cerrado-la-mar/ambiente-salones.webp",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-22",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/casos/circuito-cerrado-la-mar/",
+  "keywords": "circuito cerrado, CCTV, multicámara, eventos gastronómicos, pantallas verticales, streaming, La Mar Cebichería, Gastón Acurio",
+  "about": {
+    "@type": "Event",
+    "name": "Aniversario 18 Años de La Mar Cebichería — El Mar que Nos Une"
+  },
+  "inLanguage": "es-CL"
+};
+
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://dar2.cl/casos/circuito-cerrado-la-mar/#event",
+  "name": "Aniversario 18 Años de La Mar Cebichería — El Mar que Nos Une",
+  "description": "Cumbre culinaria por los 18 años de La Mar Cebichería Santiago, encabezada por Gastón Acurio junto a los chefs Carlos Labrín, Anthony Vásquez y Diego Oka, con cobertura multicámara en vivo de DAR2.",
+  "startDate": "2026-08-20",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "La Mar Cebichería Santiago",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Nueva Costanera 4076",
+      "addressLocality": "Vitacura",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "La Mar Cebichería"
+  },
+  "performer": [
+    { "@type": "Person", "name": "Gastón Acurio" },
+    { "@type": "Person", "name": "Carlos Labrín" },
+    { "@type": "Person", "name": "Anthony Vásquez" },
+    { "@type": "Person", "name": "Diego Oka" }
+  ],
+  "image": "https://dar2.cl/images/casos/circuito-cerrado-la-mar/ambiente-salones.webp",
+  "inLanguage": "es-CL"
+};
+---
+
+<Base
+  title="Circuito Cerrado Multicámara · La Mar Cebichería"
+  description="Cómo DAR2 desplegó un circuito cerrado de 7 cámaras para la cumbre culinaria de los 18 años de La Mar Cebichería: cámaras PTZ sobre cada estación, camarógrafos inalámbricos y 5 pantallas verticales en vivo."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/casos/circuito-cerrado-la-mar/ambiente-salones.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Gastronomía · 2026</p>
+      <h1 class="case-h1">
+        Circuito Cerrado Multicámara y Cobertura Gastronómica en Vivo:
+        <em class="hl">18 Años de La Mar Cebichería.</em>
+      </h1>
+      <p class="case-lead">
+        Despliegue técnico de nivel broadcast con 7 cámaras para la cumbre culinaria "El Mar que Nos Une", transmitiendo detalles de alta precisión en tiempo real a pantallas verticales integradas en cada estación de cocina.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <section class="case-overview">
+      <div>
+        <p class="overview-label">Cliente</p>
+        <p class="overview-value">La Mar Cebichería</p>
+      </div>
+      <div>
+        <p class="overview-label">Evento</p>
+        <p class="overview-value">18 Años — "El Mar que Nos Une"</p>
+      </div>
+      <div>
+        <p class="overview-label">Lugar</p>
+        <p class="overview-value">Av. Nueva Costanera 4076, Vitacura</p>
+      </div>
+      <div>
+        <p class="overview-label">Servicio</p>
+        <p class="overview-value">Circuito Cerrado (CCTV) / Multicámara en Vivo</p>
+      </div>
+      <div>
+        <p class="overview-label">Despliegue</p>
+        <p class="overview-value">7 cámaras (5 PTZ HD + 2 inalámbricas)</p>
+      </div>
+      <div>
+        <p class="overview-label">Visualización</p>
+        <p class="overview-value">5 pantallas verticales HD por estación</p>
+      </div>
+    </section>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/casos/circuito-cerrado-la-mar/ambiente-salones.jpg"
+        alt="Ambiente general del aniversario 18 años de La Mar Cebichería con pantallas verticales mostrando la acción de los chefs en vivo"
+        class="w-full h-full object-cover"
+        width="1600"
+        height="901"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El desafío -->
+    <section class="case-section">
+      <h2>El Desafío</h2>
+      <p>
+        Conmemorar los 18 años de La Mar Cebichería Santiago exigía un estándar de producción a la altura de una cumbre gastronómica internacional encabezada por Gastón Acurio junto a los renombrados chefs Carlos Labrín, Anthony Vásquez y Diego Oka.
+      </p>
+      <p>
+        El evento operó bajo un formato dinámico de 5 estaciones gastronómicas simultáneas, maridadas con viñas de alta gama como Vik, Caballo Loco y Moët & Chandon. El reto principal para dar2.cl consistía en lograr que todos los asistentes, sin importar en qué punto del restaurant se encontraran, pudieran apreciar en detalle la preparación artesanal de cada plato en tiempo real, capturando el virtuosismo técnico, las emplatadas de alta precisión y la energía del chef en cada estación.
+      </p>
+      <figure class="case-figure case-figure--square">
+        <Picture
+          src="/images/casos/circuito-cerrado-la-mar/gaston-acurio.jpg"
+          alt="Gastón Acurio durante la cumbre culinaria El Mar que Nos Une en La Mar Cebichería"
+          class="w-full h-full object-cover"
+          width="640"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <!-- La solución audiovisual -->
+    <section class="case-section">
+      <h2>La Solución Audiovisual</h2>
+      <p>
+        Diseñamos e implementamos una arquitectura de Circuito Cerrado de Televisión (CCTV) de baja latencia con 7 cámaras en simultáneo y un centro de control broadcast en vivo:
+      </p>
+      <p>
+        <strong>5 Cámaras Robóticas PTZ para Plano Detalle:</strong> Instalamos cámaras robóticas automatizadas sobre cada una de las 5 estaciones de comida (Estación Fría, Entradas, Fusión Nikkei, Brasas y Postres). Su función principal fue entregar un plano detalle cenital y frontal enfocado en el ensamble de bocados icónicos como el siu mai de loco, la centolla fresca y el bife con langosta de Juan Fernández.
+      </p>
+
+      <div class="case-duo">
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/camara-ptz-estacion-1.jpg"
+            alt="Cámara robótica PTZ instalada sobre una estación gastronómica de La Mar Cebichería"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/camarografos-inalambricos.jpg"
+            alt="Camarógrafos con sistemas inalámbricos cubriendo el salón del evento de La Mar Cebichería"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <p>
+        <strong>2 Cámaras Inalámbricas con Camarógrafo:</strong> Un equipo de camarógrafos en terreno cubrió el flujo del salón, las interacciones de los chefs con los comensales, los discursos directivos y el ambiente general, enviando señal de alta definición sin cables para no interferir con el servicio de garzones ni con el paso de los asistentes.
+      </p>
+      <p>
+        <strong>5 Pantallas Verticales por Estación:</strong> Integramos verticalmente pantallas de alto brillo situadas justo detrás de cada estación gastronómica. Esta disposición vertical permitió formatear el video para resaltar la perspectiva de la cocina y la acción del chef de forma natural y orgánica con la arquitectura del local.
+      </p>
+
+      <h3 class="case-subsection">Las estaciones gastronómicas</h3>
+      <p>
+        Cada estación se convirtió en un set de cocina en vivo: mientras el chef trabajaba, su plano detalle aparecía en la pantalla vertical de alto brillo, permitiendo a los asistentes apreciar cada emplatada con precisión desde cualquier punto del restaurant.
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/circuito-cerrado-la-mar/pantalla-vertical-chef.jpg"
+          alt="Pantalla vertical mostrando en detalle el trabajo del chef en vivo durante el evento de La Mar Cebichería"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="901"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- Resultados -->
+    <section class="case-section">
+      <h2>Resultados e Impacto</h2>
+      <p>
+        El despliegue audiovisual transformó la velada en una experiencia inmersiva. Los asistentes pudieron seguir el paso a paso de cada preparación desde cualquier ángulo del restaurant, potenciando el valor de la propuesta gastronómica y el prestigio de la marca. Una ejecución impecable de televisión en vivo aplicada al sector corporativo y gastronómico de alto nivel.
+      </p>
+    </section>
+
+    <!-- Galería -->
+    <section class="case-section case-gallery">
+      <h2>Galería del evento</h2>
+      <p>
+        La cobertura completa del evento en imágenes: cámaras PTZ cenitales, estaciones de cocina y la experiencia en vivo transmitida a las pantallas.
+      </p>
+      <div class="case-gallery-grid">
+        <div class="case-gallery-item case-gallery-item--land">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/estacion-brasas.jpg"
+            alt="Estación de brasas de La Mar Cebichería transmitida en vivo a las pantallas del evento"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-gallery-item case-gallery-item--tall">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/camara-ptz-cenital.jpg"
+            alt="Cámara PTZ cenital enfocando el plano detalle de una estación de cocina de La Mar Cebichería"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="2842"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-gallery-item case-gallery-item--land">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/estacion-postres.jpg"
+            alt="Estación de postres de La Mar Cebichería con cobertura multicámara en vivo"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre el cliente -->
+    <section class="case-section case-context">
+      <h3>Sobre La Mar Cebichería</h3>
+      <p>
+        La Mar Cebichería es un ícono de la cocina peruana en Chile, parte de la familia gastronómica del chef Gastón Acurio. Su local en Vitacura — en Av. Nueva Costanera 4076 — es referencia de la cebichería de autor en Santiago, combinando producto de mar de alta calidad, maridaje de viñas premium y un servicio que celebra la cultura peruana.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Necesitas circuito cerrado o cobertura multicámara para tu evento?</h2>
+      <p>
+        En DAR2 diseñamos e implementamos infraestructura audiovisual para eventos: cámaras PTZ robóticas, camarógrafos inalámbricos, pantallas verticales y control broadcast en vivo. Cotización a medida en 48 horas.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar circuito cerrado →
+        </a>
+        <a href="/servicios/streaming/" class="case-cta-link">
+          Conocer streaming corporativo →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(3, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.4; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-subsection {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 40px 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  .case-figure { margin: 0; }
+  .case-figure--square img {
+    border-radius: 16px; overflow: hidden;
+  }
+  .case-figure--square :global(picture) {
+    display: block; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    max-width: 420px; aspect-ratio: 1 / 1; margin: 0 auto;
+  }
+  .case-figure--square :global(img) {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  .case-duo {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 0 0 48px;
+  }
+  .case-duo .case-hero-image { margin-bottom: 0; }
+
+  .case-gallery { margin-bottom: 64px; }
+  .case-gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense; gap: 12px; margin-top: 28px;
+  }
+  @media (min-width: 640px) {
+    .case-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  }
+  .case-gallery-item { border-radius: 12px; overflow: hidden; background: #eaeaea; }
+  .case-gallery-item :global(img) {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .case-gallery-item--land { aspect-ratio: 16 / 9; }
+  .case-gallery-item--tall { aspect-ratio: 9 / 16; grid-row: span 2; }
+
+  .case-context {
+    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  }
+  .case-context h3 { margin-top: 0; }
+  .case-context p { font-size: 16px; color: #555; }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>
