@@ -216,7 +216,7 @@ const reviewSchemas = [
           >
             Producimos<br /><span
               id="rotating-word"
-              style="color:#E63E00;font-style:italic;opacity:1;transition:opacity 0.2s ease;"
+              style="color:#E63E00;font-style:italic;opacity:1;white-space:nowrap;transition:opacity 0.2s ease;"
             >live shopping</span><br />y mucho más.
           </span>
         </h1>
@@ -837,15 +837,33 @@ const reviewSchemas = [
   ];
   let index = 0;
 
+  // Ajusta el font-size de la palabra rotatoria para que SIEMPRE quepa en una
+  // linea (nowrap). Reduce solo cuando hace falta; al rotar o redimensionar se
+  // re-mide. Elimina el wrap y el CLS que las frases largas provocaban.
+  function fitWord(el) {
+    const parent = el.parentElement;
+    if (!parent || parent.clientWidth < 50) return;
+    el.style.fontSize = ''; // re-usa el clamp heredado (font-size heredado)
+    let size = parseFloat(getComputedStyle(el).fontSize) || 44;
+    while (el.offsetWidth > parent.clientWidth && size > 18) {
+      size -= 1;
+      el.style.fontSize = size + 'px';
+    }
+  }
+
   function initRotatingWord() {
     const el = document.getElementById('rotating-word');
     if (!el) return;
+
+    fitWord(el); // ajusta la palabra inicial (SSR) sin esperar la rotacion
+    window.addEventListener('resize', () => fitWord(el));
 
     setInterval(() => {
       el.style.opacity = '0';
       setTimeout(() => {
         index = (index + 1) % words.length;
         el.textContent = words[index];
+        fitWord(el);
         el.style.opacity = '1';
       }, 200);
     }, 2500);
