@@ -216,7 +216,7 @@ const reviewSchemas = [
           >
             Producimos<br /><span
               id="rotating-word"
-              style="color:#E63E00;font-style:italic;opacity:1;white-space:nowrap;transition:opacity 0.2s ease;"
+              style="display:inline-block;color:#E63E00;font-style:italic;opacity:1;white-space:nowrap;transition:opacity 0.2s ease;"
             >live shopping</span><br />y mucho más.
           </span>
         </h1>
@@ -1024,8 +1024,12 @@ const reviewSchemas = [
     gap: 48px;
     align-items: center;
   }
-  @media (min-width: 768px)  { .hero-grid { grid-template-columns: 65fr 35fr; } }
-  @media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
+  /* minmax(0, ...) evita que el min-content de una palabra larga (nowrap)
+     de la columna de texto achique la columna de fotos. */
+  @media (min-width: 768px)  { .hero-grid { grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); } }
+  @media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, 58fr) minmax(0, 42fr); } }
+  .hero-text { min-width: 0; }
+  .hero-gallery { min-width: 0; }
 
   .hero-gallery {
     display: grid;
