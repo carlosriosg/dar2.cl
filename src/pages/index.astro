@@ -68,7 +68,11 @@ function shuffle<T>(arr: T[]): T[] {
   }
   return a;
 }
-const heroImages = shuffle(heroPool).slice(0, 4);
+// La celda 0 (LCP) queda fija en la imagen ZCam; las celdas 1-3 se eligen al
+// azar en build (y el script cliente las vuelve a rotar en cada visita).
+const heroLcp = heroPool.find(i => i.src.includes('camara-zcam-full-equipada'));
+const heroRest = shuffle(heroPool.filter(i => i !== heroLcp)).slice(0, 3);
+const heroImages = heroLcp ? [heroLcp, ...heroRest] : shuffle(heroPool).slice(0, 4);
 function getYouTubeId(url: string | undefined) {
   if (!url) return null;
   const m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,15})/) ||
@@ -874,7 +878,10 @@ const reviewSchemas = [
       return;
     }
     if (!Array.isArray(pool) || !pool.length) return;
-    const shuffled = shuffle(pool);
+    // La celda 0 (LCP) es fija; excluirla del shuffle para que no se repita.
+    const lcpSrc = imgs[0] ? imgs[0].getAttribute('src') : null;
+    const shufflePool = lcpSrc ? pool.filter(item => item.src !== lcpSrc) : pool;
+    const shuffled = shuffle(shufflePool);
     imgs.forEach((img, i) => {
       if (i === 0) return; // keep LCP image preloaded
       const item = shuffled[i];
