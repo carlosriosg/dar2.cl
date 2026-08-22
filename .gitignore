@@ -24,6 +24,8 @@ pnpm-debug.log*
 *.heic
 # Originales del caso La Mar (fuente de conversion, no se despliegan ni trackean)
 raw-images-la-mar/
+# Master de la tarjeta Video Podcast (se convierte a JPG/WebP/AVIF para el sitio)
+raw-images-podcast/
 
 # jetbrains setting folder
 .idea/
