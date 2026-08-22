@@ -57,7 +57,12 @@ export const servicios = [
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
     seoTitle: 'Productora de streaming corporativo en Santiago',
-    seoDescription: 'Productora de streaming profesional en Santiago. Multicámara, enlace redundante, transmisión en vivo para juntas anuales, lanzamientos y seminarios corporativos. Cotiza en 48h.',
+    seoDescription: 'Productora de streaming en Santiago. Multicámara, enlace redundante y transmisión en vivo para juntas, lanzamientos y seminarios. Cotiza en 48h.',
+    relatedCase: {
+      title: 'Circuito Cerrado Multicámara · La Mar Cebichería',
+      excerpt: 'Cobertura multicámara en vivo para la cumbre culinaria de los 18 años de La Mar: 7 cámaras, PTZ y 5 pantallas verticales.',
+      url: '/casos/circuito-cerrado-la-mar/',
+    },
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
@@ -151,8 +156,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping en Santiago: venta en vivo para retail en Chile',
-    seoDescription: 'Live shopping y live stream shopping en Chile. Producción end-to-end: conducción, multicámara, integración con e-commerce y métricas de conversión reales. Cotiza en 48h.',
+    seoTitle: 'Live Shopping en Santiago: venta en vivo para retail',
+    seoDescription: 'Live shopping en Chile con conversión real: conducción, multicámara, integración con e-commerce y métricas. Producción end-to-end. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
       {
@@ -326,7 +331,7 @@ export const servicios = [
     ctaTitle: '¿Necesitas producir contenido broadcast?',
     featured: false,
     seoTitle: 'Estudio virtual y croma (chroma key) en Santiago',
-    seoDescription: 'Estudio virtual con croma profesional en Providencia. Escenografías 3D hiperrealistas, chroma key broadcast y presentaciones corporativas sin costo de set físico. Cotiza en 48h.',
+    seoDescription: 'Estudio virtual con croma en Providencia. Escenografías 3D hiperrealistas, chroma key broadcast y presentaciones sin costo de set físico. Cotiza en 48h.',
     serviceType: 'Producción en estudio virtual',
     faqs: [
       {
@@ -412,8 +417,13 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
-    seoTitle: 'Video Corporativo en Santiago: producción para empresas',
-    seoDescription: 'Videos corporativos en Santiago para empresas: institucionales, de valores, cultura, procesos y producto. Dirección creativa, cámara cinema Sony FX6 y postproducción completa.',
+    seoTitle: 'Video Corporativo en Santiago para empresas',
+    seoDescription: 'Videos corporativos en Santiago: institucionales, de valores, cultura y producto. Dirección creativa, cámara cinema Sony FX6 y postproducción completa.',
+    relatedCase: {
+      title: 'Sala de Bombas Tipo Contenedor · VOGT',
+      excerpt: 'Documentación técnica de una sala de bombas tipo contenedor para Minera Los Pelambres, con piping AISI 316L e instrumentación IO-Link.',
+      url: '/casos/bomba-minera-vogt-pelambres/',
+    },
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -499,8 +509,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Necesitas un plan digital con respaldo de producción?',
     featured: false,
-    seoTitle: 'Estrategia de Contenido Audiovisual para Empresas en Santiago',
-    seoDescription: 'Estrategia de contenido audiovisual con producción interna. Planes de comunicación para redes sociales, diagnóstico digital y calendario editorial. Contenido alineado a tu marca.',
+    seoTitle: 'Estrategia de Contenido Audiovisual en Santiago',
+    seoDescription: 'Estrategia de contenido audiovisual con producción interna. Planes de comunicación, diagnóstico digital y calendario editorial alineado a tu marca.',
     serviceType: 'Estrategia y producción de contenido digital',
     faqs: [
       {
@@ -583,7 +593,7 @@ export const servicios = [
     ctaTitle: '¿Tu marca necesita presencia en redes?',
     featured: false,
     seoTitle: 'Productora de Reels: Instagram, TikTok y LinkedIn',
-    seoDescription: 'Productora de reels en Santiago: cápsulas y videos verticales para Instagram, TikTok y LinkedIn. Dirección de ejecutivos, postproducción ágil y paquetes mensuales.',
+    seoDescription: 'Productora de reels en Santiago: cápsulas y videos verticales para Instagram, TikTok y LinkedIn, con dirección de ejecutivos y postproducción ágil.',
     serviceType: 'Producción de contenido para redes sociales',
     faqs: [
       {
@@ -665,8 +675,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Te imaginas tu marca en un filtro AR?',
     featured: false,
-    seoTitle: 'Filtros AR de Marca para TikTok y Snapchat',
-    seoDescription: 'Filtros AR de marca desde Santiago: TikTok (Effect House) y Snapchat (Lens Studio). Instagram cerró Spark AR en 2025. Branded masks y efectos interactivos. Cotiza en 48h.',
+    seoTitle: 'Filtros AR de Marca para TikTok y Snapchat en Chile',
+    seoDescription: 'Filtros AR de marca desde Santiago: TikTok (Effect House) y Snapchat (Lens Studio). Instagram cerró Spark AR en 2025. Branded masks. Cotiza en 48h.',
     serviceType: 'Filtros de realidad aumentada para redes sociales',
     faqs: [
       {
@@ -757,7 +767,7 @@ export const servicios = [
     featured: true,
     badgeText: 'NUEVO',
     seoTitle: 'Producción de Video Podcast Corporativo en Santiago',
-    seoDescription: 'Productora de video podcast corporativo en Santiago. Set profesional, multicámara, audio broadcast y cápsulas para redes. Para empresas, ejecutivos y comunicación interna. Cotiza en 48h.',
+    seoDescription: 'Productora de video podcast corporativo en Santiago. Set profesional, multicámara, audio broadcast y cápsulas para redes. Cotiza en 48h.',
     serviceType: 'Producción de video podcast corporativo',
     relatedCase: {
       title: 'Videopodcast para Transelec',
