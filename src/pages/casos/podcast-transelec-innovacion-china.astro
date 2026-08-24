@@ -24,7 +24,11 @@ const caseSchema = {
     "name": "Transelec",
     "url": "https://www.transelec.cl"
   },
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
 };
 ---
 
@@ -53,24 +57,24 @@ const caseSchema = {
     </header>
 
     <!-- Ficha técnica -->
-    <section class="case-overview">
+    <dl class="case-overview">
       <div>
-        <p class="overview-label">Cliente</p>
-        <p class="overview-value">Transelec (Innovación y Ventures)</p>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Transelec (Innovación y Ventures)</dd>
       </div>
       <div>
-        <p class="overview-label">Servicio</p>
-        <p class="overview-value">Videopodcast / Streaming Corporativo</p>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Videopodcast / Streaming Corporativo</dd>
       </div>
       <div>
-        <p class="overview-label">Audiencia</p>
-        <p class="overview-value">+150 profesionales en vivo</p>
+        <dt class="overview-label">Audiencia</dt>
+        <dd class="overview-value">+150 profesionales en vivo</dd>
       </div>
       <div>
-        <p class="overview-label">Formato</p>
-        <p class="overview-value">Talk Show con chat en tiempo real</p>
+        <dt class="overview-label">Formato</dt>
+        <dd class="overview-value">Talk Show con chat en tiempo real</dd>
       </div>
-    </section>
+    </dl>
 
     <!-- Imagen hero -->
     <div class="case-hero-image">

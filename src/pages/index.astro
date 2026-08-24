@@ -350,7 +350,7 @@ const reviewSchemas = [
             </div>
             <div class="home-svc-text">
               <p class="home-svc-num">{s.num}</p>
-              <p class="home-svc-title">{s.title}</p>
+              <h3 class="home-svc-title">{s.title}</h3>
               <p class="home-svc-desc">{s.shortDesc}</p>
             </div>
           </a>
@@ -364,7 +364,6 @@ const reviewSchemas = [
       </a>
     </div>
   </section>
-  </Reveal>
 
   <!-- ── 3. PROYECTOS DESTACADOS ───────────────────────── -->
   {destacados.length > 0 && (
@@ -568,28 +567,28 @@ const reviewSchemas = [
     <p class="text-base md:text-lg text-[#666] leading-relaxed max-w-3xl mb-12">
       Fundada en 2010 por Carlos Rios Guevara. 15 años produciendo audiovisual para empresas chilenas con equipo propio y postproducción interna. Las cifras hablan por nosotros.
     </p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="15" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
-      </div>
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+      </li>
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polygon points="23 7 16 12 7 12 7 7 16 7"/><rect x="1" y="1" width="22" height="22" rx="2" ry="2"/><line x1="2" y1="15" x2="22" y2="15"/></svg>
         <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="40" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Producciones<br />al año</p>
-      </div>
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+      </li>
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="30" data-suffix="+">0+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
-      </div>
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
+      </li>
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         <p class="text-4xl font-black tracking-tight text-[#1a1a1a]">48h</p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Respuesta a<br />cotización</p>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
   </Reveal>
 
@@ -601,29 +600,29 @@ const reviewSchemas = [
       <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
         Cómo trabajamos.
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
         <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">1</div>
         <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Briefing y propuesta</h3>
         <p class="text-[#666] text-sm leading-relaxed">
           Una reunión para entender qué necesitas: tipo de evento, audiencia, formato. Te enviamos la cotización en 48 horas hábiles, sin letra chica.
         </p>
-      </div>
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+      </li>
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
         <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">2</div>
         <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Producción</h3>
         <p class="text-[#666] text-sm leading-relaxed">
           Coordinamos todo: equipo técnico, dirección, cámaras, sonido, iluminación y enlace redundante. Un solo director responsable. Revisas avances en cada hito.
         </p>
-      </div>
-      <div class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
+      </li>
+      <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-8 relative">
         <div class="w-10 h-10 rounded-xl bg-[#FF4500] flex items-center justify-center text-white text-lg font-black mb-4">3</div>
         <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">Entrega y postproducción</h3>
         <p class="text-[#666] text-sm leading-relaxed">
           Edición, color grading, motion graphics y audio. Entregamos en todos los formatos: redes sociales, web, presentaciones, broadcast. Una sola factura.
         </p>
-      </div>
-    </div>
+      </li>
+    </ol>
     <div class="mt-10 flex flex-wrap gap-3">
       <a href="/casos/" class="outline-btn">Ver casos de éxito →</a>
       <a href="/blog/" class="outline-btn">Leer el blog →</a>
@@ -789,6 +788,9 @@ const reviewSchemas = [
       <!-- Widget Behold.so (auto-actualiza cuando publicas en @dar2.cl) -->
       <div class="ig-widget-wrap">
         <behold-widget feed-id={BEHOLD_FEED_ID}></behold-widget>
+        <noscript>
+          <p class="ig-subtitle">El feed de Instagram se carga con JavaScript. Síguenos en <a href="https://www.instagram.com/dar2.cl/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#E1306C]">@dar2.cl</a>.</p>
+        </noscript>
       </div>
 
       <p class="ig-bottom-link">

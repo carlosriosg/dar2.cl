@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -72,7 +76,7 @@ const faqSchema = {
 ---
 
 <Base
-  title="¿Cuánto cuesta un live shopping en Chile? Precios"
+  title="¿Cuánto cuesta un live shopping en Chile?"
   description="Factores que determinan el presupuesto de un live shopping en Chile: niveles de producción, qué incluye cada uno y cómo cotizar."
   breadcrumbs={breadcrumbs}
   preloadImage="/images/blog/live-shopping-presupuesto-hero2.webp"
@@ -179,12 +183,13 @@ const faqSchema = {
       <h3>Tabla comparativa por nivel</h3>
       <div class="article-table-wrap">
         <table class="article-table">
+          <caption>Niveles de producción de live shopping</caption>
           <thead>
             <tr>
-              <th>Componente</th>
-              <th>Básico</th>
-              <th>Profesional</th>
-              <th>Premium</th>
+              <th scope="col">Componente</th>
+              <th scope="col">Básico</th>
+              <th scope="col">Profesional</th>
+              <th scope="col">Premium</th>
             </tr>
           </thead>
           <tbody>
@@ -236,15 +241,9 @@ const faqSchema = {
               <td>GMV + audiencia + ROI</td>
               <td>Dashboard completo</td>
             </tr>
-            <tr>
-              <td><strong>Rango CLP</strong></td>
-              <td><strong>$800K - $1.5M</strong></td>
-              <td><strong>$1.5M - $4M</strong></td>
-              <td><strong>$4M - $8M+</strong></td>
-            </tr>
           </tbody>
         </table>
-        <p class="article-table-footnote">* Rangos referenciales. Cada proyecto se cotiza a medida en 48h hábiles. No hay dos live shoppings iguales.</p>
+        <p class="article-table-footnote">* Cada proyecto se cotiza a medida en 48h hábiles. No hay dos live shoppings iguales.</p>
       </div>
     </section>
 
@@ -268,6 +267,45 @@ const faqSchema = {
       <p>
         Es la decisión que más impacta el costo por sesión y el retorno total:
       </p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Sesión única vs. programa recurrente de live shopping</caption>
+          <thead>
+            <tr>
+              <th scope="col">Criterio</th>
+              <th scope="col">Sesión única</th>
+              <th scope="col">Programa recurrente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Frecuencia</th>
+              <td>Puntual (lanzamiento, CyberDay, Navidad)</td>
+              <td>Mensual o quincenal</td>
+            </tr>
+            <tr>
+              <th scope="row">Costo por sesión</th>
+              <td>Mayor (sin economías de escala)</td>
+              <td>Menor: el costo por sesión baja</td>
+            </tr>
+            <tr>
+              <th scope="row">Audiencia</th>
+              <td>Se construye con campañas puntuales</td>
+              <td>Audiencia propia que vuelve sin paid media</td>
+            </tr>
+            <tr>
+              <th scope="row">Aprendizaje</th>
+              <td>Poco acumulable</td>
+              <td>El aprendizaje acumulado mejora la conversión de cada live</td>
+            </tr>
+            <tr>
+              <th scope="row">Cuándo elegirlo</th>
+              <td>Probar el canal o fechas comerciales</td>
+              <td>Marcas que apuestan al canal como venta permanente</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <ul class="article-list">
         <li><strong>Sesión única.</strong> Perfecta para un lanzamiento, una fecha comercial (CyberDay, Navidad, Fiestas Patrias) o probar el canal. Mayor costo unitario, sin compromiso.</li>
         <li><strong>Programa recurrente.</strong> Mensual o quincenal. El costo por sesión baja, construyes audiencia propia que vuelve sin paid media, y el aprendizaje acumulado mejora la conversión de cada live. Para marcas que apuestan al canal, es lo más rentable.</li>

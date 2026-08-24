@@ -24,7 +24,11 @@ const caseSchema = {
     "name": "Clínica Santa María",
     "url": "https://www.clinicasantamaria.cl"
   },
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
 };
 ---
 
@@ -53,24 +57,24 @@ const caseSchema = {
     </header>
 
     <!-- Overview -->
-    <section class="case-overview">
+    <dl class="case-overview">
       <div>
-        <p class="overview-label">Cliente</p>
-        <p class="overview-value">Clínica Santa María</p>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Clínica Santa María</dd>
       </div>
       <div>
-        <p class="overview-label">Año</p>
-        <p class="overview-value">2022</p>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2022</dd>
       </div>
       <div>
-        <p class="overview-label">Servicio</p>
-        <p class="overview-value">Video corporativo</p>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Video corporativo</dd>
       </div>
       <div>
-        <p class="overview-label">Sector</p>
-        <p class="overview-value">Salud</p>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Salud</dd>
       </div>
-    </section>
+    </dl>
 
     <!-- Imagen hero -->
     <div class="case-hero-image">

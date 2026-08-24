@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/estudio-virtual-vs-set-fisico/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -124,6 +128,46 @@ const faqSchema = {
 
     <section class="article-section" id="comparativa">
       <h2>¿Cómo se comparan?</h2>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Estudio virtual vs. set físico: comparativa</caption>
+          <thead>
+            <tr>
+              <th scope="col">Criterio</th>
+              <th scope="col">Estudio virtual</th>
+              <th scope="col">Set físico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Costo</th>
+              <td>Inicial moderado (estudio + escenografía 3D). Se amortiza en producciones recurrentes: la escenografía es un activo reutilizable.</td>
+              <td>Alto por sesión: construcción, transporte, montaje y bodega del decorado se repiten.</td>
+            </tr>
+            <tr>
+              <th scope="row">Tiempo de producción</th>
+              <td>Setup de 1 hora si la escenografía ya existe. 1-3 semanas extra si requiere diseño 3D nuevo.</td>
+              <td>Montaje de 1 día completo y otro día de desmontaje.</td>
+            </tr>
+            <tr>
+              <th scope="row">Flexibilidad</th>
+              <td>Cambio de escenografía al instante entre tomas.</td>
+              <td>Cambiar de ambiente exige desmontar y montar todo.</td>
+            </tr>
+            <tr>
+              <th scope="row">Calidad final</th>
+              <td>Indistinguible de un set real con iluminación profesional de chroma key y modelo 3D de calidad.</td>
+              <td>Realismo absoluto, texturas naturales y profundidad real.</td>
+            </tr>
+            <tr>
+              <th scope="row">Cuándo conviene</th>
+              <td>Programas recurrentes, e-learning, presentaciones ejecutivas, branding visual intenso, restricciones de espacio.</td>
+              <td>Interacción con objetos reales, contexto físico como mensaje, 5+ personas en cuadro, acción con movimiento amplio.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>Costo</h3>
       <p>

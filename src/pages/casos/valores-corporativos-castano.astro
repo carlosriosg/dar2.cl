@@ -25,7 +25,11 @@ const caseSchema = {
     "url": "https://pedidos.castano.cl/nosotros",
     "foundingDate": "1933"
   },
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
 };
 ---
 
@@ -54,24 +58,24 @@ const caseSchema = {
     </header>
 
     <!-- Overview -->
-    <section class="case-overview">
+    <dl class="case-overview">
       <div>
-        <p class="overview-label">Cliente</p>
-        <p class="overview-value">CASTAÑO</p>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">CASTAÑO</dd>
       </div>
       <div>
-        <p class="overview-label">Año</p>
-        <p class="overview-value">2023</p>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2023</dd>
       </div>
       <div>
-        <p class="overview-label">Servicio</p>
-        <p class="overview-value">Video corporativo</p>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Video corporativo</dd>
       </div>
       <div>
-        <p class="overview-label">Sector</p>
-        <p class="overview-value">Retail Alimenticio</p>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Retail Alimenticio</dd>
       </div>
-    </section>
+    </dl>
 
     <!-- Imagen hero -->
     <div class="case-hero-image">

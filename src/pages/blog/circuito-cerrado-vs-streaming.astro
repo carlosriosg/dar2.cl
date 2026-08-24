@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/circuito-cerrado-vs-streaming/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -124,6 +128,57 @@ const faqSchema = {
 
     <section class="article-section" id="diferencias">
       <h2>¿Cuáles son las diferencias clave?</h2>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Circuito cerrado vs. streaming: diferencias técnicas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Criterio</th>
+              <th scope="col">Circuito cerrado (CCTV)</th>
+              <th scope="col">Streaming en vivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Distribución</th>
+              <td>Señal por cable (SDI, HDMI, fibra) a pantallas físicas; no usa internet.</td>
+              <td>Señal codificada y distribuida por internet a cualquier dispositivo.</td>
+            </tr>
+            <tr>
+              <th scope="row">Alcance</th>
+              <td>Solo pantallas conectadas en el lugar.</td>
+              <td>Cualquier persona con el link, desde cualquier lugar.</td>
+            </tr>
+            <tr>
+              <th scope="row">Seguridad</th>
+              <td>Inherentemente seguro: sin exposición a internet.</td>
+              <td>Requiere autenticación, cifrado y plataforma segura.</td>
+            </tr>
+            <tr>
+              <th scope="row">Latencia</th>
+              <td>Casi cero (frames en tiempo real).</td>
+              <td>5-30 segundos de delay según plataforma.</td>
+            </tr>
+            <tr>
+              <th scope="row">Dependencia de internet</th>
+              <td>No requiere internet.</td>
+              <td>Depende completamente de la conexión (se mitiga con enlace redundante).</td>
+            </tr>
+            <tr>
+              <th scope="row">Escalabilidad</th>
+              <td>Requiere infraestructura física por cada punto de visualización.</td>
+              <td>Escala sin límite de audiencia.</td>
+            </tr>
+            <tr>
+              <th scope="row">Uso típico</th>
+              <td>Contenido confidencial, audiencia en salas del mismo lugar, sin internet confiable, latencia cero.</td>
+              <td>Audiencia dispersa, alcance masivo, contenido grabado, métricas de audiencia.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <ul class="article-list">
         <li><strong>Seguridad:</strong> circuito cerrado es inherentemente seguro (no hay riesgo de filtración por internet). Streaming requiere autenticación, cifrado y plataformas seguras.</li>
         <li><strong>Alcance:</strong> circuito cerrado llega solo a pantallas físicas conectadas. Streaming llega a cualquier dispositivo con internet.</li>

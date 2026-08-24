@@ -26,7 +26,12 @@ const onerrorAttr = (!thumbnail && videoId)
 
 <article class="video-card group" data-embed={embed}>
   <!-- Thumbnail 16:9, rounded-16px -->
-  <div class="vc-thumb aspect-video overflow-hidden bg-[#eaeaea] relative thumbnail-trigger cursor-pointer select-none">
+  <div
+    class="vc-thumb aspect-video overflow-hidden bg-[#eaeaea] relative thumbnail-trigger cursor-pointer select-none"
+    role="button"
+    tabindex="0"
+    aria-label={`Reproducir video: ${titulo}`}
+  >
     {imgSrc ? (
       <Picture
         src={imgSrc}
@@ -53,7 +58,7 @@ const onerrorAttr = (!thumbnail && videoId)
 
   <!-- Title + client -->
   <div class="mt-4">
-    <p class="text-[17px] font-semibold text-[#111] leading-[1.3] mb-1">{titulo}</p>
+    <h3 class="text-[17px] font-semibold text-[#111] leading-[1.3] mb-1">{titulo}</h3>
     <p class="text-[13px] font-normal text-[#666]">{cliente}</p>
   </div>
 </article>
@@ -83,10 +88,18 @@ const onerrorAttr = (!thumbnail && videoId)
     document.querySelectorAll('.video-card[data-embed]').forEach(card => {
       if (card.dataset.wired) return;
       card.dataset.wired = '1';
-      card.querySelector('.thumbnail-trigger')?.addEventListener('click', () => {
+      const openVideo = () => {
         window.dispatchEvent(
           new CustomEvent('dar2:open-video', { detail: { embed: card.dataset.embed } })
         );
+      };
+      const thumb = card.querySelector('.thumbnail-trigger');
+      thumb?.addEventListener('click', openVideo);
+      thumb?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openVideo();
+        }
       });
     });
   }

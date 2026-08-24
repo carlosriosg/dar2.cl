@@ -24,7 +24,11 @@ const caseSchema = {
     "@type": "Event",
     "name": "Aniversario 18 Años de La Mar Cebichería — El Mar que Nos Une"
   },
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
 };
 
 const eventSchema = {
@@ -89,32 +93,32 @@ const eventSchema = {
     </header>
 
     <!-- Ficha técnica -->
-    <section class="case-overview">
+    <dl class="case-overview">
       <div>
-        <p class="overview-label">Cliente</p>
-        <p class="overview-value">La Mar Cebichería</p>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">La Mar Cebichería</dd>
       </div>
       <div>
-        <p class="overview-label">Evento</p>
-        <p class="overview-value">18 Años — "El Mar que Nos Une"</p>
+        <dt class="overview-label">Evento</dt>
+        <dd class="overview-value">18 Años — "El Mar que Nos Une"</dd>
       </div>
       <div>
-        <p class="overview-label">Lugar</p>
-        <p class="overview-value">Av. Nueva Costanera 4076, Vitacura</p>
+        <dt class="overview-label">Lugar</dt>
+        <dd class="overview-value">Av. Nueva Costanera 4076, Vitacura</dd>
       </div>
       <div>
-        <p class="overview-label">Servicio</p>
-        <p class="overview-value">Circuito Cerrado (CCTV) / Multicámara en Vivo</p>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Circuito Cerrado (CCTV) / Multicámara en Vivo</dd>
       </div>
       <div>
-        <p class="overview-label">Despliegue</p>
-        <p class="overview-value">7 cámaras (5 PTZ HD + 2 inalámbricas)</p>
+        <dt class="overview-label">Despliegue</dt>
+        <dd class="overview-value">7 cámaras (5 PTZ HD + 2 inalámbricas)</dd>
       </div>
       <div>
-        <p class="overview-label">Visualización</p>
-        <p class="overview-value">5 pantallas verticales HD por estación</p>
+        <dt class="overview-label">Visualización</dt>
+        <dd class="overview-value">5 pantallas verticales HD por estación</dd>
       </div>
-    </section>
+    </dl>
 
     <!-- Imagen hero -->
     <div class="case-hero-image">

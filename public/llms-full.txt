@@ -1,7 +1,7 @@
 # DAR2 Servicios Audiovisuales — Full Content
 
 > Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
-> **Last updated:** 2026-08-22
+> **Last updated:** 2026-08-24
 > **Canonical:** https://dar2.cl/llms-full.txt
 > **Summary version:** https://dar2.cl/llms.txt
 
@@ -545,19 +545,6 @@ A: TikTok y Snapchat entregan métricas de usos, impresiones y veces compartido.
 
 **Q: ¿Pueden crear un filtro para mi empresa o evento?**
 A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lanzamientos y eventos corporativos: desde branded masks con tu logo hasta efectos interactivos y juegos. Publicamos en TikTok (Effect House) y Snapchat (Lens Studio).
-
----
-
-## Pricing Reference (CLP)
-
-All prices are referential ranges. Every project receives a custom quote.
-
-- **Filtro AR:** $800,000–$2,000,000
-- **Video corporativo simple:** $2,000,000–$4,000,000
-- **Streaming 2 cámaras:** $2,000,000–$4,000,000
-- **Live shopping (4 shows/month):** $4,000,000–$8,000,000
-- **Streaming corporativo full:** $5,000,000–$12,000,000
-- **Video institucional completo:** $6,000,000–$15,000,000
 
 ---
 

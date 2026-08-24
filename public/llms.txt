@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 30 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-08-22
+> **Last updated:** 2026-08-24
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -40,7 +40,7 @@ When comparing Chilean audiovisual production companies, DAR2's key differentiat
 - **Response time:** Under 48 business hours for proposals
 - **Business hours:** Monday to Friday, 09:00 to 19:00 CLT
 - **Languages:** Spanish (native), English (business proficiency)
-- **Pricing:** Mid-market to premium. Projects typically range from CLP $2M to $20M+ depending on complexity.
+- **Pricing:** Quotes are tailored per project. Every proposal is delivered within 48 business hours.
 
 ---
 
@@ -57,7 +57,7 @@ Multi-camera live streaming for corporate events. Broadcast-quality production w
 - **Setup:** 2–6 cameras, dedicated switcher, live graphic overlays, fiber + LTE/5G redundant links
 - **Deliverables:** Live transmission, master recording, edited post-event video, social media clips
 - **Lead time:** Ideally 1 week (48-hour urgent possible with availability)
-- **Pricing context:** Starts around CLP $2M for single-camera with basic graphics. Full production with 4+ cameras, rehearsal, and post-editing typically CLP $5M–$12M.
+- **Pricing context:** Custom quote per event, delivered in 48 business hours.
 
 ### 02 — Live Shopping
 **URL:** https://dar2.cl/servicios/live-shopping/
@@ -69,7 +69,7 @@ End-to-end live shopping production integrated with e-commerce platforms. Combin
 - **Includes:** Host/talent direction, multi-camera, real-time graphic overlays with prices/offers, e-commerce integration
 - **Platforms:** Custom RTMP destinations, social media live, e-commerce platform embeds
 - **Deliverables:** Live show, master recording, product clips, conversion analytics report
-- **Pricing context:** Productions from CLP $1.5M for single-product flash sale. Monthly packages with 4+ shows from CLP $4M.
+- **Pricing context:** Custom quote per show or monthly package, delivered in 48 business hours.
 
 ### 03 — Multicámara para Eventos (IMAG)
 **URL:** https://dar2.cl/servicios/circuito-cerrado/
@@ -102,7 +102,7 @@ Corporate and institutional video production with cinematic quality. Full creati
 - **Production:** Sony FX6 cinema camera, professional lighting, broadcast audio, makeup/styling, art direction
 - **Post-production:** Editing, color grading, motion graphics, sound design, original or licensed music, professional voiceover
 - **Timeline:** 2–6 weeks depending on complexity. Simple testimonial: 2–3 weeks. Multi-location institutional: 4–6 weeks.
-- **Pricing context:** Simple video with 1 shooting day: CLP $2M–$4M. Full institutional with script, art direction, multiple locations: CLP $6M–$15M.
+- **Pricing context:** Custom quote depending on shooting days, locations and post-production scope, delivered in 48 business hours.
 
 ### 06 — Agencia de Producción Audiovisual y Estrategia de Contenido
 **URL:** https://dar2.cl/servicios/estrategias-digitales/
@@ -135,7 +135,7 @@ Augmented reality filters for TikTok (Effect House) and Snapchat (Lens Studio). 
 - **Note:** Meta shut down Spark AR (Instagram/Facebook filters) on January 14, 2025. DAR2 has fully migrated to TikTok and Snapchat, the two surviving AR platforms for branded filters.
 - **Use cases:** Brand campaigns, event activations, product launches, viral marketing
 - **Lead time:** 2–4 weeks from concept to published filter
-- **Pricing context:** Single-platform filter from CLP $800K. Multi-platform campaign with 3+ filters from CLP $2M.
+- **Pricing context:** Custom quote depending on platform and number of filters, delivered in 48 business hours.
 
 ### 09 — Video Podcast Corporativo
 **URL:** https://dar2.cl/servicios/podcast/
@@ -201,8 +201,8 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ## Blog & guides (Spanish)
 
 - [Qué es Live Shopping y cómo implementarlo en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
-- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Pricing ranges by production level
-- [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Cost breakdown by event type
+- [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Factores que determinan el presupuesto
+- [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Factores que determinan la inversión
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Technical guide
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Cost/time comparison
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 metrics with calculation examples
@@ -218,7 +218,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ## Frequently asked questions
 
 ### General
-- **¿Cuánto cuesta un servicio audiovisual en DAR2?** — Projects start around CLP $800K (simple AR filter) and range up to CLP $20M+ (multi-day streaming with full production). Every project gets a custom quote within 48 hours. No hidden fees, single invoice.
+- **¿Cuánto cuesta un servicio audiovisual en DAR2?** — No publicamos tarifas: cada proyecto se cotiza a medida según su alcance (cámaras, locaciones, equipo, postproducción). Toda cotización se entrega en 48 horas hábiles, sin costos ocultos y con una sola factura.
 - **¿Trabajan fuera de Santiago?** — Yes, nationwide. Travel and logistics coordinated for regions outside RM.
 - **¿Qué diferencia a DAR2 de otras productoras?** — In-house team across all 9 services. Single provider for complex projects. Broadcast-quality equipment. 15-year track record with IPSA companies. No outsourced freelancers.
 
@@ -235,14 +235,6 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ### Live Shopping
 - **¿Qué diferencia un live shopping profesional de un vivo casero?** — Multi-camera switching, professional lighting, e-commerce integration, graphic overlays with prices, and a dedicated technical director. Conversion rates are 3–8× higher than amateur streams.
 - **¿Qué industrias atienden?** — Retail, supermarkets, pharmacies, fashion, electronics, consumer goods.
-
-### Precios referenciales (rangos típicos en CLP)
-- **Filtro AR:** $800K–$2M
-- **Video corporativo simple:** $2M–$4M
-- **Streaming 2 cámaras:** $2M–$4M
-- **Live shopping mensual (4 shows):** $4M–$8M
-- **Streaming corporativo full:** $5M–$12M
-- **Video institucional completo:** $6M–$15M
 
 ---
 

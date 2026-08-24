@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/medir-roi-video-corporativo/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -186,8 +190,8 @@ const faqSchema = {
       </p>
       <ul class="article-list">
         <li><strong>Video de venta:</strong> valor = ventas atribuibles × ticket promedio. Directo.</li>
-        <li><strong>Video de reclutamiento:</strong> valor = (postulaciones de calidad × probabilidad de contratación × costo evitado de headhunter por contratación). Por ejemplo: 50 postulaciones × 5% probabilidad × USD 3.000 ahorro = USD 7.500.</li>
-        <li><strong>Video de capacitación:</strong> valor = (colaboradores capacitados × horas ahorradas vs. capacitación presencial × costo/hora promedio). Ej: 200 personas × 4 horas × USD 30/h = USD 24.000 ahorro.</li>
+        <li><strong>Video de reclutamiento:</strong> valor = (postulaciones de calidad × probabilidad de contratación × costo evitado de headhunter por contratación). Es directo de calcular: multiplica las postulaciones que llegan, por la probabilidad de contratación, por lo que costaría conseguir cada contratación por otra vía.</li>
+        <li><strong>Video de capacitación:</strong> valor = (colaboradores capacitados × horas ahorradas vs. capacitación presencial × costo/hora promedio). Multiplica cuántas personas se capacitaron, por las horas que ahorraron al hacerlo en video, por el costo promedio de cada hora de trabajo.</li>
         <li><strong>Video institucional / brand lift:</strong> valor = incremento de recordación × tamaño audiencia × valor por punto de recordación. Más difícil de calcular pero se puede aproximar.</li>
         <li><strong>Video de retención:</strong> valor = clientes retenidos × LTV (lifetime value). Si un video institucional reduce el churn en 1%, el valor es enorme.</li>
       </ul>
@@ -199,13 +203,13 @@ const faqSchema = {
         Caso real simplificado: empresa retail produce un video de cultura organizacional para campaña de reclutamiento.
       </p>
       <ul class="article-list">
-        <li><strong>Costo del video:</strong> CLP 4.000.000 (producción + medios).</li>
+        <li><strong>Inversión del video:</strong> costo de producción + medios de distribución.</li>
         <li><strong>Resultado:</strong> 80.000 vistas en LinkedIn + Instagram. 1.200 clicks al portal de empleo. 350 postulaciones (vs. baseline 90/mes). 12 contrataciones atribuibles.</li>
-        <li><strong>Valor por contratación evitando headhunter:</strong> CLP 1.800.000 ahorro promedio × 12 = CLP 21.600.000.</li>
-        <li><strong>ROI:</strong> (21.600.000 − 4.000.000) / 4.000.000 = <strong>440%</strong>.</li>
+        <li><strong>Valor por contratación evitando headhunter:</strong> (ahorro promedio por contratación evitada) × 12 contrataciones = valor total del video.</li>
+        <li><strong>ROI:</strong> (valor total − inversión del video) / inversión del video. En este caso, el ahorro en reclutamiento multiplicó varias veces la inversión de producción.</li>
       </ul>
       <p>
-        Sin medir, esa empresa nunca habría sabido que el video pagó cinco veces su costo solo en ahorro de reclutamiento. Y lo más importante: ahora replica el formato.
+        Sin medir, esa empresa nunca habría sabido que el video pagó varias veces su costo solo en ahorro de reclutamiento. Y lo más importante: ahora replica el formato.
       </p>
     </section>
 

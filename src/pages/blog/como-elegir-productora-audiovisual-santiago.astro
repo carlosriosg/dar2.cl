@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -40,7 +44,7 @@ const faqSchema = {
       "name": "¿Cuánto cuesta contratar una productora audiovisual en Santiago?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende del alcance del proyecto. Un video corporativo simple puede partir en CLP $2M, mientras que una producción multicámara con streaming, gráficas en tiempo real y postproducción puede llegar a CLP $15M o más. Lo importante no es el precio absoluto sino el retorno: una buena producción convierte mejor y dura más."
+        "text": "Depende del alcance del proyecto: número de cámaras, locaciones, equipo técnico y complejidad de la postproducción. Cada proyecto se cotiza a medida en 48 horas hábiles. Lo importante no es el precio absoluto sino el retorno: una buena producción convierte mejor y dura más."
       }
     },
     {
@@ -193,18 +197,17 @@ const faqSchema = {
     <section class="article-section" id="presupuesto">
       <h2>¿Cuánto cuesta contratar una productora audiovisual en Santiago?</h2>
       <p>
-        Los presupuestos varían según el alcance, pero estos rangos te dan una referencia para 2026:
+        El presupuesto depende del alcance del proyecto y no hay dos cotizaciones iguales. Lo que más incide en el monto final:
       </p>
       <ul class="article-list">
-        <li><strong>Video corporativo simple</strong> (1 cámara, 1 locación, edición básica): CLP $2M — $4M</li>
-        <li><strong>Video institucional completo</strong> (guion, dirección de arte, múltiples locaciones, color grading): CLP $6M — $15M</li>
-        <li><strong>Streaming corporativo</strong> (2-4 cámaras, gráficas, enlace redundante): CLP $2M — $12M</li>
-        <li><strong>Live shopping</strong> (producción profesional con integración e-commerce): CLP $1.5M — $8M por sesión</li>
-        <li><strong>Filtro AR</strong> (TikTok o Snapchat): CLP $800K — $2M</li>
-        <li><strong>Producción mensual de contenido</strong> (8-12 piezas para redes): CLP $3M — $8M al mes</li>
+        <li><strong>Número de cámaras y complejidad de producción.</strong> Una cámara fija no es lo mismo que un setup multicámara con switcher y dirección en vivo.</li>
+        <li><strong>Locaciones.</strong> Una locación única, múltiples oficinas, planta industrial o terreno con logística especial.</li>
+        <li><strong>Equipo técnico y talento.</strong> Cámaras cinema, iluminación, sonido broadcast, maquillaje, dirección creativa y conductores si aplica.</li>
+        <li><strong>Postproducción.</strong> Edición, color grading, motion graphics, música y locución en off.</li>
+        <li><strong>Frecuencia.</strong> Una pieza puntual o un programa recurrente de contenido con calendario definido.</li>
       </ul>
       <p>
-        Una buena productora audiovisual te entrega una cotización detallada con cada ítem desglosado. Si el presupuesto te parece alto, pregúntate: ¿cuánto vale para tu empresa un video mal hecho que no comunica, o un streaming que se cae a mitad de la junta?
+        Una buena productora audiovisual te entrega una cotización detallada con cada ítem desglosado, en un plazo máximo de 48 horas hábiles. Si el presupuesto te parece alto, pregúntate: ¿cuánto vale para tu empresa un video mal hecho que no comunica, o un streaming que se cae a mitad de la junta?
       </p>
     </section>
 
@@ -247,7 +250,7 @@ const faqSchema = {
 
       <details class="article-faq">
         <summary>¿Cuánto cuesta una productora audiovisual en Santiago?</summary>
-        <p>Desde CLP $2M para un video corporativo simple hasta CLP $15M+ para una producción completa con streaming, gráficas y postproducción. El presupuesto depende del alcance, el equipo requerido y la complejidad del proyecto.</p>
+        <p>El presupuesto depende del alcance del proyecto: número de cámaras, locaciones, equipo técnico y complejidad de la postproducción. No publicamos tarifas porque cada producción se cotiza a medida. Solicita tu cotización y la recibes en 48 horas hábiles.</p>
       </details>
 
       <details class="article-faq">

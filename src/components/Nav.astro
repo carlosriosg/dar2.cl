@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-  <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+  <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16" aria-label="Navegación principal">
     <!-- Logo -->
     <a href="/" class="site-logo" aria-label="Ir al inicio de DAR2">
       <Picture
@@ -60,6 +60,8 @@ const currentPath = Astro.url.pathname;
     <button
       id="nav-toggle"
       aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
       class="md:hidden flex flex-col gap-[5px] p-2"
     >
       <span class="w-5 h-[2px] bg-[#1a1a1a] block transition-all"></span>
@@ -126,5 +128,8 @@ const currentPath = Astro.url.pathname;
   const menu = document.getElementById('mobile-menu');
   toggle?.addEventListener('click', () => {
     menu?.classList.toggle('hidden');
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
   });
 </script>

@@ -242,7 +242,7 @@ const serviciosRelacionados = relacionadosSlugs
         {s.benefits.map(b => (
           <div>
             <p class="svc-benefit-num">{b.num}</p>
-            <p class="text-lg font-bold text-[#111] mb-2">{b.title}</p>
+            <h3 class="text-lg font-bold text-[#111] mb-2">{b.title}</h3>
             <p class="text-[#666] text-sm leading-relaxed">{b.desc}</p>
           </div>
         ))}
@@ -259,7 +259,7 @@ const serviciosRelacionados = relacionadosSlugs
         {s.cases.map(c => (
           <div class="svc-case-card">
             <p class="svc-case-num">{c.num}</p>
-            <p class="svc-case-label">{c.label}</p>
+            <h3 class="svc-case-label">{c.label}</h3>
           </div>
         ))}
       </div>

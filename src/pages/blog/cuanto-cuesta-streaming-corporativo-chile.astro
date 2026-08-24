@@ -20,7 +20,11 @@ const articleSchema = {
   "author": { "@id": "https://dar2.cl/#person" },
   "publisher": { "@id": "https://dar2.cl/#organization" },
   "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/",
-  "inLanguage": "es-CL"
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
 };
 
 const faqSchema = {
@@ -160,6 +164,64 @@ const faqSchema = {
       <p>
         La producción de un streaming corporativo se puede estructurar en niveles según la complejidad y criticidad del evento. Cada nivel responde a objetivos distintos y la cotización final siempre es a medida.
       </p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Niveles de producción de streaming corporativo</caption>
+          <thead>
+            <tr>
+              <th scope="col">Componente</th>
+              <th scope="col">Nivel básico</th>
+              <th scope="col">Nivel profesional</th>
+              <th scope="col">Nivel premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Cámaras</th>
+              <td>1-2 fijas</td>
+              <td>Multicámara con switcher</td>
+              <td>4-6 cámaras con equipo técnico ampliado</td>
+            </tr>
+            <tr>
+              <th scope="row">Sonido</th>
+              <td>Sonido desde la sala</td>
+              <td>Sonido broadcast</td>
+              <td>Audio broadcast profesional</td>
+            </tr>
+            <tr>
+              <th scope="row">Enlace redundante</th>
+              <td>No incluye</td>
+              <td>Sí, punto a punto</td>
+              <td>Sí, con respaldo automático</td>
+            </tr>
+            <tr>
+              <th scope="row">Gráficas en tiempo real</th>
+              <td>No incluye</td>
+              <td>Gráficas corporativas animadas</td>
+              <td>Gráficas + dirección creativa</td>
+            </tr>
+            <tr>
+              <th scope="row">Plataforma</th>
+              <td>Pública (YouTube, Facebook)</td>
+              <td>Pública o privada</td>
+              <td>Privada (Zoom Webinar, Teams Live Events) con integración</td>
+            </tr>
+            <tr>
+              <th scope="row">Postproducción</th>
+              <td>No incluye</td>
+              <td>Máster básico</td>
+              <td>Máster editado + cápsulas para redes</td>
+            </tr>
+            <tr>
+              <th scope="row">Para quién</th>
+              <td>Eventos internos, capacitaciones</td>
+              <td>Juntas anuales, lanzamientos, seminarios</td>
+              <td>Alta dirección, conferencias masivas, eventos sin margen de error</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>Nivel básico</h3>
       <p>

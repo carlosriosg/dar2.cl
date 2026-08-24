@@ -7,6 +7,21 @@ const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Servicios', url: 'https://dar2.cl/servicios/' },
 ];
+
+// ItemList de los 9 servicios: el catalogo como lista extraible para parsers.
+const serviciosItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Servicios audiovisuales DAR2",
+  "url": "https://dar2.cl/servicios/",
+  "itemListElement": servicios.map((s, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `https://dar2.cl/servicios/${s.slug}/`,
+    "name": s.title,
+    "description": s.shortDesc
+  }))
+};
 ---
 
 <Base
@@ -14,6 +29,9 @@ const breadcrumbs = [
   description="9 servicios audiovisuales en Santiago bajo un mismo techo: streaming, live shopping, video corporativo, podcast, estudio virtual y más. Cotiza en 48h."
   breadcrumbs={breadcrumbs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviciosItemList)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
