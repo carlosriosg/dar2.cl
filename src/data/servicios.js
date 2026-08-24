@@ -58,11 +58,13 @@ export const servicios = [
     featured: false,
     seoTitle: 'Productora de streaming corporativo en Santiago',
     seoDescription: 'Productora de streaming en Santiago. Multicámara, enlace redundante y transmisión en vivo para juntas, lanzamientos y seminarios. Cotiza en 48h.',
-    relatedCase: {
-      title: 'Circuito Cerrado Multicámara · La Mar Cebichería',
-      excerpt: 'Cobertura multicámara en vivo para la cumbre culinaria de los 18 años de La Mar: 7 cámaras, PTZ y 5 pantallas verticales.',
-      url: '/casos/circuito-cerrado-la-mar/',
-    },
+    relatedCases: [
+      {
+        title: 'Circuito Cerrado Multicámara · La Mar Cebichería',
+        excerpt: 'Cobertura multicámara en vivo para la cumbre culinaria de los 18 años de La Mar: 7 cámaras, PTZ y 5 pantallas verticales.',
+        url: '/casos/circuito-cerrado-la-mar/',
+      },
+    ],
     serviceType: 'Transmisión audiovisual en vivo',
     faqs: [
       {
@@ -419,11 +421,23 @@ export const servicios = [
     featured: false,
     seoTitle: 'Video Corporativo en Santiago para empresas',
     seoDescription: 'Videos corporativos en Santiago: institucionales, de valores, cultura y producto. Dirección creativa, cámara cinema Sony FX6 y postproducción completa.',
-    relatedCase: {
-      title: 'Sala de Bombas Tipo Contenedor · VOGT',
-      excerpt: 'Documentación técnica de una sala de bombas tipo contenedor para Minera Los Pelambres, con piping AISI 316L e instrumentación IO-Link.',
-      url: '/casos/bomba-minera-vogt-pelambres/',
-    },
+    relatedCases: [
+      {
+        title: 'Sala de Bombas Tipo Contenedor · VOGT',
+        excerpt: 'Documentación técnica de una sala de bombas tipo contenedor para Minera Los Pelambres, con piping AISI 316L e instrumentación IO-Link.',
+        url: '/casos/bomba-minera-vogt-pelambres/',
+      },
+      {
+        title: 'Valores Corporativos · CASTAÑO',
+        excerpt: 'Video institucional de valores para una panadería chilena con 90 años de historia y más de 2.000 colaboradores.',
+        url: '/casos/valores-corporativos-castano/',
+      },
+      {
+        title: 'Cirugía Robótica · Clínica Santa María',
+        excerpt: 'Producción en pabellón médico para documentar el programa de cirugía robótica más extenso de Chile (Da Vinci XI + Hugo RAS).',
+        url: '/casos/cirugia-robotica-clinica-santa-maria/',
+      },
+    ],
     serviceType: 'Producción de video corporativo',
     faqs: [
       {
@@ -769,11 +783,13 @@ export const servicios = [
     seoTitle: 'Producción de Video Podcast Corporativo en Santiago',
     seoDescription: 'Productora de video podcast corporativo en Santiago. Set profesional, multicámara, audio broadcast y cápsulas para redes. Cotiza en 48h.',
     serviceType: 'Producción de video podcast corporativo',
-    relatedCase: {
-      title: 'Videopodcast para Transelec',
-      excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +150 colaboradores.',
-      url: '/casos/podcast-transelec-innovacion-china/',
-    },
+    relatedCases: [
+      {
+        title: 'Videopodcast para Transelec',
+        excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +150 colaboradores.',
+        url: '/casos/podcast-transelec-innovacion-china/',
+      },
+    ],
     extraImages: [
       { src: '/images/podcast/plano-general-estudio.jpg', alt: 'Plano general del set de video podcast corporativo — producción DAR2 en estudio' },
       { src: '/images/podcast/los-3-saludando.jpg', alt: 'Presentadores saludando al cierre del video podcast corporativo producido por DAR2' },

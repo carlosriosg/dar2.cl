@@ -8,10 +8,12 @@ const s = servicios.find(x => x.slug === 'filtros-ar');
 const serviceJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Service',
+  url: 'https://dar2.cl/servicios/filtros-ar/',
   name: s.title,
   provider: { '@id': 'https://dar2.cl/#organization' },
-  areaServed: 'Chile',
+  areaServed: { '@type': 'Country', 'name': 'Chile' },
   description: s.seoDescription,
+  image: 'https://dar2.cl/images/servicios/filtros-ar.jpg',
   serviceType: s.serviceType,
 });
 

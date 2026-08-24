@@ -49,6 +49,7 @@ const serviceJsonLd = JSON.stringify({
   provider: { '@id': 'https://dar2.cl/#organization' },
   areaServed: { '@type': 'Country', 'name': 'Chile' },
   description: s.seoDescription ?? s.description,
+  image: `https://dar2.cl/images/servicios/${s.slug}.jpg`,
   serviceType: s.serviceType ?? s.title,
 });
 
@@ -344,17 +345,17 @@ const serviciosRelacionados = relacionadosSlugs
             <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver servicio →</p>
           </a>
         ))}
-        {s.relatedCase && (
+        {s.relatedCases?.map(c => (
           <a
-            href={s.relatedCase.url}
+            href={c.url}
             class="block p-6 border border-[#FF4500] rounded-xl hover:border-[#1a1a1a] transition-colors"
           >
             <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Caso de éxito</p>
-            <h3 class="text-xl font-black tracking-tight mb-2">{s.relatedCase.title}</h3>
-            <p class="text-sm text-[#666] leading-relaxed">{s.relatedCase.excerpt}</p>
+            <h3 class="text-xl font-black tracking-tight mb-2">{c.title}</h3>
+            <p class="text-sm text-[#666] leading-relaxed">{c.excerpt}</p>
             <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver caso →</p>
           </a>
-        )}
+        ))}
       </div>
     </section>
   )}
