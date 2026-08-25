@@ -196,7 +196,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 - [Producción Audiovisual Industrial · VOGT Pelambres](https://dar2.cl/casos/bomba-minera-vogt-pelambres/) — How to shoot a corporate video in an active mining site under extreme conditions: HSEQ accreditations, compact cinema kit, drone footage, and modular deliverables for B2B trade fairs (EXPOMIN).
 - [Producción de Video Podcast Corporativo · Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — Corporate video podcast that turned a China innovation scouting mission into a multi-episode series (4K multi-camera, Shure SM7B broadcast audio) for 500+ internal collaborators.
 - [Circuito Cerrado Multicámara para Eventos · La Mar](https://dar2.cl/casos/circuito-cerrado-la-mar/) — Zero-latency multi-camera closed-circuit for corporate events: SDI/NDI rig, fixed top-down camera, digital switcher projecting live showcooking to LED screens.
-- [Full portafolio](https://dar2.cl/portafolio/) — 20+ projects with video and case details.
+- [Full portafolio](https://dar2.cl/portafolio/) — 21+ projects with video and case details.
 
 ---
 
