@@ -361,8 +361,16 @@ const caseSchema = {
   }
   .case-cta-btn:hover { background: #e03d00; }
   .case-cta-link {
-    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
     transition: color 0.2s ease;
   }
   .case-cta-link:hover { color: #fff; }
+
+  /* El bloque CTA tambien tiene la clase .case-section: la regla de links
+     naranjas de las secciones no debe aplicar sobre boton/links del CTA. */
+  .case-cta-final .case-cta-btn,
+  .case-cta-final .case-cta-link {
+    color: #fff;
+    text-decoration: none;
+  }
 </style>
