@@ -13,11 +13,30 @@ const caseSchema = {
   "@type": "Article",
   "headline": "Circuito Cerrado Multicámara y Cobertura Gastronómica en Vivo: 18 Años de La Mar Cebichería",
   "description": "Despliegue técnico de nivel broadcast con 7 cámaras para la cumbre culinaria 'El Mar que Nos Une' de La Mar Cebichería: cámaras PTZ sobre cada estación, camarógrafos inalámbricos y 5 pantallas verticales transmitiendo en tiempo real.",
-  "image": "https://dar2.cl/images/casos/circuito-cerrado-la-mar/ambiente-salones.webp",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/casos/circuito-cerrado-la-mar/ambiente-salones.webp",
+    "width": 1600,
+    "height": 901
+  },
   "datePublished": "2026-08-22",
   "dateModified": "2026-08-22",
-  "author": { "@id": "https://dar2.cl/#person" },
-  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
   "mainEntityOfPage": "https://dar2.cl/casos/circuito-cerrado-la-mar/",
   "keywords": "circuito cerrado, CCTV, multicámara, eventos gastronómicos, pantallas verticales, streaming, La Mar Cebichería, Gastón Acurio",
   "about": {
