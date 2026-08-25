@@ -13,11 +13,30 @@ const caseSchema = {
   "@type": "Article",
   "headline": "Valores Corporativos para CASTAÑO — Caso DAR2",
   "description": "Producción de video institucional de valores corporativos para CASTAÑO, panadería chilena con 90 años de historia y más de 2.000 colaboradores. Dirección de arte y piezas testimoniales.",
-  "image": "https://dar2.cl/images/portafolio/valores-castano.png",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/portafolio/valores-castano.png",
+    "width": 1200,
+    "height": 675
+  },
   "datePublished": "2023-09-01",
   "dateModified": "2026-05-19",
-  "author": { "@id": "https://dar2.cl/#person" },
-  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
   "mainEntityOfPage": "https://dar2.cl/casos/valores-corporativos-castano/",
   "about": {
     "@type": "Organization",
