@@ -226,7 +226,7 @@ const reviewSchemas = [
         <div class="flex flex-wrap gap-4">
           <a
             href="/contacto/"
-          class="inline-flex items-center bg-[#FF4500] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#e03d00] transition-colors btn-glow"
+          class="inline-flex items-center bg-[#D13E00] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#B53500] transition-colors btn-glow"
           >
             Cotizar ahora
           </a>
@@ -244,7 +244,7 @@ const reviewSchemas = [
         {heroImages.map((img, i) => (
           <div class="hero-img-cell">
             <Picture
-              src={img.src}
+              src={img.src.replace(/\.(png|jpe?g)$/i, '-card.$1')}
               alt={img.alt}
               class="hero-img"
               width="600"
@@ -252,6 +252,8 @@ const reviewSchemas = [
               loading={i < 2 ? 'eager' : 'lazy'}
               decoding={i === 0 ? 'sync' : 'async'}
               fetchpriority={i === 0 ? 'high' : undefined}
+              responsive
+              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 280px"
             />
           </div>
         ))}

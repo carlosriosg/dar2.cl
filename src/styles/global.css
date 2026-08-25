@@ -79,8 +79,8 @@
 
 /* ── Animaciones ───────────────────────────────────── */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.3); }
-  50% { box-shadow: 0 0 0 8px rgba(255, 69, 0, 0); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0; transform: scale(1.06); }
 }
 
 @keyframes fade-in-up {
@@ -104,8 +104,20 @@
 }
 
 /* ── Utility classes ────────────────────────────────── */
+/* Anillo de glow composited por GPU: el box-shadow es ESTATICO (no se anima);
+   la animacion solo tweenea opacity + transform:scale() sobre un ::after,
+   por lo que no provoca repaint/relayout en cada frame. */
 .btn-glow {
+  position: relative;
+}
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.45);
   animation: pulse-glow 2s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .fade-in-up {
