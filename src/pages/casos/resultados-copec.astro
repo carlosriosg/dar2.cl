@@ -197,13 +197,13 @@ const caseSchema = {
       <p>
         El valor de un reporte de resultados reside en la claridad con que se presentan los datos financieros y su alcance a inversionistas globales.
       </p>
-      <div class="case-hero-image case-image-inline">
+      <div class="case-hero-image case-image-inline case-pano">
         <Picture
-          src="/images/blog/iluminacion-camara-zcam-copec.jpg"
-          alt="Iluminación LED y cámara Z CAM E2-S6 configurada para entrevista ejecutiva — DAR2"
+          src="/images/blog/edicion-premiere-copec.png"
+          alt="Panel de edición en Premiere Pro de la producción ejecutiva para Empresas Copec — DAR2"
           class="w-full h-full object-cover"
-          width="1600"
-          height="1200"
+          width="3833"
+          height="962"
           loading="lazy"
           decoding="async"
         />
@@ -278,6 +278,9 @@ const caseSchema = {
     margin-bottom: 56px;
   }
   .case-image-inline { margin-bottom: 48px; }
+
+  /* Imagen panoramica (panel de edicion): ratio propio para no recortar */
+  .case-pano { aspect-ratio: 3833 / 962; }
 
   .case-section { margin-bottom: 48px; }
   .case-section h2 {
