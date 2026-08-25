@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 30 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-08-24
+> **Last updated:** 2026-08-25
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -190,8 +190,8 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 ## Portafolio highlights
 
-- [Cirugía Robótica · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — Audiovisual production inside operating room documenting Chile's most extensive robotic surgery program (Da Vinci XI + Hugo RAS).
-- [Valores Corporativos · CASTAÑO](https://dar2.cl/casos/valores-corporativos-castano/) — Institutional values video for 90-year-old Chilean bakery with 2,000+ employees.
+- [Producción Audiovisual en Salud · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — How to produce in active surgical rooms without disrupting operations: compact cinema gear, low-heat LED lighting, on-site medical validation, and modular deliverables (90s video, 9:16 clips, training footage).
+- [Video de Valores Corporativos · CASTAÑO](https://dar2.cl/casos/valores-corporativos-castano/) — How to turn a company's culture and history into a high-impact corporate video: real employee testimonials, on-location art direction, and a 30% drop in recurring values-related queries.
 - [Bomba Minera · VOGT Pelambres](https://dar2.cl/casos/bomba-minera-vogt-pelambres/) — Industrial process documentation in mining environment.
 - [Videopodcast · Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — Innovation & Ventures team turned three months of immersion in China into a videopodcast Talk Show with 150+ live attendees.
 - [Full portafolio](https://dar2.cl/portafolio/) — 20+ projects with video and case details.

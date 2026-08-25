@@ -187,6 +187,7 @@ Reglas detectadas en el código existente. **Respetarlas para mantener consisten
 3. ⛔ **NO cambiar la paleta de colores ni la tipografía.**
 4. ⛔ **NO romper el SEO que ya funciona** (schemas, canonicals, redirects, sitemap).
 5. 💻 **Entorno de desarrollo: Windows + PowerShell.** No asumir bash/Unix por defecto (aunque hay bash disponible). Cuidado con `/dev/null` (usar `$null`), variables de entorno (`$env:VAR`), etc.
+6. 🔄 **Mantener `llms.txt` sincronizado (GEO/IA):** cada vez que se actualice contenido visible del sitio (casos, blog, servicios, home, textos), actualizar también `public/llms.txt` y `public/llms-full.txt` — son **manuales**, no se generan en el build. Incluir el campo `Last updated` de `llms.txt`. Si no se tocan, las IAs (AI Overviews, ChatGPT, Perplexity) siguen citando contenido viejo.
 
 ---
 

@@ -550,13 +550,13 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
-### Cirugía Robótica · Clínica Santa María
+### Producción Audiovisual en Salud · Clínica Santa María
 **URL:** https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/
-Production of the most extensive robotic surgery program in Chile. Filming inside operating room with Da Vinci XI and Hugo RAS systems. Challenge: sterile environment, medical protocols, multiple surgery types.
+Audiovisual production in health facilities requires strict biosecurity protocols, specialized technical direction, and compact cinema equipment. Documented the assembly and operation of the Hugo RAS robotic console at Clínica Santa María (Chile's largest robotic surgery program, 2,400+ interventions). Strategy: minimal crew (direction, Sony FX6, direct sound), low-heat LED lighting, on-site medical validation. Deliverables: 90s institutional video, vertical 9:16 clips for LinkedIn/Instagram, extended technical footage for internal training.
 
-### Valores Corporativos · CASTAÑO
+### Video de Valores Corporativos · CASTAÑO
 **URL:** https://dar2.cl/casos/valores-corporativos-castano/
-Institutional values video for 90-year-old Chilean bakery with 2,000+ employees. Art direction, real employee testimonials, multiple locations.
+Corporate values video for Castaño (90 years old, 2,000+ employees). How to turn abstract values (commitment, quality) into authentic visual assets: real employee testimonials without a rigid script, art direction on live locations, and broadcast quality. Results: 30% fewer recurring values-related queries, standardized onboarding, reusable modular deliverables.
 
 ### Bomba Minera · VOGT Pelambres
 **URL:** https://dar2.cl/casos/bomba-minera-vogt-pelambres/
