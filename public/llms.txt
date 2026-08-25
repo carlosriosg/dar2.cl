@@ -1,6 +1,6 @@
 # DAR2 Servicios Audiovisuales
 
-> Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 30 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
+> Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
 > **Last updated:** 2026-08-25
 > **Canonical:** https://dar2.cl/llms.txt
@@ -203,6 +203,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ## Blog & guides (Spanish)
 
 - [Qué es Live Shopping y cómo implementarlo en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
+- [Cómo elegir una productora audiovisual en Santiago](https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/) — Tipos de productoras, presupuestos y checklist de contratación
 - [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Factores que determinan el presupuesto
 - [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Factores que determinan la inversión
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Technical guide

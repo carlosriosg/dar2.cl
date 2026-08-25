@@ -1,7 +1,7 @@
 # DAR2 Servicios Audiovisuales — Full Content
 
 > Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
-> **Last updated:** 2026-08-24
+> **Last updated:** 2026-08-25
 > **Canonical:** https://dar2.cl/llms-full.txt
 > **Summary version:** https://dar2.cl/llms.txt
 
@@ -579,6 +579,7 @@ Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic ev
 ## Blog posts
 
 - [Qué es Live Shopping en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
+- [Cómo elegir una productora audiovisual en Santiago](https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/)
 - [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/)
 - [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/)
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/)
