@@ -1,0 +1,338 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Producción Audiovisual Ejecutiva · Empresas Copec', url: 'https://dar2.cl/casos/resultados-copec/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Producción Audiovisual Ejecutiva: Caso Resultados Copec",
+  "description": "Aprende a producir comunicaciones ejecutivas en Santiago con cámaras 6K, slider motorizado y entregas en 30 horas. Caso Copec por DAR2.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/blog/grabacion-ejecutiva-empresas-copec.png",
+    "width": 1600,
+    "height": 900
+  },
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-25",
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
+  "mainEntityOfPage": "https://dar2.cl/casos/resultados-copec/",
+  "about": {
+    "@type": "Organization",
+    "name": "Empresas Copec",
+    "url": "https://www.empresascopec.cl"
+  },
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
+};
+---
+
+<Base
+  title="Producción Audiovisual Ejecutiva: Caso Resultados Copec"
+  description="Aprende a producir comunicaciones ejecutivas en Santiago con cámaras 6K, slider motorizado y entregas en 30 horas. Caso Copec por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/grabacion-ejecutiva-empresas-copec.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Holding / Energía · 2026</p>
+      <h1 class="case-h1">
+        Producción Audiovisual Ejecutiva:
+        <em class="hl">Caso Resultados Copec.</em>
+      </h1>
+      <p class="case-lead">
+        La producción audiovisual ejecutiva para CEOs requiere máxima precisión técnica, rigurosidad en agendas acotadas y tiempos de entrega expresos. Con equipos 6K, movimiento en slider motorizado, gráficas dinámicas en After Effects y subtitulado bilingüe, transformamos comunicados corporativos en activos financieros de estándar internacional.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <dl class="case-overview">
+      <div>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Empresas Copec</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2026</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Video corporativo ejecutivo</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Holding / Energía</dd>
+      </div>
+    </dl>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/blog/grabacion-ejecutiva-empresas-copec.png"
+        alt="Grabación ejecutiva para Empresas Copec — producción audiovisual DAR2"
+        class="w-full h-full object-cover"
+        width="1600"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- La urgencia -->
+    <section class="case-section">
+      <h2>La urgencia de la comunicación financiera en la alta dirección.</h2>
+      <p>
+        Grabar reportes trimestrales y balances de resultados para la alta dirección de un holding en Chile implica superar retos operativos donde el margen de error es cero:
+      </p>
+      <ul>
+        <li><strong>Agendas ejecutivas acotadas:</strong> El tiempo del CEO es mínimo; el set debe estar 100% montado, iluminado y probado antes de su llegada.</li>
+        <li><strong>Tiempos de entrega críticos:</strong> Los reportes de resultados deben publicarse en simultáneo con el hecho esencial o el reporte a la CMF y bolsa, exigiendo entregas urgentes.</li>
+        <li><strong>Estándar internacional para inversionistas:</strong> Requiere gráficos de alta precisión técnica para métricas clave (EBITDA, utilidad) y subtitulado en inglés para stakeholders globales.</li>
+      </ul>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section class="case-section">
+      <h2>Caso de Éxito: Registro trimestral de resultados para Empresas Copec.</h2>
+      <p>
+        Durante más de tres años consecutivos, en DAR2 realizamos la producción audiovisual trimestral del mensaje del CEO de Empresas Copec, Eduardo Navarro.
+      </p>
+      <p>
+        En estas sesiones documentamos hitos del holding —como los resultados financieros, el desempeño del área de energía y minería, y el avance del Proyecto Sucuriú de Arauco— bajo un flujo de trabajo ultraeficiente y acelerado.
+      </p>
+      <div class="case-flow">
+        <div class="case-flow-card case-flow--desafio">
+          <span class="case-flow-label">Requerimiento ejecutivo</span>
+          <p>Registro trimestral del CEO de Empresas Copec con entrega exprés.</p>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--solucion">
+          <span class="case-flow-label">Despliegue técnico</span>
+          <ul>
+            <li>Setup multicámara: 2x Z CAM E2-S6 (Super 35 6K)</li>
+            <li>Cámara A fija en trípode / Cámara B en slider motorizado</li>
+            <li>Iluminación LED suave CRI 98+ y audio inalámbrico DJI Mic</li>
+          </ul>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--resultado">
+          <span class="case-flow-label">Postproducción a máxima velocidad</span>
+          <ul>
+            <li>Edición y motion graphics en After Effects para cifras financieras</li>
+            <li>Subtitulado bilingüe (Español / Inglés) para mercado internacional</li>
+            <li>Masterización en 4K entregada en menos de 30 horas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configuración técnica -->
+    <section class="case-section">
+      <h2>Configuración técnica para entrevistas de nivel C-Level.</h2>
+      <p>
+        Para lograr un acabado cinematográfico en oficinas corporativas en Santiago sin extender los tiempos de rodaje con el ejecutivo, aplicamos un setup probado:
+      </p>
+      <ul>
+        <li><strong>Rigging Multicámara Cinema (Z CAM E2-S6):</strong> Grabación en 6K para obtener tonos de piel naturales, alto rango dinámico y nitidez absoluta.</li>
+        <li><strong>Paralaje Continuo con Slider Motorizado:</strong> Movimiento automatizado en la cámara B que aporta dinamismo orgánico y sobrio, rompiendo la estática del plano tradicional.</li>
+        <li><strong>Audio Redundante e Iluminación Soft:</strong> Microfonía DJI Mic con respaldo interno directo y paneles LED de alta fidelidad cromática para cuidar la comodidad visual del vocero.</li>
+      </ul>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/blog/setup-grabacion-copec-slider.png"
+          alt="Setup multicámara con slider motorizado en grabación ejecutiva corporativa — DAR2"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- Motion graphics -->
+    <section class="case-section">
+      <h2>Motion Graphics en After Effects y Subtitulado Internacional.</h2>
+      <p>
+        El valor de un reporte de resultados reside en la claridad con que se presentan los datos financieros y su alcance a inversionistas globales.
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/blog/iluminacion-camara-zcam-copec.png"
+          alt="Iluminación LED y cámara Z CAM E2-S6 configurada para entrevista ejecutiva — DAR2"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <ul>
+        <li><strong>Gráficas financieras animadas:</strong> Diseñamos e integramos en After Effects la gráfica en pantalla para desplegar variaciones de EBITDA, utilidades y porcentaje de avance de obras.</li>
+        <li><strong>Subtitulado en Inglés:</strong> Generamos el subtitulado profesional en inglés adaptado a terminología financiera B2B para inversionistas y prensa extranjera.</li>
+        <li><strong>Entrega Master 4K en 30 Horas:</strong> Editamos, postproducimos y entregamos el master final en resolución 4K dentro de un plazo estricto de 30 horas tras el rodaje.</li>
+      </ul>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="case-section">
+      <h2>Ventajas de estandarizar la producción corporativa ejecutiva.</h2>
+      <p>
+        Implementar un flujo de trabajo audiovisual profesional y recurrente ofrece beneficios inmediatos para la reputación de la empresa:
+      </p>
+      <ul>
+        <li><strong>Confianza del mercado:</strong> Presentar métricas operativas con calidad broadcast refuerza la transparencia y credibilidad institucional.</li>
+        <li><strong>Eficiencia operativa total:</strong> Al tener un protocolo de montaje preconcebido, el tiempo requerido del CEO se reduce a minutos.</li>
+        <li><strong>Inmediatez comunicacional:</strong> La entrega en 30 horas permite sincronizar el video con los comunicados oficiales a bolsas y entes reguladores.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Necesitas producir videos corporativos ejecutivos para tu empresa?</h2>
+      <p>
+        En DAR2 somos especialistas en la producción audiovisual para la alta dirección, reportes de resultados y comunicados de alta velocidad en Santiago, garantizando confidencialidad y calidad cinematográfica.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar video corporativo →
+        </a>
+        <a href="/servicios/videos-corporativos/" class="case-cta-link">
+          Conocer Videos Corporativos →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.4; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Listas (bullets y numeradas) dentro de secciones */
+  .case-section ul, .case-section ol {
+    margin: 0 0 18px; padding-left: 22px;
+  }
+  .case-section li {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 10px;
+  }
+  .case-section li strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Tarjetas en cascada: Requerimiento -> Despliegue -> Postproduccion */
+  .case-flow { margin: 24px 0 8px; }
+  .case-flow-card {
+    border-radius: 14px; padding: 24px;
+    background: #fafafa; border: 1px solid #e5e5e5; margin-bottom: 0;
+  }
+  .case-flow--desafio { border-left: 4px solid #1a1a1a; }
+  .case-flow--solucion { border-left: 4px solid #FF4500; }
+  .case-flow--resultado { border-left: 4px solid #E63E00; }
+  .case-flow-label {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #666; margin-bottom: 10px;
+  }
+  .case-flow-card p { font-size: 16px; line-height: 1.6; color: #333; margin: 0; }
+  .case-flow-card ul { margin: 0; padding-left: 18px; }
+  .case-flow-card li { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 6px; }
+  .case-flow-card li:last-child { margin-bottom: 0; }
+  .case-flow-arrow {
+    display: block; text-align: center; color: #999; font-size: 20px;
+    line-height: 1; margin: 14px 0;
+  }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #ccc; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+</style>

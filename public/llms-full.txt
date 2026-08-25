@@ -550,6 +550,10 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
+### Producción Audiovisual Ejecutiva · Empresas Copec
+**URL:** https://dar2.cl/casos/resultados-copec/
+Executive audiovisual production for C-level communications with zero margin for error. Quarterly CEO results video for Empresas Copec (Eduardo Navarro): tight executive schedules (set 100% ready before CEO arrival), critical delivery windows synchronized with CMF/stock exchange filings. Deployment: 2x Z CAM E2-S6 (Super 35 6K), camera A on tripod + camera B on motorized slider, CRI 98+ soft LED lighting, DJI Mic wireless audio. Post: After Effects financial motion graphics (EBITDA, utilities), bilingual ES/EN subtitling, 4K master delivered in under 30 hours.
+
 ### Producción Audiovisual en Salud · Clínica Santa María
 **URL:** https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/
 Audiovisual production in health facilities requires strict biosecurity protocols, specialized technical direction, and compact cinema equipment. Documented the assembly and operation of the Hugo RAS robotic console at Clínica Santa María (Chile's largest robotic surgery program, 2,400+ interventions). Strategy: minimal crew (direction, Sony FX6, direct sound), low-heat LED lighting, on-site medical validation. Deliverables: 90s institutional video, vertical 9:16 clips for LinkedIn/Instagram, extended technical footage for internal training.
