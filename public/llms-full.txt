@@ -566,6 +566,10 @@ Audiovisual production in mining requires strict HSEQ accreditations, operationa
 **URL:** https://dar2.cl/casos/podcast-transelec-innovacion-china/
 Corporate video podcast as an internal communications strategy: how Transelec (Chile's leading electricity transmission company) delivered the learnings of an innovation scouting mission in China to 500+ collaborators. Solution: podcast studio set in corporate offices, 4K multi-camera with fixed optics and digital switcher, Shure SM7B broadcast microphones. Deliverables: 15-minute episode series for the intranet, horizontal and vertical micro-clips for internal channels, modular format for on-demand consumption.
 
+### Circuito Cerrado Multicámara para Eventos · La Mar
+**URL:** https://dar2.cl/casos/circuito-cerrado-la-mar/
+Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic events. Broadcast-standard system connecting kitchen action directly to strategic screens: SDI multi-camera rig with fast prime lenses, fixed top-down camera over the prep station, and a digital switcher for live low-latency mixing. Results: fluid transmission to LED screens with no audio/video lag, full audience immersion, and visibility of every showcooking detail. Signal can also be routed in parallel to YouTube, LinkedIn, or videoconferencing platforms.
+
 ---
 
 ## Blog posts
