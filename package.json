@@ -18,7 +18,8 @@
     "generate:cards": "node scripts/generate-card-sizes.mjs",
     "ping:sitemap": "node scripts/ping-indexnow.mjs",
     "indexnow:post": "node scripts/indexnow-post.mjs",
-    "validate:schema": "node scripts/validate-schema.mjs"
+    "validate:schema": "node scripts/validate-schema.mjs",
+    "check:redirects": "node scripts/check-redirects.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
