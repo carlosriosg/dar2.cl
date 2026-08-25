@@ -550,6 +550,10 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
+### Streaming Lanzamiento de Libro · El Espíritu de la Radio
+**URL:** https://dar2.cl/casos/streaming-lanzamiento-libro-lastarria/
+Multi-camera streaming for cultural events in tight venues. Livestreamed the relaunch of the book "El Espíritu de la Radio" (Paola Zúñiga Marro & Rodrigo Cabrillana) at Fuente Lastarria, Santiago, organized by Santiago-Ander Editorial and El Ágora, with a panel including Joe Vasconcellos. Deployment: 3 robotic PTZ cameras with dedicated IP control (no camera operators in front of the audience), live switching and titling with vMix in HD, redundant 5G bonding modem to survive mobile-cell saturation, wireless microphones with split audio (clean stream mix + parallel feed to the venue's PA). Result: stable broadcast to thousands of viewers without obstructing the in-person audience.
+
 ### Producción Audiovisual Ejecutiva · Empresas Copec
 **URL:** https://dar2.cl/casos/resultados-copec/
 Executive audiovisual production for C-level communications with zero margin for error. Quarterly CEO results video for Empresas Copec (Eduardo Navarro): tight executive schedules (set 100% ready before CEO arrival), critical delivery windows synchronized with CMF/stock exchange filings. Deployment: 2x Z CAM E2-S6 (Super 35 6K), camera A on tripod + camera B on motorized slider, CRI 98+ soft LED lighting, DJI Mic wireless audio. Post: After Effects financial motion graphics (EBITDA, utilities), bilingual ES/EN subtitling, 4K master delivered in under 30 hours.
