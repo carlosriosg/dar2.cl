@@ -5,14 +5,14 @@ import Picture from '../../components/Picture.astro';
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
   { name: 'Casos', url: 'https://dar2.cl/casos/' },
-  { name: 'Sala de Bombas · VOGT', url: 'https://dar2.cl/casos/bomba-minera-vogt-pelambres/' },
+  { name: 'Producción Audiovisual Industrial · VOGT', url: 'https://dar2.cl/casos/bomba-minera-vogt-pelambres/' },
 ];
 
 const caseSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Sala de Bombas Tipo Contenedor para Minera Los Pelambres — Caso DAR2",
-  "description": "Producción audiovisual para documentar el diseño y fabricación de una sala de bombas tipo contenedor de VOGT, diseñada y fabricada en Chile para operar a 4.000 m.s.n.m. en la faena minera Los Pelambres.",
+  "headline": "Producción Audiovisual Industrial: Caso Vogt en Pelambres",
+  "description": "Aprende cómo realizar un video corporativo en faena minera bajo condiciones extremas y protocolos de seguridad. Caso Vogt por DAR2.",
   "image": {
     "@type": "ImageObject",
     "url": "https://dar2.cl/images/portafolio/vogt-bomba-pelambres.png",
@@ -20,7 +20,7 @@ const caseSchema = {
     "height": 675
   },
   "datePublished": "2025-02-01",
-  "dateModified": "2026-06-18",
+  "dateModified": "2026-08-25",
   "author": {
     "@type": "Person",
     "@id": "https://dar2.cl/#person",
@@ -53,8 +53,8 @@ const caseSchema = {
 ---
 
 <Base
-  title="Video Corporativo Industrial para Minería · VOGT"
-  description="Cómo DAR2 documentó la sala de bombas tipo contenedor de VOGT para Minera Los Pelambres: piping AISI 316L, instrumentación IO-Link y 4.000 m.s.n.m."
+  title="Producción Audiovisual Industrial: Caso Vogt en Pelambres"
+  description="Aprende cómo realizar un video corporativo en faena minera bajo condiciones extremas y protocolos de seguridad. Caso Vogt por DAR2."
   breadcrumbs={breadcrumbs}
   preloadImage="/images/portafolio/vogt-bomba-pelambres.webp"
 >
@@ -68,11 +68,11 @@ const caseSchema = {
     <header class="case-header">
       <p class="case-eyebrow">Caso · Minería · 2025</p>
       <h1 class="case-h1">
-        Sala de Bombas para
-        <em class="hl">Minera Los Pelambres.</em>
+        Producción Audiovisual Industrial:
+        <em class="hl">Caso Vogt en Pelambres.</em>
       </h1>
       <p class="case-lead">
-        Cómo documentamos el diseño y fabricación de una sala de bombas tipo contenedor diseñada y fabricada íntegramente en Chile, con especificaciones técnicas para operar a 4.000 metros sobre el nivel del mar en una de las faenas mineras más importantes del país.
+        La producción audiovisual en minería requiere un cumplimiento estricto de acreditaciones HSEQ, planificación operativa en alta cordillera y equipos de filmación compactos. Este enfoque permite registrar maquinaria pesada y procesos industriales con calidad cine sin detener la operación en faena.
       </p>
     </header>
 
@@ -100,7 +100,7 @@ const caseSchema = {
     <div class="case-hero-image">
       <Picture
         src="/images/portafolio/vogt-bomba-pelambres.png"
-        alt="Sala de Bombas Tipo Contenedor VOGT — Producción audiovisual DAR2"
+        alt="Sala de Bombas Tipo Contenedor VOGT — Producción audiovisual industrial DAR2"
         class="w-full h-full object-cover"
         width="1200"
         height="675"
@@ -110,86 +110,87 @@ const caseSchema = {
       />
     </div>
 
-    <!-- El desafío -->
+    <!-- Desafíos -->
     <section class="case-section">
-      <h2>El desafío.</h2>
+      <h2>Los desafíos de grabar un video corporativo en faenas mineras en Chile.</h2>
       <p>
-        VOGT — empresa chilena con décadas de experiencia en soluciones de impulsión de fluidos — desarrolló una sala de bombas tipo contenedor para abastecer de agua a la operación de Minera Los Pelambres, una de las faenas cupríferas más relevantes de Chile, operada por Antofagasta Minerals en la cordillera de la Región de Coquimbo, a más de 3.200 metros sobre el nivel del mar.
+        Realizar producciones audiovisuales industriales en la gran minería de Santiago o regiones presenta complejos requisitos técnicos y de seguridad:
       </p>
-      <p>
-        Las condiciones de operación eran extremas: el contenedor debía soportar una carga de nieve de 1.200 kg/m², operar de manera confiable a 4.000 m.s.n.m. con baja presión atmosférica, cumplir con el estándar Nema 4R (protección contra ingreso de agua y polvo), y mantener toda la instrumentación crítica funcionando en un entorno de alta montaña con temperaturas bajo cero.
-      </p>
-      <p>
-        El desafío para DAR2 era documentar todo el proceso — desde el diseño y la fabricación en las dependencias de VOGT hasta el ensamblaje final — en un video técnico que sirviera tanto para la presentación al cliente minero como para futuros proyectos de la empresa. El video debía mostrar los detalles de ingeniería sin perder calidad narrativa ni profesionalismo broadcast.
-      </p>
+      <ul>
+        <li><strong>Acreditaciones y licencias HSEQ:</strong> Exigencia estricta de exámenes médicos de gran altitud geográfica, inducciones de seguridad y EPP específico para el personal de filmación.</li>
+        <li><strong>Condiciones ambientales extremas:</strong> Altura geográfica, variaciones térmicas drásticas, viento y polvo en suspensión que afectan los sensores y la electrónica de las cámaras.</li>
+        <li><strong>Continuidad operacional:</strong> El rodaje debe ajustarse a la dinámica de la faena sin interrumpir los turnos ni el tránsito de maquinaria pesada.</li>
+        <li><strong>Transporte y logística de equipos:</strong> Imposibilidad de mover volúmenes grandes de carga; exige un kit de cámara cinema compacto pero de estándar broadcast.</li>
+      </ul>
     </section>
 
-    <!-- Nuestra solución -->
+    <!-- Caso de éxito -->
     <section class="case-section">
-      <h2>Nuestra solución.</h2>
+      <h2>Caso de Éxito: Video industrial para Vogt en Minera Los Pelambres.</h2>
       <p>
-        Planteamos una producción en formato documental técnico: cámara en mano cuidada, iluminación que respeta el entorno industrial, y una estructura narrativa que guía al espectador desde la ingeniería del diseño hasta el producto terminado. El video recorre cada componente crítico de la sala de bombas, explicando su función dentro del sistema integrado.
+        Vogt, compañía líder en soluciones de bombeo e ingeniería de fluidos para la industria minera en Chile, instaló un sistema de bombeo de alta capacidad en Minera Los Pelambres, ubicada a más de 3.000 metros sobre el nivel del mar en la Región de Coquimbo.
       </p>
       <p>
-        La producción destacó los elementos clave del contenedor: el piping en acero inoxidable AISI 316L de 8" para la descarga principal, el flujómetro electromagnético DN200, las válvulas con actuador eléctrico en descarga y despiche, el tablero de control y comunicaciones con PLC, el maestro IO-Link que integra la instrumentación, y la antena Starlink que permite la comunicación remota desde la faena.
+        Para registrar este hito técnico, el equipo de DAR2 desplegó una producción técnica en faena activa enfocada en documentar la potencia operativa de la bomba y la ingeniería en terreno:
       </p>
-      <p>
-        También documentamos los elementos estructurales: la viga principal de izaje para mantenimientos, los cáncamos de 12 toneladas, el piso en grating FRP de 30 mm, el aire acondicionado tipo mochila de 60.000 BTU, y los tecles de izaje de 2.000 kg y 500 kg. Cada detalle fue capturado con la precisión que requiere un video técnico-industrial.
-      </p>
+      <div class="case-flow">
+        <div class="case-flow-card case-flow--desafio">
+          <span class="case-flow-label">Desafío operativo</span>
+          <p>Documentar bombas de alta presión en alta cordillera a +3.000 msnm.</p>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--solucion">
+          <span class="case-flow-label">Estrategia técnica</span>
+          <ul>
+            <li>Crew acreditado con exámenes HSEQ para gran altitud</li>
+            <li>Cámaras Sony FX6 y ópticas fijas de alta luminosidad</li>
+            <li>Audio directo en terreno y tomas aéreas con dron calificado</li>
+          </ul>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--resultado">
+          <span class="case-flow-label">Entregables modulares</span>
+          <ul>
+            <li>Video corporativo industrial de 2 minutos para ferias B2B</li>
+            <li>Cápsulas técnicas para presentaciones comerciales a mineras</li>
+            <li>Material en alta resolución para repositorio de la compañía</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Ejecución -->
+    <!-- Claves técnicas -->
     <section class="case-section">
-      <h2>Ejecución.</h2>
+      <h2>Claves técnicas para una producción audiovisual en el sector minero e industrial.</h2>
       <p>
-        El rodaje se realizó en las instalaciones de VOGT en Quilicura, Santiago, durante una jornada completa. Trabajamos integrados al ritmo de la planta, documentando cada etapa del ensamblaje sin interrumpir la operación. El equipo de DAR2 coordinó con los ingenieros de VOGT para identificar los momentos clave del proceso y asegurar que ningún detalle técnico quedara fuera.
+        Para lograr un video de alto valor comercial en la industria pesada B2B, es necesario coordinar aspectos clave de producción:
       </p>
-      <p>
-        La postproducción incluyó etiquetado gráfico de cada componente — manómetro de glicerina 0-40 bar, transductor de presión en descarga 0-16 bar, válvula de alivio de presión, sensor de flujo — para que el video funcionara tanto como presentación comercial como material de referencia técnica. El resultado es una pieza que comunica ingeniería de precisión con calidad cinematográfica.
-      </p>
+      <ol>
+        <li><strong>Acreditación previa del equipo:</strong> Coordinar pases de entrada, acreditación de vehículos y validación de EPP con semanas de anticipación para evitar retrasos en garita.</li>
+        <li><strong>Equipamiento de cine compacto:</strong> Utilizar cámaras de formato completo (como Sony FX6) que rindan en condiciones de luz variables y soporten ambientes de alta humedad o polvo.</li>
+        <li><strong>Registro aéreo con dron industrial:</strong> Integrar tomas aéreas para dimensionar la escala de la infraestructura industrial y la geografía de la faena minera.</li>
+        <li><strong>Narrativa orientada a la ingeniería:</strong> Validar los planos con los ingenieros a cargo para destacar la precisión, especificaciones y propuesta de valor del equipo.</li>
+      </ol>
     </section>
 
-    <!-- Resultado -->
+    <!-- Impacto B2B -->
     <section class="case-section">
-      <h2>Resultado.</h2>
+      <h2>Impacto de los videos industriales en las ventas B2B.</h2>
       <p>
-        El video fue presentado al equipo de Minera Los Pelambres como parte del dossier técnico de la sala de bombas, y hoy es parte del material comercial de VOGT para futuros proyectos mineros. La pieza demuestra la capacidad de la empresa para diseñar y fabricar equipos de bombeo de alta complejidad íntegramente en Chile, compitiendo con estándares internacionales.
+        El contenido audiovisual grabado en terreno es la herramienta comercial más sólida para proveedores de la minería en Chile:
       </p>
-      <p>
-        El proyecto consolidó la relación con VOGT y abrió la puerta a nuevas producciones para el sector minero e industrial, un segmento donde la demanda de contenido técnico de calidad sigue creciendo.
-      </p>
-    </section>
-
-    <!-- Sobre el cliente -->
-    <section class="case-section case-context">
-      <h3>Sobre VOGT</h3>
-      <p>
-        VOGT es una empresa chilena con más de 30 años de experiencia en soluciones de impulsión de fluidos para minería, industria, sanitarias y energía. Con casa matriz en Quilicura, Santiago, y sucursales en Antofagasta y Concepción, la empresa diseña, fabrica y mantiene equipos de bombeo — bombas flotantes, verticales y horizontales — además de ofrecer servicios de alta gama y soluciones IIoT para monitoreo remoto.
-      </p>
-      <p>
-        Su sello es la ingeniería aplicada a condiciones extremas: equipos diseñados para operar en alta montaña, desierto y zonas de alta exigencia sísmica, con un enfoque en sostenibilidad, eficiencia hídrica y desarrollo de proveedores locales.
-      </p>
-      <p class="case-source">
-        Fuente: <a href="https://www.vogt.cl" target="_blank" rel="noopener">vogt.cl</a>
-      </p>
-    </section>
-
-    <!-- Sobre Minera Los Pelambres -->
-    <section class="case-section case-context">
-      <h3>Sobre Minera Los Pelambres</h3>
-      <p>
-        Minera Los Pelambres es una faena de cobre ubicada en la comuna de Salamanca, Región de Coquimbo, operada por Antofagasta Minerals. Es una de las minas más grandes de Chile y produce concentrado de cobre, molibdeno y oro. La operación se encuentra a más de 3.200 m.s.n.m. en la cordillera de los Andes, lo que exige equipos diseñados específicamente para operar en condiciones de alta altitud, baja presión atmosférica y temperaturas extremas.
-      </p>
-      <p class="case-source">
-        Fuente: <a href="https://www.antofagasta.co.uk" target="_blank" rel="noopener">Antofagasta plc</a>
-      </p>
+      <ul>
+        <li><strong>Validación de capacidades técnicas:</strong> Muestra el desempeño real del equipo en las condiciones extremas para las que fue diseñado.</li>
+        <li><strong>Material clave para ferias industriales:</strong> Facilita la presentación de proyectos a clientes en instancias como EXPOMIN o reuniones comerciales internacionales.</li>
+        <li><strong>Confianza institucional:</strong> Refuerza la credibilidad de la marca ante gerencias de operaciones, abastecimiento y proyectos mineros.</li>
+      </ul>
     </section>
 
     <!-- CTA -->
     <section class="case-section case-cta-final">
-      <h2>¿Necesitas un video técnico-industrial para tu proyecto?</h2>
+      <h2>¿Necesitas registrar tus proyectos industriales o mineros en Chile?</h2>
       <p>
-        En DAR2 producimos videos corporativos, técnicos e institucionales para el sector minero e industrial. Cotización a medida en 48 horas.
+        En DAR2 somos especialistas en la producción audiovisual corporativa para empresas de la industria, energía y minería, garantizando el cumplimiento de normas de seguridad y calidad broadcast.
       </p>
       <div class="case-cta">
         <a href="/contacto/" class="case-cta-btn">
@@ -253,14 +254,38 @@ const caseSchema = {
     color: #1a1a1a; font-weight: 700;
   }
 
-  .case-context {
-    background: #fafafa; border-radius: 16px; padding: 32px; margin-top: 64px;
+  /* Listas (bullets y numeradas) dentro de secciones */
+  .case-section ul, .case-section ol {
+    margin: 0 0 18px; padding-left: 22px;
   }
-  .case-context h3 { margin-top: 0; }
-  .case-context p { font-size: 16px; color: #555; }
-  .case-source { font-size: 14px; color: #888; margin-top: 12px; }
-  .case-source a { color: #666; text-decoration: underline; }
-  .case-source a:hover { color: #E63E00; }
+  .case-section li {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 10px;
+  }
+  .case-section li strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Tarjetas en cascada: Desafio -> Estrategia -> Entregables */
+  .case-flow { margin: 24px 0 8px; }
+  .case-flow-card {
+    border-radius: 14px; padding: 24px;
+    background: #fafafa; border: 1px solid #e5e5e5; margin-bottom: 0;
+  }
+  .case-flow--desafio { border-left: 4px solid #1a1a1a; }
+  .case-flow--solucion { border-left: 4px solid #FF4500; }
+  .case-flow--resultado { border-left: 4px solid #E63E00; }
+  .case-flow-label {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #666; margin-bottom: 10px;
+  }
+  .case-flow-card p { font-size: 16px; line-height: 1.6; color: #333; margin: 0; }
+  .case-flow-card ul { margin: 0; padding-left: 18px; }
+  .case-flow-card li { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 6px; }
+  .case-flow-card li:last-child { margin-bottom: 0; }
+  .case-flow-arrow {
+    display: block; text-align: center; color: #999; font-size: 20px;
+    line-height: 1; margin: 14px 0;
+  }
 
   .case-cta-final {
     background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
