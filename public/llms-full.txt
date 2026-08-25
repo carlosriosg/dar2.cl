@@ -550,6 +550,10 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
+### Streaming e Integración Híbrida · HackLab-iA Google
+**URL:** https://dar2.cl/casos/hacklab-ia-google-streaming/
+Two-day continuous streaming for technology events. Covered the HackLab-iA (Santiago Cero Carbono) hackathon backed by Google and Ciudad Emergente at Fundación Mustakis (100+ participants, 30 teams, $50K USD in prizes). Challenge: 48 hours of uninterrupted broadcast, local projection, and dedicated internet. Deployment: point-to-point industrial wireless fiber link aligned to Cerro San Cristóbal (constant upload immune to local saturation), 5G bonding modem as automatic-failover backup, 3 robotic PTZ cameras with IP control, direct capture and live insertion of speakers' PPTs via SDI/HDMI capture cards switched in vMix, and a zero-latency auxiliary output to the giant venue screen. Result: 2 days of continuous YouTube streaming without bitrate drops and seamless hybrid coverage for judges, mentors, and online audience.
+
 ### Streaming Lanzamiento de Libro · El Espíritu de la Radio
 **URL:** https://dar2.cl/casos/streaming-lanzamiento-libro-lastarria/
 Multi-camera streaming for cultural events in tight venues. Livestreamed the relaunch of the book "El Espíritu de la Radio" (Paola Zúñiga Marro & Rodrigo Cabrillana) at Fuente Lastarria, Santiago, organized by Santiago-Ander Editorial and El Ágora, with a panel including Joe Vasconcellos. Deployment: 3 robotic PTZ cameras with dedicated IP control (no camera operators in front of the audience), live switching and titling with vMix in HD, redundant 5G bonding modem to survive mobile-cell saturation, wireless microphones with split audio (clean stream mix + parallel feed to the venue's PA). Result: stable broadcast to thousands of viewers without obstructing the in-person audience.

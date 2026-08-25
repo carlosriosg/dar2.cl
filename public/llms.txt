@@ -190,6 +190,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 ## Portafolio highlights
 
+- [Streaming e Integración Híbrida · HackLab-iA Google](https://dar2.cl/casos/hacklab-ia-google-streaming/) — Two-day continuous streaming for a Google-backed AI hackathon: point-to-point wireless fiber link to Cerro San Cristóbal, 3 robotic PTZ cameras with IP control, live PPT capture and vMix switching, zero-latency feed to the giant venue screen.
 - [Streaming Lanzamiento de Libro · El Espíritu de la Radio](https://dar2.cl/casos/streaming-lanzamiento-libro-lastarria/) — Multi-camera streaming for a book launch at Fuente Lastarria (Santiago): 3 robotic PTZ cameras with IP control, live vMix switching with on-screen titles, redundant 5G bonding modem, wireless audio with split output to the venue.
 - [Producción Audiovisual Ejecutiva · Empresas Copec](https://dar2.cl/casos/resultados-copec/) — Quarterly CEO results video for a Chilean holding: 6K multi-camera (Z CAM E2-S6), motorized slider, After Effects financial motion graphics, bilingual subtitles, 4K master delivered in under 30 hours.
 - [Producción Audiovisual en Salud · Clínica Santa María](https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/) — How to produce in active surgical rooms without disrupting operations: compact cinema gear, low-heat LED lighting, on-site medical validation, and modular deliverables (90s video, 9:16 clips, training footage).

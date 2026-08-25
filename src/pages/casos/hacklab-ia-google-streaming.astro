@@ -1,0 +1,447 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Streaming e Integración Híbrida · HackLab-iA Google', url: 'https://dar2.cl/casos/hacklab-ia-google-streaming/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Streaming e Integración Híbrida: Caso HackLab-iA Google",
+  "description": "Descubre cómo producir un streaming continuo de 2 días con cámaras PTZ, fibra inalámbrica y señal a pantalla gigante. Caso HackLab-iA por DAR2.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/casos/hacklab-ia-google-streaming/hero.jpg",
+    "width": 2228,
+    "height": 1338
+  },
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-25",
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
+  "mainEntityOfPage": "https://dar2.cl/casos/hacklab-ia-google-streaming/",
+  "about": {
+    "@type": "Organization",
+    "name": "Ciudad Emergente",
+    "url": "https://www.ciudademergente.org"
+  },
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
+};
+---
+
+<Base
+  title="Streaming e Integración Híbrida: Caso HackLab-iA Google"
+  description="Descubre cómo producir un streaming continuo de 2 días con cámaras PTZ, fibra inalámbrica y señal a pantalla gigante. Caso HackLab-iA por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/casos/hacklab-ia-google-streaming/hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Tecnología · 2024</p>
+      <h1 class="case-h1">
+        Streaming e Integración Híbrida:
+        <em class="hl">Caso HackLab-iA Google.</em>
+      </h1>
+      <p class="case-lead">
+        La producción de un streaming continuo de dos días para eventos de tecnología exige conectividad redundante de alta velocidad, cámaras PTZ robóticas e integración limpia de presentaciones. Esta arquitectura técnica garantiza transmisiones estables en YouTube y proyección sin latencia hacia pantallas gigantes.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <dl class="case-overview">
+      <div>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Ciudad Emergente · Google · Fundación Mustakis</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2024</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Streaming Corporativo</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Tecnología / Innovación</dd>
+      </div>
+    </dl>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/casos/hacklab-ia-google-streaming/hero.jpg"
+        alt="Streaming e integración híbrida del evento HackLab-iA junto a Google — DAR2"
+        class="w-full h-full object-cover"
+        width="2228"
+        height="1338"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- Desafíos -->
+    <section class="case-section">
+      <h2>Los desafíos técnicos de un streaming continuo de dos días para eventos de innovación.</h2>
+      <p>
+        Transmitir jornadas extensas de hackatones, congresos de tecnología o eventos sobre Inteligencia Artificial en Santiago presenta complejidades críticas de infraestructura:
+      </p>
+      <ul>
+        <li><strong>Estabilidad de internet ininterrumpida:</strong> Transmitir durante 48 horas seguidas sin caídas exige enlaces dedicados de alta velocidad y baja latencia.</li>
+        <li><strong>Integración de presentaciones en alta resolución:</strong> Los expositores proyectan diapositivas con datos complejos, códigos e imágenes que deben verse con nitidez absoluta tanto en el streaming como en el recinto.</li>
+        <li><strong>Gestión de temperatura y continuidad de equipos:</strong> Las cámaras y switchers deben operar durante jornadas intensas de trabajo continuo sin sobrecalentamiento ni degradación de señal.</li>
+      </ul>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section class="case-section">
+      <h2>Caso de Éxito: HackLab-iA junto a Google y Ciudad Emergente.</h2>
+      <p>
+        El evento <a href="https://www.ciudademergente.org/" target="_blank" rel="noopener noreferrer">HackLab-iA (Santiago Cero Carbono)</a> —impulsado por <a href="https://www.ciudademergente.org/" target="_blank" rel="noopener noreferrer">Ciudad Emergente</a> junto a <a href="https://about.google/" target="_blank" rel="noopener noreferrer">Google</a> en las instalaciones de la <a href="https://www.fundacionmustakis.org/" target="_blank" rel="noopener noreferrer">Fundación Mustakis</a>— reunió a más de 100 participantes en 30 equipos compitiendo por $50.000 USD en premios para desarrollar soluciones climáticas con IA.
+      </p>
+      <p>
+        Para asegurar la continuidad total de la transmisión oficial en directo vía <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a> y la experiencia presencial, DAR2 desplegó un sistema de streaming e integración audiovisual de alta tecnología:
+      </p>
+      <div class="case-flow">
+        <div class="case-flow-card case-flow--desafio">
+          <span class="case-flow-label">Desafío del evento</span>
+          <p>2 días de streaming continuo, proyección local y enlace de internet.</p>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--solucion">
+          <span class="case-flow-label">Despliegue técnico</span>
+          <ul>
+            <li>Enlace de fibra inalámbrica punto a punto al Cerro San Cristóbal</li>
+            <li>3x cámaras PTZ robóticas con control por IP y visión HD/4K</li>
+            <li>Captura directa e inserción de PPTs y presentaciones en vivo</li>
+            <li>Duplicación de señal limpia hacia la pantalla gigante presencial</li>
+          </ul>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--resultado">
+          <span class="case-flow-label">Resultado en vivo</span>
+          <ul>
+            <li>Transmisión continua por YouTube de 2 días sin caídas de bitrate</li>
+            <li>Cobertura híbrida impecable para jurados, mentores y público online</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enlace fibra -->
+    <section class="case-section">
+      <h2>Enlace de fibra inalámbrica al Cerro San Cristóbal y arquitectura de red.</h2>
+      <p>
+        El mayor desafío operativo en recintos de alta concurrencia es contar con un ancho de banda simétrico y dedicado que no colapse con el tráfico de los asistentes.
+      </p>
+      <div class="case-duo">
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/hacklab-ia-google-streaming/camara-ptz-setup.jpg"
+            alt="Instalación de cámaras PTZ robóticas en evento HackLab-iA — DAR2"
+            class="w-full h-full object-cover"
+            width="4000"
+            height="2252"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/hacklab-ia-google-streaming/camara-detail.jpg"
+            alt="Detalle de cámara del despliegue técnico HackLab-iA — DAR2"
+            class="w-full h-full object-cover"
+            width="2252"
+            height="1339"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <ul>
+        <li><strong>Enlace Punto a Punto al Cerro San Cristóbal:</strong> Instalamos una antena de fibra inalámbrica de grado industrial alineada directamente con la infraestructura del <a href="https://parquemet.cl/" target="_blank" rel="noopener noreferrer">Cerro San Cristóbal</a>, garantizando una tasa de subida (upload) constante e inmune a la saturación local.</li>
+        <li><strong>Redundancia 5G Bonding:</strong> Mantuvimos un respaldo módem celular de alta velocidad operando en paralelo con failover automático en la consola de streaming.</li>
+      </ul>
+    </section>
+
+    <!-- Control robótico -->
+    <section class="case-section">
+      <h2>Control robótico PTZ, mezcla de PPTs y proyección presencial.</h2>
+      <p>
+        Para dinamizar la cobertura audiovisual durante los dos días de pitches, mentorías y presentaciones frente al jurado, organizamos la dirección de cámara con un flujo de trabajo digitalizado:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/hacklab-ia-google-streaming/control-vmix.jpg"
+          alt="Consola de control vMix y switcher de video en transmisión continua — DAR2"
+          class="w-full h-full object-cover"
+          width="4000"
+          height="2252"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <h3>1. Sistema Multicámara PTZ Invisible</h3>
+      <p>
+        Tres cámaras PTZ robóticas permitieron cubrir el escenario, la mesa del jurado y las reacciones del público sin invadir el espacio de trabajo de los competidores ni tapar la visión del recinto.
+      </p>
+      <h3>2. Integración de Presentaciones (PPT) y Zócalos en Vivo</h3>
+      <p>
+        Capturamos la señal directa de los computadores de los expositores mediante placas de captura SDI/HDMI, conmutando en tiempo real entre el plano del speaker, la pantalla completa o diagramas lado a lado (picture-in-picture) mediante <a href="https://www.vmix.com/" target="_blank" rel="noopener noreferrer">vMix</a>.
+      </p>
+      <h3>3. Señal a Pantalla Gigante sin Latencia</h3>
+      <p>
+        Desde el switcher principal enviamos una salida auxiliar sin desfase (cero latencia) hacia la pantalla gigante del auditórium, asegurando que el público presente disfrutara de la misma claridad gráfica que la audiencia remota en YouTube.
+      </p>
+
+      <!-- Formato híbrido -->
+      <div class="case-hybrid">
+        <div class="case-hybrid-img">
+          <Picture
+            src="/images/casos/hacklab-ia-google-streaming/vertical-cobertura.jpg"
+            alt="Registro vertical del ambiente de innovación en HackLab-iA — DAR2"
+            class="w-full h-full object-cover"
+            width="4000"
+            height="2252"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div>
+          <h3>Formato Híbrido y Escalabilidad</h3>
+          <p>
+            El registro de este tipo de eventos no solo alimenta el flujo en directo en YouTube, sino que genera material de archivo en alta resolución para la producción de resúmenes institucionales y cápsulas en redes sociales.
+          </p>
+          <p>
+            Iniciativas posteriores como el programa <em>AcademIA HackLab: Santiago Región Sustentable</em> demuestran la importancia de contar con un repositorio audiovisual de calidad broadcast para validar el impacto de los proyectos frente a sponsors y alianzas estratégicas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="case-section">
+      <h2>Galería del despliegue técnico en terreno.</h2>
+      <p>
+        La combinación de tecnología inalámbrica de red, robótica e ingeniería audiovisual es la garantía de éxito en eventos corporativos de gran escala:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/hacklab-ia-google-streaming/pantalla-gigante.jpg"
+          alt="Vista de la pantalla gigante con integración de señal y presentaciones — DAR2"
+          class="w-full h-full object-cover"
+          width="2252"
+          height="1375"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <ul>
+        <li><strong>Operación remota continuada:</strong> Gestión de encuadres y balance de color centralizado durante más de 16 horas de emisión diaria.</li>
+        <li><strong>Audio directo para streaming y sala:</strong> Microfonía inalámbrica profesional procesada para evitar acoples en la sala y mantener inteligibilidad en la transmisión.</li>
+      </ul>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/hacklab-ia-google-streaming/enlace-fibra.jpg"
+          alt="Alineación del enlace de fibra inalámbrica e infraestructura técnica — DAR2"
+          class="w-full h-full object-cover"
+          width="2252"
+          height="1344"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="case-section">
+      <h2>Beneficios del streaming profesional para eventos de innovación.</h2>
+      <p>
+        Contar con una productora especializada en eventos B2B y streaming multicámara entrega ventajas decisivas:
+      </p>
+      <ul>
+        <li><strong>Continuidad operativa garantizada:</strong> La infraestructura de internet dedicada elimina el riesgo de cortes durante momentos clave como los pitches finales o la premiación.</li>
+        <li><strong>Alcance global sin fronteras:</strong> Permite a ejecutivos internacionales de Google y mentores remotos evaluar las presentaciones en tiempo real con calidad HD.</li>
+        <li><strong>Potenciamiento de marca:</strong> Eleva la imagen corporativa de los organizadores al entregar una transmisión limpia, con gráfica profesional y sonido perfecto.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Estás organizando un evento de tecnología, congreso o hackatón en Chile?</h2>
+      <p>
+        En DAR2 entregamos cobertura de streaming multicámara, conectividad dedicada vía enlace inalámbrico y circuitos cerrados para eventos corporativos e híbridos en Santiago.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar servicio de Streaming →
+        </a>
+        <a href="/servicios/streaming/" class="case-cta-link">
+          Conocer Streaming Corporativo →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.4; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-duo {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 0 0 48px;
+  }
+  .case-duo .case-hero-image { margin-bottom: 0; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+  .case-section a {
+    color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px;
+  }
+  .case-section a:hover { color: #FF4500; }
+
+  /* Listas (bullets y numeradas) dentro de secciones */
+  .case-section ul, .case-section ol {
+    margin: 0 0 18px; padding-left: 22px;
+  }
+  .case-section li {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 10px;
+  }
+  .case-section li strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Bloque Formato Hibrido: imagen + texto en dos columnas */
+  .case-hybrid {
+    display: grid; grid-template-columns: 1fr; gap: 24px;
+    margin: 40px 0 8px; align-items: start;
+  }
+  @media (min-width: 640px) {
+    .case-hybrid { grid-template-columns: 1fr 1fr; }
+  }
+  .case-hybrid .case-hybrid-img {
+    border-radius: 16px; overflow: hidden; background: #eaeaea;
+  }
+  .case-hybrid .case-hybrid-img :global(img) { width: 100%; display: block; }
+  .case-hybrid h3 { margin: 0 0 16px; }
+
+  /* Tarjetas en cascada: Desafio -> Despliegue -> Resultado */
+  .case-flow { margin: 24px 0 8px; }
+  .case-flow-card {
+    border-radius: 14px; padding: 24px;
+    background: #fafafa; border: 1px solid #e5e5e5; margin-bottom: 0;
+  }
+  .case-flow--desafio { border-left: 4px solid #1a1a1a; }
+  .case-flow--solucion { border-left: 4px solid #FF4500; }
+  .case-flow--resultado { border-left: 4px solid #E63E00; }
+  .case-flow-label {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #666; margin-bottom: 10px;
+  }
+  .case-flow-card p { font-size: 16px; line-height: 1.6; color: #333; margin: 0; }
+  .case-flow-card ul { margin: 0; padding-left: 18px; }
+  .case-flow-card li { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 6px; }
+  .case-flow-card li:last-child { margin-bottom: 0; }
+  .case-flow-arrow {
+    display: block; text-align: center; color: #999; font-size: 20px;
+    line-height: 1; margin: 14px 0;
+  }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+
+  /* El bloque CTA tambien tiene la clase .case-section: la regla de links
+     naranjas de las secciones no debe aplicar sobre boton/links del CTA. */
+  .case-cta-final .case-cta-btn,
+  .case-cta-final .case-cta-link {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
