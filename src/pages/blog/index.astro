@@ -185,12 +185,14 @@ const itemListSchema = {
           <a href={`/blog/${art.slug}/`} class="blog-link">
             <div class="blog-thumb">
               <Picture
-                src={art.image}
+                src={art.image.replace(/\.(png|jpe?g)$/i, '-card.$1')}
                 alt={art.title}
                 width="730"
                 height="411"
                 class="blog-thumb-img"
                 loading="lazy"
+                responsive
+                sizes="(max-width: 640px) 95vw, 360px"
               />
             </div>
             <div class="blog-body">

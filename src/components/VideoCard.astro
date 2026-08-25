@@ -11,9 +11,16 @@ function getYouTubeId(url) {
 
 const videoId = getYouTubeId(youtube_url);
 
-// Source priority: local thumbnail → YouTube maxresdefault
+// Si el thumbnail es local, usamos la variante -card (730px) con srcset
+// responsive (-card-sm 365w / -card 730w) para no descargar la imagen full.
+const isLocalThumb =
+  typeof thumbnail === 'string' &&
+  thumbnail.startsWith('/') &&
+  /\.(png|jpe?g)$/i.test(thumbnail);
+
+// Source priority: local thumbnail (-card) → YouTube maxresdefault
 const imgSrc = thumbnail
-  ? thumbnail
+  ? (isLocalThumb ? thumbnail.replace(/\.(png|jpe?g)$/i, '-card.$1') : thumbnail)
   : videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null;
 
 const embed = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
@@ -39,6 +46,8 @@ const onerrorAttr = (!thumbnail && videoId)
         class="vc-img w-full h-full object-cover"
         loading="lazy"
         onerror={onerrorAttr}
+        responsive={isLocalThumb}
+        sizes="(max-width: 640px) 95vw, (max-width: 1024px) 45vw, 365px"
       />
     ) : (
       <div class="w-full h-full bg-[#eaeaea]" />

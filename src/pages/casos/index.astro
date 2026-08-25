@@ -106,12 +106,14 @@ const cases = [
           <a href={`/casos/${c.slug}/`} class="case-link">
             <div class="case-thumb">
               <Picture
-                src={c.image}
+                src={c.image.replace(/\.(png|jpe?g)$/i, '-card.$1')}
                 alt={c.title}
                 width="730"
                 height="411"
                 class="case-thumb-img"
                 loading="lazy"
+                responsive
+                sizes="(max-width: 640px) 95vw, 360px"
               />
             </div>
             <div class="case-body">
