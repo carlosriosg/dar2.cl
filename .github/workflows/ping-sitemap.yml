@@ -13,3 +13,4 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/ping-indexnow.mjs
+      - run: node scripts/indexnow-post.mjs
