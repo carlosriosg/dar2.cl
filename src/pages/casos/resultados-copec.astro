@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
+import VideoCard from '../../components/VideoCard.astro';
 
 const breadcrumbs = [
   { name: 'Inicio', url: 'https://dar2.cl/' },
@@ -215,6 +216,19 @@ const caseSchema = {
       </ul>
     </section>
 
+    <!-- Video del proyecto -->
+    <section class="case-section">
+      <h2>El registro del proyecto en video.</h2>
+      <div class="case-video">
+        <VideoCard
+          youtube_url="https://youtu.be/u4W0tUksr6k"
+          titulo="Reporte Q2 2026"
+          cliente="Empresas Copec"
+          thumbnail="/images/portafolio/reporte-q2-2026-copec.png"
+        />
+      </div>
+    </section>
+
     <!-- Ventajas -->
     <section class="case-section">
       <h2>Ventajas de estandarizar la producción corporativa ejecutiva.</h2>
@@ -283,6 +297,9 @@ const caseSchema = {
   .case-pano { aspect-ratio: 3833 / 962; }
 
   .case-section { margin-bottom: 48px; }
+
+  /* Video del proyecto: card centrada con ancho de lectura comodo */
+  .case-video { max-width: 720px; margin: 0 auto; }
   .case-section h2 {
     font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
     line-height: 1.1; margin: 0 0 20px;
