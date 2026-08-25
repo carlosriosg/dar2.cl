@@ -131,6 +131,30 @@ const caseSchema = {
       <p>
         Para resolverlo, DAR2 diseñó un formato de <strong>video podcast corporativo</strong> de varios episodios, transformando el reporte de innovación en una conversación fluida entre los líderes que viajaron:
       </p>
+      <div class="case-duo">
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/podcast/los-3-conversando.jpg"
+            alt="Líderes de Transelec conversando en el video podcast corporativo producido por DAR2"
+            class="w-full h-full object-cover"
+            width="1200"
+            height="676"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/podcast/los-3-saludando.jpg"
+            alt="Los líderes de Transelec en el set del video podcast corporativo de DAR2"
+            class="w-full h-full object-cover"
+            width="1200"
+            height="676"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
       <div class="case-flow">
         <div class="case-flow-card case-flow--desafio">
           <span class="case-flow-label">Desafío comunicacional</span>
@@ -154,6 +178,17 @@ const caseSchema = {
             <li>Formato modular de fácil consumo para toda la compañía</li>
           </ul>
         </div>
+      </div>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/podcast/plano-general-estudio.jpg"
+          alt="Plano general del estudio de video podcast corporativo montado por DAR2 para Transelec"
+          class="w-full h-full object-cover"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
 
@@ -233,6 +268,13 @@ const caseSchema = {
     aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
     margin-bottom: 56px;
   }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-duo {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 0 0 48px;
+  }
+  .case-duo .case-hero-image { margin-bottom: 0; }
 
   .case-section { margin-bottom: 48px; }
   .case-section h2 {

@@ -163,6 +163,30 @@ const eventSchema = {
       <p>
         DAR2 diseñó e implementó un sistema de <strong>circuito cerrado multicámara (CCTV)</strong> de estándar broadcast en el recinto, conectando la acción en la cocina directo a pantallas estratégicas:
       </p>
+      <div class="case-duo">
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/camara-ptz-estacion-1.jpg"
+            alt="Cámara robótica PTZ instalada sobre una estación del evento de La Mar"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-hero-image case-image-inline">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/camarografos-inalambricos.jpg"
+            alt="Camarógrafos inalámbricos cubriendo el salón del evento de La Mar"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
       <div class="case-flow">
         <div class="case-flow-card case-flow--desafio">
           <span class="case-flow-label">Desafío del evento</span>
@@ -185,6 +209,17 @@ const eventSchema = {
             <li>Máxima inmersión del público y visibilidad total del showcooking</li>
           </ul>
         </div>
+      </div>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/circuito-cerrado-la-mar/pantalla-vertical-chef.jpg"
+          alt="Pantalla vertical mostrando en detalle el trabajo del chef en vivo durante el evento de La Mar"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="901"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
 
@@ -213,6 +248,49 @@ const eventSchema = {
         <li><strong>Registro de contenido posterior:</strong> La señal mezclada en vivo queda grabada en alta calidad para generar resúmenes, reels y material de prensa.</li>
         <li><strong>Flexibilidad de integración:</strong> Permite enviar la señal en paralelo a plataformas de streaming como YouTube, LinkedIn o sistemas de videoconferencia.</li>
       </ul>
+    </section>
+
+    <!-- Galería -->
+    <section class="case-section case-gallery">
+      <h2>Galería del evento.</h2>
+      <p>
+        El showcooking transmitido en vivo a las pantallas y las estaciones gastronómicas en acción durante el evento.
+      </p>
+      <figure class="case-figure case-figure--square">
+        <Picture
+          src="/images/casos/circuito-cerrado-la-mar/gaston-acurio.jpg"
+          alt="Gastón Acurio durante el evento de La Mar con cobertura multicámara en vivo"
+          class="w-full h-full object-cover"
+          width="640"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <div class="case-gallery-grid">
+        <div class="case-gallery-item">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/estacion-brasas.jpg"
+            alt="Estación de brasas de La Mar transmitida en vivo a las pantallas del evento"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="case-gallery-item">
+          <Picture
+            src="/images/casos/circuito-cerrado-la-mar/estacion-postres.jpg"
+            alt="Estación de postres de La Mar con cobertura multicámara en vivo"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- CTA -->
@@ -263,6 +341,33 @@ const eventSchema = {
   .case-hero-image {
     aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
     margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-figure { margin: 0; }
+  .case-figure--square :global(picture) {
+    display: block; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    max-width: 420px; aspect-ratio: 1 / 1; margin: 0 auto;
+  }
+  .case-figure--square :global(img) {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  .case-duo {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 0 0 48px;
+  }
+  .case-duo .case-hero-image { margin-bottom: 0; }
+
+  .case-gallery { margin-bottom: 64px; }
+  .case-gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px; margin-top: 28px;
+  }
+  @media (min-width: 640px) { .case-gallery-grid { gap: 16px; } }
+  .case-gallery-item { border-radius: 12px; overflow: hidden; background: #eaeaea; }
+  .case-gallery-item :global(img) {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
 
   .case-section { margin-bottom: 48px; }
