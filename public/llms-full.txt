@@ -9,7 +9,7 @@
 
 ## About DAR2
 
-DAR2 Servicios Audiovisuales is a B2B audiovisual production company based in Santiago, Chile. Founded in 2010 by Carlos Rios Guevara (UNIACC graduate). 15+ years of experience, 8 in-house professionals, studio in Providencia.
+DAR2 Servicios Audiovisuales is a B2B audiovisual production company based in Santiago, Chile. Founded in 2010 by Carlos Rios Guevara (UNIACC graduate). 15+ years of experience, 8 in-house professionals, studios coordinated per project.
 
 **Address:** Av. Holanda 099, Oficina 603, Providencia, Santiago, Chile
 **Phone/WhatsApp:** +56 9 9843 3346
@@ -20,7 +20,7 @@ DAR2 Servicios Audiovisuales is a B2B audiovisual production company based in Sa
 
 **Key differentiators vs competitors:**
 - 9 services under one roof (not outsourced to freelancers)
-- Broadcast-quality equipment (Sony FX6, PTZ cameras, professional audio)
+- Broadcast-quality equipment (Z CAM E2-S6, DJI RS 5 Pro gimbal, PTZ cameras, professional audio)
 - 15-year track record with IPSA companies
 - Production + post-production in the same building
 - Single invoice for multi-service projects
@@ -38,7 +38,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 - **Carlos Rios Guevara** — Director & Founder. UNIACC. 15+ years in corporate production.
 - **Cristian Pinto** — Post-production lead. Editor & colorist.
-- **Jorge Díaz** — Director of photography. Sony FX6 specialist.
+- **Jorge Díaz** — Director of photography. Z CAM E2-S6 specialist.
 - **Mario Toro** — Sound engineer. Broadcast audio & live mixing.
 - **Víctor Arriagada** — Technical director. Streaming & live switching.
 - **Pablo Haz** — Motion graphics & virtual sets.
@@ -227,7 +227,7 @@ A: Sí, el circuito cerrado puede exportarse a streaming simultáneamente.
 
 ### Description
 
-El estudio virtual con croma (chroma key) reemplaza la escenografía física por un set digital hiperrealista generado en tiempo real. En DAR2 combinamos un espacio físico profesional con iluminación calibrada, cámara broadcast y un motor de gráfica 4K que te permite presentar productos, conducir una capacitación o hacer un video institucional con fondos virtuales de calidad broadcast. Sin arrendar locaciones, sin construir sets, sin trasladar equipos ni decorados.
+El estudio virtual con croma (chroma key) reemplaza la escenografía física por un set digital hiperrealista generado en tiempo real. En DAR2, para cada producción coordinamos un estudio con croma calibrado con iluminación broadcast, cámara cinema y un motor de gráfica 4K que te permite presentar productos, conducir una capacitación o hacer un video institucional con fondos virtuales de calidad broadcast. Sin construir sets ni decorados, sin trasladar equipos.
 
 Cada proyecto virtual se diseña a medida: definimos la paleta de colores, el estilo visual y la profundidad de la escena para que sea consistente con el manual de marca del cliente. Las escenografías se crean una vez y quedan como activo reutilizable para futuras grabaciones.
 
@@ -248,7 +248,7 @@ Empresas que necesitan producir videos con alta calidad visual sin el costo de c
 - Estudio con green screen profesional
 - Escenografías virtuales 3D hiperrealistas
 - Iluminación broadcast calibrada
-- Cámara cinema Sony FX6
+- Cámara cinema Z CAM E2-S6
 - Dirección de presentador/ejecutivo en vivo
 - Teleprompter con guion cargado
 - Postproducción con motion graphics
@@ -272,7 +272,7 @@ A: Con nuestro setup de iluminación y chromakey, la integración es invisible i
 A: No. Los dirigimos para que se vean naturales. Trabajamos con ejecutivos sin experiencia en cámara todo el tiempo.
 
 **Q: ¿Ofrecen arriendo de estudio con croma (chroma key)?**
-A: Sí. Contamos con estudio propio en Providencia con croma profesional (fondo verde), iluminación calibrada y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.
+A: Sí. Para cada producción coordinamos estudios con croma profesional en Santiago, según el tipo de contenido (croma, podcast o virtual). Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.
 
 ---
 
@@ -284,7 +284,7 @@ A: Sí. Contamos con estudio propio en Providencia con croma profesional (fondo 
 
 Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.
 
-En DAR2 producimos con cámara cinema Sony FX6, iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.
+En DAR2 producimos con cámara cinema Z CAM E2-S6, iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.
 
 Trabajamos cada proyecto desde el brief hasta la entrega final: desarrollo de concepto, guion, plan de rodaje, dirección de arte, locaciones, casting cuando corresponde, rodaje, postproducción y entregables en todos los formatos (web, redes sociales, broadcast, presentaciones internas, archivos para distribución externa).
 
@@ -319,7 +319,7 @@ A: Entre 2 y 6 semanas según complejidad. Un video de valores con 1 día de rod
 A: Sí. Tenemos guionista propio. Trabajamos desde un brief del cliente y proponemos narrativa, estructura y tono.
 
 **Q: ¿Graban en las oficinas del cliente?**
-A: Sí. Grabamos en planta, oficinas, terreno o donde necesite el proyecto. También tenemos estudio propio en Providencia.
+A: Sí. Grabamos en planta, oficinas, terreno o donde necesite el proyecto. También coordinamos estudios de grabación en Santiago según el requerimiento.
 
 **Q: ¿Cuánto dura un video corporativo ideal?**
 A: Entre 60 segundos y 3 minutos para audiencias externas. Para audiencias internas (capacitación, comunicación) pueden ser más largos.
@@ -342,7 +342,7 @@ A: Video institucional, de cultura y valores, de capacitación e inducción, de 
 
 Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.
 
-En DAR2 montamos un set profesional — en nuestro estudio en Providencia o como setup móvil en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet.
+En DAR2 coordinamos estudios de podcast profesionales según el requerimiento, o montamos un set profesional en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet.
 
 ### Target audience
 
@@ -368,7 +368,7 @@ Rendiciones de cuentas y cierres de proyectos estratégicos (viajes de innovaci�
 ### FAQs
 
 **Q: ¿Se puede grabar en nuestras propias oficinas o requiere estudio?**
-A: Podemos montar un set móvil profesional directamente en tus instalaciones o utilizar nuestro estudio en Providencia.
+A: Podemos montar un set móvil profesional directamente en tus instalaciones o coordinar un estudio de podcast según el requerimiento.
 
 **Q: ¿El podcast se puede transmitir en vivo o solo grabado?**
 A: Ambas opciones. Podemos emitirlo en directo vía streaming privado o público con interacción de chat, o grabarlo para postproducción.
@@ -572,7 +572,7 @@ Executive audiovisual production for C-level communications with zero margin for
 
 ### Producción Audiovisual en Salud · Clínica Santa María
 **URL:** https://dar2.cl/casos/cirugia-robotica-clinica-santa-maria/
-Audiovisual production in health facilities requires strict biosecurity protocols, specialized technical direction, and compact cinema equipment. Documented the assembly and operation of the Hugo RAS robotic console at Clínica Santa María (Chile's largest robotic surgery program, 2,400+ interventions). Strategy: minimal crew (direction, Sony FX6, direct sound), low-heat LED lighting, on-site medical validation. Deliverables: 90s institutional video, vertical 9:16 clips for LinkedIn/Instagram, extended technical footage for internal training.
+Audiovisual production in health facilities requires strict biosecurity protocols, specialized technical direction, and compact cinema equipment. Documented the assembly and operation of the Hugo RAS robotic console at Clínica Santa María (Chile's largest robotic surgery program, 2,400+ interventions). Strategy: minimal crew (direction, Z CAM E2-S6, direct sound), low-heat LED lighting, on-site medical validation. Deliverables: 90s institutional video, vertical 9:16 clips for LinkedIn/Instagram, extended technical footage for internal training.
 
 ### Video de Valores Corporativos · CASTAÑO
 **URL:** https://dar2.cl/casos/valores-corporativos-castano/
@@ -580,7 +580,7 @@ Corporate values video for Castaño (90 years old, 2,000+ employees). How to tur
 
 ### Producción Audiovisual Industrial · VOGT Pelambres
 **URL:** https://dar2.cl/casos/bomba-minera-vogt-pelambres/
-Audiovisual production in mining requires strict HSEQ accreditations, operational planning at high altitude, and compact cinema equipment. Documented Vogt's high-pressure pumping system at Minera Los Pelambres (3,000+ meters above sea level, Coquimbo Region). Strategy: HSEQ-accredited crew for high altitude, Sony FX6 with fast prime lenses, direct field audio, qualified drone footage. Deliverables: 2-minute industrial video for B2B trade fairs, technical capsules for mining sales presentations, high-resolution material for the company repository.
+Audiovisual production in mining requires strict HSEQ accreditations, operational planning at high altitude, and compact cinema equipment. Documented Vogt's high-pressure pumping system at Minera Los Pelambres (3,000+ meters above sea level, Coquimbo Region). Strategy: HSEQ-accredited crew for high altitude, Z CAM E2-S6 with fast prime lenses, direct field audio, qualified drone footage. Deliverables: 2-minute industrial video for B2B trade fairs, technical capsules for mining sales presentations, high-resolution material for the company repository.
 
 ### Producción de Video Podcast Corporativo · Transelec
 **URL:** https://dar2.cl/casos/podcast-transelec-innovacion-china/

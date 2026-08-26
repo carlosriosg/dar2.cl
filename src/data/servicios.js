@@ -105,7 +105,7 @@ export const servicios = [
       },
       {
         q: '¿Cómo es la transmisión en vivo de un evento en Santiago?',
-        a: 'Transmitimos en vivo desde nuestro estudio en Providencia, las oficinas del cliente o cualquier recinto de eventos de Santiago. El día del evento instalamos el sistema multicámara, configuramos el switcher y las gráficas, conectamos el enlace redundante (fibra + LTE/5G) y un director técnico opera la transmisión completa hacia la plataforma que elijas, con coordinador en contacto directo contigo.',
+        a: 'Transmitimos en vivo desde un estudio de grabación en Santiago, las oficinas del cliente o cualquier recinto de eventos. El día del evento instalamos el sistema multicámara, configuramos el switcher y las gráficas, conectamos el enlace redundante (fibra + LTE/5G) y un director técnico opera la transmisión completa hacia la plataforma que elijas, con coordinador en contacto directo contigo.',
       },
     ],
   },
@@ -295,14 +295,14 @@ export const servicios = [
       'y contenido de marca con calidad de TV, sin construir decorados.',
     longDescription: [
       'El estudio croma virtual usa green screen (chroma key) e iluminación profesional para integrar al presentador en una escenografía generada digitalmente. Te permite tener cualquier ambiente que imagines (un newsroom, un espacio futurista, una réplica de tus oficinas, un set inspirado en una marca global) sin construir decorados ni alquilar locaciones.',
-      'En DAR2 producimos en estudio propio con sistema de iluminación calibrado para chroma, fondo verde de máxima opacidad, cámaras profesionales y dirección creativa. El resultado es indistinguible de un set físico para el espectador final, incluso en pantallas grandes o transmisiones broadcast.',
+      'Para cada proyecto coordinamos el estudio con croma más adecuado según el requerimiento: green screen calibrado, iluminación para chroma key, cámaras profesionales y dirección creativa. El resultado es indistinguible de un set físico para el espectador final, incluso en pantallas grandes o transmisiones broadcast.',
       'Integramos tu identidad visual completa en la escenografía virtual: colores corporativos, logos, pantallas con contenido animado, elementos 3D y branding ambient. Una sola sesión te da contenido para múltiples plataformas: YouTube, LinkedIn, intranet, capacitaciones internas, newsletters.',
-      'Si lo que necesitas es solo el espacio, también ofrecemos arriendo de estudio con croma en Providencia: fondo verde profesional, iluminación calibrada para chroma key y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu propia producción, ideal para contenidos recurrentes que requieren un setup constante y de calidad broadcast.',
+      'Si lo que necesitas es solo el espacio, coordinamos estudios con croma profesional en Santiago: fondo verde calibrado, iluminación para chroma key y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu propia producción, ideal para contenidos recurrentes que requieren un setup constante y de calidad broadcast.',
     ],
     process: [
       { num: '01', title: 'Diseño de la escenografía virtual', desc: 'Trabajamos con tu equipo de marca para definir el ambiente: colores, elementos visuales, pantallas con contenido, animaciones de fondo. Si tienes brief de identidad, lo respetamos.' },
       { num: '02', title: 'Producción del talento', desc: 'Maquillaje, styling y dirección del presentador (sea un ejecutivo de tu empresa o un talento contratado). Los ayudamos a verse naturales y profesionales frente a cámara.' },
-      { num: '03', title: 'Rodaje con chroma key', desc: 'Grabación en nuestro estudio en Providencia con iluminación calibrada para green screen. Múltiples tomas para asegurar calidad, sin compromisos en el resultado final.' },
+      { num: '03', title: 'Rodaje con chroma key', desc: 'Grabación en estudio con croma calibrado para green screen, coordinado según el requerimiento. Múltiples tomas para asegurar calidad, sin compromisos en el resultado final.' },
       { num: '04', title: 'Postproducción', desc: 'Integración del presentador en la escenografía virtual, color grading, audio mastering y entrega en formatos web, broadcast o interno según necesites.' },
     ],
     forWhom: 'Estudio virtual aplica para presentaciones ejecutivas y keynotes, capacitaciones y e-learning corporativo, anuncios de marca con formato broadcast, programas internos de comunicación recurrente, y cualquier contenido donde quieras la calidad de un set físico sin pagar la producción de un decorado.',
@@ -312,7 +312,7 @@ export const servicios = [
       'Calidad broadcast completa',
       'Compatible con streaming o grabación',
       'Fondos para presentaciones, keynotes y e-learning',
-      'Setup rápido en nuestro estudio',
+      'Setup rápido en estudio con croma',
       'Grabación en alta calidad',
       'Postproducción incluida',
     ],
@@ -367,7 +367,7 @@ export const servicios = [
       },
       {
         q: '¿Ofrecen arriendo de estudio con croma (chroma key)?',
-        a: 'Sí. Contamos con estudio propio en Providencia con croma profesional (fondo verde), iluminación calibrada y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.',
+        a: 'Sí. Para cada producción coordinamos estudios con croma profesional en Santiago, según el tipo de contenido (croma, podcast o virtual). Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.',
       },
     ],
   },
@@ -383,7 +383,7 @@ export const servicios = [
       'y postproducción profesional. 15 años haciéndolo para empresas del IPSA.',
     longDescription: [
       'Un video corporativo no es solo grabar a alguien hablando a cámara: es contar la historia de tu empresa con estructura narrativa, dirección creativa, calidad de imagen cinematográfica y postproducción que respete el lenguaje visual de tu marca. La diferencia entre un video que se ve "hecho por la sobrina" y uno que comunica seriedad profesional es directa.',
-      'En DAR2 producimos con cámara cinema Sony FX6, iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.',
+      'En DAR2 producimos con cámara cinema Z CAM E2-S6 (Super 35, 6K), iluminación profesional, captura de sonido broadcast, dirección creativa con guionista propio y postproducción completa (edición, color grading, motion graphics, sonido). El mismo estándar técnico de marcas globales, adaptado al presupuesto y los plazos de empresas chilenas.',
       'Trabajamos cada proyecto desde el brief hasta la entrega final: desarrollo de concepto, guion, plan de rodaje, dirección de arte, locaciones, casting cuando corresponde, rodaje, postproducción y entregables en todos los formatos (web, redes sociales, broadcast, presentaciones internas, archivos para distribución externa).',
     ],
     process: [
@@ -412,7 +412,7 @@ export const servicios = [
       {
         num: '02',
         title: 'Calidad cinema',
-        desc: 'Cámaras Sony FX6, iluminación profesional, audio broadcast. El mismo estándar que marcas globales.',
+        desc: 'Cámaras Z CAM E2-S6, iluminación profesional, audio broadcast. El mismo estándar que marcas globales.',
       },
       {
         num: '03',
@@ -429,7 +429,7 @@ export const servicios = [
     ctaTitle: '¿Tienes un video que quieres contar?',
     featured: false,
     seoTitle: 'Video Corporativo en Santiago para empresas',
-    seoDescription: 'Videos corporativos en Santiago: institucionales, de valores, cultura y producto. Dirección creativa, cámara cinema Sony FX6 y postproducción completa.',
+    seoDescription: 'Videos corporativos en Santiago: institucionales, de valores, cultura y producto. Dirección creativa, cámara cinema Z CAM E2-S6 y postproducción completa.',
     relatedCases: [
       {
         title: 'Sala de Bombas Tipo Contenedor · VOGT',
@@ -459,7 +459,7 @@ export const servicios = [
       },
       {
         q: '¿Graban en las oficinas del cliente?',
-        a: 'Sí. Grabamos en planta, oficinas, terreno o donde necesite el proyecto. También tenemos estudio propio en Providencia.',
+        a: 'Sí. Grabamos en planta, oficinas, terreno o donde necesite el proyecto. También coordinamos estudios de grabación en Santiago según el requerimiento.',
       },
       {
         q: '¿Cuánto dura un video corporativo ideal?',
@@ -744,7 +744,7 @@ export const servicios = [
       'Set profesional, dirección multicámara, audio prístino e integración multimedia para contenido de alto impacto interno y externo.',
     longDescription: [
       'Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.',
-      'En DAR2 contamos con un set profesional en Providencia o también podemos montar un setup móvil en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
+      'En DAR2 coordinamos estudios de podcast profesionales según el requerimiento, o montamos un set profesional en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
       'Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas para redes, sin volver a producir.',
     ],
     process: [
@@ -806,7 +806,7 @@ export const servicios = [
     faqs: [
       {
         q: '¿Se puede grabar en nuestras propias oficinas o requiere estudio?',
-        a: 'Podemos montar un set móvil profesional directamente en tus instalaciones o utilizar nuestro estudio en Providencia.',
+        a: 'Podemos montar un set móvil profesional directamente en tus instalaciones o coordinar un estudio de podcast según el requerimiento.',
       },
       {
         q: '¿El podcast se puede transmitir en vivo o solo grabado?',

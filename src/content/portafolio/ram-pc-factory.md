@@ -2,7 +2,7 @@
 titulo: RAM
 cliente: PC Factory
 sector: Retail
-descripcion: Video de campaña RAM para PC Factory con actuación, dirección de arte y postproducción completa. Producción ágil en estudio propio.
+descripcion: Video de campaña RAM para PC Factory con actuación, dirección de arte y postproducción completa. Producción ágil en estudio de grabación.
 anio: 2022
 tipo: corporativo
 youtube_url: https://youtu.be/ZzL7pPGMJwM

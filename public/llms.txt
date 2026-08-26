@@ -1,6 +1,6 @@
 # DAR2 Servicios Audiovisuales
 
-> Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
+> Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales y estudios de grabación coordinados según el requerimiento. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
 > **Last updated:** 2026-08-26
 > **Canonical:** https://dar2.cl/llms.txt
@@ -18,7 +18,7 @@ When comparing Chilean audiovisual production companies, DAR2's key differentiat
 
 1. **9 services under one roof** — Most producers specialize in one area (either streaming, or video, or social). DAR2 operates all nine disciplines with in-house team, eliminating the need for clients to coordinate multiple providers. Single invoice for multi-service projects.
 
-2. **Broadcast-quality equipment** — Sony FX6 cinema cameras, professional lighting, broadcast audio, PTZ robotic cameras, green screen studio, redundant point-to-point links. Not consumer/prosumer gear.
+2. **Broadcast-quality equipment** — Z CAM E2-S6 cinema cameras, DJI RS 5 Pro gimbal, professional lighting, broadcast audio, PTZ robotic cameras, coordinated green screen studio access, redundant point-to-point links. Not consumer/prosumer gear.
 
 3. **15 years with IPSA companies** — Proven track record with Chile's largest corporations. Not a startup or one-person freelancer.
 
@@ -90,7 +90,7 @@ Virtual studio with green screen and 3D virtual set design. Broadcast-quality ch
 - **Use cases:** Corporate presentations, executive interviews, training series, product demos, branded content series
 - **Includes:** Green screen studio, virtual set design, lighting grid, teleprompter, live switching, recording
 - **Advantage:** No physical set construction costs. One studio session can produce multiple virtual backgrounds. Reusable virtual assets for future recordings.
-- **Studio location:** Providencia, Santiago
+- **Studio location:** Studies coordinated per project in Santiago; operations base in Providencia
 
 ### 05 — Videos Corporativos
 **URL:** https://dar2.cl/servicios/videos-corporativos/
@@ -99,7 +99,7 @@ Virtual studio with green screen and 3D virtual set design. Broadcast-quality ch
 Corporate and institutional video production with cinematic quality. Full creative direction, scriptwriting, production, and post-production.
 
 - **Use cases:** Brand institutional videos, values & culture, product/service showcases, training/induction, client testimonials, industrial processes
-- **Production:** Sony FX6 cinema camera, professional lighting, broadcast audio, makeup/styling, art direction
+- **Production:** Z CAM E2-S6 cinema camera, professional lighting, broadcast audio, makeup/styling, art direction
 - **Post-production:** Editing, color grading, motion graphics, sound design, original or licensed music, professional voiceover
 - **Timeline:** 2–6 weeks depending on complexity. Simple testimonial: 2–3 weeks. Multi-location institutional: 4–6 weeks.
 - **Pricing context:** Custom quote depending on shooting days, locations and post-production scope, delivered in 48 business hours.
@@ -179,7 +179,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 - **Carlos Rios Guevara** — Director & Founder. UNIACC graduate. 15+ years in corporate audiovisual production. LinkedIn: https://www.linkedin.com/in/carlos-rios-guevara-9a1b5a2b/
 - **Cristian Pinto** — Post-production lead. Editor & colorist.
-- **Jorge Díaz** — Director of photography. Sony FX6 specialist.
+- **Jorge Díaz** — Director of photography. Z CAM E2-S6 specialist.
 - **Mario Toro** — Sound engineer. Broadcast audio & live mixing.
 - **Víctor Arriagada** — Technical director. Streaming & live switching.
 - **Pablo Haz** — Motion graphics & virtual sets.
