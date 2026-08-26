@@ -1,0 +1,660 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: '¿Cuánto cuesta un video corporativo en Chile?', url: 'https://dar2.cl/blog/cuanto-cuesta-video-corporativo-chile/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Cuánto cuesta un video corporativo en Chile en 2026?",
+  "description": "Rangos de precios de video corporativo en Chile: video institucional, de valores, de producto y capacitación. Factores que determinan el presupuesto y cómo cotizar.",
+  "image": "https://dar2.cl/images/blog/produccion-video-corporativo-hero.png",
+  "datePublished": "2026-08-26",
+  "dateModified": "2026-08-26",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/cuanto-cuesta-video-corporativo-chile/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un video corporativo en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio de un video corporativo en Chile varía según el alcance: un testimonial simple de una jornada de rodaje puede partir en valores accesibles para pymes, mientras que un video institucional multi-locación con dirección creativa, guion y postproducción completa sube de forma proporcional a los días de rodaje y la complejidad. Cada proyecto se cotiza a medida según cámaras, locaciones, equipo, duración del video y postproducción."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué factores determinan el precio de un video corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los principales factores son: días de rodaje y locaciones, tipo de cámara y equipo (una cámara cinema como Sony FX6 no cuesta lo mismo que una cámara mirrorless estándar), necesidad de dirección creativa y guion, maquillaje y styling de presentadores, captura de audio profesional, música o locución, duración del video final y la profundidad de la postproducción (edición, color grading, motion graphics)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un video institucional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un video institucional suele ser el formato más caro dentro del video corporativo porque normalmente involucra dirección creativa, guion, múltiples locaciones, equipo ampliado y postproducción con motion graphics. El precio depende directamente de los días de rodaje y la cantidad de material que hay que editar. Es el formato que más rinde a largo plazo porque es reutilizable en ferias, propuestas y sitio web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un video corporativo para una pyme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una pyme puede producir un video corporativo sin pagar por un formato de gran escala: un rodaje de una jornada en la propia oficina, con dirección profesional, iluminación y un editor, entrega un video sólido para sitio web y redes a un costo muy inferior al de un video institucional multi-locación. La clave está en acotar el alcance: un día de rodaje, una locación y entregables claros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia el precio de un video casero de uno profesional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La diferencia está en dirección, cámara cinema, iluminación profesional, audio broadcast, maquillaje, dirección de arte y postproducción con color grading y motion graphics. Un video profesional no solo se ve mejor: comunica seriedad y eleva la percepción de tu marca frente a clientes, inversores y colaboradores. Es la diferencia entre un video que se ve 'hecho por la sobrina' y uno que respeta el lenguaje visual de tu empresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo cotizar un video corporativo en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para recibir una cotización precisa, define el objetivo del video (institucional, valores, producto, capacitación), el público, las locaciones (oficina del cliente, planta, estudio), la duración aproximada del video final, la cantidad de personas en cámara y si necesitas música, locución y entregables para redes sociales. Con eso, una productora te entrega una propuesta a medida en 48 horas hábiles."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="¿Cuánto cuesta un video corporativo en Chile?"
+  description="Rangos de precios de video corporativo en Chile 2026: institucional, de valores, de producto y capacitación. Qué determina el presupuesto y cómo cotizar."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/produccion-video-corporativo-hero.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Video Corporativo</p>
+      <h1 class="article-h1">
+        ¿Cuánto cuesta un video corporativo en Chile?
+        <em class="hl">Los factores que determinan el precio</em>
+      </h1>
+      <p class="article-lead">
+        "Cuánto cuesta un video corporativo" es la pregunta que más nos hacen empresas en Chile. La respuesta honesta: no existe un precio único, pero sí factores claros que lo determinan. Aquí te explicamos qué paga el presupuesto de cada formato —institucional, de valores, de producto y capacitación— y cómo cotizar sin sorpresas.
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/produccion-video-corporativo-hero.png"
+        alt="Producción de video corporativo en Chile — costo y factores que determinan el presupuesto"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#respuesta-corta">La respuesta corta</a></li>
+        <li><a href="#factores">Qué determina el precio</a></li>
+        <li><a href="#formatos">Precio por tipo de video</a></li>
+        <li><a href="#pymes">El video corporativo para pymes</a></li>
+        <li><a href="#equipo">Por qué el equipo y la dirección importan</a></li>
+        <li><a href="#recuperar">Cómo recuperar la inversión</a></li>
+        <li><a href="#cotizar">Cómo cotizar un video corporativo en Santiago</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="respuesta-corta">
+      <h2>¿Cuánto cuesta un video corporativo en Chile?</h2>
+      <p>
+        El precio de un video corporativo en Chile varía según el <strong>alcance del proyecto</strong>: no es lo mismo un testimonial grabado en una jornada en tus oficinas que un video institucional de varios días de rodaje en distintas locaciones con dirección creativa y postproducción completa. Por eso, lo más honesto es hablar de factores y de rangos por formato en lugar de un precio único.
+      </p>
+      <p>
+        Lo importante para una empresa no es el número absoluto, sino <strong>qué se incluye en ese número</strong>. Dos cotizaciones con el mismo precio pueden tener resultados diametralmente opuestos si una incluye dirección, cámara cinema, iluminación profesional y postproducción con color grading, y la otra solo "una cámara que graba". El costo de un video corporativo se justifica por su retorno: es el activo que te representa en ferias, propuestas comerciales, sitio web y redes. Vamos por partes.
+      </p>
+    </section>
+
+    <section class="article-section" id="factores">
+      <h2>Qué determina el precio de un video corporativo</h2>
+      <p>
+        Estos son los factores que más inciden en el presupuesto:
+      </p>
+      <ul class="article-list">
+        <li><strong>Días de rodaje y locaciones.</strong> El costo más grande de cualquier producción es el día de rodaje con su equipo. Un video de una jornada en una sola locación es el punto de partida; cada día y cada locación adicional suma.</li>
+        <li><strong>Cámara y equipo.</strong> Una cámara cinema como la Sony FX6 con lentes de cine y grabación en alta resolución no cuesta lo mismo que una cámara de nivel consumidor. La diferencia se ve en la imagen final y en la capacidad de color grading.</li>
+        <li><strong>Dirección creativa y guion.</strong> Un video con estructura narrativa, guion y dirección no es "grabar a alguien hablando a cámara". La dirección es lo que convierte un registro en una pieza que comunica.</li>
+        <li><strong>Talentos y styling.</strong> Maquillaje, styling y dirección de presentadores o actores. Si tus ejecutivos salen en cámara, la dirección de talento marca la diferencia entre verse natural y verse incómodo.</li>
+        <li><strong>Audio.</strong> Captura de sonido profesional (micrófonos broadcast, locación, audio de sala). Un audio malo arruina el mejor video; el sonido no es lugar para ahorrar.</li>
+        <li><strong>Música y locución.</strong> Música original o licenciada y voz en off profesional cuando aplica.</li>
+        <li><strong>Postproducción.</strong> Edición, color grading, motion graphics, sonorización y entregables en múltiples formatos (web, redes, broadcast, interno). A más formatos y gráficas, mayor tiempo de edición.</li>
+        <li><strong>Duración y cantidad de entregables.</strong> Un video de 90 segundos con una versión vertical para redes y otra cuadrada para LinkedIn requiere más trabajo de edición que un único archivo.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="formatos">
+      <h2>Precio por tipo de video corporativo</h2>
+      <p>
+        El precio de un video corporativo en Santiago se estructura mejor por formato. Cada uno tiene un alcance de producción distinto:
+      </p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Formatos de video corporativo y alcance de producción</caption>
+          <thead>
+            <tr>
+              <th scope="col">Formato</th>
+              <th scope="col">Rodaje típico</th>
+              <th scope="col">Incluye</th>
+              <th scope="col">Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Testimonial / cápsula</th>
+              <td>1 jornada, 1 locación</td>
+              <td>Dirección, cámara, iluminación, audio, edición</td>
+              <td>Sitio web, redes, propuestas</td>
+            </tr>
+            <tr>
+              <th scope="row">Video de producto / servicio</th>
+              <td>1 jornada</td>
+              <td>Dirección creativa, planos de producto, edición con gráficas</td>
+              <td>Catálogo, ventas, e-commerce</td>
+            </tr>
+            <tr>
+              <th scope="row">Video de valores y cultura</th>
+              <td>1-2 jornadas, 2+ locaciones</td>
+              <td>Guion, testimonios de colaboradores, dirección de arte</td>
+              <td>Onboarding, marca empleadora, comunicación interna</td>
+            </tr>
+            <tr>
+              <th scope="row">Video institucional</th>
+              <td>1-3 jornadas, múltiples locaciones</td>
+              <td>Guion, dirección, equipo ampliado, motion graphics, postproducción completa</td>
+              <td>Ferias, inversores, página principal, ventas B2B</td>
+            </tr>
+            <tr>
+              <th scope="row">Video industrial / de procesos</th>
+              <td>1-2 jornadas en planta o terreno</td>
+              <td>Acreditaciones HSEQ, equipo compacto, drone opcional, cápsulas técnicas</td>
+              <td>Minería, industria, ferias B2B, licitaciones</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Como ves, el precio de un video corporativo en Chile depende más del <strong>alcance</strong> que del formato en abstracto. Un testimonial de una jornada es significativamente más accesible que un video institucional de tres días con varias locaciones y motion graphics. Por eso la mejor forma de dimensionar tu presupuesto es definir primero: objetivo, locaciones, días de rodaje y entregables.
+      </p>
+    </section>
+
+    <section class="article-section" id="pymes">
+      <h2>El video corporativo para pymes: cómo hacerlo sin pagar de más</h2>
+      <p>
+        Muchas pymes chilenas asumen que un video corporativo es un lujo inalcanzable. No tiene por qué serlo. La clave está en <strong>acotar el alcance</strong>:
+      </p>
+      <ul class="article-list">
+        <li><strong>Una jornada de rodaje en tu oficina o local.</strong> Reduce costos de locación y traslado, y aprovecha el contexto real de tu negocio.</li>
+        <li><strong>Un video principal + versiones para redes.</strong> Del mismo material de rodaje se editan versiones verticales y cuadradas, maximizando el uso de la inversión.</li>
+        <li><strong>Dirección profesional sin casting.</strong> Nosotros dirigimos a tu equipo o a ti frente a cámara: sin experiencia previa necesaria, el resultado se ve profesional.</li>
+        <li><strong>Entregables modulares.</strong> Un video de 90 segundos para el sitio, una cápsula de 30 segundos para Instagram y otra para LinkedIn. Más presencia con la misma producción.</li>
+      </ul>
+      <p>
+        Para una pyme, lo recomendable es partir por un formato testimonial o de producto de una jornada. Es la forma más rentable de tener un activo audiovisual profesional sin comprometer un presupuesto de gran escala. Si creces, ese mismo material se amplía a un video institucional completo.
+      </p>
+    </section>
+
+    <section class="article-section" id="equipo">
+      <h2>Por qué el equipo y la dirección importan en el precio</h2>
+      <p>
+        La pregunta de cuánto cuesta un video corporativo no se responde solo con la cámara. El valor real está en el <strong>equipo humano y técnico</strong> detrás:
+      </p>
+      <ul class="article-list">
+        <li><strong>Dirección.</strong> Un director estructura la narrativa, guía al talento y toma decisiones en set. Es la diferencia entre un video plano y una pieza que comunica tu mensaje.</li>
+        <li><strong>Cámara cinema.</strong> La Sony FX6 con lentes de cine y codecs profesionales permite color grading serio y una imagen que no se ve "casera".</li>
+        <li><strong>Iluminación.</strong> La iluminación profesional es lo que más transforma la percepción de calidad en un video.</li>
+        <li><strong>Audio broadcast.</strong> Micrófonos de solapa, shotgun o de estudio según la escena, con monitoreo profesional. El sonido es el 50% de la percepción de calidad.</li>
+        <li><strong>Postproducción.</strong> Edición, color grading, motion graphics y sonorización. Es donde el material bruto se convierte en una pieza pulida de marca.</li>
+      </ul>
+      <p>
+        Cuando compares cotizaciones, revisa qué incluye cada una en estos puntos. Un precio más bajo que no incluye dirección ni color grading termina costando más caro en el resultado final: el video no te representa y hay que rehacerlo.
+      </p>
+    </section>
+
+    <section class="article-section" id="recuperar">
+      <h2>Cómo recuperar la inversión de un video corporativo</h2>
+      <p>
+        El costo de un video corporativo se justifica cuando el video trabaja para ti:
+      </p>
+      <ul class="article-list">
+        <li><strong>En ventas.</strong> Un video institucional bien hecho en una propuesta comercial B2B o en una feria te diferencia de competidores que llegan con un PDF.</li>
+        <li><strong>En tu sitio web.</strong> Los videos en la página principal aumentan el tiempo de permanencia y la conversión. Es el primer punto de contacto con tu marca.</li>
+        <li><strong>En marca empleadora.</strong> Un video de valores y cultura atrae talento y estandariza el onboarding. El caso de CASTAÑO redujo consultas recurrentes de valores en 30% con un video institucional.</li>
+        <li><strong>En contenido reutilizable.</strong> Del mismo rodaje se extraen cápsulas para LinkedIn, Instagram y capacitaciones. La inversión se reparte en múltiples canales.</li>
+      </ul>
+      <p>
+        Ese es el argumento que cierra la pregunta de cuánto cuesta: un video corporativo no es un gasto, es un activo que se amortiza en ventas, marca y procesos internos. La métrica no es el precio, sino el retorno que genera en un año.
+      </p>
+    </section>
+
+    <section class="article-section" id="cotizar">
+      <h2>Cómo cotizar un video corporativo en Santiago</h2>
+      <p>
+        Para recibir una cotización precisa, ten claro:
+      </p>
+      <ol class="article-list">
+        <li><strong>Objetivo:</strong> institucional, de valores, de producto, capacitación o testimonial.</li>
+        <li><strong>Público y canal:</strong> ¿para quién es y dónde se va a ver? (web, ferias, redes, intranet).</li>
+        <li><strong>Locaciones:</strong> ¿tu oficina, planta, estudio o varias?</li>
+        <li><strong>Duración aproximada</strong> del video final.</li>
+        <li><strong>Personas en cámara:</strong> ejecutivos, colaboradores, actores o talento profesional.</li>
+        <li><strong>Entregables:</strong> ¿solo el video principal, o versiones para redes y capacitación?</li>
+      </ol>
+      <p>
+        En DAR2 producimos videos corporativos desde 2010 para empresas del IPSA (CMPC, Empresas Copec, Clínica Santa María) con cámara cinema Sony FX6, dirección creativa con guionista propio y postproducción completa en el mismo edificio. Cotizamos a medida en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/videos-corporativos/" class="article-cta-btn">
+          Ver nuestro servicio de Videos Corporativos →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta un video corporativo en Chile?</summary>
+        <p>El precio depende del alcance: formato, días de rodaje, locaciones, equipo, dirección y postproducción. Un testimonial de una jornada es significativamente más accesible que un video institucional multi-locación. Cada proyecto se cotiza a medida.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué factores determinan el precio?</summary>
+        <p>Días de rodaje y locaciones, cámara y equipo, dirección creativa y guion, talentos y styling, audio profesional, música y locución, postproducción (color, motion graphics) y cantidad de entregables.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta un video institucional?</summary>
+        <p>Es el formato más caro del video corporativo porque involucra guion, dirección, varias locaciones y postproducción con motion graphics. Su valor se justifica porque es reutilizable en ferias, propuestas y sitio web.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta un video corporativo para una pyme?</summary>
+        <p>Una pyme puede producir un video corporativo acotando el alcance: una jornada de rodaje en su oficina, dirección profesional y entregables modulares. Es la forma más rentable de tener un activo audiovisual sin pagar por una gran escala.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué diferencia un video casero de uno profesional?</summary>
+        <p>Dirección, cámara cinema, iluminación, audio broadcast, styling y postproducción con color grading y motion graphics. Un video profesional comunica seriedad y respeta el lenguaje visual de tu marca.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cómo cotizar un video corporativo en Santiago?</summary>
+        <p>Define objetivo, público, locaciones, duración, personas en cámara y entregables. Con eso, una productora seria te entrega una propuesta a medida en 48 horas hábiles, con el detalle de qué incluye cada línea.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Quieres una cotización a medida para tu video corporativo?</h2>
+      <p>
+        Cuéntanos tu objetivo, locaciones y entregables, y te armamos una propuesta personalizada con dirección creativa, cámara cinema y postproducción completa. Cotización en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar mi video corporativo →
+        </a>
+        <a href="/blog/produccion-video-corporativo-paso-a-paso/" class="article-cta-link">
+          O leer: producción de video corporativo paso a paso →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    margin-bottom: 48px;
+  }
+  .article-hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* Data table */
+  .data-table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 24px;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .data-table caption {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    padding: 16px 20px 8px;
+  }
+  .data-table th,
+  .data-table td {
+    text-align: left;
+    padding: 12px 20px;
+    border-top: 1px solid #e5e5e5;
+    vertical-align: top;
+  }
+  .data-table thead th {
+    font-size: 13px;
+    color: #666;
+    background: #fafafa;
+  }
+  .data-table tbody th {
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+  }
+  .data-table tbody td {
+    color: #333;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .article-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF4500;
+    margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+  .article-cta-final p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover {
+    background: #E63E00;
+    transform: translateY(-2px);
+  }
+  .article-cta-final .article-cta-link {
+    color: #aaa;
+  }
+  .article-cta-final .article-cta-link:hover {
+    color: #fff;
+  }
+</style>

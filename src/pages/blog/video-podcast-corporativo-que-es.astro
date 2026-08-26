@@ -1,0 +1,637 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Video podcast corporativo: qué es y cómo se produce', url: 'https://dar2.cl/blog/video-podcast-corporativo-que-es/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Video podcast corporativo: qué es, para qué sirve y cómo se produce",
+  "description": "Qué es un video podcast corporativo, para qué sirve en empresas, qué equipamiento requiere y cómo se produce en un estudio de podcast profesional.",
+  "image": "https://dar2.cl/images/podcast/plano-general-estudio.jpg",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/video-podcast-corporativo-que-es/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es un video podcast corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un video podcast corporativo es un programa conversacional grabado o transmitido en vivo con producción audiovisual broadcast: multicámara, set profesional, microfonía de estudio e iluminación cinematográfica. A diferencia de un podcast de audio, se ve y se escucha, por lo que rinde tanto como capítulo en YouTube o LinkedIn como en cápsulas verticales para redes sociales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve un video podcast en una empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sirve para comunicación interna y externa: rendiciones de cuentas, cierres de proyectos estratégicos, thought leadership de ejecutivos, cultura organizacional y divulgación técnica. Un mismo capítulo se convierte en video largo para intranet o YouTube y en cápsulas cortas para LinkedIn, Instagram y campañas, maximizando el retorno del contenido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué se necesita para producir un video podcast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se necesita un set con iluminación profesional, microfonía broadcast (por ejemplo Shure SM7B), dirección multicámara en tiempo real, un switcher para gráficas corporativas e inserción de diapositivas y video, y postproducción que entregue el capítulo completo más cápsulas horizontales y verticales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde se produce un video podcast corporativo en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En un estudio de podcast profesional en Providencia o con un set móvil montado en las oficinas del cliente. Ambas opciones entregan calidad broadcast: multicámara, audio de estudio e iluminación cinematográfica, con la comodidad de no trasladar al equipo de la empresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede transmitir el video podcast en vivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Un video podcast corporativo se puede emitir en directo vía streaming privado o público con interacción de chat, o grabarse para postproducción. La modalidad depende del objetivo: un live genera conversación en tiempo real; un capítulo grabado permite edición y cortes pulidos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto demora producir un video podcast corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un capítulo típico se graba en una jornada, incluyendo el setup del set, y se entrega editado en una a dos semanas junto con las cápsulas para redes. La cotización detallada se entrega en 48 horas hábiles."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="Video Podcast Corporativo: qué es y cómo se produce"
+  description="Qué es un video podcast corporativo, para qué sirve en empresas y qué se necesita para producirlo con calidad broadcast en Santiago."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/podcast/plano-general-estudio.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Video Podcast</p>
+      <h1 class="article-h1">
+        Video podcast corporativo:
+        <em class="hl">qué es, para qué sirve y cómo se produce</em>
+      </h1>
+      <p class="article-lead">
+        El video podcast corporativo es el formato que más rápido está creciendo en comunicación interna y externa de empresas en Chile: un programa conversacional con producción broadcast —multicámara, set, audio de estudio— que rinde como capítulo largo y como cápsulas para redes. Aquí te explicamos qué es, por qué importa y qué se necesita para producirlo bien.
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <div class="article-hero-image">
+      <Picture
+        src="/images/podcast/plano-general-estudio.jpg"
+        alt="Estudio de video podcast corporativo en Santiago — producción DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es">Qué es un video podcast corporativo</a></li>
+        <li><a href="#por-que">Por qué las empresas lo están adoptando</a></li>
+        <li><a href="#para-que">Para qué sirve en una empresa</a></li>
+        <li><a href="#diferencias">Video podcast vs. podcast de audio</a></li>
+        <li><a href="#equipo">Qué se necesita para producirlo</a></li>
+        <li><a href="#estudio">Estudio de podcast o set en tus oficinas</a></li>
+        <li><a href="#caso">Caso real: el videopodcast de Transelec</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="que-es">
+      <h2>Qué es un video podcast corporativo</h2>
+      <p>
+        Un video podcast corporativo es un <strong>programa conversacional con producción audiovisual broadcast</strong>. No es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada: es un set profesional con iluminación cinematográfica, microfonía de estudio, dirección multicámara en tiempo real, gráficas corporativas en pantalla y postproducción optimizada para cápsulas y reels.
+      </p>
+      <p>
+        La diferencia con un podcast de audio es que <strong>se ve y se escucha</strong>. Cada capítulo se graba o transmite con cámara, set e iluminación, y se entrega como un capítulo completo en YouTube, LinkedIn o intranet, más cápsulas horizontales y verticales para redes. El mismo contenido rinde en múltiples formatos sin volver a producir.
+      </p>
+    </section>
+
+    <section class="article-section" id="por-que">
+      <h2>Por qué las empresas lo están adoptando</h2>
+      <p>
+        Hay tres razones concretas por las que el video podcast corporativo está creciendo entre empresas en Chile:
+      </p>
+      <ul class="article-list">
+        <li><strong>El contenido largo volvió con formato corto.</strong> Un capítulo de 15 minutos se trocea en 5-6 cápsulas verticales para LinkedIn e Instagram. El formato conversacional es el más fácil de consumir y el más compartible.</li>
+        <li><strong>Humaniza a los ejecutivos.</strong> Una conversación dirigida entre dos personas se ve más natural y creíble que un video institucional con guion. Es el formato ideal para thought leadership.</li>
+        <li><strong>Reutilización total.</strong> Una sola jornada de grabación produce el capítulo largo, cápsulas para redes, fragmentos para intranet y material para campañas. El retorno por jornada es altísimo.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="para-que">
+      <h2>Para qué sirve un video podcast en una empresa</h2>
+      <p>
+        Los usos más comunes en el mundo corporativo:
+      </p>
+      <ul class="article-list">
+        <li><strong>Rendiciones de cuentas y cierres de proyecto.</strong> Cuando un equipo vuelve de un viaje de innovación o cierra una iniciativa estratégica, el videopodcast comunica los aprendizajes a toda la organización.</li>
+        <li><strong>Thought leadership de ejecutivos.</strong> El gerente o director conversa sobre tendencias de la industria, posicionando la marca y construyendo marca personal alineada.</li>
+        <li><strong>Comunicación interna y cultura.</strong> Programas de entrevistas internos que conectan áreas, comparten buenas prácticas y refuerzan valores.</li>
+        <li><strong>Divulgación técnica.</strong> Para industrias con expertise (salud, energía, minería, finanzas), el formato conversacional explica temas complejos de forma accesible para clientes y comunidad.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="diferencias">
+      <h2>Video podcast vs. podcast de audio</h2>
+      <p>
+        Si ya tienes un podcast de audio, sumar la capa de video lo transforma:
+      </p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Comparación: podcast de audio vs. video podcast</caption>
+          <thead>
+            <tr>
+              <th scope="col">Aspecto</th>
+              <th scope="col">Podcast de audio</th>
+              <th scope="col">Video podcast corporativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Consumo</th>
+              <td>Solo escucha (plataformas de audio)</td>
+              <td>YouTube, LinkedIn, intranet + redes</td>
+            </tr>
+            <tr>
+              <th scope="row">Producción</th>
+              <td>Micrófonos y grabadora</td>
+              <td>Multicámara, set, iluminación, switcher</td>
+            </tr>
+            <tr>
+              <th scope="row">Cápsulas</th>
+              <td>Fragmentos de audio</td>
+              <td>Cápsulas verticales 9:16 y horizontales</td>
+            </tr>
+            <tr>
+              <th scope="row">Percepción</th>
+              <td>Se escucha</td>
+              <td>Se ve: transmite seriedad y marca</td>
+            </tr>
+            <tr>
+              <th scope="row">Retorno</th>
+              <td>Audio para audiencias de podcast</td>
+              <td>Capítulo + cápsulas + intranet + campañas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Si el objetivo es comunicación corporativa —donde la imagen de marca y la cercanía importan— el video podcast rinde mucho más que el audio solo.
+      </p>
+    </section>
+
+    <section class="article-section" id="equipo">
+      <h2>Qué se necesita para producir un video podcast</h2>
+      <p>
+        La calidad broadcast de un video podcast corporativo se construye con estos elementos:
+      </p>
+      <ul class="article-list">
+        <li><strong>Set y escenografía.</strong> Un espacio diseñado para conversación: dos o tres posiciones, fondo con identidad de marca y separación visual del talento.</li>
+        <li><strong>Iluminación cinematográfica.</strong> Luces LED suaves que modelen a los participantes sin sombras duras. La iluminación es el factor que más eleva la percepción de calidad.</li>
+        <li><strong>Microfonía broadcast.</strong> Micrófonos de estudio como el Shure SM7B con procesamiento de audio en tiempo real. Audio prístino, sin ruido de sala.</li>
+        <li><strong>Multicámara con dirección en vivo.</strong> Cámaras cinema o PTZ robóticas operadas por un técnico que hace switching en tiempo real, eligiendo el mejor encuadre según quién habla.</li>
+        <li><strong>Integración de gráficas.</strong> Gráficas animadas, diapositivas y videos insertados en pantalla, con la identidad visual de la empresa.</li>
+        <li><strong>Postproducción.</strong> Edición del máster completo más cápsulas horizontales y verticales con subtítulos para redes o intranet.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="estudio">
+      <h2>Estudio de podcast profesional o set en tus oficinas</h2>
+      <p>
+        Un video podcast corporativo se puede producir de dos formas:
+      </p>
+      <ul class="article-list">
+        <li><strong>En un estudio de podcast profesional.</strong> En DAR2 contamos con un set en Providencia con iluminación calibrada, microfonía broadcast y dirección multicámara. Ideal para programas recurrentes con calidad constante.</li>
+        <li><strong>Con un set móvil en tus oficinas.</strong> Montamos el set completo directamente en las instalaciones del cliente. Los ejecutivos no se trasladan, el contexto es real y la logística es mínima.</li>
+      </ul>
+      <p>
+        Para el arriendo de estudio de podcast en Santiago, la opción de estudio propio en Providencia es la más usada por empresas que necesitan varios capítulos con la misma estética y sin repetir setup.
+      </p>
+    </section>
+
+    <section class="article-section" id="caso">
+      <h2>Caso real: el videopodcast de Transelec</h2>
+      <p>
+        El equipo de Innovación de Transelec —la principal empresa de transmisión eléctrica de Chile— volvió de una misión de scouting tecnológico en China con aprendizajes que había que comunicar a toda la organización. En vez de un informe o una presentación, lo convirtieron en un <strong>videopodcast Talk Show</strong>.
+      </p>
+      <p>
+        Montamos el set de podcast en las oficinas corporativas con cámara 4K multicámara, óptica fija y microfonía Shure SM7B. El resultado: una serie de capítulos que conectó a más de 500 colaboradores, con microcápsulas horizontales y verticales para canales internos. La misma producción sirvió como capítulo completo y como contenido corto, sin rehacer nada.
+      </p>
+      <p>
+        Este caso muestra el patrón que repetimos con clientes: un viaje de innovación, un cierre de proyecto o un programa de liderazgo se transforma en contenido que la organización efectivamente consume.
+      </p>
+      <div class="article-cta">
+        <a href="/casos/podcast-transelec-innovacion-china/" class="article-cta-btn">
+          Ver el caso Transelec →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Qué es un video podcast corporativo?</summary>
+        <p>Un programa conversacional con producción audiovisual broadcast: multicámara, set profesional, microfonía de estudio e iluminación cinematográfica. Se graba o transmite en vivo y rinde como capítulo largo y como cápsulas para redes.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Para qué sirve en una empresa?</summary>
+        <p>Comunicación interna y externa: rendiciones de cuentas, cierres de proyecto, thought leadership de ejecutivos, cultura organizacional y divulgación técnica. Un capítulo se convierte en múltiples piezas de contenido.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Qué se necesita para producirlo?</summary>
+        <p>Set con iluminación profesional, microfonía broadcast, dirección multicámara en tiempo real, switcher para gráficas e inserción de diapositivas y video, y postproducción que entregue el capítulo más cápsulas.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Dónde se produce en Santiago?</summary>
+        <p>En un estudio de podcast profesional en Providencia o con un set móvil en las oficinas del cliente. Ambas opciones entregan calidad broadcast sin trasladar al equipo de la empresa.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Se puede transmitir en vivo?</summary>
+        <p>Sí. Se puede emitir en directo vía streaming privado o público con interacción de chat, o grabarse para postproducción. La modalidad depende del objetivo de comunicación.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto demora producir un capítulo?</summary>
+        <p>Un capítulo típico se graba en una jornada, incluyendo el setup, y se entrega editado en una a dos semanas junto con las cápsulas para redes. Cotización detallada en 48 horas hábiles.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Listo para producir tu video podcast corporativo?</h2>
+      <p>
+        Cuéntanos el objetivo del programa, los participantes y la modalidad (en vivo o grabado), y te armamos una propuesta con set, multicámara, audio broadcast y cápsulas para redes. Cotización en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/podcast/" class="article-cta-btn">
+          Ver nuestro servicio de Video Podcast →
+        </a>
+        <a href="/casos/video-podcast-conpat-global-las-condes/" class="article-cta-link">
+          O ver: video podcast de Conpat Global →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    margin-bottom: 48px;
+  }
+  .article-hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* Data table */
+  .data-table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 24px;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .data-table caption {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    padding: 16px 20px 8px;
+  }
+  .data-table th,
+  .data-table td {
+    text-align: left;
+    padding: 12px 20px;
+    border-top: 1px solid #e5e5e5;
+    vertical-align: top;
+  }
+  .data-table thead th {
+    font-size: 13px;
+    color: #666;
+    background: #fafafa;
+  }
+  .data-table tbody th {
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+  }
+  .data-table tbody td {
+    color: #333;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .article-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF4500;
+    margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+  .article-cta-final p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover {
+    background: #E63E00;
+    transform: translateY(-2px);
+  }
+  .article-cta-final .article-cta-link {
+    color: #aaa;
+  }
+  .article-cta-final .article-cta-link:hover {
+    color: #fff;
+  }
+</style>

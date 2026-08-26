@@ -99,6 +99,14 @@ export const servicios = [
         q: '¿Qué tipo de eventos corporativos transmiten en Santiago?',
         a: 'Juntas anuales de accionistas, lanzamientos de producto, seminarios y conferencias, capacitaciones masivas, eventos híbridos (presencial + remoto), congresos médicos y académicos, y activaciones de marca con live shopping.',
       },
+      {
+        q: '¿Hacen streaming de congresos y seminarios completos?',
+        a: 'Sí. Producimos streaming de congresos y seminarios de una o varias jornadas, con múltiples expositores y bloques. La producción incluye switcher para cambio entre expositores, gráficas con la presentación de cada speaker, mezcla de audio desde la mesa del evento y grabación máster de todas las ponencias para su posterior distribución o archivo.',
+      },
+      {
+        q: '¿Cómo es la transmisión en vivo de un evento en Santiago?',
+        a: 'Transmitimos en vivo desde nuestro estudio en Providencia, las oficinas del cliente o cualquier recinto de eventos de Santiago. El día del evento instalamos el sistema multicámara, configuramos el switcher y las gráficas, conectamos el enlace redundante (fibra + LTE/5G) y un director técnico opera la transmisión completa hacia la plataforma que elijas, con coordinador en contacto directo contigo.',
+      },
     ],
   },
   {
@@ -289,6 +297,7 @@ export const servicios = [
       'El estudio croma virtual usa green screen (chroma key) e iluminación profesional para integrar al presentador en una escenografía generada digitalmente. Te permite tener cualquier ambiente que imagines (un newsroom, un espacio futurista, una réplica de tus oficinas, un set inspirado en una marca global) sin construir decorados ni alquilar locaciones.',
       'En DAR2 producimos en estudio propio con sistema de iluminación calibrado para chroma, fondo verde de máxima opacidad, cámaras profesionales y dirección creativa. El resultado es indistinguible de un set físico para el espectador final, incluso en pantallas grandes o transmisiones broadcast.',
       'Integramos tu identidad visual completa en la escenografía virtual: colores corporativos, logos, pantallas con contenido animado, elementos 3D y branding ambient. Una sola sesión te da contenido para múltiples plataformas: YouTube, LinkedIn, intranet, capacitaciones internas, newsletters.',
+      'Si lo que necesitas es solo el espacio, también ofrecemos arriendo de estudio con croma en Providencia: fondo verde profesional, iluminación calibrada para chroma key y cámaras. Puedes grabar con nuestro equipo o coordinar el uso del set para tu propia producción, ideal para contenidos recurrentes que requieren un setup constante y de calidad broadcast.',
     ],
     process: [
       { num: '01', title: 'Diseño de la escenografía virtual', desc: 'Trabajamos con tu equipo de marca para definir el ambiente: colores, elementos visuales, pantallas con contenido, animaciones de fondo. Si tienes brief de identidad, lo respetamos.' },

@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales, estudio en Providencia. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-08-25
+> **Last updated:** 2026-08-26
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -210,6 +210,8 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 - [Cómo elegir una productora audiovisual en Santiago](https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/) — Tipos de productoras, presupuestos y checklist de contratación
 - [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/) — Factores que determinan el presupuesto
 - [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Factores que determinan la inversión
+- [¿Cuánto cuesta un video corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-video-corporativo-chile/) — Factores que determinan el precio
+- [Video podcast corporativo: qué es, para qué sirve y cómo se produce](https://dar2.cl/blog/video-podcast-corporativo-que-es/) — Guía de video podcast corporativo
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Technical guide
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Cost/time comparison
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 metrics with calculation examples

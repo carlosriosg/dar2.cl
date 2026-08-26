@@ -258,6 +258,8 @@ Para cifras exactas de búsqueda en Chile (no estimaciones):
 
 ## RESUMEN — Qué hacer, en orden
 
+> **Ola 2 (26-ago-2026):** se agregó la **PARTE 6** con las keywords nuevas desde exportaciones (P1 transaccional / P2 servicios sin keywords / P3 reposicionamiento). Primeros pasos ejecutados: 2 posts nuevos en el blog (`cuanto-cuesta-video-corporativo-chile` y `video-podcast-corporativo-que-es`), FAQs long-tail P1 en `servicios.js` (streaming y estudio virtual), y `llms.txt`/`llms-full.txt` sincronizados. Pendiente: verificar volúmenes en Keyword Planner y atacar el resto de la lista P1/P2 en siguientes sesiones.
+
 **Esta semana (destraba todo):**
 1. ✅ Verificar indexación de las 8 páginas de servicio en Search Console → solicitar indexación
 2. ✅ `live.dar2.cl` aclarado: es la app de Radio Futuro (cliente), no spam. El spam viejo ya da 404. NO eliminar; opcional retirar URLs viejas en GSC.
@@ -277,3 +279,143 @@ Para cifras exactas de búsqueda en Chile (no estimaciones):
 ---
 
 *Documento generado con análisis de SERPs reales (mayo 2026) + revisión del código de servicios.js. Volúmenes estimados cualitativamente; para cifras exactas usar Google Keyword Planner.*
+
+---
+
+## PARTE 6 — Ola 2: Keywords nuevas desde exportaciones (26-ago-2026)
+
+**Fecha:** 2026-08-26
+**Origen:** análisis de 3 exportaciones de keyword stats (CSV):
+
+| CSV | Semilla/cobertura | Hallazgo |
+|---|---|---|
+| 10_56_17 | Identidad "productora audiovisual" + eventos + arriendo equipos | Top-of-funnel genérico |
+| 11_01_55 | Video corporativo + postproducción/edición + streaming (leve) | Top-of-funnel + algo de video corporativo |
+| 11_02_33 | Agencias de marketing digital | **Otro nicho** (agencias de marketing, no producción) — fuera de plan salvo vía "agencia de contenido" (P3) |
+
+**Lectura general:** las 3 exportaciones son casi puro top-of-funnel. Los servicios que convierten y son el core de DAR2 (streaming, live shopping, estudio virtual, filtros AR, video podcast, multicámara) están **ausentes**. Estas listas llenan esos huecos. Se prioriza primero lo transaccional (intención de compra) y con geo-modifier.
+
+---
+
+### P1 · Transaccional + geo (prioridad alta — correr primero)
+
+**Streaming** *(hueco más grave: casi no existe en las 3 exportaciones)*
+
+| Keyword | Intención |
+|---|---|
+| streaming corporativo santiago | Comercial |
+| transmisión en vivo santiago | Comercial |
+| streaming de eventos santiago | Comercial |
+| streaming de congresos | Comercial |
+| streaming junta anual | Comercial |
+| cuánto cuesta un streaming de evento | Comercial |
+| precio streaming corporativo | Comercial |
+| arriendo equipo streaming santiago | Comercial |
+| webcast chile | Comercial |
+
+**Video corporativo — completar parte transaccional**
+
+| Keyword | Intención |
+|---|---|
+| cuánto cuesta un video corporativo | Comercial |
+| precio video corporativo santiago | Comercial |
+| video institucional chile | Comercial |
+| filmación de empresa santiago | Comercial |
+| video corporativo para pymes | Comercial |
+
+**Estudio virtual / chroma** *(0 keywords hoy)*
+
+| Keyword | Intención |
+|---|---|
+| estudio virtual santiago | Comercial |
+| chroma key santiago | Comercial |
+| arriendo estudio croma santiago | Comercial |
+| grabación con chroma key | Comercial |
+| estudio virtual corporativo | Comercial |
+| set virtual / escenografía virtual | Comercial |
+
+**Live shopping** *(0 keywords hoy)*
+
+| Keyword | Intención |
+|---|---|
+| live shopping chile | Mixto |
+| cuánto cuesta un live shopping | Comercial |
+| venta en vivo / ventas en vivo | Comercial |
+| live stream shopping | Comercial |
+| producción live shopping santiago | Comercial |
+
+**Transversal**
+
+| Keyword | Intención |
+|---|---|
+| cotización video corporativo | Comercial |
+| presupuesto producción audiovisual santiago | Comercial |
+| productora audiovisual económica santiago | Comercial |
+| arriendo estudio de grabación santiago | Comercial |
+
+---
+
+### P2 · Servicios sin ninguna keyword en las exportaciones
+
+**Filtros AR** *(nicho con poca competencia en Chile — victoria rápida posible)*
+
+| Keyword | Intención |
+|---|---|
+| filtros tiktok para empresas | Comercial |
+| filtros snapchat de marca | Comercial |
+| crear filtro de marca tiktok | Comercial |
+| realidad aumentada para marcas chile | Comercial |
+| cuánto cuesta un filtro tiktok | Comercial |
+| effect house / lens studio | Comercial |
+
+**Video Podcast** *(servicio 09 — no estaba en el doc de mayo, que contaba 8 servicios)*
+
+| Keyword | Intención |
+|---|---|
+| videopodcast corporativo | Comercial |
+| producción de podcast santiago | Comercial |
+| estudio de podcast santiago | Comercial |
+| podcast para empresas | Comercial |
+| arriendo estudio podcast | Comercial |
+
+**Redes Sociales / reels** *(parcial — falta el ángulo producción)*
+
+| Keyword | Intención |
+|---|---|
+| productora de reels santiago | Comercial |
+| cápsulas para redes sociales | Comercial |
+| contenido tiktok para empresas | Comercial |
+| videos para linkedin empresas | Comercial |
+| paquete mensual de contenido audiovisual | Comercial |
+
+**Multicámara / IMAG** *(0 keywords hoy)*
+
+| Keyword | Intención |
+|---|---|
+| multicámara para congresos | Comercial |
+| pantallas led evento santiago | Comercial |
+| sistema multicámara santiago | Comercial |
+| cámaras ptz santiago | Comercial |
+| cobertura audiovisual de eventos corporativos | Comercial |
+
+---
+
+### P3 · Estrategias Digitales (reposicionar, NO pelear "marketing digital")
+
+El CSV 3 (agencias de marketing digital) es otro sector, saturado y dominado por agencias de marketing. Si se quiere traccionar "Estrategias Digitales", el ángulo correcto es el de producción de contenido:
+
+| Keyword | Intención |
+|---|---|
+| agencia de contenido audiovisual | Comercial |
+| agencia de video marketing santiago | Comercial |
+| producción de contenido para marcas | Comercial |
+| plan de contenido con producción audiovisual | Comercial |
+
+---
+
+### Cómo usar esta lista
+
+1. **Correr P1 primero:** son long-tails con intención de compra que ya tienen respaldo en el sitio (blog de costos, páginas de servicio). Con la autoridad actual rankean antes que el head term "productora audiovisual" genérico.
+2. **Geo-modifiers:** cada keyword debe tener su variante `santiago` y `chile`.
+3. **Verificar volúmenes** en Google Keyword Planner / DataForSEO filtrado a Chile antes de invertir contenido.
+4. **GEO (IA):** si estas keywords se traducen en contenido nuevo visible (blog, servicios, casos), actualizar también `public/llms.txt` y `public/llms-full.txt` para mantener citabilidad de DAR2 en AI Overviews / ChatGPT / Perplexity.
