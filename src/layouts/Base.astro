@@ -17,6 +17,7 @@ const {
   description = 'Productora audiovisual en Chile especializada en streaming, live shopping, videos corporativos, estudio virtual y filtros AR. Más de 15 años trabajando con Cencosud, ENAP, Clínica Santa María, ABCDIN y más.',
   breadcrumbs = null,
   preloadImage = null,
+  ogImage = null,
   noindex = false,
   canonicalURL: customCanonical = null,
 } = Astro.props;
@@ -24,6 +25,11 @@ const {
 const canonicalURL = customCanonical ?? new URL(Astro.url.pathname, Astro.site ?? 'https://dar2.cl');
 const fullTitle = title.includes('| DAR2') ? title : `${title} | DAR2`;
 const isHome = Astro.url.pathname === '/';
+
+// OG image específica de la página (ej. hero de un blog post). Si no se pasa,
+// se usan las OG genéricas de la marca.
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site ?? 'https://dar2.cl').href : null;
+const ogImageType = ogImage ? (ogImage.endsWith('.png') ? 'image/png' : 'image/jpeg') : 'image/png';
 
 // Schema unificado: LocalBusiness + ProfessionalService bajo un mismo @id.
 // Enriquecido con knowsAbout, numberOfEmployees, contactPoint y
@@ -195,6 +201,18 @@ const breadcrumbSchema = breadcrumbs ? {
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="es_CL" />
     <meta property="og:site_name" content="DAR2" />
+
+    <!-- OG Image específica de la página (hero del post) — tiene prioridad en el compartir -->
+    {ogImageURL && (
+      <>
+        <meta property="og:image" content={ogImageURL} />
+        <meta property="og:image:secure_url" content={ogImageURL} />
+        <meta property="og:image:type" content={ogImageType} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
+        <meta property="og:image:alt" content={fullTitle} />
+      </>
+    )}
 
     <!-- OG Image principal: cuadrada 1200x1200 (WhatsApp toma la primera que encuentra) -->
     <meta property="og:image" content="https://dar2.cl/og-square.png" />
