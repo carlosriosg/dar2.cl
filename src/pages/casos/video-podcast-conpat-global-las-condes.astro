@@ -15,9 +15,9 @@ const caseSchema = {
   "description": "Descubre cómo montar un estudio de video podcast corporativo móvil en tu oficina en Santiago con cámaras PTZ y audio broadcast. Caso por DAR2.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://dar2.cl/images/casos/video-podcast-conpat-global-las-condes/set-principal.jpg",
-    "width": 1600,
-    "height": 901
+    "url": "https://dar2.cl/images/casos/video-podcast-conpat-global-las-condes/plano-general-2-ptz.jpg",
+    "width": 4000,
+    "height": 2252
   },
   "datePublished": "2026-08-25",
   "dateModified": "2026-08-25",
@@ -55,7 +55,7 @@ const caseSchema = {
   title="Producción de Video Podcast Corporativo: Caso Conpat Global"
   description="Descubre cómo montar un estudio de video podcast corporativo móvil en tu oficina en Santiago con cámaras PTZ y audio broadcast. Caso por DAR2."
   breadcrumbs={breadcrumbs}
-  preloadImage="/images/casos/video-podcast-conpat-global-las-condes/set-principal.webp"
+  preloadImage="/images/casos/video-podcast-conpat-global-las-condes/plano-general-2-ptz.webp"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
@@ -98,11 +98,11 @@ const caseSchema = {
     <!-- Imagen hero -->
     <div class="case-hero-image">
       <Picture
-        src="/images/casos/video-podcast-conpat-global-las-condes/set-principal.jpg"
+        src="/images/casos/video-podcast-conpat-global-las-condes/plano-general-2-ptz.jpg"
         alt="Estudio móvil de video podcast corporativo en oficinas de Conpat Global — DAR2"
         class="w-full h-full object-cover"
-        width="1600"
-        height="901"
+        width="4000"
+        height="2252"
         loading="eager"
         fetchpriority="high"
         decoding="sync"
@@ -168,11 +168,11 @@ const caseSchema = {
       </p>
       <div class="case-hero-image case-image-inline">
         <Picture
-          src="/images/casos/video-podcast-conpat-global-las-condes/set-podcast.jpg"
-          alt="Montaje del set de video podcast con cámaras PTZ e iluminación en Conpat Global — DAR2"
-          class="w-full h-full object-cover"
-          width="1600"
-          height="901"
+        src="/images/casos/video-podcast-conpat-global-las-condes/plano-general-1-camara-iluminacion.jpg"
+        alt="Montaje del set de video podcast con cámaras PTZ e iluminación en Conpat Global — DAR2"
+        class="w-full h-full object-cover"
+        width="4000"
+        height="2252"
           loading="lazy"
           decoding="async"
         />
@@ -189,11 +189,11 @@ const caseSchema = {
       </ul>
       <div class="case-hero-image case-image-inline">
         <Picture
-          src="/images/casos/video-podcast-conpat-global-las-condes/control-vmix.jpg"
-          alt="Vista del switcher de video y consola de monitoreo en tiempo real — DAR2"
-          class="w-full h-full object-cover"
-          width="1600"
-          height="901"
+        src="/images/casos/video-podcast-conpat-global-las-condes/control-vmix.jpg"
+        alt="Vista del switcher de video y consola de monitoreo en tiempo real — DAR2"
+        class="w-full h-full object-cover"
+        width="4000"
+        height="2252"
           loading="lazy"
           decoding="async"
         />
@@ -208,11 +208,11 @@ const caseSchema = {
       </p>
       <div class="case-hero-image case-image-inline">
         <Picture
-          src="/images/casos/video-podcast-conpat-global-las-condes/entrevista.jpg"
-          alt="Captura en vivo del periodista Jorge Díaz y el ejecutivo Patricio Elgueta — DAR2"
-          class="w-full h-full object-cover"
-          width="1600"
-          height="901"
+        src="/images/casos/video-podcast-conpat-global-las-condes/equipos.jpg"
+        alt="Equipamiento del estudio móvil de video podcast desplegado en Conpat Global — DAR2"
+        class="w-full h-full object-cover"
+        width="4000"
+        height="2252"
           loading="lazy"
           decoding="async"
         />
@@ -223,28 +223,13 @@ const caseSchema = {
       </ul>
 
       <!-- Estrategia de contenido modular -->
-      <div class="case-hybrid">
-        <div class="case-hybrid-img">
-          <Picture
-            src="/images/casos/video-podcast-conpat-global-las-condes/set-vertical.jpg"
-            alt="Registro vertical del set de grabado para video podcast en Las Condes — DAR2"
-            class="w-full h-full object-cover"
-            width="1600"
-            height="901"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div>
-          <h3>Estrategia de Contenido Modular B2B</h3>
-          <p>
-            La grabación de un podcast ejecutivo de 30 o 45 minutos no solo genera un episodio completo para YouTube o Spotify.
-          </p>
-          <p>
-            Con la misma producción se extraen múltiples micro-cápsulas en formato vertical (9:16) con subtítulos dinámicos, ideales para potenciar la marca personal de los ejecutivos y la estrategia de contenidos de la empresa en LinkedIn e Instagram.
-          </p>
-        </div>
-      </div>
+      <h3>Estrategia de Contenido Modular B2B</h3>
+      <p>
+        La grabación de un podcast ejecutivo de 30 o 45 minutos no solo genera un episodio completo para YouTube o Spotify.
+      </p>
+      <p>
+        Con la misma producción se extraen múltiples micro-cápsulas en formato vertical (9:16) con subtítulos dinámicos, ideales para potenciar la marca personal de los ejecutivos y la estrategia de contenidos de la empresa en LinkedIn e Instagram.
+      </p>
     </section>
 
     <!-- Ventajas -->
@@ -340,20 +325,6 @@ const caseSchema = {
   .case-section li strong {
     color: #1a1a1a; font-weight: 700;
   }
-
-  /* Bloque Estrategia Modular: imagen + texto en dos columnas */
-  .case-hybrid {
-    display: grid; grid-template-columns: 1fr; gap: 24px;
-    margin: 40px 0 8px; align-items: start;
-  }
-  @media (min-width: 640px) {
-    .case-hybrid { grid-template-columns: 1fr 1fr; }
-  }
-  .case-hybrid .case-hybrid-img {
-    border-radius: 16px; overflow: hidden; background: #eaeaea;
-  }
-  .case-hybrid .case-hybrid-img :global(img) { width: 100%; display: block; }
-  .case-hybrid h3 { margin: 0 0 16px; }
 
   /* Tarjetas en cascada: Requerimiento -> Despliegue -> Resultados */
   .case-flow { margin: 24px 0 8px; }
