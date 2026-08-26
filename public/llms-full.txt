@@ -550,6 +550,10 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
+### Producción de Video Podcast Corporativo · Conpat Global
+**URL:** https://dar2.cl/casos/video-podcast-conpat-global-las-condes/
+Mobile corporate video podcast studio for C-level executives. Set up in April 2025 at Conpat Global's corporate offices (Cerro El Plomo 5680, Las Condes, Santiago), a financial planning and wealth management firm, hosting Patricio Elgueta (Executive Director) with journalist Jorge Díaz. Deployment: 3 compact robotic PTZ cameras (wide, interviewer medium, executive close-up) fully remote via IP joystick, soft bicolor LED lighting with large diffusers tuned to the building's window light, studio cardioid microphones per participant, ISO renders plus live mix for fast post. Result: seamless multi-camera recording and modular 9:16 clips with dynamic subtitles for the executives' personal branding on LinkedIn and Instagram.
+
 ### Cobertura Multicámara para Congresos · Expo Family 2024
 **URL:** https://dar2.cl/casos/expo-family-2024-espacio-riesco/
 Multi-camera closed-circuit (CCTV) coverage for mass congresses in high-capacity venues. Covered Expo Family 2024 (July 6, 2024) at Espacio Riesco, Santiago: a full-day congress (09:00–20:30) with plenary conferences, expert panels and family entertainment, organized by Librería Chema with international speakers (Agustín Laje, Tim Ballard, and others). Deployment: 3 robotic PTZ cameras with dedicated IP control (presets for podium, panel, and wide shots), broadcast switcher for live insertion of entry/exit graphics, corporate videos and slide decks, audio captured directly from the house console, and zero-latency feeds to the giant venue screens. Deliverables: continuous projection for thousands of attendees plus a full HD master recording handed to the client for institutional and promotional use.

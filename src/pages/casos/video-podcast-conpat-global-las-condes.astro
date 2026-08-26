@@ -1,0 +1,406 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Producción de Video Podcast Corporativo · Conpat Global', url: 'https://dar2.cl/casos/video-podcast-conpat-global-las-condes/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Producción de Video Podcast Corporativo: Caso Conpat Global",
+  "description": "Descubre cómo montar un estudio de video podcast corporativo móvil en tu oficina en Santiago con cámaras PTZ y audio broadcast. Caso por DAR2.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/casos/video-podcast-conpat-global-las-condes/set-principal.jpg",
+    "width": 1600,
+    "height": 901
+  },
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-25",
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
+  "mainEntityOfPage": "https://dar2.cl/casos/video-podcast-conpat-global-las-condes/",
+  "about": {
+    "@type": "Organization",
+    "name": "Conpat Global",
+    "url": "https://conpatglobal.cl"
+  },
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
+};
+---
+
+<Base
+  title="Producción de Video Podcast Corporativo: Caso Conpat Global"
+  description="Descubre cómo montar un estudio de video podcast corporativo móvil en tu oficina en Santiago con cámaras PTZ y audio broadcast. Caso por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/casos/video-podcast-conpat-global-las-condes/set-principal.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Finanzas / Consultoría · 2025</p>
+      <h1 class="case-h1">
+        Producción de Video Podcast Corporativo:
+        <em class="hl">Caso Conpat Global.</em>
+      </h1>
+      <p class="case-lead">
+        Un video podcast corporativo grabado desde las oficinas de tu empresa transmite autoridad, cercanía y liderazgo en el sector B2B. La implementación de un estudio móvil con cámaras PTZ robóticas, iluminación broadcast y microfonía profesional permite producir entrevistas de alto nivel sin alterar la dinámica de trabajo de la compañía.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <dl class="case-overview">
+      <div>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Conpat Global</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2025</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Video Podcast Corporativo</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Finanzas / Consultoría</dd>
+      </div>
+    </dl>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/casos/video-podcast-conpat-global-las-condes/set-principal.jpg"
+        alt="Estudio móvil de video podcast corporativo en oficinas de Conpat Global — DAR2"
+        class="w-full h-full object-cover"
+        width="1600"
+        height="901"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- El reto -->
+    <section class="case-section">
+      <h2>El reto de producir contenidos audiovisuales C-Level en oficinas corporativas.</h2>
+      <p>
+        Generar entrevistas, análisis de mercado y conversaciones de liderazgo para firmas de consultoría, gestión patrimonial o asesoría financiera en Santiago (como las ubicadas en el sector de Cerro El Plomo o Nueva Las Condes) implica superar barreras técnicas y de infraestructura:
+      </p>
+      <ul>
+        <li><strong>Espacio y estética corporativa:</strong> Convertir una sala de reuniones tradicional en un set audiovisual cálido y elegante sin realizar modificaciones estructurales.</li>
+        <li><strong>Tiempo acotado de ejecutivos y periodistas:</strong> Los voceros C-Level y conductores de renombre disponen de ventanas de tiempo estrictas; la técnica debe estar 100% calibrada antes de su llegada.</li>
+        <li><strong>Calidad de audio y video broadcast:</strong> Las interferencias acústicas de las oficinas y los ventanales de vidrio exigen control de iluminación LED y microfonía de alta directividad.</li>
+      </ul>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section class="case-section">
+      <h2>Caso de Éxito: Video Podcast para Conpat Global en Cerro El Plomo.</h2>
+      <p>
+        En abril de 2025, la firma especializada en planificación financiera, gestión patrimonial y consultoría estratégica <a href="https://conpatglobal.cl/" target="_blank" rel="noopener noreferrer">Conpat Global</a> requería producir una serie de video podcasts de alto estándar corporativo desde sus oficinas corporativas en Cerro El Plomo 5680 (Las Condes, Santiago).
+      </p>
+      <p>
+        La producción contó con la participación de <a href="https://rocketreach.co/patricio-elgueta-email_285129967" target="_blank" rel="noopener noreferrer">Patricio Elgueta</a>, Director Ejecutivo de Conpat Global, y la conducción del destacado periodista chileno Jorge Díaz.
+      </p>
+      <p>
+        Para lograr un acabado televisivo de la más alta exigencia, DAR2 desplegó un estudio móvil de video podcast en las dependencias del cliente:
+      </p>
+      <div class="case-flow">
+        <div class="case-flow-card case-flow--desafio">
+          <span class="case-flow-label">Requerimiento B2B</span>
+          <p>Estudio móvil de video podcast C-Level en oficinas de Las Condes.</p>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--solucion">
+          <span class="case-flow-label">Despliegue técnico</span>
+          <ul>
+            <li>Setup de 3x cámaras PTZ robóticas de alta sensibilidad en 4K/HD</li>
+            <li>Control IP unificado desde switcher digital sin cables expuestos</li>
+            <li>Iluminación LED suave bicolor ajustada a la luz natural del ventanal</li>
+            <li>Microfonía de estudio para captura de voz limpia y balanceada</li>
+          </ul>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--resultado">
+          <span class="case-flow-label">Resultados y entregables</span>
+          <ul>
+            <li>Grabación multicámara fluida sin interrupciones ni distracciones</li>
+            <li>Contenido de alto impacto para distribución en LinkedIn y YouTube</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configuración -->
+    <section class="case-section">
+      <h2>Configuración del estudio móvil de video podcast en terreno.</h2>
+      <p>
+        Para transformar una sala corporativa en un plató de televisión sin alterar las operaciones de la firma, aplicamos un esquema de producción optimizado:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/video-podcast-conpat-global-las-condes/set-podcast.jpg"
+          alt="Montaje del set de video podcast con cámaras PTZ e iluminación en Conpat Global — DAR2"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="901"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <h3>1. Sistema de 3 Cámaras PTZ Robóticas y Control por IP</h3>
+      <ul>
+        <li>Instalación de 3 cámaras PTZ compactas que registran el plano general de la conversación, el plano medio del entrevistador (Jorge Díaz) y el primer plano del ejecutivo (Patricio Elgueta).</li>
+        <li>Control totalmente remoto mediante un joystick IP dedicado, lo que elimina la presencia de camarógrafos moviéndose en la sala y garantiza una atmósfera de conversación íntima y natural.</li>
+      </ul>
+      <h3>2. Iluminación Soft Bicolor de Alta Fidelidad</h3>
+      <ul>
+        <li>Esquema de luces LED con difusores de gran tamaño colocados estratégicamente para neutralizar las sombras duras y controlar la luz natural proveniente de las ventanas del edificio corporativo.</li>
+        <li>Calibración de temperatura de color para asegurar tonos de piel naturales y sin reflejos en pantallas o mesas de cristal.</li>
+      </ul>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/video-podcast-conpat-global-las-condes/control-vmix.jpg"
+          alt="Vista del switcher de video y consola de monitoreo en tiempo real — DAR2"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="901"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- Audio -->
+    <section class="case-section">
+      <h2>Calidad de audio broadcast y dinamismo multicámara.</h2>
+      <p>
+        En el formato podcast B2B, el sonido es el 50% de la experiencia. La captura de audio debe estar libre de ecos de sala, ruidos de aire acondicionado o tráfico exterior:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/video-podcast-conpat-global-las-condes/entrevista.jpg"
+          alt="Captura en vivo del periodista Jorge Díaz y el ejecutivo Patricio Elgueta — DAR2"
+          class="w-full h-full object-cover"
+          width="1600"
+          height="901"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <ul>
+        <li><strong>Microfonía Profesional de Estudio:</strong> Micrófonos cardioides dedicados para cada participante con procesamiento directo para eliminar la reverberación de la sala.</li>
+        <li><strong>Conmutación Multicámara en Tiempo Real:</strong> Grabación de señales independientes (ISO render) más la mezcla final en directo, permitiendo acelerar el proceso de postproducción para la entrega rápida del máster.</li>
+      </ul>
+
+      <!-- Estrategia de contenido modular -->
+      <div class="case-hybrid">
+        <div class="case-hybrid-img">
+          <Picture
+            src="/images/casos/video-podcast-conpat-global-las-condes/set-vertical.jpg"
+            alt="Registro vertical del set de grabado para video podcast en Las Condes — DAR2"
+            class="w-full h-full object-cover"
+            width="1600"
+            height="901"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div>
+          <h3>Estrategia de Contenido Modular B2B</h3>
+          <p>
+            La grabación de un podcast ejecutivo de 30 o 45 minutos no solo genera un episodio completo para YouTube o Spotify.
+          </p>
+          <p>
+            Con la misma producción se extraen múltiples micro-cápsulas en formato vertical (9:16) con subtítulos dinámicos, ideales para potenciar la marca personal de los ejecutivos y la estrategia de contenidos de la empresa en LinkedIn e Instagram.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="case-section">
+      <h2>Ventajas de montar un estudio de podcast en tus oficinas.</h2>
+      <p>
+        Contratar un servicio de video podcast móvil para tu empresa en Santiago ofrece beneficios clave frente al arriendo de estudios externos:
+      </p>
+      <ul>
+        <li><strong>Cero desplazamientos para tus voceros:</strong> Los ejecutivos maximizan su tiempo al grabar en su propio entorno corporativo.</li>
+        <li><strong>Coherencia de marca:</strong> El fondo y la atmósfera del video reflejan las instalaciones reales de la firma, aportando credibilidad e identidad institucional.</li>
+        <li><strong>Tecnología invisible:</strong> La tecnología PTZ evita la invasión del espacio, permitiendo que la entrevista fluya como una conversación real.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Quieres producir un video podcast corporativo en tus oficinas?</h2>
+      <p>
+        En DAR2 diseñamos e implementamos estudios móviles de video podcast con cámaras PTZ robóticas, iluminación profesional y audio broadcast en Santiago y todo Chile.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar producción de Video Podcast →
+        </a>
+        <a href="/servicios/podcast/" class="case-cta-link">
+          Conocer Video Podcast Corporativo →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.4; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+  .case-section a {
+    color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px;
+  }
+  .case-section a:hover { color: #FF4500; }
+
+  /* Listas (bullets y numeradas) dentro de secciones */
+  .case-section ul, .case-section ol {
+    margin: 0 0 18px; padding-left: 22px;
+  }
+  .case-section li {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 10px;
+  }
+  .case-section li strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Bloque Estrategia Modular: imagen + texto en dos columnas */
+  .case-hybrid {
+    display: grid; grid-template-columns: 1fr; gap: 24px;
+    margin: 40px 0 8px; align-items: start;
+  }
+  @media (min-width: 640px) {
+    .case-hybrid { grid-template-columns: 1fr 1fr; }
+  }
+  .case-hybrid .case-hybrid-img {
+    border-radius: 16px; overflow: hidden; background: #eaeaea;
+  }
+  .case-hybrid .case-hybrid-img :global(img) { width: 100%; display: block; }
+  .case-hybrid h3 { margin: 0 0 16px; }
+
+  /* Tarjetas en cascada: Requerimiento -> Despliegue -> Resultados */
+  .case-flow { margin: 24px 0 8px; }
+  .case-flow-card {
+    border-radius: 14px; padding: 24px;
+    background: #fafafa; border: 1px solid #e5e5e5; margin-bottom: 0;
+  }
+  .case-flow--desafio { border-left: 4px solid #1a1a1a; }
+  .case-flow--solucion { border-left: 4px solid #FF4500; }
+  .case-flow--resultado { border-left: 4px solid #E63E00; }
+  .case-flow-label {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #666; margin-bottom: 10px;
+  }
+  .case-flow-card p { font-size: 16px; line-height: 1.6; color: #333; margin: 0; }
+  .case-flow-card ul { margin: 0; padding-left: 18px; }
+  .case-flow-card li { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 6px; }
+  .case-flow-card li:last-child { margin-bottom: 0; }
+  .case-flow-arrow {
+    display: block; text-align: center; color: #999; font-size: 20px;
+    line-height: 1; margin: 14px 0;
+  }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+
+  /* El bloque CTA tambien tiene la clase .case-section: la regla de links
+     naranjas de las secciones no debe aplicar sobre boton/links del CTA. */
+  .case-cta-final .case-cta-btn,
+  .case-cta-final .case-cta-link {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
