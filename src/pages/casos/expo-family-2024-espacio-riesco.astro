@@ -1,0 +1,426 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Casos', url: 'https://dar2.cl/casos/' },
+  { name: 'Cobertura Multicámara para Congresos · Expo Family 2024', url: 'https://dar2.cl/casos/expo-family-2024-espacio-riesco/' },
+];
+
+const caseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cobertura Multicámara para Congresos: Caso Expo Family 2024",
+  "description": "Aprende a ejecutar la cobertura multicámara y transmisión interna en Espacio Riesco con cámaras PTZ y respaldo master. Caso Expo Family por DAR2.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://dar2.cl/images/casos/expo-family-2024-espacio-riesco/escenario.jpg",
+    "width": 4000,
+    "height": 1800
+  },
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-25",
+  "author": {
+    "@type": "Person",
+    "@id": "https://dar2.cl/#person",
+    "name": "Carlos Rios Guevara"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dar2.cl/#organization",
+    "name": "DAR2 Servicios Audiovisuales",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dar2.cl/images/galeria/dar2_logo_firma.png",
+      "width": 400,
+      "height": 118
+    }
+  },
+  "mainEntityOfPage": "https://dar2.cl/casos/expo-family-2024-espacio-riesco/",
+  "about": {
+    "@type": "Organization",
+    "name": "Expo Family",
+    "url": "https://expofamily.cl"
+  },
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".case-header", ".case-section"]
+  }
+};
+---
+
+<Base
+  title="Cobertura Multicámara para Congresos: Caso Expo Family 2024"
+  description="Aprende a ejecutar la cobertura multicámara y transmisión interna en Espacio Riesco con cámaras PTZ y respaldo master. Caso Expo Family por DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/casos/expo-family-2024-espacio-riesco/escenario.webp"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
+  </Fragment>
+
+  <article class="case-wrap">
+
+    <!-- Hero -->
+    <header class="case-header">
+      <p class="case-eyebrow">Caso · Congresos / Eventos · 2024</p>
+      <h1 class="case-h1">
+        Cobertura Multicámara para Congresos:
+        <em class="hl">Caso Expo Family 2024.</em>
+      </h1>
+      <p class="case-lead">
+        La cobertura audiovisual de congresos masivos en pabellones de alta capacidad exige circuitos cerrados multicámara, switchers broadcast de baja latencia y gestión de señal para pantallas gigantes. Este despliegue garantiza que miles de asistentes presenciales y virtuales sigan ponencias y espectáculos sin perder detalle.
+      </p>
+    </header>
+
+    <!-- Ficha técnica -->
+    <dl class="case-overview">
+      <div>
+        <dt class="overview-label">Cliente</dt>
+        <dd class="overview-value">Expo Family / Librería Chema</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Año</dt>
+        <dd class="overview-value">2024</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Servicio</dt>
+        <dd class="overview-value">Circuito Cerrado (CCTV) Multicámara</dd>
+      </div>
+      <div>
+        <dt class="overview-label">Sector</dt>
+        <dd class="overview-value">Congresos / Eventos</dd>
+      </div>
+    </dl>
+
+    <!-- Imagen hero -->
+    <div class="case-hero-image">
+      <Picture
+        src="/images/casos/expo-family-2024-espacio-riesco/escenario.jpg"
+        alt="Escenario principal del congreso Expo Family 2024 en Espacio Riesco — DAR2"
+        class="w-full h-full object-cover"
+        width="4000"
+        height="1800"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <!-- Retos técnicos -->
+    <section class="case-section">
+      <h2>Los retos técnicos de registrar congresos masivos en Espacio Riesco.</h2>
+      <p>
+        Transmitir y proyectar eventos multitudinarios que combinan conferencias plenarias, paneles de expertos y entretenimiento en pabellones de gran escala en Santiago plantea exigencias operativas complejas:
+      </p>
+      <ul>
+        <li><strong>Distancias de tiro y escala del recinto:</strong> Salones de eventos como Espacio Riesco requieren ópticas de largo alcance (teleobjetivos) y señal SDI para evitar pérdida de calidad en trayectos extensos de cableado.</li>
+        <li><strong>Diversidad de dinamismo en escenario:</strong> Alternar en tiempo real entre conferencias magistrales, interacción con el público y presentaciones de alta movilidad exige flexibilidad en la dirección de cámaras.</li>
+        <li><strong>Integración de señales híbridas:</strong> Coordinar las imágenes del escenario, presentaciones de diapositivas y videos introductorios sin desfases ni parpadeos en pantalla gigante.</li>
+      </ul>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section class="case-section">
+      <h2>Caso de Éxito: Cobertura Multicámara en Expo Family 2024.</h2>
+      <p>
+        El sábado 6 de julio de 2024 se llevó a cabo la <a href="https://expofamily.cl/" target="_blank" rel="noopener noreferrer">Expo Family 2024</a> en el <a href="https://www.espacioriesco.cl/" target="_blank" rel="noopener noreferrer">Centro de Eventos Espacio Riesco</a> (Huechuraba, Santiago). El encuentro se estructuró como un congreso formativo enfocado en conferencias plenas y un pabellón ferial organizado por <a href="https://libreriachema.cl/" target="_blank" rel="noopener noreferrer">Librería Chema</a>.
+      </p>
+      <p>
+        El evento contó con una grilla de expositores internacionales y nacionales junto a atracciones infantiles:
+      </p>
+      <ul>
+        <li><a href="https://www.instagram.com/agustinlaje" target="_blank" rel="noopener noreferrer">Agustín Laje</a> — Politólogo y escritor argentino</li>
+        <li><a href="https://www.instagram.com/timballard.official" target="_blank" rel="noopener noreferrer">Tim Ballard</a> — Activista estadounidense, fundador de Operation Underground Railroad</li>
+        <li><a href="https://www.instagram.com/javieroliveraravasi" target="_blank" rel="noopener noreferrer">Padre Javier Olivera Ravasi</a> — Abogado, sacerdote y escritor</li>
+        <li><a href="https://www.instagram.com/mariajosemancino" target="_blank" rel="noopener noreferrer">Dra. María José Mancino</a> — Médica y fundadora de agrupaciones provida</li>
+        <li>El Gato Juanito — Icónico personaje infantil chileno de <em>Cachureos</em></li>
+        <li>Margarita Rojo y Sandra Bronzina — Especialistas en dinámicas familiares</li>
+      </ul>
+      <p>
+        Para cubrir la extensa jornada de 09:00 a 20:30 horas, DAR2 desplegó una solución de circuito cerrado multicámara, mezcla en vivo y entrega de un respaldo máster completo al cliente:
+      </p>
+      <div class="case-flow">
+        <div class="case-flow-card case-flow--desafio">
+          <span class="case-flow-label">Desafío del congreso</span>
+          <p>Transmisión interna a pantallas en Espacio Riesco con respaldos.</p>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--solucion">
+          <span class="case-flow-label">Despliegue técnico</span>
+          <ul>
+            <li>3x cámaras PTZ robóticas con control por IP dedicado</li>
+            <li>Switcher broadcast para inserción de cortinas y videos</li>
+            <li>Captura de audio directo tomada desde la consola de la sala</li>
+            <li>Proyección interna a pantallas gigantes sin latencia</li>
+          </ul>
+        </div>
+        <span class="case-flow-arrow">↓</span>
+        <div class="case-flow-card case-flow--resultado">
+          <span class="case-flow-label">Entregables al cliente</span>
+          <ul>
+            <li>Proyección continua impecable para miles de asistentes</li>
+            <li>Respaldo completo del evento grabado en alta definición (Master)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arquitectura -->
+    <section class="case-section">
+      <h2>Arquitectura del despliegue audiovisual en pabellones de eventos.</h2>
+      <p>
+        Garantizar la transmisión fluida en congresos de jornada completa requiere una planificación de producción estructurada:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/expo-family-2024-espacio-riesco/setup-control.jpg"
+          alt="Configuración del switcher de video y control multicámara en Espacio Riesco — DAR2"
+          class="w-full h-full object-cover"
+          width="4000"
+          height="1800"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <h3>1. Sistema de 3 Cámaras PTZ Robóticas y Control por IP</h3>
+      <ul>
+        <li>Operación centralizada de 3 cámaras PTZ con presets programados para alternar entre el podio, la mesa de expositores y los planos generales de la sala.</li>
+        <li>Instalación discreta que elimina la necesidad de camarógrafos sobre el escenario o interrumpiendo las líneas de visión del público.</li>
+      </ul>
+      <h3>2. Transmisión Interna, Videos e Inserción de Cortinas</h3>
+      <ul>
+        <li>Mezcla en directo enviada a las pantallas gigantes del recinto mediante un switcher digital de cero latencia.</li>
+        <li>Inserción en tiempo real de cortinas gráficas de entrada/salida, videos corporativos promocionales y presentaciones de diapositivas de cada conferencista.</li>
+      </ul>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/expo-family-2024-espacio-riesco/pantalla-gigante.jpg"
+          alt="Monitoreo de señal para pantallas gigantes en el salón principal de Espacio Riesco — DAR2"
+          class="w-full h-full object-cover"
+          width="4000"
+          height="1800"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- Audio y captura -->
+    <section class="case-section">
+      <h2>Gestión de audio y captura para dinámicas familiares.</h2>
+      <p>
+        El flujo de trabajo debió adaptarse tanto al rigor de los paneles de debate como al dinamismo de los espectáculos sobre el escenario:
+      </p>
+      <div class="case-hero-image case-image-inline">
+        <Picture
+          src="/images/casos/expo-family-2024-espacio-riesco/cobertura-escenario.jpg"
+          alt="Captura en vivo de la presentación sobre el escenario principal — DAR2"
+          class="w-full h-full object-cover"
+          width="4000"
+          height="1800"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <ul>
+        <li><strong>Audio Directo desde Consola Central:</strong> Captura de señal limpia tomada directamente desde la mesa de sonido principal de la sala para garantizar inteligibilidad perfecta en la transmisión interna y la grabación de respaldo.</li>
+        <li><strong>Respaldo Máster para el Cliente:</strong> Grabación continua e ininterrumpida de todo el evento entregada como respaldo digital en alta definición para el archivo institucional y usos promocionales posteriores.</li>
+      </ul>
+
+      <!-- Registro multiformato -->
+      <div class="case-hybrid">
+        <div class="case-hybrid-img">
+          <Picture
+            src="/images/casos/expo-family-2024-espacio-riesco/publico-vertical.jpg"
+            alt="Vista del público y ambiente durante el congreso en Espacio Riesco — DAR2"
+            class="w-full h-full object-cover"
+            width="4000"
+            height="1800"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div>
+          <h3>Registro Multiformato y Redes Sociales</h3>
+          <p>
+            Además de alimentar las pantallas gigantes en tiempo real, una cobertura de este calibre genera material estratégico para la organización.
+          </p>
+          <p>
+            El registro continuo en alta resolución facilita la extracción de cápsulas resumidas, clips verticales en 9:16 para Instagram/LinkedIn y un archivo master completo para memorias institucionales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pabellón ferial -->
+    <section class="case-section">
+      <h2>Registro del área de stands y pabellón ferial.</h2>
+      <p>
+        La producción audiovisual no se limitó al escenario principal; abarcó también el flujo de asistentes en los stands de organizaciones y editoriales como <a href="https://libreriachema.cl/" target="_blank" rel="noopener noreferrer">Librería Chema</a>:
+      </p>
+      <ul>
+        <li><strong>Cobertura móvil en terreno:</strong> Equipos livianos recorriendo el pabellón para registrar la experiencia de los asistentes, entrevistas en pasillo y ambiente general del evento.</li>
+        <li><strong>Material para recapitulaciones (Aftermovies):</strong> Tomas de apoyo cinematográficas orientadas a la edición de videos promocionales para futuras ediciones del congreso.</li>
+      </ul>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="case-section">
+      <h2>Ventajas de contratar un circuito cerrado profesional en Chile.</h2>
+      <p>
+        Implementar infraestructura broadcast con DAR2 en centros de convenciones como Espacio Riesco ofrece beneficios claros:
+      </p>
+      <ul>
+        <li><strong>Garantía de visibilidad:</strong> Permite que los asistentes ubicados en las filas posteriores disfruten de la misma cercanía visual que las primeras filas.</li>
+        <li><strong>Continuidad de transmisión:</strong> Equipos con respaldo de energía e infraestructura SDI robusta inmune a interferencias de señal.</li>
+        <li><strong>Respaldo de activos digitales:</strong> Un repositorio de contenidos listo para ser comercializado, distribuido a la prensa o compartido bajo demanda.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-section case-cta-final">
+      <h2>¿Estás planeando un congreso o evento masivo en Chile?</h2>
+      <p>
+        En DAR2 entregamos cobertura multicámara, circuito cerrado para pantallas gigantes y transmisión vía streaming para congresos, ferias y eventos corporativos en Santiago y todo el país.
+      </p>
+      <div class="case-cta">
+        <a href="/contacto/" class="case-cta-btn">
+          Cotizar Circuito Cerrado Multicámara →
+        </a>
+        <a href="/servicios/circuito-cerrado/" class="case-cta-link">
+          Conocer Multicámara para Eventos →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .case-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+
+  .case-header { margin-bottom: 40px; }
+  .case-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #666; margin-bottom: 24px;
+  }
+  .case-h1 {
+    font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+  .case-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0; max-width: 720px; }
+
+  .case-overview {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;
+    padding: 24px 0; margin: 48px 0;
+  }
+  @media (min-width: 640px) { .case-overview { grid-template-columns: repeat(4, 1fr); } }
+  .overview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #888; margin: 0 0 6px;
+  }
+  .overview-value { font-size: 16px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.4; }
+
+  .case-hero-image {
+    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #eaeaea;
+    margin-bottom: 56px;
+  }
+  .case-image-inline { margin-bottom: 48px; }
+
+  .case-section { margin-bottom: 48px; }
+  .case-section h2 {
+    font-size: clamp(28px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px;
+    line-height: 1.1; margin: 0 0 20px;
+  }
+  .case-section h3 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 16px;
+  }
+  .case-section p {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px;
+  }
+  .case-section p strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+  .case-section a {
+    color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px;
+  }
+  .case-section a:hover { color: #FF4500; }
+
+  /* Listas (bullets y numeradas) dentro de secciones */
+  .case-section ul, .case-section ol {
+    margin: 0 0 18px; padding-left: 22px;
+  }
+  .case-section li {
+    font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 10px;
+  }
+  .case-section li strong {
+    color: #1a1a1a; font-weight: 700;
+  }
+
+  /* Bloque Registro Multiformato: imagen + texto en dos columnas */
+  .case-hybrid {
+    display: grid; grid-template-columns: 1fr; gap: 24px;
+    margin: 40px 0 8px; align-items: start;
+  }
+  @media (min-width: 640px) {
+    .case-hybrid { grid-template-columns: 1fr 1fr; }
+  }
+  .case-hybrid .case-hybrid-img {
+    border-radius: 16px; overflow: hidden; background: #eaeaea;
+  }
+  .case-hybrid .case-hybrid-img :global(img) { width: 100%; display: block; }
+  .case-hybrid h3 { margin: 0 0 16px; }
+
+  /* Tarjetas en cascada: Desafio -> Despliegue -> Entregables */
+  .case-flow { margin: 24px 0 8px; }
+  .case-flow-card {
+    border-radius: 14px; padding: 24px;
+    background: #fafafa; border: 1px solid #e5e5e5; margin-bottom: 0;
+  }
+  .case-flow--desafio { border-left: 4px solid #1a1a1a; }
+  .case-flow--solucion { border-left: 4px solid #FF4500; }
+  .case-flow--resultado { border-left: 4px solid #E63E00; }
+  .case-flow-label {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #666; margin-bottom: 10px;
+  }
+  .case-flow-card p { font-size: 16px; line-height: 1.6; color: #333; margin: 0; }
+  .case-flow-card ul { margin: 0; padding-left: 18px; }
+  .case-flow-card li { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 6px; }
+  .case-flow-card li:last-child { margin-bottom: 0; }
+  .case-flow-arrow {
+    display: block; text-align: center; color: #999; font-size: 20px;
+    line-height: 1; margin: 14px 0;
+  }
+
+  .case-cta-final {
+    background: #1a1a1a; color: #fff; border-radius: 16px; padding: 48px;
+    margin-top: 80px;
+  }
+  .case-cta-final h2 { color: #fff; margin: 0 0 16px; }
+  .case-cta-final p { color: #ccc; }
+  .case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .case-cta-btn {
+    display: inline-flex; align-items: center; background: #FF4500; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s ease;
+  }
+  .case-cta-btn:hover { background: #e03d00; }
+  .case-cta-link {
+    color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .case-cta-link:hover { color: #fff; }
+
+  /* El bloque CTA tambien tiene la clase .case-section: la regla de links
+     naranjas de las secciones no debe aplicar sobre boton/links del CTA. */
+  .case-cta-final .case-cta-btn,
+  .case-cta-final .case-cta-link {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>

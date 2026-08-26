@@ -550,6 +550,10 @@ A: Sí. Diseñamos filtros de realidad aumentada personalizados para marcas, lan
 
 ## Case studies
 
+### Cobertura Multicámara para Congresos · Expo Family 2024
+**URL:** https://dar2.cl/casos/expo-family-2024-espacio-riesco/
+Multi-camera closed-circuit (CCTV) coverage for mass congresses in high-capacity venues. Covered Expo Family 2024 (July 6, 2024) at Espacio Riesco, Santiago: a full-day congress (09:00–20:30) with plenary conferences, expert panels and family entertainment, organized by Librería Chema with international speakers (Agustín Laje, Tim Ballard, and others). Deployment: 3 robotic PTZ cameras with dedicated IP control (presets for podium, panel, and wide shots), broadcast switcher for live insertion of entry/exit graphics, corporate videos and slide decks, audio captured directly from the house console, and zero-latency feeds to the giant venue screens. Deliverables: continuous projection for thousands of attendees plus a full HD master recording handed to the client for institutional and promotional use.
+
 ### Streaming e Integración Híbrida · HackLab-iA Google
 **URL:** https://dar2.cl/casos/hacklab-ia-google-streaming/
 Two-day continuous streaming for technology events. Covered the HackLab-iA (Santiago Cero Carbono) hackathon backed by Google and Ciudad Emergente at Fundación Mustakis (100+ participants, 30 teams, $50K USD in prizes). Challenge: 48 hours of uninterrupted broadcast, local projection, and dedicated internet. Deployment: point-to-point industrial wireless fiber link aligned to Cerro San Cristóbal (constant upload immune to local saturation), 5G bonding modem as automatic-failover backup, 3 robotic PTZ cameras with IP control, direct capture and live insertion of speakers' PPTs via SDI/HDMI capture cards switched in vMix, and a zero-latency auxiliary output to the giant venue screen. Result: 2 days of continuous YouTube streaming without bitrate drops and seamless hybrid coverage for judges, mentors, and online audience.
