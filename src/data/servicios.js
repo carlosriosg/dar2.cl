@@ -107,6 +107,10 @@ export const servicios = [
         q: '¿Cómo es la transmisión en vivo de un evento en Santiago?',
         a: 'Transmitimos en vivo desde un estudio de grabación en Santiago, las oficinas del cliente o cualquier recinto de eventos. El día del evento instalamos el sistema multicámara, configuramos el switcher y las gráficas, conectamos el enlace redundante (fibra + LTE/5G) y un director técnico opera la transmisión completa hacia la plataforma que elijas, con coordinador en contacto directo contigo.',
       },
+      {
+        q: '¿Qué es una producción audiovisual de streaming?',
+        a: 'Es una producción audiovisual transmitida en vivo: sistema multicámara, switcher, sonido broadcast, iluminación y gráficas corporativas que se emiten en tiempo real hacia una plataforma (YouTube, Zoom, Teams, Vimeo). En DAR2 operamos como productora de streaming audiovisual con enlace redundante y dirección técnica durante todo el evento.',
+      },
     ],
   },
   {
@@ -369,6 +373,10 @@ export const servicios = [
         q: '¿Ofrecen arriendo de estudio con croma (chroma key)?',
         a: 'Sí. Para cada producción coordinamos estudios con croma profesional en Santiago, según el tipo de contenido (croma, podcast o virtual). Puedes grabar con nuestro equipo o coordinar el uso del set para tu producción.',
       },
+      {
+        q: '¿Realizan grabación audiovisual en un estudio de grabación?',
+        a: 'Sí. Producimos grabación audiovisual en estudios de grabación de Santiago según el requerimiento: estudio con croma para contenido virtual, set para videopodcast o estudio de grabación tradicional. Coordinamos el espacio, la iluminación y el sonido, y grabamos con nuestro equipo para que la sesión sea eficiente y con calidad broadcast.',
+      },
     ],
   },
   {
@@ -472,6 +480,10 @@ export const servicios = [
       {
         q: '¿Qué tipos de video corporativo producen?',
         a: 'Video institucional, de cultura y valores, de capacitación e inducción, de procesos industriales y mineros, de producto y testimoniales de clientes o colaboradores. Adaptamos el formato y el presupuesto a tu objetivo.',
+      },
+      {
+        q: '¿Ofrecen edición audiovisual y postproducción de video?',
+        a: 'Sí. Nuestra postproducción es 100% interna: edición audiovisual, color grading, motion graphics, sonorización y entrega en múltiples formatos. Puedes contratar solo el servicio de edición de video para material ya grabado, o el flujo completo de producción y edición de video corporativo.',
       },
     ],
   },
@@ -638,6 +650,10 @@ export const servicios = [
       {
         q: '¿En cuánto tiempo entregan?',
         a: '5 días hábiles desde la grabación. Entregas express en 48h con costo adicional.',
+      },
+      {
+        q: '¿Producen contenido audiovisual para redes sociales?',
+        a: 'Sí. Producimos contenido audiovisual para redes sociales —Instagram, TikTok y LinkedIn— con formato optimizado por plataforma: reels verticales 9:16, cápsulas cuadradas y clips con subtítulos quemados. Es la producción audiovisual para redes sociales de tu empresa, entregada lista para publicar.',
       },
     ],
   },
