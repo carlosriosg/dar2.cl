@@ -753,15 +753,15 @@ export const servicios = [
     num: '09',
     title: 'Video Podcast',
     shortDesc: 'Videopodcast corporativo con calidad broadcast.',
-    heroEyebrow: 'PRODUCTORA DE VIDEO PODCAST EN SANTIAGO',
-    tagline: 'Producción de Video Podcast Corporativo <em class="hl">en Santiago.</em>',
+    heroEyebrow: 'PRODUCTORA DE PODCAST EN SANTIAGO',
+    tagline: 'Productora de podcast en Santiago, <em class="hl">con calidad de estudio.</em>',
     description:
-      'Transforma tus informes, estrategias y conversaciones de liderazgo en videopodcasts de alta calidad audiovisual. ' +
-      'Set profesional, dirección multicámara, audio prístino e integración multimedia para contenido de alto impacto interno y externo.',
+      'Producimos podcasts y video podcasts para marcas, empresas y creadores: formato conversacional con dirección multicámara, ' +
+      'audio broadcast, set profesional o estudio coordinado en Santiago, y cápsulas listas para redes. Tú pones la conversación; nosotros, la producción.',
     longDescription: [
-      'Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.',
-      'En DAR2 coordinamos estudios de podcast profesionales según el requerimiento, o montamos un set profesional en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
-      'Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas para redes, sin volver a producir.',
+      'Un podcast no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es producción: microfonía broadcast, iluminación que hace ver bien a quien conversa, dirección multicámara en tiempo real, gráficas en pantalla y postproducción que convierte cada capítulo en contenido para varias plataformas.',
+      'En DAR2 coordinamos estudios de podcast profesionales en Santiago o montamos un set profesional en tus oficinas — para grabar o transmitir programas de liderazgo, podcast de marca, conversaciones con clientes, rendiciones de cuentas y contenidos de creadores. La diferencia con un registro casero es directa: audio limpio, encuadres dirigidos, gráficas corporativas en pantalla y un máster listo para distribuirse.',
+      'Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para YouTube, LinkedIn, Instagram, TikTok o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas para redes, sin volver a producir.',
     ],
     process: [
       { num: '01', title: 'Briefing y pauta', desc: 'Definimos el tono, formato de set, participantes e integración de apoyo gráfico y video. Cotización detallada en 48h.' },
@@ -769,26 +769,27 @@ export const servicios = [
       { num: '03', title: 'Grabación / transmisión en vivo', desc: 'Dirección técnica en tiempo real, switching de cámaras y mezcla de audio prístina. Transmisión privada o pública con interacción de chat.' },
       { num: '04', title: 'Postproducción & clips', desc: 'Entrega del capítulo máster completo más edición de cápsulas y reels en formato vertical para redes o intranet.' },
     ],
-    forWhom: 'Un video podcast corporativo aplica para rendiciones de cuentas y cierres de proyectos estratégicos (viajes de innovación, juntas internas), programas de thought leadership de ejecutivos y gerentes, comunicación interna y cultura organizacional, y programas de entrevistas o divulgación técnica para clientes o industria.',
+    forWhom: 'Un podcast profesional aplica tanto para empresas y marcas como para creadores y líderes de opinión. Del lado corporativo: rendiciones de cuentas y cierres de proyectos estratégicos, thought leadership de ejecutivos, comunicación interna y cultura organizacional, y programas de entrevistas o divulgación técnica para clientes o industria. Del lado de marcas y creadores: podcast de marca como canal de contenido recurrente, conversaciones con clientes e industria, y podcasters independientes que tercerizan grabación, dirección y edición sin invertir en un estudio propio.',
     bullets: [
-      'Set de grabación o setup móvil en oficinas del cliente',
+      'Coordinación de estudios de podcast profesionales en Santiago',
+      'Set móvil en tus oficinas, sin trasladar al equipo',
       'Sistema multicámara Cinema / PTZ',
       'Microfonía broadcast y procesamiento de audio en tiempo real',
       'Iluminación LED suave de set',
-      'Switcher y dirección técnica en vivo',
+      'Switcher y dirección técnica en vivo (streaming privado o público)',
       'Inserción de gráficas animadas, diapositivas y videos en pantalla',
-      'Edición máster y entrega de mini-cápsulas para RRSS / Intranet',
+      'Máster + cápsulas verticales y horizontales para RRSS / Intranet',
     ],
     benefits: [
       {
         num: '01',
-        title: 'Calidad broadcast, no Zoom',
-        desc: 'Multicámara, audio de estudio e iluminación cinematográfica. Un videopodcast que se ve y se escucha profesional.',
+        title: 'Calidad de estudio, sin invertir en estudio',
+        desc: 'Coordinamos estudios de podcast profesionales en Santiago o montamos un set móvil donde tú estés. Pagas por producción, no por infraestructura.',
       },
       {
         num: '02',
         title: 'Un formato, múltiples salidas',
-        desc: 'Máster completo más cápsulas verticales y horizontales para LinkedIn, Instagram e intranet desde la misma sesión.',
+        desc: 'Máster completo más cápsulas verticales y horizontales para YouTube, LinkedIn, Instagram, TikTok e intranet desde la misma sesión.',
       },
       {
         num: '03',
@@ -797,21 +798,21 @@ export const servicios = [
       },
     ],
     cases: [
-      { num: '01', label: 'Rendiciones de cuentas y cierres de proyecto' },
-      { num: '02', label: 'Thought leadership de ejecutivos y gerentes' },
-      { num: '03', label: 'Comunicación interna y cultura organizacional' },
-      { num: '04', label: 'Entrevistas y divulgación técnica' },
+      { num: '01', label: 'Podcast de marca y marketing de contenido' },
+      { num: '02', label: 'Thought leadership de ejecutivos y fundadores' },
+      { num: '03', label: 'Comunicación interna, cultura y rendiciones de cuentas' },
+      { num: '04', label: 'Creadores y podcasters que tercerizan su producción' },
     ],
     ctaTitle: '¿Listo para producir tu video podcast?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Producción de Video Podcast Corporativo en Santiago',
-    seoDescription: 'Productora de video podcast corporativo en Santiago. Set profesional, multicámara, audio broadcast y cápsulas para redes. Cotiza en 48h.',
-    serviceType: 'Producción de video podcast corporativo',
+    seoTitle: 'Productora de Podcast en Santiago | Video Podcast',
+    seoDescription: 'Productora de podcast en Santiago: grabamos y transmitimos video podcasts para marcas, empresas y creadores con calidad broadcast, en estudio o set móvil. Cotiza en 48h.',
+    serviceType: 'Producción de podcast y video podcast en Santiago',
     relatedCases: [
       {
         title: 'Videopodcast para Transelec',
-        excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +150 colaboradores.',
+        excerpt: 'Cómo el equipo de Innovación de Transelec convirtió tres meses de inmersión en China en un videopodcast que conectó a +500 colaboradores.',
         url: '/casos/podcast-transelec-innovacion-china/',
       },
     ],
@@ -839,6 +840,18 @@ export const servicios = [
       {
         q: '¿Cuánto demora producir un video podcast corporativo?',
         a: 'Un capítulo típico se graba en una jornada (incluyendo el setup de set) y se entrega editado en una a dos semanas, junto con las cápsulas para redes. La cotización detallada la tienes en 48 horas hábiles.',
+      },
+      {
+        q: '¿Producen podcasts de audio o solo video?',
+        a: 'Producimos video podcast, que ya incluye audio broadcast de nivel profesional. No distribuimos episodios de audio puro: cada sesión se graba con cámara para rendir en YouTube, LinkedIn y redes. Si ya tienes un podcast de audio, lo llevamos a video con set profesional manteniendo la calidad de tu audio.',
+      },
+      {
+        q: '¿Trabajan con marcas y creadores o solo con empresas?',
+        a: 'Con los tres. Hacemos podcast de marca como canal de contenido recurrente, programas de liderazgo para ejecutivos y marcas personales, y también producimos para creadores y podcasters que quieren tercerizar grabación, dirección y edición sin comprar equipos ni arrendar estudio mes a mes.',
+      },
+      {
+        q: '¿Cuánto cuesta producir un podcast en Chile?',
+        a: 'Depende del formato: cantidad de cámaras, set o estudio, participantes y postproducción. Un capítulo típico se graba en una jornada y se entrega en una a dos semanas junto con las cápsulas. Te enviamos una cotización detallada, ítem por ítem, en 48 horas hábiles.',
       },
     ],
   },

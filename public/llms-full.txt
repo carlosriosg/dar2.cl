@@ -1,7 +1,7 @@
 # DAR2 Servicios Audiovisuales — Full Content
 
 > Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
-> **Last updated:** 2026-08-26
+> **Last updated:** 2026-09-03
 > **Canonical:** https://dar2.cl/llms-full.txt
 > **Summary version:** https://dar2.cl/llms.txt
 
@@ -44,6 +44,22 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 - **Pablo Haz** — Motion graphics & virtual sets.
 - **Mariluz López** — Production coordinator.
 - **Abigail Ruiz** — Digital content & strategy.
+
+---
+
+## Productora audiovisual en Chile (hub page)
+
+**URL:** https://dar2.cl/productora-audiovisual/
+
+A productora audiovisual in Chile is a company that plans, produces and edits video content for brands and organizations. DAR2 is a full-service audiovisual production company based in Santiago serving all of Chile since 2010 with its own in-house team of 8 and cinema cameras (Z CAM E2-S6). Under one roof it offers 9 services — streaming corporativo, live shopping, multicámara para eventos, estudio virtual, videos corporativos, podcast y video podcast, estrategias digitales, contenido para redes y filtros AR — with in-house post-production and a single invoice. Clients include IPSA companies: Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC and Nestlé.
+
+- **What DAR2 is NOT:** a freelancer with a single camera, or an agency that outsources production and post-production to third parties.
+- **Nationwide:** operations from Santiago; productions across Chile including mining sites (HSEQ accreditations), industrial plants and regional offices.
+- **Process:** brief & itemized proposal in 48 business hours → pre-production (guion, dirección creativa, locaciones) → production (cinema cameras, broadcast audio) → in-house post-production (edición, color, motion graphics) with multi-format delivery.
+- **What a productora audiovisual does (3 phases):** 1) preproducción — guion o pauta, locaciones, equipo técnico y plan de rodaje; 2) producción — grabación o rodaje con cámaras, iluminación y sonido (y transmisión en vivo con switcher si aplica); 3) postproducción — edición, corrección de color, sonido, música y motion graphics.
+- **Productora vs agencia vs estudio:** una agencia de publicidad diseña campañas y suele tercerizar el video; un estudio de grabación arrienda espacio y equipamiento; una productora audiovisual planifica, produce y edita el contenido completo, de principio a fin. DAR2 es productora audiovisual y coordina estudios de croma, podcast o virtual según el requerimiento.
+- **Industries:** retail, banking & insurance, mining & industry, healthcare, energy & construction, professional services.
+- **Pricing:** tailored quotes, no published rates, itemized proposal within 48 business hours.
 
 ---
 
@@ -341,21 +357,23 @@ A: Sí. Nuestra postproducción es 100% interna: edición audiovisual, color gra
 
 ---
 
-## Service: Video Podcast Corporativo
+## Service: Podcast y Video Podcast
 
 **URL:** https://dar2.cl/servicios/podcast/
-**Type:** Producción de video podcast corporativo
-**Keywords:** videopodcast corporativo, podcast para empresas, producción de podcast en Santiago, estudio de podcast corporativo, video podcast para ejecutivos
+**Type:** Productora de podcast y video podcast en Santiago (marcas, empresas y creadores)
+**Keywords:** productora de podcast santiago, producción de podcast santiago, estudio de podcast santiago, arriendo estudio podcast, video podcast corporativo, podcast para empresas
 
 ### Description
 
-Un video podcast corporativo no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es una producción broadcast adaptada a formatos conversacionales: micrófonos de estudio broadcast, iluminación cinematográfica, dirección multicámara en tiempo real, integración de gráficas corporativas, video en alta resolución y postproducción optimizada para cápsulas y reels.
+Un podcast no es una llamada de Zoom grabada ni un micrófono sobre una mesa improvisada. Es producción: microfonía broadcast, iluminación que hace ver bien a quien conversa, dirección multicámara en tiempo real, gráficas en pantalla y postproducción que convierte cada capítulo en contenido para varias plataformas.
 
-En DAR2 coordinamos estudios de podcast profesionales según el requerimiento, o montamos un set profesional en tus oficinas — para grabar o transmitir conversaciones de liderazgo, rendiciones de cuentas, cierres de proyecto y programas de thought leadership. Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para LinkedIn, Instagram o intranet.
+En DAR2 coordinamos estudios de podcast profesionales en Santiago o montamos un set profesional en tus oficinas — para grabar o transmitir programas de liderazgo, podcast de marca, conversaciones con clientes, rendiciones de cuentas y contenidos de creadores. Pagas por producción, no por infraestructura.
+
+Cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas para YouTube, LinkedIn, Instagram, TikTok o intranet.
 
 ### Target audience
 
-Rendiciones de cuentas y cierres de proyectos estratégicos (viajes de innovación, juntas internas), programas de thought leadership de ejecutivos y gerentes, comunicación interna y cultura organizacional, y programas de entrevistas o divulgación técnica para clientes o industria.
+Marcas que usan el podcast como canal de contenido recurrente, thought leadership de ejecutivos y fundadores, comunicación interna y cultura organizacional, divulgación técnica para clientes o industria, y creadores o podcasters que tercerizan grabación, dirección y edición sin invertir en un estudio propio.
 
 ### Process
 
@@ -366,34 +384,46 @@ Rendiciones de cuentas y cierres de proyectos estratégicos (viajes de innovaci�
 
 ### Features
 
-- Set de grabación o setup móvil en oficinas del cliente
+- Coordinación de estudios de podcast profesionales en Santiago
+- Set móvil en tus oficinas, sin trasladar al equipo
 - Sistema multicámara Cinema / PTZ
 - Microfonía broadcast y procesamiento de audio en tiempo real
 - Iluminación LED suave de set
-- Switcher y dirección técnica en vivo
+- Switcher y dirección técnica en vivo (streaming privado o público)
 - Inserción de gráficas animadas, diapositivas y videos en pantalla
-- Edición máster y entrega de mini-cápsulas para RRSS / Intranet
+- Máster + cápsulas verticales y horizontales para RRSS / Intranet
 
 ### FAQs
 
 **Q: ¿Se puede grabar en nuestras propias oficinas o requiere estudio?**
-A: Podemos montar un set móvil profesional directamente en tus instalaciones o coordinar un estudio de podcast según el requerimiento.
+A: Podemos montar un set móvil profesional directamente en tus instalaciones o coordinar un estudio de podcast en Santiago según el requerimiento.
 
 **Q: ¿El podcast se puede transmitir en vivo o solo grabado?**
 A: Ambas opciones. Podemos emitirlo en directo vía streaming privado o público con interacción de chat, o grabarlo para postproducción.
 
 **Q: ¿Entregan cápsulas para redes sociales?**
-A: Sí, cada capítulo incluye la entrega del máster completo más clips horizontales y verticales editados para LinkedIn, Instagram o intranet.
+A: Sí, cada capítulo incluye la entrega del máster completo más clips horizontales y verticales editados para YouTube, LinkedIn, Instagram, TikTok o intranet.
+
+**Q: ¿Producen podcasts de audio o solo video?**
+A: Producimos video podcast, que ya incluye audio broadcast de nivel profesional. No distribuimos episodios de audio puro: cada sesión se graba con cámara para rendir en YouTube, LinkedIn y redes. Si el cliente ya tiene un podcast de audio, lo llevamos a video con set profesional manteniendo la calidad de su audio.
+
+**Q: ¿Trabajan con marcas y creadores o solo con empresas?**
+A: Con los tres. Hacemos podcast de marca como canal de contenido recurrente, programas de liderazgo para ejecutivos y marcas personales, y producción para creadores y podcasters que tercerizan grabación, dirección y edición.
 
 **Q: ¿En qué se diferencia un video podcast corporativo de un podcast de audio?**
-A: Un video podcast suma cámara, set e iluminación al formato conversacional: se graba o transmite con dirección multicámara, gráficas corporativas en pantalla y audio broadcast. El resultado rinde tanto como capítulo en YouTube o LinkedIn como en cápsulas verticales para redes.
+A: Un video podcast suma cámara, set e iluminación al formato conversacional: se graba o transmite con dirección multicámara, gráficas en pantalla y audio broadcast. El resultado rinde tanto como capítulo en YouTube o LinkedIn como en cápsulas verticales para redes.
 
-**Q: ¿Cuánto demora producir un video podcast corporativo?**
-A: Un capítulo típico se graba en una jornada (incluyendo el setup de set) y se entrega editado en una a dos semanas, junto con las cápsulas para redes. La cotización detallada la tienes en 48 horas hábiles.
+**Q: ¿Cuánto cuesta producir un podcast en Chile?**
+A: Depende del formato: cámaras, set o estudio, participantes y postproducción. No publicamos tarifas: cada proyecto se cotiza a medida y se entrega una cotización detallada ítem por ítem en 48 horas hábiles.
 
-### Related case study
+**Q: ¿Cuánto demora producir un capítulo?**
+A: Un capítulo típico se graba en una jornada (incluyendo el setup de set) y se entrega editado en una a dos semanas, junto con las cápsulas para redes.
+
+### Case studies
 
 [Videopodcast para Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — tres meses de inmersión tecnológica en China convertidos en un videopodcast Talk Show que conectó a más de 500 colaboradores.
+
+[Video Podcast Corporativo · Conpat Global](https://dar2.cl/casos/video-podcast-conpat-global-las-condes/) — estudio móvil para una firma de planificación financiera en Las Condes: 3 cámaras PTZ robóticas con control IP, iluminación LED suave y clips 9:16 para el posicionamiento de los ejecutivos en LinkedIn e Instagram.
 
 ---
 
@@ -611,7 +641,8 @@ Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic ev
 - [¿Cuánto cuesta un live shopping en Chile?](https://dar2.cl/blog/cuanto-cuesta-live-shopping-chile/)
 - [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/)
 - [¿Cuánto cuesta un video corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-video-corporativo-chile/)
-- [Video podcast corporativo: qué es, para qué sirve y cómo se produce](https://dar2.cl/blog/video-podcast-corporativo-que-es/)
+- [Video podcast corporativo: qué es, para qué sirve y cómo se produce](https://dar2.cl/blog/video-podcast-corporativo-que-es/) — Guía de video podcast corporativo
+- [Cómo producir un podcast profesional en Santiago](https://dar2.cl/blog/producir-podcast-profesional-santiago/) — Audio vs video, estudio o set móvil, qué pedirle a la productora y cuánto cuesta
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/)
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/)
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/)

@@ -1,0 +1,586 @@
+---
+import Base from '../../layouts/Base.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Cómo producir un podcast profesional en Santiago: audio, video y estudio', url: 'https://dar2.cl/blog/producir-podcast-profesional-santiago/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo producir un podcast profesional en Santiago: audio, video y estudio",
+  "description": "Guía para producir un podcast profesional en Santiago de Chile: podcast de audio vs video podcast, estudio o set móvil, qué pedirle a una productora y cuánto cuesta. Con casos reales.",
+  "image": "https://dar2.cl/images/podcast/plano-general-estudio.jpg",
+  "datePublished": "2026-09-03",
+  "dateModified": "2026-09-03",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/producir-podcast-profesional-santiago/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Podcast de audio o video podcast: cuál conviene?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El video podcast multiplica el alcance del formato: la misma conversación rinde como capítulo en YouTube y LinkedIn y como cápsulas verticales para TikTok, Reels y Shorts. Producir en video no impide distribuir el audio: el máster de la sesión se exporta a plataformas de audio si el cliente lo distribuye."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde se graba un podcast en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En un estudio de podcast profesional coordinado en Santiago (estética constante y tratamiento acústico) o con un set móvil montado en tus oficinas. Ambas opciones entregan calidad broadcast: microfonía de estudio, iluminación profesional y dirección multicámara."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta producir un podcast en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del formato: cámaras, set o estudio, participantes y postproducción. Como referencia de mercado, el arriendo de un estudio con operador en Santiago parte en torno a los $80.000 + IVA por hora, y una producción completa con dirección multicámara y edición se cotiza por jornada y alcance. La forma de tener un número certero es pedir una cotización detallada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto demora grabar y editar un capítulo de podcast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un capítulo típico se graba en una jornada, incluyendo el setup del set, y se entrega editado en una a dos semanas junto con las cápsulas para redes. La cotización detallada se entrega en 48 horas hábiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito comprar equipos o arrendar estudio mes a mes para tener un podcast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Una productora aporta el set (en estudio coordinado o móvil), las cámaras, la microfonía broadcast, la iluminación y la postproducción. Pagas por producción, no por infraestructura, lo que deja el costo del podcast 100% variable y escalable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Una productora de podcast entrega cápsulas para redes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas (con subtítulos) para YouTube, LinkedIn, Instagram, TikTok o intranet. Así el mismo contenido rinde como capítulo largo y como piezas cortas sin volver a producir."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title="Cómo producir un podcast profesional en Santiago"
+  description="Guía para producir un podcast profesional en Santiago de Chile: podcast de audio vs video podcast, estudio o set móvil, qué pedirle a la productora y cuánto cuesta."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/podcast/plano-general-estudio.webp"
+  ogImage="/images/podcast/plano-general-estudio.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <!-- Hero -->
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Producción de Podcast</p>
+      <h1 class="article-h1">
+        Cómo producir un podcast profesional en Santiago:
+        <em class="hl">audio, video y estudio</em>
+      </h1>
+      <p class="article-lead">
+        Producir un podcast profesional en Santiago implica mucho más que sentarse frente a un micrófono: hay que decidir entre audio y video, elegir estudio o set móvil, garantizar sonido broadcast e iluminación, y convertir cada capítulo en contenido para varias plataformas. Aquí te explicamos qué se necesita, cuánto cuesta y qué pedirle a una productora de podcast.
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <div class="article-hero-image">
+      <Picture
+        src="/images/podcast/plano-general-estudio.jpg"
+        alt="Set de producción de podcast profesional en Santiago — producción DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es">Qué implica producir un podcast profesional</a></li>
+        <li><a href="#audio-vs-video">Podcast de audio o video podcast</a></li>
+        <li><a href="#donde">Estudio en Santiago o set móvil</a></li>
+        <li><a href="#que-pedir">Qué pedirle a una productora de podcast</a></li>
+        <li><a href="#proceso">Cómo se produce un capítulo paso a paso</a></li>
+        <li><a href="#cuanto-cuesta">¿Cuánto cuesta producir un podcast en Chile?</a></li>
+        <li><a href="#casos">Casos reales de podcast DAR2</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section class="article-section" id="que-es">
+      <h2>Qué implica producir un podcast profesional</h2>
+      <p>
+        Un podcast profesional no es una llamada grabada ni un micrófono sobre una mesa improvisada. Es una <strong>producción recurrente</strong> donde la conversación importa, pero también cómo se ve, cómo se escucha y cómo se distribuye. En la práctica, producir un podcast de nivel profesional implica cinco capas:
+      </p>
+      <ul class="article-list">
+        <li><strong>Audio broadcast.</strong> Microfonía de estudio con procesamiento en tiempo real. El audio malo es la razón número uno por la que un podcast no se escucha, por más buena que sea la conversación.</li>
+        <li><strong>Iluminación y set.</strong> Si hay cámara, la luz decide si el programa se ve profesional o amateur. Un set con identidad visual (logo, escenografía, separación del talento) construye marca en cada capítulo.</li>
+        <li><strong>Dirección.</strong> Alguien que dirija la conversación en formato, controle los tiempos y coordine encuadres, gráficas y material en pantalla.</li>
+        <li><strong>Postproducción.</strong> Edición del máster, corrección de color, subtítulos y exportación en múltiples formatos.</li>
+        <li><strong>Multiplataforma.</strong> El mismo capítulo debe rendir como video largo en YouTube, episodio de audio si aplica, y cápsulas verticales para redes.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="audio-vs-video">
+      <h2>¿Podcast de audio o video podcast?</h2>
+      <p>
+        La decisión de fondo al producir un podcast es si se graba solo audio o con cámara. El panorama en Chile, igual que en el resto del mundo, apunta a una sola dirección:
+      </p>
+      <ul class="article-list">
+        <li><strong>El video multiplica la distribución.</strong> Un capítulo en video se publica en YouTube y LinkedIn, y de ahí se extraen cápsulas verticales para TikTok, Instagram Reels y Shorts. Un podcast de audio puro solo vive en las plataformas de audio.</li>
+        <li><strong>El audio se exporta del video.</strong> Grabar en video no impide distribuir el audio: el máster de la sesión se exporta y el cliente puede publicarlo en Spotify, Apple Podcasts u otras plataformas por su cuenta.</li>
+        <li><strong>El formato corto alimenta al largo.</strong> Las cápsulas de 30-60 segundos son la puerta de entrada: acercan audiencia nueva al capítulo completo. Sin video, ese motor no existe.</li>
+      </ul>
+      <p>
+        Para marcas y ejecutivos, la recomendación práctica es <strong>grabar siempre en video</strong> y decidir después qué se distribuye en cada canal. El costo adicional de la cámara es marginal frente al retorno en alcance. Si tu foco es comunicación interna corporativa, tienes la <a href="/blog/video-podcast-corporativo-que-es/" class="article-inline-link">guía específica de video podcast corporativo</a>.
+      </p>
+    </section>
+
+    <section class="article-section" id="donde">
+      <h2>¿Dónde grabar: estudio de podcast en Santiago o set móvil?</h2>
+      <p>
+        En Santiago hay tres caminos para producir un podcast y cada uno resuelve una necesidad distinta:
+      </p>
+      <ul class="article-list">
+        <li><strong>Estudio de podcast profesional (coordinado).</strong> Tratamiento acústico, iluminación calibrada y una estética constante entre capítulos. Ideal para programas recurrentes. Como referencia de mercado, el arriendo de un estudio con operador en Santiago parte en torno a los $80.000 + IVA por hora, y suele combinarse con la producción completa.</li>
+        <li><strong>Set móvil en tus oficinas.</strong> Montamos el set donde está el equipo: los participantes no se trasladan, el contexto es real (una sala de directorio, un espacio con la identidad de la empresa) y la logística es mínima. Es la vía que más usamos en DAR2 para programas corporativos.</li>
+        <li><strong>Estudio propio del cliente.</strong> Si la empresa ya invirtió en un estudio de podcast, la productora llega con cámaras, iluminación complementaria y dirección para que ese espacio rinda a nivel broadcast.</li>
+      </ul>
+      <p>
+        En <a href="/servicios/podcast/" class="article-inline-link">DAR2 coordinamos estudios de podcast profesionales en Santiago o montamos un set móvil</a> según el proyecto. La regla es simple: pagas por producción, no por infraestructura, así el costo del podcast queda variable y escalable.
+      </p>
+    </section>
+
+    <section class="article-section" id="que-pedir">
+      <h2>Qué pedirle a una productora de podcast en Santiago</h2>
+      <p>
+        Al cotizar con una productora de podcast, usa este checklist para separar una producción seria de un registro casero con nombre bonito:
+      </p>
+      <ol class="article-list">
+        <li><strong>Audio broadcast y no el micrófono del notebook.</strong> Pregunta por la microfonía y el tratamiento de sonido de la sala.</li>
+        <li><strong>Video y cápsulas, no solo audio.</strong> Si no te ofrecen cápsulas verticales y horizontales editadas, estás dejando el alcance en redes sobre la mesa.</li>
+        <li><strong>Dirección y switcher.</strong> ¿Quién elige el encuadre según quién habla? Una productora con dirección multicámara en vivo produce capítulos que se ven dirigidos, no cámaras fijas.</li>
+        <li><strong>Opción de transmitir en vivo.</strong> Si quieres lanzar un capítulo con audiencia en tiempo real o hacer un live de marca, la productora debe manejar streaming, no solo grabación.</li>
+        <li><strong>Estudio coordinado o set móvil.</strong> Debe poder adaptarse a tu formato: recurrente con estética constante o grabación puntual en tus oficinas.</li>
+        <li><strong>Casos reales completos.</strong> Pide ver un capítulo terminado de principio a fin, no solo fotos del set.</li>
+        <li><strong>Cotización desglosada en 48 horas.</strong> Una cotización profesional detalla cada ítem y se respeta, sin letra chica.</li>
+      </ol>
+    </section>
+
+    <section class="article-section" id="proceso">
+      <h2>Cómo se produce un capítulo de podcast, paso a paso</h2>
+      <p>
+        Un capítulo profesional se produce en cuatro etapas:
+      </p>
+      <ul class="article-list">
+        <li><strong>01 · Briefing y pauta.</strong> Se define el formato (uno a uno, panel, Talk Show), el tono, los participantes, el set y el apoyo visual (gráficas, diapositivas, videos). Con eso se arma la cotización detallada.</li>
+        <li><strong>02 · Set y setup técnico.</strong> Iluminación de set, microfonía broadcast, configuración multicámara y prueba de señal antes de grabar. Sin sorpresas el día de la sesión.</li>
+        <li><strong>03 · Grabación o transmisión en vivo.</strong> Dirección técnica en tiempo real, switching de cámaras y mezcla de audio prístina. Si es en vivo, con streaming privado o público e interacción de chat.</li>
+        <li><strong>04 · Postproducción y clips.</strong> Edición del capítulo máster más cápsulas horizontales y verticales con subtítulos, listas para YouTube, LinkedIn, Instagram, TikTok o intranet.</li>
+      </ul>
+      <p>
+        Un capítulo típico se graba en una jornada, incluyendo el setup, y se entrega editado en una a dos semanas junto con las cápsulas.
+      </p>
+    </section>
+
+    <section class="article-section" id="cuanto-cuesta">
+      <h2>¿Cuánto cuesta producir un podcast en Chile?</h2>
+      <p>
+        No existe un precio único: el valor de un capítulo depende del formato, la cantidad de cámaras, el set o estudio, los participantes y la postproducción. Para dimensionar, conviene separar lo que sí tiene referencia de mercado de lo que se cotiza por proyecto:
+      </p>
+      <ul class="article-list">
+        <li><strong>Arriendo de estudio con operador.</strong> Como referencia de mercado en Santiago, parte en torno a los $80.000 + IVA por hora. Cubre el espacio y suelen incluir un operador básico.</li>
+        <li><strong>Producción completa del capítulo.</strong> Multicámara, dirección, iluminación, audio broadcast, grabación y edición se cotizan por jornada y alcance. Una producción completa con edición de cápsulas es una inversión distinta a un arriendo de estudio.</li>
+        <li><strong>Programas recurrentes.</strong> El costo por capítulo baja con la frecuencia: una temporada mensual permite estandarizar el set, la pauta y la postproducción.</li>
+      </ul>
+      <p>
+        La única forma de tener un número certero para tu caso es pedir una cotización. En DAR2 recibes una propuesta <strong>ítem por ítem en 48 horas hábiles</strong>, sin costos ocultos y con una sola factura. No publicamos tarifas porque cada proyecto es distinto — y una cotización apurada solo termina en sorpresas.
+      </p>
+    </section>
+
+    <section class="article-section" id="casos">
+      <h2>Casos reales: podcast que ya produjimos en DAR2</h2>
+      <p>
+        La mejor prueba de una productora de podcast es un capítulo terminado. Dos casos recientes muestran los formatos que trabajamos:
+      </p>
+      <ul class="article-list">
+        <li><strong>Videopodcast de Transelec.</strong> El equipo de Innovación volvió de una misión de scouting en China y convirtió los aprendizajes en un videopodcast Talk Show para toda la organización. Montamos el set en las oficinas corporativas con multicámara 4K y microfonía Shure SM7B: una serie que conectó a más de 500 colaboradores, con microcápsulas horizontales y verticales para canales internos.</li>
+        <li><strong>Video podcast de Conpat Global.</strong> Para una firma de planificación financiera en Las Condes, montamos un estudio móvil con tres cámaras PTZ robóticas operadas por control IP, iluminación LED suave y microfonía cardoide de estudio. El resultado: capítulos multicámara y clips 9:16 con subtítulos para el posicionamiento de los ejecutivos en LinkedIn e Instagram.</li>
+      </ul>
+      <div class="article-cta">
+        <a href="/casos/podcast-transelec-innovacion-china/" class="article-cta-btn">
+          Ver el caso Transelec →
+        </a>
+        <a href="/casos/video-podcast-conpat-global-las-condes/" class="article-cta-link">
+          Ver el caso Conpat Global →
+        </a>
+      </div>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details class="article-faq">
+        <summary>¿Podcast de audio o video podcast: cuál conviene?</summary>
+        <p>El video podcast multiplica el alcance: rinde como capítulo en YouTube y LinkedIn y como cápsulas verticales para TikTok, Reels y Shorts. Producir en video no impide distribuir el audio: el máster de la sesión se exporta a plataformas de audio si el cliente lo distribuye.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Dónde se graba un podcast en Santiago?</summary>
+        <p>En un estudio de podcast profesional coordinado en Santiago (estética constante y tratamiento acústico) o con un set móvil montado en tus oficinas. Ambas opciones entregan calidad broadcast: microfonía de estudio, iluminación profesional y dirección multicámara.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto cuesta producir un podcast en Chile?</summary>
+        <p>Depende del formato: cámaras, set o estudio, participantes y postproducción. Como referencia de mercado, el arriendo de un estudio con operador parte en torno a los $80.000 + IVA por hora, y una producción completa se cotiza por jornada y alcance. Pide una cotización detallada para tu caso.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Cuánto demora grabar y editar un capítulo?</summary>
+        <p>Un capítulo típico se graba en una jornada, incluyendo el setup del set, y se entrega editado en una a dos semanas junto con las cápsulas para redes. La cotización detallada se entrega en 48 horas hábiles.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Necesito comprar equipos o arrendar estudio mes a mes?</summary>
+        <p>No. Una productora aporta el set (en estudio coordinado o móvil), las cámaras, la microfonía broadcast, la iluminación y la postproducción. Pagas por producción, no por infraestructura, y el costo del podcast queda 100% variable.</p>
+      </details>
+
+      <details class="article-faq">
+        <summary>¿Una productora de podcast entrega cápsulas para redes?</summary>
+        <p>Sí, cada capítulo se entrega con el máster completo más cápsulas horizontales y verticales editadas (con subtítulos) para YouTube, LinkedIn, Instagram, TikTok o intranet. El mismo contenido rinde como capítulo largo y como piezas cortas, sin volver a producir.</p>
+      </details>
+    </section>
+
+    <!-- CTA final -->
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Listo para producir tu podcast?</h2>
+      <p>
+        Cuéntanos el formato (audio, video o en vivo), los participantes y si prefieres estudio coordinado en Santiago o set móvil en tus oficinas. Te armamos una propuesta con audio broadcast, dirección multicámara y cápsulas para redes. Cotización en 48 horas hábiles.
+      </p>
+      <div class="article-cta">
+        <a href="/servicios/podcast/" class="article-cta-btn">
+          Ver nuestro servicio de podcast →
+        </a>
+        <a href="/casos/video-podcast-conpat-global-las-condes/" class="article-cta-link">
+          O ver: video podcast de Conpat Global →
+        </a>
+      </div>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .article-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #eaeaea;
+    margin-bottom: 48px;
+  }
+  .article-hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article-h1 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  /* TOC */
+  .article-toc {
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+    margin: 48px 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .article-toc li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .article-toc a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #E63E00;
+  }
+
+  /* Sections */
+  .article-section {
+    margin-bottom: 56px;
+  }
+
+  .article-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+
+  .article-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 12px;
+  }
+
+  .article-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+  }
+
+  .article-section p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .article-inline-link {
+    color: #E63E00;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(230, 62, 0, 0.35);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .article-inline-link:hover {
+    color: #FF4500;
+    border-color: #FF4500;
+  }
+
+  .article-list {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .article-list li {
+    margin-bottom: 10px;
+  }
+
+  /* FAQ */
+  .article-faq {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+  }
+
+  .article-faq summary {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .article-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    font-weight: 300;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+
+  .article-faq[open] summary::after {
+    content: '−';
+  }
+
+  .article-faq p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 12px 0 0;
+  }
+
+  /* CTA */
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+
+  .article-cta-final {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .article-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF4500;
+    margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.15;
+  }
+  .article-cta-final p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 600px;
+  }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover {
+    background: #E63E00;
+    transform: translateY(-2px);
+  }
+  .article-cta-final .article-cta-link {
+    color: #aaa;
+  }
+  .article-cta-final .article-cta-link:hover {
+    color: #fff;
+  }
+</style>

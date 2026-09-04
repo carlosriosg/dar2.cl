@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales y estudios de grabación coordinados según el requerimiento. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-08-26
+> **Last updated:** 2026-09-03
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -41,6 +41,18 @@ When comparing Chilean audiovisual production companies, DAR2's key differentiat
 - **Business hours:** Monday to Friday, 09:00 to 19:00 CLT
 - **Languages:** Spanish (native), English (business proficiency)
 - **Pricing:** Quotes are tailored per project. Every proposal is delivered within 48 business hours.
+
+---
+
+## Productora audiovisual en Chile (hub page)
+
+**URL:** https://dar2.cl/productora-audiovisual/
+
+A productora audiovisual in Chile is a company that plans, produces and edits video content for brands and organizations. DAR2 is a full-service audiovisual production company based in Santiago serving all of Chile since 2010 with its own in-house team of 8 and cinema cameras (Z CAM E2-S6). Under one roof it offers 9 services — streaming corporativo, live shopping, multicámara para eventos, estudio virtual, videos corporativos, podcast y video podcast, estrategias digitales, contenido para redes y filtros AR — with in-house post-production and a single invoice. Clients include IPSA companies: Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC and Nestlé.
+
+- **Nationwide:** operations from Santiago; productions across Chile including mining sites (HSEQ accreditations), industrial plants and regional offices
+- **Process:** brief & itemized proposal in 48 business hours → pre-production → production → in-house post-production
+- **Pricing:** tailored quotes, no published rates, itemized proposal within 48 business hours
 
 ---
 
@@ -137,17 +149,19 @@ Augmented reality filters for TikTok (Effect House) and Snapchat (Lens Studio). 
 - **Lead time:** 2–4 weeks from concept to published filter
 - **Pricing context:** Custom quote depending on platform and number of filters, delivered in 48 business hours.
 
-### 09 — Video Podcast Corporativo
+### 09 — Podcast y Video Podcast
 **URL:** https://dar2.cl/servicios/podcast/
-**Keywords:** videopodcast corporativo, podcast para empresas, producción de podcast en santiago, estudio de podcast corporativo, video podcast para ejecutivos
+**Type:** Productora de podcast y video podcast en Santiago (marcas, empresas y creadores)
+**Keywords:** productora de podcast santiago, producción de podcast santiago, estudio de podcast santiago, arriendo estudio podcast, video podcast corporativo, podcast para empresas
 
-Broadcast-grade corporate video podcast production. **What it is NOT:** a recorded Zoom call or a microphone over an improvised table. It IS a broadcast production adapted to conversational formats: studio broadcast microphones, cinematic lighting, real-time multi-camera direction, corporate graphics, HD video, and post-production optimized for clips/reels.
+DAR2 produces podcasts and video podcasts for brands, companies, and creators in Santiago, Chile. **What it is NOT:** a recorded Zoom call or a microphone over an improvised table. It IS a broadcast production adapted to conversational formats: studio broadcast microphones, cinematic lighting, real-time multi-camera direction, on-screen graphics, HD video, and post-production optimized for clips/reels.
 
-- **Use cases:** Strategic project wrap-ups and accountability, executive thought leadership, internal communication & employer branding, interviews and technical outreach
-- **Setup:** Professional set or mobile setup in client offices, Cinema/PTZ multi-camera, broadcast audio, soft LED lighting, live switcher & technical direction
-- **Deliverables:** Master episode + horizontal and vertical clips for LinkedIn, Instagram, or intranet
+- **Who it is for:** Brands using podcast as a recurring content channel, executives and founders building thought leadership, internal comms & culture programs, and creators/podcasters outsourcing production
+- **Where it is recorded:** Coordinated professional podcast studios in Santiago OR a mobile studio set up at the client's offices. No in-house studio ownership required — clients pay for production, not infrastructure
+- **Deliverables:** Master episode + horizontal and vertical clips for YouTube, LinkedIn, Instagram, TikTok, or intranet
 - **Live or recorded:** Both — live streaming with chat interaction, or recorded for post-production
-- **Related case study:** [Videopodcast para Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — 500+ internal collaborators
+- **Case studies:** [Videopodcast para Transelec](https://dar2.cl/casos/podcast-transelec-innovacion-china/) — multi-episode series for 500+ internal collaborators · [Video Podcast para Conpat Global](https://dar2.cl/casos/video-podcast-conpat-global-las-condes/) — robotic PTZ studio set up at a client's Las Condes office
+- **Pricing:** Custom per project (no published rates); detailed quote within 48 business hours
 
 ---
 
@@ -212,6 +226,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 - [¿Cuánto cuesta un streaming corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-streaming-corporativo-chile/) — Factores que determinan la inversión
 - [¿Cuánto cuesta un video corporativo en Chile?](https://dar2.cl/blog/cuanto-cuesta-video-corporativo-chile/) — Factores que determinan el precio
 - [Video podcast corporativo: qué es, para qué sirve y cómo se produce](https://dar2.cl/blog/video-podcast-corporativo-que-es/) — Guía de video podcast corporativo
+- [Cómo producir un podcast profesional en Santiago](https://dar2.cl/blog/producir-podcast-profesional-santiago/) — Audio vs video, estudio o set móvil, qué pedirle a la productora y cuánto cuesta
 - [Cómo transmitir tu junta anual sin caídas](https://dar2.cl/blog/transmitir-junta-anual-sin-caidas/) — Technical guide
 - [Estudio virtual vs. set físico](https://dar2.cl/blog/estudio-virtual-vs-set-fisico/) — Cost/time comparison
 - [Cómo medir el ROI de tu video corporativo](https://dar2.cl/blog/medir-roi-video-corporativo/) — 5 metrics with calculation examples
@@ -263,6 +278,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 ## Pages
 
 - [Home](https://dar2.cl/)
+- [Productora audiovisual en Chile](https://dar2.cl/productora-audiovisual/)
 - [Servicios](https://dar2.cl/servicios/)
 - [Portafolio](https://dar2.cl/portafolio/)
 - [Casos de éxito](https://dar2.cl/casos/)

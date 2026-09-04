@@ -30,6 +30,22 @@ const faqJsonLd = {
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "¿Qué son los servicios audiovisuales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los servicios audiovisuales son las soluciones profesionales de video, sonido, iluminación y transmisión en vivo que una empresa usa para comunicar con colaboradores, clientes y público. Como productora integral, DAR2 los presta en Santiago y todo Chile: producción de video corporativo, transmisión y registro de eventos en vivo, video podcast, estudio virtual, contenido para redes y ventas en vivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de servicios audiovisuales existen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los principales tipos de servicios audiovisuales son: producción de video (corporativo, promocional y de capacitación), transmisión y registro de eventos en vivo (streaming y multicámara IMAG a pantallas), contenido conversacional y escenografía (video podcast y estudio virtual con chroma), y contenido para canales digitales (cápsulas para redes, live shopping y filtros de realidad aumentada)."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Cómo funciona la cotización de una producción audiovisual?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -57,8 +73,8 @@ const faqJsonLd = {
 ---
 
 <Base
-  title="Servicios de Producción Audiovisual en Santiago"
-  description="9 servicios audiovisuales en Santiago bajo un mismo techo: streaming, live shopping, video corporativo, podcast, estudio virtual y más. Cotiza en 48h."
+  title="Servicios Audiovisuales para Empresas en Chile"
+  description="Servicios audiovisuales para empresas en Chile: producción de video corporativo, transmisión y registro de eventos en vivo, video podcast, estudio virtual, contenido para redes y más. Cotiza en 48h."
   breadcrumbs={breadcrumbs}
 >
   <Fragment slot="head">
@@ -68,13 +84,13 @@ const faqJsonLd = {
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
-    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Servicios</p>
-    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-3xl">
-      Todo lo que necesitas
-      <em class="not-italic italic text-[#FF4500]"> bajo un solo techo.</em>
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">Servicios audiovisuales</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6 max-w-4xl">
+      Servicios audiovisuales
+      <em class="not-italic italic text-[#FF4500]"> para empresas en Chile.</em>
     </h1>
     <p class="text-lg text-[#666] max-w-2xl leading-relaxed">
-      Directorio de servicios audiovisuales corporativos en Chile: 9 servicios especializados, equipo propio de producción y postproducción, una sola factura por todo el proyecto. Cotización audiovisual a medida en 48 horas hábiles.
+      Los servicios audiovisuales son las soluciones profesionales de video, sonido, iluminación y transmisión en vivo que usan las empresas para comunicar. Como productora integral en Santiago, DAR2 los presta bajo un mismo techo: producción de video corporativo, transmisión y registro de eventos en vivo, video podcast, estudio virtual, contenido para redes y ventas en vivo — con equipo propio, postproducción interna y una sola factura.
     </p>
   </section>
 
@@ -104,6 +120,47 @@ const faqJsonLd = {
           </div>
         </a>
       ))}
+    </div>
+  </section>
+
+  <!-- Tipos de servicios audiovisuales (taxonomía que los buscadores/IA replican) -->
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Tipos</p>
+    <h2 class="text-3xl font-black tracking-tight mb-6 max-w-3xl">Tipos de servicios audiovisuales que ofrecemos.</h2>
+    <p class="text-[#666] max-w-2xl leading-relaxed mb-10">
+      Si llegaste buscando "servicios audiovisuales", así se agrupan los que prestamos como productora integral:
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl">
+      <div class="svc-taxo-card">
+        <p class="svc-taxo-num">01</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Producción de video</h3>
+        <p class="text-sm text-[#666] leading-relaxed mb-4">Videos corporativos e institucionales, de producto, de valores y cultura, y de capacitación. Cámara cinema, guion y dirección creativa.</p>
+        <a href="/servicios/videos-corporativos/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Ver Videos Corporativos →</a>
+      </div>
+      <div class="svc-taxo-card">
+        <p class="svc-taxo-num">02</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Transmisión y registro de eventos en vivo</h3>
+        <p class="text-sm text-[#666] leading-relaxed mb-4">Streaming de juntas, lanzamientos y congresos, más cobertura multicámara con proyección a pantallas (IMAG). Enlaces redundantes para que nada falle en vivo.</p>
+        <a href="/servicios/streaming/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Ver Streaming →</a>
+        <span class="mx-2 text-[#999]">·</span>
+        <a href="/servicios/circuito-cerrado/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Multicámara →</a>
+      </div>
+      <div class="svc-taxo-card">
+        <p class="svc-taxo-num">03</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Contenido conversacional y escenografía</h3>
+        <p class="text-sm text-[#666] leading-relaxed mb-4">Video podcast y podcast de marca con audio broadcast, y estudio virtual con chroma y escenografías digitales para contenido de nivel TV.</p>
+        <a href="/servicios/podcast/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Ver Podcast →</a>
+        <span class="mx-2 text-[#999]">·</span>
+        <a href="/servicios/estudio-virtual/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Estudio Virtual →</a>
+      </div>
+      <div class="svc-taxo-card">
+        <p class="svc-taxo-num">04</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Contenido para canales digitales y ventas en vivo</h3>
+        <p class="text-sm text-[#666] leading-relaxed mb-4">Cápsulas y reels para redes, estrategia de contenido, live shopping con venta en tiempo real y filtros de realidad aumentada para TikTok y Snapchat.</p>
+        <a href="/servicios/redes-sociales/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Redes Sociales →</a>
+        <span class="mx-2 text-[#999]">·</span>
+        <a href="/servicios/live-shopping/" class="text-sm font-semibold text-[#FF4500] hover:text-[#C53700] transition-colors">Live Shopping →</a>
+      </div>
     </div>
   </section>
 
@@ -139,6 +196,24 @@ const faqJsonLd = {
     <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Cotización</p>
     <h2 class="text-3xl font-black tracking-tight mb-8">Preguntas frecuentes sobre cotización audiovisual.</h2>
     <div class="divide-y divide-[#e5e5e5] border-y border-[#e5e5e5]">
+      <details class="py-5">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-[#1a1a1a] list-none [&::-webkit-details-marker]:hidden">
+          ¿Qué son los servicios audiovisuales?
+          <span class="text-[#999] text-xl font-light shrink-0">+</span>
+        </summary>
+        <p class="mt-3 text-[#555] text-sm leading-relaxed max-w-2xl">
+          Los servicios audiovisuales son las soluciones profesionales de video, sonido, iluminación y transmisión en vivo que una empresa usa para comunicar con colaboradores, clientes y público. Como productora integral, DAR2 los presta en Santiago y todo Chile: producción de video corporativo, transmisión y registro de eventos en vivo, video podcast, estudio virtual, contenido para redes y ventas en vivo.
+        </p>
+      </details>
+      <details class="py-5">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-[#1a1a1a] list-none [&::-webkit-details-marker]:hidden">
+          ¿Qué tipos de servicios audiovisuales existen?
+          <span class="text-[#999] text-xl font-light shrink-0">+</span>
+        </summary>
+        <p class="mt-3 text-[#555] text-sm leading-relaxed max-w-2xl">
+          Los principales tipos son: producción de video (corporativo, promocional y de capacitación), transmisión y registro de eventos en vivo (streaming y multicámara IMAG a pantallas), contenido conversacional y escenografía (video podcast y estudio virtual con chroma), y contenido para canales digitales (cápsulas para redes, live shopping y filtros de realidad aumentada).
+        </p>
+      </details>
       <details class="py-5">
         <summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-[#1a1a1a] list-none [&::-webkit-details-marker]:hidden">
           ¿Cómo funciona la cotización de una producción audiovisual?
@@ -249,4 +324,19 @@ const faqJsonLd = {
     transition: color 0.2s ease;
   }
   .svc-inline-link:hover { color: #E63E00; }
+
+  .svc-taxo-card {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .svc-taxo-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #FF4500;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px;
+  }
 </style>

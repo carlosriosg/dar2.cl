@@ -1,0 +1,532 @@
+---
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import { servicios } from '../data/servicios.js';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Productora audiovisual en Chile', url: 'https://dar2.cl/productora-audiovisual/' },
+];
+
+const faqs = [
+  {
+    q: '¿Qué es una productora audiovisual?',
+    a: 'Una productora audiovisual es una empresa que planifica, produce y edita contenido en video para marcas y organizaciones: videos corporativos, comerciales, streaming en vivo, contenido para redes, videopodcasts y más. En Chile, las productoras audiovisuales serias operan con equipo propio y ofrecen servicio completo de preproducción, rodaje y postproducción.',
+  },
+  {
+    q: '¿Qué servicios ofrece una productora audiovisual en Chile?',
+    a: 'Una productora audiovisual completa en Chile ofrece streaming corporativo, videos corporativos e institucionales, live shopping, video podcast, estudio virtual, multicámara para eventos, contenido para redes sociales, estrategia digital y filtros de realidad aumentada. DAR2 opera los nueve servicios bajo un mismo techo, con una sola factura.',
+  },
+  {
+    q: '¿Cuánto cuesta contratar una productora audiovisual en Chile?',
+    a: 'Depende del alcance: días de rodaje, locaciones, cámaras, dirección creativa, talento y postproducción. No hay dos cotizaciones iguales y una productora seria desglosa cada ítem. La única forma de tener un número certero es cotizar tu proyecto: en DAR2 recibes una propuesta detallada en 48 horas hábiles.',
+  },
+  {
+    q: '¿Trabajan en regiones o solo en Santiago?',
+    a: 'Estamos en Santiago, pero trabajamos en todo Chile. Producimos en regiones con logística coordinada (viajes, acreditaciones HSEQ en faenas mineras, locaciones en terreno) sin costo sorpresa. Tenemos experiencia grabando en plantas industriales, faenas mineras y oficinas a lo largo del país.',
+  },
+  {
+    q: '¿Productora audiovisual o freelancer: cuál conviene para mi empresa?',
+    a: 'Un freelancer sirve para piezas simples y presupuestos muy ajustados, pero sin respaldo si falla algo el día de la grabación. Una productora audiovisual aporta equipo propio, plan B técnico, dirección y postproducción interna. Para contenido que representa a tu marca, la diferencia en calidad y seguridad es directa.',
+  },
+  {
+    q: '¿Cuánto demora producir un video corporativo en Chile?',
+    a: 'Un video corporativo simple con una jornada de grabación toma de 2 a 3 semanas desde el brief hasta la entrega. Producciones complejas con múltiples locaciones, animaciones y varios ciclos de aprobación pueden tomar de 4 a 6 semanas. El tiempo depende del alcance y de los plazos de aprobación del cliente.',
+  },
+  {
+    q: '¿Para qué tipo de empresas es una productora audiovisual?',
+    a: 'Para empresas de todas las industrias que necesitan comunicar: retail, banca y seguros, minería e industria, salud, energía, construcción, logística y servicios profesionales. DAR2 trabaja desde hace 15 años con empresas IPSA como Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC y Nestlé.',
+  },
+  {
+    q: '¿Cómo cotizo un proyecto audiovisual?',
+    a: 'Cuéntanos el objetivo, el formato, los días de rodaje y los entregables por el formulario de contacto o WhatsApp. En 48 horas hábiles recibes una propuesta ítem por ítem, sin costos ocultos y con una sola factura. También puedes escribirnos directo a dar2@dar2.cl o al +56 9 9843 3346.',
+  },
+  {
+    q: '¿Qué hace una productora audiovisual?',
+    a: 'Una productora audiovisual gestiona un proyecto en tres fases: preproducción (guion o pauta, locaciones, equipo técnico y plan de rodaje), producción (grabación o rodaje con cámaras, iluminación y sonido) y postproducción (edición, corrección de color, sonido, música y motion graphics). DAR2 ejecuta las tres fases con equipo propio y postproducción interna.',
+  },
+  {
+    q: '¿Cuál es la diferencia entre una productora audiovisual, una agencia y un estudio?',
+    a: 'Una agencia de publicidad diseña campañas y suele tercerizar la producción de video. Un estudio de grabación arrienda espacio y equipamiento por hora o por jornada. Una productora audiovisual planifica, produce y edita el contenido completo: es la responsable del resultado de principio a fin. DAR2 es productora audiovisual, y coordina estudios de croma, podcast o virtual según el requerimiento de cada proyecto.',
+  },
+];
+
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+
+const serviciosJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Servicios de producción audiovisual de DAR2 en Chile',
+  itemListElement: servicios.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `https://dar2.cl/servicios/${s.slug}/`,
+    name: s.title,
+  })),
+});
+---
+
+<Base
+  title="Productora audiovisual en Chile"
+  description="Productora audiovisual en Chile con equipo propio: videos corporativos, streaming, live shopping, video podcast y contenido para redes. 15 años, clientes IPSA y cotización en 48h."
+  canonicalURL="https://dar2.cl/productora-audiovisual/"
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/galeria/camara-zcam-full-equipada.webp"
+  ogImage="/images/galeria/camara-zcam-full-equipada.png"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={faqJsonLd} />
+    <script type="application/ld+json" set:html={serviciosJsonLd} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-6">
+          DAR2 · PRODUCTORA AUDIOVISUAL EN CHILE
+        </p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] mb-6">
+          Productora audiovisual en Chile, <em class="hl">con equipo propio y calidad broadcast.</em>
+        </h1>
+        <p class="text-base md:text-lg text-[#666] leading-relaxed mb-8">
+          Producimos video corporativo, streaming en vivo, live shopping, video podcast y contenido para redes de empresas en todo el país. Equipo propio de 8 profesionales, cámaras cinema Z CAM E2-S6, estudios coordinados según el requerimiento y 15 años con clientes IPSA.
+        </p>
+        <a
+          href="/contacto/"
+          class="inline-flex items-center bg-[#1a1a1a] text-white text-sm font-semibold px-6 py-3 rounded-xl hover:bg-[#333] transition-colors"
+        >
+          Cotizar mi proyecto →
+        </a>
+      </div>
+      <div class="rounded-[16px] overflow-hidden aspect-video bg-[#eaeaea]">
+        <Picture
+          src="/images/galeria/camara-zcam-full-equipada.png"
+          alt="Productora audiovisual en Chile — equipo DAR2 en producción con cámara cinema Z CAM"
+          class="w-full h-full object-cover"
+          width="800"
+          height="450"
+          loading="eager"
+          fetchpriority="high"
+          decoding="sync"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué es una productora audiovisual -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Definición</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-2xl">
+      ¿Qué es una productora audiovisual?
+    </h2>
+    <div class="max-w-3xl space-y-5">
+      <p class="text-[#444] text-base md:text-lg leading-relaxed">
+        Una productora audiovisual es una empresa que <strong>planifica, produce y edita contenido en video</strong> para marcas, empresas e instituciones. A diferencia de un camarógrafo freelance o una agencia que terceriza todo, una productora audiovisual profesional en Chile cubre la cadena completa: preproducción (guion, dirección creativa, locaciones), rodaje (cámaras, iluminación, sonido, dirección) y postproducción (edición, color, motion graphics, sonorización).
+      </p>
+      <p class="text-[#444] text-base md:text-lg leading-relaxed">
+        El resultado se usa para comunicar hacia dentro (cultura, capacitaciones, rendiciones de cuentas) y hacia fuera (marca, ventas, thought leadership, eventos en vivo). Cuando una empresa contrata una productora audiovisual en Chile, contrata un socio de comunicación, no a alguien que "presta una cámara".
+      </p>
+    </div>
+  </section>
+
+  <!-- Qué hace una productora (fases) -->
+  <section id="fases" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Qué hace</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-2xl">
+      ¿Qué hace una productora audiovisual? Tres fases de trabajo.
+    </h2>
+    <p class="text-[#666] max-w-2xl leading-relaxed mb-10">
+      Toda producción audiovisual en Chile (y en el mundo) se divide en tres fases. Esto es lo que hace una productora en cada una:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="svc-process-step">
+        <p class="svc-process-num">1 · PREPRODUCCIÓN</p>
+        <h3 class="svc-process-title">Planificación</h3>
+        <p class="svc-process-desc">Se define el objetivo y el guion o pauta, se eligen las locaciones, se arma el equipo técnico y el plan de rodaje. Aquí se decide el presupuesto y los tiempos. En DAR2, esta etapa parte con un brief y una propuesta detallada en 48 horas hábiles.</p>
+      </div>
+      <div class="svc-process-step">
+        <p class="svc-process-num">2 · PRODUCCIÓN</p>
+        <h3 class="svc-process-title">Rodaje o transmisión</h3>
+        <p class="svc-process-desc">Es la grabación: cámaras, iluminación, sonido y dirección en el set o locación. Si es en vivo, se suma el switcher, la dirección técnica y los enlaces redundantes para que la señal no se caiga.</p>
+      </div>
+      <div class="svc-process-step">
+        <p class="svc-process-num">3 · POSTPRODUCCIÓN</p>
+        <h3 class="svc-process-title">Edición y entrega</h3>
+        <p class="svc-process-desc">Se edita el material, se corrigen colores, se añade sonido, música y motion graphics, y se entregan los formatos finales: máster, cápsulas verticales y horizontales para cada canal.</p>
+      </div>
+    </div>
+    <p class="mt-10 text-[#666] max-w-3xl leading-relaxed">
+      En DAR2 ejecutamos las tres fases con equipo propio y postproducción interna, para que la calidad y los plazos no dependan de terceros.
+    </p>
+  </section>
+
+  <!-- Servicios -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Servicios</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-2xl">
+      9 servicios audiovisuales bajo un mismo techo.
+    </h2>
+    <p class="text-[#666] max-w-2xl leading-relaxed mb-10">
+      La mayoría de las productoras en Chile se especializa en una disciplina. DAR2 opera las nueve con equipo interno: evitas coordinar varios proveedores y pagas una sola factura.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {servicios.map(s => (
+        <a
+          href={`/servicios/${s.slug}/`}
+          class="svc-card-hover block p-6 border border-[#e5e5e5] rounded-xl transition-colors"
+        >
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">{s.num} · {s.title}</p>
+          <p class="text-[#555] text-sm leading-relaxed">{s.shortDesc}</p>
+          <p class="text-sm font-semibold text-[#666] mt-4">Ver servicio →</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Cómo trabajamos -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Proceso</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+      Cómo trabajamos en cada proyecto.
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="svc-process-step">
+        <p class="svc-process-num">01</p>
+        <h3 class="svc-process-title">Brief y propuesta en 48h</h3>
+        <p class="svc-process-desc">Relevamos el objetivo, formato, días de rodaje, locaciones y entregables. Recibes una cotización ítem por ítem en 48 horas hábiles, sin costos ocultos.</p>
+      </div>
+      <div class="svc-process-step">
+        <p class="svc-process-num">02</p>
+        <h3 class="svc-process-title">Preproducción</h3>
+        <p class="svc-process-desc">Guion o pauta, dirección creativa, locaciones y acreditaciones, cast de talento si aplica y plan de rodaje. Sin sorpresas el día de la grabación.</p>
+      </div>
+      <div class="svc-process-step">
+        <p class="svc-process-num">03</p>
+        <h3 class="svc-process-title">Producción</h3>
+        <p class="svc-process-desc">Rodaje con cámaras cinema Z CAM E2-S6, iluminación y audio broadcast, o transmisión en vivo con switcher, dirección técnica y enlaces redundantes.</p>
+      </div>
+      <div class="svc-process-step">
+        <p class="svc-process-num">04</p>
+        <h3 class="svc-process-title">Postproducción y entrega</h3>
+        <p class="svc-process-desc">Edición, color grading, motion graphics y sonorización in-house. Entregas en todos los formatos: máster, cápsulas verticales y horizontales para cada canal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué DAR2 -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Por qué DAR2</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-12 max-w-2xl">
+      Por qué elegir a DAR2 como productora audiovisual.
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <p class="svc-benefit-num">01</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Equipo propio, no terceros</h3>
+        <p class="text-[#666] text-sm leading-relaxed">Directores, camarógrafos, editores, coloristas y motion graphic artists internos. La calidad y los plazos no dependen de freelancers coordinados por mail.</p>
+      </div>
+      <div>
+        <p class="svc-benefit-num">02</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Trayectoria con empresas IPSA</h3>
+        <p class="text-[#666] text-sm leading-relaxed">15 años produciendo para Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC y Nestlé. No somos una productora nueva.</p>
+      </div>
+      <div>
+        <p class="svc-benefit-num">03</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Producción y post en un solo lugar</h3>
+        <p class="text-[#666] text-sm leading-relaxed">Rodaje y postproducción en la misma casa: tiempos más cortos, consistencia de calidad y una sola factura para todo el proyecto.</p>
+      </div>
+      <div>
+        <p class="svc-benefit-num">04</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Equipos broadcast, estudios según requerimiento</h3>
+        <p class="text-[#666] text-sm leading-relaxed">Cámaras Z CAM E2-S6, gimbal DJI RS 5 Pro, enlaces redundantes y estudios de croma y podcast coordinados por proyecto. Pagas por producción, no por infraestructura.</p>
+      </div>
+      <div>
+        <p class="svc-benefit-num">05</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Presencia en todo Chile</h3>
+        <p class="text-[#666] text-sm leading-relaxed">Desde Santiago coordinamos producciones en regiones: faenas mineras con acreditaciones HSEQ, plantas industriales y oficinas a lo largo del país.</p>
+      </div>
+      <div>
+        <p class="svc-benefit-num">06</p>
+        <h3 class="text-lg font-bold text-[#111] mb-2">Cotización en 48 horas</h3>
+        <p class="text-[#666] text-sm leading-relaxed">Propuestas estructuradas con cada ítem desglosado, entregadas en 2 días hábiles. Sin letra chica ni cargos sorpresa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industrias -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Industrias</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-8 max-w-2xl">
+      Productoras audiovisuales por industria en Chile.
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="svc-case-card">
+        <p class="svc-case-num">RETAIL</p>
+        <p class="svc-case-label">Cencosud, ABCDIN, PC Factory — live shopping y video comercial</p>
+      </div>
+      <div class="svc-case-card">
+        <p class="svc-case-num">BANCA Y SEGUROS</p>
+        <p class="svc-case-label">Banco de Chile, Consorcio, Coopeuch, MetLife — streaming y video corporativo</p>
+      </div>
+      <div class="svc-case-card">
+        <p class="svc-case-num">MINERÍA E INDUSTRIA</p>
+        <p class="svc-case-label">Codelco, CMPC, Polpaico — video industrial con acreditaciones HSEQ</p>
+      </div>
+      <div class="svc-case-card">
+        <p class="svc-case-num">SALUD</p>
+        <p class="svc-case-label">Clínica Santa María — streaming médico y video quirúrgico</p>
+      </div>
+      <div class="svc-case-card">
+        <p class="svc-case-num">ENERGÍA Y CONSTRUCCIÓN</p>
+        <p class="svc-case-label">ENAP, Enel, Sacyr, Salfacorp — comunicación interna y capacitación</p>
+      </div>
+      <div class="svc-case-card">
+        <p class="svc-case-num">SERVICIOS PROFESIONALES</p>
+        <p class="svc-case-label">Marsh, ICARE, Empresas Copec — estrategia digital y contenido ejecutivo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Costos -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Costos</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 max-w-2xl">
+      ¿Cuánto cuesta una producción audiovisual en Chile?
+    </h2>
+    <div class="max-w-3xl space-y-5">
+      <p class="text-[#444] text-base md:text-lg leading-relaxed">
+        No existe un precio único: el monto depende del alcance. Los factores que más inciden son los <strong>días de rodaje y locaciones</strong>, la <strong>cantidad de cámaras y complejidad de producción</strong>, la <strong>dirección creativa y el guion</strong>, el <strong>talento y styling</strong>, el <strong>audio</strong> y la <strong>postproducción</strong> (formatos, motion graphics, música).
+      </p>
+      <p class="text-[#444] text-base md:text-lg leading-relaxed">
+        Una buena productora audiovisual en Chile te entrega una cotización detallada con cada ítem desglosado, en un plazo máximo de 48 horas hábiles. Si el presupuesto te parece alto, pregúntate: ¿cuánto vale para tu empresa un video mal hecho que no comunica, o un streaming que se cae a mitad de la junta?
+      </p>
+      <div class="article-cta">
+        <a href="/blog/cuanto-cuesta-video-corporativo-chile/" class="article-cta-btn">Ver: cuánto cuesta un video corporativo →</a>
+        <a href="/blog/cuanto-cuesta-streaming-corporativo-chile/" class="article-cta-link">Y cuánto cuesta un streaming →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Casos de éxito</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-10 max-w-2xl">
+      Producciones reales, no solo reels.
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="/casos/resultados-copec/" class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Video ejecutivo</p>
+        <h3 class="text-xl font-black tracking-tight mb-2">Resultados trimestrales de Empresas Copec</h3>
+        <p class="text-sm text-[#666] leading-relaxed">Multicámara 6K, gráficas financieras animadas y máster entregado en menos de 30 horas.</p>
+        <p class="text-sm font-semibold text-[#666] mt-4">Ver caso →</p>
+      </a>
+      <a href="/casos/podcast-transelec-innovacion-china/" class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Video podcast</p>
+        <h3 class="text-xl font-black tracking-tight mb-2">Videopodcast de Innovación para Transelec</h3>
+        <p class="text-sm text-[#666] leading-relaxed">Set montado en oficinas corporativas; una serie que conectó a +500 colaboradores.</p>
+        <p class="text-sm font-semibold text-[#666] mt-4">Ver caso →</p>
+      </a>
+      <a href="/casos/hacklab-ia-google-streaming/" class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Streaming</p>
+        <h3 class="text-xl font-black tracking-tight mb-2">Streaming continuo de 48h para HackLab-iA Google</h3>
+        <p class="text-sm text-[#666] leading-relaxed">Cámaras PTZ, enlace inalámbrico punto a punto y señal cero latencia a pantalla gigante.</p>
+        <p class="text-sm font-semibold text-[#666] mt-4">Ver caso →</p>
+      </a>
+    </div>
+    <div class="mt-10">
+      <a href="/casos/" class="text-sm font-semibold text-[#666] hover:text-[#1a1a1a] transition-colors">
+        Ver todos los casos de éxito →
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">FAQ</p>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-10 max-w-2xl">
+      Preguntas frecuentes sobre productoras audiovisuales en Chile.
+    </h2>
+    <div class="faq-list">
+      {faqs.map(f => (
+        <details class="faq-item">
+          <summary class="faq-question">{f.q}</summary>
+          <p class="faq-answer">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="bg-[#1a1a1a] mt-8">
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3">
+          ¿Listo para producir con tu nueva productora audiovisual?
+        </h2>
+        <p class="text-[#ccc]">Cuéntanos el objetivo y el formato de tu proyecto. Cotización detallada en 48 horas hábiles.</p>
+      </div>
+      <a
+        href="/contacto/"
+        class="shrink-0 inline-flex items-center bg-[#FF4500] text-white text-sm font-bold px-8 py-4 rounded-xl hover:bg-[#e03d00] transition-colors whitespace-nowrap"
+      >
+        Cotizar mi proyecto →
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .svc-process-step {
+    border-top: 2px solid #FF4500;
+    padding-top: 16px;
+  }
+
+  .svc-process-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FF4500;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+
+  .svc-process-title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 10px;
+  }
+
+  .svc-process-desc {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #555;
+    margin: 0;
+  }
+
+  .svc-benefit-num {
+    font-size: 40px;
+    font-weight: 900;
+    color: #FF4500;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .svc-case-card {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+
+  .svc-case-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: #FF4500;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .svc-case-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 22px;
+    font-weight: 300;
+    color: #999;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 0 20px 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  .article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .article-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .article-cta-btn:hover {
+    background: #333;
+  }
+
+  .article-cta-link {
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .article-cta-link:hover {
+    color: #1a1a1a;
+  }
+</style>

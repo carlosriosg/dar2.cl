@@ -253,6 +253,7 @@ El sitio no aparece bien posicionado en Google **no por el código** (que está 
 | :--- | :--- |
 | `KEYWORDS-Y-POSICIONAMIENTO.md` | Keyword research por servicio (cómo busca la gente cada uno) + diagnóstico de indexación |
 | `BACKLINKS-DIRECTORIOS.md` | Guía de link building: directorios priorizados + datos NAP exactos para citaciones |
+| `GEO-CITACION-IA.md` | Checklist de citación en IA (ChatGPT/Perplexity/AI Overviews): dónde conseguir menciones externas, plantillas de outreach y medición |
 | `FULL-AUDIT-REPORT.md` / `ACTION-PLAN.md` | Auditoría SEO completa (jun 2026) + plan priorizado |
 | `ESTRATEGIA-CONTENIDO-SEO.md` | Inteligencia competitiva + océanos azules + plan de contenido en 3 olas |
 | `AUDIT-DEEPSEEK.md` | Auditoría secundaria con hallazgos verificados contra código |
