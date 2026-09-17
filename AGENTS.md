@@ -25,16 +25,20 @@
 
 ### Scripts de procesamiento de imágenes (build-time, con `sharp`)
 
-Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **resize → optimize → cards**.
+Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **resize → optimize → cards → responsive**.
 
 | Comando | Acción |
 | :--- | :--- |
 | `npm run resize:images` | Reduce imágenes > 1200px a máx 1200px (in-place, vía archivo temporal) |
-| `npm run optimize:images` | Genera variantes **WebP + AVIF** de los PNG/JPG |
+| `npm run optimize:images` | Genera variantes **WebP + AVIF** de los PNG/JPG y cuantiza el fallback PNG a paleta |
 | `npm run generate:cards` | Genera versiones `-card` (730px) y `-card-sm` (365px) para srcset |
+| `npm run generate:responsive` | Genera variantes `-480`/`-800`/`-1200` para heroes (srcset responsive) |
+| `npm run generate:hashes` | Regenera `src/data/image-hashes.json` (cache busting `?v=<hash>`) |
 | `npm run generate:favicons` | Regenera favicons (cuadrado naranja #FF4500 + cámara, vía SVG inline) |
 | `npm run generate:og` | Genera la imagen Open Graph social |
 | `npm run generate:ico` | Genera `favicon.ico` (con `png-to-ico`) |
+
+> **Cache busting:** `npm run build` corre `generate-image-hashes.mjs` automáticamente antes de Astro. `Picture.astro` y `Base.astro` (preload del LCP) agregan `?v=<hash-de-contenido>` a cada URL de imagen, así que un cambio de bytes estrena URL e invalida Cloudflare y el navegador **sin purgar caché**. No hay que hacer nada manual al desplegar. Si editas imágenes en local, corre `npm run generate:hashes` para que `npm run dev` use hashes frescos (el JSON se commitea).
 
 ### Testing, Linting y Formateo
 

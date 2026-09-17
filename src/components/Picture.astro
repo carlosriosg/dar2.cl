@@ -1,6 +1,7 @@
 ---
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import imageHashes from '../data/image-hashes.json';
 
 const {
   src,
@@ -28,6 +29,15 @@ const base = raster ? stripExt(src) : src;
 const PUBLIC_DIR = join(process.cwd(), 'public');
 const exists = (url) => existsSync(join(PUBLIC_DIR, url));
 
+// Cache busting: agrega "?v=<hash>" segun el contenido del archivo
+// (scripts/generate-image-hashes.mjs). Una imagen que cambia estrena URL, asi
+// que invalida Cloudflare y el navegador sin purgas manuales; las que no
+// cambian conservan su cache de 1 ano. nginx ignora el query (try_files $uri).
+const versioned = (url) => {
+  const hash = imageHashes[url];
+  return hash ? `${url}?v=${hash}` : url;
+};
+
 // Variantes de hero: {base}-{w}.{ext} (scripts/generate-responsive-sizes.mjs).
 const HERO_WIDTHS = [480, 800, 1200];
 const heroWidths = raster ? HERO_WIDTHS.filter((w) => exists(`${base}-${w}.avif`)) : [];
@@ -37,27 +47,27 @@ const cardBase = base.replace(/-card$/i, '');
 const hasCardVariants =
   raster && /-card$/i.test(base) && exists(`${cardBase}-card-sm.avif`) && exists(`${cardBase}-card.avif`);
 
-let avifSrcset = raster ? `${base}.avif` : src;
-let webpSrcset = raster ? `${base}.webp` : src;
+let avifSrcset = raster ? versioned(`${base}.avif`) : versioned(src);
+let webpSrcset = raster ? versioned(`${base}.webp`) : versioned(src);
 let useSrcset = false;
 // Ancho por defecto para heroes a ancho completo (contenedor max 880px menos
 // padding). Se puede sobreescribir pasando `sizes` explicito.
 let resolvedSizes = sizes;
 
 if (heroWidths.length) {
-  avifSrcset = heroWidths.map((w) => `${base}-${w}.avif ${w}w`).join(', ');
-  webpSrcset = heroWidths.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
+  avifSrcset = heroWidths.map((w) => `${versioned(`${base}-${w}.avif`)} ${w}w`).join(', ');
+  webpSrcset = heroWidths.map((w) => `${versioned(`${base}-${w}.webp`)} ${w}w`).join(', ');
   useSrcset = true;
   if (!resolvedSizes) resolvedSizes = '(max-width: 928px) 92vw, 832px';
 } else if (responsive && hasCardVariants) {
-  avifSrcset = `${cardBase}-card-sm.avif 365w, ${cardBase}-card.avif 730w`;
-  webpSrcset = `${cardBase}-card-sm.webp 365w, ${cardBase}-card.webp 730w`;
+  avifSrcset = `${versioned(`${cardBase}-card-sm.avif`)} 365w, ${versioned(`${cardBase}-card.avif`)} 730w`;
+  webpSrcset = `${versioned(`${cardBase}-card-sm.webp`)} 365w, ${versioned(`${cardBase}-card.webp`)} 730w`;
   useSrcset = true;
 }
 
 // Construir atributos del img de forma uniforme. Astro filtra undefined.
 const imgAttrs = {
-  src,
+  src: versioned(src),
   alt,
   class: className,
   width,

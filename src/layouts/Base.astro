@@ -5,6 +5,9 @@ import ScrollToTop from '../components/ScrollToTop.astro';
 import '@fontsource-variable/inter/index.css';
 import '@fontsource-variable/inter/wght-italic.css';
 import '../styles/global.css';
+import imageHashes from '../data/image-hashes.json';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 // Imports de las 2 fuentes Inter latinas más usadas (normal + italic) para
 // preload. Astro/Vite resuelve el path con hash automáticamente. Reduce la
@@ -30,6 +33,24 @@ const isHome = Astro.url.pathname === '/';
 // se usan las OG genéricas de la marca.
 const ogImageURL = ogImage ? new URL(ogImage, Astro.site ?? 'https://dar2.cl').href : null;
 const ogImageType = ogImage ? (ogImage.endsWith('.png') ? 'image/png' : 'image/jpeg') : 'image/png';
+
+// Cache busting del preload del LCP: debe usar las MISMAS URLs versionadas que
+// el <picture> (Picture.astro), o el navegador precarga una URL y descarga
+// otra. Como los heroes tienen variantes -480/-800/-1200, el preload usa
+// imagesrcset para que el navegador baje la variante que corresponde a su
+// viewport, en vez de una URL fija.
+const versioned = (url) => {
+  const hash = imageHashes[url];
+  return hash ? `${url}?v=${hash}` : url;
+};
+const preloadBase = preloadImage ? preloadImage.replace(/\.(png|jpe?g|webp|avif)$/i, '') : null;
+const preloadWidths = preloadBase
+  ? [480, 800, 1200].filter((w) => existsSync(join(process.cwd(), 'public', `${preloadBase}-${w}.avif`)))
+  : [];
+const preloadSrcset = preloadWidths.length
+  ? preloadWidths.map((w) => `${versioned(`${preloadBase}-${w}.avif`)} ${w}w`).join(', ')
+  : null;
+const preloadHref = preloadImage ? versioned(preloadImage) : null;
 
 // Schema unificado: LocalBusiness + ProfessionalService bajo un mismo @id.
 // Enriquecido con knowsAbout, numberOfEmployees, contactPoint y
@@ -265,9 +286,11 @@ const breadcrumbSchema = breadcrumbs ? {
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <!-- Preload LCP image (cuando el page lo indica) -->
-    {preloadImage && (
-      <link rel="preload" as="image" href={preloadImage} type="image/webp" fetchpriority="high" />
-    )}
+    {preloadSrcset ? (
+      <link rel="preload" as="image" type="image/avif" imagesrcset={preloadSrcset} imagesizes="(max-width: 928px) 92vw, 832px" fetchpriority="high" />
+    ) : preloadHref ? (
+      <link rel="preload" as="image" href={preloadHref} type="image/webp" fetchpriority="high" />
+    ) : null}
 
     <!-- Preconnect hints para orígenes críticos de terceros -->
     <link rel="preconnect" href="https://w.behold.so" crossorigin />

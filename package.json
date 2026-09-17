@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/generate-image-hashes.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "generate:favicons": "node scripts/generate-favicons.mjs",
@@ -17,6 +17,7 @@
     "resize:images": "node scripts/resize-large-images.mjs",
     "generate:cards": "node scripts/generate-card-sizes.mjs",
     "generate:responsive": "node scripts/generate-responsive-sizes.mjs",
+    "generate:hashes": "node scripts/generate-image-hashes.mjs",
     "ping:sitemap": "node scripts/ping-indexnow.mjs",
     "indexnow:post": "node scripts/indexnow-post.mjs",
     "validate:schema": "node scripts/validate-schema.mjs",
