@@ -83,7 +83,7 @@ Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **re
   - **410 Gone** para spam legacy de WordPress (`/wp-*`) y del hackeo de Bluehost (`*.html`, `/products/`).
   - 301 `/sitemap.xml` y `/sitemap-manual.xml` → `/sitemap-index.xml` (el sitemap viejo redirige al automático).
   - Cache headers (1 año immutable para assets `_astro/` e imágenes).
-  - Security headers (HSTS, CSP, X-Frame-Options, etc.).
+  - Security headers (HSTS, CSP, X-Frame-Options, etc.) y `Content-Signal: search=yes, ai-train=no, ai-input=yes` (postura frente a crawlers de IA, coherente con `robots.txt` y `llms.txt`).
 
 ### Patrón de diseño
 

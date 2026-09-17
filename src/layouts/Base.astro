@@ -103,10 +103,15 @@ const organizationSchema = {
     "closes": "19:00"
   }],
   ...(isHome && {
+    // Debe coincidir con las reseñas realmente visibles y marcadas con
+    // Review en la home (index.astro: reviewSchemas). Google exige que el
+    // aggregateRating sea consistente con los Review marcados en la pagina;
+    // declarar 12 cuando solo hay 2 marcadas invalida el rich result.
+    // Si se publican mas testimonios reales en la home, subir este numero.
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": 5.0,
-      "reviewCount": 12,
+      "reviewCount": 2,
       "bestRating": 5,
       "worstRating": 1
     }
