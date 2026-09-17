@@ -65,9 +65,14 @@ if (heroWidths.length) {
   useSrcset = true;
 }
 
+// Fallback del <img>: WebP (universal desde 2020) en vez del PNG original, que
+// pesa 2-4x mas. El PNG sigue en el repo como fuente del pipeline y para las
+// URLs absolutas de schema.org / og:image, que deben quedar estables.
+const fallbackSrc = raster && exists(`${base}.webp`) ? `${base}.webp` : src;
+
 // Construir atributos del img de forma uniforme. Astro filtra undefined.
 const imgAttrs = {
-  src: versioned(src),
+  src: versioned(fallbackSrc),
   alt,
   class: className,
   width,
