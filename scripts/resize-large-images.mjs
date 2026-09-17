@@ -16,12 +16,16 @@ import { join } from 'node:path';
 // "imagen mas grande de lo necesario" para los cards de servicios
 // (580x433) y portafolio hero gallery (415x234).
 const MAX_WIDTH = 1200;
+// casos y podcast estaban fuera del pipeline: sus originales llegaban a 4000px
+// y generaban AVIF de 200-500KB que el movil descargaba completos.
 const FOLDERS = [
   'public/images/servicios',
   'public/images/portafolio',
   'public/images/galeria',
   'public/images/nosotros',
   'public/images/blog',
+  'public/images/casos',
+  'public/images/podcast',
 ];
 
 let processed = 0;
@@ -59,9 +63,12 @@ async function resize(srcPath) {
   const isJpg = /\.jpe?g$/i.test(srcPath);
   const tmpPath = srcPath + '.resized.tmp';
 
+  // `quality` solo aplica a JPEG. En PNG (lossless) sharp lo IGNORA: la
+  // compresion del fallback PNG la hace optimize-images.mjs (paleta) DESPUES
+  // de generar webp/avif, para no degradar los formatos modernos.
   await sharp(srcPath)
     .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-    [isJpg ? 'jpeg' : 'png']({ quality: 90 })
+    [isJpg ? 'jpeg' : 'png'](isJpg ? { quality: 90 } : { compressionLevel: 9 })
     .toFile(tmpPath);
 
   // Reemplaza el original (en Windows necesita borrar primero).

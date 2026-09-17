@@ -16,6 +16,7 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "resize:images": "node scripts/resize-large-images.mjs",
     "generate:cards": "node scripts/generate-card-sizes.mjs",
+    "generate:responsive": "node scripts/generate-responsive-sizes.mjs",
     "ping:sitemap": "node scripts/ping-indexnow.mjs",
     "indexnow:post": "node scripts/indexnow-post.mjs",
     "validate:schema": "node scripts/validate-schema.mjs",

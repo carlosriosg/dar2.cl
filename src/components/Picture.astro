@@ -1,4 +1,7 @@
 ---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
 const {
   src,
   alt = 'DAR2 — Producción audiovisual',
@@ -8,32 +11,47 @@ const {
   fetchpriority,
   loading,
   decoding,
-  // Si `responsive` es true y `src` apunta a un archivo "-card.{ext}",
-  // genera srcset con la version -card-sm (365w) y -card (730w).
-  // El navegador elige según DPI y `sizes`.
+  // `responsive`: activa el srcset de card (-card-sm 365w / -card 730w).
+  // El srcset de hero (-480/-800/-1200) se detecta solo, sin prop.
   responsive = false,
   sizes,
   ...rest
 } = Astro.props;
 
 const isLocal = typeof src === 'string' && src.startsWith('/');
-const avif = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.avif') : src;
-const webp = isLocal ? src.replace(/\.(png|jpe?g)$/i, '.webp') : src;
-const hasModern = isLocal && webp !== src;
+const raster = isLocal && /\.(png|jpe?g)$/i.test(src);
+const stripExt = (p) => p.replace(/\.(png|jpe?g)$/i, '');
+const base = raster ? stripExt(src) : src;
 
-// Si responsive y src termina en "-card.{ext}", deriva las URLs -sm.
-let avifSrcset = avif;
-let webpSrcset = webp;
+// Deteccion de variantes en build-time (SSG). Asi el <picture> nunca apunta a
+// un <source> que devuelva 404 (el navegador NO hace fallback en ese caso).
+const PUBLIC_DIR = join(process.cwd(), 'public');
+const exists = (url) => existsSync(join(PUBLIC_DIR, url));
+
+// Variantes de hero: {base}-{w}.{ext} (scripts/generate-responsive-sizes.mjs).
+const HERO_WIDTHS = [480, 800, 1200];
+const heroWidths = raster ? HERO_WIDTHS.filter((w) => exists(`${base}-${w}.avif`)) : [];
+
+// Variantes de card: {baseSinCard}-card-sm (365w) / {baseSinCard}-card (730w).
+const cardBase = base.replace(/-card$/i, '');
+const hasCardVariants =
+  raster && /-card$/i.test(base) && exists(`${cardBase}-card-sm.avif`) && exists(`${cardBase}-card.avif`);
+
+let avifSrcset = raster ? `${base}.avif` : src;
+let webpSrcset = raster ? `${base}.webp` : src;
 let useSrcset = false;
+// Ancho por defecto para heroes a ancho completo (contenedor max 880px menos
+// padding). Se puede sobreescribir pasando `sizes` explicito.
+let resolvedSizes = sizes;
 
-if (responsive && isLocal && /-card\.(png|jpe?g)$/i.test(src)) {
-  const baseAvif = src.replace(/\.(png|jpe?g)$/i, '');
-  const ext = 'avif';
-  const extWebp = 'webp';
-  // baseAvif termina en "-card", quitamos "-card" para insertar "-card-sm"
-  const baseWithoutCard = baseAvif.replace(/-card$/i, '');
-  avifSrcset = `${baseWithoutCard}-card-sm.${ext} 365w, ${baseWithoutCard}-card.${ext} 730w`;
-  webpSrcset = `${baseWithoutCard}-card-sm.${extWebp} 365w, ${baseWithoutCard}-card.${extWebp} 730w`;
+if (heroWidths.length) {
+  avifSrcset = heroWidths.map((w) => `${base}-${w}.avif ${w}w`).join(', ');
+  webpSrcset = heroWidths.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
+  useSrcset = true;
+  if (!resolvedSizes) resolvedSizes = '(max-width: 928px) 92vw, 832px';
+} else if (responsive && hasCardVariants) {
+  avifSrcset = `${cardBase}-card-sm.avif 365w, ${cardBase}-card.avif 730w`;
+  webpSrcset = `${cardBase}-card-sm.webp 365w, ${cardBase}-card.webp 730w`;
   useSrcset = true;
 }
 
@@ -47,15 +65,15 @@ const imgAttrs = {
   fetchpriority,
   loading,
   decoding,
-  ...(useSrcset && sizes ? { sizes } : {}),
+  ...(useSrcset && resolvedSizes ? { sizes: resolvedSizes } : {}),
   ...rest,
 };
 ---
 
-{hasModern ? (
+{raster ? (
   <picture>
-    <source srcset={avifSrcset} type="image/avif" sizes={useSrcset ? sizes : undefined} />
-    <source srcset={webpSrcset} type="image/webp" sizes={useSrcset ? sizes : undefined} />
+    <source srcset={avifSrcset} type="image/avif" sizes={useSrcset ? resolvedSizes : undefined} />
+    <source srcset={webpSrcset} type="image/webp" sizes={useSrcset ? resolvedSizes : undefined} />
     <img {...imgAttrs} />
   </picture>
 ) : (

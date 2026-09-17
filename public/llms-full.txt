@@ -1,7 +1,7 @@
 # DAR2 Servicios Audiovisuales — Full Content
 
 > Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
-> **Last updated:** 2026-09-03
+> **Last updated:** 2026-09-17
 > **Canonical:** https://dar2.cl/llms-full.txt
 > **Summary version:** https://dar2.cl/llms.txt
 

@@ -1,11 +1,14 @@
 import sharp from 'sharp';
-import { readdirSync, statSync, existsSync } from 'node:fs';
+import { readdirSync, statSync, existsSync, writeFileSync, utimesSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = 'public/images';
 const WEBP_QUALITY = 80;
 const AVIF_QUALITY = 60;
 const AVIF_EFFORT = 4;
+// Fallback PNG: solo se cuantiza a paleta si pesa mas que esto. Evita tocar
+// logos/iconos pequenos donde no vale la pena.
+const FALLBACK_MIN_BYTES = 80 * 1024;
 
 let totalSrc = 0;
 let totalWebp = 0;
@@ -14,6 +17,9 @@ let webpCreated = 0;
 let webpSkipped = 0;
 let avifCreated = 0;
 let avifSkipped = 0;
+let fallbackOptimized = 0;
+let fallbackBefore = 0;
+let fallbackAfter = 0;
 
 async function walk(dir) {
   for (const entry of readdirSync(dir)) {
@@ -61,6 +67,28 @@ async function optimize(srcPath) {
     console.log(`[avif] ${srcPath.padEnd(55)} ${(srcSize / 1024).toFixed(0).padStart(5)}KB → ${(avifSize / 1024).toFixed(0).padStart(5)}KB  (-${savedPct}%)`);
   }
   totalAvif += avifSize;
+
+  // ── Fallback PNG ──────────────────────────────────────────────────────
+  // Se cuantiza a paleta DESPUES de generar webp/avif, para que los formatos
+  // modernos conserven la calidad completa del original. Cuantizar antes
+  // hacia que el AVIF pesara el doble (el dither no comprime bien).
+  // El fallback PNG solo lo ven navegadores sin AVIF/WebP y algunos scrapers.
+  if (/\.png$/i.test(srcPath) && srcSize > FALLBACK_MIN_BYTES) {
+    const quantized = await sharp(srcPath)
+      .png({ palette: true, colours: 128, dither: 1, effort: 10, compressionLevel: 9 })
+      .toBuffer();
+    if (quantized.length < srcSize * 0.75) {
+      writeFileSync(srcPath, quantized);
+      // Restaurar mtime: si cambia, la proxima corrida regeneraria webp/avif
+      // desde el PNG ya cuantizado y perderia calidad.
+      utimesSync(srcPath, new Date(srcMtime), new Date(srcMtime));
+      fallbackOptimized++;
+      fallbackBefore += srcSize;
+      fallbackAfter += quantized.length;
+      const savedPct = (100 * (1 - quantized.length / srcSize)).toFixed(0);
+      console.log(`[png ] ${srcPath.padEnd(55)} ${(srcSize / 1024).toFixed(0).padStart(5)}KB → ${(quantized.length / 1024).toFixed(0).padStart(5)}KB  (-${savedPct}%)`);
+    }
+  }
 }
 
 console.log(`Optimizando imágenes en ${ROOT}/ → WebP (q=${WEBP_QUALITY}) + AVIF (q=${AVIF_QUALITY})\n`);
@@ -75,5 +103,7 @@ console.log(
   `(ahorro ${savedWebpMB}MB, -${webpPct}%)\n` +
   `AVIF: ${avifCreated} creadas, ${avifSkipped} ya existían. ` +
   `${(totalSrc / 1024 / 1024).toFixed(1)}MB → ${(totalAvif / 1024 / 1024).toFixed(1)}MB ` +
-  `(ahorro ${savedAvifMB}MB, -${avifPct}%)`
+  `(ahorro ${savedAvifMB}MB, -${avifPct}%)\n` +
+  `Fallback PNG (paleta): ${fallbackOptimized} cuantizados. ` +
+  `${(fallbackBefore / 1024 / 1024).toFixed(1)}MB → ${(fallbackAfter / 1024 / 1024).toFixed(1)}MB`
 );

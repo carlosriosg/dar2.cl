@@ -60,9 +60,12 @@ async function makeCards(srcPath) {
       continue;
     }
 
+    // `quality` solo aplica a JPEG; en PNG sharp lo ignora (lossless).
+    // La compresion del PNG fallback la hace optimize-images.mjs (paleta)
+    // despues de generar webp/avif, para no degradar los formatos modernos.
     await sharp(srcPath)
       .resize({ width, withoutEnlargement: true })
-      [isJpg ? 'jpeg' : 'png']({ quality: 85 })
+      [isJpg ? 'jpeg' : 'png'](isJpg ? { quality: 85 } : { compressionLevel: 9 })
       .toFile(outPath);
 
     const srcSize = statSync(srcPath).size;
