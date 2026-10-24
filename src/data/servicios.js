@@ -806,7 +806,7 @@ export const servicios = [
     ctaTitle: '¿Listo para producir tu video podcast?',
     featured: true,
     badgeText: 'NUEVO',
-    seoTitle: 'Productora de Podcast en Santiago | Video Podcast',
+    seoTitle: 'Productora de Podcast y Video Podcast en Santiago',
     seoDescription: 'Productora de podcast en Santiago: producimos video podcasts para marcas, empresas y creadores con calidad broadcast, en estudio o set móvil. Cotiza en 48h.',
     serviceType: 'Producción de podcast y video podcast en Santiago',
     relatedCases: [
