@@ -25,6 +25,9 @@ const contactPageSchema = {
   breadcrumbs={breadcrumbs}
 >
   <Fragment slot="head">
+    <!-- Preconnect al origen del mapa embebido (iframe lazy) para acortar
+         la conexion cuando el usuario hace scroll a la seccion de contacto. -->
+    <link rel="preconnect" href="https://maps.google.com" crossorigin />
     <script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
   </Fragment>
 
