@@ -47,7 +47,7 @@ resource "cloudflare_ruleset" "cache_html_dar2" {
         cache = true
         edge_ttl = {
           mode    = "override_origin"
-          default = 3600 # 1 hora de cache en el edge
+          default = 300 # 5 minutos de cache en el edge
         }
       }
     },

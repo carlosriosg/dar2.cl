@@ -22,7 +22,7 @@ En Cloudflare → **Caching → Cache Rules → Create rule**:
 | **Name** | `Cache HTML estático` |
 | **When incoming requests match** | `Hostname` equals `dar2.cl` **AND** `Request Method` equals `GET` **AND** `URI Path` does not contain `wp-` |
 | **Then → Cache eligibility** | `Eligible for cache` |
-| **Then → Edge TTL** | `1 hour` (subir a `4 hours` si el contenido no cambia seguido) |
+| **Then → Edge TTL** | `300 seconds` (5 minutos) |
 
 Opcional (recomendado): agregar una segunda condición `URI Path` does not
 contain `.well-known` para no cachear `security.txt` ni `llms.txt` por si se
@@ -123,7 +123,7 @@ curl.exe "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/rulesets/phases/ht
   --request PUT `
   --header "Authorization: Bearer $TOKEN" `
   --header "Content-Type: application/json" `
-  --data '{"rules":[{"expression":"(http.host eq \"dar2.cl\" and http.request.method eq \"GET\" and not http.request.uri.path contains \"wp-\" and not http.request.uri.path contains \"sitemap\")","description":"Cache HTML estatico dar2.cl","action":"set_cache_settings","action_parameters":{"cache":true,"edge_ttl":{"mode":"override_origin","default":3600}}}]}'
+  --data '{"rules":[{"expression":"(http.host eq \"dar2.cl\" and http.request.method eq \"GET\" and not http.request.uri.path contains \"wp-\" and not http.request.uri.path contains \"sitemap\")","description":"Cache HTML estatico dar2.cl","action":"set_cache_settings","action_parameters":{"cache":true,"edge_ttl":{"mode":"override_origin","default":300}}}]}'
 ```
 
 > **Si el expression editor rechaza `http.request.method`:** quitarlo y usar
@@ -132,3 +132,31 @@ curl.exe "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/rulesets/phases/ht
 > defecto, así que `POST /contacto/` no se cachearía igual.
 
 Referencias oficiales: [Cache Rules — Terraform example](https://developers.cloudflare.com/cache/how-to/cache-rules/terraform-example/) · [Create a cache rule via API](https://developers.cloudflare.com/cache/how-to/cache-rules/create-api/).
+
+---
+
+## 7. Purga de caché en cada deploy (no hace falta automatizar)
+
+Con el TTL de **5 minutos**, el contenido nuevo aparece solo en ≤5 min tras cada
+deploy, sin necesidad de Worker ni webhook: el HTML cacheado expira rápido y
+Cloudflare lo re-fetchea del origen (que ya sirve la versión nueva tras el
+redeploy de Coolify).
+
+Si en algún momento necesitas purgar **al instante** (ej. lanzamiento urgente),
+hazlo a mano desde el dashboard (**Caching → Purge Everything**) o con:
+
+```powershell
+$ZONE_ID = "TU_ZONE_ID"
+$TOKEN   = "TU_API_TOKEN"   # token con permiso "Zone > Cache Purge > Purge"
+
+curl.exe "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/purge_cache" `
+  --request POST `
+  --header "Authorization: Bearer $TOKEN" `
+  --header "Content-Type: application/json" `
+  --data '{"purge_everything":true}'
+```
+
+> Si más adelante quieres subir el TTL a 1h y purgar automáticamente en cada
+> deploy, se puede agregar un Worker de Cloudflare que intermedie el webhook de
+> Coolify (que no soporta cabeceras personalizadas). Lo dejamos fuera por
+> simplicidad.
