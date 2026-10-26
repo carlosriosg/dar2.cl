@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
+import CasosDestacados from '../../components/CasosDestacados.astro';
 import { servicios } from '../../data/servicios.js';
 
 const breadcrumbs = [
@@ -243,6 +244,10 @@ const faqJsonLd = {
       </details>
     </div>
   </section>
+
+  <!-- Casos reales: /servicios/ recibe enlaces de todo el sitio, así que
+       reparte autoridad hacia los casos (antes solo los enlazaba /casos/). -->
+  <CasosDestacados />
 
   <!-- CTA -->
   <section class="bg-[#1a1a1a]">

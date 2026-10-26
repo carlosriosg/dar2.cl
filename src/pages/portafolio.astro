@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import VideoCard from '../components/VideoCard.astro';
+import CasosDestacados from '../components/CasosDestacados.astro';
 import { getCollection } from 'astro:content';
 
 const breadcrumbs = [
@@ -103,5 +104,9 @@ const portafolioSchema = {
       <p class="text-muted text-lg">Pronto estaremos agregando nuestros proyectos aquí.</p>
     )}
   </section>
+
+  <!-- Casos de éxito: la página de portafolio era la más delgada del sitio
+       (solo la galería de videos) y recibe enlaces de todo el menú. -->
+  <CasosDestacados />
 
 </Base>
