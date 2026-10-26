@@ -1,0 +1,47 @@
+---
+// Bloque de casos de éxito reutilizable.
+//
+// - En /servicios/<slug>/ se usa con `servicio={s.slug}` para enlazar los casos
+//   reales de ese servicio (antes solo 3 de 9 servicios tenian casos enlazados).
+// - En /casos/<slug>/ se usa sin props: infiere el caso actual desde la URL y
+//   muestra 3 casos hermanos. Antes cada caso recibia 1-2 enlaces internos.
+import { casosDelServicio, casosRelacionados } from '../data/casos.js';
+
+const {
+  servicio = null,
+  eyebrow = 'Casos',
+  titulo = 'Casos de éxito.',
+  limite = 3,
+} = Astro.props;
+
+const slugActual = Astro.url.pathname.split('/').filter(Boolean).pop();
+const items = servicio
+  ? casosDelServicio(servicio, limite)
+  : casosRelacionados(slugActual, limite);
+
+// En las páginas de caso el artículo mide 880px; la sección se ajusta a ese
+// ancho para no romper la columna de lectura. En servicios va a ancho completo.
+const ancho = servicio ? 'max-w-7xl' : 'max-w-[900px]';
+---
+
+{items.length > 0 && (
+  <section class:list={[ancho, 'mx-auto px-6 py-20 border-t border-[#e5e5e5]']}>
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">{eyebrow}</p>
+    <h2 class="text-3xl font-black tracking-tight mb-10">{titulo}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {items.map((c) => (
+        <a
+          href={`/casos/${c.slug}/`}
+          class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors"
+        >
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-2">
+            {c.sector} · {c.year}
+          </p>
+          <h3 class="text-xl font-black tracking-tight mb-2">{c.title}</h3>
+          <p class="text-sm text-[#666] leading-relaxed">{c.excerpt}</p>
+          <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver caso →</p>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

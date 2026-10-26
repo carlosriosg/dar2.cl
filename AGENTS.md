@@ -4,7 +4,7 @@
 >
 > **Proyecto:** sitio web de **DAR2 Servicios Audiovisuales** — productora audiovisual B2B en Santiago de Chile (streaming, live shopping, video corporativo, estudio virtual, etc.).
 > **Sitio en producción:** https://dar2.cl/
-> **Última actualización del handover:** 2026-06-13
+> **Última actualización del handover:** 2026-10-25
 > **Idioma del proyecto:** español de Chile (es-CL). Todo el contenido, comentarios y nombres de dominio están en español.
 
 ---
@@ -44,7 +44,7 @@ Se corren manualmente cuando se agregan imágenes nuevas. Pipeline típico: **re
 
 > ⚠️ **NO hay framework de tests, ni ESLint, ni Prettier configurados.** No existen scripts `test`/`lint`/`format`.
 > - La única validación de tipos es vía `tsconfig.json` (`astro/tsconfigs/strict`). Para chequear tipos: `npm run astro -- check`.
-> - La "prueba" estándar antes de un commit es: **`npm run build`** debe completar sin errores (29 páginas generadas a la fecha).
+> - La "prueba" estándar antes de un commit es: **`npm run build`** debe completar sin errores (43 URLs + 404 = 44 páginas a la fecha).
 
 ### Despliegue (Deploy)
 
@@ -107,17 +107,21 @@ No es Clean Architecture ni MVC. Es el patrón idiomático de **Astro: content-d
 │   └── .well-known/security.txt
 │   # sitemap-index.xml + sitemap-0.xml se generan en build (@astrojs/sitemap), no viven en public/
 ├── src/
-│   ├── components/              # 7 componentes Astro
+│   ├── components/              # 9 componentes Astro
 │   │   ├── Nav.astro            # header sticky + menú mobile (aria-current)
 │   │   ├── Footer.astro         # footer 4 columnas + Instagram + WhatsApp
 │   │   ├── Picture.astro        # <picture> responsive AVIF/WebP/fallback (props: responsive, sizes)
 │   │   ├── VideoCard.astro      # card de video YouTube del portafolio
 │   │   ├── Reveal.astro         # animación scroll-reveal (prop: delay)
 │   │   ├── TTSPlayer.astro      # reproductor Text-to-Speech para blog posts
+│   │   ├── CasosDestacados.astro # casos del servicio / casos hermanos (data-driven)
+│   │   ├── BlogRelacionados.astro # "Sigue leyendo" al final de cada post
 │   │   └── ScrollToTop.astro
 │   ├── content/portafolio/*.md  # 20 proyectos del portafolio (content collection)
 │   ├── content.config.js        # Zod schema de la colección portafolio
 │   ├── data/servicios.js        # FUENTE DE VERDAD de los 8 servicios
+│   ├── data/casos.js            # FUENTE DE VERDAD de los 10 casos de éxito
+│   ├── data/blog.js             # FUENTE DE VERDAD de los 15 posts del blog
 │   ├── layouts/Base.astro       # layout único: <head> SEO, schema Org/WebSite, GTM, fonts, slots
 │   ├── pages/
 │   │   ├── index.astro          # home (hero, servicios, portafolio, clientes, cifras, Instagram)
@@ -127,8 +131,8 @@ No es Clean Architecture ni MVC. Es el patrón idiomático de **Astro: content-d
 │   │   ├── privacidad.astro
 │   │   ├── 404.astro            # única página con <meta robots noindex>
 │   │   ├── servicios/{index,[slug],filtros-ar}.astro
-│   │   ├── casos/{index, ...}.astro      # 2 casos de éxito detallados
-│   │   └── blog/{index, ...}.astro       # 9 blog posts (índice + artículos)
+│   │   ├── casos/{index, ...}.astro      # 10 casos de éxito detallados
+│   │   └── blog/{index, ...}.astro       # 15 blog posts (índice + artículos)
 │   └── styles/global.css
 ├── scripts/*.mjs                # 6 scripts de imágenes/favicons (sharp)
 ├── astro.config.mjs             # site=dar2.cl, inlineStylesheets:'always', integrations:[]
@@ -213,13 +217,14 @@ Trabajo reciente (todo desplegado en producción, `main`):
 - ✅ **Auditoría profunda (jun 2026):** fix de imágenes 404 en casos (.jpg→.png en schema + `<img>`), logo schema con dimensiones reales (400×118), `uploadDate` unificado vía `fechaVideo()`, 3 bylines de blog corregidos, 7 titles + 3 descriptions acortados a límite SERP.
 - ✅ **Blog post océano azul:** "¿Cuánto cuesta un live shopping en Chile?" — keyword transaccional sin competencia de productoras.
 - ✅ **Reposicionamiento Filtros AR:** Meta cerró Spark AR (14-ene-2025) → servicio + blog reescritos a **TikTok (Effect House) + Snapchat (Lens Studio)**. FAQ que captura "¿filtros de Instagram en 2026?".
-- ✅ **Sitemap automático:** migrado de manual a `@astrojs/sitemap` (siempre sincronizado, 29 URLs).
+- ✅ **Sitemap automático:** migrado de manual a `@astrojs/sitemap` (siempre sincronizado, 43 URLs).
 - ✅ **GTM eliminado:** era peso muerto sin uso (confirmado con el dueño) — gana performance.
 - ✅ **`live.dar2.cl` aclarado:** NO es spam, es la app de Live Shopping de Radio Futuro (cliente). El spam viejo ya da 404. NO eliminar.
+- ✅ **Enlazado interno (oct 2026):** `src/data/casos.js` + `CasosDestacados.astro` (cada servicio enlaza sus casos y cada caso enlaza 3 hermanos) y `src/data/blog.js` + `BlogRelacionados.astro` ("Sigue leyendo" en los 15 posts). Los casos pasaron de 1-2 a 3-18 enlaces internos entrantes; los posts, de 2-4 a 2-13.
 
 ### 4.2 Estado actual del código
 
-**El sitio está técnicamente completo y estable.** El on-page, schema, performance (CSS inline, imágenes AVIF, fonts preload) y técnico (canonicals, redirects, sitemap automático, robots) están en muy buen estado — mejor que la competencia directa. `npm run build` genera 29 páginas sin errores.
+**El sitio está técnicamente completo y estable.** El on-page, schema, performance (CSS inline, imágenes AVIF, fonts preload) y técnico (canonicals, redirects, sitemap automático, robots) están en muy buen estado — mejor que la competencia directa. `npm run build` genera 44 páginas sin errores (43 URLs + 404).
 
 ### 4.3 Deudas técnicas y errores conocidos (de CÓDIGO)
 
@@ -232,10 +237,10 @@ Trabajo reciente (todo desplegado en producción, `main`):
 
 ### 4.4 NO son bugs de código — SEO operativo (tareas del dueño del sitio)
 
-El sitio no aparece bien posicionado en Google **no por el código** (que está completo), sino por **falta de autoridad de dominio**. Estado en Search Console (2026-06): **15 páginas indexadas / 19 "rastreada: actualmente sin indexar"**. Eso = Google las leyó pero el dominio aún no le da confianza suficiente.
+El sitio no aparece bien posicionado en Google **no por el código** (que está completo), sino por **falta de autoridad de dominio**. Estado en Search Console (2026-10-25): el problema "Rastreada: actualmente sin indexar" se redujo a **6 URLs**, y solo 2 son de dar2.cl — ambas ya responden 301 (`/dar2/` desde el 2026-08-08 y `/servicios/filtros-ar` → versión con slash). Las otras 4 son de `live.dar2.cl` (2 fuentes `.woff2`, el `favicon.ico` y una ficha de producto).
 
-- ⏳ **Indexación pendiente** de ~19 páginas → se resuelve con autoridad (backlinks) + tiempo, NO con código.
-- ✅ **Subdominio `live.dar2.cl`** → NO es spam: es la app de Live Shopping de Radio Futuro (cliente). El spam viejo del hackeo ya da 404. **NO eliminar.** Opcional: retirar URLs viejas en GSC.
+- ⏳ **Indexación pendiente** → se resuelve con autoridad (backlinks) + tiempo, NO con código. **No volver a "Validar corrección"** en GSC para esta categoría: Google no indexa fuentes ni favicons, así que la validación nunca va a aprobar mientras `live.dar2.cl` los sirva.
+- ✅ **Subdominio `live.dar2.cl`** → NO es spam: es la app de Live Shopping de Radio Futuro (cliente), un Next.js aparte que **no** se sirve desde este repo. El spam viejo del hackeo ya da 404. **NO eliminar.** Su `robots.txt` devolvía 404 hasta oct-2026; el parche (robots.txt + `X-Robots-Tag: noindex` en assets + fichas de producto en noindex) vive en el repo hermano `live-shopping` y requiere deploy propio.
 - ⏳ **Reviews en Google:** 12 actuales → meta 40+.
 
 ### 4.5 Próximos pasos (Next Steps) inmediatos

@@ -29,6 +29,13 @@ const canonicalURL = customCanonical ?? new URL(Astro.url.pathname, Astro.site ?
 const fullTitle = title.includes('| DAR2') ? title : `${title} | DAR2`;
 const isHome = Astro.url.pathname === '/';
 
+// og:type correcto por sección: los artículos (blog y casos) deben declararse
+// como "article" para que LinkedIn/Facebook los traten como nota y no como
+// portada genérica. Las páginas de índice (/blog/, /casos/) siguen "website".
+const pathSinSlash = Astro.url.pathname.replace(/\/$/, '');
+const isArticle = /^\/(blog|casos)\/[^/]+$/.test(pathSinSlash);
+const ogType = isArticle ? 'article' : 'website';
+
 // OG image específica de la página (ej. hero de un blog post). Si no se pasa,
 // se usan las OG genéricas de la marca.
 const ogImageURL = ogImage ? new URL(ogImage, Astro.site ?? 'https://dar2.cl').href : null;
@@ -221,7 +228,7 @@ const breadcrumbSchema = breadcrumbs ? {
     <meta name="language" content="Spanish" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />

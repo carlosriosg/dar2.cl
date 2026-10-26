@@ -1,0 +1,115 @@
+---
+// "Sigue leyendo" al final de cada artículo.
+//
+// Infiere el post actual desde la URL y muestra 3 artículos: primero los de la
+// misma categoría, luego los más recientes. Antes cada post recibía solo 2-4
+// enlaces internos entrantes (índice + alguna página de servicio).
+import { articulosRelacionados } from '../data/blog.js';
+
+const slugActual = Astro.url.pathname.split('/').filter(Boolean).pop();
+const items = articulosRelacionados(slugActual, 3);
+---
+
+{items.length > 0 && (
+  <section class="blog-relacionados">
+    <p class="blog-relacionados-eyebrow">Blog</p>
+    <h2 class="blog-relacionados-title">Sigue leyendo.</h2>
+    <ul class="blog-relacionados-list">
+      {items.map((a) => (
+        <li>
+          <a href={`/blog/${a.slug}/`} class="blog-relacionados-link">
+            <span class="blog-relacionados-h">{a.title}</span>
+            <span class="blog-relacionados-meta">{a.category} · {a.readTime}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/blog/" class="blog-relacionados-all">Ver todos los artículos →</a>
+  </section>
+)}
+
+<style>
+  .blog-relacionados {
+    max-width: 832px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  .blog-relacionados-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 10px;
+  }
+
+  .blog-relacionados-title {
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    margin: 0 0 24px;
+  }
+
+  .blog-relacionados-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .blog-relacionados-list li {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .blog-relacionados-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-relacionados-h {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+  }
+
+  .blog-relacionados-link:hover .blog-relacionados-h {
+    color: #FF4500;
+  }
+
+  .blog-relacionados-meta {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    white-space: nowrap;
+  }
+
+  .blog-relacionados-all {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF4500;
+    text-decoration: none;
+  }
+
+  .blog-relacionados-all:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 560px) {
+    .blog-relacionados-link {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>

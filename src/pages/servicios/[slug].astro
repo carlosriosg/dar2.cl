@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import VideoCard from '../../components/VideoCard.astro';
 import Picture from '../../components/Picture.astro';
+import CasosDestacados from '../../components/CasosDestacados.astro';
 import { servicios } from '../../data/servicios.js';
 import { getCollection } from 'astro:content';
 
@@ -327,6 +328,11 @@ const serviciosRelacionados = relacionadosSlugs
     </section>
   )}
 
+  <!-- Casos de éxito: propios del servicio primero, luego los más recientes.
+       Antes solo 3 de los 9 servicios enlazaban casos (relatedCases manual),
+       así que 7 casos quedaban con 1-2 enlaces internos entrantes. -->
+  <CasosDestacados servicio={s.slug} />
+
   <!-- Servicios relacionados -->
   {serviciosRelacionados.length > 0 && (
     <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
@@ -344,17 +350,6 @@ const serviciosRelacionados = relacionadosSlugs
             <h3 class="text-xl font-black tracking-tight mb-2">{rel.title}</h3>
             <p class="text-sm text-[#666] leading-relaxed">{rel.shortDesc}</p>
             <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver servicio →</p>
-          </a>
-        ))}
-        {s.relatedCases?.map(c => (
-          <a
-            href={c.url}
-            class="block p-6 border border-[#FF4500] rounded-xl hover:border-[#1a1a1a] transition-colors"
-          >
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#FF4500] mb-2">Caso de éxito</p>
-            <h3 class="text-xl font-black tracking-tight mb-2">{c.title}</h3>
-            <p class="text-sm text-[#666] leading-relaxed">{c.excerpt}</p>
-            <p class="text-sm font-semibold text-[#FF4500] mt-4">Ver caso →</p>
           </a>
         ))}
       </div>
