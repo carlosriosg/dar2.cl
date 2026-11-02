@@ -267,3 +267,12 @@
   color: #666;
   margin-top: 12px;
 }
+
+/* ── Foco visible (WCAG 2.4.7) ─────────────────────── */
+/* Los inputs usan `outline-none` y solo cambiaban el color del borde al
+   enfocarse: un anillo explícito garantiza un indicador visible también en
+   navegación por teclado, sin mover el layout (outline no ocupa espacio). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid #FF4500;
+  outline-offset: 2px;
+}

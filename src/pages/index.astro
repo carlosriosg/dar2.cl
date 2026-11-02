@@ -531,7 +531,7 @@ const reviewSchemas = [
           <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">CM</div>
           <div>
             <p class="text-sm font-semibold text-[#1a1a1a]">Claudio Martínez</p>
-            <p class="text-xs text-[#999]">Google Review</p>
+            <p class="text-xs text-[#666]">Google Review</p>
           </div>
         </div>
       </div>
@@ -550,7 +550,7 @@ const reviewSchemas = [
           <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">AS</div>
           <div>
             <p class="text-sm font-semibold text-[#1a1a1a]">Andrés Sepúlveda</p>
-            <p class="text-xs text-[#999]">Google Review</p>
+            <p class="text-xs text-[#666]">Google Review</p>
           </div>
         </div>
       </div>
@@ -569,7 +569,7 @@ const reviewSchemas = [
           <div class="w-9 h-9 rounded-full bg-[#FF4500]/10 flex items-center justify-center text-[#FF4500] text-sm font-bold shrink-0">GC</div>
           <div>
             <p class="text-sm font-semibold text-[#1a1a1a]">Gerente de Comunicaciones</p>
-            <p class="text-xs text-[#999]">Retail multinacional, Chile</p>
+            <p class="text-xs text-[#666]">Retail multinacional, Chile</p>
           </div>
         </div>
       </div>
@@ -845,8 +845,45 @@ const reviewSchemas = [
     </div>
   </section>
 
-  <!-- Behold.so widget loader (auto-actualiza el feed de Instagram) -->
-  <script type="module" src="https://w.behold.so/widget.js" defer></script>
+  <!-- Behold.so loader DIFERIDO: el script de terceros y el feed (imagenes
+       desde cdninstagram.com) ya no entran al camino critico; se piden recien
+       cuando la seccion esta a ~800px de entrar en pantalla. El wrapper
+       reserva 600px de alto, asi que no hay CLS al inyectarse. -->
+  <script>
+    function initBeholdLazy() {
+      const wrap = document.querySelector('.ig-widget-wrap') as HTMLElement | null;
+      if (!wrap || wrap.dataset.beholdCargado === '1') return;
+
+      const cargar = () => {
+        if (wrap.dataset.beholdCargado === '1') return;
+        wrap.dataset.beholdCargado = '1';
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://w.behold.so/widget.js';
+        document.head.appendChild(script);
+      };
+
+      if (!('IntersectionObserver' in window)) {
+        cargar();
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            cargar();
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '800px 0px' }
+      );
+
+      observer.observe(wrap);
+    }
+
+    document.addEventListener('astro:page-load', initBeholdLazy);
+    initBeholdLazy();
+  </script>
 
   <!-- Hero gallery pool (fuente unica del frontmatter; el script lo parsea). -->
   <script type="application/json" id="hero-pool-data" set:html={JSON.stringify(heroPool)}></script>

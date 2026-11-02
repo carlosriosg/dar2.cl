@@ -2,6 +2,21 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { articulos } from './src/data/blog.js';
+
+// lastmod por URL: Google lo usa para priorizar recrawls. Se toma la fecha real
+// del contenido (no "ahora", que seria una senal falsa): `date` de los posts del
+// blog y el `dateModified` que cada pagina de caso ya declara en su schema.
+const lastmodBlog = new Map(articulos.map((a) => [`/blog/${a.slug}/`, a.date]));
+const lastmodCaso = new Map();
+for (const archivo of readdirSync(join('src', 'pages', 'casos'))) {
+  if (!archivo.endsWith('.astro') || archivo === 'index.astro') continue;
+  const texto = readFileSync(join('src', 'pages', 'casos', archivo), 'utf8');
+  const fecha = texto.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})"/)?.[1];
+  if (fecha) lastmodCaso.set(`/casos/${archivo.replace(/\.astro$/, '')}/`, fecha);
+}
 
 // Sitemap automatico: @astrojs/sitemap genera sitemap-index.xml +
 // sitemap-0.xml en cada build, incluyendo TODAS las paginas. Reemplaza
@@ -25,6 +40,13 @@ export default defineConfig({
         } catch {
           return false;
         }
+      },
+      // lastmod real solo donde hay fecha de contenido (blog y casos). El resto
+      // de las paginas se emite sin lastmod, que es mejor que inventarla.
+      serialize: (item) => {
+        const path = new URL(item.url).pathname;
+        const fecha = lastmodBlog.get(path) ?? lastmodCaso.get(path);
+        return fecha ? { ...item, lastmod: `${fecha}T00:00:00.000Z` } : item;
       },
     }),
   ],

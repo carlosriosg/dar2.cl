@@ -8,6 +8,7 @@ import '../styles/global.css';
 import imageHashes from '../data/image-hashes.json';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 
 // Imports de las 2 fuentes Inter latinas más usadas (normal + italic) para
 // preload. Astro/Vite resuelve el path con hash automáticamente. Reduce la
@@ -36,10 +37,28 @@ const pathSinSlash = Astro.url.pathname.replace(/\/$/, '');
 const isArticle = /^\/(blog|casos)\/[^/]+$/.test(pathSinSlash);
 const ogType = isArticle ? 'article' : 'website';
 
-// OG image específica de la página (ej. hero de un blog post). Si no se pasa,
-// se usan las OG genéricas de la marca.
+// OG image específica de la página (ej. hero de un post, de un servicio o de un
+// caso). Si no se pasa, se usan las OG genéricas de la marca.
 const ogImageURL = ogImage ? new URL(ogImage, Astro.site ?? 'https://dar2.cl').href : null;
 const ogImageType = ogImage ? (ogImage.endsWith('.png') ? 'image/png' : 'image/jpeg') : 'image/png';
+
+// Dimensiones REALES de la OG (antes se declaraban 1200x675 a mano, pero los
+// heroes miden 1200x670 en blog, 1200x721 en casos y 630 en las OG generadas):
+// declarar medidas falsas hace que LinkedIn/Facebook recorten o descarten la
+// imagen. Se leen con sharp en build-time y, si no se puede, cae al estandar.
+let ogImageWidth = 1200;
+let ogImageHeight = 630;
+if (ogImage) {
+  try {
+    const meta = await sharp(join(process.cwd(), 'public', ogImage)).metadata();
+    if (meta.width && meta.height) {
+      ogImageWidth = meta.width;
+      ogImageHeight = meta.height;
+    }
+  } catch {
+    // La imagen todavía no existe: se mantiene el tamaño OG estándar.
+  }
+}
 
 // Cache busting del preload del LCP: debe usar las MISMAS URLs versionadas que
 // el <picture> (Picture.astro), o el navegador precarga una URL y descarga
@@ -254,40 +273,46 @@ const breadcrumbSchema = breadcrumbs ? {
     <meta property="og:locale" content="es_CL" />
     <meta property="og:site_name" content="DAR2" />
 
-    <!-- OG Image específica de la página (hero del post) — tiene prioridad en el compartir -->
+    <!-- OG Image específica de la página (hero del post / servicio / caso) -->
     {ogImageURL && (
       <>
         <meta property="og:image" content={ogImageURL} />
         <meta property="og:image:secure_url" content={ogImageURL} />
         <meta property="og:image:type" content={ogImageType} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="675" />
+        <meta property="og:image:width" content={String(ogImageWidth)} />
+        <meta property="og:image:height" content={String(ogImageHeight)} />
         <meta property="og:image:alt" content={fullTitle} />
       </>
     )}
 
-    <!-- OG Image principal: cuadrada 1200x1200 (WhatsApp toma la primera que encuentra) -->
-    <meta property="og:image" content="https://dar2.cl/og-square.png" />
-    <meta property="og:image:secure_url" content="https://dar2.cl/og-square.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
-    <meta property="og:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile — Streaming, Live Shopping y más" />
+    <!-- Fallback: OG genéricas de la marca (solo si la página no trae la suya,
+         para no declarar 3 og:image y que el crawler elija la equivocada) -->
+    {!ogImageURL && (
+      <>
+        <!-- Cuadrada 1200x1200 (WhatsApp toma la primera que encuentra) -->
+        <meta property="og:image" content="https://dar2.cl/og-square.png" />
+        <meta property="og:image:secure_url" content="https://dar2.cl/og-square.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile — Streaming, Live Shopping y más" />
 
-    <!-- OG Image secundaria: rectangular 1200x630 (Facebook / LinkedIn eligen la mejor según contexto) -->
-    <meta property="og:image" content="https://dar2.cl/og-rect.png" />
-    <meta property="og:image:secure_url" content="https://dar2.cl/og-rect.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="DAR2 — Streaming, live shopping y más" />
+        <!-- Rectangular 1200x630 (Facebook / LinkedIn) -->
+        <meta property="og:image" content="https://dar2.cl/og-rect.png" />
+        <meta property="og:image:secure_url" content="https://dar2.cl/og-rect.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="DAR2 — Streaming, live shopping y más" />
+      </>
+    )}
 
     <!-- Twitter / X (usa card grande con imagen rectangular) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://dar2.cl/og-rect.png" />
-    <meta name="twitter:image:alt" content="DAR2 — Productora audiovisual en Santiago de Chile" />
+    <meta name="twitter:image" content={ogImageURL ?? 'https://dar2.cl/og-rect.png'} />
+    <meta name="twitter:image:alt" content={ogImageURL ? fullTitle : 'DAR2 — Productora audiovisual en Santiago de Chile'} />
 
     <!-- Schema.org: Organization (LocalBusiness + ProfessionalService unificados) -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
@@ -357,9 +382,11 @@ const breadcrumbSchema = breadcrumbs ? {
     <slot name="head" />
   </head>
   <body>
+    <!-- Skip link (WCAG 2.4.1): primer elemento enfocable del documento. -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <Nav />
-    <main>
+    <main id="contenido" tabindex="-1">
       <slot />
     </main>
     <Footer />
@@ -449,6 +476,36 @@ const breadcrumbSchema = breadcrumbs ? {
     </a>
 
     <style>
+      /* ── Skip link (WCAG 2.4.1) ──────────────────────── */
+      /* Fuera de pantalla hasta que recibe foco por teclado. */
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 16px;
+        z-index: 9999;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        background: #1a1a1a;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 0 0 12px 12px;
+        text-decoration: none;
+        transition: top 0.15s ease;
+      }
+
+      .skip-link:focus,
+      .skip-link:focus-visible {
+        top: 0;
+        color: #fff;
+      }
+
+      /* Al saltar al contenido no queremos el anillo de foco en el <main>. */
+      #contenido:focus {
+        outline: none;
+      }
+
       /* ── WhatsApp Floating Button ────────────────────── */
       .whatsapp-float {
         position: fixed;
