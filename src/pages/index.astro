@@ -164,25 +164,10 @@ const clienteUrls: Record<string, string> = {
   'udp.png': 'https://www.udp.cl',
 };
 
-// Review schema para testimonios con nombres reales (Google Reviews publicas)
-const reviewSchemas = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": { "@type": "Organization", "@id": "https://dar2.cl/#organization", "name": "DAR2 Servicios Audiovisuales" },
-    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-    "author": { "@type": "Person", "name": "Claudio Martínez" },
-    "reviewBody": "Excelente servicio, muy profesionales, cumplieron con todo lo prometido y más. Muy recomendables para eventos corporativos y streaming en vivo."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": { "@type": "Organization", "@id": "https://dar2.cl/#organization", "name": "DAR2 Servicios Audiovisuales" },
-    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-    "author": { "@type": "Person", "name": "Andrés Sepúlveda" },
-    "reviewBody": "Muy contento con el trabajo realizado. Producción impecable, equipo muy profesional y resultados de alta calidad. Sin duda volveremos a trabajar con ellos."
-  }
-];
+// Los testimonios visibles NO se marcan con Review: Google no emite rich
+// results de reseñas que el propio negocio publica en su web (self-serving) y
+// el informe de "Fragmentos de reseña" las reporta como no válidas. Las
+// reseñas reales están en Google Business Profile (ver bloque de testimonios).
 ---
 
 <Base
@@ -192,9 +177,6 @@ const reviewSchemas = [
 >
   <Fragment slot="head">
     {videoSchemas.map(schema => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))}
-    {reviewSchemas.map(schema => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
   </Fragment>

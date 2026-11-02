@@ -170,7 +170,7 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping Chile | Producción Audiovisual y Streaming | DAR2',
+    seoTitle: 'Live Shopping Chile | Producción Audiovisual | DAR2',
     seoDescription: 'Live shopping Chile con producción audiovisual y streaming: conducción, multicámara, integración con tu e-commerce y métricas. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [

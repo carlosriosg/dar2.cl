@@ -12,7 +12,9 @@ import { servicios } from '../src/data/servicios.js';
 import { casos } from '../src/data/casos.js';
 
 const PUBLIC = join(process.cwd(), 'public');
-const SALIDA = join(PUBLIC, 'images', 'og');
+// public/og (no public/images/og): los scripts de optimize/cards/hashes recorren
+// public/images, y estas OG no necesitan WebP/AVIF ni cache busting.
+const SALIDA = join(PUBLIC, 'og');
 const ANCHO = 1200;
 const ALTO = 630;
 

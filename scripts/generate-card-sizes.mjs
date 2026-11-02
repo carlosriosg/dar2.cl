@@ -34,6 +34,10 @@ async function walk(dir) {
     // Solo procesa originales (jpg/png que NO tienen -card o -card-sm en el nombre)
     if (!/\.(png|jpe?g)$/i.test(entry)) continue;
     if (/-card(-sm)?\.(png|jpe?g)$/i.test(entry)) continue;
+    // Tampoco las variantes de ancho (-480/-800/-1200): generaban -480-card y
+    // similares, archivos que Picture.astro no referencia (arma su srcset desde
+    // el original), asi que solo ensuciaban el repo.
+    if (/-\d{3,4}\.(png|jpe?g)$/i.test(entry)) continue;
     try {
       await makeCards(fullPath);
     } catch (e) {
