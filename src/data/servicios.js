@@ -5,7 +5,7 @@ export const servicios = [
     title: 'Streaming',
     shortDesc: 'Transmisión en vivo con enlaces punto a punto.',
     heroEyebrow: 'PRODUCTORA DE STREAMING EN SANTIAGO',
-    tagline: 'Streaming corporativo profesional <em class="hl">sin dolores de cabeza.</em>',
+    tagline: 'Streaming para Eventos Corporativos en Santiago <em class="hl">sin dolores de cabeza.</em>',
     description:
       'Producimos streaming de eventos para juntas anuales, lanzamientos, seminarios y eventos híbridos. ' +
       'Servicio de streaming con multicámara, switcher profesional y enlaces redundantes para que nada falle en vivo.',
@@ -56,8 +56,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Tienes un evento en puerta?',
     featured: false,
-    seoTitle: 'Productora de streaming corporativo en Santiago',
-    seoDescription: 'Productora de streaming en Santiago. Multicámara, enlace redundante y transmisión en vivo para juntas, lanzamientos y seminarios. Cotiza en 48h.',
+    seoTitle: 'Streaming para Eventos Corporativos en Santiago | DAR2',
+    seoDescription: 'Streaming para eventos corporativos en Santiago: multicámara, enlace redundante y transmisión en vivo sin caídas. Cotiza tu evento en 48h.',
     relatedCases: [
       {
         title: 'Circuito Cerrado Multicámara · La Mar Cebichería',
@@ -119,7 +119,7 @@ export const servicios = [
     title: 'Live Shopping',
     shortDesc: 'Venta en vivo con conversión medible.',
     heroEyebrow: 'LIVE SHOPPING',
-    tagline: 'Ventas en vivo <em class="hl">que convierten.</em>',
+    tagline: 'Live Shopping Chile: <em class="hl">ventas en vivo que convierten.</em>',
     description:
       'Live stream shopping y ventas en vivo en Chile, integradas a tu e-commerce. Conducción profesional, productos en pantalla ' +
       'y métricas reales de conversión. Retail, farmacias y supermercados ya están acá.',
@@ -170,8 +170,8 @@ export const servicios = [
     ],
     ctaTitle: '¿Listo para vender en vivo?',
     featured: true,
-    seoTitle: 'Live Shopping en Santiago: venta en vivo para retail',
-    seoDescription: 'Live shopping en Chile con conversión real: conducción, multicámara, integración con e-commerce y métricas. Producción end-to-end. Cotiza en 48h.',
+    seoTitle: 'Live Shopping Chile | Producción Audiovisual y Streaming | DAR2',
+    seoDescription: 'Live shopping Chile con producción audiovisual y streaming: conducción, multicámara, integración con tu e-commerce y métricas. Cotiza en 48h.',
     serviceType: 'Live Shopping y comercio en vivo',
     faqs: [
       {

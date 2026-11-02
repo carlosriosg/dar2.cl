@@ -2,7 +2,7 @@
 
 > Productora audiovisual B2B en Santiago de Chile. 15+ años de experiencia, equipo propio de 8 profesionales y estudios de grabación coordinados según el requerimiento. Especialistas en streaming corporativo, live shopping, videos corporativos, estudio virtual, multicámara para eventos y filtros AR. Más de 40 marcas cliente incluyendo Cencosud, ENAP, MetLife, Codelco, Banco de Chile, Clínica Santa María, CMPC, Nestlé.
 
-> **Last updated:** 2026-10-25
+> **Last updated:** 2026-11-01
 > **Canonical:** https://dar2.cl/llms.txt
 > **Full version:** https://dar2.cl/llms-full.txt
 
@@ -58,11 +58,12 @@ A productora audiovisual in Chile is a company that plans, produces and edits vi
 
 ## Core services
 
-### 01 — Streaming Corporativo
+### 01 — Streaming para Eventos Corporativos
 **URL:** https://dar2.cl/servicios/streaming/
-**Keywords:** productora streaming, streaming corporativo, transmisión de eventos en vivo, streaming para empresas, servicio de streaming santiago
+**Page title:** Streaming para Eventos Corporativos en Santiago | DAR2
+**Keywords:** streaming para eventos corporativos, productora streaming, streaming corporativo, transmisión de eventos en vivo, streaming para empresas, servicio de streaming santiago
 
-Multi-camera live streaming for corporate events. Broadcast-quality production with redundant point-to-point links, professional audio mixing, animated corporate graphics, and platform integration.
+Streaming para eventos corporativos en Santiago de Chile: multi-camera live streaming with broadcast-quality production, redundant point-to-point links, professional audio mixing, animated corporate graphics, and platform integration.
 
 - **Use cases:** Annual shareholder meetings, product launches, corporate seminars, mass training (5,000+ attendees), hybrid events
 - **Platforms:** Zoom Webinar, Microsoft Teams Live Events, YouTube Live, Vimeo, LinkedIn Live, RTMP custom
@@ -73,9 +74,10 @@ Multi-camera live streaming for corporate events. Broadcast-quality production w
 
 ### 02 — Live Shopping
 **URL:** https://dar2.cl/servicios/live-shopping/
+**Page title:** Live Shopping Chile | Producción Audiovisual y Streaming | DAR2
 **Keywords:** live shopping chile, productora live shopping, venta en vivo retail, cómo implementar live shopping
 
-End-to-end live shopping production integrated with e-commerce platforms. Combines live TV-style production with real-time sales conversion.
+Live Shopping Chile end-to-end production integrated with e-commerce platforms. Combines live TV-style production with real-time sales conversion.
 
 - **Use cases:** Retail product launches, flash sales, supermarket/pharmacy live demos, brand activations
 - **Includes:** Host/talent direction, multi-camera, real-time graphic overlays with prices/offers, e-commerce integration

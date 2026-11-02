@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import VideoCard from '../../components/VideoCard.astro';
 import Picture from '../../components/Picture.astro';
 import CasosDestacados from '../../components/CasosDestacados.astro';
+import EnlacesInternos from '../../components/EnlacesInternos.astro';
 import { servicios } from '../../data/servicios.js';
 import { getCollection } from 'astro:content';
 
@@ -70,18 +71,10 @@ const breadcrumbs = [
   { name: s.title, url: `https://dar2.cl/servicios/${s.slug}/` },
 ];
 
-// Cross-linking: blog posts relacionados por servicio (mejora enlaces internos + SEO).
-const blogPorServicio = {
-  'streaming': [{ slug: 'streaming-corporativo-santiago-guia-completa', title: 'Streaming corporativo en Santiago: guía completa' }, { slug: 'transmitir-junta-anual-sin-caidas', title: 'Transmitir junta anual sin caídas' }, { slug: 'cuanto-cuesta-streaming-corporativo-chile', title: 'Streaming: factores que determinan la inversión' }],
-  'live-shopping': [{ slug: 'que-es-live-shopping-chile', title: 'Qué es Live Shopping en Chile' }, { slug: 'cuanto-cuesta-live-shopping-chile', title: '¿Cuánto cuesta un live shopping?' }],
-  'circuito-cerrado': [{ slug: 'circuito-cerrado-vs-streaming', title: 'Circuito cerrado vs streaming' }],
-  'estudio-virtual': [{ slug: 'estudio-virtual-vs-set-fisico', title: 'Estudio virtual vs set físico' }],
-  'videos-corporativos': [{ slug: 'cuanto-cuesta-video-corporativo-chile', title: '¿Cuánto cuesta un video corporativo en Chile?' }, { slug: 'medir-roi-video-corporativo', title: 'Cómo medir el ROI de un video corporativo' }, { slug: 'produccion-video-corporativo-paso-a-paso', title: 'Producción de video corporativo paso a paso' }],
-  'podcast': [{ slug: 'video-podcast-corporativo-que-es', title: 'Video podcast corporativo: qué es y cómo se produce' }, { slug: 'producir-podcast-profesional-santiago', title: 'Cómo producir un podcast profesional en Santiago' }],
-  'estrategias-digitales': [{ slug: 'contenido-linkedin-ejecutivos', title: 'Contenido para LinkedIn de ejecutivos' }, { slug: 'como-elegir-productora-audiovisual-santiago', title: 'Cómo elegir una productora audiovisual en Santiago' }],
-  'redes-sociales': [{ slug: 'contenido-linkedin-ejecutivos', title: 'Contenido para LinkedIn de ejecutivos' }, { slug: 'filtros-ar-marca-instagram-tiktok', title: 'Filtros AR para marca en Instagram y TikTok' }],
-};
-const blogPostsRelacionados = blogPorServicio[s.slug] ?? [];
+// Cross-linking: los enlaces internos del final de cada servicio (guías de
+// blog + casos + portafolio, con anchors descriptivos) viven en
+// src/data/enlaces-internos.js y se pintan con <EnlacesInternos />.
+// Antes había acá un mapa blogPorServicio con un bloque "Leer artículo →".
 
 // Cross-linking: 3 servicios relacionados por cada uno (mejora crawl depth + SEO).
 const relacionadosMap = {
@@ -307,27 +300,6 @@ const serviciosRelacionados = relacionadosSlugs
     </section>
   )}
 
-  <!-- Blog posts relacionados -->
-  {blogPostsRelacionados.length > 0 && (
-    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]">
-      <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Blog</p>
-      <h2 class="text-3xl font-black tracking-tight mb-10">
-        Artículos relacionados.
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPostsRelacionados.map(post => (
-          <a
-            href={`/blog/${post.slug}/`}
-            class="block p-6 border border-[#e5e5e5] rounded-xl hover:border-[#1a1a1a] transition-colors"
-          >
-            <h3 class="text-xl font-black tracking-tight mb-2">{post.title}</h3>
-            <p class="text-sm font-semibold text-[#FF4500] mt-4">Leer artículo →</p>
-          </a>
-        ))}
-      </div>
-    </section>
-  )}
-
   <!-- Casos de éxito: propios del servicio primero, luego los más recientes.
        Antes solo 3 de los 9 servicios enlazaban casos (relatedCases manual),
        así que 7 casos quedaban con 1-2 enlaces internos entrantes. -->
@@ -355,6 +327,10 @@ const serviciosRelacionados = relacionadosSlugs
       </div>
     </section>
   )}
+
+  <!-- Enlazado interno: guías de blog + casos + portafolio con anchors
+       descriptivos (data en src/data/enlaces-internos.js). -->
+  <EnlacesInternos slug={s.slug} />
 
   <!-- CTA final -->
   <section class="bg-[#1a1a1a] mt-8">

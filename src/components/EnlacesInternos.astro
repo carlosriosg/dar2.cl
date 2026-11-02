@@ -1,0 +1,175 @@
+---
+// Bloque de enlazado interno al final de cada página de servicio.
+//
+// Reemplaza al antiguo "Artículos relacionados" (que usaba el título del post
+// como anchor y un CTA repetido "Leer artículo →"). Acá cada anchor describe
+// el destino con variaciones de la keyword del servicio, y se mezclan guías de
+// blog con casos de éxito y portafolio, que es lo que Google usa para entender
+// la relación temática entre las páginas.
+//
+// Los datos viven en src/data/enlaces-internos.js (fuente de verdad).
+import { enlacesInternos } from '../data/enlaces-internos.js';
+
+interface PropsEnlace {
+  href: string;
+  anchor: string;
+  meta?: string;
+}
+
+interface PropsGrupo {
+  titulo: string;
+  items: PropsEnlace[];
+}
+
+interface PropsBloque {
+  titulo: string;
+  intro?: string;
+  grupos: PropsGrupo[];
+}
+
+const { slug } = Astro.props as { slug: string };
+const mapa = enlacesInternos as Record<string, PropsBloque | undefined>;
+const bloque = mapa[slug];
+const grupos = bloque?.grupos ?? [];
+const totalEnlaces = grupos.reduce((total, grupo) => total + grupo.items.length, 0);
+---
+
+{bloque && totalEnlaces > 0 && (
+  <section
+    class="enl-int max-w-7xl mx-auto px-6 py-20 border-t border-[#e5e5e5]"
+    aria-labelledby="enl-int-titulo"
+  >
+    <p class="text-xs font-semibold uppercase tracking-widest text-[#666] mb-4">Sigue explorando</p>
+    <h2 id="enl-int-titulo" class="text-3xl font-black tracking-tight mb-4 max-w-3xl">
+      {bloque.titulo}
+    </h2>
+    {bloque.intro && (
+      <p class="text-[#555] text-base md:text-lg leading-relaxed max-w-3xl mb-12">
+        {bloque.intro}
+      </p>
+    )}
+
+    <div class="enl-int-grid">
+      {grupos.map((grupo) => (
+        <div class="enl-int-grupo">
+          <h3 class="enl-int-grupo-titulo">{grupo.titulo}</h3>
+          <ul class="enl-int-lista">
+            {grupo.items.map((item) => (
+              <li>
+                <a href={item.href} class="enl-int-link">
+                  <span class="enl-int-anchor">{item.anchor}</span>
+                  {item.meta && (
+                    <span class="enl-int-meta">
+                      {item.meta}
+                      <span class="enl-int-flecha" aria-hidden="true">→</span>
+                    </span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .enl-int-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .enl-int-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 56px;
+    }
+  }
+
+  .enl-int-grupo-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 8px;
+  }
+
+  .enl-int-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .enl-int-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e5e5;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease;
+  }
+
+  .enl-int-link:hover {
+    border-bottom-color: #FF4500;
+  }
+
+  .enl-int-anchor {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+  }
+
+  .enl-int-link:hover .enl-int-anchor {
+    color: #C53700;
+  }
+
+  .enl-int-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  .enl-int-flecha {
+    display: inline-block;
+    color: #FF4500;
+    transition: transform 0.2s ease;
+  }
+
+  .enl-int-link:hover .enl-int-flecha {
+    transform: translateX(4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .enl-int-link,
+    .enl-int-anchor,
+    .enl-int-flecha {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .enl-int {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    .enl-int-grid {
+      gap: 32px;
+    }
+    .enl-int-anchor {
+      font-size: 15px;
+    }
+  }
+</style>

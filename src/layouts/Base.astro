@@ -57,6 +57,25 @@ const preloadWidths = preloadBase
 const preloadSrcset = preloadWidths.length
   ? preloadWidths.map((w) => `${versioned(`${preloadBase}-${w}.avif`)} ${w}w`).join(', ')
   : null;
+
+// El <picture> de Picture.astro usa las variantes -card (365w/730w) cuando la
+// imagen NO tiene variantes -480/-800/-1200 (caso del hero del home). Si el
+// preload apuntara a otra URL, el navegador descargaría dos imágenes: una
+// ignorada y la real. Aquí se replica exactamente la detección de Picture.
+const preloadCardBase = preloadBase && /-card$/i.test(preloadBase) ? preloadBase.replace(/-card$/i, '') : null;
+const preloadCardSrcset = preloadCardBase &&
+  existsSync(join(process.cwd(), 'public', `${preloadCardBase}-card-sm.avif`)) &&
+  existsSync(join(process.cwd(), 'public', `${preloadCardBase}-card.avif`))
+  ? `${versioned(`${preloadCardBase}-card-sm.avif`)} 365w, ${versioned(`${preloadCardBase}-card.avif`)} 730w`
+  : null;
+const preloadImagesrcset = preloadSrcset ?? preloadCardSrcset;
+// imagesizes debe coincidir con el atributo sizes del <img> real, o el
+// navegador elige otra variante y el preload no sirve de nada.
+const preloadImagesizes = preloadSrcset
+  ? '(max-width: 928px) 92vw, 832px'
+  : preloadCardSrcset
+    ? '(max-width: 768px) 92vw, (max-width: 1024px) 30vw, 280px'
+    : null;
 const preloadHref = preloadImage ? versioned(preloadImage) : null;
 
 // Schema unificado: LocalBusiness + ProfessionalService bajo un mismo @id.
@@ -298,8 +317,8 @@ const breadcrumbSchema = breadcrumbs ? {
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <!-- Preload LCP image (cuando el page lo indica) -->
-    {preloadSrcset ? (
-      <link rel="preload" as="image" type="image/avif" imagesrcset={preloadSrcset} imagesizes="(max-width: 928px) 92vw, 832px" fetchpriority="high" />
+    {preloadImagesrcset && preloadImagesizes ? (
+      <link rel="preload" as="image" type="image/avif" imagesrcset={preloadImagesrcset} imagesizes={preloadImagesizes} fetchpriority="high" />
     ) : preloadHref ? (
       <link rel="preload" as="image" href={preloadHref} type="image/webp" fetchpriority="high" />
     ) : null}
