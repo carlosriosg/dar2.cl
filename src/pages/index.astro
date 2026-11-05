@@ -572,17 +572,17 @@ const clienteUrls: Record<string, string> = {
     <ul class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
       <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="15" data-suffix="+">0+</span></p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="15" data-suffix="+">15+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Años de<br />experiencia</p>
       </li>
       <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><polygon points="23 7 16 12 7 12 7 7 16 7"/><rect x="1" y="1" width="22" height="22" rx="2" ry="2"/><line x1="2" y1="15" x2="22" y2="15"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="40" data-suffix="+">0+</span></p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="40" data-suffix="+">40+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Producciones<br />al año</p>
       </li>
       <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="30" data-suffix="+">0+</span></p>
+        <p class="text-4xl font-black tracking-tight text-[#1a1a1a]"><span data-count="30" data-suffix="+">30+</span></p>
         <p class="text-[#666] text-sm mt-2 leading-snug">Clientes<br />corporativos</p>
       </li>
       <li class="bg-[#fafafa] rounded-2xl border border-[#e5e5e5] p-6 text-center">
@@ -973,10 +973,17 @@ const clienteUrls: Record<string, string> = {
   // Stats counter animation: cuenta desde 0 al valor real al entrar en viewport
   function initCounters() {
     document.querySelectorAll('[data-count]').forEach(el => {
+      if (el.dataset.countReady === '1') return; // evita doble init (astro:page-load + llamada directa)
+      el.dataset.countReady = '1';
+
       const target = Number(el.dataset.count);
       const suffix = el.dataset.suffix || '';
       const duration = 1800;
       let started = false;
+
+      // SEO / no-JS: el HTML ya trae la cifra real (ej. "15+"). Solo con JS activo
+      // la ponemos en 0 para animar la cuenta; los crawlers sin JS leen la cifra real.
+      el.textContent = '0' + suffix;
 
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting && !started) {
