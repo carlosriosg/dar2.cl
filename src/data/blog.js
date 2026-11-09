@@ -6,6 +6,15 @@
 // articulo (src/components/BlogRelacionados.astro).
 export const articulos = [
   {
+    slug: 'streaming-medico-en-vivo-obesity-days-alemania',
+    title: 'Streaming médico en vivo: caso Obesity Days Alemania',
+    excerpt: 'Cómo DAR2 transmitió una cirugía bariátrica en vivo desde Santiago al congreso Obesity Days en Frankfurt: streaming bidireccional, señal endoscópica y multicámara.',
+    date: '2026-11-09',
+    readTime: '6 min',
+    category: 'Streaming',
+    image: '/images/blog/streaming-medico-obesity-days-hero.png',
+  },
+  {
     slug: 'producir-podcast-profesional-santiago',
     title: 'Cómo producir un podcast profesional en Santiago: audio, video y estudio',
     excerpt: 'Qué se necesita para producir un podcast profesional en Santiago: audio vs video podcast, estudio o set móvil, qué pedirle a la productora, proceso y cuánto cuesta. Con casos reales DAR2.',
