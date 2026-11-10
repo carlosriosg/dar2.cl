@@ -6,6 +6,15 @@
 // articulo (src/components/BlogRelacionados.astro).
 export const articulos = [
   {
+    slug: 'produccion-audiovisual-streaming-eda',
+    title: 'Producción Audiovisual y Streaming B2B para EDA',
+    excerpt: 'Cómo DAR2 produjo 10 videos corporativos y el streaming internacional del Encuentro EDA 2026, conectando Santiago con Colombia sin latencia y con calidad broadcast.',
+    date: '2026-11-09',
+    readTime: '7 min',
+    category: 'Streaming Corporativo',
+    image: '/images/blog/encuentro-eda-2026-streaming.jpg',
+  },
+  {
     slug: 'streaming-medico-en-vivo-obesity-days-alemania',
     title: 'Streaming médico en vivo: caso Obesity Days Alemania',
     excerpt: 'Cómo DAR2 transmitió una cirugía bariátrica en vivo desde Santiago al congreso Obesity Days en Frankfurt: streaming bidireccional, señal endoscópica y multicámara.',

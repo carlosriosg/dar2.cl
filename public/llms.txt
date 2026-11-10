@@ -187,7 +187,7 @@ DAR2 has deep experience across these verticals in Chile:
 
 ## Clients (partial list)
 
-Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Vida Cámara, VOENS, Castaño, Parque Arauco, Sacyr, Salfacorp.
+Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde, DHL, Banco de Chile, ICARE, Nestlé, Codelco, AFP Habitat, PC Factory, ABCDIN, Clínica Santa María, CMPC, Polpaico, Empresas Copec, Marsh, Astara, Vida Cámara, VOENS, Castaño, Parque Arauco, Sacyr, Salfacorp, Electrónicas de América (EDA).
 
 ---
 
@@ -222,6 +222,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 ## Blog & guides (Spanish)
 
+- [Producción Audiovisual y Streaming B2B para EDA](https://dar2.cl/blog/produccion-audiovisual-streaming-eda/) — 10 videos corporativos y streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia
 - [Streaming médico en vivo: caso Obesity Days Alemania](https://dar2.cl/blog/streaming-medico-en-vivo-obesity-days-alemania/) — Cirugía bariátrica transmitida en vivo desde Santiago a Frankfurt con streaming bidireccional
 - [Qué es Live Shopping y cómo implementarlo en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)
 - [Cómo elegir una productora audiovisual en Santiago](https://dar2.cl/blog/como-elegir-productora-audiovisual-santiago/) — Tipos de productoras, presupuestos y checklist de contratación

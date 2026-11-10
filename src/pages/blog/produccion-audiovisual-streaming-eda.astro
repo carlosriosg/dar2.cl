@@ -1,0 +1,280 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogRelacionados from '../../components/BlogRelacionados.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Producción Audiovisual y Streaming B2B para EDA', url: 'https://dar2.cl/blog/produccion-audiovisual-streaming-eda/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Producción Audiovisual y Streaming B2B para EDA",
+  "description": "Cómo DAR2 produjo 10 videos corporativos y el streaming internacional del Encuentro EDA 2026, conectando Santiago con Colombia sin latencia y con calidad broadcast.",
+  "image": "https://dar2.cl/images/blog/encuentro-eda-2026-streaming.jpg",
+  "datePublished": "2026-11-09",
+  "dateModified": "2026-11-09",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/produccion-audiovisual-streaming-eda/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+---
+
+<Base
+  title="Producción Audiovisual y Streaming B2B para EDA"
+  description="Cómo DAR2 produjo 10 videos corporativos y el streaming internacional del Encuentro EDA 2026, conectando Santiago con Colombia sin latencia y con calidad broadcast."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/encuentro-eda-2026-streaming.webp"
+  ogImage="/images/blog/encuentro-eda-2026-streaming.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming Corporativo</p>
+      <h1 class="article-h1">
+        Producción Audiovisual y Streaming B2B
+        <em class="hl">para EDA.</em>
+      </h1>
+      <p class="article-lead">
+        Para Electrónicas de América (EDA), DAR2 ejecutó una estrategia audiovisual integral: 9 cápsulas de inducción, un video de directorio y la transmisión streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia. Un despliegue técnico impecable, sin latencia y con calidad broadcast.
+      </p>
+      <p class="article-meta text-sm text-[#666] mt-4">
+        Por el <a href="/nosotros/" class="font-semibold text-[#1a1a1a] underline underline-offset-2 hover:text-accent">Equipo DAR2</a> · <time datetime="2026-11-09">9 de noviembre de 2026</time>
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/encuentro-eda-2026-streaming.jpg"
+        alt="Streaming en vivo del Encuentro EDA 2026 desde el piso 38 del Hotel Boulevard Suites, Santiago — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En este caso:</p>
+      <ol>
+        <li><a href="#el-desafio">El desafío: comunicación interna y transfronteriza</a></li>
+        <li><a href="#produccion">Videos institucionales y de inducción</a></li>
+        <li><a href="#encuentro">Encuentro EDA 2026: streaming híbrido</a></li>
+        <li><a href="#despliegue">Despliegue técnico y ejecución broadcast</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="el-desafio">
+      <h2>El desafío: estandarizar la comunicación interna y transfronteriza</h2>
+      <p>
+        <a href="https://edamerica.cl/" target="_blank" rel="noopener noreferrer" class="article-inline-link">Electrónicas de América</a> necesitaba actualizar sus materiales de capacitación corporativa y conectar de forma directa a su equipo directivo con todos sus colaboradores.
+      </p>
+      <p>
+        El cierre del año requería un evento híbrido de alto nivel que uniera las operaciones centrales en Chile con su importante sede en Colombia.
+      </p>
+    </section>
+
+    <section class="article-section" id="produccion">
+      <h2>Producción de videos institucionales y de inducción</h2>
+      <p>
+        El proyecto comenzó semanas antes del evento principal con un intenso y milimétrico cronograma de rodaje en las instalaciones de EDA.
+      </p>
+      <p>
+        Para optimizar la retención de información de los colaboradores, estructuramos el contenido audiovisual en formatos cortos y directos.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/encuentro-eda-2026-rodaje-induccion.jpg"
+          alt="Rodaje de las cápsulas de inducción en las instalaciones de EDA — DAR2"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Rodaje de las cápsulas de inducción en las instalaciones de EDA.</figcaption>
+      </figure>
+
+      <p>Los entregables clave de esta etapa fueron:</p>
+      <ul class="article-list">
+        <li><strong>9 videos de inducción por área:</strong> cápsulas dinámicas de 1 minuto de duración, diseñadas para capacitar ágilmente a los nuevos ingresos de cada departamento.</li>
+        <li><strong>1 video institucional directivo:</strong> pieza corporativa central donde los directores comunicaron la visión estratégica y los objetivos de la empresa.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="encuentro">
+      <h2>Encuentro EDA 2026: streaming híbrido de alto nivel</h2>
+      <p>
+        El sábado 7 de noviembre de 2026, toda la estrategia audiovisual culminó en el esperado Encuentro EDA 2026.
+      </p>
+      <p>
+        El evento se desarrolló en el prestigioso piso 38 del Hotel Boulevard Suites, ubicado en Av. Pdte. Kennedy, Santiago.
+      </p>
+      <p>
+        Nuestra misión fue técnica y crítica: garantizar que la experiencia presencial se replicara con idéntica calidad para los colaboradores conectados remotamente desde Colombia.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/encuentro-eda-2026-hotel-boulevard.jpg"
+          alt="Evento híbrido Encuentro EDA 2026 en el piso 38 del Hotel Boulevard Suites, Santiago"
+          class="w-full h-auto"
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Encuentro EDA 2026 en el piso 38 del Hotel Boulevard Suites.</figcaption>
+      </figure>
+    </section>
+
+    <section class="article-section" id="despliegue">
+      <h2>Despliegue técnico y ejecución broadcast</h2>
+      <p>
+        Implementamos un flujo de trabajo multicámara gestionado en tiempo real mediante un switcher de video profesional.
+      </p>
+      <p>
+        Aseguramos una señal estable utilizando codificación por hardware con un bitrate optimizado, eliminando el riesgo de caída para la audiencia internacional.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/encuentro-eda-2026-multicamara.jpg"
+          alt="Flujo multicámara y switcher de video durante el streaming del Encuentro EDA 2026"
+          class="w-full h-auto"
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Flujo multicámara gestionado con switcher de video profesional.</figcaption>
+      </figure>
+
+      <p>Nuestro setup audiovisual corporativo incluyó:</p>
+      <ul class="article-list">
+        <li><strong>Integración perfecta de gráficas corporativas</strong> y la reproducción en vivo de los 10 videos producidos previamente por nuestro equipo.</li>
+        <li><strong>Enrutamiento de audio independiente</strong> para garantizar que el sonido de sala (PA) y la mezcla de streaming tuvieran una fidelidad absoluta.</li>
+        <li><strong>Proyección en pantallas locales</strong> simultánea a la transmisión hacia el servidor de streaming.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="resultados">
+      <h2>Resultados: conexión internacional sin interrupciones</h2>
+      <p>
+        La transmisión simultánea fue un éxito rotundo tanto a nivel local en el Hotel Boulevard Suites como en la señal recibida en Colombia.
+      </p>
+      <p>
+        Los colaboradores y directivos experimentaron un evento fluido, con transiciones limpias y un soporte técnico que operó de manera invisible y resolutiva.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/encuentro-eda-2026-pantallas.jpg"
+          alt="Proyección en pantallas locales y transmisión simultánea del Encuentro EDA 2026 hacia Colombia"
+          class="w-full h-auto"
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Proyección local y señal internacional recibida sin interrupciones.</figcaption>
+      </figure>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>Eleva el estándar de tus eventos corporativos</h2>
+      <p>
+        Un evento corporativo internacional no permite margen de error. La tecnología debe funcionar a la perfección para que el mensaje de tu empresa sea el único protagonista. Si buscas una productora audiovisual en Chile capaz de integrar producción de video y streaming profesional sin fallas, somos tu partner estratégico.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar streaming y video →
+        </a>
+        <a href="/servicios/streaming/" class="article-cta-link">
+          Ver servicio de Streaming →
+        </a>
+      </div>
+    </section>
+
+  </article>
+  <BlogRelacionados />
+
+</Base>
+
+<style>
+  .article-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-figure { margin: 0 0 32px; }
+  .article-figure :global(picture) { display: block; border-radius: 16px; overflow: hidden; background: #eaeaea; }
+  .article-figure :global(img) { display: block; width: 100%; height: auto; }
+  .article-figcaption { font-size: 13px; line-height: 1.5; color: #666; margin-top: 10px; text-align: center; }
+  .article-inline-link { color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .article-inline-link:hover { color: #FF4500; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>
