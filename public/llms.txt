@@ -65,7 +65,7 @@ A productora audiovisual in Chile is a company that plans, produces and edits vi
 
 Streaming para eventos corporativos en Santiago de Chile: multi-camera live streaming with broadcast-quality production, redundant point-to-point links, professional audio mixing, animated corporate graphics, and platform integration.
 
-- **Use cases:** Annual shareholder meetings, product launches, corporate seminars, mass training (5,000+ attendees), hybrid events
+- **Use cases:** Annual shareholder meetings, product launches, corporate seminars, mass training (5,000+ attendees), hybrid events, live surgery streaming (hospitals and medical congresses)
 - **Platforms:** Zoom Webinar, Microsoft Teams Live Events, YouTube Live, Vimeo, LinkedIn Live, RTMP custom
 - **Setup:** 2–6 cameras, dedicated switcher, live graphic overlays, fiber + LTE/5G redundant links
 - **Deliverables:** Live transmission, master recording, edited post-event video, social media clips
@@ -222,6 +222,7 @@ Cencosud, ENAP, MetLife, Consorcio, Engage, Cuprum, Coopeuch, Enel, Easy, Linde,
 
 ## Blog & guides (Spanish)
 
+- [Streaming de cirugías en vivo: guía para hospitales y congresos médicos](https://dar2.cl/blog/streaming-cirugias-en-vivo/) — Bioseguridad, señal endoscópica, audio bidireccional y enlace redundante para transmisión quirúrgica
 - [Producción Audiovisual y Streaming B2B para EDA](https://dar2.cl/blog/produccion-audiovisual-streaming-eda/) — 10 videos corporativos y streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia
 - [Streaming médico en vivo: caso Obesity Days Alemania](https://dar2.cl/blog/streaming-medico-en-vivo-obesity-days-alemania/) — Cirugía bariátrica transmitida en vivo desde Santiago a Frankfurt con streaming bidireccional
 - [Qué es Live Shopping y cómo implementarlo en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)

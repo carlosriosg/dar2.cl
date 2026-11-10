@@ -80,7 +80,7 @@ Trabajamos con plataformas privadas (Zoom Webinar, Microsoft Teams Live Events) 
 
 ### Target audience
 
-El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota.
+El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes), eventos híbridos que combinan público presencial con audiencia remota, y streaming de cirugías en vivo y congresos médicos para hospitales, clínicas y marcas de dispositivos médicos.
 
 ### Process
 
@@ -640,6 +640,7 @@ Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic ev
 
 ## Blog posts
 
+- [Streaming de cirugías en vivo: guía para hospitales y congresos médicos](https://dar2.cl/blog/streaming-cirugias-en-vivo/) — Bioseguridad, señal endoscópica, audio bidireccional y enlace redundante para transmisión quirúrgica
 - [Producción Audiovisual y Streaming B2B para EDA](https://dar2.cl/blog/produccion-audiovisual-streaming-eda/) — 10 videos corporativos y streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia
 - [Streaming médico en vivo: caso Obesity Days Alemania](https://dar2.cl/blog/streaming-medico-en-vivo-obesity-days-alemania/) — Cirugía bariátrica transmitida en vivo desde Santiago a Frankfurt con streaming bidireccional
 - [Qué es Live Shopping en Chile](https://dar2.cl/blog/que-es-live-shopping-chile/)

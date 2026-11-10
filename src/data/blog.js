@@ -6,6 +6,15 @@
 // articulo (src/components/BlogRelacionados.astro).
 export const articulos = [
   {
+    slug: 'streaming-cirugias-en-vivo',
+    title: 'Streaming de cirugías en vivo: guía para hospitales y congresos médicos',
+    excerpt: 'Cómo se transmite una cirugía en vivo con estándar broadcast: bioseguridad, señal endoscópica, audio bidireccional y enlace redundante. Casos reales de streaming quirúrgico de DAR2.',
+    date: '2026-11-09',
+    readTime: '8 min',
+    category: 'Streaming',
+    image: '/images/blog/streaming-medico-obesity-days-operativo.jpg',
+  },
+  {
     slug: 'produccion-audiovisual-streaming-eda',
     title: 'Producción Audiovisual y Streaming B2B para EDA',
     excerpt: 'Cómo DAR2 produjo 10 videos corporativos y el streaming internacional del Encuentro EDA 2026, conectando Santiago con Colombia sin latencia y con calidad broadcast.',

@@ -1,0 +1,302 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogRelacionados from '../../components/BlogRelacionados.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Streaming de cirugías en vivo', url: 'https://dar2.cl/blog/streaming-cirugias-en-vivo/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Streaming de cirugías en vivo: guía para hospitales y congresos médicos",
+  "description": "Guía de streaming de cirugías en vivo en Chile: bioseguridad, señal endoscópica, audio bidireccional y enlace redundante. Casos reales de transmisión quirúrgica de DAR2.",
+  "image": "https://dar2.cl/images/blog/streaming-medico-obesity-days-operativo.jpg",
+  "datePublished": "2026-11-09",
+  "dateModified": "2026-11-09",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/streaming-cirugias-en-vivo/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es el streaming de cirugías en vivo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El streaming de cirugías en vivo es la transmisión en tiempo real de un procedimiento quirúrgico desde el quirófano hacia una audiencia remota: un congreso médico, un auditorio, otra ciudad o el mundo entero. Combina la señal de la cámara quirúrgica (endoscopía, laparoscopía o microscopio) con cámaras del pabellón, audio bidireccional y enlace redundante, para que la cirugía se vea y se escuche con calidad broadcast y sin interrupciones." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un streaming de cirugía en vivo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El costo de un streaming de cirugía en vivo depende del alcance: número de señales médicas a integrar (endoscopía, laparoscopía, microscopio), cámaras del pabellón, audio bidireccional, enlace redundante para transmisión internacional y cantidad de jornadas. En DAR2 no publicamos tarifas fijas: cada cirugía se cotiza a medida y entregamos una propuesta detallada en 48 horas hábiles." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué se necesita para transmitir una cirugía en vivo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para transmitir una cirugía en vivo se necesita: 1) captura directa de la señal médica (endoscopía, laparoscopía o cámara quirúrgica), 2) cámaras del pabellón para planos del equipo y del entorno, 3) switcher de video para mezclar las fuentes en tiempo real, 4) audio bidireccional sin latencia para que el cirujano escuche y responda preguntas, y 5) enlace redundante (fibra + LTE/5G) para que la señal internacional no se caiga." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede transmitir desde cualquier quirófano?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, con protocolos de bioseguridad estrictos y equipamiento compacto y cero invasivo. El equipo técnico se instala cumpliendo las normativas sanitarias del recinto, sin interferir el trabajo del equipo médico. En DAR2 validamos cada locación con la dirección médica antes del procedimiento para garantizar continuidad operativa y seguridad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se integra la señal de la endoscopía o laparoscopía al streaming?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nos conectamos directamente a la salida de video de la torre de endoscopía o laparoscopía, capturando la imagen cruda sin pérdida de calidad y enviándola al switcher. Así la audiencia ve exactamente lo que ve el cirujano en su monitor, en tiempo real y con la máxima nitidez." }
+    }
+  ]
+};
+---
+
+<Base
+  title="Streaming de cirugías en vivo: guía para hospitales y congresos médicos"
+  description="Guía de streaming de cirugías en vivo en Chile: bioseguridad, señal endoscópica, audio bidireccional y enlace redundante. Casos reales de transmisión quirúrgica de DAR2."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/streaming-medico-obesity-days-operativo.webp"
+  ogImage="/images/blog/streaming-medico-obesity-days-operativo.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming</p>
+      <h1 class="article-h1">
+        Streaming de cirugías en vivo:
+        <em class="hl">guía para hospitales y congresos.</em>
+      </h1>
+      <p class="article-lead">
+        El streaming de cirugías en vivo conecta un quirófano con un congreso, un auditorio o el mundo entero en tiempo real. En DAR2 transmitimos desde cirugía bariátrica hasta cirugía robótica con señal médica integrada, audio bidireccional y enlace redundante.
+      </p>
+      <p class="article-meta text-sm text-[#666] mt-4">
+        Por el <a href="/nosotros/" class="font-semibold text-[#1a1a1a] underline underline-offset-2 hover:text-accent">Equipo DAR2</a> · <time datetime="2026-11-09">9 de noviembre de 2026</time>
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/streaming-medico-obesity-days-operativo.jpg"
+        alt="Producción de streaming de cirugía en vivo conectando el quirófano con un auditorio internacional — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En esta guía:</p>
+      <ol>
+        <li><a href="#que-es">Qué es el streaming de cirugías en vivo</a></li>
+        <li><a href="#para-quien">Quién lo necesita</a></li>
+        <li><a href="#tecnica">Requisitos técnicos de la transmisión quirúrgica</a></li>
+        <li><a href="#casos">Casos reales de DAR2</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="que-es">
+      <h2>Qué es el streaming de cirugías en vivo</h2>
+      <p>
+        El streaming de cirugías en vivo es la transmisión en tiempo real de un procedimiento quirúrgico desde el pabellón hacia una audiencia remota. No es una videollamada: es producción broadcast que combina la señal de la cámara quirúrgica con cámaras del quirófano, audio bidireccional y enlace redundante.
+      </p>
+      <p>
+        Se usa principalmente para tres objetivos:
+      </p>
+      <ul class="article-list">
+        <li><strong>Educación médica:</strong> transmitir una técnica quirúrgica a un congreso o a especialistas en formación.</li>
+        <li><strong>Demostración de tecnología:</strong> mostrar en vivo el desempeño de un dispositivo o equipo médico ante una audiencia especializada.</li>
+        <li><strong>Telemedicina y colaboración:</strong> conectar cirujanos de distintos países para discutir un caso en tiempo real.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="para-quien">
+      <h2>Quién necesita transmitir una cirugía en vivo</h2>
+      <p>
+        El streaming quirúrgico es un servicio de alto valor para tres perfiles:
+      </p>
+      <ul class="article-list">
+        <li><strong>Hospitales y clínicas:</strong> para transmitir cirugías complejas a congresos nacionales e internacionales, reforzando su prestigio institucional y docente.</li>
+        <li><strong>Marcas de dispositivos médicos:</strong> para demostrar en vivo el desempeño de sus equipos (endocortadoras, robots quirúrgicos, endoscopios) ante cirujanos y tomadores de decisión.</li>
+        <li><strong>Sociedades científicas y organizadores de congresos:</strong> para llevar sesiones de cirugía en vivo a sus auditorios, ya sea presencial o híbrido.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="tecnica">
+      <h2>Requisitos técnicos de la transmisión quirúrgica</h2>
+      <p>
+        Transmitir una cirugía en vivo exige estándares más altos que un streaming corporativo. Estos son los cinco pilares que garantizan una señal impecable desde el pabellón:
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/streaming-medico-obesity-days-quirofano.jpg"
+          alt="Switcher y equipamiento de producción dentro del quirófano durante un streaming de cirugía en vivo"
+          class="w-full h-auto"
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Switcher y despliegue técnico dentro del pabellón quirúrgico.</figcaption>
+      </figure>
+
+      <ul class="article-list">
+        <li><strong>Bioseguridad:</strong> protocolos estrictos y equipamiento compacto, cero invasivo, que no obstaculiza el trabajo del equipo médico.</li>
+        <li><strong>Señal médica integrada:</strong> captura directa de la cámara de endoscopía, laparoscopía o microscopio, sin pérdida de calidad.</li>
+        <li><strong>Audio bidireccional sin latencia:</strong> el cirujano escucha en vivo las preguntas de la audiencia y responde mientras opera.</li>
+        <li><strong>Enlace redundante:</strong> fibra + LTE/5G para que la transmisión internacional no se caiga.</li>
+        <li><strong>Multicámara:</strong> cámaras PTZ robóticas para planos del equipo y del entorno, sin entorpecer el espacio físico.</li>
+      </ul>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/streaming-medico-obesity-days-endoscopia.png"
+          alt="Detalle de la señal endoscópica capturada en vivo durante una cirugía transmitida por streaming"
+          class="w-full h-auto"
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Señal endoscópica integrada directamente al switcher de streaming.</figcaption>
+      </figure>
+    </section>
+
+    <section class="article-section" id="casos">
+      <h2>Casos reales de streaming quirúrgico de DAR2</h2>
+      <p>
+        No es teoría: en DAR2 ya transmitimos cirugías en vivo hacia audiencias internacionales con resultados impecables.
+      </p>
+      <ul class="article-list">
+        <li><strong>Cirugía bariátrica a Frankfurt:</strong> conectamos el pabellón de Clínica Lo Curro en Santiago con el congreso Obesity Days en Alemania, con señal endoscópica, audio bidireccional y la cirujano respondiendo preguntas en tiempo real. <a href="/blog/streaming-medico-en-vivo-obesity-days-alemania/" class="article-inline-link">Ver el caso Obesity Days →</a></li>
+        <li><strong>Cirugía robótica en Clínica Santa María:</strong> documentamos y transmitimos procedimientos del programa de cirugía robótica más grande de Chile (Da Vinci XI + Hugo RAS), con validación médica en sitio y equipamiento de cine compacto. <a href="/casos/cirugia-robotica-clinica-santa-maria/" class="article-inline-link">Ver el caso Clínica Santa María →</a></li>
+      </ul>
+      <p>
+        Si tu hospital, clínica o marca de dispositivos médicos necesita <a href="/servicios/streaming/" class="article-inline-link">streaming de cirugías en vivo con estándar broadcast</a>, habla con nuestros especialistas.
+      </p>
+    </section>
+
+    <section class="article-section" id="faq">
+      <h2>Preguntas frecuentes sobre streaming de cirugías en vivo</h2>
+      <h3>¿Qué es el streaming de cirugías en vivo?</h3>
+      <p>
+        Es la transmisión en tiempo real de un procedimiento quirúrgico desde el quirófano hacia una audiencia remota, combinando la señal de la cámara quirúrgica con cámaras del pabellón, audio bidireccional y enlace redundante, con calidad broadcast.
+      </p>
+      <h3>¿Cuánto cuesta un streaming de cirugía en vivo?</h3>
+      <p>
+        Depende del alcance: señales médicas a integrar, cámaras del pabellón, audio bidireccional, enlace redundante internacional y cantidad de jornadas. En DAR2 cada cirugía se cotiza a medida y entregamos una propuesta detallada en 48 horas hábiles.
+      </p>
+      <h3>¿Qué se necesita para transmitir una cirugía en vivo?</h3>
+      <p>
+        Captura directa de la señal médica, cámaras del pabellón, switcher de video, audio bidireccional sin latencia y enlace redundante (fibra + LTE/5G) para que la señal internacional no se caiga.
+      </p>
+      <h3>¿Se puede transmitir desde cualquier quirófano?</h3>
+      <p>
+        Sí, con protocolos de bioseguridad estrictos y equipamiento compacto que no interfiere el trabajo del equipo médico. Validamos cada locación con la dirección médica antes del procedimiento.
+      </p>
+      <h3>¿Cómo se integra la señal de la endoscopía o laparoscopía al streaming?</h3>
+      <p>
+        Nos conectamos directamente a la salida de video de la torre de endoscopía o laparoscopía, capturando la imagen cruda sin pérdida de calidad y enviándola al switcher para que la audiencia vea exactamente lo que ve el cirujano.
+      </p>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Necesitas transmitir una cirugía en vivo?</h2>
+      <p>
+        Conectamos quirófanos, clínicas y laboratorios con congresos y audiencias de todo el mundo con estándares broadcast: señal endoscópica, audio bidireccional, multicámara y enlace redundante.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar streaming de cirugía →
+        </a>
+        <a href="/servicios/streaming/" class="article-cta-link">
+          Ver servicio de Streaming →
+        </a>
+      </div>
+    </section>
+
+  </article>
+  <BlogRelacionados />
+
+</Base>
+
+<style>
+  .article-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-figure { margin: 0 0 32px; }
+  .article-figure :global(picture) { display: block; border-radius: 16px; overflow: hidden; background: #eaeaea; }
+  .article-figure :global(img) { display: block; width: 100%; height: auto; }
+  .article-figcaption { font-size: 13px; line-height: 1.5; color: #666; margin-top: 10px; text-align: center; }
+  .article-inline-link { color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .article-inline-link:hover { color: #FF4500; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

@@ -33,6 +33,16 @@ export const enlacesInternos = {
             anchor: 'Cuánto cuesta un streaming corporativo en Chile y qué define el presupuesto',
             meta: 'Artículo · 7 min',
           },
+          {
+            href: '/blog/streaming-cirugias-en-vivo/',
+            anchor: 'Streaming de cirugías en vivo: guía para hospitales y congresos médicos',
+            meta: 'Artículo · 8 min',
+          },
+          {
+            href: '/blog/streaming-medico-en-vivo-obesity-days-alemania/',
+            anchor: 'Streaming médico en vivo: cirugía bariátrica de Santiago a Frankfurt',
+            meta: 'Artículo · 6 min',
+          },
         ],
       },
       {

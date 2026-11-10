@@ -20,7 +20,7 @@ export const servicios = [
       { num: '03', title: 'Transmisión en vivo', desc: 'Dirección técnica en tiempo real, switching entre cámaras, gestión de gráficas, mezcla de audio y monitoreo de enlace redundante. Un coordinador queda en contacto directo contigo durante todo el evento.' },
       { num: '04', title: 'Entrega post-evento', desc: 'Edición del máster, generación de cápsulas para redes sociales y entrega de archivo en alta calidad listo para subir a tu intranet, archivo corporativo o redistribuir a tu audiencia.' },
     ],
-    forWhom: 'El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes) y eventos híbridos que combinan público presencial con audiencia remota. Si la audiencia importa y el costo de una caída técnica es alto, este servicio de streaming para eventos empresariales es para ti.',
+    forWhom: 'El servicio de streaming para eventos aplica para juntas anuales de accionistas, lanzamientos de producto, seminarios corporativos, capacitaciones masivas (5.000+ asistentes), eventos híbridos que combinan público presencial con audiencia remota, y streaming de cirugías en vivo y congresos médicos para hospitales, clínicas y marcas de dispositivos médicos. Si la audiencia importa y el costo de una caída técnica es alto, este servicio de streaming para eventos empresariales es para ti.',
     bullets: [
       'Producción y dirección técnica completa',
       'Sistema multicámara (2 a 6 cámaras)',
@@ -110,6 +110,14 @@ export const servicios = [
       {
         q: '¿Qué es una producción audiovisual de streaming?',
         a: 'Es una producción audiovisual transmitida en vivo: sistema multicámara, switcher, sonido broadcast, iluminación y gráficas corporativas que se emiten en tiempo real hacia una plataforma (YouTube, Zoom, Teams, Vimeo). En DAR2 operamos como productora de streaming audiovisual con enlace redundante y dirección técnica durante todo el evento.',
+      },
+      {
+        q: '¿Hacen streaming de cirugías en vivo (streaming quirúrgico o médico)?',
+        a: 'Sí. Producimos streaming de cirugías en vivo para hospitales, clínicas, congresos médicos y marcas de dispositivos médicos: integramos la señal de endoscopía, laparoscopía o microscopio al switcher, sumamos cámaras PTZ del pabellón y audio bidireccional para que el cirujano responda preguntas en tiempo real. Casos reales: cirugía bariátrica transmitida de Santiago a Frankfurt (congreso Obesity Days) y cirugía robótica en Clínica Santa María.',
+      },
+      {
+        q: '¿Qué se necesita para transmitir una cirugía en vivo a un congreso?',
+        a: 'Captura directa de la señal médica (endoscopía/laparoscopía), cámaras del pabellón, switcher de video, audio bidireccional sin latencia y enlace redundante (fibra + LTE/5G) para la señal internacional. Además, protocolos de bioseguridad y equipamiento compacto que no interfiere el trabajo del equipo médico. En DAR2 coordinamos todo con la dirección médica del recinto.',
       },
     ],
   },
