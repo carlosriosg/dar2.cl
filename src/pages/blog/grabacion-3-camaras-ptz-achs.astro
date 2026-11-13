@@ -1,0 +1,218 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogRelacionados from '../../components/BlogRelacionados.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Grabación a 3 Cámaras PTZ en ACHS: Eventos Médicos', url: 'https://dar2.cl/blog/grabacion-3-camaras-ptz-achs/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Grabación a 3 Cámaras PTZ en ACHS: Eventos Médicos",
+  "description": "Cómo DAR2 desplegó un setup broadcast de 3 cámaras robóticas (PTZ) para el conversatorio de salud de la Red Chilena de Pacientes Reumáticos en ACHS Las Condes.",
+  "image": "https://dar2.cl/images/blog/grabacion-3-camaras-ptz-achs.jpg",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/grabacion-3-camaras-ptz-achs/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+---
+
+<Base
+  title="Grabación a 3 Cámaras PTZ en ACHS: Eventos Médicos"
+  description="Descubre nuestro setup broadcast con 3 cámaras robóticas (PTZ) para el conversatorio de salud en ACHS Las Condes. Producción audiovisual B2B en Santiago."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/grabacion-3-camaras-ptz-achs.webp"
+  ogImage="/images/blog/grabacion-3-camaras-ptz-achs.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Corporativo</p>
+      <h1 class="article-h1">
+        Grabación a 3 Cámaras PTZ en ACHS:
+        <em class="hl">eventos médicos.</em>
+      </h1>
+      <p class="article-lead">
+        Para la grabación de eventos corporativos de salud que exigen mínima invasión, los sistemas multicámara con cámaras robóticas (PTZ) son la solución definitiva. En DAR2 desplegamos un setup broadcast de 3 cámaras en ACHS Las Condes, garantizando calidad televisiva y operación discreta para conversatorios médicos.
+      </p>
+      <p class="article-meta text-sm text-[#666] mt-4">
+        Por el <a href="/nosotros/" class="font-semibold text-[#1a1a1a] underline underline-offset-2 hover:text-accent">Equipo DAR2</a> · <time datetime="2026-11-13">13 de noviembre de 2026</time>
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/grabacion-3-camaras-ptz-achs.jpg"
+        alt="Grabación broadcast con 3 cámaras PTZ robóticas durante un conversatorio de salud en ACHS Las Condes — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="676"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En este caso:</p>
+      <ol>
+        <li><a href="#el-desafio">El desafío: registro audiovisual para el sector salud</a></li>
+        <li><a href="#setup">Setup técnico: grabación con 3 cámaras robóticas (PTZ)</a></li>
+        <li><a href="#estandar">El estándar broadcast en eventos corporativos</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="el-desafio">
+      <h2>El desafío: registro audiovisual para el sector salud</h2>
+      <p>
+        El 10 de noviembre, la <a href="https://www.minsal.cl/" target="_blank" rel="noopener noreferrer" class="article-inline-link"><strong>Red Chilena de Pacientes Reumáticos</strong></a> organizó un conversatorio enfocado en políticas públicas y el funcionamiento del sistema de salud. El evento se llevó a cabo en las instalaciones de la ACHS, en Av. Las Condes 6830, Santiago.
+      </p>
+      <p>
+        Durante la jornada se expusieron datos críticos de su encuesta 2026, revelando problemáticas como los <strong>548 días de espera</strong> para una primera consulta de reumatología en Antofagasta. También se discutió la vulnerabilidad financiera del sector: casi <strong>1 de cada 5 participantes</strong> debe recurrir a créditos para enfrentar sus gastos médicos.
+      </p>
+      <p>
+        Registrar este nivel de información confidencial exigía un entorno sin distracciones ni operadores invasivos. Por eso diseñamos un flujo de grabación discreto y centralizado, capaz de capturar cada ángulo sin interrumpir la dinámica del panel.
+      </p>
+    </section>
+
+    <section class="article-section" id="setup">
+      <h2>Setup técnico: grabación con 3 cámaras robóticas (PTZ)</h2>
+      <p>
+        Para cumplir con este requerimiento implementamos un flujo de trabajo basado en cámaras <a href="https://es.wikipedia.org/wiki/C%C3%A1mara_PTZ" target="_blank" rel="noopener noreferrer" class="article-inline-link"><strong>PTZ (Pan-Tilt-Zoom)</strong></a>. Este formato permite operar múltiples ángulos desde una estación centralizada, sin mover personal dentro del salón.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/camara-ptz-achs-las-condes.jpg"
+          alt="Cámara PTZ robótica montada sobre trípode para la grabación multicámara del conversatorio en ACHS Las Condes"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Cámara PTZ operada de forma remota desde una estación centralizada.</figcaption>
+      </figure>
+
+      <p>Un ecosistema de cámaras robóticas ofrece ventajas operativas invaluables para productores de eventos y agencias:</p>
+      <ul class="article-list">
+        <li><strong>Huella espacial reducida:</strong> los equipos se montan en trípodes discretos, maximizando el espacio útil para la audiencia y los expositores.</li>
+        <li><strong>Operación remota integral:</strong> el control de paneo, inclinación, zoom y foco se realiza a distancia, eliminando el movimiento de personal en el salón.</li>
+        <li><strong>Integración de señal óptima:</strong> utilizamos conexiones SDI y NDI para garantizar una transmisión de video sin latencia y con bitrates de alta calidad.</li>
+        <li><strong>Colorimetría unificada:</strong> a través del control central, el operador técnico iguala los perfiles de color de las 3 cámaras en tiempo real.</li>
+      </ul>
+
+      <p>
+        Este es el corazón de nuestro servicio de <a href="/servicios/circuito-cerrado/" class="article-inline-link">multicámara para eventos</a>: cobertura completa del escenario con una operación casi invisible para la audiencia.
+      </p>
+    </section>
+
+    <section class="article-section" id="estandar">
+      <h2>El estándar broadcast en eventos corporativos</h2>
+      <p>
+        Los directores de marketing y las instituciones de <a href="https://www.minsal.cl/" target="_blank" rel="noopener noreferrer" class="article-inline-link"><strong>salud pública</strong></a> necesitan documentar sus hitos anuales con un estándar impecable. Un registro audiovisual profesional asegura que el mensaje mantenga su peso estratégico al distribuirse digitalmente.
+      </p>
+      <p>
+        La tecnología PTZ permite democratizar el estándar televisivo (broadcast) para el entorno B2B. Logramos una cobertura dinámica y multicámara, optimizando los recursos técnicos del cliente sin renunciar a la calidad de una producción de televisión.
+      </p>
+      <p>
+        Si tu organización también trabaja en el ámbito médico o de congresos, te puede interesar cómo combinamos grabación multicámara con transmisión en vivo en nuestro artículo sobre <a href="/blog/circuito-cerrado-vs-streaming/" class="article-inline-link">circuito cerrado vs. streaming</a>.
+      </p>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>Eleva el nivel técnico de tus comunicaciones</h2>
+      <p>
+        Si tu organización planifica un congreso, seminario o conversatorio en Santiago, necesitas un proveedor técnico que entienda la dinámica corporativa. Nuestro equipo domina las arquitecturas de video modernas para asegurar un resultado perfecto.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar grabación multicámara →
+        </a>
+        <a href="/servicios/circuito-cerrado/" class="article-cta-link">
+          Ver servicio de Multicámara →
+        </a>
+      </div>
+    </section>
+
+  </article>
+  <BlogRelacionados />
+
+</Base>
+
+<style>
+  .article-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-figure { margin: 0 0 32px; }
+  .article-figure :global(picture) { display: block; border-radius: 16px; overflow: hidden; background: #eaeaea; }
+  .article-figure :global(img) { display: block; width: 100%; height: auto; }
+  .article-figcaption { font-size: 13px; line-height: 1.5; color: #666; margin-top: 10px; text-align: center; }
+  .article-inline-link { color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .article-inline-link:hover { color: #FF4500; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>

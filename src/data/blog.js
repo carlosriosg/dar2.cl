@@ -6,6 +6,15 @@
 // articulo (src/components/BlogRelacionados.astro).
 export const articulos = [
   {
+    slug: 'grabacion-3-camaras-ptz-achs',
+    title: 'Grabación a 3 Cámaras PTZ en ACHS: Eventos Médicos',
+    excerpt: 'Cómo DAR2 desplegó un setup broadcast de 3 cámaras robóticas (PTZ) para el conversatorio de salud de la Red Chilena de Pacientes Reumáticos en ACHS Las Condes.',
+    date: '2026-11-13',
+    readTime: '5 min',
+    category: 'Corporativo',
+    image: '/images/blog/grabacion-3-camaras-ptz-achs.jpg',
+  },
+  {
     slug: 'streaming-multicamara-seminario-u-de-chile',
     title: 'Streaming Multicámara para Seminarios: Caso U. de Chile',
     excerpt: 'Cómo DAR2 desplegó streaming a 4 cámaras, audio e iluminación broadcast para el seminario del MGPP en el Salón de Honor de la Universidad de Chile.',

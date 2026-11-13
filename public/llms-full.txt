@@ -640,6 +640,7 @@ Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic ev
 
 ## Blog posts
 
+- [Grabación a 3 Cámaras PTZ en ACHS: Eventos Médicos](https://dar2.cl/blog/grabacion-3-camaras-ptz-achs/) — Setup broadcast de 3 cámaras robóticas (PTZ) para el conversatorio de salud en ACHS Las Condes
 - [Streaming Multicámara para Seminarios: Caso U. de Chile](https://dar2.cl/blog/streaming-multicamara-seminario-u-de-chile/) — Despliegue de 4 cámaras, audio e iluminación para el seminario del MGPP en el Salón de Honor de la Universidad de Chile
 - [Streaming de cirugías en vivo: guía para hospitales y congresos médicos](https://dar2.cl/blog/streaming-cirugias-en-vivo/) — Bioseguridad, señal endoscópica, audio bidireccional y enlace redundante para transmisión quirúrgica
 - [Producción Audiovisual y Streaming B2B para EDA](https://dar2.cl/blog/produccion-audiovisual-streaming-eda/) — 10 videos corporativos y streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia
