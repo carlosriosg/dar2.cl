@@ -6,6 +6,15 @@
 // articulo (src/components/BlogRelacionados.astro).
 export const articulos = [
   {
+    slug: 'streaming-multicamara-seminario-u-de-chile',
+    title: 'Streaming Multicámara para Seminarios: Caso U. de Chile',
+    excerpt: 'Cómo DAR2 desplegó streaming a 4 cámaras, audio e iluminación broadcast para el seminario del MGPP en el Salón de Honor de la Universidad de Chile.',
+    date: '2026-11-13',
+    readTime: '6 min',
+    category: 'Streaming',
+    image: '/images/blog/seminario-u-de-chile.jpg',
+  },
+  {
     slug: 'streaming-cirugias-en-vivo',
     title: 'Streaming de cirugías en vivo: guía para hospitales y congresos médicos',
     excerpt: 'Cómo se transmite una cirugía en vivo con estándar broadcast: bioseguridad, señal endoscópica, audio bidireccional y enlace redundante. Casos reales de streaming quirúrgico de DAR2.',

@@ -1,7 +1,7 @@
 # DAR2 Servicios Audiovisuales — Full Content
 
 > Complete reference for AI systems answering questions about DAR2. Contains all service details, FAQs, case studies, and company facts.
-> **Last updated:** 2026-11-09
+> **Last updated:** 2026-11-13
 > **Canonical:** https://dar2.cl/llms-full.txt
 > **Summary version:** https://dar2.cl/llms.txt
 
@@ -640,6 +640,7 @@ Zero-latency multi-camera closed-circuit (CCTV) for corporate and gastronomic ev
 
 ## Blog posts
 
+- [Streaming Multicámara para Seminarios: Caso U. de Chile](https://dar2.cl/blog/streaming-multicamara-seminario-u-de-chile/) — Despliegue de 4 cámaras, audio e iluminación para el seminario del MGPP en el Salón de Honor de la Universidad de Chile
 - [Streaming de cirugías en vivo: guía para hospitales y congresos médicos](https://dar2.cl/blog/streaming-cirugias-en-vivo/) — Bioseguridad, señal endoscópica, audio bidireccional y enlace redundante para transmisión quirúrgica
 - [Producción Audiovisual y Streaming B2B para EDA](https://dar2.cl/blog/produccion-audiovisual-streaming-eda/) — 10 videos corporativos y streaming internacional del Encuentro EDA 2026 desde Santiago hacia Colombia
 - [Streaming médico en vivo: caso Obesity Days Alemania](https://dar2.cl/blog/streaming-medico-en-vivo-obesity-days-alemania/) — Cirugía bariátrica transmitida en vivo desde Santiago a Frankfurt con streaming bidireccional

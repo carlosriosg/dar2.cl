@@ -1,0 +1,278 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogRelacionados from '../../components/BlogRelacionados.astro';
+import Picture from '../../components/Picture.astro';
+import TTSPlayer from '../../components/TTSPlayer.astro';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: 'https://dar2.cl/' },
+  { name: 'Blog', url: 'https://dar2.cl/blog/' },
+  { name: 'Streaming Multicámara para Seminarios: Caso U. de Chile', url: 'https://dar2.cl/blog/streaming-multicamara-seminario-u-de-chile/' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Streaming Multicámara para Seminarios: Caso U. de Chile",
+  "description": "Cómo DAR2 desplegó streaming multicámara a 4 cámaras, audio e iluminación para el seminario del MGPP en el Salón de Honor de la Universidad de Chile.",
+  "image": "https://dar2.cl/images/blog/seminario-u-de-chile.jpg",
+  "datePublished": "2026-11-13",
+  "dateModified": "2026-11-13",
+  "author": { "@id": "https://dar2.cl/#person" },
+  "publisher": { "@id": "https://dar2.cl/#organization" },
+  "mainEntityOfPage": "https://dar2.cl/blog/streaming-multicamara-seminario-u-de-chile/",
+  "inLanguage": "es-CL",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".article-header", ".article-section"]
+  }
+};
+---
+
+<Base
+  title="Streaming Multicámara para Seminarios: Caso U. de Chile"
+  description="Cómo DAR2 desplegó streaming multicámara a 4 cámaras, audio e iluminación para el seminario del MGPP en el Salón de Honor de la Universidad de Chile."
+  breadcrumbs={breadcrumbs}
+  preloadImage="/images/blog/seminario-u-de-chile.webp"
+  ogImage="/images/blog/seminario-u-de-chile.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+
+  <article class="article-wrap">
+
+    <header class="article-header">
+      <p class="article-eyebrow">Blog · Streaming</p>
+      <h1 class="article-h1">
+        Streaming Multicámara para Seminarios:
+        <em class="hl">Caso U. de Chile.</em>
+      </h1>
+      <p class="article-lead">
+        Un servicio de streaming para seminarios de alto nivel exige una integración técnica sin fallas. Para el reciente evento del MGPP, implementamos un circuito cerrado y transmisión a 4 cámaras, asegurando calidad broadcast para autoridades y espectadores en el emblemático Salón de Honor.
+      </p>
+      <p class="article-meta text-sm text-[#666] mt-4">
+        Por el <a href="/nosotros/" class="font-semibold text-[#1a1a1a] underline underline-offset-2 hover:text-accent">Equipo DAR2</a> · <time datetime="2026-11-13">13 de noviembre de 2026</time>
+      </p>
+    </header>
+
+    <div class="article-hero-image">
+      <Picture
+        src="/images/blog/seminario-u-de-chile.jpg"
+        alt="Streaming multicámara del seminario del MGPP en el Salón de Honor de la Casa Central de la Universidad de Chile — DAR2"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="675"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </div>
+
+    <TTSPlayer />
+
+    <nav class="article-toc" aria-label="Tabla de contenido">
+      <p class="toc-title">En este caso:</p>
+      <ol>
+        <li><a href="#el-desafio">El desafío: producción técnica en la Universidad de Chile</a></li>
+        <li><a href="#multicamara">Streaming y realización multicámara</a></li>
+        <li><a href="#sonido">Refuerzo sonoro de precisión</a></li>
+        <li><a href="#iluminacion">Iluminación escénica y para video</a></li>
+        <li><a href="#resultados">Resultados: tranquilidad y cero fallas</a></li>
+      </ol>
+    </nav>
+
+    <section class="article-section" id="el-desafio">
+      <h2>El desafío: producción técnica en la Universidad de Chile</h2>
+      <p>
+        Producir un evento corporativo o académico con figuras de alta relevancia pública no permite margen de error. Asumimos la producción audiovisual del seminario <strong>“Servir a la ciudadanía en un escenario inédito”</strong>.
+      </p>
+      <p>
+        El evento conmemoró las tres décadas del <strong>Magíster en Gestión y Políticas Públicas (MGPP)</strong>. Se llevó a cabo el 12 de noviembre de 2026 en el <strong>Salón de Honor de la Casa Central de la Universidad de Chile</strong>.
+      </p>
+      <p>
+        Contar con panelistas como <strong>Mario Marcel</strong> y <strong>Ricardo Baeza-Yates</strong> exigió un estándar de transmisión impecable tanto para la audiencia presencial como para la conexión digital.
+      </p>
+    </section>
+
+    <section class="article-section" id="multicamara">
+      <h2>Streaming y realización multicámara</h2>
+      <p>
+        Para cubrir las necesidades de este seminario, diseñamos una arquitectura técnica basada en redundancia y calidad broadcast. Aunque los requerimientos iniciales apuntaban a una realización a 3 cámaras, implementamos un setup de 4 cámaras con streaming para maximizar el dinamismo visual.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/seminario-u-de-chile-multicamara.jpg"
+          alt="Despliegue de cámaras broadcast para la realización multicámara del seminario del MGPP"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Realización multicámara en el Salón de Honor con cobertura de múltiples ángulos.</figcaption>
+      </figure>
+
+      <p>Desplegamos un ecosistema robusto para el envío de señal en vivo y la visualización fluida en sala:</p>
+      <ul class="article-list">
+        <li><strong>4 cámaras broadcast</strong> operadas para múltiples ángulos (plano general, detalle de panelistas y podio).</li>
+        <li><strong>02 encoders para transmisión</strong> que aseguran redundancia y evitan cortes de señal.</li>
+        <li><strong>Sistema de Circuito Cerrado de Televisión (CCTV)</strong> con integración directa de presentaciones y gráficas en pantalla.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="sonido">
+      <h2>Refuerzo sonoro de precisión</h2>
+      <p>
+        La inteligibilidad de la voz es crítica en paneles de discusión. Distribuimos estratégicamente el audio para cubrir la acústica del recinto sin generar acoples.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/seminario-u-de-chile-sonido.jpg"
+          alt="Refuerzo sonoro distribuido con sistemas activos y microfonía inalámbrica para el panel del MGPP"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Refuerzo sonoro distribuido para cubrir la acústica del Salón de Honor.</figcaption>
+      </figure>
+
+      <ul class="article-list">
+        <li><strong>Distribución de 06 sistemas activos Bose L1 Compact</strong> y refuerzo adicional con parlantes QSC.</li>
+        <li><strong>Microfonía inalámbrica combinada</strong> (03 de mano y 03 tipo solapa) para la comodidad de cada expositor.</li>
+        <li><strong>Centralización de señales limpia</strong> mediante un stage box digital Midas DL32.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="iluminacion">
+      <h2>Iluminación escénica y para video</h2>
+      <p>
+        La iluminación arquitectónica del Salón de Honor es majestuosa, pero los sensores de cámara requieren compensación específica para evitar sombras.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/seminario-u-de-chile-iluminacion.jpg"
+          alt="Iluminación escénica con focos PAR LED y luminarias COB para el seminario del MGPP"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Iluminación escénica uniforme para compensar los sensores de cámara.</figcaption>
+      </figure>
+
+      <ul class="article-list">
+        <li><strong>Instalación de 10 focos PAR LED y luminarias COB</strong> para bañar el escenario de forma uniforme.</li>
+        <li><strong>Uso de equipos Wash y consola de control</strong> para ajustar las temperaturas de color en tiempo real.</li>
+      </ul>
+    </section>
+
+    <section class="article-section" id="resultados">
+      <h2>Resultados: tranquilidad y cero fallas</h2>
+      <p>
+        La verdadera tranquilidad de un director de RR.HH. o productor de eventos radica en delegar la ejecución a un equipo experto y resolutivo. Gestionamos todo el ciclo: desde el cableado previo hasta la operación con nuestro <strong>Stage Manager</strong> y <strong>Director Técnico</strong>.
+      </p>
+
+      <figure class="article-figure">
+        <Picture
+          src="/images/blog/seminario-u-de-chile-montaje.jpg"
+          alt="Montaje técnico previo al seminario del MGPP en el Salón de Honor de la Universidad de Chile"
+          class="w-full h-auto"
+          width="1200"
+          height="676"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="article-figcaption">Montaje y cableado técnico previo a la jornada del seminario.</figcaption>
+      </figure>
+
+      <p>
+        ¿Organizas un congreso, seminario o cuenta pública en Santiago y necesitas estándar televisivo? <a href="/contacto/" class="article-inline-link">Cotiza tu servicio de streaming y producción técnica con DAR2</a> y asegura el éxito de tu próxima transmisión.
+      </p>
+    </section>
+
+    <section class="article-section article-cta-final">
+      <p class="article-cta-eyebrow">DAR2 · Cotización en 48h</p>
+      <h2>¿Organizas un seminario, congreso o cuenta pública?</h2>
+      <p>
+        Un evento con autoridades no permite margen de error. Con multicámara, audio broadcast, iluminación de escena y enlace redundante, tu transmisión se ve impecable para el público presencial y para la audiencia online.
+      </p>
+      <div class="article-cta">
+        <a href="/contacto/" class="article-cta-btn">
+          Cotizar streaming y producción →
+        </a>
+        <a href="/servicios/streaming/" class="article-cta-link">
+          Ver servicio de Streaming →
+        </a>
+      </div>
+    </section>
+
+  </article>
+  <BlogRelacionados />
+
+</Base>
+
+<style>
+  .article-wrap { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+  .article-header { margin-bottom: 32px; }
+  .article-hero-image { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #eaeaea; margin-bottom: 48px; }
+  .article-hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .article-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 24px; }
+  .article-h1 { font-size: clamp(36px, 4.5vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; margin: 0 0 24px; }
+  .article-lead { font-size: 20px; line-height: 1.5; color: #333; margin: 0 0 16px; }
+
+  .article-toc { border: 1px solid #e5e5e5; padding: 24px; margin: 48px 0; border-radius: 8px; background: #fafafa; }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0 0 16px; }
+  .article-toc ol { margin: 0; padding-left: 24px; }
+  .article-toc li { margin-bottom: 6px; font-size: 15px; }
+  .article-toc a { color: #1a1a1a; text-decoration: none; }
+  .article-toc a:hover { color: #E63E00; }
+  .article-section { margin-bottom: 56px; }
+  .article-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.1; margin: 0 0 24px; }
+  .article-section h3 { font-size: 22px; font-weight: 800; margin: 32px 0 12px; }
+  .article-section p { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; }
+  .article-section p strong { color: #1a1a1a; font-weight: 700; }
+  .article-list { font-size: 17px; line-height: 1.7; color: #333; margin: 0 0 18px; padding-left: 24px; }
+  .article-list li { margin-bottom: 10px; }
+  .article-figure { margin: 0 0 32px; }
+  .article-figure :global(picture) { display: block; border-radius: 16px; overflow: hidden; background: #eaeaea; }
+  .article-figure :global(img) { display: block; width: 100%; height: auto; }
+  .article-figcaption { font-size: 13px; line-height: 1.5; color: #666; margin-top: 10px; text-align: center; }
+  .article-inline-link { color: #E63E00; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .article-inline-link:hover { color: #FF4500; }
+  .article-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .article-cta-btn { display: inline-flex; align-items: center; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .article-cta-btn:hover { background: #333; }
+  .article-cta-link { color: #666; font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .article-cta-link:hover { color: #1a1a1a; }
+  .article-cta-final {
+    background: #1a1a1a; border-radius: 20px; padding: 48px 40px; margin-top: 80px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .article-cta-final::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #FF4500 0%, #E63E00 100%);
+  }
+  .article-cta-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #FF4500; margin: 0 0 16px;
+  }
+  .article-cta-final h2 {
+    color: #fff; margin-top: 0; margin-bottom: 16px;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  }
+  .article-cta-final p { color: #ccc; font-size: 17px; margin-bottom: 28px; max-width: 600px; }
+  .article-cta-final .article-cta-btn {
+    background: #FF4500; color: #fff; padding: 16px 28px; border-radius: 12px; font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .article-cta-final .article-cta-btn:hover { background: #E63E00; transform: translateY(-2px); }
+  .article-cta-final .article-cta-link { color: #aaa; }
+  .article-cta-final .article-cta-link:hover { color: #fff; }
+</style>
