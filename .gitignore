@@ -37,3 +37,6 @@ raw-images-podcast/
 # Server-only artifacts (vivien en el hosting, no en el repo)
 htaccess-nuevo.txt
 htaccess-current.txt
+
+# Cloudflare Tunnel config (contiene token/credenciales — no commitear)
+cloudflared-tunnel.yml

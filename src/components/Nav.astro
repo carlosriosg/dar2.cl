@@ -1,8 +1,9 @@
 ---
 import Picture from './Picture.astro';
+import { servicios } from '../data/servicios.js';
 
 const navLinks = [
-  { href: '/servicios/', label: 'Servicios' },
+  { href: '/servicios/', label: 'Servicios', dropdown: true },
   { href: '/portafolio/', label: 'Portafolio' },
   { href: '/casos/', label: 'Casos' },
   { href: '/blog/', label: 'Blog' },
@@ -30,20 +31,63 @@ const currentPath = Astro.url.pathname;
     <ul class="hidden md:flex items-center gap-8">
       {navLinks.map(link => {
         const isCurrent = currentPath.startsWith(link.href);
+        const linkClass = `text-sm font-medium transition-colors hover-underline ${
+          isCurrent
+            ? 'text-[#1a1a1a] font-semibold'
+            : 'text-[#666] hover:text-[#1a1a1a]'
+        }`;
+
+        // Dropdown "Servicios": enlaza directo a cada landing desde el menú
+        // principal (el plan de enlazado interno pedía llegar a Live Shopping y
+        // Productora Audiovisual sin pasar por /servicios/). Solo desktop;
+        // en mobile "Servicios" sigue yendo al índice (que lista los 9).
+        if (link.dropdown) {
+          return (
+            <li class="nav-has-dropdown">
+              <a
+                href={link.href}
+                class={`${linkClass} nav-dropdown-toggle`}
+                aria-current={isCurrent ? 'page' : undefined}
+              >
+                {link.label}
+                <svg
+                  class="nav-caret"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <div class="nav-dropdown">
+                {servicios.map(s => (
+                  <a href={`/servicios/${s.slug}/`} class="nav-dropdown-link">
+                    <span class="nav-dropdown-title">{s.title}</span>
+                    <span class="nav-dropdown-desc">{s.shortDesc}</span>
+                  </a>
+                ))}
+              </div>
+            </li>
+          );
+        }
+
         return (
-        <li>
-          <a
-            href={link.href}
-            class={`text-sm font-medium transition-colors hover-underline ${
-              isCurrent
-                ? 'text-[#1a1a1a] font-semibold'
-                : 'text-[#666] hover:text-[#1a1a1a]'
-            }`}
-            aria-current={isCurrent ? 'page' : undefined}
-          >
-            {link.label}
-          </a>
-        </li>
+          <li>
+            <a
+              href={link.href}
+              class={linkClass}
+              aria-current={isCurrent ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
         );
       })}
     </ul>
@@ -119,6 +163,100 @@ const currentPath = Astro.url.pathname;
   @media (min-width: 768px) {
     .site-logo img {
       height: 36px;
+    }
+  }
+
+  /* ── Dropdown "Servicios" (desktop) ──────────────────── */
+  /* Abre con hover o con foco por teclado (focus-within), sin JS. */
+  .nav-has-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-caret {
+    transition: transform 0.2s ease;
+  }
+
+  .nav-has-dropdown:hover .nav-caret,
+  .nav-has-dropdown:focus-within .nav-caret {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    min-width: 300px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  }
+
+  /* Puente invisible: evita que el hover se pierda al mover el mouse al panel. */
+  .nav-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+
+  .nav-has-dropdown:hover .nav-dropdown,
+  .nav-has-dropdown:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .nav-dropdown-link:hover,
+  .nav-dropdown-link:focus-visible {
+    background: #fff8f5;
+    outline: none;
+  }
+
+  .nav-dropdown-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .nav-dropdown-link:hover .nav-dropdown-title,
+  .nav-dropdown-link:focus-visible .nav-dropdown-title {
+    color: #C53700;
+  }
+
+  .nav-dropdown-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.35;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-caret,
+    .nav-dropdown {
+      transition: none;
     }
   }
 </style>

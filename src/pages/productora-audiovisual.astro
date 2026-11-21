@@ -72,6 +72,24 @@ const serviciosJsonLd = JSON.stringify({
     name: s.title,
   })),
 });
+
+// Service schema de la línea de negocio "Productora Audiovisual". Esta página
+// ya tenía FAQPage + ItemList, pero no declaraba el servicio en sí; Google y
+// los motores de IA usan @type Service para entender QUÉ se ofrece acá (keyword
+// "productora audiovisual santiago/chile"). Es el equivalente del serviceJsonLd
+// que cada página de servicio inyecta en [slug].astro.
+const serviceJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  url: 'https://dar2.cl/productora-audiovisual/',
+  name: 'Productora Audiovisual en Chile',
+  provider: { '@id': 'https://dar2.cl/#organization' },
+  areaServed: { '@type': 'Country', 'name': 'Chile' },
+  serviceType: 'Producción audiovisual corporativa',
+  description:
+    'Productora audiovisual en Santiago de Chile con equipo propio: video corporativo, streaming en vivo, live shopping, video podcast y contenido para redes. 15 años de experiencia con clientes IPSA.',
+  image: 'https://dar2.cl/images/galeria/camara-zcam-full-equipada.png',
+});
 ---
 
 <Base
@@ -83,6 +101,7 @@ const serviciosJsonLd = JSON.stringify({
   ogImage="/images/galeria/camara-zcam-full-equipada.png"
 >
   <Fragment slot="head">
+    <script type="application/ld+json" set:html={serviceJsonLd} />
     <script type="application/ld+json" set:html={faqJsonLd} />
     <script type="application/ld+json" set:html={serviciosJsonLd} />
   </Fragment>
@@ -95,7 +114,7 @@ const serviciosJsonLd = JSON.stringify({
           DAR2 · PRODUCTORA AUDIOVISUAL EN CHILE
         </p>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] mb-6">
-          Productora audiovisual en Chile, <em class="hl">con equipo propio y calidad broadcast.</em>
+          Productora audiovisual en Chile, <em class="hl">equipo propio y calidad broadcast.</em>
         </h1>
         <p class="text-base md:text-lg text-[#666] leading-relaxed mb-8">
           Producimos video corporativo, streaming en vivo, live shopping, video podcast y contenido para redes de empresas en todo el país. Equipo propio de 8 profesionales, cámaras cinema Z CAM E2-S6, estudios coordinados según el requerimiento y 15 años con clientes IPSA.
